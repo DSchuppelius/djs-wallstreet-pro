@@ -1,0 +1,143 @@
+html, body{
+    height: auto;
+    background : none;
+}
+
+    body.home .homepage_mycarousel,
+    body.home .home-blog-section,
+    body.home .portfolio-section,
+    body.home .testimonial-section,
+    body.home .features-section,
+    body.home .service-section .service-btn {
+        display: none;
+    }
+
+    body.page-template .container div.col-md-4,
+    body.single-post .container.single div.col-md-4 {
+        display: none;
+    }
+
+.header-top-area {
+    transform: translate3d(0px, 0px, 0px) !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+    .header-top-area ~ .container .row {
+        margin-top: 60px;
+    }
+
+footer, .page_scrollup i {
+    display: none;
+}
+
+.post {
+    page-break-after: always;
+    overflow-y: hidden;
+}
+
+body.home .service-section .col-md-4 {
+    width: 800px;
+    margin-top: -30px;
+    padding: 0px;
+    display: block;
+}
+
+.columnfiller,
+.wp-block-embed__wrapper,
+.parallax-mirror,
+.pagetitle-separator,
+.col-md-4 {
+    display: none;
+}
+
+.sharedaddy {
+    display: none;
+}
+
+#jp-relatedposts {
+    display: none !important;
+    visibility: hidden;
+}
+
+.footer_section {
+    display: none;
+}
+
+.comment-form-section {
+    display: none;
+}
+
+.page-mycarousel {
+    display: none;
+}
+
+.navbar {
+    display: none;
+}
+
+.blog-pagination,
+.blog-post-meta,
+.blog-author {
+    display: none;
+    visibility: hidden;
+}
+
+a[href]:after {
+    display: none;
+    visibility: hidden;
+}
+
+#wpadminbar, .head-contact-social {
+    display: none;
+}
+
+.header-top-area {
+    background-color: #CCC !important;
+    -webkit-print-color-adjust: exact;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+img {
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    border-radius: 20px !important;
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+
+.blog-post-date {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+
+.blog-post-date span.comment {
+    background-color: #BBB !important;
+    -webkit-print-color-adjust: exact;
+}
+
+.blog-post-date span.date,
+.blog-btn {
+    background-color: #999 !important;
+    -webkit-print-color-adjust: exact;
+}
+
+.main-portfolio-area {
+    width: 165px;
+    height: 165px;
+    float: left;
+}
+
+.afterclearfix {
+    display: none;
+}
+
+div.bigborder {
+    border: none !important;
+}

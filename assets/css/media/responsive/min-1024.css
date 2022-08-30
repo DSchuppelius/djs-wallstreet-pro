@@ -1,0 +1,64 @@
+.col-md-4.service-effect:nth-child(3n+1), .row.service2 .col-md-4:nth-child(3n+1),
+.row.service3 .col-md-4:nth-child(3n+1), .row.service4 .col-md-4:nth-child(3n+1),
+.row.service5 .col-md-4:nth-child(3n+1) {
+    clear: left;
+}
+
+@media (min-width: 1100px) {
+    body .btn.navbar-toggle {
+        display: none;
+    }
+
+    body .navbar-collapse.collapse {
+        display: block;
+    }
+
+    body .navbar-header {
+        float: left;
+    }
+
+    body .navbar-nav {
+        float: right;
+    }
+
+        body .navbar-nav > li {
+            float: left;
+        }
+
+    .navbar2 .nav {
+        padding: 7px 0;
+    }
+
+        .navbar2 .nav.navbar-left {
+            padding: 0 0;
+        }
+
+    .navbar.navbar2 .navbar-nav > li > a {
+        border-radius: 0px;
+        padding: 15px 20px;
+    }
+
+    .navbar.navbar2 .header-module {
+        text-align: right;
+        float: right;
+    }
+
+    .index2 .contact-social.right {
+        float: right;
+        padding: 25px 0;
+    }
+
+
+    .navbar2 .header-module {
+        width: 10%;
+    }
+
+    .navbar2 .navbar-left, .navbar3 .navbar-left {
+        width: 90%;
+    }
+
+    .index2 .contact-social.right {
+        float: right;
+        padding: 25px 0;
+    }
+}

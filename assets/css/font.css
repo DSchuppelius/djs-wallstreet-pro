@@ -1,0 +1,1685 @@
+/*Variables Section---------------------------------------------------------------------------*/
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/ElMessiri-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontLight";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 200;
+    src: local('Roboto'), url('fonts/ElMessiri-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontBold";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/ElMessiri-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontSemi";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/ElMessiri-SemiBold.ttf');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "SiteFontMedium";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/ElMessiri-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/icon-material-design/MaterialIcons-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsRound-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsSharp-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsOutlined-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsTwoTone-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/font-awesome/webfonts/fa-regular-400.ttf'), url('fonts/font-awesome/webfonts/fa-regular-400.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bootstrap Icons";
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    src: local('Roboto'), url('fonts/bootstrap/bootstrap-icons.woff') format('woff'), url('fonts/bootstrap/bootstrap-icons.woff2') format('woff2');
+    font-display: swap;
+}
+
+/*HTML Section--------------------------------------------------------------------------------*/
+html,
+body {
+    font-family: 'SiteFont', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px
+}
+
+    body .fa-regular {
+        font-family: "FontAwesome";
+    }
+
+    body .material-symbols-outlined,
+    body .material-icons-outlined,
+    body .material-icons {
+        font-family: "Material Icons";
+    }
+
+    body.fixed_Header .navbar.navbar-fixed-top .wallstreet_title_head {
+        font-size: 25px;
+    }
+
+#blogdetail_btn {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+#searchbar_fullscreen .btn {
+    font-size: 1em
+}
+
+#searchbar_fullscreen .close {
+    font-size: 27px
+}
+
+#searchbar_fullscreen input[type="search"] {
+    font-size: 50px;
+    font-weight: 400
+}
+
+.about-us .social a {
+    font-size: 30px;
+}
+    .about-section h3 {
+    font-family: 'SiteFontBold';
+    font-weight: 400;
+    font-size: 24px
+}
+
+.about-section p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.about-social-icons li > a > i {
+    font-size: 25px
+}
+
+.acco_panel p {
+    font-size: 14px;
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.alert-error {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.alert-info {
+    border-radius: 2px;
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 17px 35px 18px 14px
+}
+
+.alert-success {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.alert-warning {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.bi {
+    font-family: 'Bootstrap Icons';
+    font-size: 15px;
+    font-weight: 100
+}
+
+.blockquote2 > small {
+    font-size: 14px;
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-style: italic
+}
+
+.blockquote2 > span {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 15px
+}
+
+.blog-author h6 {
+    font-family: 'SiteFontSemi';
+    font-weight: 500;
+    font-size: 16px
+}
+
+.blog-author p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.blog-blockquote blockquote > small {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.blog-blockquote blockquote > span {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15px
+}
+
+.blog-form-control {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.blog-form-control-textarea {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.blog-list-view .blog-post-date span.date {
+    font-size: 16px
+}
+
+.blog-list-view .blog-post-title-wrapper h2, .blog-list-view .blog-post-title-wrapper-full h2 {
+    font-family: 'SiteFontSemi';
+    font-size: 30px;
+    font-weight: 500
+}
+
+.blog-pagination a, .page-links a, .blog-pagination span, .page-numbers {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 18px
+}
+
+.blog-post-date {
+    font-family: 'SiteFont';
+    font-weight: 600
+}
+
+    .blog-post-date span.comment {
+        font-family: 'SiteFontBold';
+        font-weight: 600;
+        font-size: 14px
+    }
+
+        .blog-post-date span.comment > i {
+            font-size: 15px
+        }
+
+    .blog-post-date span.date {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 36px
+    }
+
+        .blog-post-date span.date > small {
+            font-size: 16px
+        }
+
+.blog-post-detail {
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+    .blog-post-detail a {
+        font-size: 12px
+    }
+
+        .blog-post-detail a > i {
+            font-size: 14px
+        }
+
+.blog-post-meta {
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+    .blog-post-meta a > i {
+        font-size: 14px
+    }
+
+.blog-post-title .blog-post-title-wrapper blockquote > p > span, .blog-post-title .blog-post-title-wrapper-full blockquote > p > span {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 15px
+}
+
+.blog-post-title .blog-post-title-wrapper ul > li > span, .blog-post-title .blog-post-title-wrapper-full ul > li > span {
+    font-family: 'SiteFont';
+    font-size: 16px !important
+}
+
+.blog-post-title > .blog-post-title-wrapper > h1 {
+    font-size: 46px
+}
+
+.blog-post-title > .blog-post-title-wrapper > h1, .blog-post-title > .blog-post-title-wrapper > h2, .blog-post-title > .blog-post-title-wrapper > h3, .blog-post-title > .blog-post-title-wrapper > h4, .blog-post-title > .blog-post-title-wrapper > h5, .blog-post-title > .blog-post-title-wrapper > h6 {
+    font-family: 'SiteFont'
+}
+
+.blog-post-title > .blog-post-title-wrapper > h2 {
+    font-size: 40px
+}
+
+.blog-post-title > .blog-post-title-wrapper > h3 {
+    font-size: 34px
+}
+
+.blog-post-title > .blog-post-title-wrapper > h4 {
+    font-size: 28px
+}
+
+.blog-post-title > .blog-post-title-wrapper > h5 {
+    font-size: 22px
+}
+
+.blog-post-title > .blog-post-title-wrapper > h6 {
+    font-size: 16px
+}
+
+.blog-post-title-wrapper > dl > dt, .blog-post-title-wrapper-full > dl > dt, .blog-post-title-wrapper > dl > dd, .blog-post-title-wrapper-full > dl > dd {
+    font-size: 16px
+}
+
+.blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ul > li, .blog-post-title-wrapper-full > ol > li > ul > li, .blog-post-title-wrapper > ol > li > ul > li > ol > li, .blog-post-title-wrapper-full > ol > li > ul > li > ol > li {
+    margin: 0 0 7px;
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px
+}
+
+    .blog-post-title-wrapper > ol, .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li, .blog-post-title-wrapper > ol > li > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li > ol > li {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 16px
+    }
+
+.blog-post-title-wrapper > ul, .blog-post-title-wrapper > ul > li, .blog-post-title-wrapper-full > ul, .blog-post-title-wrapper-full > ul > li, .blog-post-title-wrapper > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li, .blog-post-title-wrapper > ul > li > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li > ul > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px
+}
+
+.blog-post-title-wrapper address, .blog-post-title-wrapper-full address {
+    font-style: italic
+}
+
+.blog-post-title-wrapper blockquote > p > small, .blog-post-title-wrapper-full blockquote > p > small {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1 {
+    font-size: 46px
+}
+
+.blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1, .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3, .blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4, .blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5, .blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
+    font-family: 'SiteFont';
+    font-weight: 300
+}
+
+.blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2 {
+    font-size: 40px
+}
+
+    .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
+        font-family: 'SiteFont';
+        font-weight: 300;
+        font-size: 40px
+    }
+
+.blog-post-title-wrapper h2, .title h3 {
+    font-family: 'SiteFontSemi';
+    font-weight: 300
+}
+
+    .blog-post-title-wrapper h2 span.title {
+        font-family: 'SiteFont';
+        font-weight: 200
+    }
+
+        .blog-post-title-wrapper h2 span.title.post_format {
+            font-family: 'SiteFontSemi';
+            text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+            font-weight: 300
+        }
+
+            .blog-post-title-wrapper h2 span.title.post_format.none ~ .title {
+                font-family: 'SiteFontSemi';
+                font-weight: 300
+            }
+
+.blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3 {
+    font-size: 34px
+}
+
+.blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4 {
+    font-size: 28px
+}
+
+    .blog-post-title-wrapper h4.linked_post, .blog-post-title-wrapper-full h4.linked_post {
+        font-size: 20px;
+    }
+
+.blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5 {
+    font-size: 22px
+}
+
+.blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
+    font-size: 16px
+}
+
+.blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.blog-tags a {
+    font-size: 12px
+}
+
+.blog-tags i {
+    font-size: 14px
+}
+
+.blog-tags span {
+    font-size: 16px
+}
+
+.blogdetail-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.breadcrumbs > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.callout-section {
+    font-size: 14px
+}
+
+    .callout-section a {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 18px
+    }
+
+    .callout-section h3 {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 24px
+    }
+
+    .callout-section p {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 15px
+    }
+
+.close {
+    font-size: 18px !important
+}
+
+.column-box p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px
+}
+
+.comment-date a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.comment-detail > dl > dt, .comment-detail > dl > dd {
+    font-size: 16px
+}
+
+.comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px
+}
+
+    .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 16px
+    }
+
+.comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px
+}
+
+.comment-detail address {
+    font-style: italic
+}
+
+.comment-detail p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.comment-detail-title {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 15px
+}
+
+.comment-title h3 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 24px
+}
+
+    .comment-title h3 > i {
+        font-size: 26px
+    }
+
+.comment_box h1 {
+    font-size: 46px
+}
+
+.comment_box h1, .comment_box h2, .comment_box h3, .comment_box h4, .comment_box h5, .comment_box h6 {
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.comment_box h2 {
+    font-size: 40px
+}
+
+.comment_box h3 {
+    font-size: 34px
+}
+
+.comment_box h4 {
+    font-size: 15px
+}
+
+.comment_box h5 {
+    font-size: 22px
+}
+
+.comment_box h6 {
+    font-size: 16px
+}
+
+.cont-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.cont-form-control {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.cont-form-control-textarea {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.cont-heading-title h1 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 36px;
+    font-weight: normal
+}
+
+.cont-heading-title p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 20px
+}
+
+.contact-detail-area address {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 16px
+}
+
+.contact-detail-area h5 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 24px
+}
+
+.contact-detail-area i {
+    font-size: 20px
+}
+
+.dropcape-circle span {
+    font-family: 'SiteFont';
+    font-weight: 600;
+    font-size: 45px
+}
+
+.dropcape-simple span {
+    font-family: 'SiteFont';
+    font-weight: 600;
+    font-size: 45px
+}
+
+.dropcape-square span {
+    font-family: 'SiteFont';
+    font-weight: 600;
+    font-size: 45px
+}
+
+.dropcape-square, .dropcape-simple, .dropcape-circle {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
+    font-size: 12px;
+}
+
+.entry-content dt, .comment-content dt {
+    font-weight: 700
+}
+
+.error_404 {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 18px;
+    font-weight: normal
+}
+
+    .error_404 h2 {
+        font-size: 75px;
+        font-family: 'SiteFont';
+        font-weight: 600
+    }
+
+.feature-icon i {
+    font-size: 28px
+}
+
+.features-area h3 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 20px
+}
+
+.features-area p {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 15px
+}
+
+.features-title {
+    font-family: 'SiteFontSemi';
+    font-weight: 400;
+    font-size: 34px
+}
+
+.flex_btn {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 18px
+}
+
+.footer-blog-post h3 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.footer-blog-post span {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 12px
+}
+
+.footer-contact-social li > a > i {
+    font-size: 30px
+}
+
+.footer-copyright p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h1, .footer-widget-section h2, .footer-widget-section h3, .footer-widget-section h4, .footer-widget-section h5, .footer-widget-section h6 {
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h2 {
+    font-weight: 400;
+    font-size: 24px
+}
+
+.footer-widget-section li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+.footer-widget-tags a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+footer.site p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.footer_widget_column > .tagcloud a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px !important
+}
+
+.footer_widget_column > ul > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+.footer_widget_column ul#recentcomments > li.recentcomments > a:before, .footer_widget_column ul.sidebar-tab.sidebar-widget-tab > li > a:before {
+    font-family: 'FontAwesome'
+}
+
+.footer_widget_title {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 24px
+}
+
+.format-status p {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px
+}
+
+.google-map-title h1 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 36px
+}
+
+.head-contact-info i {
+    font-size: 17px
+}
+
+.head-contact-info li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.head-contact-social li > a > i {
+    font-size: 18px
+}
+
+.home-blog-area .home-blog-info h2,
+.page-blog-area .home-blog-info h2 {
+    font-family: 'SiteFontSemi';
+    font-weight: 300;
+    font-size: 36px
+}
+
+.home-blog-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 12px
+}
+
+.home-blog-description p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.home-blog-post-detail {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 12px
+}
+
+    .home-blog-post-detail > .comment {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 12px
+    }
+
+        .home-blog-post-detail > .comment > a > i {
+            font-size: 14px
+        }
+
+    .home-blog-post-detail > .date {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 15px
+    }
+
+.home-portfolio-showcase .home-portfolio-showcase-detail h4 {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px
+}
+
+.home-portfolio-showcase .home-portfolio-showcase-detail p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.image-para-content {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.image-para-title {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 18px
+}
+
+.main-portfolio-showcase .main-portfolio-showcase-detail h4 {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px
+}
+
+.main-portfolio-showcase .main-portfolio-showcase-detail p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.masonry-item .blog-lg-area-left h3 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 24px;
+    font-weight: 700
+}
+
+.masonry-item .blog-post-sm {
+    font-size: 14px
+}
+
+.masonry-item .blog-post-title-wrapper h2, .masonry-item .blog-post-title-wrapper-full h2 {
+    font-size: 22px
+}
+
+.masonry-item:after {
+    font-size: 0
+}
+
+.menu-primary-container a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+.menu-primary-container li a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+.navbar2 li .dropdown-toggle::before {
+    font-family: "FontAwesome"
+}
+
+.navbar2 li .dropdown-toggle::before {
+    font-family: "FontAwesome"
+}
+
+.other-service-area h2 {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 18px
+}
+
+.other-service-area i {
+    font-size: 40px
+}
+
+.other-service-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.other-service-area1 i {
+    font-size: 100px
+}
+
+.page-title-col h1 {
+    font-family: 'SiteFontMedium';
+    font-size: 50px
+}
+
+.page-title-col h2 {
+    font-family: 'SiteFont';
+    font-size: 40px
+}
+
+.page_scrollup i {
+    font-size: 22px
+}
+
+.panel-default > .short-panel-heading h4 {
+    font-size: 14px !important;
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+.panel-title {
+    font-size: 14px !important;
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+    .panel-title a span {
+        font-size: 20px
+    }
+
+.portfolio-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 12px
+}
+
+.portfolio-detail-description p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.portfolio-detail-info .project-btn {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.portfolio-detail-info p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+    .portfolio-detail-info p small {
+        font-family: 'SiteFont';
+        font-weight: 500;
+        font-size: 15px
+    }
+
+.portfolio-detail-pagi li a span {
+    font-size: 22px
+}
+
+.portfolio-icon a > i {
+    font-size: 16px
+}
+
+.portfolio-tabs li a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.post-content li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+    .post-content li > i {
+        font-size: 6px;
+        font-weight: 400
+    }
+
+.post-date span.date {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 24px
+}
+
+.post-date span.month {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px
+}
+
+.post-media-sidebar h3 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.post-media-sidebar p {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 15px
+}
+
+.post-password-form input[type="submit"] {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: normal
+}
+
+.post_message {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 40px
+}
+
+.prelated-project-btn li > a > i {
+    font-size: 22px
+}
+
+.proejct-btn a {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px
+}
+
+.qua_contact_btn {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.edit-link,
+.reply {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px
+}
+
+    .edit-link a,
+    .reply a {
+        font-size: 13px;
+        font-family: 'SiteFont';
+        font-weight: 400
+    }
+
+.screen-reader-text:focus {
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 700
+}
+
+.search-form button[type="submit"] {
+    font-size: 15px
+}
+
+.search-panel input[type="search"] {
+    font-size: 15px;
+    font-weight: 400
+}
+
+.search-widget a {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: normal
+}
+
+.search-widget input {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.search_btn {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: normal
+}
+
+.search_err_heading {
+    font-size: 20px;
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.search_heading {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 35px
+}
+
+.search_widget_input {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 14px
+}
+
+.section_heading_title h1 {
+    font-family: 'SiteFontBold';
+    font-weight: 400;
+    font-size: 36px
+}
+
+.section_heading_title p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 20px
+}
+
+.service-area h2 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 24px
+}
+
+.service-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.service-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.service1 .service-box i.fa {
+    font-size: 36px
+}
+
+.service2 .service-box i.fa {
+    font-size: 36px
+}
+
+.service3 .service-box i.fa {
+    font-size: 36px;
+    font-size: 36px
+}
+
+.service4 .service-box i.fa {
+    font-size: 36px;
+    font-size: 36px
+}
+
+.service5 .service-box i.fa {
+    font-size: 36px
+}
+
+.short-btn-large {
+    font-size: 12px;
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+.short-btn-mini {
+    font-size: 12px;
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.short-btn-small {
+    font-size: 12px;
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+.short-tabs li a {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 14px
+}
+
+.short-tooltip {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.sidebar-comment-box span {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 12px
+}
+
+    .sidebar-comment-box span > a > i {
+        font-size: 5px
+    }
+
+    .sidebar-comment-box span > small {
+        font-family: 'SiteFont';
+        font-weight: 300;
+        font-size: 16px
+    }
+
+.sidebar-tweet-area i {
+    font-size: 30px
+}
+
+.sidebar-tweet-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.sidebar-tweet-area span {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px
+}
+
+.sidebar-widget .wp-block-search .wp-block-search__label, .sidebar-widget h1, .sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4, .sidebar-widget h5, .sidebar-widget h6 {
+    font-family: 'SiteFontSemi'
+}
+
+.sidebar-widget > .tagcloud a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px !important
+}
+
+.sidebar-widget > div.textwidget, .footer_widget_column > div.textwidget {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.sidebar-widget > ul > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+    .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
+        font-family: 'FontAwesome'
+    }
+
+    .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
+        font-size: 6px;
+        font-weight: 400
+    }
+
+.sidebar-widget div#calendar_wrap table > caption, .footer_widget_column div#calendar_wrap table > caption {
+    font-size: 18px;
+    font-family: 'SiteFontBold'
+}
+
+.sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
+    font-size: 14px
+}
+
+.sidebar-widget div#calendar_wrap table > tfoot > tr > td, .footer_widget_column div#calendar_wrap table > tfoot > tr > td {
+    font-size: 20px
+}
+
+.sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
+    font-size: 18px
+}
+
+.sidebar-widget ul li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: 400
+}
+
+    .sidebar-widget ul li a:before, .footer_widget_column ul li a:before {
+        font-size: 6px;
+        font-weight: 400;
+        font-family: 'FontAwesome'
+    }
+
+.sidebar-widget ul#recentcomments > li.recentcomments > a:before, .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li > a:before {
+    font-family: 'FontAwesome'
+}
+
+.sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: normal
+}
+
+.sidebar-widget-tab li a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.sidebar-widget-tags a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px
+}
+
+.sidebar-widget-title h2 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 22px
+}
+
+.site-branding-text .site-title .navbar-brand {
+    font-size: unset
+}
+
+.slide-text-bg1 h2 {
+    font-family: 'SiteFontSemi';
+    font-weight: 300;
+    font-size: 60px
+}
+
+.slide-text-bg2 h1 {
+    font-family: 'SiteFontMedium';
+    font-weight: 400;
+    font-size: 80px;
+    font-weight: normal
+}
+
+.slide-text-bg2 span {
+    font-family: 'SiteFont';
+    font-weight: 300
+}
+
+.slide-text-bg3 p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 22px
+}
+
+.table {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.team-area h5 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 18px
+}
+
+    .team-area h5 > span {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 13px
+    }
+
+.team-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.team-section1 .position {
+    font-size: 16px
+}
+
+.team-section1 .team-img .overlay .custom-social-icons li > a {
+    font-size: 18px
+}
+
+.team-social-icons li > a > i {
+    font-size: 14px
+}
+
+.testimonial-area h2 {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px
+}
+
+.testimonial-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 20px
+}
+
+.testimonial1 p:before {
+    font-family: 'FontAwesome';
+    font-size: 62px
+}
+
+.testimonial2 p:before {
+    font-family: 'FontAwesome';
+    font-size: 62px
+}
+
+.testimonial3 p:before {
+    font-family: 'FontAwesome';
+    font-size: 62px
+}
+
+.tweet-area h2 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 18px
+}
+
+.tweet-area p {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 20px
+}
+
+.tweet-btn a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.tweet-icon i {
+    font-size: 85px
+}
+
+.typo-head-title h3 {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 20px
+}
+
+.typo-para-icons i {
+    font-size: 16px
+}
+
+.typo-para-icons span {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+.typo-section {
+    font-family: 'SiteFont'
+}
+
+    .typo-section blockquote > small {
+        font-size: 14px;
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-style: italic
+    }
+
+    .typo-section blockquote > span {
+        font-family: 'SiteFont';
+        font-weight: 300;
+        font-size: 15px
+    }
+
+    .typo-section h1 {
+        font-size: 46px
+    }
+
+    .typo-section h1, .typo-section h2, .typo-section h3, .typo-section h4, .typo-section h5, .typo-section h6 {
+        font-weight: 300
+    }
+
+    .typo-section h2 {
+        font-size: 40px
+    }
+
+    .typo-section h3 {
+        font-size: 34px
+    }
+
+    .typo-section h4 {
+        font-size: 28px
+    }
+
+    .typo-section h5 {
+        font-size: 22px
+    }
+
+    .typo-section h6 {
+        font-size: 16px
+    }
+
+    .typo-section p {
+        font-weight: 300;
+        font-size: 16px
+    }
+
+.wallstreet_searching {
+    font-size: 16px;
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+.wallstreet_title_head {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 38px
+}
+
+.warning.java {
+    font-size: 30px;
+}
+
+.wp-block-calendar table caption {
+    font-weight: 600;
+    font-size: 16px
+}
+
+.wp-block-calendar table caption {
+    font-size: 25px;
+    font-family: 'SiteFont';
+    font-weight: 600
+}
+
+.wp-block-calendar table th {
+    font-weight: 600
+}
+
+.wp-block-calendar table th {
+    font-weight: 500
+}
+
+.wp-block-calendar tbody td, .wp-block-calendar th {
+    font-size: 15px
+}
+
+.wp-block-search .wp-block-search__button {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-weight: normal
+}
+
+.wp-block-search .wp-block-search__input {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 14px
+}
+
+.wp-block-search .wp-block-search__label, .sidebar-widget h2 {
+    font-weight: 300;
+    font-size: 22px
+}
+
+.wp-block-social-links .wp-social-link a {
+    font-size: 20px
+}
+
+.wp-block-tag-cloud a {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px !important
+}
+
+.wp-calendar-table #today {
+    font-weight: 600
+}
+
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+    font-style: italic;
+    font-size: 1.257143rem
+}
+
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+    font-size: 1.25714rem;
+    font-style: italic
+}
+
+.wpcf7-submit {
+    font-family: 'SiteFont';
+    font-weight: 600;
+    font-size: 16px
+}
+
+.wpcf7-text, .wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 15px
+}
+
+.wpcf7-textarea {
+    font-family: 'SiteFont';
+    font-weight: 600;
+    font-size: 14px
+}
+
+a.blog-btn {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px
+}
+
+a.readmore {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 12px
+}
+
+article footer {
+    font-size: 12px
+}
+
+.sidebar-widget article footer {
+    font-size: 14px
+}
+
+cite {
+    font-style: italic !important
+}
+
+div.wpcf7-validation-errors {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a.button {
+    font-family: 'SiteFontSemi'
+}
+
+    a.comment-edit-link:before, a.comment-reply-link:before, input[type="submit"]:before, button:before, .btn:before, a.button:before {
+        font-family: 'Material Icons';
+        font-size: 1.5625rem;
+        font-weight: 100
+    }
+
+input#pwbox-1168 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.not) {
+    font-size: 0.9em
+}
+
+p.short-tabs-content {
+    font-size: 14px;
+    font-family: 'SiteFont';
+    font-weight: 400
+}
+
+span.wpcf7-not-valid-tip {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 14px
+}
+
+td {
+    font-weight: 300;
+    font-size: 15px
+}
+
+th {
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'SiteFont';
+    font-weight: 500
+}
+
+tr {
+    font-size: 15px;
+    font-weight: 400
+}

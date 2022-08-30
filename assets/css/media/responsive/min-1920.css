@@ -1,0 +1,23 @@
+.container {
+    width: 1570px;
+    max-width: 1570px;
+}
+
+.blog-form-group {
+    width: 49.15%;
+}
+
+.container.single.portfolio .port-detail-img {
+    height: 1000px;
+    width: 1000px;
+}
+
+.container.single.portfolio .row.portfolio-detail-section.no_background .port-detail-img {
+    height: 1023px;
+    width: 1023px
+}
+
+
+.portfolio-detail-pagi .button.btn {
+    min-width: 240px;
+}

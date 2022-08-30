@@ -1,17 +1,21 @@
 <?php
-/*	@Theme Name	:	Wallstreet-Pro
-* 	@file         :	sidebar.php
-* 	@package      :	Wallstreet-pro
-* 	@filesource   :	wp-content/themes/Wallstreet/sidebar.php
-*/	
-?>
+/*
+ * Created on   : Wed Jun 22 2022
+ * Author       : Daniel Jörg Schuppelius
+ * Author Uri   : https://schuppelius.org
+ * Filename     : sidebar.php
+ * License      : GNU General Public License v3 or later
+ * License Uri  : http://www.gnu.org/licenses/gpl.html
+ */
+$current_options = get_current_options();
 
-<?php  if ( is_active_sidebar( 'sidebar_primary' ) ) { ?>
+if (is_active_sidebar("sidebar_primary")) { ?>
 <!--Sidebar Area-->
-	<div class="col-md-4">
-		<div class="sidebar-section">
-			<?php dynamic_sidebar( 'sidebar_primary' );	?>
+	<div class="col-md-4 flexcolumn">
+		<div class="sidebar-section <?php with_Filler(); innerrow_Frame_Border(" "); ?>">
+			<?php dynamic_sidebar("sidebar_primary"); ?>
 		</div>
+		<?php get_template_part("template-parts/content/filler"); ?>
 	</div>
 <!--Sidebar Area-->
 <?php } ?>

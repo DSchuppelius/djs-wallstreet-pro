@@ -1,21 +1,33 @@
-wallstreet-Pro.
+== DJS-Wallstreet-Pro ==
 
-A Premium multi colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
+Contributors: DSchuppelius
+Version: 2.0.0
+Requires at least: 5.3
+Tested up to: 6.0.0
+Requires PHP: 5.6.20
+Requires MySQL: 5.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+
+== Description ==
+
+A Premium multi colored Business Blog theme that supports Primary menu's, Primary sidebar, Four widgets area at the footer region etc. 
+It has a perfect design that's great for any Business/Firms Blogs who wants a new look for their site. Three page templates Home, Blog and Contact Page. 
 Theme supports featured slider managed from Theme Option Panel.
 
-Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri and Vibhor Purandare.
-Theme Homepage Url:http://webriti.com/demo/wp/wallstreet/
+Author: Priyanshu Mittal, Hari Maliya, Shahid Mansuri, Vibhor Purandare and Daniel Jörg Schuppelius.
+Base Theme Homepage Url:http://webriti.com/demo/wp/wallstreet/
+Theme Homepage Url:https://github.com/DSchuppelius/djs-wallstreet-pro/
 
 About:
-wallstreet-Pro a theme for business, consultancy firms etc  by Webriti (Author URI: http://www.webriti.com). 
+DJS-Wallstreet-Pro a theme for business, consultancy firms etc. Initial created by Webriti and continued by Daniel Jörg Schuppelius (Base Author URI: http://webriti.com) (Author URI: http://schuppelius.org). 
 
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 
 Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
-Appoinment supports Custom Menu, Widgets and 
+Wallstreet supports Custom Menu, Widgets and 
 the following extra features:
 
  - Pre-installed menu and content colors
@@ -33,12 +45,12 @@ the following extra features:
 -----------------------------------
 Fresh installation!
 
-1. Upload the wallstreet-Pro Theme folder to your wp-content/themes folder.
+1. Upload the DJS-Wallstreet-Pro Theme folder to your wp-content/themes folder.
 2. Activate the theme from the WP Dashboard.
 3. Done!
 === Images ===
 
-All images in wallstreet-Pro are licensed under the terms of the GNU GPL.
+All images in DJS-Wallstreet-Pro are licensed under the terms of the GNU GPL.
 
 # Top Navigation Menu:
 - Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
@@ -49,15 +61,37 @@ All images in wallstreet-Pro are licensed under the terms of the GNU GPL.
 
 
 ===========Front Page Added with the theme=================
-1 It has header(logo + menus),Home Featured Image, services,recent comments widgets and footer.
+1 It has header(logo + menus), Home Featured Image, services, recent comments widgets and footer.
 
 ======Site Title and Description=============
 Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
-	
+    
+
 Support
 -------
 
-Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
+
+@version 2.0.0
+1. Refactoring Theme
+2. Add Parallaxfunctions
+3. Add Custom Background
+4. Add Support for Revolution Slider
+5. Add Google Fonts (Material Icons, El Messiri)
+6. Update Bootstrap 3.4.1 with Icons
+7. Update Font-awesome Library 6.1.1
+8. Add Fading Pageload
+9. Add Designobjects Frame, Filler and Big Border
+10. Add Custom Bradcrumb and Content Positions
+11. Repair Portfoliosite
+12. Split Css Files
+13. Change Links to Buttons
+14. Add fx.css for animations and others
+15. Add fixed header and footer
+16. Add attachment-site
+17. Add aktivating iframe (cookie accept)
+18. Updated german locale
+19. Add design-variants (improvement required)
 @version 1.9.9
 1. Removed duplicate and unused js.
 @version 1.9.8
@@ -148,6 +182,7 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 4. Add style for monster widget Image.
 @Version 1.0
 released
+
 
 # --- EOF --- #
 

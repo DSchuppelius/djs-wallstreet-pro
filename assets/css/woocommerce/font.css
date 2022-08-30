@@ -1,0 +1,132 @@
+.woocommerce {
+    font-family: 'SiteFont';
+}
+
+    .woocommerce ul.products li.product h3 {
+        font-size: 1.2286em;
+        font-family: 'SiteFont';
+        font-weight: 400;
+    }
+
+    .woocommerce ul.products li.product .onsale {
+        font-weight: 800;
+        font-size: 10px;
+    }
+
+    .woocommerce span.onsale {
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    .woocommerce ul.products li.product .price {
+        font-size: 1.2286em;
+        font-family: 'SiteFont';
+        font-weight: 400;
+    }
+
+        .woocommerce ul.products li.product .price del {
+            font-size: 0.8em;
+        }
+
+    .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+    .woocommerce #respond input#submit.alt, .woocommerce button.button.alt {
+        font-size: 0.9em;
+        font-family: 'SiteFont';
+        font-weight: 400;
+    }
+
+    .woocommerce a.added_to_cart {
+        font-size: 0.9em;
+        font-weight: 700;
+    }
+
+    .woocommerce div.product .product_title {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 30px;
+    }
+
+    .woocommerce div.product p.price, .woocommerce div.product span.price {
+        font-size: 1.25em;
+    }
+
+    .woocommerce p {
+        font-size: 15px;
+    }
+
+    .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
+        font-size: 1em;
+    }
+
+    .woocommerce #reviews h3 {
+        font-family: 'SiteFont';
+    }
+
+    .woocommerce table.shop_table td {
+        font-weight: 400;
+    }
+
+    .woocommerce .cart_totals h2 {
+        font-family: 'SiteFont';
+    }
+
+    .woocommerce form .form-row label {
+        font-weight: 400;
+    }
+
+
+.woocommerce-billing-fields input {
+    font-size: 14px;
+}
+
+.woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, #order_review_heading {
+    font-family: 'SiteFont';
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.woocommerce-Tabs-panel h2, .woocommerce-Tabs-panel {
+    font-family: 'SiteFont';
+    font-weight: 400;
+}
+
+.products h2 {
+    font-family: 'SiteFont';
+    font-weight: 400;
+}
+
+.variations td.label {
+    font-size: 15px;
+}
+
+.reset_variations {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.widget-title {
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.price_slider_amount {
+    font-size: 0.8751em;
+}
+
+    .price_slider_amount .button {
+        font-size: 1.15em;
+    }
+
+.woocommerce-product-search input[type="search"] {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.woocommerce-product-search input[type="submit"] {
+    font-family: 'SiteFont';
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: normal;
+}

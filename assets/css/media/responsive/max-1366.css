@@ -1,0 +1,196 @@
+@media (max-width: 1300px) {
+    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .page-mycarousel img, .homepage_mycarousel, .page-mycarousel {
+        border-radius: 0;
+    }
+
+    body.custom-positions .page-title-col {
+        margin-top: 40px
+    }
+
+    body.custom-positions .page-breadcrumbs {
+        bottom: 0px
+    }
+
+    body.custom-positions .page-mycarousel {
+        margin-bottom: 80px
+    }
+}
+
+@media (max-width: 1200px) {
+    .dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
+        margin: -10px 0 0 10px;
+        top: 2px;
+    }
+
+    .navbar .navbar-nav > li > a {
+        padding: 40px 10px;
+    }
+
+    body .body-fixed-top .page-mycarousel, body.custom-positions.body-fixed-top .page-mycarousel {
+        top: 100px;
+        margin-bottom: 180px;
+    }
+
+    ul.dropdown-menu > li > a {
+        border: none;
+    }
+
+    .blog-form-group {
+        width: 48.75%;
+    }
+
+    .navbar4 .navbar-header {
+        width: inherit;
+        padding: 0 20px;
+    }
+
+    .navbar4 .navbar-nav {
+        padding: 14px 0 0;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+    body.fixed_Header .navbar.navbar-fixed-top {
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+    }
+
+    .flex-slider-center {
+        top: 31%;
+        width: 910px;
+    }
+
+    .slide-text-bg1 {
+        margin: 0 0 10px;
+    }
+
+        .slide-text-bg1 h2 {
+            display: block;
+            font-size: 45px;
+            line-height: 55px;
+            margin: 0px;
+        }
+
+    .slide-text-bg2 {
+        margin: 0 0 13px;
+    }
+
+        .slide-text-bg2 h1 {
+            display: inline-block;
+            font-size: 52px;
+            line-height: 50px;
+            margin: 0px;
+        }
+
+        .slide-text-bg2 span {
+            line-height: 50px;
+        }
+
+    .slide-text-bg3 {
+        margin: 0 0 13px;
+    }
+
+        .slide-text-bg3 p {
+            display: inline-block;
+            font-size: 18px;
+            line-height: 25px;
+            margin: 0;
+        }
+
+    .flex_btn {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 5px;
+        padding: 8px 18px;
+    }
+
+    .sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1199px) {
+    body.custom-background,
+    #page_fader{
+        background-image: none !important;
+    }
+
+    .head-contact-social li {
+        width: 30px;
+    }
+
+    .footer-contact-social li {
+        width: auto;
+        margin: 10px;
+    }
+
+    .head-contact-social li a {
+        margin-left: 0px;
+    }
+
+    nav.container {
+        position: relative;
+    }
+
+    body.custom-positions .page-title-col {
+        margin-top: 0
+    }
+
+    .portfolio.portfoliocat .tab-pane .row {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container.single.portfolio .port-detail-img {
+        height: 600px;
+        width: 600px;
+    }
+
+    .container.single.portfolio .row.portfolio-detail-section.no_background .port-detail-img {
+        height: 624px;
+        width: 624px
+    }
+
+    .portfolio-detail-pagi .button.btn {
+        min-width: 140px;
+    }
+
+    .service-area .btn {
+        min-width: 200px;
+        padding: 1rem 2.5rem 0.925rem 3.75rem;
+    }
+
+    .home-portfolio-showcase .home-portfolio-showcase-detail .btn.small {
+        min-width: 175px;
+        padding: 1rem 2.5rem 0.925rem 3.75rem;
+    }
+
+    .home-portfolio-showcase .home-portfolio-showcase-detail p {
+        max-height: 50%;
+    }
+
+    .home-portfolio-showcase .home-portfolio-showcase-detail .portfolio-btn {
+        margin-left: -87.5px;
+    }
+    .home-blog-area .home-blog-btn .btn {
+        min-width: 200px;
+        padding: 1rem 2.5rem 0.925rem 3.75rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1169px) {
+    .page-title-col h1 {
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .breadcrumbs {
+        padding: 13px 0;
+    }
+}

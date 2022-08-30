@@ -1,199 +1,167 @@
 <?php
-function wallstreet_header_customizer( $wp_customize ) {
+/*
+ * Created on   : Wed Jun 22 2022
+ * Author       : Daniel Jörg Schuppelius
+ * Author Uri   : https://schuppelius.org
+ * Filename     : customizer-home.php
+ * License      : GNU General Public License v3 or later
+ * License Uri  : http://www.gnu.org/licenses/gpl.html
+ */
+function wallstreet_header_customizer($wp_customize) {
+    /* Header Section */
+    $wp_customize->add_panel("header_options", [
+        "priority" => 450,
+        "capability" => "edit_theme_options",
+        "title" => __("Header settings", "wallstreet"),
+    ]);
 
-/* Header Section */
-	$wp_customize->add_panel( 'header_options', array(
-		'priority'       => 450,
-		'capability'     => 'edit_theme_options',
-		'title'      => __('Header settings', 'wallstreet'),
-	) );
-	
-	/* favicon option */
-    $wp_customize->add_section( 'wallstreet_favicon' , array(
-      'title'       => __('Site favicon','wallstreet'),
-      'priority'    => 300,
-      'description' => __( 'Upload a favicon', 'wallstreet' ),
-	  'panel'  => 'header_options',
-    ) );
-    
-    $wp_customize->add_setting('wallstreet_pro_options[upload_image_favicon]', array(
-      'sanitize_callback' => 'esc_url_raw',
-	   'capability'     => 'edit_theme_options',
-	   'type' => 'option', 
-    ) );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wallstreet_pro_options[upload_image_favicon]', array(
-      'label'    => __( 'Choose your favicon (ideal width and height is 16x16 or 32x32)', 'wallstreet' ),
-      'section'  => 'wallstreet_favicon',
-    ) ) );
-	
-	
-	
-	//Header social Icon
+    /* favicon option */
+    $wp_customize->add_section("wallstreet_favicon", [
+        "title" => __("Site Favicon", "wallstreet"),
+        "priority" => 300,
+        "description" => __("Upload a Favicon", "wallstreet"),
+        "panel" => "header_options",
+    ]);
 
-	$wp_customize->add_section(
-        'header_social_icon',
-        array(
-            'title' => __('Social Links','wallstreet'),
-           'priority'    => 400,
-			'panel' => 'header_options',
-        )
+    $wp_customize->add_setting("wallstreet_pro_options[upload_image_favicon]", [
+        "sanitize_callback" => "esc_url_raw",
+        "capability" => "edit_theme_options",
+        "type" => "option",
+    ]);
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control($wp_customize, "wallstreet_pro_options[upload_image_favicon]", [
+            "label" => __("Upload a Favicon (ideal width and height is 16x16 or 32x32)", "wallstreet"),
+            "section" => "wallstreet_favicon",
+        ])
     );
-	
-	//Header logo setting
-	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header logo setting', 'wallstreet'),
-		'panel'  => 'header_options',
-		'priority'   => 400,
-   	) );
-	$wp_customize->add_setting(
-		'wallstreet_pro_options[upload_image_logo]'
-		, array(
-        'default'        => '',
-        'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
-		'type' => 'option',
-    ));
-	
-	$wp_customize->add_control(
-		   new WP_Customize_Image_Control(
-			   $wp_customize,
-			   'wallstreet_pro_options[upload_image_logo]',
-			   array(
-				   'label'          => __( 'Upload a 150x150 for Logo Image', 'wallstreet' ),
-				   'section'        => 'header_logo',
-				   'priority'   => 50,
-			   )
-		   )
-	);
-	
-	//Enable/Disable logo text
-	$wp_customize->add_setting(
-    'wallstreet_pro_options[text_title]',array(
-	'default'    => true,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' => 'option'
-	));
 
-	$wp_customize->add_control(
-    'wallstreet_pro_options[text_title]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Enable/Disable Logo','wallstreet'),
-        'section' => 'header_logo',
-		'priority'   => 100,
-    )
-	);
-	
-	
-	//Logo width
-	
-	$wp_customize->add_setting(
-    'wallstreet_pro_options[width]',array(
-	'sanitize_callback' => 'sanitize_text_field',
-	'default' => 250,
-	'type' => 'option',
-	
-	));
+    //Header social Icon
+    $wp_customize->add_section("header_social_icon", [
+        "title" => __("Social Links", "wallstreet"),
+        "priority" => 400,
+        "panel" => "header_options",
+    ]);
 
-	$wp_customize->add_control(
-    'wallstreet_pro_options[width]',
-    array(
-        'type' => 'text',
-        'label' => __('Enter Logo Width','wallstreet'),
-        'section' => 'header_logo',
-		'priority'   => 400,
-    )
-	);
-	
-	//Logo Height
-	$wp_customize->add_setting(
-    'wallstreet_pro_options[height]',array(
-	'sanitize_callback' => 'sanitize_text_field',
-	'default' => 50,
-	'type'=>'option',
-	
-	));
+    //Custom css
+    $wp_customize->add_section("custom_css", [
+        "title" => __("Custom CSS", "wallstreet"),
+        "panel" => "header_options",
+        "priority" => 100,
+    ]);
 
-	$wp_customize->add_control(
-    'wallstreet_pro_options[height]',
-    array(
-        'type' => 'text',
-        'label' => __('Enter Logo Height','wallstreet'),
-        'section' => 'header_logo',
-		'priority'   =>410,
-    )
-	);
-	
-	
-	
-	//Text logo
-	$wp_customize->add_setting(
-	'wallstreet_pro_options[text_title]'
-    ,array(
-	'default' => true,
-	'sanitize_callback' => 'sanitize_text_field',
-	'type' =>'option',
-	
-	));
+    $wp_customize->add_setting("wallstreet_pro_options[webrit_custom_css]", [
+        "default" => "",
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[webrit_custom_css]", [
+        "label" => __("Custom CSS", "wallstreet"),
+        "section" => "custom_css",
+        "type" => "textarea",
+        "priority" => 100,
+    ]);
 
-	$wp_customize->add_control(
-    'wallstreet_pro_options[text_title]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Show Logo text','wallstreet'),
-        'section' => 'header_logo',
-		'priority'   => 200,
-    )
-	);
-	
-	//Custom css
-	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom CSS', 'wallstreet'),
-		'panel'  => 'header_options',
-		'priority'   => 100,
-   	) );
-	$wp_customize->add_setting(
-	'wallstreet_pro_options[webrit_custom_css]'
-		, array(
-        'default'        => '',
-        'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'type'=> 'option',
-    ));
-    $wp_customize->add_control( 'wallstreet_pro_options[webrit_custom_css]', array(
-        'label'   => __('Custom CSS', 'wallstreet'),
-        'section' => 'custom_css',
-        'type' => 'textarea',
-		'priority'   => 100,
-    )); 
+    //Custom css
+    $wp_customize->add_section("header_contact", [
+        "title" => __("Header contact settings", "wallstreet"),
+        "panel" => "header_options",
+        "priority" => 500,
+    ]);
 
+    //Text logo
+    $wp_customize->add_setting("wallstreet_pro_options[contact_header_settings]", [
+        "default" => true,
+        "type" => "option",
+    ]);
 
-	//Custom css
-	$wp_customize->add_section( 'header_contact' , array(
-		'title'      => __('Header contact setting', 'wallstreet'),
-		'panel'  => 'header_options',
-		'priority'   => 500,
-   	) );
-	
-	//Text logo
-	$wp_customize->add_setting(
-	'wallstreet_pro_options[contact_header_settings]'
-    ,array(
-	'default' => true,
-	'type' =>'option',
-	
-	));
+    $wp_customize->add_control("wallstreet_pro_options[contact_header_settings]", [
+        "type" => "checkbox",
+        "label" => __("Enable/Disable contact header", "wallstreet"),
+        "section" => "header_contact",
+        "priority" => 500,
+    ]);
 
-	$wp_customize->add_control(
-    'wallstreet_pro_options[contact_header_settings]',
-    array(
-        'type' => 'checkbox',
-        'label' => __('Enable/Disable contact header','wallstreet'),
-        'section' => 'header_contact',
-		'priority'   => 500,
-    )
-	);
-	}
-	add_action( 'customize_register', 'wallstreet_header_customizer' );
-	?>
+    $wp_customize->add_setting("wallstreet_pro_options[contact_header_contact_settings]", [
+        "default" => "+1-800-123-789",
+        "type" => "option",
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[contact_header_contact_settings]", [
+        "type" => "text",
+        "label" => __("Header contact info", "wallstreet"),
+        "section" => "header_contact",
+        "priority" => 500,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[contact_header_email_settings]", [
+        "default" => "info@webriti.com",
+        "type" => "option",
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[contact_header_email_settings]", [
+        "type" => "text",
+        "label" => __("Header email info", "wallstreet"),
+        "section" => "header_contact",
+        "priority" => 500,
+    ]);
+
+    //Header Preset
+    $wp_customize->add_section("header_presets", [
+        "title" => __("Header Preset settings", "wallstreet"),
+        "panel" => "header_options",
+        "priority" => 600,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[header_presets_stlyle]", [
+        "default" => 1,
+        "type" => "option",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[header_presets_stlyle]", [
+        "type" => "select",
+        "label" => __("Select header preset style", "wallstreet"),
+        "section" => "header_presets",
+        "choices" => [
+            1 => __("Style 1", "wallstreet"),
+            2 => __("Style 2", "wallstreet"),
+            3 => __("Style 3", "wallstreet"),
+            4 => __("Style 4", "wallstreet"),
+            5 => __("Style 5", "wallstreet"),
+            6 => __("Style 6", "wallstreet"),
+        ],
+    ]);
+
+    //Search Enable Search button
+    $wp_customize->add_setting("wallstreet_pro_options[enable_search_btn]", [
+        "default" => true,
+        "type" => "option",
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[enable_search_btn]", [
+        "type" => "checkbox",
+        "label" => __("Enable/Disable Search Icon", "wallstreet"),
+        "section" => "header_presets",
+        "priority" => 500,
+    ]);
+
+    //SEARCH EFFECT OR STYLES
+    $wp_customize->add_setting("wallstreet_pro_options[search_effect_style_setting]", [
+        "default" => "toogle",
+        "type" => "option",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[search_effect_style_setting]", [
+        "label" => esc_html__("Choose Position", "wallstreet"),
+        "section" => "header_presets",
+        "type" => "select",
+        "choices" => [
+            "toogle" => esc_html__("Toogle", "wallstreet"),
+            "popup_light" => esc_html__("Pop up light", "wallstreet"),
+            "popup_dark" => esc_html__("Pop up dark", "wallstreet"),
+        ],
+    ]);
+}
+add_action("customize_register", "wallstreet_header_customizer"); ?>

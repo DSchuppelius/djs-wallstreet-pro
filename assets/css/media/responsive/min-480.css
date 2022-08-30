@@ -1,0 +1,6 @@
+@media (min-width: 600px) {
+    .testimonial2 .testimonial-area .image-box,
+    .testimonial2 .testimonial-area img {
+        display: inline-block;
+    }
+}

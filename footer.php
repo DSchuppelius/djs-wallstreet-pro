@@ -1,83 +1,60 @@
 <?php
-/**
-* @Theme Name	:	wallstreet-Pro
-* @file         :	footer.php
-* @package      :	wallstreet-Pro
-* @author       :	webriti
-* @filesource   :	wp-content/themes/wallstreet/footer.php
-*/
-?>
-<!-- Footer Widget Secton -->
-<?php $wallstreet_pro_options=theme_data_setup();
-	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
-<div class="footer_section">
-	<?php if($current_options['footer_social_media_enabled']==true) { ?>
-				<div class="footer-social-area"><ul class="footer-social-icons">
-					<?php if($current_options['social_media_twitter_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_twitter_link']; ?>"><i class="fa fa-twitter"></i></a></li>
-					<?php }
-					if($current_options['social_media_facebook_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_facebook_link']; ?>"><i class="fa fa-facebook"></i></a></li>
-					<?php }					
-					if($current_options['social_media_googleplus_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_googleplus_link']; ?>"><i class="fa fa-google-plus"></i></a></li>
-					<?php }
-					if($current_options['social_media_linkedin_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_linkedin_link']; ?>"><i class="fa fa-linkedin"></i></a></li>
-					<?php }
-					if($current_options['social_media_pinterest_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_pinterest_link']; ?>"><i class="fa fa-pinterest"></i></a></li>
-					<?php }
-					if($current_options['social_media_youtube_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_youtube_link']; ?>"><i class="fa fa-youtube"></i></a></li>					
-					<?php }
-					if($current_options['social_media_skype_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_skype_link']; ?>"><i class="fa fa-skype"></i></a></li>				
-					<?php }
-					if($current_options['social_media_rssfeed_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_rssfeed_link']; ?>"><i class="fa fa-rss"></i></a></li>				
-					<?php }
-					if($current_options['social_media_wordpress_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_wordpress_link']; ?>"><i class="fa fa-wordpress"></i></a></li>					
-					<?php }
-					if($current_options['social_media_dropbox_link']!='') { ?>
-					<li><a href="<?php echo $current_options['social_media_dropbox_link']; ?>"><i class="fa fa-dropbox"></i></a></li>
+/*
+ * Created on   : Wed Jun 22 2022
+ * Author       : Daniel Jörg Schuppelius
+ * Author Uri   : https://schuppelius.org
+ * Filename     : footer.php
+ * License      : GNU General Public License v3 or later
+ * License Uri  : http://www.gnu.org/licenses/gpl.html
+ */
+$current_options = get_current_options(); ?>
+				<!-- Footer Widget Secton -->
+				<footer class="site<?php if ($current_options["fixedfooter_enabled"]) { echo " fixed"; } ?>">
+					<i class="show-me fa fa-info-circle fa-4x"></i>
+					<?php if ($current_options["footer_social_media_enabled"] == true) { ?>
+						<div class="footer-social-area">
+							<?php
+                            global $ul_class;
+                            $ul_class = "footer";
+                            get_template_part("template-parts/global/social-media");
+                            ?>
+						</div>
 					<?php } ?>
-					
-				</div></ul>
-				<?php } ?>
-	
-	<div class="container">
-	
-		<?php if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
-		<div class="row footer-widget-section">
-		<?php dynamic_sidebar( 'footer-widget-area' ); ?>
-		</div>
-		<?php } ?>
-		
-        <div class="row">
-			<div class="col-md-12">
-				<div class="footer-copyright">
-					<p><?php echo $current_options['footer_copyright']; ?></p>
-				</div>
+					<div class="container">
+						<?php
+                        if (is_active_sidebar("footer-widget-area")) { ?>
+							<div class="row footer-widget-section">
+								<?php dynamic_sidebar("footer-widget-area"); ?>
+							</div>
+						<?php }
+                        if ($current_options["footerbar_enabled"] == true) { ?>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="footer-copyright">
+										<p><?php echo $current_options["footer_copyright"]; ?></p>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+					</div>
+				</footer>
+				<?php
+                if ($current_options["webrit_custom_css"] != "") { ?>
+					<style type="text/css">
+						<?php echo $current_options["webrit_custom_css"]; ?>
+					</style>
+				<?php }
+                if ($current_options["google_analytics"] != "") { ?>
+					<script type="text/javascript">
+						<?php echo $current_options["google_analytics"]; ?>
+					</script>
+				<?php } ?>	
 			</div>
+			<?php if ($current_options["scroll_to_top_enabled"] == true) { ?>
+				<a href="#" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
+			<?php } ?>
 		</div>
-	</div>
-</div>
-<!------  Google Analytics code --------->
-<?php
-if($current_options['webrit_custom_css']!='') {  ?>
-<style>
-<?php echo $current_options['webrit_custom_css']; ?>
-</style>
-<?php } 
-if($current_options['google_analytics']!='') {  ?>
-<script type="text/javascript">
-<?php echo $current_options['google_analytics']; ?>
-</script>
-<?php } ?>	
-<!------  Google Analytics code end ------->
-</div> <!-- end of wrapper -->
-<?php wp_footer(); ?>
-</body>
+		<script> var rellax = new Rellax('.rellax'); </script>
+		<?php wp_footer(); ?>
+	</body>
 </html>

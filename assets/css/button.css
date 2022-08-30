@@ -1,0 +1,709 @@
+.btn:before,
+button:before,
+a.button:before {
+    content: "chevron_right";
+}
+
+button[type="submit"]:before {
+    content: "send";
+}
+
+a.button.btn.warning:before,
+button.btn.warning:before {
+    content: "warning"
+}
+
+a.button.btn.back:before,
+button.btn.back:before {
+    content: "fast_rewind"
+}
+
+a.button.btn.forward:before,
+button.btn.forward:before {
+    content: "fast_forward"
+}
+
+a.button.btn.buy:before,
+button.btn.buy:before {
+    content: "euro_symbol"
+}
+
+a.button.btn.menu:before,
+button.btn.menu:before,
+button.btn.navbar-toggle.collapsed:before {
+    content: "menu"
+}
+
+button.btn.navbar-toggle:before {
+    content: "menu_open"
+}
+
+a.button.btn.more:before,
+button.btn.more:before {
+    content: "read_more"
+}
+
+a.button.btn.loadmore:before,
+button.btn.loadmore:before {
+    content: "drive_folder_upload"
+}
+
+a.button.btn.more.blog:before,
+button.btn.more.blog:before {
+    content: "dashboard"
+}
+
+a.button.btn.more.history:before,
+button.btn.more.history:before {
+    content: "history"
+}
+
+a.button.btn.more.portfolio:before,
+button.btn.more.portfolio:before {
+    content: "collections_bookmark"
+}
+
+a.button.btn.more.services:before,
+button.btn.more.services:before {
+    content: "engineering"
+}
+
+a.button.btn.project:before,
+button.btn.project:before {
+    content: "developer_board"
+}
+
+a.button.search:before,
+button.btn.search_btn:before,
+button.search-submit.btn:before,
+button.wp-block-search__button:before {
+    content: "search"
+}
+
+#subscribe-submit button:before {
+    content: "stars";
+}
+
+.btn.search_btn:before {
+    content: "search";
+}
+
+.btn.tab:before {
+    content: "local_activity";
+}
+
+.btn.next:before,
+.btn.history:before {
+    content: "history";
+}
+
+.btn.prev:before,
+.btn.update:before {
+    content: "update";
+}
+
+.home-blog-info .home-blog-btn a:before,
+.btn.blog-btn:before {
+    content: "article";
+}
+
+.cookies .btn:before {
+    content: "visibility";
+}
+
+a.comment-reply-link:before {
+    content: "reply";
+}
+
+a.comment-edit-link:before {
+    content: "edit";
+}
+
+button.close:before {
+    content: "";
+}
+/* End Contentpart*/
+button.btn.navbar-toggle {
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding: 8px 18px 8px 55px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none
+}
+
+a.blog-btn,
+a.comment-edit-link,
+a.comment-reply-link {
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding: 9px 18px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none
+}
+
+.btn,
+button,
+a.button,
+input[type="submit"],
+a.comment-edit-link,
+a.comment-reply-link {
+    box-shadow: inset 0 2.75em 0 -1.5em rgba(255, 255, 255, 0.15);
+    text-shadow: 0 1px 1px #18191b
+}
+
+    button.btn.search_btn:focus {
+        outline: none;
+        outline-offset: 0
+    }
+
+    button.close {
+        border: 0 none;
+        cursor: pointer;
+        padding: 0
+    }
+
+    button.close,
+    a.button.close {
+        box-shadow: inset 0 2.55em 0 -1.65em rgba(255, 255, 255, 0.15)
+    }
+
+    button.wp-block-search__button,
+    .search-form button.btn.search_btn {
+        box-shadow: inset 0 2.55em 0 -1.15em rgba(255, 255, 255, 0.15)
+    }
+
+        button.wp-block-search__button:before {
+            line-height: 2.9em
+        }
+
+        button.wp-block-search__button:not(.not) {
+            padding: 1.1em 2.5em 0.85em 4.75em;
+            position: absolute;
+            line-height: 1em;
+            min-width: 150px
+        }
+
+    .btn:hover,
+    button:hover,
+    a.button:hover,
+    input[type="submit"]:hover,
+    a.comment-edit-link:hover,
+    a.comment-reply-link:hover {
+        text-shadow: 0 0 1px #18191b
+    }
+
+    .btn:before,
+    button:before,
+    a.button:before,
+    input[type="submit"]:before,
+    a.comment-edit-link:before,
+    a.comment-reply-link:before {
+        left: 0;
+        line-height: 2.3em;
+        position: absolute;
+        text-align: left;
+        text-indent: .625rem;
+        top: 0;
+        width: 2.8125rem;
+        z-index: -1
+    }
+
+    .btn:hover:before,
+    button:hover:before,
+    a.button:hover:before,
+    input[type="submit"]:hover:before,
+    a.comment-edit-link:hover:before,
+    a.comment-reply-link:hover:before {
+        width: 100%
+    }
+
+    .btn:not(.not),
+    button:not(.not),
+    a.button:not(.not),
+    input[type="submit"]:not(.not),
+    a.comment-edit-link:not(.not),
+    a.comment-reply-link:not(.not) {
+        min-width: 250px;
+        display: inline-block;
+        line-height: 1em;
+        overflow: hidden;
+        padding: 0.825em 4.5em 0.525em 5.75em;
+        position: relative;
+        user-select: none;
+        z-index: 3
+    }
+
+    .btn.big:not(.not),
+    button.big:not(.not),
+    a.button.big:not(.not),
+    input[type="submit"].big:not(.not) {
+        min-width: 300px;
+        padding: 1rem 5.5rem 0.925rem 6.75rem;
+    }
+
+    .btn.small:not(.not),
+    button.small:not(.not),
+    a.button.small:not(.not),
+    input[type="submit"].small:not(.not) {
+        min-width: 200px;
+        padding: 1rem 3.5rem 0.925rem 4.75rem;
+    }
+
+    a.comment-edit-link:not(.not),
+    a.comment-reply-link:not(.not) {
+        min-width: 210px
+    }
+
+    button.btn.navbar-toggle {
+        min-width: 100px
+    }
+
+a.btn.tab {
+    min-width: 160px;
+}
+
+    a.btn.tab:not(.not) {
+        padding: 1rem 3.5rem 0.925rem 4.75rem;
+    }
+
+#searchbar_fullscreen .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    margin-top: 50px;
+    margin-left: -125px;
+    height: 2.25em;
+    padding: .3em .1em .1em 1em;
+    border-radius: 3px
+}
+
+#searchbar_fullscreen .close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    opacity: 1;
+    padding: 7px 12px;
+    min-width: 50px;
+    height: 30px;
+    border-radius: 3px
+}
+
+.blogdetail-btn {
+    display: block;
+    margin: 0 0 10px
+}
+
+    .blogdetail-btn a {
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 12px 24px;
+        text-align: center
+    }
+
+.cookies button {
+    padding: 6px 15px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+    .cookies button:hover {
+        background-color: #eb675e;
+        text-shadow: 0px 3px 3px rgba(255,255,255,0.3);
+    }
+
+    .cookies button:active {
+        position: relative;
+        top: 1px;
+    }
+
+.cont-btn {
+    display: block;
+    margin: 0 0 10px
+}
+
+    .cont-btn a {
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 12px 24px;
+        text-align: center
+    }
+
+.flex_btn {
+    display: inline-block;
+    line-height: 22px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 12px 25px;
+    text-align: center
+}
+
+.home-blog-btn {
+    display: block;
+    margin: 0
+}
+
+    .home-blog-btn a {
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 10px 18px;
+        text-align: center
+    }
+
+.home-portfolio-showcase .home-portfolio-showcase-detail .portfolio-btn {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -100px
+}
+
+.portfolio-detail-pagi {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .portfolio-detail-pagi .button.btn {
+        min-width: 173px;
+        padding: 0.825em 1.5em 0.525em 2.75em;
+    }
+
+.portfolio-btn {
+    display: block;
+    margin: 0 0 20px;
+    text-align: center
+}
+
+    .portfolio-btn a {
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 7px 15px;
+        text-align: center
+    }
+
+.portfolio-detail-info .project-btn {
+    display: inline-block;
+    line-height: 20px;
+    margin: 10px 0;
+    padding: 9px 20px;
+    text-align: right;
+    vertical-align: middle;
+    text-align: center
+}
+
+.prelated-project-btn {
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    padding: 0;
+    line-height: 3em;
+    text-align: center
+}
+
+    .prelated-project-btn li {
+        display: inline-block;
+        margin-left: 5px
+    }
+
+        .prelated-project-btn li:first-child {
+            margin-left: 0
+        }
+
+        .prelated-project-btn li a.btn {
+            display: block !important;
+        }
+
+.proejct-btn {
+    border-radius: 0;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 50px
+}
+
+    .proejct-btn a {
+        display: inline-block;
+        line-height: 22px;
+        margin: 0;
+        padding: 13px 30px;
+        text-align: right;
+        vertical-align: middle
+    }
+
+    .proejct-btn.switcher-style {
+        margin: 50px 0
+    }
+
+.qua_contact_btn {
+    display: block;
+    margin: 0 0 10px;
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 12px 24px;
+    text-align: center;
+    border: none
+}
+
+.search_btn {
+    border-radius: 3px;
+    border: 0 none;
+    border-radius: 0;
+    cursor: pointer;
+    float: right;
+    line-height: 22px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    padding: 11px 29px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap
+}
+
+.search-form button.btn.search_btn {
+    min-width: 124px;
+    text-indent: 2.4rem;
+    height: 36px;
+    margin: 2px
+}
+
+    .search-form button.btn.search_btn:before {
+        line-height: 2.6em !important
+    }
+
+.search-form button[type="submit"] {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    height: 40px;
+    line-height: 1;
+    left: auto;
+    right: 8px;
+    top: 12px;
+    padding: 12px 20px;
+    border-radius: 0 3px 3px 0
+}
+
+.service-btn {
+    display: block;
+    text-align: center;
+    margin: 0 0 20px
+}
+
+    .service-btn a {
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 9px 18px;
+        text-align: center
+    }
+
+.service1 .service-area:hover .service-btn a,
+.service4 .service-area:hover .service-btn a,
+.service2 .service-effect:hover .service-btn a,
+.service3 .service-effect:hover .service-btn a {
+    border: 1px solid #F5F5F5
+}
+
+.service2 .service-area h2,
+.service2 .service-area p,
+.service2 .service-btn,
+.service4 .service-area h2,
+.service4 .service-area p,
+.service4 .service-btn {
+    text-align: left
+}
+
+.service5 .service-effect:hover .service-btn a {
+    border: 1px solid #32343c
+}
+
+.short-btn-large {
+    display: inline-block;
+    padding: 20px 32px;
+    margin: 0 10px 15px 0;
+    line-height: 20px;
+    text-align: center;
+    text-transform: lowercase;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 0
+}
+
+.short-btn-mini {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 0 10px 10px 0;
+    line-height: 20px;
+    text-align: center;
+    text-transform: lowercase;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 0
+}
+
+.short-btn-small {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 0 10px 10px 0;
+    line-height: 20px;
+    text-align: center;
+    text-transform: lowercase;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 0
+}
+
+.team3 .project-scroll-btn {
+    margin-top: 50px
+}
+
+.tweet-btn {
+    display: block;
+    margin: 0 0 25px;
+    overflow: hidden
+}
+
+    .tweet-btn a {
+        border-radius: 2px;
+        display: inline-block;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 12px 22px;
+        text-align: center
+    }
+
+/*Blog Parts*/
+.search .blog-pagination a,
+.search .blog-pagination span {
+    border-radius: 0.25em
+}
+
+.blog-pagination, .navigation.pagination .nav-links {
+    margin: 0 0 20px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center
+}
+
+    .blog-pagination a {
+        border: 0.2em solid rgb(55,57,65)
+    }
+
+    .blog-pagination a,
+    .page-links a,
+    .blog-pagination span,
+    .page-numbers {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 20px;
+        margin: 9px 8px;
+        padding: 9px 0;
+        vertical-align: baseline;
+        white-space: nowrap
+    }
+
+    .blog-pagination a,
+    .blog-pagination span {
+        border-radius: 0.45em;
+        box-shadow: inset 0px 36px 0px -19px rgba(255, 255, 255, 0.15)
+    }
+
+        .blog-pagination a:hover,
+        .blog-pagination span:hover,
+        .blog-pagination a.active,
+        .blog-pagination span.active {
+            border-radius: 0.25em;
+        }
+
+        .blog-pagination a .fa {
+            line-height: 0
+        }
+
+.blog-post-date {
+    border-radius: 0.3em;
+    display: block;
+    float: left;
+    height: 102px;
+    margin-left: 0;
+    margin-right: 3.5%;
+    margin-bottom: 25px;
+    min-width: 60px;
+    width: 60px
+}
+
+    .blog-post-date:hover > span.date {
+        box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 30px 50px -18px inset;
+        text-shadow: none
+    }
+
+    .blog-post-date span {
+        border-radius: 0.1em;
+    }
+
+        .blog-post-date span.date {
+            display: block;
+            margin-top: 5px;
+            line-height: 35px;
+            margin-bottom: 0;
+            padding: 5px 0 3px;
+            text-align: center;
+            box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
+            text-shadow: 0px 2px 2px rgb(0 0 0 / 40%)
+        }
+
+            .blog-post-date span.date > small {
+                display: block;
+                line-height: 20px;
+                margin-bottom: 4px;
+                padding: 0;
+                text-align: center
+            }
+
+        .blog-post-date span.comment {
+            margin-top: -5px;
+            display: block;
+            line-height: 20px;
+            text-align: center;
+            padding: 9px 0
+        }
+
+            .blog-post-date span.comment > i {
+                line-height: 20px;
+                margin-right: 5px
+            }
+
+.blog-list-view .blog-post-date {
+    min-width: 180px;
+    margin: 30px 0 0 30px;
+}
+
+    .blog-list-view .blog-post-date span.date {
+        margin-top: 0px;
+        margin-left: 5px;
+    }
+
+    .blog-list-view .blog-post-date span.comment {
+        margin-top: 0px;
+    }
+
+.blog-list-view.left .has-post-thumbnail .blog-post-date {
+    margin: 30px 0 0 0
+}
