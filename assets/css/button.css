@@ -1,6 +1,6 @@
-.btn:before,
-button:before,
-a.button:before {
+.btn:not(.not):before,
+button:not(.not):before,
+a.button:not(.not):before {
     content: "chevron_right";
 }
 
@@ -122,6 +122,11 @@ a.comment-edit-link:before {
 button.close:before {
     content: "";
 }
+
+input, button, .proejct-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea {
+    border-radius: 0.25rem;
+}
+
 /* End Contentpart*/
 button.btn.navbar-toggle {
     border-radius: 3px 3px 3px 3px;
@@ -177,7 +182,7 @@ a.comment-reply-link {
 
     button.close,
     a.button.close {
-        box-shadow: inset 0 2.55em 0 -1.65em rgba(255, 255, 255, 0.15)
+        box-shadow: inset 0 2.65em 0 -1.65em rgba(255, 255, 255, 0.15)
     }
 
     button.wp-block-search__button,
@@ -196,23 +201,23 @@ a.comment-reply-link {
             min-width: 150px
         }
 
-    .btn:hover,
-    button:hover,
-    a.button:hover,
-    input[type="submit"]:hover,
-    a.comment-edit-link:hover,
-    a.comment-reply-link:hover {
+    .btn:not(.not):hover,
+    button:not(.not):hover,
+    a.button:not(.not):hover,
+    input[type="submit"]:not(.not):hover,
+    a.comment-edit-link:not(.not):hover,
+    a.comment-reply-link:not(.not):hover {
         text-shadow: 0 0 1px #18191b
     }
 
-    .btn:before,
-    button:before,
-    a.button:before,
-    input[type="submit"]:before,
-    a.comment-edit-link:before,
-    a.comment-reply-link:before {
+    .btn:not(.not):before,
+    button:not(.not):before,
+    a.button:not(.not):before,
+    input[type="submit"]:not(.not):before,
+    a.comment-edit-link:not(.not):before,
+    a.comment-reply-link:not(.not):before {
         left: 0;
-        line-height: 2.3em;
+        line-height: 2.4em;
         position: absolute;
         text-align: left;
         text-indent: .625rem;
@@ -221,12 +226,12 @@ a.comment-reply-link {
         z-index: -1
     }
 
-    .btn:hover:before,
-    button:hover:before,
-    a.button:hover:before,
-    input[type="submit"]:hover:before,
-    a.comment-edit-link:hover:before,
-    a.comment-reply-link:hover:before {
+    .btn:not(.not):hover:before,
+    button:not(.not):hover:before,
+    a.button:not(.not):hover:before,
+    input[type="submit"]:not(.not):hover:before,
+    a.comment-edit-link:not(.not):hover:before,
+    a.comment-reply-link:not(.not):hover:before {
         width: 100%
     }
 
@@ -286,9 +291,7 @@ a.btn.tab {
     right: auto;
     margin-top: 50px;
     margin-left: -125px;
-    height: 2.25em;
-    padding: .3em .1em .1em 1em;
-    border-radius: 3px
+    border-radius: 0.2em;
 }
 
 #searchbar_fullscreen .close {
@@ -296,10 +299,10 @@ a.btn.tab {
     top: 15px;
     right: 15px;
     opacity: 1;
-    padding: 7px 12px;
+    padding: 8px;
     min-width: 50px;
-    height: 30px;
-    border-radius: 3px
+    min-height: 35px;
+    border-radius: 0.2em
 }
 
 .blogdetail-btn {
@@ -461,18 +464,7 @@ a.btn.tab {
 }
 
 .search_btn {
-    border-radius: 3px;
-    border: 0 none;
-    border-radius: 0;
-    cursor: pointer;
     float: right;
-    line-height: 22px;
-    margin-bottom: 10px;
-    margin-right: 0;
-    padding: 11px 29px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap
 }
 
 .search-form button.btn.search_btn {
@@ -488,14 +480,9 @@ a.btn.tab {
 
 .search-form button[type="submit"] {
     cursor: pointer;
-    position: absolute;
     width: auto;
-    height: 40px;
-    line-height: 1;
-    left: auto;
-    right: 8px;
-    top: 12px;
-    padding: 12px 20px;
+    padding: 0.825em 4.5em 0.525em 5.75em;
+    line-height: 1em;
     border-radius: 0 3px 3px 0
 }
 
@@ -597,7 +584,7 @@ a.btn.tab {
 .blog-pagination, .navigation.pagination .nav-links {
     margin: 0 0 20px;
     overflow: hidden;
-    padding: 0;
+    padding: 15px 0;
     text-align: center
 }
 

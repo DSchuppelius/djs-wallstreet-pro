@@ -7,14 +7,14 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-define("CLIENT_POST_TYPE", "client");
-define("PORTFOLIO_POST_TYPE", "portfolio");
-define("SERVICE_POST_TYPE", "service");
-define("SLIDER_POST_TYPE", "slider");
-define("TEAM_POST_TYPE", "team");
-define("TESTIMONIAL_POST_TYPE", "testimonial");
+define("CLIENT_POST_TYPE", "wallstreet_client");
+define("PORTFOLIO_POST_TYPE", "wallstreet_portfolio");
+define("SERVICE_POST_TYPE", "wallstreet_service");
+define("SLIDER_POST_TYPE", "wallstreet_slider");
+define("TEAM_POST_TYPE", "wallstreet_team");
+define("TESTIMONIAL_POST_TYPE", "wallstreet_testi");
 
-define("PORTFOLIO_TAXONOMY", PORTFOLIO_POST_TYPE . "_categories");
+define("PORTFOLIO_TAXONOMY", "portfolio_categories");
 
 require_once "client.php";
 require_once "portfolio.php";

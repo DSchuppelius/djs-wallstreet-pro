@@ -97,10 +97,10 @@ $current_options = get_current_options(); ?>
                             <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/team/hometeam<?php echo $i; ?>.jpg">
                             <div class="overlay">
                                 <ul class="custom-social-icons">
-                                    <li><a href="http://facebook.com" class="btn btn-just-icon btn-simple customize-unpreviewable"><i class="fa-brands fa-facebook "></i></a></li>
-                                    <li><a href="http://twitter.com" class="btn btn-just-icon btn-simple customize-unpreviewable"><i class="fa-brands fa-twitter "></i></a></li>
-                                    <li><a href="http://linkedin.com" class="btn btn-just-icon btn-simple customize-unpreviewable"><i class="fa-brands fa-linkedin "></i></a></li>
-                                    <li><a href="http://behance.com" class="btn btn-just-icon btn-simple customize-unpreviewable"><i class="fa-brands fa-behance "></i></a></li>
+                                    <li><a href="http://facebook.com" class="btn btn-just-icon btn-simple customize-unpreviewable not"><i class="fa-brands fa-facebook "></i></a></li>
+                                    <li><a href="http://twitter.com" class="btn btn-just-icon btn-simple customize-unpreviewable not"><i class="fa-brands fa-twitter "></i></a></li>
+                                    <li><a href="http://linkedin.com" class="btn btn-just-icon btn-simple customize-unpreviewable not"><i class="fa-brands fa-linkedin "></i></a></li>
+                                    <li><a href="http://behance.com" class="btn btn-just-icon btn-simple customize-unpreviewable not"><i class="fa-brands fa-behance "></i></a></li>
                                 </ul>
                             </div>
                         </div>

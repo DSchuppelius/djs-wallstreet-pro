@@ -102,10 +102,14 @@ $current_options = get_current_options(); ?>
 						<div class="service-box">
 							<img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/service<?php echo $i; ?>.jpg">
 						</div>
-						<div class="service-area">
+						<div class="service-area<?php big_Border(" "); ?>">
 							<h2><a href="#"><?php echo $service_defualttext[$i - 1]; ?></a></h2>
 							<p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
-							<div class="service-btn"><a href="#"><?php _e("Read More", "wallstreet"); ?></a></div>
+                            <div class="service-btn">
+								<form action="#">
+									<button class="btn more services" ><?php _e("Read More", "wallstreet"); ?></button>
+								</form>
+							</div>
 						</div>
 					</div>
 				<?php }

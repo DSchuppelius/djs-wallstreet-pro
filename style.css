@@ -78,6 +78,44 @@ Text Domain: wallstreet
         opacity: 1
     }
 
+article ol, article ul {
+    margin-bottom: 20px
+}
+
+article figure > div {
+    display: flex;
+    justify-content: center
+}
+
+article figure > img {
+    margin: 0 auto
+}
+
+article figure figcaption {
+    margin: 0 auto;
+    text-align: center
+}
+
+article footer .blog-post-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+    article footer .blog-post-meta > a {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    article footer .blog-post-meta > div {
+        display: flex;
+        flex-grow: 2;
+    }
+
+        article footer .blog-post-meta > div:last-child {
+            flex-grow: 1;
+        }
+
+
 .about-section {
     margin-bottom: 20px
 }
@@ -644,7 +682,6 @@ Text Domain: wallstreet
     .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
         line-height: 50px;
         margin-bottom: 16px;
-        margin-top: -10px;
         padding-bottom: 0
     }
 
@@ -676,6 +713,10 @@ Text Domain: wallstreet
 
 .blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
     word-wrap: break-word
+}
+
+.blog-post-title-wrapper figure video, .blog-post-title-wrapper figure iframe, .blog-post-title-wrapper figure img, .blog-post-title-wrapper figure figcaption, .blog-post-title-wrapper .wp-block-image, .blog-post-title-wrapper .wp-block-image img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post span {
+    border-radius: 0.2em;
 }
 
 .blog-post-title-wrapper-full {
@@ -1761,6 +1802,7 @@ footer.site {
 .home-blog-area,
 .page-blog-area {
     border: 0;
+    width: 100%;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     border-radius: 0;
     margin-bottom: 20px;
@@ -1843,7 +1885,6 @@ footer.site {
         object-fit: cover;
         max-width: 100%;
         width: 100%;
-        height: 400px;
         opacity: .8
     }
 
@@ -1909,7 +1950,7 @@ footer.site {
                 position: absolute;
                 left: 0;
                 top: 0;
-                border-radius: 25px;
+                border-radius: var(--border-bigbase);
             }
 
 .main-portfolio-showcase .main-portfolio-showcase-detail p:before {
@@ -3255,6 +3296,10 @@ div.collapsing ul.nav {
     }
 
 .post_message {
+    position: relative;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
     text-align: center
 }
 
@@ -3360,6 +3405,10 @@ div.collapsing ul.nav {
     margin: 0px 0px 10px 10px;
 }
 
+.single .row.no_background.flexstretch .col-md-8.flexcolumn > div:not(.with_filler):last-child {
+    flex: 1 1 20px;
+}
+
 .row.no_background .innerrow,
 .row.with_background .innerrow {
     margin: 0 -10px 0 -10px;
@@ -3372,6 +3421,14 @@ div.collapsing ul.nav {
     .row.no_background .col-md-4 .wp-block-search .wp-block-search__button {
         right: 26px;
     }
+
+        .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not) {
+            padding: 1.1em 2.5em 0.8em 4.75em;
+        }
+
+            .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not):before {
+                line-height: 2.7em;
+            }
 
 .blog-left-sidebar .row.no_background .col-md-4 .wp-block-search .wp-block-search__button {
     right: 36px;
@@ -3394,9 +3451,9 @@ div.collapsing ul.nav {
     padding: 0
 }
 
-.row.no_background.attachment-section.img .col-md-12 img{
-    margin:0
-}
+    .row.no_background.attachment-section.img .col-md-12 img {
+        margin: 0
+    }
 
 .row.portfolio-detail-section.no_background {
     background: none
@@ -3598,7 +3655,6 @@ div.collapsing ul.nav {
 }
 
 .search_widget_input {
-    border-radius: 0;
     line-height: 20px;
     margin: 25px 0 15px;
     height: 46px;
@@ -3623,7 +3679,7 @@ div.collapsing ul.nav {
 
     .section_heading_title.bigborder {
         margin: 0;
-        padding-top:10px;
+        padding-top: 10px;
         width: 100%
     }
 
@@ -3664,7 +3720,7 @@ div.collapsing ul.nav {
     display: block;
     margin-bottom: -120px;
     position: relative;
-    z-index: 0
+    z-index: 1
 }
 
     .service-box img {
@@ -5208,7 +5264,8 @@ article footer time {
     }
 
 .sidebar-widget article footer time {
-    margin-top: 3px
+    margin-top: 3px;
+    padding-left: 5px
 }
 
 article.format-aside .aside {
