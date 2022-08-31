@@ -13,6 +13,10 @@ body {
         background-color: rgba(0, 0, 0, 0.6);
     }
 
+article figure figcaption a {
+    color: #f5f5f5
+}
+
 #blogdetail_btn {
     color: #FFF
 }
@@ -1567,6 +1571,19 @@ footer.site {
 .slide-text-bg3 p {
     color: #FFF
 }
+
+#subscribe-email input, .search_widget_input {
+    background-color: #2a2c33;
+    color: #fff;
+    border: 1px solid #E0E4E6;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 8%) inset;
+}
+
+    #subscribe-email input:focus, .search_widget_input:focus {
+        border-color: #2793ff;
+        background-color: #565963;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 8%) inset;
+    }
 
 .table {
     background: #fff

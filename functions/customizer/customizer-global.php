@@ -29,6 +29,20 @@ function wallstreet_scroll_to_top_customizer($wp_customize) {
         "priority" => 100,
     ]);
 
+    $wp_customize->add_setting("wallstreet_pro_options[contextmenu_enabled]", [
+        "default" => true,
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[contextmenu_enabled]", [
+        "label" => __("Enable Contextmenu", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "checkbox",
+        "priority" => 10,
+    ]);
+
     $wp_customize->add_setting("wallstreet_pro_options[fixedheader_enabled]", [
         "default" => false,
         "capability" => "edit_theme_options",

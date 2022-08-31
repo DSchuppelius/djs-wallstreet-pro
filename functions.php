@@ -170,6 +170,17 @@ if (!function_exists("theme_setup")) {
 }
 add_action("after_setup_theme", "theme_setup");
 
+function kb_mimes($my_mime){
+    $my_mime['FCStd'] = 'application/zip';
+    $my_mime['svg']   = 'image/svg+xml';
+    $my_mime['zip']   = 'application/zip';
+    $my_mime['m4a']   = 'audio/mp4';
+    $my_mime['mp4']   = 'application/mp4';
+    $my_mime['mp3']   = 'audio/mp3';
+    return $my_mime;
+}
+add_filter( 'upload_mimes', 'kb_mimes' );
+
 if (!function_exists("busiprof_customizer_preview_scripts")) {
     function busiprof_customizer_preview_scripts() {
         wp_enqueue_script("honeypress-customizer-preview", trailingslashit(get_template_directory_uri()) . "inc/customizer/customizer-slider/js/customizer-preview.js", ["customize-preview", "jquery"]);

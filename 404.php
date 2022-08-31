@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 get_template_parts(["template-parts/index/index", "banner"], true); ?>
-<div class="container">
+<div class="container error">
 	<div class="row">	
 		<div class="col-md-12">
 			<div class="error_404">

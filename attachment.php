@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Blog Right Sidebar
+/* 
  * Created on   : Wed Jun 22 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org

@@ -21,6 +21,9 @@ function get_content_title() {
         case "audio":
             $output .= __("Audio", "wallstreet");
             break;
+        case "video":
+            $output .= __("Video", "wallstreet");
+            break;
         case "chat":
             $output .= __("Chat", "wallstreet");
             break;

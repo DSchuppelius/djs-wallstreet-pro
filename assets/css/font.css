@@ -93,14 +93,15 @@ body {
         font-size: 25px;
     }
 
+article figure figcaption {
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 13px
+}
+
 #blogdetail_btn {
     font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
-}
-
-#searchbar_fullscreen .btn {
-    font-size: 1em
 }
 
 #searchbar_fullscreen .close {
@@ -419,7 +420,7 @@ body {
 .blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
     font-family: 'SiteFont';
     font-weight: 400;
-    font-size: 15px
+    font-size: 16px
 }
 
 .blog-tags a {
@@ -1077,10 +1078,6 @@ footer.site p {
     font-weight: 700
 }
 
-.search-form button[type="submit"] {
-    font-size: 15px
-}
-
 .search-panel input[type="search"] {
     font-size: 15px;
     font-weight: 400
@@ -1620,6 +1617,10 @@ a.readmore {
 article footer {
     font-size: 12px
 }
+
+    article footer .material-icons {
+        font-size: 15px
+    }
 
 .sidebar-widget article footer {
     font-size: 14px

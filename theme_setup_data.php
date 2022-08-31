@@ -19,6 +19,7 @@ function theme_data_setup() {
         "webrit_custom_css" => "",
         "link_color" => "#00c2a9",
         "addframe" => false,
+        "contextmenu_enabled" => true,
         "addflexelements" => false,
         "page_fader_enabled" => false,
         "fixedheader_enabled" => false,

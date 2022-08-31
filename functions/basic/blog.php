@@ -85,4 +85,26 @@ function twenty_twenty_one_can_show_post_thumbnail() {
      * @param bool $show_post_thumbnail Whether to show post thumbnail.
      */
     return apply_filters("twenty_twenty_one_can_show_post_thumbnail", !post_password_required() && !is_attachment() && has_post_thumbnail());
-} ?>
+} 
+
+function ageOF($atts, $content = null) {
+    extract(shortcode_atts([
+        'begin' => '', /* See post for date formats */
+        'date' => 0,
+        'dateformat' => 'jS F Y' /* http://php.net/manual/en/function.date.php */
+    ], $atts));
+
+    if ($begin == '') $begin = $content;
+    $age = ($content == null) ? floor((time() - strtotime($begin)) / 31556926) : floor((time() - strtotime($content)) / 31556926);
+    return ($date) ? date($dateformat, strtotime($begin)) . ' (Alter: ' .  $age . ')' : $age;
+}
+add_shortcode('age', 'ageOF');
+
+function year_shortcode () {
+    $year = date_i18n ('Y');
+    return $year;
+}
+add_shortcode ('year', 'year_shortcode');
+
+?>
+

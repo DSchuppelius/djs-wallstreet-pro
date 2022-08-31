@@ -269,6 +269,15 @@
         margin-bottom: 15px
     }
 
+    article footer .blog-post-meta {
+         display: block; 
+    }
+
+        article footer .blog-post-meta .blog-tags {
+            display: inline-block;
+            margin: 0 0 5px;
+        }
+
     .page-title-col {
         top: 50%;
     }
