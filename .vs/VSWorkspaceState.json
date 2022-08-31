@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\assets",
-    "\\assets\\css",
-    "\\assets\\css\\media\\responsive",
-    "\\assets\\js",
-    "\\functions",
-    "\\functions\\scripts",
-    "\\template-parts",
-    "\\template-parts\\content",
-    "\\template-parts\\testimonial"
+    ""
   ],
-  "SelectedNode": "\\assets\\css\\light.css",
   "PreviewInSolutionExplorer": false
 }

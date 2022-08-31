@@ -20,6 +20,7 @@
 
 .navbar > .container .navbar-brand {
     margin-left: 0px;
+    position: absolute
 }
 
 .navbar-brand {
@@ -160,7 +161,7 @@
 }
 
 .withLogo {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .withText {
