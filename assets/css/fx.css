@@ -258,7 +258,7 @@
         float: none;
         width: fit-content;
         margin: 30px auto;
-        padding: 0;
+        padding: 0 50px;
     }
 
 .animate {
