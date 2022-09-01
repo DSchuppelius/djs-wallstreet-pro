@@ -108,6 +108,9 @@
         line-height: 20px;
         padding: 15px 20px;
         transition: color 0.2s ease-in-out 0s;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
         .dropdown-menu > li > a:last-chlid {
