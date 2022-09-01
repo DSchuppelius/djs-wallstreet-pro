@@ -60,8 +60,8 @@ the_post();
         <?php endif; ?>
 	
 	    <div class="row <?php row_Frame_Border(""); ?> about-section text team-section">
-    	    <?php $count_posts = wp_count_posts("team")->publish;
-            $arg = ["post_type" => "team", "posts_per_page" => $count_posts];
+    	    <?php $count_posts = wp_count_posts(TEAM_POST_TYPE)->publish;
+            $arg = ["post_type" => TEAM_POST_TYPE, "posts_per_page" => $count_posts];
             $team = new WP_Query($arg);
             $i = 1;
             if ($team->have_posts()) {
@@ -84,7 +84,7 @@ the_post();
                         $defalt_arg = ["class" => "img-responsive"];
                         if (has_post_thumbnail()) { ?>
                             <div class="team-box">
-			    		        <?php the_post_thumbnail('', $defalt_arg); ?>
+			    		        <?php the_post_thumbnail('port-thumb', $defalt_arg); ?>
                             </div>
                         <?php } ?>
     			    	<div class="team-area<?php big_Border(" "); ?>">				
