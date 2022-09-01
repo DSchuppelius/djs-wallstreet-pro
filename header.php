@@ -2,20 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
     <head>
         <?php global $wp_query;
-        $postid = $wp_query->post->ID;
+        if(!empty($wp_query->post)){
+            $postid = $wp_query->post->ID;
         
-        $page_description = get_post_meta($postid, 'page_description', true);
-        if(empty($page_description)) {$page_description=htmlentities(wp_strip_all_tags(tag_description()));}
-        if(empty($page_description)) {$page_description=get_the_archive_title()!="Archive"?htmlentities(wp_strip_all_tags(get_the_archive_title())):"";}
+            $page_description = get_post_meta($postid, 'page_description', true);
+            if(empty($page_description)) {$page_description=htmlentities(wp_strip_all_tags(tag_description()));}
+            if(empty($page_description)) {$page_description=get_the_archive_title()!="Archive"?htmlentities(wp_strip_all_tags(get_the_archive_title())):"";}
 
-        $single_description = substr(htmlentities(wp_strip_all_tags(get_the_excerpt(), true)), 0, 150);
-        if(empty($single_description)) {$single_description= get_the_title();}
-        $single_description .= "...";
+            $single_description = substr(htmlentities(wp_strip_all_tags(get_the_excerpt(), true)), 0, 150);
+            if(empty($single_description)) {$single_description= get_the_title();}
+            $single_description .= "...";
 
-        $single_metakeytags = "Blog";
-        $tags = get_the_tags();
-        if(!empty($tags))
-        foreach($tags as $tag){ $single_metakeytags.= ", ".htmlentities(wp_strip_all_tags($tag->name)); } ?>
+            $single_metakeytags = "Blog";
+            $tags = get_the_tags();
+            if(!empty($tags))
+                foreach($tags as $tag){ $single_metakeytags.= ", ".htmlentities(wp_strip_all_tags($tag->name)); }
+        } ?>
         <!--[if IE]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->	

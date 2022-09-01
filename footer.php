@@ -31,6 +31,9 @@ $current_options = get_current_options(); ?>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="footer-copyright">
+                                        <?php if($current_options["footer_link_enabled"] == true) { ?>
+                                            <p><?php echo $current_options["footer_link"];?></p>
+                                        <?php } ?>
 										<p><?php echo $current_options["footer_copyright"]; ?></p>
 									</div>
 								</div>

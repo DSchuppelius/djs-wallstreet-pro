@@ -294,6 +294,8 @@ function theme_data_setup() {
 
         /** footer customization **/
         "footerbar_enabled" => true,
+        "footer_link_enabled" => true,
+        "footer_link" => __('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "wallstreet"),
         "footer_copyright" => __("Copyright @ 2022 - DJS-WallStreet-Pro. Designed by", "wallstreet") . " " . '<a href="https://schuppelius.org" rel="nofollow" target="_blank">' . __("Daniel Joerg Schuppelius", "wallstreet") . "</a>",
 
         "before_comment" => "<b>" .__("Please Note:", "wallstreet"). "</b>&nbsp;" .__("Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.", "wallstreet"),

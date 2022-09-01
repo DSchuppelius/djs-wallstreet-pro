@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-08-30 07:07+0200\n"
-"PO-Revision-Date: 2022-08-30 07:08+0200\n"
+"POT-Creation-Date: 2022-09-01 08:23+0200\n"
+"PO-Revision-Date: 2022-09-01 08:26+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -82,15 +82,15 @@ msgstr "Belichtungszeit:"
 msgid "Linked post"
 msgstr "Verlinkter Beitrag"
 
-#: attachment.php:64 functions.php:183 index.php:31
+#: attachment.php:64 functions.php:195 index.php:31
 #: template-parts/content/content.php:17
-#: template-parts/home/blog/blog-layout-1.php:67
+#: template-parts/home/blog/blog-layout-1.php:82
 #: template-parts/home/blog/blog-layout-2.php:56
 #: template-parts/home/blog/blog-layout-3.php:64
 #: template-parts/home/blog/blog-layout-4.php:64
 #: template-parts/home/blog/blog-layout-5.php:71
 #: template-parts/home/blog/blog-layout-6.php:75
-#: template-parts/home/service/servic-1.php:108
+#: template-parts/home/service/servic-1.php:110
 #: template-parts/home/service/servic-2.php:107
 #: template-parts/home/service/servic-3.php:111
 #: template-parts/home/service/servic-4.php:109
@@ -208,7 +208,7 @@ msgstr "Schreiben Sie einen Kommentar"
 msgid "Leave a Reply to %s"
 msgstr "Schreiben Sie einen Kommentar zu %s"
 
-#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:122
+#: functions.php:93 functions/breadcrumbs/breadcrumbs.php:122
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -216,26 +216,26 @@ msgstr "Schreiben Sie einen Kommentar zu %s"
 msgid "Page"
 msgstr "Seite"
 
-#: functions.php:125
+#: functions.php:126
 msgctxt "header image description"
 msgid "MyPic"
 msgstr "MeinBild"
 
-#: functions.php:130
+#: functions.php:131
 msgid "Primary Menu"
 msgstr "Prim&auml;res Men&uuml;"
 
-#: functions.php:188 functions/customizer/customizer-social.php:97
+#: functions.php:200 functions/customizer/customizer-social.php:97
 #: functions/meta-box/post-meta.php:257 functions/meta-box/post-meta.php:258
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: functions.php:189 functions/customizer/customizer-social.php:72
+#: functions.php:201 functions/customizer/customizer-social.php:72
 #: functions/meta-box/post-meta.php:289 functions/meta-box/post-meta.php:290
 msgid "Twitter URL"
 msgstr "Twitter URL"
 
-#: functions.php:190 functions/customizer/customizer-social.php:122
+#: functions.php:202 functions/customizer/customizer-social.php:122
 #: functions/meta-box/post-meta.php:281 functions/meta-box/post-meta.php:282
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
@@ -249,33 +249,37 @@ msgid "Audio"
 msgstr "Audio"
 
 #: functions/base/get_content_title.php:25
+msgid "Video"
+msgstr ""
+
+#: functions/base/get_content_title.php:28
 msgid "Chat"
 msgstr "Chat"
 
-#: functions/base/get_content_title.php:28
+#: functions/base/get_content_title.php:31
 msgid "Gallery"
 msgstr "Galerie"
 
-#: functions/base/get_content_title.php:31
+#: functions/base/get_content_title.php:34
 #: functions/customizer/customizer-feature.php:44
 #: functions/customizer/customizer-feature.php:225
 #: functions/customizer/customizer-testimonial.php:168
 msgid "Image"
 msgstr "Bild"
 
-#: functions/base/get_content_title.php:34
+#: functions/base/get_content_title.php:37
 msgid "Quote"
 msgstr "Zitat"
 
-#: functions/base/get_content_title.php:37
+#: functions/base/get_content_title.php:40
 msgid "Status"
 msgstr "Status"
 
-#: functions/base/get_content_title.php:40
+#: functions/base/get_content_title.php:43
 msgid "Story"
 msgstr "Geschichte"
 
-#: functions/base/get_content_title.php:43
+#: functions/base/get_content_title.php:46
 msgid "Blog Post"
 msgstr "Blogbeitrag"
 
@@ -374,7 +378,7 @@ msgstr "Startseite-Blogeinstellungen"
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:205
+#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:206
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 
@@ -402,7 +406,7 @@ msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:206
+#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:207
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
@@ -464,7 +468,7 @@ msgstr "Anzahl der Post"
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:81
+#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:82
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
@@ -517,11 +521,11 @@ msgstr "Kunden-Einstellungen"
 msgid "Section Heading"
 msgstr "Bereichs&uuml;berschrift"
 
-#: functions/customizer/customizer-client.php:26 theme_setup_data.php:111
+#: functions/customizer/customizer-client.php:26 theme_setup_data.php:112
 msgid "Our Clients"
 msgstr "Unsere Kunden"
 
-#: functions/customizer/customizer-client.php:39 theme_setup_data.php:112
+#: functions/customizer/customizer-client.php:39 theme_setup_data.php:113
 msgid ""
 "Have a look at our clients we are growing their business and they are going "
 "up in the market by beating their competitors."
@@ -539,18 +543,41 @@ msgid "Footer copyright settings"
 msgstr "Footer-Copyright-Einstellungen"
 
 #: functions/customizer/customizer-copyright.php:32
+msgid "Enable Footer Link-text"
+msgstr "Aktiviere Footer-Linktext"
+
+#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:298
+msgid ""
+"&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
+"\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
+"&nbsp;<a href=\"/terms\">General Terms and Conditions</a>&nbsp;|&nbsp;<a "
+"href=\"/rights\">Rights of withdrawal</a>&nbsp;|&nbsp;<a href=\"/shipping-"
+"costs\">Shipping costs</a>&nbsp;"
+msgstr ""
+"&nbsp;<a href=\"/kontakt\">Kontakt</a>&nbsp;|&nbsp;<a href=\"/impressum"
+"\">Impressum</a>&nbsp;|&nbsp;<a href=\"/datenschutzerklaerung"
+"\">Datenschutzerklärung</a>&nbsp;|&nbsp;<a href=\"/agb\">Allgemeine "
+"Geschäftsbedingungen</a>&nbsp;|&nbsp;<a href=\"/widerrufsrechte"
+"\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/versandkosten\">Versandkosten</"
+"a>&nbsp;"
+
+#: functions/customizer/customizer-copyright.php:42
+msgid "Footer Link-text"
+msgstr "Footer-Linktext"
+
+#: functions/customizer/customizer-copyright.php:55
 msgid "Enable Footer Copyright"
 msgstr "Aktiviere Footer-Copyright-Einstellungen"
 
-#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:296
+#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:299
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
-#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:296
+#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:299
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel J&ouml;rg Schuppelius"
 
-#: functions/customizer/customizer-copyright.php:42
+#: functions/customizer/customizer-copyright.php:65
 msgid "Copyright text"
 msgstr "Copyright Text"
 
@@ -569,7 +596,7 @@ msgstr ""
 msgid "Image Link"
 msgstr "Bildlink"
 
-#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:96
+#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:97
 msgid "Core features of theme"
 msgstr "Kernfunktionen des Themes"
 
@@ -596,8 +623,8 @@ msgstr "Icon"
 
 #: functions/customizer/customizer-feature.php:106
 #: functions/customizer/customizer-feature.php:146
-#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:98
-#: theme_setup_data.php:101 theme_setup_data.php:104
+#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:99
+#: theme_setup_data.php:102 theme_setup_data.php:105
 msgid "Incredibly flexible"
 msgstr "Unglaublich flexibel"
 
@@ -615,53 +642,59 @@ msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
 #: functions/customizer/customizer-global.php:40
+#, fuzzy
+#| msgid "Enable Callout section"
+msgid "Enable Contextmenu"
+msgstr "Abschnitt \"Callout\" aktivieren"
+
+#: functions/customizer/customizer-global.php:54
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/customizer-global.php:54
+#: functions/customizer/customizer-global.php:68
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/customizer-global.php:68
+#: functions/customizer/customizer-global.php:82
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/customizer-global.php:82
+#: functions/customizer/customizer-global.php:96
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:95
+#: functions/customizer/customizer-global.php:109
 #, fuzzy
 #| msgid "Enable/Disable Big Border"
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der großen Rahmen"
 
-#: functions/customizer/customizer-global.php:107
+#: functions/customizer/customizer-global.php:121
 #, fuzzy
 #| msgid "Enable Parallax Header"
 msgid "Enable Fader on Pageload"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:119
+#: functions/customizer/customizer-global.php:133
 #, fuzzy
 #| msgid "Enable Callout area section"
 msgid "Enable frame on pages"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-global.php:131
+#: functions/customizer/customizer-global.php:145
 msgid "Add filling elements to pages"
 msgstr "Hinzuf&uuml;gen von Füllelementen zu Seiten"
 
-#: functions/customizer/customizer-global.php:137
-#: functions/customizer/customizer-global.php:155
+#: functions/customizer/customizer-global.php:151
+#: functions/customizer/customizer-global.php:169
 msgid "0"
 msgstr ""
 
-#: functions/customizer/customizer-global.php:142
+#: functions/customizer/customizer-global.php:156
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/customizer-global.php:160
+#: functions/customizer/customizer-global.php:174
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
@@ -875,14 +908,14 @@ msgid "Number of portfolio on portfolio section"
 msgstr "Anzahl Portfolios im Portfolio-Bereich"
 
 #: functions/customizer/customizer-project.php:62
-#: functions/customizer/customizer-template.php:307 theme_setup_data.php:66
-#: theme_setup_data.php:88
+#: functions/customizer/customizer-template.php:307 theme_setup_data.php:67
+#: theme_setup_data.php:89
 msgid "Featured portfolio"
 msgstr "Vorgestelltes Portfolio"
 
 #: functions/customizer/customizer-project.php:75
-#: functions/customizer/customizer-template.php:320 theme_setup_data.php:67
-#: theme_setup_data.php:89
+#: functions/customizer/customizer-template.php:320 theme_setup_data.php:68
+#: theme_setup_data.php:90
 msgid "Most popular of our works."
 msgstr "Unsere beliebtesten Werke."
 
@@ -890,7 +923,7 @@ msgstr "Unsere beliebtesten Werke."
 msgid "Enable view all portfolios button"
 msgstr "Button zum Zeigen aller Portfolios aktivieren"
 
-#: functions/customizer/customizer-project.php:102 theme_setup_data.php:74
+#: functions/customizer/customizer-project.php:102 theme_setup_data.php:75
 msgid "View All Projects"
 msgstr "Alle Projekte anzeigen"
 
@@ -914,7 +947,7 @@ msgstr "Anzahl Dienstleistungen im Dienstleistungs-Bereich"
 msgid "Select Service Style"
 msgstr "Servicestil auswählen"
 
-#: functions/customizer/customizer-service.php:71 theme_setup_data.php:56
+#: functions/customizer/customizer-service.php:71 theme_setup_data.php:57
 msgid "Our Services"
 msgstr "Unsere Dienstleistungen"
 
@@ -922,9 +955,9 @@ msgstr "Unsere Dienstleistungen"
 #: functions/customizer/customizer-service.php:173
 #: functions/customizer/customizer-template.php:51
 #: functions/customizer/customizer-template.php:149
-#: functions/customizer/customizer-template.php:408 theme_setup_data.php:57
-#: theme_setup_data.php:59 theme_setup_data.php:69 theme_setup_data.php:128
-#: theme_setup_data.php:204
+#: functions/customizer/customizer-template.php:408 theme_setup_data.php:58
+#: theme_setup_data.php:60 theme_setup_data.php:70 theme_setup_data.php:129
+#: theme_setup_data.php:205
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
@@ -951,7 +984,7 @@ msgid "Enable other services section in service template"
 msgstr ""
 "Bereich für Andere Dienstleistungen im Dienstleistung-Template aktivieren"
 
-#: functions/customizer/customizer-service.php:158 theme_setup_data.php:58
+#: functions/customizer/customizer-service.php:158 theme_setup_data.php:59
 msgid "Other services"
 msgstr "Andere Dienstleistungen"
 
@@ -963,7 +996,7 @@ msgstr "Dienstleistung-Callout-Einstellungen"
 msgid "Enable Callout area section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-service.php:232 theme_setup_data.php:137
+#: functions/customizer/customizer-service.php:232 theme_setup_data.php:138
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
@@ -1129,11 +1162,11 @@ msgstr "Vimeo URL"
 msgid "Comment Options"
 msgstr "Kommentar Optionen"
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:298
+#: functions/customizer/customizer-social.php:350 theme_setup_data.php:301
 msgid "Please Note:"
 msgstr "Bitte beachten:"
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:298
+#: functions/customizer/customizer-social.php:350 theme_setup_data.php:301
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -1148,7 +1181,7 @@ msgstr ""
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/customizer-social.php:363 theme_setup_data.php:299
+#: functions/customizer/customizer-social.php:363 theme_setup_data.php:302
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1188,11 +1221,11 @@ msgstr "3-Spalten-Layout"
 msgid "4 Column Layout"
 msgstr "4-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:58 theme_setup_data.php:117
+#: functions/customizer/customizer-team.php:58 theme_setup_data.php:118
 msgid "The Team"
 msgstr "Das Team"
 
-#: functions/customizer/customizer-team.php:71 theme_setup_data.php:118
+#: functions/customizer/customizer-team.php:71 theme_setup_data.php:119
 msgid "Meet Our Experts"
 msgstr "Treffen Sie unsere Experten"
 
@@ -1209,7 +1242,7 @@ msgstr "„&Uuml;ber Uns“-Seite-Einstellungen"
 msgid "Enable team section"
 msgstr "Teamabschnitt aktivieren"
 
-#: functions/customizer/customizer-template.php:39 theme_setup_data.php:203
+#: functions/customizer/customizer-template.php:39 theme_setup_data.php:204
 msgid "Our great team"
 msgstr "Unser tolles Team"
 
@@ -1246,7 +1279,7 @@ msgstr "Referenz-Einstellungen"
 msgid "Enable cta section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-template.php:137 theme_setup_data.php:127
+#: functions/customizer/customizer-template.php:137 theme_setup_data.php:128
 msgid "Why choose us"
 msgstr "Warum wählen Sie uns"
 
@@ -1317,7 +1350,7 @@ msgstr "Anzahl der Portfolios auf der Seite der Portfoliokategorie"
 msgid "Portfolio template and related page setting"
 msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
 
-#: functions/customizer/customizer-template.php:341 theme_setup_data.php:70
+#: functions/customizer/customizer-template.php:341 theme_setup_data.php:71
 msgid "Our Portfolio"
 msgstr "Unser Portfolio"
 
@@ -1325,7 +1358,7 @@ msgstr "Unser Portfolio"
 msgid "Title For Portfolio Template"
 msgstr "Titel für Portfolio-Vorlage"
 
-#: functions/customizer/customizer-template.php:354 theme_setup_data.php:71
+#: functions/customizer/customizer-template.php:354 theme_setup_data.php:72
 msgid "Most popular of our works"
 msgstr "Unsere beliebtesten Werke"
 
@@ -1341,8 +1374,8 @@ msgstr "Anzahl des Portfolios auf Portfolio-Vorlage"
 msgid "Enable Related Project Setting"
 msgstr "Zugehörige Projekteinstellung aktivieren"
 
-#: functions/customizer/customizer-template.php:395 theme_setup_data.php:68
-#: theme_setup_data.php:134
+#: functions/customizer/customizer-template.php:395 theme_setup_data.php:69
+#: theme_setup_data.php:135
 msgid "Related projects"
 msgstr "Verwandte Projekte"
 
@@ -1362,7 +1395,7 @@ msgstr "Kontaktseite-Adress-Einstellungen"
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/customizer-template.php:454 theme_setup_data.php:176
+#: functions/customizer/customizer-template.php:454 theme_setup_data.php:177
 msgid "Address"
 msgstr "Adresse"
 
@@ -1415,11 +1448,11 @@ msgstr "E-Mail Zwei"
 msgid "Contact page form setting"
 msgstr "Kontaktseite-Formulareinstellung"
 
-#: functions/customizer/customizer-template.php:656 theme_setup_data.php:192
+#: functions/customizer/customizer-template.php:656 theme_setup_data.php:193
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/customizer-template.php:669 theme_setup_data.php:193
+#: functions/customizer/customizer-template.php:669 theme_setup_data.php:194
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
@@ -1431,7 +1464,7 @@ msgstr "Kontaktseite Google Maps"
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/customizer-template.php:702 theme_setup_data.php:169
+#: functions/customizer/customizer-template.php:702 theme_setup_data.php:170
 msgid "Location map"
 msgstr "Lageplan"
 
@@ -1891,7 +1924,7 @@ msgstr "Kommentar"
 msgid "By"
 msgstr "Von"
 
-#: header.php:121 searchform.php:13 template-parts/global/menu-search.php:16
+#: header.php:142 searchform.php:13 template-parts/global/menu-search.php:16
 #: template-parts/global/menu-search.php:28
 #: template-parts/global/menu-search.php:32
 #: template-parts/global/menu-search.php:34
@@ -1938,28 +1971,28 @@ msgstr "Letztes Update:"
 msgid "Menu"
 msgstr "Menü"
 
-#: template-parts/home/blog/blog-layout-1.php:62
+#: template-parts/home/blog/blog-layout-1.php:77
 #: template-parts/home/blog/blog-layout-2.php:51
 #: template-parts/home/blog/blog-layout-3.php:59
 #: template-parts/home/blog/blog-layout-4.php:59
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: template-parts/home/blog/blog-layout-1.php:62
+#: template-parts/home/blog/blog-layout-1.php:77
 #: template-parts/home/blog/blog-layout-2.php:51
 #: template-parts/home/blog/blog-layout-3.php:59
 #: template-parts/home/blog/blog-layout-4.php:59
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: template-parts/home/blog/blog-layout-1.php:62
+#: template-parts/home/blog/blog-layout-1.php:77
 #: template-parts/home/blog/blog-layout-2.php:51
 #: template-parts/home/blog/blog-layout-3.php:59
 #: template-parts/home/blog/blog-layout-4.php:59
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: template-parts/home/blog/blog-layout-1.php:75
+#: template-parts/home/blog/blog-layout-1.php:89
 #: template-parts/home/blog/blog-layout-2.php:67
 #: template-parts/home/blog/blog-layout-3.php:71
 #: template-parts/home/blog/blog-layout-4.php:71
@@ -2071,24 +2104,24 @@ msgstr ""
 
 #: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
 #: template-parts/team/team-3.php:92 template-parts/team/team-4.php:89
-#: template/about-us.php:119
+#: template/about-us.php:120
 msgid "FOUNDER"
 msgstr "GR&Uuml;NDER"
 
 #: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
 #: template-parts/team/team-3.php:92 template-parts/team/team-4.php:89
-#: template/about-us.php:119
+#: template/about-us.php:120
 msgid "DEVELOPER"
 msgstr "ENTWICKLER"
 
 #: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
 #: template-parts/team/team-3.php:92 template-parts/team/team-4.php:89
-#: template/about-us.php:119
+#: template/about-us.php:120
 msgid "DESIGNER"
 msgstr "DESIGNER"
 
 #: template-single/single-portfolio.php:19
-#: template-single/single-portfolio.php:142
+#: template-single/single-portfolio.php:143
 msgid "Back"
 msgstr "Zurück"
 
@@ -2100,7 +2133,7 @@ msgstr "Datum"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: template-single/single-portfolio.php:148
+#: template-single/single-portfolio.php:149
 msgid "Forward"
 msgstr "Vorwärts"
 
@@ -2160,15 +2193,15 @@ msgstr "Danke"
 msgid "Your information has been sent."
 msgstr "Deine Nachricht wurde versendet."
 
-#: theme_setup_data.php:132
+#: theme_setup_data.php:133
 msgid "Meet our"
 msgstr "Das ist unser"
 
-#: theme_setup_data.php:133
+#: theme_setup_data.php:134
 msgid "Great team"
 msgstr "Tolles Team"
 
-#: theme_setup_data.php:139
+#: theme_setup_data.php:140
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 
@@ -2197,9 +2230,8 @@ msgstr "Daniel J&ouml;rg Schuppelius"
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
 
-#. Template Name of the plugin/theme
-msgid "Blog Right Sidebar"
-msgstr "Blog Seitenleiste rechts"
+#~ msgid "Blog Right Sidebar"
+#~ msgstr "Blog Seitenleiste rechts"
 
 #, fuzzy
 #~| msgid "Portfolio Categories"

@@ -1622,6 +1622,10 @@ article footer {
         font-size: 15px
     }
 
+    article footer time .material-icons {
+        font-size: 12px
+    }
+
 .sidebar-widget article footer {
     font-size: 14px
 }
