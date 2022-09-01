@@ -111,6 +111,18 @@ function theme_data_setup() {
         "total_client" => "",
         "home_client_title" => __("Our Clients", "wallstreet"),
         "home_client_description" => __("Have a look at our clients we are growing their business and they are going up in the market by beating their competitors.", "wallstreet"),
+        "client_pictureheight" => 100,
+        "client_padding_tb" => 30,
+        "client_padding_lr" => 30,
+
+        //partner
+        "partner_list" => "",
+        "total_partner" => "",
+        "home_partner_title" => __("Our Partners", "wallstreet"),
+        "home_partner_description" => __("Take a look at our partners. With their help, we expand your company and leave your competitors behind.", "wallstreet"),
+        "partner_pictureheight" => 100,
+        "partner_padding_tb" => 30,
+        "partner_padding_lr" => 30,
 
         //Home Team Section
         "team_design_style" => 1,
@@ -142,7 +154,7 @@ function theme_data_setup() {
         "call_out_button_link_target" => "on",
 
         // front page
-        "front_page_data" => "service,portfolio,team,testimonials,blog,features,client",
+        "front_page_data" => "service,portfolio,team,testimonials,blog,features,client,partner",
 
         //Slug
         "slider_slug" => "slider",
@@ -150,6 +162,7 @@ function theme_data_setup() {
         "team_slug" => "team",
         "portfolio_slug" => "portfolio",
         "client_slug" => "client",
+        "partner_slug" => "partner",
         "testimonial_slug" => "testimonial",
 
         //Testimonial Settings
@@ -159,10 +172,6 @@ function theme_data_setup() {
         "testimonial_timeout_duration" => "2000",
         "testimonial_scroll_duration" => "1500",
         "testimonial_background" => THEME_ASSETS_PATH_URI . "/images/testimonial-bg.jpg",
-
-        //Post Type slug Options
-        "service_slug" => "service",
-        "portfolio_slug" => "portfolio",
 
         //contact page settings
         "contact_header_settings" => "on",

@@ -1,0 +1,3 @@
+			</div>
+		</partner>
+	</div>

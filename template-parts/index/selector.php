@@ -41,6 +41,10 @@ if ($data) {
                 //****** get index  client  ********
                 get_template_part("template-parts/index/index", "client");
                 break;
+            case "partner":
+                //****** get index  client  ********
+                get_template_part("template-parts/index/index", "partner");
+                break;
         }
     }
 }

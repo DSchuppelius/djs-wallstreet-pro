@@ -392,13 +392,13 @@ article figure figcaption a {
     color: #e5e5e5
 }
 
-.clients-logo {
+.clients-logo, .partners-logo {
     background-color: transparent;
     background: none repeat scroll 0 0 rgba(100, 100, 100, 0.4);
     border: 0.2em solid #fff
 }
 
-    .clients-logo:hover {
+    .clients-logo:hover, .partners-logo:hover {
         background: none repeat scroll 0 0 rgba(100, 100, 100, 0.8);
     }
 

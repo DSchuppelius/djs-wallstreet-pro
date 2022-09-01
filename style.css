@@ -856,23 +856,39 @@ article footer .blog-post-meta {
         margin: 0 0 10px
     }
 
-.client-section {
+.client-section, .partner-section {
     margin: 0;
     padding: 70px 0 20px
 }
 
-.clients-logo {
+    .client-section .row, .partner-section .row {
+        justify-content: center
+    }
+
+    .client-section client, .partner-section partner {
+        display: flex;
+        align-items: stretch;
+        width: 100%
+    }
+
+        .client-section client > div, .partner-section partner > div {
+            display: flex;
+            align-items: center;
+            flex: content;
+            flex-grow: 1;
+            justify-content: center
+        }
+
+.clients-logo, .partners-logo {
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     display: block;
     min-height: 200px;
-    height: 200px;
     margin: 0 0 60px;
-    padding: 50px 25px;
     width: auto;
     white-space: nowrap
 }
 
-    .clients-logo img {
+    .clients-logo img, .partners-logo img {
         display: block;
         margin: 0 auto;
         vertical-align: middle
@@ -3351,6 +3367,10 @@ div.collapsing ul.nav {
     margin-bottom: 55px
 }
 
+.next.row.flexstretch{
+    margin-top: -75px
+}
+
 .row.bigborder {
     padding: 10px;
 }
@@ -5285,6 +5305,7 @@ body {
 footer .footer-copyright p:first-child {
     padding-bottom: 5px
 }
+
 footer .footer-copyright p:last-child {
     padding-bottom: 0
 }

@@ -57,6 +57,7 @@ require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-layout.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-slider.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-social.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-feature.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-partner.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-service.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-project.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-template.php";

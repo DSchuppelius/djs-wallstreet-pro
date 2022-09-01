@@ -91,6 +91,22 @@ if ($current_options["enable_custom_typography"] == true) { ?>
         --theme-color: <?php echo $link_color; ?>;
 	}
 
+    .clients-logo {
+        padding: <?php echo $current_options["client_padding_tb"]; ?>px <?php echo $current_options["client_padding_lr"]; ?>px;
+    }
+
+    .client-section client img {
+        max-height: <?php echo $current_options["client_pictureheight"]; ?>px
+    }
+
+    .partners-logo {
+        padding: <?php echo $current_options["partner_padding_tb"]; ?>px <?php echo $current_options["partner_padding_lr"]; ?>px;
+    }
+
+    .partner-section partner img {
+        max-height: <?php echo $current_options["partner_pictureheight"]; ?>px
+    }
+
     #djs-body{
         background-color: <?php echo $background_color; ?>;
     }

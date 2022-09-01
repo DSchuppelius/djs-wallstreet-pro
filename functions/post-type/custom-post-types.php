@@ -8,6 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 define("CLIENT_POST_TYPE", "wallstreet_client");
+define("PARTNER_POST_TYPE", "wallstreet_partner");
 define("PORTFOLIO_POST_TYPE", "wallstreet_portfolio");
 define("SERVICE_POST_TYPE", "wallstreet_service");
 define("SLIDER_POST_TYPE", "wallstreet_slider");
@@ -17,6 +18,7 @@ define("TESTIMONIAL_POST_TYPE", "wallstreet_testi");
 define("PORTFOLIO_TAXONOMY", "portfolio_categories");
 
 require_once "client.php";
+require_once "partner.php";
 require_once "portfolio.php";
 require_once "service.php";
 require_once "slider.php";

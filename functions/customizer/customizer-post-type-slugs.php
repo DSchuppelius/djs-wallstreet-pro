@@ -105,6 +105,18 @@ function wallstreet_post_type_slugs_customizer($wp_customize) {
         "type" => "text",
     ]);
 
+    // Client Slug
+    $wp_customize->add_setting("wallstreet_pro_options[partner_slug]", [
+        "default" => "partner",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[partner_slug]", [
+        "label" => __("Partner slug", "wallstreet"),
+        "section" => "slugs_section",
+        "type" => "text",
+    ]);
+
     class wallstreet_Customize_slug extends WP_Customize_Control {
         public function render_content() {
             ?>

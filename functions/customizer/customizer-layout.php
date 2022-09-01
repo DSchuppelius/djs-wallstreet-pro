@@ -16,7 +16,7 @@ function wallstreet_layout_customizer($wp_customize) {
         public function render_content() {
             $current_options = get_current_options();
             $data_enable = is_array($current_options["front_page_data"]) ? $current_options["front_page_data"] : explode(",", $current_options["front_page_data"]);
-            $defaultenableddata = ["service", "portfolio", "team", "blog", "testimonials", "features", "client"];
+            $defaultenableddata = ["service", "portfolio", "team", "blog", "testimonials", "features", "client", "partner"];
             $layout_disable = array_diff($defaultenableddata, $data_enable);
             ?>
 			<h3><?php _e("Enable", "wallstreet"); ?></h3>
@@ -108,7 +108,7 @@ function wallstreet_layout_customizer($wp_customize) {
     );
 
     $wp_customize->add_setting("wallstreet_pro_options[front_page_data]", [
-        "default" => "service,portfolio,team,testimonials,blog,features,client",
+        "default" => "service,portfolio,team,testimonials,blog,features,client,partner",
         "type" => "option",
     ]);
     $wp_customize->add_control("wallstreet_pro_options[front_page_data]", [

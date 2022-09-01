@@ -28,46 +28,45 @@
 					<?php } ?>
 				</div>	
 			<?php endif; ?>	
-			<div class="row"><?php
-   $j = 1;
-   $args = ["post_type" => CLIENT_POST_TYPE, "posts_per_page" => -1];
-   $client = new WP_Query($args);
-   if ($client->have_posts()) {
-       while ($client->have_posts()) {
-           $client->the_post();
-           get_template_part("template-parts/client/client", "header");
-
-           $post_client_url = get_post_meta(get_the_ID(), "clientstrip_link", true) ? get_post_meta(get_the_ID(), "clientstrip_link", true) : "#";
-           $post_client_url_target = get_post_meta(get_the_ID(), "meta_client_target", true) ? "_blank" : "_self";
-
-           if (has_post_thumbnail()) {
-               $post_thumbnail_id = get_post_thumbnail_id();
-               $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
-
-               if ($post_thumbnail_url) { ?>
-								<a href="<?php echo $post_client_url; ?>" target="<?php echo $post_client_url_target; ?>" >
-									<img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
-								</a>
-							<?php } else { ?>
-								<img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>"><?php }
-           } else {
-                ?>
-							<a href="<?php echo $post_client_url; ?>" target="<?php echo $post_client_url_target; ?>" >
-								<h2 class="clients-text"><?php echo get_the_title(); ?></h2>
-							</a>
-						<?php
-           }
-
-           get_template_part("template-parts/client/client", "footer");
-           if ($j % 4 == 0) {
-               echo "<div class='clearfix'></div>";
-           }
-           $j++;
-       }
-   } else {
-       get_template_part("template-parts/client/client", "demo");
-   }
-   ?>			
+			<div class="row flexstretch">
+                <?php $j = 1;
+                $args = ["post_type" => CLIENT_POST_TYPE, "posts_per_page" => -1];
+                $client = new WP_Query($args);
+                if ($client->have_posts()) {
+                    while ($client->have_posts()) {
+                        $client->the_post();
+                        get_template_part("template-parts/client/client", "header");
+    
+                        $post_client_url = get_post_meta(get_the_ID(), "clientstrip_link", true) ? get_post_meta(get_the_ID(), "clientstrip_link", true) : "#";
+                        $post_client_url_target = get_post_meta(get_the_ID(), "meta_client_target", true) ? "_blank" : "_self";
+    
+                        if (has_post_thumbnail()) {
+                            $post_thumbnail_id = get_post_thumbnail_id();
+                            $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
+    
+                            if ($post_thumbnail_url) { ?>
+                                <a href="<?php echo $post_client_url; ?>" target="<?php echo $post_client_url_target; ?>" >
+                                    <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
+                                </a>
+    					    <?php } else { ?>
+                                <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
+                            <?php }
+                        } else { ?>
+                            <a href="<?php echo $post_client_url; ?>" target="<?php echo $post_client_url_target; ?>" >
+                                <h2 class="clients-text"><?php echo get_the_title(); ?></h2>
+                            </a>
+                        <?php }
+    
+                        get_template_part("template-parts/client/client", "footer");
+                        if ($j % 4 == 0) {
+                            // echo "<div class='clearfix'></div>";
+                            echo '</div><div class="next row flexstretch">';
+                        }
+                        $j++;
+                    }
+                } else {
+                    get_template_part("template-parts/client/client", "demo");
+                } ?>			
 			</div>		
 		</div> 		
 	</div>

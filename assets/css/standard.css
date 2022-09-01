@@ -270,7 +270,7 @@ div.blog-switcher-view.sidebar div.row.bigborder div.col-md-4 div.columnfiller {
 }
 
 /*Clients Section Css-------------------------------------------------------------------------*/
-.clients-logo {
+.clients-logo, .partners-logo {
     border-top-left-radius: var(--border-bigbase);
     border-top-right-radius: var(--border-bigbase);
     border-bottom-right-radius: var(--border-bigbase);

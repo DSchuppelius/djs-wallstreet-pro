@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-09-01 08:23+0200\n"
+"POT-Creation-Date: 2022-09-01 21:18+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Linked post"
 msgstr ""
 
-#: attachment.php:64 functions.php:195 index.php:31
+#: attachment.php:64 functions.php:196 index.php:31
 #: template-parts/content/content.php:17
 #: template-parts/home/blog/blog-layout-1.php:82
 #: template-parts/home/blog/blog-layout-2.php:56
@@ -143,8 +143,8 @@ msgstr ""
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:85 functions/meta-box/post-meta.php:200
-#: functions/meta-box/post-meta.php:201 template-single/single-portfolio.php:28
+#: comments.php:85 functions/meta-box/post-meta.php:96
+#: functions/meta-box/post-meta.php:97 template-single/single-portfolio.php:28
 #: template-single/single-portfolio.php:52 template/contact-us.php:88
 #: template/contact-us.php:89
 msgid "Website"
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: functions.php:93 functions/breadcrumbs/breadcrumbs.php:122
+#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:122
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -196,27 +196,27 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:132
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:200 functions/customizer/customizer-social.php:97
-#: functions/meta-box/post-meta.php:257 functions/meta-box/post-meta.php:258
+#: functions.php:201 functions/customizer/customizer-social.php:97
+#: functions/meta-box/post-meta.php:136 functions/meta-box/post-meta.php:137
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:201 functions/customizer/customizer-social.php:72
-#: functions/meta-box/post-meta.php:289 functions/meta-box/post-meta.php:290
+#: functions.php:202 functions/customizer/customizer-social.php:72
+#: functions/meta-box/post-meta.php:152 functions/meta-box/post-meta.php:153
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:202 functions/customizer/customizer-social.php:122
-#: functions/meta-box/post-meta.php:281 functions/meta-box/post-meta.php:282
+#: functions.php:203 functions/customizer/customizer-social.php:122
+#: functions/meta-box/post-meta.php:148 functions/meta-box/post-meta.php:149
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Hide blog meta from home page"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:206
+#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:215
 msgid "Our latest blog post"
 msgstr ""
 
@@ -354,6 +354,7 @@ msgstr ""
 #: functions/customizer/customizer-feature.php:111
 #: functions/customizer/customizer-feature.php:151
 #: functions/customizer/customizer-feature.php:191
+#: functions/customizer/customizer-partner.php:32
 #: functions/customizer/customizer-project.php:68
 #: functions/customizer/customizer-service.php:77
 #: functions/customizer/customizer-service.php:164
@@ -367,12 +368,12 @@ msgstr ""
 #: functions/customizer/customizer-template.php:603
 #: functions/customizer/customizer-template.php:662
 #: functions/customizer/customizer-template.php:708
-#: functions/meta-box/post-meta.php:107 functions/meta-box/post-meta.php:108
+#: functions/meta-box/post-meta.php:33 functions/meta-box/post-meta.php:34
 #: functions/widget/wallstreet-latest-widget.php:151
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:207
+#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:216
 msgid "We work with new customers and grow their businesses"
 msgstr ""
 
@@ -381,6 +382,7 @@ msgstr ""
 #: functions/customizer/customizer-feature.php:124
 #: functions/customizer/customizer-feature.php:164
 #: functions/customizer/customizer-feature.php:204
+#: functions/customizer/customizer-partner.php:46
 #: functions/customizer/customizer-project.php:81
 #: functions/customizer/customizer-service.php:89
 #: functions/customizer/customizer-service.php:179
@@ -391,10 +393,9 @@ msgstr ""
 #: functions/customizer/customizer-template.php:326
 #: functions/customizer/customizer-template.php:675
 #: functions/meta-box/post-meta.php:35 functions/meta-box/post-meta.php:36
-#: functions/meta-box/post-meta.php:111 functions/meta-box/post-meta.php:112
-#: functions/meta-box/post-meta.php:156 functions/meta-box/post-meta.php:157
-#: functions/meta-box/post-meta.php:223 functions/meta-box/post-meta.php:224
-#: functions/meta-box/post-meta.php:250 functions/meta-box/post-meta.php:251
+#: functions/meta-box/post-meta.php:65 functions/meta-box/post-meta.php:66
+#: functions/meta-box/post-meta.php:109 functions/meta-box/post-meta.php:110
+#: functions/meta-box/post-meta.php:131 functions/meta-box/post-meta.php:132
 msgid "Description"
 msgstr ""
 
@@ -441,17 +442,17 @@ msgstr ""
 #: functions/customizer/customizer-blog.php:117
 #: functions/customizer/customizer-project.php:108
 #: functions/customizer/customizer-service.php:263
-#: functions/meta-box/post-meta.php:115 functions/meta-box/post-meta.php:160
-#: functions/meta-box/post-meta.php:161 functions/meta-box/post-meta.php:204
-#: functions/meta-box/post-meta.php:205
+#: functions/meta-box/post-meta.php:37 functions/meta-box/post-meta.php:68
+#: functions/meta-box/post-meta.php:69 functions/meta-box/post-meta.php:98
+#: functions/meta-box/post-meta.php:99
 msgid "Button Text"
 msgstr ""
 
 #: functions/customizer/customizer-blog.php:130
 #: functions/customizer/customizer-project.php:122
 #: functions/customizer/customizer-service.php:276
-#: functions/meta-box/post-meta.php:119 functions/meta-box/post-meta.php:208
-#: functions/meta-box/post-meta.php:209
+#: functions/meta-box/post-meta.php:39 functions/meta-box/post-meta.php:100
+#: functions/meta-box/post-meta.php:101
 msgid "Button Link"
 msgstr ""
 
@@ -471,19 +472,22 @@ msgstr ""
 #: functions/customizer/customizer-social.php:286
 #: functions/customizer/customizer-social.php:311
 #: functions/customizer/customizer-social.php:336
-#: functions/meta-box/post-meta.php:125 functions/meta-box/post-meta.php:155
-#: functions/meta-box/post-meta.php:180 functions/meta-box/post-meta.php:214
-#: functions/meta-box/post-meta.php:263 functions/meta-box/post-meta.php:271
-#: functions/meta-box/post-meta.php:279 functions/meta-box/post-meta.php:287
-#: functions/meta-box/post-meta.php:295 functions/meta-box/post-meta.php:311
+#: functions/meta-box/post-meta.php:41 functions/meta-box/post-meta.php:63
+#: functions/meta-box/post-meta.php:81 functions/meta-box/post-meta.php:102
+#: functions/meta-box/post-meta.php:138 functions/meta-box/post-meta.php:142
+#: functions/meta-box/post-meta.php:146 functions/meta-box/post-meta.php:150
+#: functions/meta-box/post-meta.php:154 functions/meta-box/post-meta.php:164
+#: functions/meta-box/post-meta.php:175
 msgid "Open link in new tab"
 msgstr ""
 
 #: functions/customizer/customizer-client.php:15
+#: functions/customizer/customizer-client.php:54
 msgid "Client settings"
 msgstr ""
 
 #: functions/customizer/customizer-client.php:19
+#: functions/customizer/customizer-partner.php:19
 msgid "Section Heading"
 msgstr ""
 
@@ -497,7 +501,39 @@ msgid ""
 "up in the market by beating their competitors."
 msgstr ""
 
-#: functions/customizer/customizer-client.php:59
+#: functions/customizer/customizer-client.php:58
+msgid "Client Picture Settings"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:64
+#: functions/customizer/customizer-partner.php:64
+#: functions/customizer/customizer-slider.php:152
+msgid "100"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:70
+#: functions/customizer/customizer-partner.php:70
+msgid "Max Pictureheight"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:82
+#: functions/customizer/customizer-client.php:100
+#: functions/customizer/customizer-partner.php:82
+#: functions/customizer/customizer-partner.php:100
+msgid "30"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:88
+#: functions/customizer/customizer-partner.php:88
+msgid "Top/Bottom Padding"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:106
+#: functions/customizer/customizer-partner.php:106
+msgid "Left/Right Padding"
+msgstr ""
+
+#: functions/customizer/customizer-client.php:125
 msgid "Click here to add client"
 msgstr ""
 
@@ -510,7 +546,7 @@ msgstr ""
 msgid "Enable Footer Link-text"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:298
+#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:307
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
 "\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
@@ -527,11 +563,11 @@ msgstr ""
 msgid "Enable Footer Copyright"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:299
+#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:308
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:299
+#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:308
 msgid "Daniel Joerg Schuppelius"
 msgstr ""
 
@@ -562,7 +598,7 @@ msgstr ""
 #: functions/customizer/customizer-template.php:447
 #: functions/customizer/customizer-template.php:518
 #: functions/customizer/customizer-template.php:590
-#: functions/meta-box/post-meta.php:140 functions/meta-box/post-meta.php:146
+#: functions/meta-box/post-meta.php:55 functions/meta-box/post-meta.php:59
 #: template-parts/home/service/servic-1.php:77
 #: template-specials/service-five-template.php:79
 #: template-specials/service-five-template.php:181
@@ -783,6 +819,29 @@ msgstr ""
 msgid "Theme layout manager"
 msgstr ""
 
+#: functions/customizer/customizer-partner.php:15
+#: functions/customizer/customizer-partner.php:54
+msgid "Partner settings"
+msgstr ""
+
+#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:121
+msgid "Our Partners"
+msgstr ""
+
+#: functions/customizer/customizer-partner.php:39
+msgid ""
+"Have a look at our partners we are growing their business and they are going "
+"up in the market by beating their competitors."
+msgstr ""
+
+#: functions/customizer/customizer-partner.php:58
+msgid "Partner Picture Settings"
+msgstr ""
+
+#: functions/customizer/customizer-partner.php:125
+msgid "Click here to add partner"
+msgstr ""
+
 #: functions/customizer/customizer-post-type-slugs.php:15
 msgid "SEO Friendly URL"
 msgstr ""
@@ -819,17 +878,21 @@ msgstr ""
 msgid "Client slug"
 msgstr ""
 
-#: functions/customizer/customizer-post-type-slugs.php:111
+#: functions/customizer/customizer-post-type-slugs.php:115
+msgid "Partner slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:123
 msgid ""
 "After changing the slug, please do not forget to save the permalinks. "
 "Without saving, the old permalinks will not update."
 msgstr ""
 
-#: functions/customizer/customizer-post-type-slugs.php:123
+#: functions/customizer/customizer-post-type-slugs.php:135
 msgid "Wallstreet slug"
 msgstr ""
 
-#: functions/customizer/customizer-post-type-slugs.php:136
+#: functions/customizer/customizer-post-type-slugs.php:148
 msgid "Click here permalinks setting"
 msgstr ""
 
@@ -898,8 +961,8 @@ msgstr ""
 #: functions/customizer/customizer-template.php:51
 #: functions/customizer/customizer-template.php:149
 #: functions/customizer/customizer-template.php:408 theme_setup_data.php:58
-#: theme_setup_data.php:60 theme_setup_data.php:70 theme_setup_data.php:129
-#: theme_setup_data.php:205
+#: theme_setup_data.php:60 theme_setup_data.php:70 theme_setup_data.php:141
+#: theme_setup_data.php:214
 msgid "We offer great services to our clients"
 msgstr ""
 
@@ -936,7 +999,7 @@ msgstr ""
 msgid "Enable Callout area section"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:232 theme_setup_data.php:138
+#: functions/customizer/customizer-service.php:232 theme_setup_data.php:150
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr ""
 
@@ -1002,10 +1065,6 @@ msgstr ""
 msgid "Slideshow speed"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:152
-msgid "100"
-msgstr ""
-
 #: functions/customizer/customizer-slider.php:157
 msgid "Round Corner Value"
 msgstr ""
@@ -1067,12 +1126,12 @@ msgid "Youtube URL"
 msgstr ""
 
 #: functions/customizer/customizer-social.php:197
-#: functions/meta-box/post-meta.php:265 functions/meta-box/post-meta.php:266
+#: functions/meta-box/post-meta.php:140 functions/meta-box/post-meta.php:141
 msgid "Skype URL"
 msgstr ""
 
 #: functions/customizer/customizer-social.php:223
-#: functions/meta-box/post-meta.php:273 functions/meta-box/post-meta.php:274
+#: functions/meta-box/post-meta.php:144 functions/meta-box/post-meta.php:145
 msgid "RSS URL"
 msgstr ""
 
@@ -1096,11 +1155,11 @@ msgstr ""
 msgid "Comment Options"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:301
+#: functions/customizer/customizer-social.php:350 theme_setup_data.php:310
 msgid "Please Note:"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:301
+#: functions/customizer/customizer-social.php:350 theme_setup_data.php:310
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -1111,7 +1170,7 @@ msgstr ""
 msgid "First Text in Comment-Section"
 msgstr ""
 
-#: functions/customizer/customizer-social.php:363 theme_setup_data.php:302
+#: functions/customizer/customizer-social.php:363 theme_setup_data.php:311
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1146,11 +1205,11 @@ msgstr ""
 msgid "4 Column Layout"
 msgstr ""
 
-#: functions/customizer/customizer-team.php:58 theme_setup_data.php:118
+#: functions/customizer/customizer-team.php:58 theme_setup_data.php:130
 msgid "The Team"
 msgstr ""
 
-#: functions/customizer/customizer-team.php:71 theme_setup_data.php:119
+#: functions/customizer/customizer-team.php:71 theme_setup_data.php:131
 msgid "Meet Our Experts"
 msgstr ""
 
@@ -1167,7 +1226,7 @@ msgstr ""
 msgid "Enable team section"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:39 theme_setup_data.php:204
+#: functions/customizer/customizer-template.php:39 theme_setup_data.php:213
 msgid "Our great team"
 msgstr ""
 
@@ -1196,7 +1255,7 @@ msgstr ""
 msgid "Enable cta section"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:137 theme_setup_data.php:128
+#: functions/customizer/customizer-template.php:137 theme_setup_data.php:140
 msgid "Why choose us"
 msgstr ""
 
@@ -1282,7 +1341,7 @@ msgid "Enable Related Project Setting"
 msgstr ""
 
 #: functions/customizer/customizer-template.php:395 theme_setup_data.php:69
-#: theme_setup_data.php:135
+#: theme_setup_data.php:147
 msgid "Related projects"
 msgstr ""
 
@@ -1302,7 +1361,7 @@ msgstr ""
 msgid "Enable contact page address section"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:454 theme_setup_data.php:177
+#: functions/customizer/customizer-template.php:454 theme_setup_data.php:186
 msgid "Address"
 msgstr ""
 
@@ -1355,11 +1414,11 @@ msgstr ""
 msgid "Contact page form setting"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:656 theme_setup_data.php:193
+#: functions/customizer/customizer-template.php:656 theme_setup_data.php:202
 msgid "Drop us a mail"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:669 theme_setup_data.php:194
+#: functions/customizer/customizer-template.php:669 theme_setup_data.php:203
 msgid "Feel free to write us a message"
 msgstr ""
 
@@ -1371,7 +1430,7 @@ msgstr ""
 msgid "Enable Google map in contact page"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:702 theme_setup_data.php:170
+#: functions/customizer/customizer-template.php:702 theme_setup_data.php:179
 msgid "Location map"
 msgstr ""
 
@@ -1555,73 +1614,77 @@ msgstr ""
 msgid "Portfolio Featured Details"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:18
-msgid "Testimonial Detail"
-msgstr ""
-
-#: functions/meta-box/post-meta.php:19
+#: functions/meta-box/post-meta.php:16
 msgid "Team Details"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:20
+#: functions/meta-box/post-meta.php:17
 msgid "Client Details"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:70
-msgid "Page Description"
+#: functions/meta-box/post-meta.php:18
+msgid "Partner Details"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:71
-msgid "Enter page description"
+#: functions/meta-box/post-meta.php:19
+msgid "Testimonial Detail"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:74
-msgid "Page Layout"
-msgstr ""
-
-#: functions/meta-box/post-meta.php:116
+#: functions/meta-box/post-meta.php:38
 msgid "Text"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:120 functions/meta-box/post-meta.php:149
-#: functions/meta-box/post-meta.php:150 functions/meta-box/post-meta.php:174
-#: functions/meta-box/post-meta.php:175 functions/meta-box/post-meta.php:305
-#: functions/meta-box/post-meta.php:306
+#: functions/meta-box/post-meta.php:40 functions/meta-box/post-meta.php:61
+#: functions/meta-box/post-meta.php:62 functions/meta-box/post-meta.php:79
+#: functions/meta-box/post-meta.php:80 functions/meta-box/post-meta.php:162
+#: functions/meta-box/post-meta.php:163 functions/meta-box/post-meta.php:173
+#: functions/meta-box/post-meta.php:174
 msgid "Link"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:142
+#: functions/meta-box/post-meta.php:55
+msgid "(Using font awesome icons name) like:"
+msgstr ""
+
+#: functions/meta-box/post-meta.php:56
 msgid "Get your Font Awesome icons."
 msgstr ""
 
-#: functions/meta-box/post-meta.php:145
+#: functions/meta-box/post-meta.php:58
 msgid "To enable service icon check mark the checkbox"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:181 functions/meta-box/post-meta.php:182
+#: functions/meta-box/post-meta.php:82 functions/meta-box/post-meta.php:83
 msgid "Page Info"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:196 functions/meta-box/post-meta.php:197
+#: functions/meta-box/post-meta.php:94 functions/meta-box/post-meta.php:95
 #: functions/post-type/client.php:16 template-single/single-portfolio.php:46
 msgid "Clients"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:246 functions/meta-box/post-meta.php:247
+#: functions/meta-box/post-meta.php:129 functions/meta-box/post-meta.php:130
 msgid "Designation"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:255
+#: functions/meta-box/post-meta.php:134
 msgid "Social Media Settings"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:312
+#: functions/meta-box/post-meta.php:165
 msgid ""
 "Upload client image using feature image. Best fit scenario is using 130 X "
 "130 px image."
 msgstr ""
 
+#: functions/meta-box/post-meta.php:176
+msgid ""
+"Upload partner image using feature image. Best fit scenario is using 130 X "
+"130 px image."
+msgstr ""
+
 #: functions/post-type/client.php:17 functions/post-type/client.php:19
+#: functions/post-type/partner.php:17 functions/post-type/partner.php:19
 #: functions/post-type/portfolio.php:17 functions/post-type/portfolio.php:19
 #: functions/post-type/service.php:17 functions/post-type/service.php:19
 #: functions/post-type/slider.php:17 functions/post-type/slider.php:19
@@ -1635,9 +1698,10 @@ msgstr ""
 msgid "Add New Client"
 msgstr ""
 
-#: functions/post-type/client.php:20 functions/post-type/portfolio.php:20
-#: functions/post-type/service.php:20 functions/post-type/slider.php:20
-#: functions/post-type/team.php:20 functions/post-type/testimonial.php:20
+#: functions/post-type/client.php:20 functions/post-type/partner.php:20
+#: functions/post-type/portfolio.php:20 functions/post-type/service.php:20
+#: functions/post-type/slider.php:20 functions/post-type/team.php:20
+#: functions/post-type/testimonial.php:20
 msgid "New Link"
 msgstr ""
 
@@ -1645,28 +1709,43 @@ msgstr ""
 msgid "All Clients"
 msgstr ""
 
-#: functions/post-type/client.php:22 functions/post-type/portfolio.php:22
-#: functions/post-type/service.php:22 functions/post-type/slider.php:22
-#: functions/post-type/team.php:22 functions/post-type/testimonial.php:22
+#: functions/post-type/client.php:22 functions/post-type/partner.php:22
+#: functions/post-type/portfolio.php:22 functions/post-type/service.php:22
+#: functions/post-type/slider.php:22 functions/post-type/team.php:22
+#: functions/post-type/testimonial.php:22
 msgid "View Link"
 msgstr ""
 
-#: functions/post-type/client.php:23 functions/post-type/portfolio.php:23
-#: functions/post-type/service.php:23 functions/post-type/slider.php:23
-#: functions/post-type/team.php:23
+#: functions/post-type/client.php:23 functions/post-type/partner.php:23
+#: functions/post-type/portfolio.php:23 functions/post-type/service.php:23
+#: functions/post-type/slider.php:23 functions/post-type/team.php:23
 msgid "Search Links"
 msgstr ""
 
-#: functions/post-type/client.php:24 functions/post-type/portfolio.php:24
-#: functions/post-type/service.php:24 functions/post-type/slider.php:24
-#: functions/post-type/team.php:24 functions/post-type/testimonial.php:24
+#: functions/post-type/client.php:24 functions/post-type/partner.php:24
+#: functions/post-type/portfolio.php:24 functions/post-type/service.php:24
+#: functions/post-type/slider.php:24 functions/post-type/team.php:24
+#: functions/post-type/testimonial.php:24
 msgid "No Links found"
 msgstr ""
 
-#: functions/post-type/client.php:25 functions/post-type/portfolio.php:25
-#: functions/post-type/service.php:25 functions/post-type/slider.php:25
-#: functions/post-type/team.php:25 functions/post-type/testimonial.php:25
+#: functions/post-type/client.php:25 functions/post-type/partner.php:25
+#: functions/post-type/portfolio.php:25 functions/post-type/service.php:25
+#: functions/post-type/slider.php:25 functions/post-type/team.php:25
+#: functions/post-type/testimonial.php:25
 msgid "No Links found in Trash"
+msgstr ""
+
+#: functions/post-type/partner.php:16
+msgid "Partner"
+msgstr ""
+
+#: functions/post-type/partner.php:18
+msgid "Add New Partner"
+msgstr ""
+
+#: functions/post-type/partner.php:21
+msgid "All Partner"
 msgstr ""
 
 #: functions/post-type/portfolio.php:16
@@ -2088,15 +2167,21 @@ msgstr ""
 msgid "Your information has been sent."
 msgstr ""
 
-#: theme_setup_data.php:133
+#: theme_setup_data.php:122
+msgid ""
+"Take a look at our partners. With their help, we expand your company and "
+"leave your competitors behind."
+msgstr ""
+
+#: theme_setup_data.php:145
 msgid "Meet our"
 msgstr ""
 
-#: theme_setup_data.php:134
+#: theme_setup_data.php:146
 msgid "Great team"
 msgstr ""
 
-#: theme_setup_data.php:140
+#: theme_setup_data.php:152
 msgid "See All Features"
 msgstr ""
 
