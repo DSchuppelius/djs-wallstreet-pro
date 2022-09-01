@@ -377,6 +377,10 @@ article footer .blog-post-meta {
     margin-right: 0
 }
 
+    .blog-detail-section article section figure.wp-block-embed iframe {
+        width: 600px
+    }
+
     .blog-detail-section.no-meta header,
     .blog-detail-section.no-meta footer,
     .blog-detail-section.no-meta .clear {
