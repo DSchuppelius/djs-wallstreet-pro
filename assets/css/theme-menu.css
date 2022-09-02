@@ -113,7 +113,7 @@
         white-space: nowrap;
     }
 
-        .dropdown-menu > li > a:last-chlid {
+        .dropdown-menu > li > a:last-child {
             border-bottom: 0px;
             border-bottom: 0;
         }
