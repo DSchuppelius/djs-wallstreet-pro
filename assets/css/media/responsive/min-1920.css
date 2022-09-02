@@ -3,8 +3,9 @@
     max-width: 1570px;
 }
 
-.blog-detail-section article section figure.wp-block-embed iframe {
-    height:480px;
+.blog-detail-section article section figure.wp-block-embed iframe,
+.archive article section figure.wp-block-embed iframe {
+    height: 480px;
     width: 800px
 }
 
