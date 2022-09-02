@@ -227,5 +227,19 @@ function wallstreet_features_customizer($wp_customize) {
             "settings" => "wallstreet_pro_options[theme_feature_background]",
         ])
     );
+
+    $wp_customize->add_setting("wallstreet_pro_options[theme_feature_background_fixed]", [
+        "default" => false,
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+        "description" => __("Open link in new tab", "wallstreet"),
+    ]);
+
+    $wp_customize->add_control("wallstreet_pro_options[theme_feature_background_fixed]", [
+        "label" => __("Background Image Fixed", "wallstreet"),
+        "section" => "features_section",
+        "type" => "checkbox",
+    ]);
 }
 add_action("customize_register", "wallstreet_features_customizer"); ?>

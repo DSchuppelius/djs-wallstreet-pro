@@ -126,5 +126,5 @@ if ($current_options["enable_custom_typography"] == true) { ?>
 
 	.custom-logo{ width: <?php echo esc_html(get_theme_mod("busiprof_logo_length", "156")); ?>px; height: auto;}
 	.custom-positions .page-breadcrumbs{ bottom:<?php echo $current_options["breadcrumbposition"]; ?>px; }
-	.custom-positions .page-mycarousel{ margin-bottom:<?php echo 80 - $current_options["contentposition"]; ?>px; }
+	.custom-positions .page-mycarousel:not(.home .page-mycarousel){ margin-bottom:<?php echo 80 - $current_options["contentposition"]; ?>px; }
 </style>

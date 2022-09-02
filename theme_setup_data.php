@@ -105,6 +105,7 @@ function theme_data_setup() {
         "theme_third_title" => __("Incredibly flexible", "wallstreet"),
         "theme_third_description" => "Perspiciatis unde omnis iste natus error sit voluptaem omnis iste.",
         "theme_feature_background" => THEME_ASSETS_PATH_URI . "/images/tweet-bg.jpg",
+        "theme_feature_background_fixed" => false,
 
         //client
         "client_list" => "",
