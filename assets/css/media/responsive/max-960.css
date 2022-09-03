@@ -279,7 +279,7 @@
         }
 
     .cookies button.btn:not(.not) {
-        max-width: 200px
+        max-width: 200px !important
     }
 
     .blog-post-meta a {
