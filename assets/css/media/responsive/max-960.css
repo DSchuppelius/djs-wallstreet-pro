@@ -265,7 +265,7 @@
 }
 
 @media (max-width: 767px) {
-    body.body-fixed-top .page-mycarousel, body.custom-positions.body-fixed-top .page-mycarousel, body.custom-positions .page-mycarousel {
+    body.body-fixed-top .page-mycarousel, body.custom-positions.body-fixed-top .page-mycarousel, body.custom-positions .page-mycarousel:not(.home .page-mycarousel) {
         margin-bottom: 15px
     }
 

@@ -13,7 +13,7 @@ function custom_dark() {
     $current_options = get_current_options(); ?>
 
     <style type="text/css">
-        .prelated-project-btn li a, .portfolio-detail-section a, .portfolio-detail-pagi li a, .header-top-area, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,
+        button.wp-block-button__link, .prelated-project-btn li a, .portfolio-detail-section a, .portfolio-detail-pagi li a, .header-top-area, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,
         .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus, .navbar-inverse .navbar-toggle,
         .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .flex_btn, .service-btn a, .other-service-area:hover i,
         .proejct-btn a:hover, .home-blog-btn a, .feature-icon, .tweet-btn a:hover, .post-date, .team-area:hover, .callout-section a, .blog-post-date span.date, a.blog-btn, .blog-pagination a:hover,

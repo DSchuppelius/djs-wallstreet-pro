@@ -1822,11 +1822,11 @@ footer.site {
 }
 
 .home .page-breadcrumbs, .home .page-title-col {
-    display:none
+    display: none
 }
 
-.home .page-mycarousel{
-    margin-bottom:-30px
+.home .page-mycarousel {
+    margin-bottom: -30px
 }
 
 .home-blog-area,
@@ -3380,7 +3380,7 @@ div.collapsing ul.nav {
     margin-bottom: 55px
 }
 
-.next.row.flexstretch{
+.next.row.flexstretch {
     margin-top: -75px
 }
 
@@ -3688,7 +3688,26 @@ div.collapsing ul.nav {
     padding: 10px
 }
 
-.search_widget_input {
+.wp-block-search .wp-block-search__input:focus-visible,
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
+    border: 1px solid #E0E4E6;
+    box-shadow: 0 1px 1px rgba(0,0,0,.075)inset;
+    border-radius: 2px !important;
+    line-height: 20px;
+    margin: 0;
+    height: 46px;
+    padding: 10px 8px !important;
+    background-image: none;
+    display: block;
+    width: 100%;
+    padding-right: 155px !important;
+}
+
+#subscribe-email input, .search_widget_input {
     line-height: 20px;
     margin: 25px 0 15px;
     height: 46px;
@@ -3698,7 +3717,7 @@ div.collapsing ul.nav {
     width: 100%
 }
 
-    .search_widget_input:focus {
+    #subscribe-email input:focus, .search_widget_input:focus {
         outline: 0
     }
 

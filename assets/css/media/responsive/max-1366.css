@@ -11,7 +11,7 @@
         bottom: 0px
     }
 
-    body.custom-positions .page-mycarousel {
+    body.custom-positions .page-mycarousel:not(.home .page-mycarousel) {
         margin-bottom: 80px
     }
 }
@@ -122,6 +122,7 @@
 
     .head-contact-social li {
         width: 30px;
+        height:100%
     }
 
     .footer-contact-social li {

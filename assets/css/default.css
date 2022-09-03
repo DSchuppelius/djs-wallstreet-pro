@@ -1844,9 +1844,12 @@ footer.site {
 }
 
 .wp-block-search .wp-block-search__input {
-    background-color: #fff;
-    color: #000
+    background-color: #2a2c33;
+    color: #fff
 }
+    .wp-block-search .wp-block-search__input:focus {
+        background-color: #565963;
+    }
 
 .wp-block-tag-cloud {
     color: #fff
