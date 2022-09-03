@@ -5,20 +5,21 @@ body {
 .portfolio-detail-pagi .button.btn {
     min-width: 155px;
 }
+
 .navbar1 .logo-link-url {
     float: none;
     text-align: center;
 }
 
 .navbar1 .navbar-header {
-    margin:0;
-    padding:0
+    margin: 0;
+    padding: 0
 }
 
 .navbar1.navbar > .container .navbar-brand,
 .navbar4.navbar > .container .navbar-brand {
     padding: 11px 0px;
-    position:initial;
+    position: initial;
 }
 
 .head-contact-social {
@@ -26,12 +27,12 @@ body {
 }
 
 .page-title-col h1 {
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 25px;
+    line-height: 30px;
 }
 
-.blog-post-title.flex_stretch{
-    display:block
+.blog-post-title.flex_stretch {
+    display: block
 }
 
 .breadcrumbs {
@@ -67,6 +68,11 @@ body {
 /*Flexslider--------------------------*/
 .page-mycarousel {
     margin-bottom: 80px;
+}
+
+.blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
+    font-size: 25px;
+    line-height: 30px;
 }
 
 .flex-slider-center {
@@ -456,6 +462,7 @@ body {
         width: 17.5rem !important;
         left: 0rem;
     }
+
     .portfolio-detail-pagi .button.btn {
         min-width: 127px;
     }

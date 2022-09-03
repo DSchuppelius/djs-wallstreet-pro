@@ -270,13 +270,21 @@
     }
 
     article footer .blog-post-meta {
-         display: block; 
+        display: block;
     }
 
         article footer .blog-post-meta .blog-tags {
             display: inline-block;
             margin: 0 0 5px;
         }
+
+    .cookies button.btn:not(.not) {
+        max-width: 200px
+    }
+
+    .blog-post-meta a {
+        padding: 5px 0px 5px 0px;
+    }
 
     .page-title-col {
         top: 50%;
@@ -299,8 +307,9 @@
     .about-section iframe {
         width: 100%;
     }
+
     .col-md-4.col-sm-6.service-effect.first_column div.service-area,
-    .col-md-4.col-sm-6.service-effect.last_column div.service-area{
+    .col-md-4.col-sm-6.service-effect.last_column div.service-area {
         border-radius: var(--border-bigbase);
     }
 }
