@@ -3714,7 +3714,7 @@ div.collapsing ul.nav {
     padding: 10px 16px;
     background-image: none;
     display: block;
-    width: 100%
+    width: 100% !important
 }
 
     #subscribe-email input:focus, .search_widget_input:focus {
