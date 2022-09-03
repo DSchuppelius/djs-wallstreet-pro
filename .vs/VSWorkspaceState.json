@@ -1,8 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\functions"
+    "\\assets",
+    "\\assets\\css",
+    "\\assets\\css\\media",
+    "\\assets\\css\\media\\responsive",
+    "\\functions",
+    "\\functions\\customizer",
+    "\\template",
+    "\\template-parts",
+    "\\template-parts\\index",
+    "\\template-parts\\partner"
   ],
-  "SelectedNode": "\\searchform.php",
+  "SelectedNode": "\\assets\\css\\media\\responsive\\max-960.css",
   "PreviewInSolutionExplorer": false
 }
