@@ -120,6 +120,13 @@
         background-image: none !important;
     }
 
+    .cookies button.btn:not(.not) {
+        padding: 0.825em 2.5em 0.525em 3.75em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden
+    }
+
     .head-contact-social li {
         width: 30px;
         height:100%

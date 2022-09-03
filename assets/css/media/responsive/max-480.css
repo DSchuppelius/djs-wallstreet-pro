@@ -26,8 +26,8 @@ body {
 }
 
 .page-title-col h1 {
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 25px;
+    line-height: 30px;
 }
 
 .blog-post-title.flex_stretch{
@@ -67,6 +67,11 @@ body {
 /*Flexslider--------------------------*/
 .page-mycarousel {
     margin-bottom: 80px;
+}
+
+.blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
+    font-size: 25px;
+    line-height: 30px;
 }
 
 .flex-slider-center {
