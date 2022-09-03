@@ -454,6 +454,10 @@ body {
     .portfolio-detail-pagi .button.btn {
         min-width: 130px;
     }
+
+    .cookies button.btn:not(.not) {
+        max-width: 120px;
+    }
 }
 
 
