@@ -456,6 +456,7 @@ body {
     }
 
     .cookies button.btn:not(.not) {
+        max-width: 150px;
         min-width: 120px
     }
 }
