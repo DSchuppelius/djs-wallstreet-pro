@@ -20,7 +20,7 @@
         getInfo:function ramboshortcodes() {
             return {
                 longname:'Insert Shortcode',
-                author:'Daniel Jörg Schuppelius',
+                author:'Daniel JÃ¶rg Schuppelius',
                 authorurl:'https://schuppelius.org',
                 infourl:'https://schuppelius.org',
                 version:tinymce.majorVersion + "." + tinymce.minorVersion

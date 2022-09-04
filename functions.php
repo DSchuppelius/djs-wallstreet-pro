@@ -44,8 +44,8 @@ require_once THEME_FUNCTIONS_PATH . "/basic/htmlclasses.php";
 
 // Sidebar Widgets
 require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-latest-widget.php";
-// Webriti shortcodes
-require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php"; //for shortcodes
+// Shortcodes
+require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
 
 // Customizer
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-blog.php";
