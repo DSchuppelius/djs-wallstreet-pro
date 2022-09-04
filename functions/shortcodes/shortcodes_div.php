@@ -36,7 +36,7 @@ add_shortcode('div', 'theme_shortcode_div');
 function theme_shortcode_end_div() {
     return '</div>';
 }
-add_shortcode( 'end_div', 'theme_shortcode_end_div' );
+add_shortcode('end_div', 'theme_shortcode_end_div');
 
 function theme_shortcode_row($params, $content = null) {
     extract(shortcode_atts([
@@ -58,9 +58,42 @@ function column_shortcode($atts, $content = null) {
         "size" => "col-md-6",
         //'position' =>'first'
     ], $atts));
-    $atts = shortcode_atts(["offset" => "", "size" => "col-md-6"], $atts);
+    $atts = shortcode_atts([
+        "offset" => "",
+        "size" => "col-md-6"
+    ], $atts);
     $result = '<div class="' . $size . '"><p>' . do_shortcode($content) . "</p></div>";
 
     return $result;
 }
 add_shortcode("column", "column_shortcode");
+
+// [paypal_donation button_id="XXXXXXX" img_src="https://..."]
+function paypal_donation_shortcode($atts, $content = null) {
+    extract(shortcode_atts([
+        "button_id" => "",
+        "img_src" => "",
+    ], $atts));
+    $atts = shortcode_atts(["offset" => "", "size" => "col-md-6"], $atts);
+    $result =
+        '<div id="donate-button-container" style="background-color: snow; border-radius: 4px; margin-top:-40px;"><center><p></p>
+            <div id="donate-button"></div>
+            <p><script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                    PayPal.Donation.Button({
+                        env:\'production\',
+                        hosted_button_id:\'' . $button_id . '\',
+                        image: {
+                            src:\'' . $img_src . '\',
+                            alt:\'Donate with PayPal button\',
+                            title:\'PayPal - The safer, easier way to pay online!\',
+                        }
+                    }).render(\'#donate-button\');
+                </script>
+            </p>
+            <p></p>
+        <p></p></center></div>';
+
+    return $result;
+}
+add_shortcode("paypal_donation", "paypal_donation_shortcode");
