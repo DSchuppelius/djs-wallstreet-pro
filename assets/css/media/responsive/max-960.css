@@ -5,20 +5,18 @@
         margin-bottom: 80px;
     }
 
-    header.navbar.navbar-fixed-top {
-        border-bottom: none
-    }
-
-    .navbar-wrapper {
-        position: relative !important;
-    }
-
     .navbar .navbar-nav > li > a {
         padding: 25px 19px;
     }
 
     .navbar-inverse {
         background-color: #2a2c33;
+    }
+}
+
+@media (max-width: 782px){
+    .body-fixed-top.admin-bar .navbar-fixed-top {
+        top: 46px;
     }
 }
 
@@ -285,6 +283,14 @@
 
     .blog-post-meta a {
         padding: 5px 0px 5px 0px;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .navbar .container{
+        margin: auto 0;
     }
 
     .page-title-col {

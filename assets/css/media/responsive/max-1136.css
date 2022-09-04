@@ -1,8 +1,4 @@
 @media (max-width: 1100px) {
-    body.fixed_Header .navbar.navbar-fixed-top, body.fixed_Header .navbar.navbar-static-top {
-        background-color: #2a2c33;
-    }
-
     .nav li.menu-item a:hover, .nav li.menu-item.active a {
         box-shadow: none;
     }

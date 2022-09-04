@@ -180,7 +180,7 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
     <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="-1">		
         <div class="flexslider">
             <div class="flex-viewport">
-                <?php $count_posts = wp_count_posts("slider")->publish;
+                <?php $count_posts = wp_count_posts(SLIDER_POST_TYPE)->publish;
                 $args = [
                     "post_type" => SLIDER_POST_TYPE,
                     "posts_per_page" => $count_posts,

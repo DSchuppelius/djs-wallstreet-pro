@@ -1930,6 +1930,16 @@ footer.site {
     padding: 70px 0 0
 }
 
+.homepage_mycarousel .flexslider {
+    overflow: hidden;
+    border: none;
+    margin: 0
+}
+
+.homepage_mycarousel .flex-control-nav {
+    bottom: 30px;
+}
+
 .home-portfolio-area {
     margin-bottom: 50px
 }
@@ -2386,45 +2396,50 @@ div.collapsing ul.nav {
     overflow: hidden;
 }
 
-.navbar .header-module {
-    padding: 39px 0 39px 16px;
-    vertical-align: middle;
-    position: relative;
-    top: 50%
+.navbar {
+    display: flex;
+    align-items: center
 }
 
-.navbar .header-module {
-    padding: 39px 0 39px 16px;
-    vertical-align: middle;
-    position: relative;
-    top: 50%
-}
-
-.navbar .search-box-outer {
-    margin-right: 0;
-    display: inline-block;
-    position: relative;
-    top: 0;
-    padding: 0 6px 0 0
-}
-
-.navbar .search-box-outer {
-    margin-right: 0;
-    display: inline-block;
-    position: relative;
-    top: 0;
-    padding: 0 6px 0 0
-}
-
-    .navbar .search-box-outer .dropdown-menu, .index2 .search-box-outer .dropdown-menu {
-        top: 30px !important;
-        right: 0;
-        padding: 0;
-        left: auto;
-        width: 430px !important;
-        margin: 0 !important;
-        border-radius: 5px
+    .navbar .header-module {
+        padding: 39px 0 39px 16px;
+        vertical-align: middle;
+        position: relative;
+        top: 50%
     }
+
+    .navbar .header-module {
+        padding: 39px 0 39px 16px;
+        vertical-align: middle;
+        position: relative;
+        top: 50%
+    }
+
+    .navbar .search-box-outer {
+        margin-right: 0;
+        display: inline-block;
+        position: relative;
+        top: 0;
+        padding: 0 6px 0 0
+    }
+
+    .navbar .search-box-outer {
+        margin-right: 0;
+        display: inline-block;
+        position: relative;
+        top: 0;
+        padding: 0 6px 0 0
+    }
+
+        .navbar .search-box-outer .dropdown-menu, .index2 .search-box-outer .dropdown-menu {
+            top: 30px !important;
+            right: 0;
+            padding: 0;
+            left: auto;
+            width: 430px !important;
+            margin: 0 !important;
+            border-radius: 5px
+        }
 
 .navbar-brand {
     padding: 25px 15px 25px 0
@@ -2627,24 +2642,18 @@ div.collapsing ul.nav {
 }
 
 .navbar1 .navbar-brand {
-    padding: 11px 0;
-    display: inline-block
-}
-
-.navbar1 .navbar-brand {
-    padding: 11px 0;
     display: inline-block
 }
 
 .navbar1 .navbar-header {
-    display: inline-block;
-    padding: 14px 15px 14px 0
+    display: flex;
+    align-content: center
 }
 
-.navbar1 .navbar-header {
-    display: inline-block;
-    padding: 14px 15px 14px 0
-}
+    .navbar1 .navbar-header a, .navbar1 .navbar-header button {
+        align-items: center;
+        justify-content: space-between
+    }
 
 .navbar1 .site-branding-text .site-description {
     margin-bottom: 0

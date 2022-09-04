@@ -20,6 +20,8 @@
 
 .navbar > .container .navbar-brand {
     margin-left: 0px;
+    height: 100%;
+    display: flex;
     position: absolute
 }
 
@@ -29,7 +31,7 @@
     font-size: 40px;
     height: auto;
     line-height: 40px;
-    padding: 22.5px 15px 22.5px 0px;
+    padding: 0;
     margin-right: 50px;
 }
 

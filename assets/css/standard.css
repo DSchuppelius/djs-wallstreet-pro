@@ -40,6 +40,11 @@ body.error404 .container.error .row .col-md-12 {
 body.error404 .error_404 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), 1px -1px 1px rgba(0, 0, 0, 0.6), -1px 1px 1px rgba(0, 0, 0, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.6);
 }
+
+.body-fixed-top.admin-bar .navbar-fixed-top {
+    top: 32px;
+}
+
 /*Homepage Flex Slider Section----------------------------------------------------------------*/
 .homepage_mycarousel {
     border-bottom: var(--border-base) solid rgb(0,0,0);
@@ -51,7 +56,7 @@ body.error404 .error_404 {
     border-bottom-left-radius: 50% var(--main-slider-radius);
 }
 
-    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .page-mycarousel img {
+    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .homepage_mycarousel img, .page-mycarousel img {
         border-bottom-right-radius: 50% var(--sub-slider-radius);
         border-bottom-left-radius: 50% var(--sub-slider-radius);
     }

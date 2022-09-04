@@ -1,5 +1,5 @@
 @media (max-width: 1300px) {
-    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .page-mycarousel img, .homepage_mycarousel, .page-mycarousel {
+    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .homepage_mycarousel img, .page-mycarousel img, .homepage_mycarousel, .page-mycarousel {
         border-radius: 0;
     }
 
@@ -26,9 +26,13 @@
         padding: 40px 10px;
     }
 
+    .body-fixed-top .navbar .navbar-nav > li > a {
+        padding: 20px 10px;
+    }
+
     body .body-fixed-top .page-mycarousel, body.custom-positions.body-fixed-top .page-mycarousel {
         top: 100px;
-        margin-bottom: 180px;
+        margin-bottom: 180px !important;
     }
 
     ul.dropdown-menu > li > a {
@@ -118,6 +122,11 @@
     body.custom-background,
     #page_fader {
         background-image: none !important;
+    }
+
+    body.fixed_Header .navbar.navbar-fixed-top {
+        height: 60px;
+        min-height: 60px;
     }
 
     .cookies button.btn:not(.not) {

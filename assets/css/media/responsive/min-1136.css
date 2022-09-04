@@ -14,14 +14,6 @@
             margin-top: -22px;
         }
 
-    #wpadminbar.navbar-fixed-top {
-        height: 0px;
-    }
-
-    #wpadminbar.navbar-static-top {
-        height: 32px;
-    }
-
     .navbar.navbar-fixed-top .navbar-nav > li > a {
         line-height: 15px;
         padding: 20px 19px;
@@ -34,7 +26,6 @@
 
     .navbar-fixed-top .navbar-brand,
     .navbar-fixed-top .wallstreet_title_head {
-        margin-top: -24px;
         height: auto;
         font-size: 30px;
         line-height: 20px;
