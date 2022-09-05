@@ -38,10 +38,10 @@ function theme_shortcode_end_div() {
 }
 add_shortcode('end_div', 'theme_shortcode_end_div');
 
-function theme_shortcode_row($params, $content = null) {
+function theme_shortcode_row($atts, $content = null) {
     extract(shortcode_atts([
         "class" => "",
-    ], $params));
+    ], $atts));
     $result = '<div class="row">';
     $content = str_replace("]<br />", "]", $content);
     $content = str_replace("<br />\n[", "[", $content);
@@ -56,12 +56,7 @@ function column_shortcode($atts, $content = null) {
     extract(shortcode_atts([
         "offset" => "",
         "size" => "col-md-6",
-        //'position' =>'first'
     ], $atts));
-    $atts = shortcode_atts([
-        "offset" => "",
-        "size" => "col-md-6"
-    ], $atts);
     $result = '<div class="' . $size . '"><p>' . do_shortcode($content) . "</p></div>";
 
     return $result;
@@ -74,9 +69,8 @@ function paypal_donation_shortcode($atts, $content = null) {
         "button_id" => "",
         "img_src" => "",
     ], $atts));
-    $atts = shortcode_atts(["offset" => "", "size" => "col-md-6"], $atts);
     $result =
-        '<div id="donate-button-container" style="background-color: snow; border-radius: 4px; margin-top:-40px;"><center><p></p>
+        '<div id="donate-button-container" style="background-color: snow; border-radius: 4px;"><center><p></p>
             <div id="donate-button"></div>
             <p><script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
                 <script>
