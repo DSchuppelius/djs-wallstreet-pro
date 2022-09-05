@@ -28,8 +28,8 @@ if (class_exists("WP_Customize_Control")) {
          * Enqueue our scripts and styles
          */
         public function enqueue() {
-            wp_enqueue_script("wallstreet-custom-controls-js", $this->get_busiprof_resource_url() . "inc/customizer/customizer-slider/js/customizer.js", ["jquery", "jquery-ui-core"], "1.0", true);
-            wp_enqueue_style("wallstreet-custom-controls-css", $this->get_busiprof_resource_url() . "inc/customizer/customizer-slider/css/customizer.css", [], "1.0", "all");
+            wp_enqueue_script("wallstreet-custom-controls-js", THEME_ASSETS_PATH_URI . "/customizer/slider/js/customizer.js", ["jquery", "jquery-ui-core"], "1.0", true);
+            wp_enqueue_style("wallstreet-custom-controls-css", THEME_ASSETS_PATH_URI . "/customizer/slider/css/customizer.css", [], "1.0", "all");
         }
         /**
          * Render the control in the customizer

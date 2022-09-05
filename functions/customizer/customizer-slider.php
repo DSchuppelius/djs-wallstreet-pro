@@ -7,6 +7,8 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+require_once "customizer-controls.php";
+
 function slider_customizer($wp_customize) {
     //slider Section
     $wp_customize->add_panel("slider_setting", [

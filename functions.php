@@ -71,7 +71,6 @@ require_once THEME_FUNCTIONS_PATH . "/customizer/single-blog-options.php";
 
 require_once THEME_ASSETS_PATH . "/css/custom_dark.php";
 require_once THEME_ASSETS_PATH . "/css/custom_light.php";
-require_once TEMPLATE_DIR . "/inc/customizer/customizer-slider/customizer-slider.php";
 
 // Title
 function theme_head($title, $sep) {
@@ -182,13 +181,6 @@ function kb_mimes($my_mime){
     return $my_mime;
 }
 add_filter( 'upload_mimes', 'kb_mimes' );
-
-if (!function_exists("busiprof_customizer_preview_scripts")) {
-    function busiprof_customizer_preview_scripts() {
-        wp_enqueue_script("honeypress-customizer-preview", trailingslashit(get_template_directory_uri()) . "inc/customizer/customizer-slider/js/customizer-preview.js", ["customize-preview", "jquery"]);
-    }
-}
-add_action("customize_preview_init", "busiprof_customizer_preview_scripts");
 
 // Read more tag to formatting in blog page
 function new_content_more($more) {

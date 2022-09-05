@@ -122,4 +122,11 @@ function footer_custom_script() {
     }
 }
 add_action("wp_footer", "footer_custom_script");
+
+if (!function_exists("busiprof_customizer_preview_scripts")) {
+    function busiprof_customizer_preview_scripts() {
+        wp_enqueue_script("bp-customizer-preview",  THEME_ASSETS_PATH_URI . "/customizer/slider/js/customizer-preview.js", ["customize-preview", "jquery"]);
+    }
+}
+add_action("customize_preview_init", "busiprof_customizer_preview_scripts");
 ?>
