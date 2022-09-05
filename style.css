@@ -2647,6 +2647,7 @@ div.collapsing ul.nav {
 
 .navbar1 .navbar-header {
     display: flex;
+    align-items: center;
     align-content: center
 }
 

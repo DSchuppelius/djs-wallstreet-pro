@@ -84,7 +84,7 @@ function wallstreet_header_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[contact_header_contact_settings]", [
-        "default" => "+1-800-123-789",
+        "default" => "+49-123-456-78-901",
         "type" => "option",
     ]);
 
@@ -96,7 +96,7 @@ function wallstreet_header_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[contact_header_email_settings]", [
-        "default" => "info@webriti.com",
+        "default" => "info@schuppelius.org",
         "type" => "option",
     ]);
 

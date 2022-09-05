@@ -18,11 +18,19 @@
         color: #ffffff;
     }
 
-.navbar > .container .navbar-brand {
+.navbar > .container .navbar-brand.noText {
     margin-left: 0px;
     height: 100%;
     display: flex;
     position: absolute
+}
+
+.navbar > .container .navbar-brand.withText ~ .site-branding-text .navbar-brand {
+    margin-left: 0
+}
+
+.navbar > .container .noLogo .navbar-brand {
+    position: relative
 }
 
 .navbar-brand {

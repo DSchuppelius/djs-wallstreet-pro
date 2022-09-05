@@ -4,14 +4,14 @@
     "\\assets",
     "\\assets\\css",
     "\\assets\\css\\media",
-    "\\assets\\css\\media\\responsive",
     "\\functions",
-    "\\functions\\customizer",
-    "\\template",
+    "\\functions\\post-type",
+    "\\inc",
+    "\\inc\\customizer",
+    "\\inc\\customizer\\customizer-slider",
     "\\template-parts",
-    "\\template-parts\\index",
-    "\\template-parts\\partner"
+    "\\template-parts\\index"
   ],
-  "SelectedNode": "\\assets\\css\\media\\responsive\\max-960.css",
+  "SelectedNode": "\\assets\\css\\media\\responsive\\max-1366.css",
   "PreviewInSolutionExplorer": false
 }

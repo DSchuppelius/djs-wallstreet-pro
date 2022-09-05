@@ -9,10 +9,7 @@
  */
 function theme_data_setup() {
     return [
-        //Logo and Fevicon header
-        "upload_image_logo" => "",
-        "height" => "50",
-        "width" => "250",
+        //Logo and favicon header
         "upload_image_favicon" => "",
         "stylesheet" => "default.css",
         "google_analytics" => "",
@@ -180,7 +177,7 @@ function theme_data_setup() {
         "contact_google_map_title" => __("Location map", "wallstreet"),
         "contact_google_map_url" => "https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538",
 
-        "contact_header_contact_settings" => "+1-800-123-789",
+        "contact_header_contact_settings" => "+49-123-456-78-901",
         "contact_header_email_settings" => "info@schuppelius.org",
         "contact_address_settings" => "on",
         "contact_address_icon" => "fa-map-marker",
