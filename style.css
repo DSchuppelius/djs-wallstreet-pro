@@ -2441,6 +2441,12 @@ div.collapsing ul.nav {
             border-radius: 5px
         }
 
+    .navbar.navbar-wrapper .container > .navbar-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 .navbar-brand {
     padding: 25px 15px 25px 0
 }

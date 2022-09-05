@@ -208,6 +208,10 @@ body {
         margin: 0 auto;
     }
 
+.navbar.navbar-wrapper .container > .navbar-header {
+    display: block;
+}
+
 .btn.navbar-toggle {
     float: none;
     padding: 8px 8px;
