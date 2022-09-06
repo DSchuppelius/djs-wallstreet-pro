@@ -7,8 +7,11 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
-				<!-- Footer Widget Secton -->
+global $loaded_banner;
+
+$current_options = get_current_options();
+
+if ($loaded_banner){ ?></div><?php } ?>
 				<footer class="site<?php if ($current_options["fixedfooter_enabled"]) { echo " fixed"; } ?>">
 					<i class="show-me fa fa-info-circle fa-4x"></i>
 					<?php if ($current_options["footer_social_media_enabled"] == true) { ?>

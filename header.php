@@ -99,10 +99,10 @@
         <div id="wall_wrapper">	
             <!--Header Top Layer Section-->
             <?php if (!$current_options["fixedheader_enabled"]) { ?>
-                <div class="rellax" data-rellax-speed="-3">
+                <div class="rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_header"]; ?>">
             <?php } ?>
             <?php if ($current_options["header_social_media_enabled"] == true || $current_options["contact_header_settings"] == "on") { ?>
-                <div class="header-top-area rellax" data-rellax-speed="-5">
+                <div class="header-top-area rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_social_contact_header"]; ?>">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">

@@ -3495,6 +3495,15 @@ div.collapsing ul.nav {
         z-index: 100000
     }
 
+.search .row.bigborder .col-md-8 #searchform {
+    margin: 10px 0;
+}
+
+.search .row .col-md-8 #searchform {
+    margin: 20px 0;
+    padding: 0px 15px 20px 15px
+}
+
 .search-box-outer .dropdown-menu > li {
     padding: 12px 8px 7px;
     border: none

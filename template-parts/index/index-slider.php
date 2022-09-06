@@ -177,7 +177,7 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
 <noscript><style>.flexslider .slides > li.first{ display: block; -webkit-backface-visibility: unset; }</style></noscript>
 <!-- /Slider Section -->
 <?php if ($current_options["home_slider_enabled"] == true && $current_options["slidertype"] == "base") { ?>
-    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="-1">		
+    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_slider"]; ?>">		
         <div class="flexslider">
             <div class="flex-viewport">
                 <?php $count_posts = wp_count_posts(SLIDER_POST_TYPE)->publish;
@@ -252,7 +252,7 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
         </div>  
     </div>
 <?php } elseif ($current_options["home_slider_enabled"] == true && $current_options["slidertype"] == "revolution" && function_exists("add_revslider")) { ?>
-    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="-1">		
+    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_slider"]; ?>">		
         <?php add_revslider($current_options["revolutionslidername"]); ?>
     </div>
 <?php } else { ?>
