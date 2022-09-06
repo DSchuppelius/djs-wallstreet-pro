@@ -38,6 +38,10 @@
         margin-right: 50px
     }
 
+    .navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
+        position: absolute;
+    }
+
     .navbar-header .site-logo-area.with-Logo.with-Text .navbar-brand {
         margin-right: 10px
     }
