@@ -262,6 +262,10 @@
         padding: 0 50px;
     }
 
+    .page_fader.logo .site-logo-area {
+        padding-bottom: 5px
+    }
+
     .page_fader.logo .site-logo-area.with-Logo.with-Text > .navbar-brand {
         margin-bottom: -15px
     }

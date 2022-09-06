@@ -3,15 +3,12 @@
     "",
     "\\assets",
     "\\assets\\css",
-    "\\assets\\css\\media",
     "\\functions",
     "\\functions\\post-type",
-    "\\inc",
-    "\\inc\\customizer",
-    "\\inc\\customizer\\customizer-slider",
     "\\template-parts",
+    "\\template-parts\\global",
+    "\\template-parts\\global\\header",
     "\\template-parts\\index"
   ],
-  "SelectedNode": "\\assets\\css\\media\\responsive\\max-1366.css",
   "PreviewInSolutionExplorer": false
 }
