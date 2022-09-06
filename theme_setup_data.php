@@ -26,6 +26,12 @@ function theme_data_setup() {
         "parallaxbackground_enabled" => false,
         "breadcrumbposition" => "0",
         "contentposition" => "0",
+        // Relax Speeds
+        "data_rellax_speed_social_contact_header" => 0,
+        "data_rellax_speed_header" => 0,
+        "data_rellax_speed_slider" => 0,
+        "data_rellax_speed_breadcrumbs" => 0,
+        "data_rellax_speed_banner" => 0,
         //Scroll to top
         "scroll_to_top_enabled" => true,
         //Slide

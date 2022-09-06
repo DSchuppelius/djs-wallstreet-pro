@@ -1,7 +1,7 @@
 <?php
 /*
  * Created on   : Wed Jun 22 2022
- * Author       : Daniel Jörg Schuppelius
+ * Author       : Daniel JÃ¶rg Schuppelius
  * Author Uri   : https://schuppelius.org
  * Filename     : archive.php
  * License      : GNU General Public License v3 or later

@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-function wallstreet_scroll_to_top_customizer($wp_customize) {
+function wallstreet_global_customizer($wp_customize) {
     //Scroll To Top Section
     $wp_customize->add_section("themeoptions_section_settings", [
         "title" => __("Global theme options", "wallstreet"),
@@ -182,8 +182,99 @@ function wallstreet_scroll_to_top_customizer($wp_customize) {
         "priority" => 600,
         "sanitize_callback" => "sanitize_text_field",
     ]);
+
+    //rellax
+    $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_social_contact_header]", [
+        "default" => __("0", "wallstreet"),
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[data_rellax_speed_social_contact_header]", [
+        "label" => __("Rellax Speed (Social Contact Header)", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "number",
+        "input_attrs" => [
+            "min" => "-5",
+            "step" => "1",
+            "max" => "20",
+        ],
+        "priority" => 650,
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_header]", [
+        "default" => __("0", "wallstreet"),
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[data_rellax_speed_header]", [
+        "label" => __("Rellax Speed (Header)", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "number",
+        "input_attrs" => [
+            "min" => "-5",
+            "step" => "1",
+            "max" => "20",
+        ],
+        "priority" => 650,
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_slider]", [
+        "default" => __("0", "wallstreet"),
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[data_rellax_speed_slider]", [
+        "label" => __("Rellax Speed (Homepage Slider)", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "number",
+        "input_attrs" => [
+            "min" => "-5",
+            "step" => "1",
+            "max" => "20",
+        ],
+        "priority" => 650,
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_breadcrumbs]", [
+        "default" => __("0", "wallstreet"),
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[data_rellax_speed_breadcrumbs]", [
+        "label" => __("Rellax Speed (Breadcrumbs)", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "number",
+        "input_attrs" => [
+            "min" => "-5",
+            "step" => "1",
+            "max" => "20",
+        ],
+        "priority" => 650,
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_banner]", [
+        "default" => __("0", "wallstreet"),
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[data_rellax_speed_banner]", [
+        "label" => __("Rellax Speed (Site Banner)", "wallstreet"),
+        "section" => "themeoptions_section_settings",
+        "type" => "number",
+        "input_attrs" => [
+            "min" => "0",
+            "step" => "1",
+            "max" => "10",
+        ],
+        "priority" => 650,
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
 }
-add_action("customize_register", "wallstreet_scroll_to_top_customizer");
+add_action("customize_register", "wallstreet_global_customizer");
 
 function wallstrett_checkbox() {
     echo '<input name="wporg_setting_name" id="wporg_setting_name" type="checkbox" value="1" class="code" ' . checked(1, get_option("wporg_setting_name"), false) . ' /> <label for="wporg_setting_name">Explanation text</label>';

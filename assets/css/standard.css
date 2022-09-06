@@ -397,7 +397,8 @@ div.container.blog-left-sidebar div.row.bigborder div.col-md-8 div.blog-paginati
 div.container div.row div.col-md-8 div.blog-detail-section,
 div.container div.row div.col-md-8 div.blog-section-left.first,
 div.container div.row div.col-md-8 div.blog-list-view .first,
-div.container div.row div.col-md-8 .search_heading {
+div.container div.row div.col-md-8 .search_heading,
+div.container div.row div.col-md-8 .search_error {
     border-top-left-radius: var(--border-smallbase);
 }
 
@@ -468,7 +469,8 @@ div.container.attachment div.row.attachment-section div.col-md-8 div.blog-detail
 
 div.container div.row.bigborder div.col-md-8 div.blog-detail-section,
 div.container div.row.bigborder div.col-md-8 div.blog-section-left.first,
-div.container div.row.bigborder div.col-md-8 .search_heading {
+div.container div.row.bigborder div.col-md-8 .search_heading,
+div.container div.row.bigborder div.col-md-8 .search_error {
     border-top-left-radius: var(--border-verysmallbase);
 }
 

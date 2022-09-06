@@ -25,7 +25,6 @@ the_post();
         </div>
     <?php } ?>
     <div class="row <?php row_Frame_Border(""); ?> about-section text flexstretch">
-
 		<div class="col-md-8 flexcolumn">
 			<?php get_template_part("template-parts/content/content", "about"); //the_content(); ?>	
 			<?php if ($current_options["about_social_media_enabled"] == true) { ?>

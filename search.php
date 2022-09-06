@@ -19,13 +19,12 @@ $theme_blog_section = "blog-section-left";
 
 <!-- Blog & Sidebar Section -->
 <div class="container search">
-	<div class="row rellax <?php row_Frame_Border(""); ?> flexstretch" data-rellax-speed="4">
+	<div class="row <?php row_Frame_Border(""); ?> flexstretch">
 		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
 			<?php if (have_posts()) { ?>
 				<h1 class="search_heading">
 					<?php printf(__("Search results for: %s", "wallstreet"), '<span>"' . get_search_query() . '"</span>'); ?>
 				</h1>
-				$only_one_post = ;
 				<?php while (have_posts()) {
                     the_post();
                     get_template_part("template-parts/content/content", get_theme_mod("display_excerpt_or_full_post", "excerpt"));

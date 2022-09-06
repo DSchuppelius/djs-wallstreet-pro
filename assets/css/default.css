@@ -1170,6 +1170,11 @@ footer.site {
         color: #21759b
     }
 
+.search .row .col-md-8 #searchform {
+    background-color: rgba(55,57,65,0.8);
+    color: #21759b
+}
+
 .search-box-outer .bg-light {
     background-color: transparent !important
 }

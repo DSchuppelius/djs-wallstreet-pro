@@ -7,8 +7,9 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
-<!-- Page Title Section -->
+$current_options = get_current_options();
+global $loaded_banner;
+$loaded_banner = true; ?>
 
 <div class="page-mycarousel">
 	<?php $header_img = wp_get_attachment_image_url(attachment_url_to_postid(get_header_image()), "banner-thumb");
@@ -86,4 +87,4 @@ $current_options = get_current_options(); ?>
 	</div>
 	<?php get_template_part("template-parts/global/breadcrumb"); ?>
 </div>
-<!-- /Page Title Section -->
+<div class="site rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_banner"]; ?>">

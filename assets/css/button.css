@@ -196,8 +196,8 @@ a.comment-reply-link {
     }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline button.wp-block-button__link {
-    right: 0px;
-    margin: 2px 2px 0 0;
+    right: 20px;
+    margin: 2px 2px 0 0 !important;
     padding: 0.8em 0.5em 0.4em 2.75em !important;
     border-top-right-radius: 2px !important;
     border-bottom-right-radius: 2px !important;
