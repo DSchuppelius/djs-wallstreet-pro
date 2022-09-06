@@ -18,36 +18,43 @@
         color: #ffffff;
     }
 
-.navbar > .container .navbar-brand.noText {
-    margin-left: 0px;
-    height: 100%;
+
+.navbar-header .site-logo-area {
     display: flex;
-    position: relative
+    flex-direction: row;
+    flex: 1 1 300px;
 }
 
-.navbar > .container .navbar-brand.withText ~ .site-branding-text .navbar-brand {
-    margin-left: 0
-}
+    .navbar-header .site-logo-area .navbar-brand {
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 40px;
+        height: auto;
+        line-height: 40px;
+        padding: 0;
+    }
 
-.navbar > .container .noLogo .navbar-brand {
-    position: relative
-}
+    .navbar-header .site-logo-area.no-Text .navbar-brand {
+        margin-right: 50px
+    }
 
-.navbar-brand {
-    font-family: 'SiteFont';
-    font-weight: 400;
-    font-size: 40px;
-    height: auto;
-    line-height: 40px;
-    padding: 0;
-    margin-right: 50px;
-}
+    .navbar-header .site-logo-area.with-Logo.with-Text .navbar-brand {
+        margin-right: 10px
+    }
+
+    .navbar-header .site-logo-area.with-Logo .site-title .navbar-brand {
+        margin-left: 0
+    }
 
 .navbar {
     border-radius: 0px;
     margin-bottom: 0px;
     min-height: 100px;
 }
+
+    .navbar > .container .navbar-brand {
+        margin-left: 0
+    }
 
     .navbar .navbar-nav > .active > a,
     .navbar .navbar-nav > .active > a:hover,
@@ -171,13 +178,4 @@
 .navbar-right .dropdown-menu {
     left: 0;
     right: 0;
-}
-
-.withLogo {
-    margin-right: 10px;
-}
-
-.withText {
-    margin-right: 0px;
-    float: none
 }

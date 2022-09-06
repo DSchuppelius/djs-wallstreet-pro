@@ -2441,13 +2441,8 @@ div.collapsing ul.nav {
             border-radius: 5px
         }
 
-    .navbar.navbar-wrapper .container > .navbar-header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-
 .navbar-brand {
+    width: max-content;
     padding: 25px 15px 25px 0
 }
 
@@ -2455,22 +2450,10 @@ div.collapsing ul.nav {
     float: none
 }
 
-.navbar-header.index2 {
-    float: none
-}
-
     .navbar-header.index2 .contact-social.right {
         float: right
     }
 
-    .navbar-header.index2 .contact-social.right {
-        float: right
-    }
-
-    .navbar-header.index2 .head-contact-social li {
-        border-left: none;
-        border-radius: 50%
-    }
 
     .navbar-header.index2 .head-contact-social li {
         border-left: none;
@@ -2481,31 +2464,17 @@ div.collapsing ul.nav {
             border-right: none
         }
 
-        .navbar-header.index2 .head-contact-social li:last-child {
-            border-right: none
-        }
 
     .navbar-header.index2 .site-branding-text .navbar-brand {
         padding: 11px 0;
         margin-right: 0
     }
 
-    .navbar-header.index2 .site-branding-text .navbar-brand {
-        padding: 11px 0;
-        margin-right: 0
-    }
 
     .navbar-header.index2 .site-description {
         margin: 4px 0 10px
     }
 
-    .navbar-header.index2 .site-description {
-        margin: 4px 0 10px
-    }
-
-    .navbar-header.index2 .site-title {
-        margin: 0
-    }
 
     .navbar-header.index2 .site-title {
         margin: 0
@@ -2516,19 +2485,6 @@ div.collapsing ul.nav {
     float: none;
     padding: 17px 15px 17px 0
 }
-
-.navbar-header.index3 {
-    text-align: center;
-    float: none;
-    padding: 17px 15px 17px 0
-}
-
-    .navbar-header.index3 .navbar-brand {
-        display: inline-block;
-        float: none;
-        margin-right: 0;
-        padding: 7px 0 0
-    }
 
     .navbar-header.index3 .navbar-brand {
         display: inline-block;
@@ -2543,15 +2499,6 @@ div.collapsing ul.nav {
 
 .navbar-nav.sm-collapsible .search-box-outer .has-submenu {
     padding-right: 0
-}
-
-.navbar.navbar2 {
-    border: none;
-    padding: 0;
-    position: relative;
-    min-height: 40px;
-    margin-top: 0;
-    margin-bottom: 0
 }
 
 .navbar.navbar2 {
@@ -2583,15 +2530,6 @@ div.collapsing ul.nav {
         left: 0
     }
 
-    .navbar.navbar2 .navbar-nav > li.active > a:after, .navbar2 ul li > a:hover:after {
-        width: 100%;
-        left: 0
-    }
-
-.navbar.navbar3 {
-    min-height: auto
-}
-
 .navbar.navbar3 {
     min-height: auto
 }
@@ -2602,22 +2540,9 @@ div.collapsing ul.nav {
     position: relative
 }
 
-.navbar.navbar4 {
-    padding: 14px 0;
-    border-top: 1px solid rgba(0,0,0,0.6);
-    position: relative
-}
 
     .navbar.navbar4 .header-module {
         padding: 12px 0 12px 16px
-    }
-
-    .navbar.navbar4 .header-module {
-        padding: 12px 0 12px 16px
-    }
-
-    .navbar.navbar4 .navbar-nav > li > a {
-        padding: 12px 19px
     }
 
     .navbar.navbar4 .navbar-nav > li > a {
@@ -2640,39 +2565,12 @@ div.collapsing ul.nav {
     padding: 4px 0 8px
 }
 
-.navbar1 .logo-link-url {
-    display: block;
-    clear: both;
-    float: left;
-    padding: 4px 0 8px
-}
-
 .navbar1 .navbar-brand {
     display: inline-block
 }
 
-.navbar1 .navbar-header {
-    display: flex;
-    align-items: center;
-    align-content: center
-}
-
-    .navbar1 .navbar-header a, .navbar1 .navbar-header button {
-        align-items: center;
-        justify-content: space-between
-    }
-
 .navbar1 .site-branding-text .site-description {
     margin-bottom: 0
-}
-
-.navbar1 .site-branding-text .site-description {
-    margin-bottom: 0
-}
-
-.navbar1 .site-branding-text .site-title {
-    margin: 0;
-    display: contents
 }
 
 .navbar1 .site-branding-text .site-title {
@@ -2684,20 +2582,6 @@ div.collapsing ul.nav {
     content: '\f107';
     position: absolute;
     right: 6px
-}
-
-.navbar2 li .dropdown-toggle::before {
-    content: '\f107';
-    position: absolute;
-    right: 6px
-}
-
-.navbar2 ul li > a:after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0;
-    margin-top: 2px
 }
 
 .navbar2 ul li > a:after {
@@ -2713,15 +2597,6 @@ div.collapsing ul.nav {
     float: right
 }
 
-.navbar3 .header-module {
-    float: right
-}
-
-.navbar4 .navbar-brand {
-    padding: 11px 0;
-    margin-right: 0
-}
-
 .navbar4 .navbar-brand {
     padding: 11px 0;
     margin-right: 0
@@ -2730,14 +2605,6 @@ div.collapsing ul.nav {
 .navbar4 .navbar-header {
     width: inherit
 }
-
-.navbar4 .navbar-header {
-    width: inherit
-}
-
-    .navbar4 .navbar-header .site-title {
-        margin: 0
-    }
 
     .navbar4 .navbar-header .site-title {
         margin: 0

@@ -11,14 +11,9 @@
     }
 
         body.fixed_Header .navbar.navbar-fixed-top .site-branding-text {
-            margin-top: -9px;
+            margin-top: 10px;
+            padding: 0
         }
-
-    .navbar.navbar-wrapper .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
     .navbar.navbar-fixed-top .navbar-nav > li > a {
         line-height: 15px;

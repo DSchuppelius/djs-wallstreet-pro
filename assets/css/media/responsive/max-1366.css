@@ -26,6 +26,15 @@
         padding: 40px 10px;
     }
 
+    .navbar-header .site-logo-area.with-Logo {
+        font-size: 12px;
+    }
+
+        .navbar-header .site-logo-area.with-Logo .site-title,
+        .navbar-header .site-logo-area.with-Logo .site-title .wallstreet_title_head {
+            font-size: 26px;
+        }
+
     .body-fixed-top .navbar .navbar-nav > li > a {
         padding: 20px 10px;
     }

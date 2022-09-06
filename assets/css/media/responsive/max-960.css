@@ -577,10 +577,6 @@
     .comment-section ul.children {
         padding-left: 0px;
     }
-
-    .navbar1 .site-branding-text .site-description {
-        margin-left: 15px;
-    }
 }
 
 @media (max-width: 625px) {

@@ -25,6 +25,23 @@
             float: left;
         }
 
+    .navbar.navbar-wrapper .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row
+    }
+
+        .navbar.navbar-wrapper .container > .navbar-header {
+            display: flex;
+            flex: 1 1 300px
+        }
+
+            .navbar.navbar-wrapper .container > .navbar-header a {
+                display: flex;
+                align-items: center
+            }
+
     .navbar2 .nav {
         padding: 7px 0;
     }

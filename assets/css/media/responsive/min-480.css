@@ -4,3 +4,10 @@
         display: inline-block;
     }
 }
+
+@media (min-width: 768px){
+    .navbar > .container .navbar-brand.noText,
+    .navbar > .container .navbar-brand.withText ~ .site-branding-text .navbar-brand {
+        margin-left: 0
+    }
+}

@@ -1156,11 +1156,19 @@ footer.site {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     background-color: rgba(55,57,65,0.6)
 }
-
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    color: #21759b
+.page_fader .site-branding-text{
+    color:#ddd
 }
+
+    .page_fader .site-branding-text .site-title,
+    .page_fader .site-branding-text .site-title a{
+        color: #fff
+    }
+
+    .screen-reader-text:focus {
+        background-color: #f1f1f1;
+        color: #21759b
+    }
 
 .search-box-outer .bg-light {
     background-color: transparent !important
