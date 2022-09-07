@@ -9,7 +9,6 @@
  */
 function slider_type() {
     $current_options = get_current_options();
-    $slider_slug = $current_options["slider_slug"];
 
     register_post_type(SLIDER_POST_TYPE, [
         "labels" => [
@@ -29,7 +28,7 @@ function slider_type() {
         "show_in_nav_menus" => false,
         "public" => true,
         "menu_position" => 20,
-        "rewrite" => ["slug" => $slider_slug],
+        "rewrite" => ["slug" => $current_options["slider_slug"]],
         "public" => true,
         "menu_icon" => THEME_ASSETS_PATH_URI . "/images/slider.png",
     ]);

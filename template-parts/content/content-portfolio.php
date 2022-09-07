@@ -8,12 +8,11 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 $current_options = get_current_options();
-$post_type = PORTFOLIO_POST_TYPE;
-$tax = PORTFOLIO_TAXONOMY;
+
 $term_args = ["hide_empty" => true, "orderby" => "id"];
 $posts_per_page = $current_options["portfolio_numbers_on_templates"];
-$tax_terms = get_terms($tax, $term_args);
-$defualt_tex_id = get_option("wallstreet_theme_default_term_id");
+$tax_terms = get_terms(PORTFOLIO_TAXONOMY, $term_args);
+$default_tax_id = get_option("wallstreet_theme_default_term_id");
 $j = 1;
 $tab = "";
 
@@ -77,7 +76,7 @@ if (isset($_GET["div"])) {
             if ($tax_terms) {
                 foreach ($tax_terms as $tax_term) {
                     $args = [
-                        "post_type" => $post_type,
+                        "post_type" => PORTFOLIO_POST_TYPE,
                         "post_status" => "publish",
                         PORTFOLIO_TAXONOMY => $tax_term->slug,
                         "posts_per_page" => $posts_per_page,

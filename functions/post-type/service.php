@@ -9,7 +9,6 @@
  */
 function service_type() {
     $current_options = get_current_options();
-    $service_slug = $current_options["service_slug"];
 
     register_post_type(SERVICE_POST_TYPE, [
         "labels" => [
@@ -27,7 +26,7 @@ function service_type() {
         "supports" => ["title", "thumbnail"],
         "show_in" => true,
         "show_in_nav_menus" => false,
-        "rewrite" => ["slug" => $service_slug],
+        "rewrite" => ["slug" => $current_options["service_slug"]],
         "public" => true,
         "menu_position" => 20,
         "public" => true,

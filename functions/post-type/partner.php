@@ -9,7 +9,6 @@
  */
 function partner_type() {
     $current_options = get_current_options();
-    $partner_slug = $current_options["partner_slug"];
 
     register_post_type(PARTNER_POST_TYPE, [
         "labels" => [
@@ -28,7 +27,7 @@ function partner_type() {
         "show_in" => true,
         "public" => true,
         "menu_position" => 20,
-        "rewrite" => ["slug" => $partner_slug],
+        "rewrite" => ["slug" => $current_options["partner_slug"]],
         "public" => true,
         "menu_icon" => THEME_ASSETS_PATH_URI . "/images/satisfied-clients.jpg",
     ]);

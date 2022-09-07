@@ -9,7 +9,6 @@
  */
 function testimonial_type() {
     $current_options = get_current_options();
-    $testimonial_slug = $current_options["testimonial_slug"];
 
     register_post_type(TESTIMONIAL_POST_TYPE, [
         "labels" => [
@@ -29,7 +28,7 @@ function testimonial_type() {
         "show_in_nav_menus" => false,
         "public" => true,
         "menu_position" => 20,
-        "rewrite" => ["slug" => $testimonial_slug],
+        "rewrite" => ["slug" => $current_options["testimonial_slug"]],
         "public" => true,
         "menu_icon" => THEME_ASSETS_PATH_URI . "/images/testimonial.png",
     ]);

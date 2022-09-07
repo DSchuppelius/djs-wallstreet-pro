@@ -111,4 +111,12 @@ function contains_page_templates($templates) {
     return false;
 }
 
+function show_rellax_div() {
+    global $loaded_banner;
+
+    if(!is_404() && $loaded_banner)
+        return true;
+
+    return false;
+}
 ?>

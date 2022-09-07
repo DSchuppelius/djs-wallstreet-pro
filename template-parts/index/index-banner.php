@@ -87,4 +87,6 @@ $loaded_banner = true; ?>
 	</div>
 	<?php get_template_part("template-parts/global/breadcrumb"); ?>
 </div>
-<div class="site rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_banner"]; ?>">
+<?php if(show_rellax_div()) { ?>
+    <div class="site rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_banner"]; ?>">
+<?php } ?>

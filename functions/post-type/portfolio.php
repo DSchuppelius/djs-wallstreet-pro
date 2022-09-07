@@ -9,7 +9,6 @@
  */
 function portfolio_type() {
     $current_options = get_current_options();
-    $portfolio_slug = $current_options["portfolio_slug"];
 
     register_post_type(PORTFOLIO_POST_TYPE, [
         "labels" => [
@@ -27,7 +26,7 @@ function portfolio_type() {
         "supports" => ["title", "editor", "thumbnail", "excerpt"],
         "show_in" => true,
         "show_in_nav_menus" => false,
-        "rewrite" => ["slug" => $portfolio_slug],
+        "rewrite" => ["slug" => $current_options["portfolio_slug"]],
         "public" => true,
         "menu_position" => 20,
         "public" => true,

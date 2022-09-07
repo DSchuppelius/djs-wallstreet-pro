@@ -11,7 +11,7 @@ global $loaded_banner;
 
 $current_options = get_current_options();
 
-if ($loaded_banner){ ?></div><?php } ?>
+if (show_rellax_div()){ ?></div><?php } ?>
 				<footer class="site<?php if ($current_options["fixedfooter_enabled"]) { echo " fixed"; } ?>">
 					<i class="show-me fa fa-info-circle fa-4x"></i>
 					<?php if ($current_options["footer_social_media_enabled"] == true) { ?>

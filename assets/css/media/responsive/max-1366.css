@@ -26,6 +26,16 @@
         padding: 40px 10px;
     }
 
+    .navbar.navbar-wrapper .container > .navbar-header a {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
+        position: initial;
+        width: auto
+    }
+
     .navbar-header .site-logo-area.with-Logo {
         font-size: 12px;
     }

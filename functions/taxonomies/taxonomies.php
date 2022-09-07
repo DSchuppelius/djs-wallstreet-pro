@@ -1,22 +1,20 @@
 <?php
 /*
- * @Theme Name	:	DJS-Wallstreet-Pro
- * @file         :	taxonomies.php
- * @package      :	DJS-Wallstreet-Pro
- * @author       :	Hari Maliya
- * @license      :	license.txt*
- * Add custom taxonomies
- * Additional custom taxonomies can be defined here
- * http://codex.wordpress.org/Function_Reference/register_taxonomy
+ * Created on   : Wed Jun 22 2022
+ * Author       : Hari Maliya, Daniel Jörg Schuppelius
+ * Author Uri   : https://schuppelius.org
+ * Filename     : taxonomies.php
+ * License      : GNU General Public License v3 or later
+ * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+
 function create_portfolio_taxonomy() {
     $current_options = get_current_options();
-    $wallstreet_products_category_slug = $current_options["wallstreet_products_category_slug"];
 
     register_taxonomy(PORTFOLIO_TAXONOMY, PORTFOLIO_POST_TYPE, [
         "hierarchical" => true,
         "show_in_nav_menus" => true,
-        "rewrite" => ["slug" => $wallstreet_products_category_slug],
+        "rewrite" => ["slug" => $current_options["wallstreet_products_category_slug"]],
         "label" => __("Portfolio Categories", "wallstreet"),
         "query_var" => true,
     ]);
@@ -46,7 +44,7 @@ function create_portfolio_taxonomy() {
     }
     // Delete default category
     if (isset($_POST["action"]) && isset($_POST["tag_ID"])) {
-        if ($_POST["tag_ID"] == $defualt_tex_id && $_POST["action"] == "delete-tag") {
+        if ($_POST["tag_ID"] == $default_tax_id && $_POST["action"] == "delete-tag") {
             delete_option("custom_texo_appointment");
         }
     }

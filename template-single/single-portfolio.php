@@ -84,11 +84,9 @@ get_template_part("template-parts/index/index", "banner"); ?>
         <?php endif; ?>
         <div class="row <?php row_Frame_Border(""); ?>">
             <div class="row related-project-section" id="related_project_scroll">
-                <?php $post_type = PORTFOLIO_POST_TYPE;
-                $tax = PORTFOLIO_TAXONOMY;
-                $count_posts = wp_count_posts(PORTFOLIO_POST_TYPE)->publish;
+                <?php $count_posts = wp_count_posts(PORTFOLIO_POST_TYPE)->publish;
                 $args = [
-                    "post_type" => $post_type,
+                    "post_type" => PORTFOLIO_POST_TYPE,
                     PORTFOLIO_TAXONOMY => $draught_links[0],
                     "post__not_in" => [$post->ID],
                     "posts_per_page" => $count_posts,

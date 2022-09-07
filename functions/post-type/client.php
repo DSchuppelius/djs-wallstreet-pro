@@ -9,7 +9,6 @@
  */
 function client_type() {
     $current_options = get_current_options();
-    $client_slug = $current_options["client_slug"];
 
     register_post_type(CLIENT_POST_TYPE, [
         "labels" => [
@@ -28,7 +27,7 @@ function client_type() {
         "show_in" => true,
         "public" => true,
         "menu_position" => 20,
-        "rewrite" => ["slug" => $client_slug],
+        "rewrite" => ["slug" => $current_options["client_slug"]],
         "public" => true,
         "menu_icon" => THEME_ASSETS_PATH_URI . "/images/satisfied-clients.jpg",
     ]);
