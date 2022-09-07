@@ -776,7 +776,8 @@ footer.site {
     color: #fff;
     border-bottom: 1px solid #fff
 }
-
+.portfolio-detail-section a.btn,
+.portfolio-detail-section a.button,
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
     color: #FFF
 }

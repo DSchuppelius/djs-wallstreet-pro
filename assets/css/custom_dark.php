@@ -13,7 +13,7 @@ function custom_dark() {
     $current_options = get_current_options(); ?>
 
     <style type="text/css">
-        button.wp-block-button__link, .prelated-project-btn li a, .portfolio-detail-section a, .portfolio-detail-pagi li a, .header-top-area, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,
+        button.wp-block-button__link, .portfolio-detail-section a.btn, .portfolio-detail-section a.button, .prelated-project-btn li a, .portfolio-detail-pagi li a, .header-top-area, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,
         .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus, .navbar-inverse .navbar-toggle,
         .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .flex_btn, .service-btn a, .other-service-area:hover i,
         .proejct-btn a:hover, .home-blog-btn a, .feature-icon, .tweet-btn a:hover, .post-date, .team-area:hover, .callout-section a, .blog-post-date span.date, a.blog-btn, .blog-pagination a:hover,
@@ -29,7 +29,7 @@ function custom_dark() {
         .search .blog-pagination a, .blog-pagination a, .btn.tab { background-color:<?php the_additional_rgba($link_color, $alpha = 0.65); ?>; }
     
         /* Text Colors */
-        article a:hover, .footer-contact-social li > a > i:hover, .comment-detail-title a, .head-contact-social li:hover i, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .home-blog-area:hover .home-blog-info h2 > a, .tweet-icon i, .tweet-area p > a, 
+        article a:hover, .portfolio-detail-section a, .footer-contact-social li > a > i:hover, .comment-detail-title a, .head-contact-social li:hover i, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .home-blog-area:hover .home-blog-info h2 > a, .tweet-icon i, .tweet-area p > a, 
         .footer-blog-post:hover h3 a, .footer-blog-post:hover .post-date span.date, .footer-blog-post:hover .post-date span.month, .footer-copyright p a, .page-header-title h1 a, .page-breadcrumbs,
         .breadcrumbs > .active, .about-social-icons li > a > i:hover, .team-area h5 > span, .blog-post-title > .blog-post-title-wrapper > h1, .blog-post-title > .blog-post-title-wrapper > h2, 
         .blog-post-title > .blog-post-title-wrapper > h3, .blog-post-title > .blog-post-title-wrapper > h4, .blog-post-title > .blog-post-title-wrapper > h5, .blog-post-title > .blog-post-title-wrapper > h6,

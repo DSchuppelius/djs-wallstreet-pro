@@ -8,9 +8,21 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
  
- function archives_view($args) {
-    $args['type'] = 'yearly';
-    $args['limit'] = 5;
+function archives_view($args) {
+    switch ($args['type']) {
+    	case 'yearly':
+    		$args['limit'] = 5;
+    		break;
+    	case 'monthly':
+    		$args['limit'] = 12;
+    		break;
+    	case 'daily':
+            $args['limit'] = 7;
+    		break;
+    	default:
+    		$args['limit'] = 10;
+    		break;
+    }
     return $args;
 }
 add_filter('widget_archives_args', 'archives_view');
