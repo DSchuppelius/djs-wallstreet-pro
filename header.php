@@ -1,19 +1,31 @@
+<?php
+/*
+ * Created on   : Wed Jun 22 2022
+ * Author       : Daniel Jörg Schuppelius
+ * Author Uri   : https://schuppelius.org
+ * Filename     : header.php
+ * License      : GNU General Public License v3 or later
+ * License Uri  : http://www.gnu.org/licenses/gpl.html
+ */
+
+$current_options = get_current_options(); ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
     <head>
         <?php global $wp_query;
+        $single_metakeytags = "Blog";
+
         if(!empty($wp_query->post)){
             $postid = $wp_query->post->ID;
         
             $page_description = get_post_meta($postid, 'page_description', true);
-            if(empty($page_description)) {$page_description=htmlentities(wp_strip_all_tags(tag_description()));}
-            if(empty($page_description)) {$page_description=get_the_archive_title()!="Archive"?htmlentities(wp_strip_all_tags(get_the_archive_title())):"";}
+            if(empty($page_description)) { $page_description = htmlentities(wp_strip_all_tags(tag_description()));}
+            if(empty($page_description)) { $page_description = get_the_archive_title() != "Archive" ? htmlentities(wp_strip_all_tags(get_the_archive_title())) : "";}
 
             $single_description = substr(htmlentities(wp_strip_all_tags(get_the_excerpt(), true)), 0, 150);
             if(empty($single_description)) {$single_description= get_the_title();}
             $single_description .= "...";
 
-            $single_metakeytags = "Blog";
             $tags = get_the_tags();
             if(!empty($tags))
                 foreach($tags as $tag){ $single_metakeytags.= ", ".htmlentities(wp_strip_all_tags($tag->name)); }
@@ -33,9 +45,7 @@
         <meta name="keywords" content="<?php echo $single_metakeytags; ?>" />
 
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <?php $current_options = get_current_options(); ?>
-        <?php
-        if ($current_options["upload_image_favicon"] != "") { ?>
+        <?php if ($current_options["upload_image_favicon"] != "") { ?>
             <link rel="shortcut icon" href="<?php echo $current_options["upload_image_favicon"]; ?>" /> 
         <?php }
         wp_head();

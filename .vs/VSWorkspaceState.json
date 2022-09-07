@@ -4,11 +4,13 @@
     "\\assets",
     "\\assets\\css",
     "\\functions",
-    "\\functions\\post-type",
+    "\\functions\\customizer",
+    "\\functions\\scripts",
     "\\template-parts",
+    "\\template-parts\\archive",
     "\\template-parts\\global",
-    "\\template-parts\\global\\header",
     "\\template-parts\\index"
   ],
+  "SelectedNode": "\\assets\\css\\button.css",
   "PreviewInSolutionExplorer": false
 }
