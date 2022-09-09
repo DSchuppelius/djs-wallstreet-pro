@@ -96,7 +96,7 @@ $current_options = get_current_options(); ?>
     <body id="djs-body" <?php body_class($additional_BodyClasses); ?> <?php if (!$current_options["contextmenu_enabled"]) { echo 'oncontextmenu="return false;"'; } ?>>
         <?php if ($current_options["page_fader_enabled"]) { ?>
             <div id="page_fader">
-                <div class="page_fader logo <?php row_Frame_Border(""); ?>">
+                <div class="page_fader logo <?php row_frame_border(""); ?>">
                     <?php get_template_part("template-parts/global/header/navbar", "logo"); ?>
                     <h2 class="animate">Inhalt wird geladen...</h2>
                 </div>

@@ -13,7 +13,7 @@ $current_options = get_current_options(); ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
 <div class="container single service">
-    <div class="row <?php row_Frame_Border(""); ?> flexstretch">
+    <div class="row <?php row_frame_border(""); ?> flexstretch">
 
         <!--Blog Area-->
         <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">

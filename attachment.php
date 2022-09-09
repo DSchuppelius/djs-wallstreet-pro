@@ -19,14 +19,14 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 if(!isset($default_arg)) $default_arg="";
 ?>
 <div class="container single attachment">
-    <div class="row attachment-section img <?php row_Frame_Border(""); ?>">
+    <div class="row attachment-section img <?php row_frame_border(""); ?>">
         <!--Blog Area-->
         <?php the_post(); ?>
-        <div class="blog-section-attachment col-md-12<?php innerrow_Frame_Border(" ");?>">
+        <div class="blog-section-attachment col-md-12<?php innerrow_frame_border(" ");?>">
             <?php echo wp_get_attachment_link(get_post_thumbnail_id(), 'fullpost-thumb', true, false, false, array( "class" => "img-responsive" )); ?>
         </div>
     </div>
-    <div class="row attachment-section content <?php row_Frame_Border(""); ?> flexstretch">
+    <div class="row attachment-section content <?php row_frame_border(""); ?> flexstretch">
         <div class="col-md-<?php echo (is_active_sidebar( 'sidebar_primary' )?'8':'12'); ?> flexcolumn">
             <?php get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

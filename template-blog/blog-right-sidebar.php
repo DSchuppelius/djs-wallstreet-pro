@@ -52,7 +52,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
     }
 </style>
 <div class="container blog-right-sidebar">
-    <div class="row <?php row_Frame_Border(""); ?> flexstretch">
+    <div class="row <?php row_frame_border(""); ?> flexstretch">
         <div class="col-md-8 flexcolumn">
             <?php
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;

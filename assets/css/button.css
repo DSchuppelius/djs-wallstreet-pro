@@ -247,12 +247,12 @@ input[type="submit"]:not(.not):before,
 a.comment-edit-link:not(.not):before,
 a.comment-reply-link:not(.not):before {
     left: 0;
-    line-height: 2.4em;
+    line-height: 1.75em;
     position: absolute;
     text-align: left;
-    text-indent: .625rem;
+    text-indent: .55em;
     top: 0;
-    width: 2.8125rem;
+    width: 2.125em;
     z-index: -1
 }
 
@@ -273,9 +273,9 @@ a.comment-edit-link:not(.not),
 a.comment-reply-link:not(.not) {
     min-width: 250px;
     display: inline-block;
-    line-height: 1em;
+    line-height: 1.5em;
     overflow: hidden;
-    padding: 0.825em 4.5em 0.525em 5.75em;
+    padding: 0.625em 1em 0.425em 3.5em;
     position: relative;
     user-select: none;
     z-index: 3
@@ -286,15 +286,13 @@ button.big:not(.not),
 a.button.big:not(.not),
 input[type="submit"].big:not(.not) {
     min-width: 300px;
-    padding: 1rem 5.5rem 0.925rem 6.75rem;
 }
 
 .btn.small:not(.not),
 button.small:not(.not),
 a.button.small:not(.not),
 input[type="submit"].small:not(.not) {
-    min-width: 200px;
-    padding: 1rem 3.5rem 0.925rem 4.75rem;
+    min-width: 180px;
 }
 
 a.comment-edit-link:not(.not),
@@ -404,7 +402,7 @@ a.btn.tab {
     position: absolute;
     bottom: 0px;
     left: 50%;
-    margin-left: -100px
+    margin-left: -90px
 }
 
 .portfolio-detail-pagi {

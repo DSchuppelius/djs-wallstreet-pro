@@ -7,10 +7,10 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-function wallstreet_fonts_url() {
+function wallstreet_fonts_url($font) {
     $fonts_url = "";
     $font_families = [];
-    $font_families = ["El Messiri:100,300,400,500,700", "900", "italic"];
+    $font_families = [$font . ":100,300,400,500,700", "900", "italic"];
 
     $query_args = [
         "family" => urlencode(implode("|", $font_families)),
@@ -22,9 +22,12 @@ function wallstreet_fonts_url() {
     return $fonts_url;
 }
 
-function wallstreet_scripts_styles() {
-    wp_enqueue_style("wallstreet-fonts", THEME_ASSETS_PATH_URI . "/css/font.css");
-    wp_enqueue_style("spicy-fonts", wallstreet_fonts_url(), [], null);
+function get_font_family($font){
+    $result = null;
+    $current_options = get_current_options();
+    $result = str_replace("GoogleFont", $current_options["google_font"], $font);
+    echo $result;
+
+    return $result;
 }
-add_action("wp_enqueue_scripts", "wallstreet_scripts_styles");
 ?>

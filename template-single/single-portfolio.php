@@ -11,7 +11,7 @@ $current_options = get_current_options();
 
 get_template_part("template-parts/index/index", "banner"); ?>
 <div class="container single portfolio">
-    <div class="row portfolio-detail-section <?php row_Frame_Border(""); ?>">
+    <div class="row portfolio-detail-section <?php row_frame_border(""); ?>">
         <div class="col-md-4 portfolio-detail-sidebar">
             <ul class="portfolio-detail-pagi">
                 <?php $next_post = get_next_post();
@@ -70,7 +70,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
 <?php if ($current_options["related_portfolio_project_hide_show"] == true) { ?>
     <div class="container single portfolio preview">
         <?php if (!empty($current_options["related_portfolio_title"]) || !empty($current_options["related_portfolio_description"])): ?>
-            <div class="row <?php row_Frame_Border(""); ?>">
+            <div class="row <?php row_frame_border(""); ?>">
                 <div class="section_heading_title">
                     <?php if ($current_options["related_portfolio_title"]) { ?>
                         <h1><?php echo $current_options["related_portfolio_title"]; ?></h1>
@@ -82,7 +82,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                 </div>
             </div>
         <?php endif; ?>
-        <div class="row <?php row_Frame_Border(""); ?>">
+        <div class="row <?php row_frame_border(""); ?>">
             <div class="row related-project-section" id="related_project_scroll">
                 <?php $count_posts = wp_count_posts(PORTFOLIO_POST_TYPE)->publish;
                 $args = [

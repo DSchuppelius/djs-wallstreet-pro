@@ -414,6 +414,7 @@ body {
     }
 
 .wallstreet_title_head {
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -451,6 +452,10 @@ body {
 .row {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.service-area .btn {
+    min-width: 200px;
 }
 /*Testimonial*/
 .testimonial-area p {

@@ -17,7 +17,7 @@ $theme_blog_section = "blog-section-left blog-list-view";
 get_template_parts(["template-parts/index/index", "banner"], true);
 ?>
 <div class="container blog-list-view sidebar">
-	<div class="row <?php row_Frame_Border(""); ?> flexstretch">
+	<div class="row <?php row_frame_border(""); ?> flexstretch">
 		<div class="col-md-8">
 			<?php
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;

@@ -511,7 +511,7 @@ body {
 }
 
 .error_404 {
-    color: #727272
+    color: #f2f2f2
 }
 
 .feature-icon i {
@@ -773,6 +773,10 @@ footer.site {
     border-bottom: 1px solid #fff
 }
 
+.home-portfolio-showcase-media img {
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%)
+}
+
 .portfolio-detail-section a.btn,
 .portfolio-detail-section a.button,
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
@@ -780,7 +784,6 @@ footer.site {
 }
 
 .homepage_mycarousel {
-    background: #2a2c33;
     box-shadow: 0 7px 10px -10px #000
 }
 
@@ -1095,7 +1098,7 @@ footer.site {
 
 .section_heading_title h1 {
     color: #2a2c33;
-    text-shadow: 1px 1px 1px rgb(200 200 200 / 60%), 1px -1px 1px rgb(200 200 200 / 60%), -1px 1px 1px rgb(200 200 200 / 60%), -1px -1px 1px rgb(200 200 200 / 60%)
+    text-shadow: 1px 1px 1px rgb(255 255 255 / 60%), 1px -1px 1px rgb(255 255 255 / 60%), -1px 1px 1px rgb(255 255 255 / 60%), -1px -1px 1px rgb(255 255 255 / 60%)
 }
 
 .section_heading_title p {
@@ -1438,7 +1441,7 @@ footer.site {
 
 .testimonial-area p {
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4)
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4)
 }
 
 .testimonial-section {

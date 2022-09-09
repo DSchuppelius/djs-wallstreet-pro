@@ -58,7 +58,7 @@ if (!function_exists("wallstreet_comment")) {
 }
 
 if (have_comments()) { ?>
-	<div class="comment-section<?php innerrow_Frame_Border(" "); ?>">
+	<div class="comment-section<?php innerrow_frame_border(" "); ?>">
 		<div class="comment-title">
 			<h3><i class="fa-solid fa-comments"></i><?php comments_number(__("No comments so far", "wallstreet"), __("1 comment so far", "wallstreet"), __("% comments so far", "wallstreet")); ?></h3>
 		</div>
@@ -80,7 +80,7 @@ if ("open" == $post->comment_status) {
     if (get_option("comment_registration") && !$user_ID) { ?>
 		<p><?php echo sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', "wallstreet"), site_url("wp-login.php") . "?redirect_to=" . urlencode(get_permalink())); ?></p>
 	<?php } else { ?>
-		<div class="comment-form-section<?php innerrow_Frame_Border(" "); ?>">
+		<div class="comment-form-section<?php innerrow_frame_border(" "); ?>">
             <?php $fields = [
                 "url" => '<div class="blog-form-group-full"><input class="blog-form-control" name="url" id="url" value="" type="url" placeholder="' . __("Website", "wallstreet") . '" /></div>',
                 "author" => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="' . __("Name", "wallstreet") . '" /></div>',

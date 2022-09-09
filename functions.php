@@ -21,8 +21,8 @@ require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
 require_once THEME_FUNCTIONS_PATH . "/base/theme_functions.php";
 require_once THEME_FUNCTIONS_PATH . "/base/theme_colors.php";
 
-require_once THEME_FUNCTIONS_PATH . "/font/font.php";
 require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
+require_once THEME_FUNCTIONS_PATH . "/font/font.php";
 
 require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
 require_once THEME_FUNCTIONS_PATH . "/meta-box/post-meta.php";

@@ -64,19 +64,19 @@ $current_options = get_current_options(); ?>
                                 <p><?php if (!empty($description_meta_save)) { echo $description_meta_save; } ?></p>
                                 <ul class="custom-social-icons">
                                     <?php if ($fb_meta_save) { ?>
-                                        <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_Target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
                                     <?php } ?>
                                     <?php if ($skype_meta_save) { ?>
-                                        <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_Target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
+                                        <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
                                     <?php } ?>
                                     <?php if ($rss_meta_save) { ?>
-                                        <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_Target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
+                                        <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
                                     <?php } ?>
                                     <?php if ($lnkd_meta_save) { ?>
-                                        <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_Target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>			   
+                                        <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>			   
                                     <?php } ?>
                                     <?php if ($twt_meta_save) { ?>
-                                        <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_Target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
                                     <?php } ?>
                                 </ul>
                             </div>

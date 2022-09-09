@@ -62,6 +62,7 @@ function theme_data_setup() {
         "other_service_title" => __("Other services", "wallstreet"),
         "other_service_description" => __("We offer great services to our clients", "wallstreet"),
         "service_hover_change_effect" => true,
+        "service_middle_extrapadding" => false,
 
         //portfolio
         "view_all_projects_btn_enabled" => true,
@@ -259,6 +260,7 @@ function theme_data_setup() {
 
         // Typography
         "enable_custom_typography" => false,
+        "google_font" => "El Messiri",
 
         // general typography
         "general_typography_fontsize" => "16",

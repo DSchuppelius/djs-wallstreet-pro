@@ -13,7 +13,6 @@ function wallstreet_typography_customizer($wp_customize) {
         "capability" => "edit_theme_options",
         "title" => __("Typography settings", "wallstreet"),
     ]);
-
     // Enble / Disable typography section
     $wp_customize->add_section("wallstreet_typography_section", [
         "title" => __("Typhography enable / disable", "wallstreet"),
@@ -32,6 +31,18 @@ function wallstreet_typography_customizer($wp_customize) {
         "setting" => "wallstreet_pro_options[enable_custom_typography]",
         "type" => "checkbox",
     ]);
+    $wp_customize->add_setting("wallstreet_pro_options[google_font]", [
+        "default" => "El Messiri",
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[google_font]", [
+        "label" => __("Name of GoogleFont", "wallstreet"),
+        "section" => "wallstreet_typography_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
 
     $font_size = [];
     for ($i = 9; $i <= 100; $i++) {
@@ -39,12 +50,12 @@ function wallstreet_typography_customizer($wp_customize) {
     }
 
     $font_family = [
-        "400" => "SiteFont Regular",
-        "300" => "SiteFont Light",
-        "600" => "SiteFont Bold",
-        "700" => "SiteFont Black",
-        "500" => "SiteFont Medium",
-        "200" => "SiteFont Thin",
+        "400" => "GoogleFont Regular",
+        "300" => "GoogleFont Light",
+        "600" => "GoogleFont Bold",
+        "700" => "GoogleFont Black",
+        "500" => "GoogleFont Medium",
+        "200" => "GoogleFont Thin",
     ];
 
     $font_style = ["normal" => "Normal", "italic" => "Italic"];

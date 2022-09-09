@@ -54,7 +54,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 </style>
 <div class="blog6 blog-section">
 	<div class="container blog-switcher-view sidebar">
-		<div class="row <?php row_Frame_Border(""); ?> flexstretch">		
+		<div class="row <?php row_frame_border(""); ?> flexstretch">		
 			<!--Blog Area-->
 			<div class="col-md-8">
 				<?php

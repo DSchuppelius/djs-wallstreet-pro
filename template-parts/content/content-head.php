@@ -25,7 +25,7 @@ if (!$has_thumbnail) {
     $local_theme_blog_section .= " has_no_post_thumbnail";
 }
 ?>
-    <div id="post-<?php the_ID(); ?>" <?php post_class($local_theme_blog_section . get_innerrow_Frame_Border(" ")); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class($local_theme_blog_section . get_innerrow_frame_border(" ")); ?>>
         <?php if ($has_thumbnail && !$no_thumb) { ?>
             <?php $defalt_arg = [
                 "class" => "img-responsive attachment-post-thumbnail",

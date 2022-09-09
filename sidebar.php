@@ -12,7 +12,7 @@ $current_options = get_current_options();
 if (is_active_sidebar("sidebar_primary")) { ?>
 <!--Sidebar Area-->
 	<div class="col-md-4 flexcolumn">
-		<div class="sidebar-section <?php with_Filler(); innerrow_Frame_Border(" "); ?>">
+		<div class="sidebar-section <?php with_filler(); innerrow_frame_border(" "); ?>">
 			<?php dynamic_sidebar("sidebar_primary"); ?>
 		</div>
 		<?php get_template_part("template-parts/content/filler"); ?>

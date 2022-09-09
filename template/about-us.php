@@ -17,18 +17,18 @@ the_post();
 ?>
 <div class="container page about-us">
     <?php if (has_post_thumbnail()) { ?>
-	    <div class="row <?php row_Frame_Border(""); ?> about-section img">
+	    <div class="row <?php row_frame_border(""); ?> about-section img">
             <?php $defalt_arg = ["class" => "img-responsive"]; ?>
-            <div class="col-md-12<?php innerrow_Frame_Border(" ");?>">
+            <div class="col-md-12<?php innerrow_frame_border(" ");?>">
                 <?php the_post_thumbnail('about-thumb', $defalt_arg); ?>
             </div>
         </div>
     <?php } ?>
-    <div class="row <?php row_Frame_Border(""); ?> about-section text flexstretch">
+    <div class="row <?php row_frame_border(""); ?> about-section text flexstretch">
 		<div class="col-md-8 flexcolumn">
 			<?php get_template_part("template-parts/content/content", "about"); //the_content(); ?>	
 			<?php if ($current_options["about_social_media_enabled"] == true) { ?>
-                <div class="social<?php innerrow_Frame_Border(" "); ?>">
+                <div class="social<?php innerrow_frame_border(" "); ?>">
 				<?php $ul_class = "about";
                 get_template_part("template-parts/global/social-media");?>
                 </div>
@@ -44,8 +44,8 @@ the_post();
 <div class="container page about-us team">
 	<?php if ($current_options["about_team_section_show_hide"] == true): ?>
 	    <?php if (!empty($current_options["about_team_title"]) || !empty($current_options["about_team_description"])): ?>
-	        <div class="row <?php row_Frame_Border(""); ?> about-section text team-title">
-		        <div class="section_heading_title<?php innerrow_Frame_Border(" "); ?>">
+	        <div class="row <?php row_frame_border(""); ?> about-section text team-title">
+		        <div class="section_heading_title<?php innerrow_frame_border(" "); ?>">
 			        <?php if ($current_options["about_team_title"] != "") { ?><h1><?php echo $current_options["about_team_title"]; ?></h1>
 			            <div class="pagetitle-separator">
 				            <div class="pagetitle-separator-border">
@@ -58,7 +58,7 @@ the_post();
 	        </div>
         <?php endif; ?>
 	
-	    <div class="row <?php row_Frame_Border(""); ?> about-section text team-section">
+	    <div class="row <?php row_frame_border(""); ?> about-section text team-section">
     	    <?php $count_posts = wp_count_posts(TEAM_POST_TYPE)->publish;
             $arg = ["post_type" => TEAM_POST_TYPE, "posts_per_page" => $count_posts];
             $team = new WP_Query($arg);
@@ -86,25 +86,25 @@ the_post();
 			    		        <?php the_post_thumbnail('port-thumb', $defalt_arg); ?>
                             </div>
                         <?php } ?>
-    			    	<div class="team-area<?php big_Border(" "); ?>">				
+    			    	<div class="team-area<?php big_border(" "); ?>">				
 	    	    			<h5><?php the_title(); ?><span><?php if (!empty($designation_meta_save)) { echo $designation_meta_save; } ?></span></h5>
 		        			<div class="desi-seperate"></div>
 	    		    		<p><?php if (!empty($description_meta_save)) { echo $description_meta_save; } ?></p>
     				    	<ul class="team-social-icons">
 					    	    <?php if ($fb_meta_save) { ?>
-                                    <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_Target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
     						    <?php } ?>
 						        <?php if ($skype_meta_save) { ?>
-                                    <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_Target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
+                                    <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
                                 <?php } ?>
 						        <?php if ($rss_meta_save) { ?>
-                                    <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_Target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
+                                    <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
     					    	<?php } ?>
 						        <?php if ($lnkd_meta_save) { ?>
-                                    <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_Target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>
                                 <?php } ?>
     						    <?php if ($twt_meta_save) { ?>
-                                    <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_Target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
 	    			    		<?php } ?>
     					    </ul>
 				        </div>
@@ -122,7 +122,7 @@ the_post();
 			            <div class="team-box">
 				            <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/team/team<?php echo $i; ?>.jpg">
     		    	    </div>
-	        		    <div class="team-area<?php innerrow_Frame_Border(" ");?>">				
+	        		    <div class="team-area<?php innerrow_frame_border(" ");?>">				
 	    	    		    <h5><?php echo $team_title[$i - 1]; ?> <span><?php echo $team_designation[$i - 1]; ?></span></h5>
     			    	    <div class="desi-seperate"></div>
 				            <p><?php echo "Lorem ipsum dolor sit amet, conet adipis cing. Lorem ipsum dolore sit amet, consectetur adipisicings elit"; ?></p>

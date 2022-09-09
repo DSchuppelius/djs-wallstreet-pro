@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 ?>
-<div class="blog-author<?php innerrow_Frame_Border(" "); ?>">
+<div class="blog-author<?php innerrow_frame_border(" "); ?>">
     <div class="media">
         <div class="pull-left">
             <?php echo get_avatar(get_the_author_meta("ID"), 94); ?>

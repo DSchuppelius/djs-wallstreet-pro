@@ -97,7 +97,7 @@ $current_options = get_current_options(); ?>
 
       endwhile;
   } else {
-      $service_defualttext = [__("Product designing", "wallstreet"), __("WordPress themes", "wallstreet"), __("Responsive designs", "wallstreet")];
+      $service_defaulttext = [__("Product designing", "wallstreet"), __("WordPress themes", "wallstreet"), __("Responsive designs", "wallstreet")];
       for ($i = 1; $i <= 3; $i++) { ?>
 
 			<div class="col-md-4 col-sm-6">
@@ -106,7 +106,7 @@ $current_options = get_current_options(); ?>
 				<img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/service<?php echo $i; ?>.jpg">
 			</div>
 			<div class="service-area">
-				<h2><a href="#"><?php echo $service_defualttext[$i - 1]; ?></a></h2>
+				<h2><a href="#"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
 				<p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
 				<div class="service-btn"><a href="#"><?php _e("Read More", "wallstreet"); ?></a></div>
 			</div>

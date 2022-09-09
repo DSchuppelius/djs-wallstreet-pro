@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-function get_Values_On_Current_Option($option, $positive, $negative = "", $prefix = "", $suffix = "") {
+function get_values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = "") {
     $current_options = get_current_options();
 
     if (array_key_exists($option, $current_options)) {
@@ -23,7 +23,11 @@ function get_Values_On_Current_Option($option, $positive, $negative = "", $prefi
     return null;
 }
 
-function get_blank_Target($option){
+function values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = ""){
+    echo get_values_on_current_option($option, $positive, $negative, $prefix, $suffix);
+}
+
+function get_blank_target($option){
     $result = 'target="';
     if ($option) {
         $result .= '_blank"';
@@ -33,11 +37,11 @@ function get_blank_Target($option){
     return $result;
 }
 
-function blank_Target($option){
-    echo get_blank_Target($option);
+function blank_target($option){
+    echo get_blank_target($option);
 }
 
-function is_NoFrame_With_BigBorder() {
+function is_noframe_with_bigborder() {
     $current_options = get_current_options();
     if (!$current_options["addframe"] && $current_options["bigborder"]) {
         return true;

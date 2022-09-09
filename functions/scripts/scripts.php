@@ -7,21 +7,38 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+function theme_bootstrap_scripts() {
+    wp_enqueue_style("bootstrap",                   THEME_ASSETS_PATH_URI . "/bootstrap/css/bootstrap.min.css");
+    wp_enqueue_script("bootstrap",                  THEME_ASSETS_PATH_URI . "/bootstrap/js/bootstrap.min.js");
+}
+add_action("wp_enqueue_scripts", "theme_bootstrap_scripts");
+
+function theme_font_scripts() {
+    $current_options = get_current_options();
+
+    wp_enqueue_style("font-awesome-min",            THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/all.min.css");
+    wp_enqueue_style("icon_font-faces",             THEME_ASSETS_PATH_URI . "/css/fonts/icon_font-faces.css");
+    wp_enqueue_style("wallstreet-fonts",            THEME_ASSETS_PATH_URI . "/css/fonts/font.css");
+    if($current_options["enable_custom_typography"] == true){
+        wp_enqueue_style("spicy-fonts",             wallstreet_fonts_url($current_options["google_font"]), [], null);
+    } else {
+	    wp_enqueue_style("site_font-faces",            THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
+    }
+}
+add_action("wp_enqueue_scripts", "theme_font_scripts");
+
 function theme_scripts() {
     $current_options = get_current_options();
-    $stylesheet = get_custom_stylesheet($current_options);
 
     wp_enqueue_style("wallstreet-style",            get_stylesheet_uri());
 
-    wp_enqueue_style("bootstrap",                   THEME_ASSETS_PATH_URI . "/bootstrap/css/bootstrap.min.css");
-    wp_enqueue_style("wallstreet-default",          THEME_ASSETS_PATH_URI . "/css/" . $stylesheet);
+    wp_enqueue_style("wallstreet-default",          THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_options));
     wp_enqueue_style("wallstreet-standard",         THEME_ASSETS_PATH_URI . "/css/standard.css");
 
     wp_enqueue_style("wallstreet-button",           THEME_ASSETS_PATH_URI . "/css/button.css");
     wp_enqueue_style("wallstreet-fx",               THEME_ASSETS_PATH_URI . "/css/fx.css");
 
     wp_enqueue_style("theme-menu",                  THEME_ASSETS_PATH_URI . "/css/theme-menu.css");
-    wp_enqueue_style("font-awesome-min",            THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/all.min.css");
     wp_enqueue_style("tool-tip",                    THEME_ASSETS_PATH_URI . "/css/css-tooltips.css");
 
     wp_enqueue_style("media-responsive-min-1920",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1920.css",   array(), '1.0.0', 'only screen and (min-width: 1920px)');
@@ -38,8 +55,14 @@ function theme_scripts() {
 
     wp_enqueue_style("media-print",                 THEME_ASSETS_PATH_URI . "/css/media/print.css",                 array(), '1.0.0', 'only print');
 
+    require_once "custom_style.php";
+}
+add_action("wp_enqueue_scripts", "theme_scripts");
+
+function theme_jquery_scripts() {
+    $current_options = get_current_options();
+
     wp_enqueue_script("menu",                       THEME_ASSETS_PATH_URI . "/js/menu/menu.js", ["jquery"]);
-    wp_enqueue_script("bootstrap",                  THEME_ASSETS_PATH_URI . "/bootstrap/js/bootstrap.min.js");
     if ($current_options["page_fader_enabled"]) {
         wp_enqueue_script("page_fader",             THEME_ASSETS_PATH_URI . "/js/page_fader.js");
     }
@@ -73,9 +96,8 @@ function theme_scripts() {
         wp_enqueue_script("flexslider",             THEME_ASSETS_PATH_URI . "/js/flexslider/jquery.flexslider.js");
         wp_enqueue_script("carouFredSel",           THEME_ASSETS_PATH_URI . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js");
     }
-    require_once "custom_style.php";
 }
-add_action("wp_enqueue_scripts", "theme_scripts");
+add_action("wp_enqueue_scripts", "theme_jquery_scripts");
 
 if (is_singular()) {
     wp_enqueue_script("comment-reply");

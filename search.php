@@ -19,7 +19,7 @@ $theme_blog_section = "blog-section-left";
 
 <!-- Blog & Sidebar Section -->
 <div class="container search">
-	<div class="row <?php row_Frame_Border(""); ?> flexstretch">
+	<div class="row <?php row_frame_border(""); ?> flexstretch">
 		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
 			<?php if (have_posts()) { ?>
 				<h1 class="search_heading">

@@ -56,14 +56,14 @@
                         <div class="home-portfolio-showcase">
                             <div class="home-portfolio-showcase-media count<?php echo $j; echo $portfolio_item_pos . $portfolio_row_pos; ?>">
                                 <?php
-                                $defalt_arg = ["class" => "img-responsive" . get_big_Border(" ")];
+                                $defalt_arg = ["class" => "img-responsive" . get_big_border(" ")];
                                 if (has_post_thumbnail()):
 
                                     the_post_thumbnail("port-thumb", $defalt_arg);
                                     $post_thumbnail_id = get_post_thumbnail_id();
                                     $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
                                     ?>
-                                    <div class="home-portfolio-showcase-overlay<?php big_Border(" "); ?>">
+                                    <div class="home-portfolio-showcase-overlay<?php big_border(" "); ?>">
                                         <div class="home-portfolio-showcase-overlay-inner">
                                             <div class="home-portfolio-showcase-detail">
                                                 <h4><?php the_title(); ?></h4>
@@ -94,7 +94,7 @@
                     <div class="col-md-<?php echo $current_options["portfolio_homepage_column_laouts"]; ?> home-portfolio-area">
                         <div class="home-portfolio-showcase">
                             <div class="home-portfolio-showcase-media">
-                                <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/portfolio/port<?php echo rand(1, 4); ?>.jpg" />
+                                <img class="img-responsive<?php big_border(" "); ?>" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/portfolio/port<?php echo rand(1, 4); ?>.jpg" />
                                 <div class="home-portfolio-showcase-overlay">
                                     <div class="home-portfolio-showcase-overlay-inner">
                                         <div class="home-portfolio-showcase-detail">

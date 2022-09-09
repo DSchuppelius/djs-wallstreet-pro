@@ -14,7 +14,7 @@ $theme_blog_section = "blog-detail-section";
 get_template_part("template-parts/index/index", "banner");
 ?>
 <div class="container single">
-	<div class="row <?php row_Frame_Border(""); ?> flexstretch">
+	<div class="row <?php row_frame_border(""); ?> flexstretch">
 		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
 			<?php while (have_posts()) {
                 the_post();

@@ -33,7 +33,7 @@ if (isset($_GET["div"])) {
 ?>
 
 <section class="portfolio portfoliocat">
-	<div class="container<?php big_Border(" "); ?>">
+	<div class="container<?php big_border(" "); ?>">
 		<div class="row">
 			<div class="section_heading_title">
 				<?php if ($current_options["two_thre_four_col_port_tem_title"]) { ?>
@@ -117,12 +117,12 @@ if (isset($_GET["div"])) {
                                         <div class="main-portfolio-showcase">
 											<div class="<?php echo $class1; ?> main-portfolio-showcase-media">
 												<?php
-                                                the_post_thumbnail("full", [ "class" => "img-responsive" . get_big_Border(" ")]);
+                                                the_post_thumbnail("full", [ "class" => "img-responsive" . get_big_border(" ")]);
                                                 if (has_post_thumbnail()) {
                                                     $post_thumbnail_id = get_post_thumbnail_id();
                                                     $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
                                                 } ?>
- 												<div class="main-portfolio-showcase-overlay<?php big_Border(" "); ?>">
+ 												<div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
 													<div class="main-portfolio-showcase-overlay-inner">
  														<div class="main-portfolio-showcase-detail">
  															<h4><?php the_title(); ?></h4>

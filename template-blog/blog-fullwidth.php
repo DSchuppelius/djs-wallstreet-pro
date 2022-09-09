@@ -53,7 +53,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 </style>
 <!-- Blog & Sidebar Section -->
 <div class="container blog-fullwidth">
-	<div class="row <?php row_Frame_Border(""); ?>">
+	<div class="row <?php row_frame_border(""); ?>">
 		<!--Blog Area-->
 		<div class="col-md-12">
 			<?php

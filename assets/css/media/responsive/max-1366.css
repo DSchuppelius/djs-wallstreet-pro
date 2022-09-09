@@ -201,12 +201,10 @@
 
     .service-area .btn {
         min-width: 200px;
-        padding: 1rem 2.5rem 0.925rem 3.75rem;
     }
 
     .home-portfolio-showcase .home-portfolio-showcase-detail .btn.small {
         min-width: 175px;
-        padding: 1rem 2.5rem 0.925rem 3.75rem;
     }
 
     .home-portfolio-showcase .home-portfolio-showcase-detail p {
@@ -219,7 +217,6 @@
 
     .home-blog-area .home-blog-btn .btn {
         min-width: 200px;
-        padding: 1rem 2.5rem 0.925rem 3.75rem;
     }
 }
 

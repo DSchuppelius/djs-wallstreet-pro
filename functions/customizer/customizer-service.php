@@ -93,6 +93,20 @@ function service_customizer($wp_customize) {
         "priority" => 200,
     ]);
 
+    $wp_customize->add_setting("wallstreet_pro_options[service_middle_extrapadding]", [
+        "default" => false,
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[service_middle_extrapadding]", [
+        "label" => __("Give middle element more size", "wallstreet"),
+        "description" => __("This setting will work with only service design 1", "wallstreet"),
+        "section" => "service_section_head",
+        "type" => "checkbox",
+        "sanitize_callback" => "sanitize_text_field",
+        "priority" => 200,
+    ]);
+
     $wp_customize->add_setting("wallstreet_pro_options[service_hover_change_effect]", [
         "default" => true,
         "sanitize_callback" => "sanitize_text_field",

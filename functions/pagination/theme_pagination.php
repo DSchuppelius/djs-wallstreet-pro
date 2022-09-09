@@ -10,7 +10,7 @@
 class Theme_Pagination {
     function page($curpage, $post_type_data) {
         ?>
-        <div class="blog-pagination <?php echo get_with_Filler() . get_innerrow_Frame_Border(" "); ?>">
+        <div class="blog-pagination <?php echo get_with_filler() . get_innerrow_frame_border(" "); ?>">
             <?php
             if ($curpage != 1) {
                 echo '<a class="page-btn" href="' . get_pagenum_link($curpage - 1 > 0 ? $curpage - 1 : 1) . '"><i class="fa fa-angle-double-left"></i></a>';
@@ -29,7 +29,7 @@ class Theme_Pagination {
 class Theme_Pagination2 {
     function page2($curpage, $post_type_data, $div) {
         ?>
-        <div class="blog-pagination <?php echo get_with_Filler() . get_innerrow_Frame_Border(" "); ?>">
+        <div class="blog-pagination <?php echo get_with_filler() . get_innerrow_frame_border(" "); ?>">
             <?php if ($curpage != 1) {
                 $arr = explode("?", get_pagenum_link($curpage - 1 > 0 ? $curpage - 1 : 1));
                 echo '<a href="' . $arr[0] . "?div=$div" . '"><i class="fa fa-angle-double-left"></i></a>';
@@ -65,7 +65,7 @@ class Theme_Pagination3 {
         }
 
         if (1 != $pages) { ?>
-            <div class="blog-pagination <?php echo get_with_Filler() . get_innerrow_Frame_Border(" "); ?>">
+            <div class="blog-pagination <?php echo get_with_filler() . get_innerrow_frame_border(" "); ?>">
                 <?php if ($paged > 2 && $paged > $range + 1 && $showitems < $pages); ?>
                     <a class="portfolio_categories" href="<?php echo get_pagenum_link(1); ?>">&laquo;</a>
                 <?php if ($paged > 1 && $showitems < $pages); ?>

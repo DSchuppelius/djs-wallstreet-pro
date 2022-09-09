@@ -35,44 +35,44 @@ function get_first_middle_last_row($count, $total, $maxcol, $prefix = "") {
     return $prefix . $output;
 }
 
-function get_big_Border($prefix = "", $suffix = "") {
-    return get_Values_On_Current_Option("bigborder", "bigborder", "", $prefix, $suffix);
+function get_big_border($prefix = "", $suffix = "") {
+    return get_values_on_current_option("bigborder", "bigborder", "", $prefix, $suffix);
 }
 
-function big_Border($prefix = "", $suffix = "") {
-    echo get_big_Border($prefix, $suffix);
+function big_border($prefix = "", $suffix = "") {
+    echo get_big_border($prefix, $suffix);
 }
 
-function get_with_Filler($prefix = "", $suffix = "") {
-    return get_Values_On_Current_Option("addflexelements", "with_filler", "no_filler", $prefix, $suffix);
+function get_with_filler($prefix = "", $suffix = "") {
+    return get_values_on_current_option("addflexelements", "with_filler", "no_filler", $prefix, $suffix);
 }
 
-function with_Filler($prefix = "", $suffix = "") {
-    echo get_with_Filler($prefix, $suffix);
+function with_filler($prefix = "", $suffix = "") {
+    echo get_with_filler($prefix, $suffix);
 }
 
 function get_Page_Frame($prefix = "", $suffix = "") {
-    return get_Values_On_Current_Option("addframe", "with_background", "no_background", $prefix, $suffix);
+    return get_values_on_current_option("addframe", "with_background", "no_background", $prefix, $suffix);
 }
 
-function page_Frame($prefix = "", $suffix = "") {
+function page_frame($prefix = "", $suffix = "") {
     echo get_Page_Frame($prefix, $suffix);
 }
 
-function row_Frame_Border($prefix = "", $suffix = "") {
-    if (is_NoFrame_With_BigBorder()) {
-        page_Frame($prefix, $suffix);
+function row_frame_border($prefix = "", $suffix = "") {
+    if (is_noframe_with_bigborder()) {
+        page_frame($prefix, $suffix);
     } else {
-        echo get_Page_Frame($prefix) . get_big_Border(" ", $suffix);
+        echo get_Page_Frame($prefix) . get_big_border(" ", $suffix);
     }
 }
-function get_innerrow_Frame_Border($prefix = "", $suffix = "") {
-    if (is_NoFrame_With_BigBorder()) {
-        return get_big_Border($prefix, $suffix);
+function get_innerrow_frame_border($prefix = "", $suffix = "") {
+    if (is_noframe_with_bigborder()) {
+        return get_big_border($prefix, $suffix);
     }
     return "";
 }
-function innerrow_Frame_Border($prefix = "", $suffix = "") {
-    echo get_innerrow_Frame_Border($prefix, $suffix);
+function innerrow_frame_border($prefix = "", $suffix = "") {
+    echo get_innerrow_frame_border($prefix, $suffix);
 }
 ?>

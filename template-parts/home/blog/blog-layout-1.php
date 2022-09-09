@@ -63,7 +63,7 @@ $post_per_page = $current_options["home_blog_counts"];
                 $blog_row_pos = get_first_middle_last_row($j, $blog_posts->post_count, $col_count, " ");
                 $blog_item_pos = get_first_middle_last($j, $blog_posts->post_count); ?>
                 <div class="col-md-4 col-sm-4 flexstretch <?php echo $blog_item_pos . $blog_row_pos; ?>">
-                    <div class="home-blog-area<?php big_Border(" "); ?>">
+                    <div class="home-blog-area<?php big_border(" "); ?>">
                         <div class="home-blog-post-img">
                             <?php $default_arg = ["class" => "img-responsive"];
                             if (has_post_thumbnail()):

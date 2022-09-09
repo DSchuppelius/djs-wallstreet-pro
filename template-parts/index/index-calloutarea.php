@@ -11,7 +11,7 @@
 <!-- wallstreet Callout Section -->
 <?php $current_options = get_current_options(); ?>
 <?php if ($current_options["call_out_area_enabled"] == true) { ?>
-<div class="row <?php row_Frame_Border(""); ?> callout">		
+<div class="row <?php row_frame_border(""); ?> callout">		
 	<div class="callout-section">
 		<h3><?php if ($current_options["call_out_title"] != "") { echo $current_options["call_out_title"]; } ?></h3>
 		<p>

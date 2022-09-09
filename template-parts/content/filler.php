@@ -10,5 +10,5 @@
 $current_options = get_current_options();
 
 if ($current_options["addflexelements"]) { ?>
-	<div class="columnfiller<?php innerrow_Frame_Border(" "); ?>"></div>
+	<div class="columnfiller<?php innerrow_frame_border(" "); ?>"></div>
 <?php } ?>

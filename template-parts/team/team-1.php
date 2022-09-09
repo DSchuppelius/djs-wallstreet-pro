@@ -53,7 +53,7 @@ $current_options = get_current_options(); ?>
                     $twt_meta_save = sanitize_text_field(get_post_meta(get_the_ID(), "twt_meta_save", true));
                     $twt_meta_save_chkbx = sanitize_text_field(get_post_meta(get_the_ID(), "twt_meta_save_chkbx", true)); ?>
                     <div class="col-md-<?php echo $current_options["team_design_layout_style"]; ?> col-sm-6 col-xs-12 team-block">
-                        <div class="team-img<?php big_Border(" "); ?>">
+                        <div class="team-img<?php big_border(" "); ?>">
                             <?php
                             $defalt_arg = ["class" => "img-responsive"];
                             if (has_post_thumbnail()) {
@@ -62,19 +62,19 @@ $current_options = get_current_options(); ?>
                             <div class="overlay">
                                 <ul class="custom-social-icons">
                                     <?php if ($fb_meta_save) { ?>
-                                        <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_Target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="<?php if ($fb_meta_save) { echo esc_html($fb_meta_save); } ?>" <?php blank_target($fb_meta_save_chkbx); ?>><i class="fa-brands fa-facebook"></i></a></li>
                                     <?php } ?>
                                     <?php if ($skype_meta_save) { ?>
-                                        <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_Target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
+                                        <li><a href="<?php if ($skype_meta_save) { echo esc_html($skype_meta_save); } ?>" <?php blank_target($skype_meta_save_chkbx); ?>><i class="fa-brands fa-skype"></i></a></li>
                                     <?php } ?>
                                     <?php if ($rss_meta_save) { ?>
-                                        <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_Target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
+                                        <li><a href="<?php if ($rss_meta_save) { echo esc_html($rss_meta_save); } ?>" <?php blank_target($rss_meta_save_chkbx); ?>><i class="fa fa-rss"></i></a></li>
                                     <?php } ?>
                                     <?php if ($lnkd_meta_save) { ?>
-                                        <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_Target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>			   
+                                        <li><a href="<?php if ($lnkd_meta_save) { echo esc_html($lnkd_meta_save); } ?>" <?php blank_target($lnkd_meta_save_chkbx); ?>><i class="fa-brands fa-linkedin"></i></a></li>			   
                                     <?php } ?>
                                     <?php if ($twt_meta_save) { ?>
-                                        <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_Target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="<?php if ($twt_meta_save) { echo esc_html($twt_meta_save); } ?>" <?php blank_target($twt_meta_save_chkbx); ?>><i class="fa-brands fa-twitter"></i></a></li>
                                     <?php } ?>
                                 </ul>
                             </div>

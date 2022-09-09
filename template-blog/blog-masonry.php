@@ -54,8 +54,8 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 	}
 </style>
 <div class="container <?php echo $masonry_page_template; ?>">
-    <div class="row <?php row_Frame_Border(""); ?> masonry">
-        <div class="toprow<?php innerrow_Frame_Border(" ");?>"></div>
+    <div class="row <?php row_frame_border(""); ?> masonry">
+        <div class="toprow<?php innerrow_frame_border(" ");?>"></div>
     	<div class="innerrow">
 	    	<?php
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;

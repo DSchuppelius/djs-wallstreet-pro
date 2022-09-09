@@ -1,70 +1,3 @@
-/*Variables Section---------------------------------------------------------------------------*/
-@font-face {
-    font-family: "SiteFont";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/ElMessiri-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "SiteFontLight";
-    font-style: normal;
-    font-weight: 200;
-    src: url('fonts/ElMessiri-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "SiteFontBold";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/ElMessiri-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "SiteFontSemi";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/ElMessiri-SemiBold.ttf');
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: "SiteFontMedium";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/ElMessiri-Medium.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Material Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/icon-material-design/MaterialIcons-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsRound-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsSharp-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsOutlined-Regular.ttf'), url('fonts/icon-material-design/MaterialIconsTwoTone-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "FontAwesome";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/font-awesome/webfonts/fa-regular-400.ttf'), url('fonts/font-awesome/webfonts/fa-regular-400.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Bootstrap Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/bootstrap/bootstrap-icons.woff') format('woff'), url('fonts/bootstrap/bootstrap-icons.woff2') format('woff2');
-    font-display: swap;
-}
-
-/*HTML Section--------------------------------------------------------------------------------*/
 html,
 body {
     font-family: 'SiteFont', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1649,7 +1582,7 @@ input#pwbox-1168 {
 }
 
 input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.not) {
-    font-size: 0.9em
+    font-size: 1em
 }
 
 p.short-tabs-content {

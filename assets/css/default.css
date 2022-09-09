@@ -776,6 +776,11 @@ footer.site {
     color: #fff;
     border-bottom: 1px solid #fff
 }
+
+.home-portfolio-showcase-media img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+}
+
 .portfolio-detail-section a.btn,
 .portfolio-detail-section a.button,
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
@@ -1237,7 +1242,8 @@ footer.site {
     }
 
 .section_heading_title h1 {
-    color: #fff
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 60%), 1px -1px 1px rgb(0 0 0 / 60%), -1px 1px 1px rgb(0 0 0 / 60%), -1px -1px 1px rgb(0 0 0 / 60%)
 }
 
 .section_heading_title p {
@@ -1666,11 +1672,6 @@ footer.site {
     .team-social-icons li > a > i {
         color: #FFF
     }
-
-.team1 .team-img:before {
-    background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 100%);
-    background: linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 100%)
-}
 
 .team2 .name {
     color: #f5f5f5

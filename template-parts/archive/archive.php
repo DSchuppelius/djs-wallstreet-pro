@@ -21,7 +21,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 $post_type_data = $wp_query;
 ?>
 <div class="container archive<?php echo empty($archive_type) ? "" : " " . $archive_type; ?>">
-	<div class="row <?php row_Frame_Border(""); ?> flexstretch">
+	<div class="row <?php row_frame_border(""); ?> flexstretch">
 		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
 			<?php $paged = get_query_var("paged") ? get_query_var("paged") : 1;
 			if(!empty($archive_type))

@@ -76,7 +76,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 </style>
 <div class="blog6 blog-section">
 	<div class="container blog-switcher-view">
-		<div class="row <?php row_Frame_Border(""); ?>">		
+		<div class="row <?php row_frame_border(""); ?>">		
 			<div class="col-md-12">
 				<?php
                 $switcher = 1;
