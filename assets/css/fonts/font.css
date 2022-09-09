@@ -24,7 +24,6 @@ article figure figcaption {
 }
 
 #blogdetail_btn {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -41,14 +40,14 @@ article figure figcaption {
 .about-us .social a {
     font-size: 30px;
 }
-    .about-section h3 {
+
+.about-section h3 {
     font-family: 'SiteFontBold';
     font-weight: 400;
     font-size: 24px
 }
 
 .about-section p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -59,19 +58,16 @@ article figure figcaption {
 
 .acco_panel p {
     font-size: 14px;
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
 .alert-error {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .alert-info {
     border-radius: 2px;
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px;
     margin-bottom: 15px;
@@ -79,13 +75,11 @@ article figure figcaption {
 }
 
 .alert-success {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .alert-warning {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -98,13 +92,11 @@ article figure figcaption {
 
 .blockquote2 > small {
     font-size: 14px;
-    font-family: 'SiteFont';
     font-weight: 400;
     font-style: italic
 }
 
 .blockquote2 > span {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 15px
 }
@@ -116,32 +108,27 @@ article figure figcaption {
 }
 
 .blog-author p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .blog-blockquote blockquote > small {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .blog-blockquote blockquote > span {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-style: italic;
     font-size: 15px
 }
 
 .blog-form-control {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .blog-form-control-textarea {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -157,13 +144,11 @@ article figure figcaption {
 }
 
 .blog-pagination a, .page-links a, .blog-pagination span, .page-numbers {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 18px
 }
 
 .blog-post-date {
-    font-family: 'SiteFont';
     font-weight: 600
 }
 
@@ -178,7 +163,6 @@ article figure figcaption {
         }
 
     .blog-post-date span.date {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 36px
     }
@@ -188,7 +172,6 @@ article figure figcaption {
         }
 
 .blog-post-detail {
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
@@ -201,7 +184,6 @@ article figure figcaption {
         }
 
 .blog-post-meta {
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
@@ -210,13 +192,11 @@ article figure figcaption {
     }
 
 .blog-post-title .blog-post-title-wrapper blockquote > p > span, .blog-post-title .blog-post-title-wrapper-full blockquote > p > span {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 15px
 }
 
 .blog-post-title .blog-post-title-wrapper ul > li > span, .blog-post-title .blog-post-title-wrapper-full ul > li > span {
-    font-family: 'SiteFont';
     font-size: 16px !important
 }
 
@@ -254,20 +234,17 @@ article figure figcaption {
 
 .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ul > li, .blog-post-title-wrapper-full > ol > li > ul > li, .blog-post-title-wrapper > ol > li > ul > li > ol > li, .blog-post-title-wrapper-full > ol > li > ul > li > ol > li {
     margin: 0 0 7px;
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px;
     line-height: 20px
 }
 
     .blog-post-title-wrapper > ol, .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li, .blog-post-title-wrapper > ol > li > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li > ol > li {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 16px
     }
 
 .blog-post-title-wrapper > ul, .blog-post-title-wrapper > ul > li, .blog-post-title-wrapper-full > ul, .blog-post-title-wrapper-full > ul > li, .blog-post-title-wrapper > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li, .blog-post-title-wrapper > ul > li > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li > ul > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
@@ -277,7 +254,6 @@ article figure figcaption {
 }
 
 .blog-post-title-wrapper blockquote > p > small, .blog-post-title-wrapper-full blockquote > p > small {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -287,7 +263,6 @@ article figure figcaption {
 }
 
 .blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1, .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3, .blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4, .blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5, .blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
-    font-family: 'SiteFont';
     font-weight: 300
 }
 
@@ -296,7 +271,6 @@ article figure figcaption {
 }
 
     .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
-        font-family: 'SiteFont';
         font-weight: 300;
         font-size: 40px
     }
@@ -307,7 +281,6 @@ article figure figcaption {
 }
 
     .blog-post-title-wrapper h2 span.title {
-        font-family: 'SiteFont';
         font-weight: 200
     }
 
@@ -343,7 +316,6 @@ article figure figcaption {
 }
 
 .blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
@@ -361,13 +333,11 @@ article figure figcaption {
 }
 
 .blogdetail-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .breadcrumbs > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -377,19 +347,16 @@ article figure figcaption {
 }
 
     .callout-section a {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 18px
     }
 
     .callout-section h3 {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 24px
     }
 
     .callout-section p {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 15px
     }
@@ -399,13 +366,11 @@ article figure figcaption {
 }
 
 .column-box p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
 
 .comment-date a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -415,19 +380,16 @@ article figure figcaption {
 }
 
 .comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
 
     .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 16px
     }
 
 .comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
@@ -437,19 +399,16 @@ article figure figcaption {
 }
 
 .comment-detail p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .comment-detail-title {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 15px
 }
 
 .comment-title h3 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 24px
 }
@@ -463,7 +422,6 @@ article figure figcaption {
 }
 
 .comment_box h1, .comment_box h2, .comment_box h3, .comment_box h4, .comment_box h5, .comment_box h6 {
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
@@ -488,44 +446,37 @@ article figure figcaption {
 }
 
 .cont-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .cont-form-control {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .cont-form-control-textarea {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .cont-heading-title h1 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 36px;
     font-weight: normal
 }
 
 .cont-heading-title p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 20px
 }
 
 .contact-detail-area address {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 16px
 }
 
 .contact-detail-area h5 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 24px
 }
@@ -535,25 +486,21 @@ article figure figcaption {
 }
 
 .dropcape-circle span {
-    font-family: 'SiteFont';
     font-weight: 600;
     font-size: 45px
 }
 
 .dropcape-simple span {
-    font-family: 'SiteFont';
     font-weight: 600;
     font-size: 45px
 }
 
 .dropcape-square span {
-    font-family: 'SiteFont';
     font-weight: 600;
     font-size: 45px
 }
 
 .dropcape-square, .dropcape-simple, .dropcape-circle {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -567,7 +514,6 @@ article figure figcaption {
 }
 
 .error_404 {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 18px;
     font-weight: normal
@@ -575,7 +521,6 @@ article figure figcaption {
 
     .error_404 h2 {
         font-size: 75px;
-        font-family: 'SiteFont';
         font-weight: 600
     }
 
@@ -584,13 +529,11 @@ article figure figcaption {
 }
 
 .features-area h3 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 20px
 }
 
 .features-area p {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 15px
 }
@@ -602,19 +545,16 @@ article figure figcaption {
 }
 
 .flex_btn {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 18px
 }
 
 .footer-blog-post h3 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .footer-blog-post span {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 12px
 }
@@ -624,13 +564,11 @@ article figure figcaption {
 }
 
 .footer-copyright p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h1, .footer-widget-section h2, .footer-widget-section h3, .footer-widget-section h4, .footer-widget-section h5, .footer-widget-section h6 {
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
@@ -640,33 +578,28 @@ article figure figcaption {
 }
 
 .footer-widget-section li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
 }
 
 .footer-widget-tags a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
 }
 
 footer.site p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .footer_widget_column > .tagcloud a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px !important
 }
 
 .footer_widget_column > ul > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
@@ -677,7 +610,6 @@ footer.site p {
 }
 
 .footer_widget_title {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 24px
 }
@@ -688,7 +620,6 @@ footer.site p {
 }
 
 .google-map-title h1 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 36px
 }
@@ -698,7 +629,6 @@ footer.site p {
 }
 
 .head-contact-info li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -715,25 +645,21 @@ footer.site p {
 }
 
 .home-blog-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 12px
 }
 
 .home-blog-description p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .home-blog-post-detail {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 12px
 }
 
     .home-blog-post-detail > .comment {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 12px
     }
@@ -743,43 +669,36 @@ footer.site p {
         }
 
     .home-blog-post-detail > .date {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 15px
     }
 
 .home-portfolio-showcase .home-portfolio-showcase-detail h4 {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px
 }
 
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .image-para-content {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .image-para-title {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 18px
 }
 
 .main-portfolio-showcase .main-portfolio-showcase-detail h4 {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px
 }
 
 .main-portfolio-showcase .main-portfolio-showcase-detail p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -803,14 +722,12 @@ footer.site p {
 }
 
 .menu-primary-container a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
 }
 
 .menu-primary-container li a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
@@ -825,7 +742,6 @@ footer.site p {
 }
 
 .other-service-area h2 {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 18px
 }
@@ -835,7 +751,6 @@ footer.site p {
 }
 
 .other-service-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
@@ -850,7 +765,6 @@ footer.site p {
 }
 
 .page-title-col h2 {
-    font-family: 'SiteFont';
     font-size: 40px
 }
 
@@ -860,13 +774,11 @@ footer.site p {
 
 .panel-default > .short-panel-heading h4 {
     font-size: 14px !important;
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
 .panel-title {
     font-size: 14px !important;
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
@@ -875,31 +787,26 @@ footer.site p {
     }
 
 .portfolio-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 12px
 }
 
 .portfolio-detail-description p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .portfolio-detail-info .project-btn {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .portfolio-detail-info p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
     .portfolio-detail-info p small {
-        font-family: 'SiteFont';
         font-weight: 500;
         font-size: 15px
     }
@@ -913,13 +820,11 @@ footer.site p {
 }
 
 .portfolio-tabs li a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .post-content li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
@@ -931,38 +836,32 @@ footer.site p {
     }
 
 .post-date span.date {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 24px
 }
 
 .post-date span.month {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px
 }
 
 .post-media-sidebar h3 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .post-media-sidebar p {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 15px
 }
 
 .post-password-form input[type="submit"] {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px;
     font-weight: normal
 }
 
 .post_message {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 40px
 }
@@ -972,20 +871,17 @@ footer.site p {
 }
 
 .proejct-btn a {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px
 }
 
 .qua_contact_btn {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .edit-link,
 .reply {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px
 }
@@ -993,7 +889,6 @@ footer.site p {
     .edit-link a,
     .reply a {
         font-size: 13px;
-        font-family: 'SiteFont';
         font-weight: 400
     }
 
@@ -1009,20 +904,17 @@ footer.site p {
 }
 
 .search-widget a {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px;
     font-weight: normal
 }
 
 .search-widget input {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .search_btn {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px;
     font-weight: normal
@@ -1030,18 +922,15 @@ footer.site p {
 
 .search_err_heading {
     font-size: 20px;
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
 .search_heading {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 35px
 }
 
 .search_widget_input {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 14px
 }
@@ -1053,25 +942,21 @@ footer.site p {
 }
 
 .section_heading_title p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 20px
 }
 
 .service-area h2 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 24px
 }
 
 .service-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .service-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1100,36 +985,30 @@ footer.site p {
 
 .short-btn-large {
     font-size: 12px;
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
 .short-btn-mini {
     font-size: 12px;
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
 .short-btn-small {
     font-size: 12px;
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
 .short-tabs li a {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 14px
 }
 
 .short-tooltip {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .sidebar-comment-box span {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 12px
 }
@@ -1139,7 +1018,6 @@ footer.site p {
     }
 
     .sidebar-comment-box span > small {
-        font-family: 'SiteFont';
         font-weight: 300;
         font-size: 16px
     }
@@ -1149,13 +1027,11 @@ footer.site p {
 }
 
 .sidebar-tweet-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .sidebar-tweet-area span {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px
 }
@@ -1165,19 +1041,16 @@ footer.site p {
 }
 
 .sidebar-widget > .tagcloud a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px !important
 }
 
 .sidebar-widget > div.textwidget, .footer_widget_column > div.textwidget {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .sidebar-widget > ul > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1209,7 +1082,6 @@ footer.site p {
 }
 
 .sidebar-widget ul li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: 400
@@ -1226,26 +1098,22 @@ footer.site p {
 }
 
 .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px;
     font-weight: normal
 }
 
 .sidebar-widget-tab li a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
 
 .sidebar-widget-tags a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px
 }
 
 .sidebar-widget-title h2 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 22px
 }
@@ -1268,36 +1136,30 @@ footer.site p {
 }
 
 .slide-text-bg2 span {
-    font-family: 'SiteFont';
     font-weight: 300
 }
 
 .slide-text-bg3 p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 22px
 }
 
 .table {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .team-area h5 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 18px
 }
 
     .team-area h5 > span {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 13px
     }
 
 .team-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1315,13 +1177,11 @@ footer.site p {
 }
 
 .testimonial-area h2 {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 18px
 }
 
 .testimonial-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 20px
 }
@@ -1342,19 +1202,16 @@ footer.site p {
 }
 
 .tweet-area h2 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 18px
 }
 
 .tweet-area p {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 20px
 }
 
 .tweet-btn a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1364,7 +1221,6 @@ footer.site p {
 }
 
 .typo-head-title h3 {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 20px
 }
@@ -1374,7 +1230,6 @@ footer.site p {
 }
 
 .typo-para-icons span {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1385,13 +1240,11 @@ footer.site p {
 
     .typo-section blockquote > small {
         font-size: 14px;
-        font-family: 'SiteFont';
         font-weight: 400;
         font-style: italic
     }
 
     .typo-section blockquote > span {
-        font-family: 'SiteFont';
         font-weight: 300;
         font-size: 15px
     }
@@ -1431,12 +1284,10 @@ footer.site p {
 
 .wallstreet_searching {
     font-size: 16px;
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
 .wallstreet_title_head {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 38px
 }
@@ -1452,7 +1303,6 @@ footer.site p {
 
 .wp-block-calendar table caption {
     font-size: 25px;
-    font-family: 'SiteFont';
     font-weight: 600
 }
 
@@ -1469,13 +1319,11 @@ footer.site p {
 }
 
 .wp-block-search .wp-block-search__button {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-weight: normal
 }
 
 .wp-block-search .wp-block-search__input {
-    font-family: 'SiteFont';
     font-weight: 500;
     font-size: 14px
 }
@@ -1490,7 +1338,6 @@ footer.site p {
 }
 
 .wp-block-tag-cloud a {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px !important
 }
@@ -1510,31 +1357,26 @@ footer.site p {
 }
 
 .wpcf7-submit {
-    font-family: 'SiteFont';
     font-weight: 600;
     font-size: 16px
 }
 
 .wpcf7-text, .wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 15px
 }
 
 .wpcf7-textarea {
-    font-family: 'SiteFont';
     font-weight: 600;
     font-size: 14px
 }
 
 a.blog-btn {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 13px
 }
 
 a.readmore {
-    font-family: 'SiteFont';
     font-weight: 300;
     font-size: 12px
 }
@@ -1560,7 +1402,6 @@ cite {
 }
 
 div.wpcf7-validation-errors {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1576,7 +1417,6 @@ a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a
     }
 
 input#pwbox-1168 {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1587,12 +1427,10 @@ input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.
 
 p.short-tabs-content {
     font-size: 14px;
-    font-family: 'SiteFont';
     font-weight: 400
 }
 
 span.wpcf7-not-valid-tip {
-    font-family: 'SiteFont';
     font-weight: 400;
     font-size: 14px
 }
@@ -1605,7 +1443,6 @@ td {
 th {
     font-size: 15px;
     font-weight: 100;
-    font-family: 'SiteFont';
     font-weight: 500
 }
 
