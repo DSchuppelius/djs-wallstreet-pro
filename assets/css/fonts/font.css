@@ -204,10 +204,6 @@ article figure figcaption {
     font-size: 46px
 }
 
-.blog-post-title > .blog-post-title-wrapper > h1, .blog-post-title > .blog-post-title-wrapper > h2, .blog-post-title > .blog-post-title-wrapper > h3, .blog-post-title > .blog-post-title-wrapper > h4, .blog-post-title > .blog-post-title-wrapper > h5, .blog-post-title > .blog-post-title-wrapper > h6 {
-    font-family: 'SiteFont'
-}
-
 .blog-post-title > .blog-post-title-wrapper > h2 {
     font-size: 40px
 }
@@ -535,7 +531,7 @@ article figure figcaption {
 
 .features-area p {
     font-weight: 300;
-    font-size: 15px
+    font-size: 16px
 }
 
 .features-title {
@@ -614,11 +610,6 @@ footer.site p {
     font-size: 24px
 }
 
-.format-status p {
-    font-family: 'Open Sans',sans-serif;
-    font-size: 18px
-}
-
 .google-map-title h1 {
     font-weight: 400;
     font-size: 36px
@@ -651,7 +642,7 @@ footer.site p {
 
 .home-blog-description p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 16px
 }
 
 .home-blog-post-detail {
@@ -680,7 +671,7 @@ footer.site p {
 
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 15px
 }
 
 .image-para-content {
@@ -700,11 +691,10 @@ footer.site p {
 
 .main-portfolio-showcase .main-portfolio-showcase-detail p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 15px
 }
 
 .masonry-item .blog-lg-area-left h3 {
-    font-family: 'Open Sans',sans-serif;
     font-size: 24px;
     font-weight: 700
 }
@@ -953,7 +943,6 @@ footer.site p {
 
 .service-area p {
     font-weight: 400;
-    font-size: 15px
 }
 
 .service-btn a {
@@ -1234,53 +1223,49 @@ footer.site p {
     font-size: 14px
 }
 
-.typo-section {
-    font-family: 'SiteFont'
+.typo-section blockquote > small {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic
 }
 
-    .typo-section blockquote > small {
-        font-size: 14px;
-        font-weight: 400;
-        font-style: italic
-    }
+.typo-section blockquote > span {
+    font-weight: 300;
+    font-size: 15px
+}
 
-    .typo-section blockquote > span {
-        font-weight: 300;
-        font-size: 15px
-    }
+.typo-section h1 {
+    font-size: 46px
+}
 
-    .typo-section h1 {
-        font-size: 46px
-    }
+.typo-section h1, .typo-section h2, .typo-section h3, .typo-section h4, .typo-section h5, .typo-section h6 {
+    font-weight: 300
+}
 
-    .typo-section h1, .typo-section h2, .typo-section h3, .typo-section h4, .typo-section h5, .typo-section h6 {
-        font-weight: 300
-    }
+.typo-section h2 {
+    font-size: 40px
+}
 
-    .typo-section h2 {
-        font-size: 40px
-    }
+.typo-section h3 {
+    font-size: 34px
+}
 
-    .typo-section h3 {
-        font-size: 34px
-    }
+.typo-section h4 {
+    font-size: 28px
+}
 
-    .typo-section h4 {
-        font-size: 28px
-    }
+.typo-section h5 {
+    font-size: 22px
+}
 
-    .typo-section h5 {
-        font-size: 22px
-    }
+.typo-section h6 {
+    font-size: 16px
+}
 
-    .typo-section h6 {
-        font-size: 16px
-    }
-
-    .typo-section p {
-        font-weight: 300;
-        font-size: 16px
-    }
+.typo-section p {
+    font-weight: 300;
+    font-size: 16px
+}
 
 .wallstreet_searching {
     font-size: 16px;

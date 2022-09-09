@@ -215,7 +215,7 @@ button.wp-block-search__button,
 }
 
     button.wp-block-search__button:not(.not):before {
-        line-height: 2.9em
+        line-height: 2em
     }
 
     button.wp-block-button__link:not(.not) {
@@ -225,7 +225,7 @@ button.wp-block-search__button,
     }
 
     button.wp-block-search__button:not(.not) {
-        padding: 1.1em 2.5em 0.8em 4.75em;
+        padding: 1em 2.5em 0.65em 4.75em;
         position: absolute;
         line-height: 1em;
         min-width: 150px
@@ -273,9 +273,9 @@ a.comment-edit-link:not(.not),
 a.comment-reply-link:not(.not) {
     min-width: 250px;
     display: inline-block;
-    line-height: 1.5em;
+    line-height: 1em;
     overflow: hidden;
-    padding: 0.625em 1em 0.425em 3.5em;
+    padding: 0.85em 1em 0.55em 3.5em;
     position: relative;
     user-select: none;
     z-index: 3
@@ -307,10 +307,6 @@ button.btn.navbar-toggle {
 a.btn.tab {
     min-width: 160px;
 }
-
-    a.btn.tab:not(.not) {
-        padding: 1rem 3.5rem 0.925rem 4.75rem;
-    }
 
 #searchbar_fullscreen .btn {
     position: absolute;

@@ -94,7 +94,7 @@ $post_per_page = $current_options["home_blog_counts"];
             <div class ="row">
                 <div class="proejct-btn">
                     <form action="<?php if ($current_options["all_posts_link"] != "") { echo $current_options["all_posts_link"]; } ?>" <?php if ($current_options["view_all_lnik_target"] == true) { echo 'method="get" target="_blank"'; } ?>>
-                        <button class="btn more blog" type="submit" ><?php echo $current_options["view_all_posts_text"]; ?></button>
+                        <button class="btn more blog big" type="submit" ><?php echo $current_options["view_all_posts_text"]; ?></button>
                     </form>
                 </div>
             </div>

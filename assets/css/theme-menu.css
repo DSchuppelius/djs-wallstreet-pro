@@ -26,7 +26,6 @@
 }
 
     .navbar-header .site-logo-area .navbar-brand {
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 40px;
         height: auto;
@@ -82,7 +81,6 @@
             padding: 40px 19px;
             border-radius: 0px 0px 4px 4px;
             color: #ffffff;
-            font-family: 'SiteFont';
             font-weight: 400;
             font-size: 16px;
         }
@@ -122,7 +120,6 @@
 
     .dropdown-menu > li > a {
         color: #ffffff;
-        font-family: 'SiteFont';
         font-weight: 400;
         font-size: 15px;
         line-height: 20px;
