@@ -35,6 +35,14 @@ function get_first_middle_last_row($count, $total, $maxcol, $prefix = "") {
     return $prefix . $output;
 }
 
+function get_odd_even_row($count, $total, $maxcol, $prefix = "") {
+    $output = null;
+
+    $output = ceil($count/$maxcol)%2 != 0?"odd-row":"even-row";
+
+    return $prefix . $output;
+}
+
 function get_big_border($prefix = "", $suffix = "") {
     return get_values_on_current_option("bigborder", "bigborder", "", $prefix, $suffix);
 }

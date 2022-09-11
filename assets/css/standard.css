@@ -96,53 +96,58 @@ body.error404 .error_404 {
     border-radius: var(--border-bigbase);
 }
 
-.home-portfolio-showcase-media.count1 img,
-.home-portfolio-showcase-media.count1 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count1 .home-portfolio-showcase-detail p:before,
-.home-portfolio-showcase-media.count3 img,
-.home-portfolio-showcase-media.count3 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count3 .home-portfolio-showcase-detail p:before,
-.main-portfolio-showcase.count1 div,
-.main-portfolio-showcase.count1 img,
-.main-portfolio-showcase.count3 div,
-.main-portfolio-showcase.count3 img {
+.home-portfolio-showcase-media.count1.clover-items img,
+.home-portfolio-showcase-media.count1.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count1.clover-items .home-portfolio-showcase-detail p:before,
+.home-portfolio-showcase-media.count3.clover-items img,
+.home-portfolio-showcase-media.count3.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count3.clover-items .home-portfolio-showcase-detail p:before {
     border-bottom-right-radius: 0px;
 }
 
-.home-portfolio-showcase-media.count2 img,
-.home-portfolio-showcase-media.count2 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count2 .home-portfolio-showcase-detail p:before,
-.home-portfolio-showcase-media.count4 img,
-.home-portfolio-showcase-media.count4 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count4 .home-portfolio-showcase-detail p:before,
-.main-portfolio-showcase.count2 div,
-.main-portfolio-showcase.count2 img,
-.main-portfolio-showcase.count4 div,
-.main-portfolio-showcase.count4 img {
+.home-portfolio-showcase-media.count2.clover-items img,
+.home-portfolio-showcase-media.count2.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count2.clover-items .home-portfolio-showcase-detail p:before,
+.home-portfolio-showcase-media.count4.clover-items img,
+.home-portfolio-showcase-media.count4.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count4.clover-items .home-portfolio-showcase-detail p:before{
     border-bottom-left-radius: 0px;
 }
 
-.home-portfolio-showcase-media.count5 img,
-.home-portfolio-showcase-media.count5 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count7 img,
-.home-portfolio-showcase-media.count7 .home-portfolio-showcase-overlay,
-.main-portfolio-showcase.count5 div,
-.main-portfolio-showcase.count5 img,
-.main-portfolio-showcase.count7 div,
-.main-portfolio-showcase.count7 img {
+.home-portfolio-showcase-media.count5.clover-items img,
+.home-portfolio-showcase-media.count5.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count7.clover-items img,
+.home-portfolio-showcase-media.count7.clover-items .home-portfolio-showcase-overlay {
     border-top-right-radius: 0px;
 }
 
-.home-portfolio-showcase-media.count6 img,
-.home-portfolio-showcase-media.count6 .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count8 img,
-.home-portfolio-showcase-media.count8 .home-portfolio-showcase-overlay,
-.main-portfolio-showcase.count6 div,
-.main-portfolio-showcase.count6 img,
-.main-portfolio-showcase.count8 div,
-.main-portfolio-showcase.count8 img {
+.home-portfolio-showcase-media.count6.clover-items img,
+.home-portfolio-showcase-media.count6.clover-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.count8.clover-items img,
+.home-portfolio-showcase-media.count8.clover-items .home-portfolio-showcase-overlay{
     border-top-left-radius: 0px;
 }
+
+.home-portfolio-showcase-media.first_column.block-items img,
+.home-portfolio-showcase-media.first_column.block-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.first_column.block-items .home-portfolio-showcase-detail p:before {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.home-portfolio-showcase-media.middle_column.block-items img,
+.home-portfolio-showcase-media.middle_column.block-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.middle_column.block-items .home-portfolio-showcase-detail p:before {
+    border-radius: 0px;
+}
+
+.home-portfolio-showcase-media.last_column.block-items img,
+.home-portfolio-showcase-media.last_column.block-items .home-portfolio-showcase-overlay,
+.home-portfolio-showcase-media.last_column.block-items .home-portfolio-showcase-detail p:before {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
 
 /*Blog Section Css----------------------------------------------------------------------------*/
 .col-md-4.col-sm-4.first_column div.home-blog-area {

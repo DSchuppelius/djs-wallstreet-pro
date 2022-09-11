@@ -2,16 +2,17 @@ body {
     min-width: 350px;
 }
 
-article section figure:has(.cookies){
-    overflow:auto;
+article section figure:has(.cookies) {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .portfolio-detail-pagi .button.btn {
     min-width: 155px;
 }
 
-.navbar .navbar-brand{
-    margin:0 auto
+.navbar .navbar-brand {
+    margin: 0 auto
 }
 
 .navbar1 .logo-link-url {
@@ -32,7 +33,7 @@ article section figure:has(.cookies){
 }
 
 .navbar-header .site-logo-area {
-     display: block; 
+    display: block;
 }
 
     .navbar-header .site-logo-area.with-Text > .site-branding-text .site-description {

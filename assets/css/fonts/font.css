@@ -599,6 +599,11 @@ footer.site p {
     font-size: 36px
 }
 
+.has-drop-cap:not(:focus):first-letter {
+    font-size: 8.6em;
+    margin: .15em .15em 0 0;
+}
+
 .head-contact-info i {
     font-size: 17px
 }

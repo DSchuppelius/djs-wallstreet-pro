@@ -4018,6 +4018,10 @@ div.collapsing ul.nav {
     padding: 0
 }
 
+    .sidebar-widget canvas {
+        width: 100%
+    }
+
     .sidebar-widget #searchform {
         overflow: hidden
     }

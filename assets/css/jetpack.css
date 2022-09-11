@@ -2,6 +2,10 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px;
 }
 
+.comment-like-link {
+    color: var(--theme-color);
+}
+
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form {
     display: flex;
     flex: auto;
@@ -35,7 +39,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
     border: none;
-    box-shadow: 0 1px 1px rgba(0,0,0,.075)inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .075em) inset;
     border-radius: 0.1em !important;
     line-height: 20px;
     margin: 0;
@@ -62,7 +66,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button {
         padding: 1em 1em 0.75em 3.5em !important;
         margin-left: 2px !important;
-        min-width: 180px;
+        min-width: 150px;
         border-radius: 0 !important;
         border-top-right-radius: 0.1em !important;
         border-bottom-right-radius: 0.1em !important;

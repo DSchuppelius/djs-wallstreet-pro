@@ -33,7 +33,7 @@
         <div class="row">
             <?php
             $j = 1;
-            $col_count = $current_options["portfolio_homepage_column_laouts"] == 3 ? 4 : ($current_options["portfolio_homepage_column_laouts"] == 4 ? 3 : 2);
+            $col_count = $current_options["portfolio_homepage_column_layouts"] == 3 ? 4 : ($current_options["portfolio_homepage_column_layouts"] == 4 ? 3 : 2);
             $total_portfolio = $current_options["portfolio_list"];
             $args = [
                 "post_type" => PORTFOLIO_POST_TYPE,
@@ -45,16 +45,20 @@
 
                     $portfolio->the_post();
                     $portfolio_row_pos = get_first_middle_last_row($j, $portfolio->post_count, $col_count, " ");
+                    $portfolio_odd_row = get_odd_even_row($j, $portfolio->post_count, $col_count, " ");
                     $portfolio_item_pos = get_first_middle_last($j, $portfolio->post_count, " ");
+                    $portfolio_item_type = $current_options["portfolio_homepage_item_layouts"];
+                    if($col_count != 4 && $current_options["portfolio_homepage_item_layouts"] == "clover-items")
+                        $portfolio_item_type = null;
 
                     if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
                         $meta_project_link = get_post_meta(get_the_ID(), "meta_project_link", true);
                     } else {
                         $meta_project_link = get_post_permalink();
                     } ?>
-                    <div class="col-md-<?php echo $current_options["portfolio_homepage_column_laouts"]; ?> home-portfolio-area">
+                    <div class="col-md-<?php echo $current_options["portfolio_homepage_column_layouts"]; ?> home-portfolio-area">
                         <div class="home-portfolio-showcase">
-                            <div class="home-portfolio-showcase-media count<?php echo $j; echo $portfolio_item_pos . $portfolio_row_pos; ?>">
+                            <div class="home-portfolio-showcase-media count<?php echo $j; echo $portfolio_odd_row. $portfolio_item_pos . $portfolio_row_pos; echo " ". $portfolio_item_type; ?>">
                                 <?php
                                 $defalt_arg = ["class" => "img-responsive" . get_big_border(" ")];
                                 if (has_post_thumbnail()):
@@ -68,7 +72,7 @@
                                             <div class="home-portfolio-showcase-detail">
                                                 <h4><?php the_title(); ?></h4>
                                                 <?php
-                                                if ($current_options["portfolio_homepage_column_laouts"] == 3) { ?>
+                                                if ($current_options["portfolio_homepage_column_layouts"] == 3) { ?>
                                                     <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
                                                 <?php } else { ?>
                                                     <p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
@@ -91,7 +95,7 @@
                 endwhile;
             } else {
                 for ($i = 1; $i <= $current_options["portfolio_list"]; $i++) { ?>
-                    <div class="col-md-<?php echo $current_options["portfolio_homepage_column_laouts"]; ?> home-portfolio-area">
+                    <div class="col-md-<?php echo $current_options["portfolio_homepage_column_layouts"]; ?> home-portfolio-area">
                         <div class="home-portfolio-showcase">
                             <div class="home-portfolio-showcase-media">
                                 <img class="img-responsive<?php big_border(" "); ?>" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/portfolio/port<?php echo rand(1, 4); ?>.jpg" />

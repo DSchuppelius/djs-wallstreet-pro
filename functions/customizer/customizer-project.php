@@ -22,13 +22,13 @@ function wallstreet_project_customizer($wp_customize) {
     ]);
 
     //Column Layout
-    $wp_customize->add_setting("wallstreet_pro_options[portfolio_homepage_column_laouts]", [
+    $wp_customize->add_setting("wallstreet_pro_options[portfolio_homepage_column_layouts]", [
         "default" => 3,
         "capability" => "edit_theme_options",
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
-    $wp_customize->add_control("wallstreet_pro_options[portfolio_homepage_column_laouts]", [
+    $wp_customize->add_control("wallstreet_pro_options[portfolio_homepage_column_layouts]", [
         "type" => "radio",
         "label" => __("Portfolio Column layout section", "wallstreet"),
         "section" => "project_section_settings",
@@ -36,6 +36,24 @@ function wallstreet_project_customizer($wp_customize) {
             3 => "4 Column Layout",
             4 => "3 Column Layout",
             6 => "2 Column Layout",
+        ],
+    ]);
+
+    //Item Layout
+    $wp_customize->add_setting("wallstreet_pro_options[portfolio_homepage_item_layouts]", [
+        "default" => "single-items",
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[portfolio_homepage_item_layouts]", [
+        "type" => "radio",
+        "label" => __("Portfolio item layout section", "wallstreet"),
+        "section" => "project_section_settings",
+        "choices" => [
+            "clover-items" => __("Clover (Only for 4 Column Layout)", "wallstreet"),
+            "block-items" => __("Block", "wallstreet"),
+            "single-items" => __("Single", "wallstreet"),
         ],
     ]);
 

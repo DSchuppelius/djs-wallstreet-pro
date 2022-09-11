@@ -66,7 +66,8 @@ function theme_data_setup() {
 
         //portfolio
         "view_all_projects_btn_enabled" => true,
-        "portfolio_homepage_column_laouts" => 3,
+        "portfolio_homepage_item_layouts" => "single-items",
+        "portfolio_homepage_column_layouts" => 3,
         "portfolio_list" => 4,
         "portfolio_title" => __("Featured portfolio", "wallstreet"),
         "portfolio_description" => __("Most popular of our works.", "wallstreet"),
