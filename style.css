@@ -87,6 +87,11 @@ article figure > div {
     justify-content: center
 }
 
+article figure:not(.alignright, .alignleft, .aligncenter) {
+    width: 100%;
+    margin-bottom: 1em
+}
+
 article figure > img {
     margin: 0 auto
 }
@@ -124,14 +129,12 @@ article footer .blog-post-meta {
     .about-section h3 {
         line-height: 25px;
         margin-bottom: 15px;
-        padding: 0 0 0 10px;
         margin-top: 0
     }
 
     .about-section p {
         line-height: 28px;
         margin: 0 0 15px;
-        padding: 0 0 0 10px
     }
 
     .about-section .social {
@@ -533,7 +536,7 @@ article footer .blog-post-meta {
         .blog-post-meta a > i {
             margin-right: 9px;
             vertical-align: middle;
-            margin-top: -3px
+            margin-top: 2px
         }
 
 .blog-post-title {
@@ -723,6 +726,8 @@ article footer .blog-post-meta {
 
 .blog-post-title-wrapper figure video, .blog-post-title-wrapper figure iframe, .blog-post-title-wrapper figure img, .blog-post-title-wrapper figure figcaption, .blog-post-title-wrapper .wp-block-image, .blog-post-title-wrapper .wp-block-image img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post span {
     border-radius: 0.2em;
+    margin: 0 auto;
+    max-width: 100%
 }
 
 .blog-post-title-wrapper-full {
@@ -756,7 +761,7 @@ article footer .blog-post-meta {
 
 .blog-tags {
     display: inline-block;
-    margin: 0 5px 5px
+    margin: 5px
 }
 
     .blog-tags a {
@@ -770,6 +775,10 @@ article footer .blog-post-meta {
     .blog-tags i, .blog-tags span {
         margin-right: 9px;
         vertical-align: middle
+    }
+
+    .blog-tags i {
+        margin-top: 2px
     }
 
 .blog6 .blog-section-left {
@@ -3272,10 +3281,6 @@ div.collapsing ul.nav {
         padding: 0 0 0 6px;
     }
 
-        .row.bigborder .col-md-4 .wp-block-search .wp-block-search__button {
-            right: 26px;
-        }
-
     .row.bigborder .col-md-8 {
         padding: 0 6px 0 0;
     }
@@ -3385,10 +3390,6 @@ div.collapsing ul.nav {
     .row.with_background .col-md-4 {
         padding: 0 0 0 10px;
     }
-
-        .row.with_background .col-md-4 .wp-block-search .wp-block-search__button {
-            right: 26px;
-        }
 
     .row.with_background .col-md-8 {
         padding: 0 10px 0 0;
@@ -3573,26 +3574,7 @@ div.collapsing ul.nav {
     padding: 10px
 }
 
-.wp-block-search .wp-block-search__input:focus-visible,
-.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input:focus-visible {
-    outline: -webkit-focus-ring-color auto 1px;
-}
-
-.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
-    border: 1px solid #E0E4E6;
-    box-shadow: 0 1px 1px rgba(0,0,0,.075)inset;
-    border-radius: 2px !important;
-    line-height: 20px;
-    margin: 0;
-    height: 46px;
-    padding: 10px 8px !important;
-    background-image: none;
-    display: block;
-    width: 100%;
-    padding-right: 155px !important;
-}
-
-#subscribe-email input, .search_widget_input {
+.search_widget_input {
     line-height: 20px;
     margin: 25px 0 15px;
     height: 46px;
@@ -3602,7 +3584,7 @@ div.collapsing ul.nav {
     width: 100% !important
 }
 
-    #subscribe-email input:focus, .search_widget_input:focus {
+    .search_widget_input:focus {
         outline: 0
     }
 
@@ -3643,19 +3625,19 @@ div.collapsing ul.nav {
     padding: 130px 30px 20px
 }
 
-    .service-area h2 {
-        line-height: 30px;
-        margin: 0 0 11px;
-        text-align: center
-    }
+.service-area h2 {
+    line-height: 30px;
+    margin: 0 0 11px;
+    text-align: center
+}
 
-    .service-area p {
-        line-height: 28px;
-        margin-bottom: 27px;
-        margin-top: 0;
-        padding: 0;
-        text-align: center
-    }
+.service-area p {
+    line-height: 28px;
+    margin-bottom: 27px;
+    margin-top: 0;
+    padding: 0;
+    text-align: center
+}
 
 .service-box {
     display: block;
@@ -4085,11 +4067,7 @@ div.collapsing ul.nav {
     }
 
         .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
-            margin-right: 10px;
-            content: "\f04d"
-        }
-
-        .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
+            content: "\f04d";
             line-height: 10px;
             margin-right: 10px;
             vertical-align: middle
@@ -5060,40 +5038,44 @@ div.collapsing ul.nav {
         display: none
     }
 
-.wp-block-search .wp-block-search__button {
-    border-radius: 3px;
-    border: 0 none;
-    border-radius: 0;
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    line-height: 20px;
-    margin-bottom: 10px;
-    margin-right: -4px;
-    padding: 11px 29px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    position: absolute;
-    right: 36px;
-    margin-top: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px
+.wp-block-search .wp-block-search__input:focus-visible,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:has( .wp-block-search__input:focus-visible) {
+    outline: -webkit-focus-ring-color auto 1px;
 }
 
 .wp-block-search .wp-block-search__input {
-    border: 1px solid #E0E4E6;
-    box-shadow: 0 1px 1px rgba(0,0,0,.075)inset;
-    border-radius: 2px;
-    line-height: 20px;
-    margin: 0;
     height: 46px;
-    padding: 10px 8px;
-    background-image: none;
-    display: block;
-    width: 100%;
-    padding-right: 155px
 }
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+    padding: 2px;
+    border: 1px solid #E0E4E6;
+    box-shadow: 0 1px 1px rgba(0,0,0,.075) inset;
+}
+
+    .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+        border-radius: 0;
+        margin: 0 0 0 2px;
+        border-top-right-radius: 0.1em;
+        border-bottom-right-radius: 0.1em
+    }
+
+        .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-icon) {
+            padding: 0.85em 1em 0.55em 3.5em;
+        }
+
+    .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+        border-radius: 0.1em;
+        line-height: 20px;
+        margin: 0;
+        height: 46px;
+        padding: 10px 8px;
+        background-image: none;
+        display: block;
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px
+    }
 
 .wp-block-social-links a:before {
     display: none

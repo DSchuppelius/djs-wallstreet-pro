@@ -1,129 +1,129 @@
-.btn:not(.not):before,
-button:not(.not):before,
-a.button:not(.not):before {
+.btn:not(.not, .has-icon):before,
+button:not(.not, .has-icon):before,
+a.button:not(.not, .has-icon):before {
     content: "chevron_right";
 }
 
-button[type="submit"]:before {
+button[type="submit"]:not(.not, .has-icon):before {
     content: "send";
 }
 
-a.button.btn.warning:before,
-button.btn.warning:before {
+a.button.btn.warning:not(.not, .has-icon):before,
+button.btn.warning:not(.not, .has-icon):before {
     content: "warning"
 }
 
-a.button.btn.back:before,
-button.btn.back:before {
+a.button.btn.back:not(.not, .has-icon):before,
+button.btn.back:not(.not, .has-icon):before {
     content: "fast_rewind"
 }
 
-a.button.btn.forward:before,
-button.btn.forward:before {
+a.button.btn.forward:not(.not, .has-icon):before,
+button.btn.forward:not(.not, .has-icon):before {
     content: "fast_forward"
 }
 
-a.button.btn.buy:before,
-button.btn.buy:before {
+a.button.btn.buy:not(.not, .has-icon):before,
+button.btn.buy:not(.not, .has-icon):before {
     content: "euro_symbol"
 }
 
-a.button.btn.menu:before,
-button.btn.menu:before,
-button.btn.navbar-toggle.collapsed:before {
+a.button.btn.menu:not(.not, .has-icon):before,
+button.btn.menu:not(.not, .has-icon):before,
+button.btn.navbar-toggle.collapsed:not(.not, .has-icon):before {
     content: "menu"
 }
 
-button.btn.navbar-toggle:before {
+button.btn.navbar-toggle:not(.not, .has-icon):before {
     content: "menu_open"
 }
 
-a.button.btn.more:before,
-button.btn.more:before {
+a.button.btn.more:not(.not, .has-icon):before,
+button.btn.more:not(.not, .has-icon):before {
     content: "read_more"
 }
 
-a.button.btn.loadmore:before,
-button.btn.loadmore:before {
+a.button.btn.loadmore:not(.not, .has-icon):before,
+button.btn.loadmore:not(.not, .has-icon):before {
     content: "drive_folder_upload"
 }
 
-a.button.btn.more.blog:before,
-button.btn.more.blog:before {
+a.button.btn.more.blog:not(.not, .has-icon):before,
+button.btn.more.blog:not(.not, .has-icon):before {
     content: "dashboard"
 }
 
-a.button.btn.more.history:before,
-button.btn.more.history:before {
+a.button.btn.more.history:not(.not, .has-icon):before,
+button.btn.more.history:not(.not, .has-icon):before {
     content: "history"
 }
 
-a.button.btn.more.portfolio:before,
-button.btn.more.portfolio:before {
+a.button.btn.more.portfolio:not(.not, .has-icon):before,
+button.btn.more.portfolio:not(.not, .has-icon):before {
     content: "collections_bookmark"
 }
 
-a.button.btn.more.services:before,
-button.btn.more.services:before {
+a.button.btn.more.services:not(.not, .has-icon):before,
+button.btn.more.services:not(.not, .has-icon):before {
     content: "engineering"
 }
 
-a.button.btn.project:before,
-button.btn.project:before {
+a.button.btn.project:not(.not, .has-icon):before,
+button.btn.project:not(.not, .has-icon):before {
     content: "developer_board"
 }
 
-a.button.search:before,
-button.btn.search_btn:before,
-button.search-submit.btn:before,
-button.wp-block-search__button:before {
+a.button.search:not(.not, .has-icon):before,
+button.btn.search_btn:not(.not, .has-icon):before,
+button.search-submit.btn:not(.not, .has-icon):before,
+button.wp-block-search__button:not(.not, .has-icon):before {
     content: "search"
 }
 
-#subscribe-submit button:before {
+#subscribe-submit button:not(.not, .has-icon):before {
     content: "stars";
 }
 
-.btn.search_btn:before {
+.btn.search_btn:not(.not, .has-icon):before {
     content: "search";
 }
 
-.btn.tab:before {
+.btn.tab:not(.not, .has-icon):before {
     content: "local_activity";
 }
 
-.btn.next:before,
-.btn.history:before {
+.btn.next:not(.not, .has-icon):before,
+.btn.history:not(.not, .has-icon):before {
     content: "history";
 }
 
-.btn.prev:before,
-.btn.update:before {
+.btn.prev:not(.not, .has-icon):before,
+.btn.update:not(.not, .has-icon):before {
     content: "update";
 }
 
-.home-blog-info .home-blog-btn a:before,
-.btn.blog-btn:before {
+.home-blog-info .home-blog-btn a:not(.not, .has-icon):before,
+.btn.blog-btn:not(.not, .has-icon):before {
     content: "article";
 }
 
-.cookies .btn:before {
+.cookies .btn:not(.not, .has-icon):before {
     content: "visibility";
 }
 
-a.comment-reply-link:before {
+a.comment-reply-link:not(.not, .has-icon):before {
     content: "reply";
 }
 
-a.comment-edit-link:before {
+a.comment-edit-link:not(.not, .has-icon):before {
     content: "edit";
 }
 
-button.close:before {
+button.close:not(.not, .has-icon):before {
     content: "";
 }
 
-input, button, .proejct-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea {
+input, button, .proejct-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
     border-radius: 0.25rem;
 }
 
@@ -174,135 +174,98 @@ a.comment-reply-link {
         outline-offset: 0
     }
 
-    button.close {
-        border: 0 none;
-        cursor: pointer;
-        padding: 0
-    }
-
     button.close,
     a.button.close {
-        box-shadow: inset 0 2.65em 0 -1.65em rgba(255, 255, 255, 0.15)
+        box-shadow: inset 0 2.65em 0 -1.85em rgba(255, 255, 255, 0.15)
     }
 
-    button.wp-block-button__link:not(.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline button.wp-block-button__link) {
+    button.wp-block-button__link,
+    button.wp-block-search__button,
+    .search-form button.btn.search_btn {
+        border: 1px solid transparent;
+        box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
+    }
+
+        button.wp-block-search__button:not(.not, .has-icon) {
+            min-width: 180px
+        }
+
+            button.wp-block-search__button:not(.not, .has-icon):before {
+                line-height: 2.5em
+            }
+
+    .btn:not(.not, .has-icon):hover,
+    button:not(.not, .has-icon):hover,
+    a.button:not(.not, .has-icon):hover,
+    input[type="submit"]:not(.not, .has-icon):hover,
+    a.comment-edit-link:not(.not, .has-icon):hover,
+    a.comment-reply-link:not(.not, .has-icon):hover {
+        text-shadow: 0 0 1px #18191b
+    }
+
+    .btn:not(.not, .has-icon):before,
+    button:not(.not, .has-icon):before,
+    a.button:not(.not, .has-icon):before,
+    input[type="submit"]:not(.not, .has-icon):before,
+    a.comment-edit-link:not(.not, .has-icon):before,
+    a.comment-reply-link:not(.not, .has-icon):before {
+        left: 0;
+        line-height: 2em;
+        position: absolute;
+        text-align: left;
+        text-indent: .55em;
+        top: 0;
+        width: 2.125em;
+        z-index: -1
+    }
+
+    .btn:not(.not, .has-icon):hover:before,
+    button:not(.not, .has-icon):hover:before,
+    a.button:not(.not, .has-icon):hover:before,
+    input[type="submit"]:not(.not, .has-icon):hover:before,
+    a.comment-edit-link:not(.not, .has-icon):hover:before,
+    a.comment-reply-link:not(.not, .has-icon):hover:before {
+        width: 100%
+    }
+
+    .btn:not(.not, .has-icon),
+    button:not(.not, .has-icon),
+    a.button:not(.not, .has-icon),
+    input[type="submit"]:not(.not, .has-icon),
+    a.comment-edit-link:not(.not, .has-icon),
+    a.comment-reply-link:not(.not, .has-icon) {
         min-width: 250px;
         display: inline-block;
         line-height: 1em;
         overflow: hidden;
+        padding: 0.85em 1em 0.55em 3.5em;
+        position: relative;
         user-select: none;
-        border-radius: 4px;
-        box-shadow: inset 0 2.35em 0 -1.15em rgba(255, 255, 255, 0.15)
+        z-index: 3
     }
 
-.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline button.wp-block-button__link {
-    right: 20px;
-    margin: 2px 2px 0 0 !important;
-    padding: 0.8em 0.5em 0.4em 2.75em !important;
-    border-top-right-radius: 2px !important;
-    border-bottom-right-radius: 2px !important;
-}
-
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline button.wp-block-button__link:not(.not):before {
-        line-height: 2.8em
+    .btn.big:not(.not, .has-icon),
+    button.big:not(.not, .has-icon),
+    a.button.big:not(.not, .has-icon),
+    input[type="submit"].big:not(.not, .has-icon) {
+        min-width: 300px;
     }
 
-button.wp-block-button__link,
-button.wp-block-search__button,
-.search-form button.btn.search_btn {
-    border: 1px solid transparent;
-    box-shadow: inset 0 2.55em 0 -1.15em rgba(255, 255, 255, 0.15)
-}
-
-    button.wp-block-search__button:not(.not):before {
-        line-height: 2em
+    .btn.small:not(.not, .has-icon),
+    button.small:not(.not, .has-icon),
+    a.button.small:not(.not, .has-icon),
+    input[type="submit"].small:not(.not, .has-icon) {
+        min-width: 180px;
     }
 
-    button.wp-block-button__link:not(.not) {
-        position: absolute;
-        line-height: 1em;
-        min-width: 150px
+    a.comment-edit-link:not(.not, .has-icon),
+    a.comment-reply-link:not(.not, .has-icon) {
+        min-width: 210px
     }
 
-    button.wp-block-search__button:not(.not) {
-        padding: 1em 2.5em 0.65em 4.75em;
-        position: absolute;
-        line-height: 1em;
-        min-width: 150px
+    button.btn.navbar-toggle {
+        min-width: 100px
     }
-
-.btn:not(.not):hover,
-button:not(.not):hover,
-a.button:not(.not):hover,
-input[type="submit"]:not(.not):hover,
-a.comment-edit-link:not(.not):hover,
-a.comment-reply-link:not(.not):hover {
-    text-shadow: 0 0 1px #18191b
-}
-
-.btn:not(.not):before,
-button:not(.not):before,
-a.button:not(.not):before,
-input[type="submit"]:not(.not):before,
-a.comment-edit-link:not(.not):before,
-a.comment-reply-link:not(.not):before {
-    left: 0;
-    line-height: 1.75em;
-    position: absolute;
-    text-align: left;
-    text-indent: .55em;
-    top: 0;
-    width: 2.125em;
-    z-index: -1
-}
-
-.btn:not(.not):hover:before,
-button:not(.not):hover:before,
-a.button:not(.not):hover:before,
-input[type="submit"]:not(.not):hover:before,
-a.comment-edit-link:not(.not):hover:before,
-a.comment-reply-link:not(.not):hover:before {
-    width: 100%
-}
-
-.btn:not(.not),
-button:not(.not),
-a.button:not(.not),
-input[type="submit"]:not(.not),
-a.comment-edit-link:not(.not),
-a.comment-reply-link:not(.not) {
-    min-width: 250px;
-    display: inline-block;
-    line-height: 1em;
-    overflow: hidden;
-    padding: 0.85em 1em 0.55em 3.5em;
-    position: relative;
-    user-select: none;
-    z-index: 3
-}
-
-.btn.big:not(.not),
-button.big:not(.not),
-a.button.big:not(.not),
-input[type="submit"].big:not(.not) {
-    min-width: 300px;
-}
-
-.btn.small:not(.not),
-button.small:not(.not),
-a.button.small:not(.not),
-input[type="submit"].small:not(.not) {
-    min-width: 180px;
-}
-
-a.comment-edit-link:not(.not),
-a.comment-reply-link:not(.not) {
-    min-width: 210px
-}
-
-button.btn.navbar-toggle {
-    min-width: 100px
-}
 
 a.btn.tab {
     min-width: 160px;
@@ -323,10 +286,8 @@ a.btn.tab {
     top: 15px;
     right: 15px;
     opacity: 1;
-    padding: 8px;
     min-width: 50px;
-    min-height: 35px;
-    border-radius: 0.2em
+    min-height: 35px
 }
 
 .blogdetail-btn {
@@ -342,21 +303,21 @@ a.btn.tab {
         text-align: center
     }
 
-.cookies button {
-    padding: 6px 15px;
+.cookies button.btn {
+    min-width: 560px;
     margin-top: 20px;
     margin-bottom: 25px;
 }
 
-    .cookies button:hover {
-        background-color: #eb675e;
-        text-shadow: 0px 3px 3px rgba(255,255,255,0.3);
-    }
+.cookies button:hover {
+    background-color: #eb675e;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.3);
+}
 
-    .cookies button:active {
-        position: relative;
-        top: 1px;
-    }
+.cookies button:active {
+    position: relative;
+    top: 1px;
+}
 
 .cont-btn {
     display: block;
@@ -487,11 +448,7 @@ a.btn.tab {
     border: none
 }
 
-#subscribe-submit button:not(.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button) {
-    position: relative
-}
-
-#subscribe-submit button, .search_btn {
+.search_btn {
     float: right;
 }
 

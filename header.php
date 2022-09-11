@@ -148,7 +148,7 @@ $current_options = get_current_options(); ?>
             <?php endif; ?>
             <?php if ($current_options["search_effect_style_setting"] == "toogle") { ?>
                 <div id="searchbar_fullscreen" <?php if ($current_options["search_effect_style_setting"] == "popup_light") { ?> class="bg-light" <?php } ?>>
-                    <button type="button" class="close material-icons-outlined">close</button>
+                    <button type="button" class="close material-icons-outlined has-icon">close</button>
                     <form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url(home_url("/")); ?>"><label><input type="search" class="search-field" placeholder="<?php echo esc_html__("Search", "wallstreet"); ?> …" value="" name="s" id="s" required></label><button type="submit" class="search-submit btn" value="<?php echo esc_html__("Search", "wallstreet"); ?>"><?php echo esc_html__("Search", "wallstreet"); ?></button></form>
                 </div>
             <?php } ?>

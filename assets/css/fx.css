@@ -266,9 +266,9 @@
         padding-bottom: 5px
     }
 
-    .page_fader.logo .site-logo-area.with-Logo.with-Text > .navbar-brand {
-        margin-bottom: -15px
-    }
+        .page_fader.logo .site-logo-area.with-Logo.with-Text > .navbar-brand {
+            margin-bottom: -15px
+        }
 
 .animate {
     margin: 30px auto;

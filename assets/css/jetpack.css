@@ -1,0 +1,75 @@
+div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
+    margin-top: 20px;
+}
+
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form {
+    display: flex;
+    flex: auto;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    padding: 2px;
+    border-radius: 0.25rem;
+    border: 1px solid #E0E4E6;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 8%) inset;
+}
+
+    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form:has(input:focus-visible) {
+        outline: -webkit-focus-ring-color auto 1px;
+        outline: 1px auto Highlight;
+        outline: 1px auto -webkit-focus-ring-color;
+    }
+
+.wp-block-jetpack-subscriptions #subscribe-email {
+    width: 100%;
+    margin: 0
+}
+
+    .wp-block-jetpack-subscriptions #subscribe-email input {
+        width: 100%;
+        height: 46px
+    }
+
+        .wp-block-jetpack-subscriptions #subscribe-email input:focus-visible {
+            outline: none;
+        }
+
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
+    border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.075)inset;
+    border-radius: 0.1em !important;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px 8px !important;
+    background-image: none;
+    display: block;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important
+}
+
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit {
+    display: flex;
+    width: max-content;
+    margin: 0 !important;
+    border-top-right-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+}
+
+    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email br,
+    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit br {
+        display: none;
+    }
+
+    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button {
+        padding: 1em 1em 0.75em 3.5em !important;
+        margin-left: 2px !important;
+        min-width: 180px;
+        border-radius: 0 !important;
+        border-top-right-radius: 0.1em !important;
+        border-bottom-right-radius: 0.1em !important;
+        align-items: stretch;
+        font-size: 0.9em !important
+    }
+
+        .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button:before {
+            line-height: 2.5em;
+        }

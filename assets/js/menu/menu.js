@@ -173,7 +173,7 @@ jQuery(document).ready(function () {
     jQuery("#searchbar_fullscreen, #searchbar_fullscreen button.close").on("click keyup", function (event) {
         if (
             // event.target == this ||
-            event.target.className == "close material-icons-outlined" ||
+            event.target.className == "close material-icons-outlined has-icon" ||
             event.keyCode == 27
         ) {
             jQuery(this).removeClass("open");

@@ -176,20 +176,20 @@ body {
     border: 1px solid #eaeaea;
 }
 
-.blog-pagination a, .blog-pagination span {
-    color: #545454;
-    background-color: #fafafa;
-    border: 1px solid #eaeaea
-}
-
-    .blog-pagination a:hover, .blog-pagination a.active, .blog-pagination span {
-        color: #FFF
+    .blog-pagination a, .blog-pagination span {
+        color: #545454;
+        background-color: #fafafa;
+        border: 1px solid #eaeaea
     }
 
-        .blog-pagination span.current {
-            background-color: #2a2c33;
+        .blog-pagination a:hover, .blog-pagination a.active, .blog-pagination span {
             color: #FFF
         }
+
+            .blog-pagination span.current {
+                background-color: #2a2c33;
+                color: #FFF
+            }
 
 .blog-post-date {
     background-color: #FFF
@@ -873,6 +873,7 @@ footer.site {
     background-color: rgba(255,255,255,0.7);
     text-shadow: 1px 1px 1px rgb(100 100 100 / 60%), 1px -1px 1px rgb(100 100 100 / 60%), -1px 1px 1px rgb(100 100 100 / 60%), -1px -1px 1px rgb(100 100 100 / 60%);
 }
+
 }
 
 .page-header-title h1 {

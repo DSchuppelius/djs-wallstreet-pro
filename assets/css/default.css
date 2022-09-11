@@ -1,6 +1,4 @@
 body {
-    font-family: "SiteFont", "El Messiri", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
     color: #333333;
 }
 
@@ -1162,19 +1160,20 @@ footer.site {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     background-color: rgba(55,57,65,0.6)
 }
-.page_fader .site-branding-text{
-    color:#ddd
+
+.page_fader .site-branding-text {
+    color: #ddd
 }
 
     .page_fader .site-branding-text .site-title,
-    .page_fader .site-branding-text .site-title a{
+    .page_fader .site-branding-text .site-title a {
         color: #fff
     }
 
-    .screen-reader-text:focus {
-        background-color: #f1f1f1;
-        color: #21759b
-    }
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    color: #21759b
+}
 
 .search .row .col-md-8 #searchform {
     background-color: rgba(55,57,65,0.8);
@@ -1862,6 +1861,7 @@ footer.site {
     background-color: #2a2c33;
     color: #fff
 }
+
     .wp-block-search .wp-block-search__input:focus {
         background-color: #565963;
     }

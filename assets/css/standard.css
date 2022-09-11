@@ -167,8 +167,8 @@ body.error404 .error_404 {
     border-top-right-radius: var(--border-base);
 }
 
-.row.no_background.about-section.img .bigborder img{
-    border-top-right-radius:0
+.row.no_background.about-section.img .bigborder img {
+    border-top-right-radius: 0
 }
 
 .portfolio-detail-section div:not(.portfolio-detail-button) {
@@ -184,13 +184,14 @@ body.error404 .error_404 {
     border-top-left-radius: var(--border-verysmallbase);
     border-top-right-radius: var(--border-verysmallbase);
 }
+
 div.cookies {
     text-align: left;
     padding: 0 10px;
 }
 
-form.cookies{
-    margin-bottom:10px;
+form.cookies {
+    margin-bottom: 10px;
 }
 
 div.inner.cookies {
@@ -417,10 +418,10 @@ div.container.page div.row div.col-md-8 div.blog-detail-section {
     border-bottom-left-radius: var(--border-smallbase);
 }
 
-    div.container.page div.row.about-section div.col-md-8 div.blog-detail-section,
-    div.container div.row div.col-md-8 .with_filler div.blog-detail-section {
-        border-bottom-left-radius: 0
-    }
+div.container.page div.row.about-section div.col-md-8 div.blog-detail-section,
+div.container div.row div.col-md-8 .with_filler div.blog-detail-section {
+    border-bottom-left-radius: 0
+}
 
 div.container div.row.masonry .toprow,
 div.container.blog-switcher-view div.row .first {
@@ -464,7 +465,7 @@ div.container div.row.bigborder div.col-md-4 div.sidebar-section {
     }
 
 div.container.attachment div.row.attachment-section div.col-md-8 div.blog-detail-section:not(.attachment) {
-    border-top-left-radius:0
+    border-top-left-radius: 0
 }
 
 div.container div.row.bigborder div.col-md-8 div.blog-detail-section,
@@ -534,6 +535,7 @@ footer.site.fixed:hover {
 .row.no_background .team-area.bigborder {
     border: 1em solid rgba(0,0,0,0.2);
 }
+
 .row.no_background .team-area.bigborder {
     border: 1em solid rgba(0,0,0,0.4);
 }
