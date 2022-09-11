@@ -203,65 +203,65 @@ a.comment-reply-link {
         text-shadow: 0 0 1px #18191b
     }
 
-    .btn:not(.not, .has-icon):before,
-    button:not(.not, .has-icon):before,
-    a.button:not(.not, .has-icon):before,
-    input[type="submit"]:not(.not, .has-icon):before,
-    a.comment-edit-link:not(.not, .has-icon):before,
-    a.comment-reply-link:not(.not, .has-icon):before {
-        left: 0;
-        line-height: 2em;
-        position: absolute;
-        text-align: left;
-        text-indent: .55em;
-        top: 0;
-        width: 2.125em;
-        z-index: -1
-    }
+.btn:not(.not):before,
+button:not(.not):before,
+a.button:not(.not):before,
+input[type="submit"]:not(.not):before,
+a.comment-edit-link:not(.not):before,
+a.comment-reply-link:not(.not):before {
+    left: 0;
+    line-height: 1.75em;
+    position: absolute;
+    text-align: left;
+    text-indent: .55em;
+    top: 0;
+    width: 2.125em;
+    z-index: -1
+}
 
-    .btn:not(.not, .has-icon):hover:before,
-    button:not(.not, .has-icon):hover:before,
-    a.button:not(.not, .has-icon):hover:before,
-    input[type="submit"]:not(.not, .has-icon):hover:before,
-    a.comment-edit-link:not(.not, .has-icon):hover:before,
-    a.comment-reply-link:not(.not, .has-icon):hover:before {
-        width: 100%
-    }
+.btn:not(.not):hover:before,
+button:not(.not):hover:before,
+a.button:not(.not):hover:before,
+input[type="submit"]:not(.not):hover:before,
+a.comment-edit-link:not(.not):hover:before,
+a.comment-reply-link:not(.not):hover:before {
+    width: 100%
+}
 
-    .btn:not(.not, .has-icon),
-    button:not(.not, .has-icon),
-    a.button:not(.not, .has-icon),
-    input[type="submit"]:not(.not, .has-icon),
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
-        min-width: 250px;
-        display: inline-block;
-        line-height: 1em;
-        overflow: hidden;
-        padding: 0.85em 1em 0.55em 3.5em;
-        position: relative;
-        user-select: none;
-        z-index: 3
-    }
+.btn:not(.not),
+button:not(.not),
+a.button:not(.not),
+input[type="submit"]:not(.not),
+a.comment-edit-link:not(.not),
+a.comment-reply-link:not(.not) {
+    min-width: 250px;
+    display: inline-block;
+    line-height: 1em;
+    overflow: hidden;
+    padding: 0.85em 1em 0.55em 3.5em;
+    position: relative;
+    user-select: none;
+    z-index: 3
+}
 
-    .btn.big:not(.not, .has-icon),
-    button.big:not(.not, .has-icon),
-    a.button.big:not(.not, .has-icon),
-    input[type="submit"].big:not(.not, .has-icon) {
-        min-width: 300px;
-    }
+.btn.big:not(.not),
+button.big:not(.not),
+a.button.big:not(.not),
+input[type="submit"].big:not(.not) {
+    min-width: 300px;
+}
 
-    .btn.small:not(.not, .has-icon),
-    button.small:not(.not, .has-icon),
-    a.button.small:not(.not, .has-icon),
-    input[type="submit"].small:not(.not, .has-icon) {
-        min-width: 180px;
-    }
+.btn.small:not(.not),
+button.small:not(.not),
+a.button.small:not(.not),
+input[type="submit"].small:not(.not) {
+    min-width: 180px;
+}
 
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
-        min-width: 210px
-    }
+a.comment-edit-link:not(.not),
+a.comment-reply-link:not(.not) {
+    min-width: 210px
+}
 
     button.btn.navbar-toggle {
         min-width: 100px
