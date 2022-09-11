@@ -112,7 +112,7 @@ function wallstreet_social_customizer($wp_customize) {
         "type" => "checkbox",
     ]);
 
-    //Linkdin link
+    //Linkedin link
     $wp_customize->add_setting("wallstreet_pro_options[social_media_linkedin_link]", [
         "default" => "#",
         "sanitize_callback" => "sanitize_text_field",
@@ -124,14 +124,39 @@ function wallstreet_social_customizer($wp_customize) {
         "type" => "text",
     ]);
 
-    //linkdin link new tab/window
-    $wp_customize->add_setting("wallstreet_pro_options[linkdin_link_new_tab]", [
+    //Linkedin link new tab/window
+    $wp_customize->add_setting("wallstreet_pro_options[linkedin_link_new_tab]", [
         "default" => false,
         "capability" => "edit_theme_options",
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
-    $wp_customize->add_control("wallstreet_pro_options[linkdin_link_new_tab]", [
+    $wp_customize->add_control("wallstreet_pro_options[linkedin_link_new_tab]", [
+        "label" => __("Open link in new tab", "wallstreet"),
+        "section" => "social_icon",
+        "type" => "checkbox",
+    ]);
+
+    //Github link
+    $wp_customize->add_setting("wallstreet_pro_options[social_media_github_link]", [
+        "default" => "#",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[social_media_github_link]", [
+        "label" => __("GitHub URL", "wallstreet"),
+        "section" => "social_icon",
+        "type" => "text",
+    ]);
+
+    //Github link new tab/window
+    $wp_customize->add_setting("wallstreet_pro_options[github_link_new_tab]", [
+        "default" => false,
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[github_link_new_tab]", [
         "label" => __("Open link in new tab", "wallstreet"),
         "section" => "social_icon",
         "type" => "checkbox",
@@ -149,7 +174,7 @@ function wallstreet_social_customizer($wp_customize) {
         "type" => "text",
     ]);
 
-    //linkdin link new tab/window
+    //Pinterest link new tab/window
     $wp_customize->add_setting("wallstreet_pro_options[pintrest_link_new_tab]", [
         "default" => false,
         "capability" => "edit_theme_options",

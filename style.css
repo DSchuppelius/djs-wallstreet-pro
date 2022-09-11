@@ -1607,7 +1607,7 @@ footer.site {
     footer.site i.show-me {
         display: none;
         position: fixed;
-        right: 27px;
+        right: 25px;
         bottom: 85px;
     }
 
