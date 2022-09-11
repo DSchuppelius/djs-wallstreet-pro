@@ -15,7 +15,7 @@
         </div>
         <div class="media-body">
             <h6><?php the_author(); ?></h6>
-            <p><?php the_author_meta("description"); ?></p>
+            <p class="justify"><?php the_author_meta("description"); ?></p>
             <ul class="blog-author-social">
                 <?php
                 $facebook_profile = get_the_author_meta("facebook_profile");

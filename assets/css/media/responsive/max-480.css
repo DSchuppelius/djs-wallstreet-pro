@@ -2,6 +2,10 @@ body {
     min-width: 350px;
 }
 
+article section figure:has(.cookies){
+    overflow:auto;
+}
+
 .portfolio-detail-pagi .button.btn {
     min-width: 155px;
 }

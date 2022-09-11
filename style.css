@@ -82,24 +82,38 @@ article ol, article ul {
     margin-bottom: 20px
 }
 
-article figure > div {
-    display: flex;
-    justify-content: center
+article figure,
+article .wp-block-image figure {
+    margin-bottom: 10px;
 }
 
-article figure:not(.alignright, .alignleft, .aligncenter) {
-    width: 100%;
-    margin-bottom: 1em
-}
+    article figure a{
+        max-width:100%;overflow:hidden
+    }
 
-article figure > img {
-    margin: 0 auto
-}
+        article figure a > img{
+            width:100%;
+            object-fit:cover
+        }
 
-article figure figcaption {
-    margin: 0 auto;
-    text-align: center
-}
+        article figure > div {
+            display: flex;
+            justify-content: center
+        }
+
+    article figure:not(.alignright, .alignleft, .aligncenter) {
+        width: 100%;
+        margin-bottom: 1em
+    }
+
+    article figure > img {
+        margin: 0 auto
+    }
+
+    article figure figcaption {
+        margin: 0 auto;
+        text-align: center
+    }
 
 article footer .blog-post-meta {
     display: flex;
@@ -946,9 +960,14 @@ article footer .blog-post-meta {
 
 .comment-detail {
     margin-left: 0;
+    margin-right: 20px;
     margin-bottom: 40px;
     padding: 0 0 25px
 }
+
+    .comment-detail .comment-detail-title {
+        margin-right: -20px;
+    }
 
     .comment-detail > dl > dt, .comment-detail > dl > dd {
         line-height: 28px

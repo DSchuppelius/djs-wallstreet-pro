@@ -3,6 +3,10 @@
     max-width: 1570px;
 }
 
+.cookies button.btn {
+    min-width: 560px;
+}
+
 .blog-detail-section article section figure.wp-block-embed iframe,
 .archive article section figure.wp-block-embed iframe {
     height: 480px;
