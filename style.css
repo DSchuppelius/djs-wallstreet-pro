@@ -87,19 +87,10 @@ article .wp-block-image figure {
     margin-bottom: 10px;
 }
 
-    article figure a{
-        max-width:100%;overflow:hidden
+    article figure > div {
+        display: flex;
+        justify-content: center
     }
-
-        article figure a > img{
-            width:100%;
-            object-fit:cover
-        }
-
-        article figure > div {
-            display: flex;
-            justify-content: center
-        }
 
     article figure:not(.alignright, .alignleft, .aligncenter) {
         width: 100%;
