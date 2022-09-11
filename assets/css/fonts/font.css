@@ -1,7 +1,7 @@
 html,
 body {
     font-family: 'SiteFont', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px
+    font-size: 1em
 }
 
     body .fa-regular {
@@ -20,12 +20,12 @@ body {
 
 article figure figcaption {
     text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
-    font-size: 13px
+    font-size: 0.8em
 }
 
 #blogdetail_btn {
     font-weight: 400;
-    font-size: 15px
+    font-size: 0.9em
 }
 
 #searchbar_fullscreen .close {
@@ -33,7 +33,7 @@ article figure figcaption {
 }
 
 #searchbar_fullscreen input[type="search"] {
-    font-size: 50px;
+    font-size: 3em;
     font-weight: 400
 }
 
@@ -49,7 +49,7 @@ article figure figcaption {
 
 .about-section p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .about-social-icons li > a > i {
@@ -57,84 +57,84 @@ article figure figcaption {
 }
 
 .acco_panel p {
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 400
 }
 
 .alert-error {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .alert-info {
     border-radius: 2px;
     font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 15px;
-    padding: 17px 35px 18px 14px
+    font-size: 1em;
+    margin-bottom: 1em;
+    padding: 17px 35px 18px 0.9em
 }
 
 .alert-success {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .alert-warning {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .bi {
     font-family: 'Bootstrap Icons';
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 100
 }
 
 .blockquote2 > small {
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 400;
     font-style: italic
 }
 
 .blockquote2 > span {
     font-weight: 300;
-    font-size: 15px
+    font-size: 1em
 }
 
 .blog-author h6 {
     font-family: 'SiteFontSemi';
     font-weight: 500;
-    font-size: 16px
+    font-size: 1.4em
 }
 
 .blog-author p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .blog-blockquote blockquote > small {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .blog-blockquote blockquote > span {
     font-weight: 400;
     font-style: italic;
-    font-size: 15px
+    font-size: 1em
 }
 
 .blog-form-control {
     font-weight: 400;
-    font-size: 14px
+    font-size: 1em
 }
 
 .blog-form-control-textarea {
     font-weight: 400;
-    font-size: 14px
+    font-size: 1em
 }
 
 .blog-list-view .blog-post-date span.date {
-    font-size: 16px
+    font-size: 1em
 }
 
 .blog-list-view .blog-post-title-wrapper h2, .blog-list-view .blog-post-title-wrapper-full h2 {
@@ -155,11 +155,11 @@ article figure figcaption {
     .blog-post-date span.comment {
         font-family: 'SiteFontBold';
         font-weight: 600;
-        font-size: 14px
+        font-size: 0.9em
     }
 
         .blog-post-date span.comment > i {
-            font-size: 15px
+            font-size: 1em
         }
 
     .blog-post-date span.date {
@@ -168,7 +168,7 @@ article figure figcaption {
     }
 
         .blog-post-date span.date > small {
-            font-size: 16px
+            font-size: 0.5em
         }
 
 .blog-post-detail {
@@ -176,11 +176,11 @@ article figure figcaption {
 }
 
     .blog-post-detail a {
-        font-size: 12px
+        font-size: 0.8em
     }
 
         .blog-post-detail a > i {
-            font-size: 14px
+            font-size: 0.9em
         }
 
 .blog-post-meta {
@@ -188,16 +188,16 @@ article figure figcaption {
 }
 
     .blog-post-meta a > i {
-        font-size: 14px
+        font-size: 0.9em
     }
 
 .blog-post-title .blog-post-title-wrapper blockquote > p > span, .blog-post-title .blog-post-title-wrapper-full blockquote > p > span {
     font-weight: 300;
-    font-size: 15px
+    font-size: 1em
 }
 
 .blog-post-title .blog-post-title-wrapper ul > li > span, .blog-post-title .blog-post-title-wrapper-full ul > li > span {
-    font-size: 16px !important
+    font-size: 1em !important
 }
 
 .blog-post-title > .blog-post-title-wrapper > h1 {
@@ -205,44 +205,44 @@ article figure figcaption {
 }
 
 .blog-post-title > .blog-post-title-wrapper > h2 {
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .blog-post-title > .blog-post-title-wrapper > h3 {
-    font-size: 34px
+    font-size: 2em
 }
 
 .blog-post-title > .blog-post-title-wrapper > h4 {
-    font-size: 28px
+    font-size: 1.8em
 }
 
 .blog-post-title > .blog-post-title-wrapper > h5 {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .blog-post-title > .blog-post-title-wrapper > h6 {
-    font-size: 16px
+    font-size: 1em
 }
 
 .blog-post-title-wrapper > dl > dt, .blog-post-title-wrapper-full > dl > dt, .blog-post-title-wrapper > dl > dd, .blog-post-title-wrapper-full > dl > dd {
-    font-size: 16px
+    font-size: 1em
 }
 
 .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ul > li, .blog-post-title-wrapper-full > ol > li > ul > li, .blog-post-title-wrapper > ol > li > ul > li > ol > li, .blog-post-title-wrapper-full > ol > li > ul > li > ol > li {
     margin: 0 0 7px;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px
+    font-size: 1em;
+    line-height: 1.4em
 }
 
     .blog-post-title-wrapper > ol, .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li, .blog-post-title-wrapper > ol > li > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li > ol > li {
         font-weight: 400;
-        font-size: 16px
+        font-size: 1em
     }
 
 .blog-post-title-wrapper > ul, .blog-post-title-wrapper > ul > li, .blog-post-title-wrapper-full > ul, .blog-post-title-wrapper-full > ul > li, .blog-post-title-wrapper > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li, .blog-post-title-wrapper > ul > li > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li > ul > li {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
 .blog-post-title-wrapper address, .blog-post-title-wrapper-full address {
@@ -251,7 +251,7 @@ article figure figcaption {
 
 .blog-post-title-wrapper blockquote > p > small, .blog-post-title-wrapper-full blockquote > p > small {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1 {
@@ -263,12 +263,12 @@ article figure figcaption {
 }
 
 .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2 {
-    font-size: 40px
+    font-size: 2.5em
 }
 
     .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
         font-weight: 300;
-        font-size: 40px
+        font-size: 2.5em
     }
 
 .blog-post-title-wrapper h2, .title h3 {
@@ -292,54 +292,42 @@ article figure figcaption {
             }
 
 .blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3 {
-    font-size: 34px
+    font-size: 2em
 }
 
 .blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4 {
-    font-size: 28px
+    font-size: 1.8em
 }
 
     .blog-post-title-wrapper h4.linked_post, .blog-post-title-wrapper-full h4.linked_post {
-        font-size: 20px;
+        font-size: 1.4em;
     }
 
 .blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5 {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
-    font-size: 16px
+    font-size: 1em
 }
 
 .blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
     font-weight: 400;
-    font-size: 16px
-}
-
-.blog-tags a {
-    font-size: 12px
-}
-
-.blog-tags i {
-    font-size: 14px
-}
-
-.blog-tags span {
-    font-size: 16px
+    font-size: 1em
 }
 
 .blogdetail-btn a {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .breadcrumbs > li {
     font-weight: 400;
-    font-size: 15px
+    font-size: 0.9em
 }
 
 .callout-section {
-    font-size: 14px
+    font-size: 0.9em
 }
 
     .callout-section a {
@@ -354,40 +342,40 @@ article figure figcaption {
 
     .callout-section p {
         font-weight: 400;
-        font-size: 15px
+        font-size: 1em
     }
 
 .close {
-    font-size: 18px !important
+    font-size: 1.4em !important
 }
 
 .column-box p {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
 .comment-date a {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.8em
 }
 
 .comment-detail > dl > dt, .comment-detail > dl > dd {
-    font-size: 16px
+    font-size: 1em
 }
 
 .comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
     .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
         font-weight: 400;
-        font-size: 16px
+        font-size: 1em
     }
 
 .comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
 .comment-detail address {
@@ -396,12 +384,12 @@ article figure figcaption {
 
 .comment-detail p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 1em
 }
 
 .comment-detail-title {
     font-weight: 500;
-    font-size: 15px
+    font-size: 1em
 }
 
 .comment-title h3 {
@@ -422,38 +410,38 @@ article figure figcaption {
 }
 
 .comment_box h2 {
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .comment_box h3 {
-    font-size: 34px
+    font-size: 2em
 }
 
 .comment_box h4 {
-    font-size: 15px
+    font-size: 1em
 }
 
 .comment_box h5 {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .comment_box h6 {
-    font-size: 16px
+    font-size: 1em
 }
 
 .cont-btn a {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .cont-form-control {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .cont-form-control-textarea {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .cont-heading-title h1 {
@@ -464,12 +452,12 @@ article figure figcaption {
 
 .cont-heading-title p {
     font-weight: 400;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .contact-detail-area address {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
 .contact-detail-area h5 {
@@ -478,7 +466,7 @@ article figure figcaption {
 }
 
 .contact-detail-area i {
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .dropcape-circle span {
@@ -498,11 +486,11 @@ article figure figcaption {
 
 .dropcape-square, .dropcape-simple, .dropcape-circle {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
-    font-size: 12px;
+    font-size: 0.8em;
 }
 
 .entry-content dt, .comment-content dt {
@@ -521,23 +509,23 @@ article figure figcaption {
     }
 
 .feature-icon i {
-    font-size: 28px
+    font-size: 1.8em
 }
 
 .features-area h3 {
     font-weight: 400;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .features-area p {
     font-weight: 300;
-    font-size: 16px
+    font-size: 1em
 }
 
 .features-title {
     font-family: 'SiteFontSemi';
     font-weight: 400;
-    font-size: 34px
+    font-size: 2em
 }
 
 .flex_btn {
@@ -547,12 +535,12 @@ article figure figcaption {
 
 .footer-blog-post h3 {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .footer-blog-post span {
     font-weight: 400;
-    font-size: 12px
+    font-size: 0.8em
 }
 
 .footer-contact-social li > a > i {
@@ -561,7 +549,7 @@ article figure figcaption {
 
 .footer-copyright p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h1, .footer-widget-section h2, .footer-widget-section h3, .footer-widget-section h4, .footer-widget-section h5, .footer-widget-section h6 {
@@ -575,29 +563,29 @@ article figure figcaption {
 
 .footer-widget-section li {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
 .footer-widget-tags a {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
 footer.site p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .footer_widget_column > .tagcloud a {
     font-weight: 400;
-    font-size: 14px !important
+    font-size: 0.9em !important
 }
 
 .footer_widget_column > ul > li {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
@@ -621,7 +609,7 @@ footer.site p {
 
 .head-contact-info li {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .head-contact-social li > a > i {
@@ -637,31 +625,31 @@ footer.site p {
 
 .home-blog-btn a {
     font-weight: 400;
-    font-size: 12px
+    font-size: 0.8em
 }
 
 .home-blog-description p {
     font-weight: 400;
-    font-size: 16px
+    font-size: 1em
 }
 
 .home-blog-post-detail {
     font-weight: 400;
-    font-size: 12px
+    font-size: 0.8em
 }
 
     .home-blog-post-detail > .comment {
         font-weight: 400;
-        font-size: 12px
+        font-size: 0.8em
     }
 
         .home-blog-post-detail > .comment > a > i {
-            font-size: 14px
+            font-size: 0.9em
         }
 
     .home-blog-post-detail > .date {
         font-weight: 400;
-        font-size: 15px
+        font-size: 1em
     }
 
 .home-portfolio-showcase .home-portfolio-showcase-detail h4 {
@@ -671,12 +659,12 @@ footer.site p {
 
 .home-portfolio-showcase .home-portfolio-showcase-detail p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .image-para-content {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .image-para-title {
@@ -691,7 +679,7 @@ footer.site p {
 
 .main-portfolio-showcase .main-portfolio-showcase-detail p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .masonry-item .blog-lg-area-left h3 {
@@ -700,11 +688,11 @@ footer.site p {
 }
 
 .masonry-item .blog-post-sm {
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .masonry-item .blog-post-title-wrapper h2, .masonry-item .blog-post-title-wrapper-full h2 {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .masonry-item:after {
@@ -713,13 +701,13 @@ footer.site p {
 
 .menu-primary-container a {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
 .menu-primary-container li a {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
@@ -737,12 +725,12 @@ footer.site p {
 }
 
 .other-service-area i {
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .other-service-area p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .other-service-area1 i {
@@ -751,72 +739,72 @@ footer.site p {
 
 .page-title-col h1 {
     font-family: 'SiteFontMedium';
-    font-size: 50px
+    font-size: 3em
 }
 
 .page-title-col h2 {
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .page_scrollup i {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .panel-default > .short-panel-heading h4 {
-    font-size: 14px !important;
+    font-size: 0.9em !important;
     font-weight: 500
 }
 
 .panel-title {
-    font-size: 14px !important;
+    font-size: 0.9em !important;
     font-weight: 500
 }
 
     .panel-title a span {
-        font-size: 20px
+        font-size: 1.4em
     }
 
 .portfolio-btn a {
     font-weight: 400;
-    font-size: 12px
+    font-size: 0.8em
 }
 
 .portfolio-detail-description p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .portfolio-detail-info .project-btn {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .portfolio-detail-info p {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
     .portfolio-detail-info p small {
         font-weight: 500;
-        font-size: 15px
+        font-size: 1em
     }
 
 .portfolio-detail-pagi li a span {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .portfolio-icon a > i {
-    font-size: 16px
+    font-size: 1em
 }
 
 .portfolio-tabs li a {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .post-content li {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
@@ -832,17 +820,17 @@ footer.site p {
 
 .post-date span.month {
     font-weight: 400;
-    font-size: 13px
+    font-size: 0.8em
 }
 
 .post-media-sidebar h3 {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .post-media-sidebar p {
     font-weight: 300;
-    font-size: 15px
+    font-size: 1em
 }
 
 .post-password-form input[type="submit"] {
@@ -853,11 +841,11 @@ footer.site p {
 
 .post_message {
     font-weight: 300;
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .prelated-project-btn li > a > i {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .proejct-btn a {
@@ -867,29 +855,28 @@ footer.site p {
 
 .qua_contact_btn {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .edit-link,
 .reply {
     font-weight: 400;
-    font-size: 13px
+    font-size: 0.9em
 }
 
     .edit-link a,
     .reply a {
-        font-size: 13px;
         font-weight: 400
     }
 
 .screen-reader-text:focus {
-    font-size: 14px;
+    font-size: 0.9em;
     font-size: .875rem;
     font-weight: 700
 }
 
 .search-panel input[type="search"] {
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 400
 }
 
@@ -901,7 +888,7 @@ footer.site p {
 
 .search-widget input {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .search_btn {
@@ -911,7 +898,7 @@ footer.site p {
 }
 
 .search_err_heading {
-    font-size: 20px;
+    font-size: 1.4em;
     font-weight: 400
 }
 
@@ -922,7 +909,7 @@ footer.site p {
 
 .search_widget_input {
     font-weight: 500;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .section_heading_title h1 {
@@ -933,7 +920,7 @@ footer.site p {
 
 .section_heading_title p {
     font-weight: 400;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .service-area h2 {
@@ -947,7 +934,7 @@ footer.site p {
 
 .service-btn a {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .service1 .service-box i.fa {
@@ -973,33 +960,33 @@ footer.site p {
 }
 
 .short-btn-large {
-    font-size: 12px;
+    font-size: 0.8em;
     font-weight: 500
 }
 
 .short-btn-mini {
-    font-size: 12px;
+    font-size: 0.8em;
     font-weight: 400
 }
 
 .short-btn-small {
-    font-size: 12px;
+    font-size: 0.8em;
     font-weight: 500
 }
 
 .short-tabs li a {
     font-weight: 500;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .short-tooltip {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .sidebar-comment-box span {
     font-weight: 400;
-    font-size: 12px
+    font-size: 0.8em
 }
 
     .sidebar-comment-box span > a > i {
@@ -1008,7 +995,7 @@ footer.site p {
 
     .sidebar-comment-box span > small {
         font-weight: 300;
-        font-size: 16px
+        font-size: 1em
     }
 
 .sidebar-tweet-area i {
@@ -1017,12 +1004,12 @@ footer.site p {
 
 .sidebar-tweet-area p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .sidebar-tweet-area span {
     font-weight: 400;
-    font-size: 13px
+    font-size: 0.8em
 }
 
 .sidebar-widget .wp-block-search .wp-block-search__label, .sidebar-widget h1, .sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4, .sidebar-widget h5, .sidebar-widget h6 {
@@ -1031,17 +1018,17 @@ footer.site p {
 
 .sidebar-widget > .tagcloud a {
     font-weight: 400;
-    font-size: 13px !important
+    font-size: 0.8em !important
 }
 
 .sidebar-widget > div.textwidget, .footer_widget_column > div.textwidget {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .sidebar-widget > ul > li {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
     .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
@@ -1059,11 +1046,11 @@ footer.site p {
 }
 
 .sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .sidebar-widget div#calendar_wrap table > tfoot > tr > td, .footer_widget_column div#calendar_wrap table > tfoot > tr > td {
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
@@ -1072,12 +1059,12 @@ footer.site p {
 
 .sidebar-widget ul li {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 400
 }
 
     .sidebar-widget ul li a:before, .footer_widget_column ul li a:before {
-        font-size: 6px;
+        font-size: 0.6em;
         font-weight: 400;
         font-family: 'FontAwesome'
     }
@@ -1088,23 +1075,23 @@ footer.site p {
 
 .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: normal
 }
 
 .sidebar-widget-tab li a {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .sidebar-widget-tags a {
     font-weight: 400;
-    font-size: 13px
+    font-size: 0.8em
 }
 
 .sidebar-widget-title h2 {
     font-weight: 400;
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .site-branding-text .site-title .navbar-brand {
@@ -1130,12 +1117,12 @@ footer.site p {
 
 .slide-text-bg3 p {
     font-weight: 400;
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .table {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .team-area h5 {
@@ -1145,16 +1132,16 @@ footer.site p {
 
     .team-area h5 > span {
         font-weight: 400;
-        font-size: 13px
+        font-size: 0.8em
     }
 
 .team-area p {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .team-section1 .position {
-    font-size: 16px
+    font-size: 1em
 }
 
 .team-section1 .team-img .overlay .custom-social-icons li > a {
@@ -1162,7 +1149,7 @@ footer.site p {
 }
 
 .team-social-icons li > a > i {
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .testimonial-area h2 {
@@ -1172,7 +1159,7 @@ footer.site p {
 
 .testimonial-area p {
     font-weight: 400;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .testimonial1 p:before {
@@ -1197,12 +1184,12 @@ footer.site p {
 
 .tweet-area p {
     font-weight: 400;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .tweet-btn a {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .tweet-icon i {
@@ -1211,27 +1198,27 @@ footer.site p {
 
 .typo-head-title h3 {
     font-weight: 300;
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .typo-para-icons i {
-    font-size: 16px
+    font-size: 1em
 }
 
 .typo-para-icons span {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .typo-section blockquote > small {
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 400;
     font-style: italic
 }
 
 .typo-section blockquote > span {
     font-weight: 300;
-    font-size: 15px
+    font-size: 1em
 }
 
 .typo-section h1 {
@@ -1243,32 +1230,32 @@ footer.site p {
 }
 
 .typo-section h2 {
-    font-size: 40px
+    font-size: 2.5em
 }
 
 .typo-section h3 {
-    font-size: 34px
+    font-size: 2em
 }
 
 .typo-section h4 {
-    font-size: 28px
+    font-size: 1.8em
 }
 
 .typo-section h5 {
-    font-size: 22px
+    font-size: 1.5em
 }
 
 .typo-section h6 {
-    font-size: 16px
+    font-size: 1.3em
 }
 
 .typo-section p {
     font-weight: 300;
-    font-size: 16px
+    font-size: 1em
 }
 
 .wallstreet_searching {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 400
 }
 
@@ -1283,7 +1270,7 @@ footer.site p {
 
 .wp-block-calendar table caption {
     font-weight: 600;
-    font-size: 16px
+    font-size: 1em
 }
 
 .wp-block-calendar table caption {
@@ -1300,7 +1287,7 @@ footer.site p {
 }
 
 .wp-block-calendar tbody td, .wp-block-calendar th {
-    font-size: 15px
+    font-size: 1em
 }
 
 .wp-block-search .wp-block-search__button {
@@ -1310,21 +1297,21 @@ footer.site p {
 
 .wp-block-search .wp-block-search__input {
     font-weight: 500;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 .wp-block-search .wp-block-search__label, .sidebar-widget h2 {
     font-weight: 300;
-    font-size: 22px
+    font-size: 24px
 }
 
 .wp-block-social-links .wp-social-link a {
-    font-size: 20px
+    font-size: 1.4em
 }
 
 .wp-block-tag-cloud a {
     font-weight: 400;
-    font-size: 13px !important
+    font-size: 0.8em !important
 }
 
 .wp-calendar-table #today {
@@ -1343,43 +1330,43 @@ footer.site p {
 
 .wpcf7-submit {
     font-weight: 600;
-    font-size: 16px
+    font-size: 1em
 }
 
 .wpcf7-text, .wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz {
     font-weight: 400;
-    font-size: 15px
+    font-size: 1em
 }
 
 .wpcf7-textarea {
     font-weight: 600;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 a.blog-btn {
     font-weight: 400;
-    font-size: 13px
+    font-size: 0.8em
 }
 
 a.readmore {
     font-weight: 300;
-    font-size: 12px
+    font-size: 0.8em
 }
 
 article footer {
-    font-size: 12px
+    font-size: 0.8em
 }
 
     article footer .material-icons {
-        font-size: 15px
+        font-size: 1em
     }
 
     article footer time .material-icons {
-        font-size: 12px
+        font-size: 0.9em
     }
 
 .sidebar-widget article footer {
-    font-size: 14px
+    font-size: 1em
 }
 
 cite {
@@ -1388,7 +1375,7 @@ cite {
 
 div.wpcf7-validation-errors {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a.button {
@@ -1397,41 +1384,41 @@ a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a
 
     a.comment-edit-link:before, a.comment-reply-link:before, input[type="submit"]:before, button:before, .btn:before, a.button:before {
         font-family: 'Material Icons';
-        font-size: 1.5625rem;
+        font-size: 1.25em;
         font-weight: 100
     }
 
 input#pwbox-1168 {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.not) {
-    font-size: 1em
+    font-size: 0.9em
 }
 
 p.short-tabs-content {
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: 400
 }
 
 span.wpcf7-not-valid-tip {
     font-weight: 400;
-    font-size: 14px
+    font-size: 0.9em
 }
 
 td {
     font-weight: 300;
-    font-size: 15px
+    font-size: 0.95em
 }
 
 th {
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 100;
     font-weight: 500
 }
 
 tr {
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 400
 }

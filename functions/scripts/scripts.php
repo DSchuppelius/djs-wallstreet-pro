@@ -35,6 +35,7 @@ function theme_scripts() {
     wp_enqueue_style("wallstreet-default",          THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_options));
     wp_enqueue_style("wallstreet-standard",         THEME_ASSETS_PATH_URI . "/css/standard.css");
 
+    wp_enqueue_style("wallstreet-jetpack",          THEME_ASSETS_PATH_URI . "/css/jetpack.css");
     wp_enqueue_style("wallstreet-button",           THEME_ASSETS_PATH_URI . "/css/button.css");
     wp_enqueue_style("wallstreet-fx",               THEME_ASSETS_PATH_URI . "/css/fx.css");
 
