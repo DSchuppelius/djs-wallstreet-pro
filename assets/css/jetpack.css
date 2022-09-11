@@ -29,9 +29,8 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
         height: 46px
     }
 
-        .wp-block-jetpack-subscriptions #subscribe-email input:focus-visible {
-            outline: none;
-        }
+    .wp-block-jetpack-subscriptions #subscribe-email input:focus-visible {
+    }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
     border: none;
@@ -60,7 +59,6 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     }
 
     .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button {
-        padding: 1em 1em 0.75em 3.5em !important;
         margin-left: 2px !important;
         min-width: 180px;
         border-radius: 0 !important;

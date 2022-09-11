@@ -186,82 +186,91 @@ a.comment-reply-link {
         box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
     }
 
-        button.wp-block-search__button:not(.not, .has-icon) {
-            min-width: 180px
-        }
-
-            button.wp-block-search__button:not(.not, .has-icon):before {
-                line-height: 2.5em
-            }
-
-    .btn:not(.not, .has-icon):hover,
-    button:not(.not, .has-icon):hover,
-    a.button:not(.not, .has-icon):hover,
-    input[type="submit"]:not(.not, .has-icon):hover,
-    a.comment-edit-link:not(.not, .has-icon):hover,
-    a.comment-reply-link:not(.not, .has-icon):hover {
-        text-shadow: 0 0 1px #18191b
+    button.wp-block-search__button:not(.not):before {
+        line-height: 2em
     }
 
-    .btn:not(.not, .has-icon):before,
-    button:not(.not, .has-icon):before,
-    a.button:not(.not, .has-icon):before,
-    input[type="submit"]:not(.not, .has-icon):before,
-    a.comment-edit-link:not(.not, .has-icon):before,
-    a.comment-reply-link:not(.not, .has-icon):before {
-        left: 0;
-        line-height: 2em;
+    button.wp-block-button__link:not(.not) {
         position: absolute;
-        text-align: left;
-        text-indent: .55em;
-        top: 0;
-        width: 2.125em;
-        z-index: -1
-    }
-
-    .btn:not(.not, .has-icon):hover:before,
-    button:not(.not, .has-icon):hover:before,
-    a.button:not(.not, .has-icon):hover:before,
-    input[type="submit"]:not(.not, .has-icon):hover:before,
-    a.comment-edit-link:not(.not, .has-icon):hover:before,
-    a.comment-reply-link:not(.not, .has-icon):hover:before {
-        width: 100%
-    }
-
-    .btn:not(.not, .has-icon),
-    button:not(.not, .has-icon),
-    a.button:not(.not, .has-icon),
-    input[type="submit"]:not(.not, .has-icon),
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
-        min-width: 250px;
-        display: inline-block;
         line-height: 1em;
-        overflow: hidden;
-        padding: 0.85em 1em 0.55em 3.5em;
-        position: relative;
-        user-select: none;
-        z-index: 3
+        min-width: 150px
     }
 
-    .btn.big:not(.not, .has-icon),
-    button.big:not(.not, .has-icon),
-    a.button.big:not(.not, .has-icon),
-    input[type="submit"].big:not(.not, .has-icon) {
-        min-width: 300px;
+    button.wp-block-search__button:not(.not) {
+        padding: 1em 2.5em 0.65em 4.75em;
+        position: absolute;
+        line-height: 1em;
+        min-width: 150px
     }
 
-    .btn.small:not(.not, .has-icon),
-    button.small:not(.not, .has-icon),
-    a.button.small:not(.not, .has-icon),
-    input[type="submit"].small:not(.not, .has-icon) {
-        min-width: 180px;
-    }
+.btn:not(.not):hover,
+button:not(.not):hover,
+a.button:not(.not):hover,
+input[type="submit"]:not(.not):hover,
+a.comment-edit-link:not(.not):hover,
+a.comment-reply-link:not(.not):hover {
+    text-shadow: 0 0 1px #18191b
+}
 
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
-        min-width: 210px
-    }
+.btn:not(.not):before,
+button:not(.not):before,
+a.button:not(.not):before,
+input[type="submit"]:not(.not):before,
+a.comment-edit-link:not(.not):before,
+a.comment-reply-link:not(.not):before {
+    left: 0;
+    line-height: 1.75em;
+    position: absolute;
+    text-align: left;
+    text-indent: .55em;
+    top: 0;
+    width: 2.125em;
+    z-index: -1
+}
+
+.btn:not(.not):hover:before,
+button:not(.not):hover:before,
+a.button:not(.not):hover:before,
+input[type="submit"]:not(.not):hover:before,
+a.comment-edit-link:not(.not):hover:before,
+a.comment-reply-link:not(.not):hover:before {
+    width: 100%
+}
+
+.btn:not(.not),
+button:not(.not),
+a.button:not(.not),
+input[type="submit"]:not(.not),
+a.comment-edit-link:not(.not),
+a.comment-reply-link:not(.not) {
+    min-width: 250px;
+    display: inline-block;
+    line-height: 1em;
+    overflow: hidden;
+    padding: 0.85em 1em 0.55em 3.5em;
+    position: relative;
+    user-select: none;
+    z-index: 3
+}
+
+.btn.big:not(.not),
+button.big:not(.not),
+a.button.big:not(.not),
+input[type="submit"].big:not(.not) {
+    min-width: 300px;
+}
+
+.btn.small:not(.not),
+button.small:not(.not),
+a.button.small:not(.not),
+input[type="submit"].small:not(.not) {
+    min-width: 180px;
+}
+
+a.comment-edit-link:not(.not),
+a.comment-reply-link:not(.not) {
+    min-width: 210px
+}
 
     button.btn.navbar-toggle {
         min-width: 100px
