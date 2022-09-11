@@ -28,10 +28,6 @@ article figure figcaption {
     font-size: 0.9em
 }
 
-#searchbar_fullscreen .close {
-    font-size: 27px
-}
-
 #searchbar_fullscreen input[type="search"] {
     font-size: 3em;
     font-weight: 400
@@ -1393,7 +1389,7 @@ input#pwbox-1168 {
     font-size: 0.9em
 }
 
-input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.not) {
+input[type="submit"]:not(.not, .has-icon), button:not(.not, .has-icon), .btn:not(.not, .has-icon), a.button:not(.not, .has-icon) {
     font-size: 0.9em
 }
 

@@ -276,7 +276,7 @@
             margin: 0 0 5px;
         }
 
-    .cookies button.btn:not(.not) {
+    .cookies button.btn:not(.not, .has-icon) {
         max-width: 200px;
         min-width: 150px
     }

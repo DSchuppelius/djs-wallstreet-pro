@@ -34,8 +34,11 @@ article figure figcaption a {
     }
 
     #searchbar_fullscreen .close {
-        color: #fff
+        color: #ccc
     }
+        #searchbar_fullscreen .close:hover {
+            color: darkred
+        }
 
     #searchbar_fullscreen input[type="search"] {
         background: rgba(55,57,65,0.6);

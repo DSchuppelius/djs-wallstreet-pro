@@ -3337,11 +3337,11 @@ div.collapsing ul.nav {
         right: 26px;
     }
 
-        .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not) {
+        .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not, .has-icon) {
             padding: 1.1em 2.5em 0.8em 4.75em;
         }
 
-            .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not):before {
+            .row.no_background .col-md-4 .wp-block-search .wp-block-search__button:not(.not, .has-icon):before {
                 line-height: 2.7em;
             }
 
@@ -3621,7 +3621,7 @@ div.collapsing ul.nav {
     padding: 120px 30px 10px
 }
 
-.middle .service-area:not(.not) {
+.middle .service-area:not(.not, .has-icon) {
     padding: 130px 30px 20px
 }
 

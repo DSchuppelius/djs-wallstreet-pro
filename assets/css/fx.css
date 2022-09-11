@@ -445,6 +445,10 @@ body.fixed_Header .navbar.navbar-fixed-top {
         transform: translate(0px,0px) scale(1,1)
     }
 
+.close {
+    transition: all 100ms ease-out 0s;
+}
+
 .container.single.portfolio .port-detail-img img {
     transition: all 300ms ease-out 0s;
 }
@@ -1161,6 +1165,6 @@ input#pwbox-1168 {
     transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s
 }
 
-a.comment-edit-link:not(.not), a.comment-reply-link:not(.not), input[type="submit"]:not(.not), button:not(.not), .btn:not(.not), a.button:not(.not) {
+a.comment-edit-link:not(.not, .has-icon), a.comment-reply-link:not(.not, .has-icon), input[type="submit"]:not(.not, .has-icon), button:not(.not, .has-icon), .btn:not(.not, .has-icon), a.button:not(.not, .has-icon) {
     transition: all .3s
 }

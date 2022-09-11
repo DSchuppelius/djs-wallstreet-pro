@@ -485,7 +485,7 @@ body {
         min-width: 130px;
     }
 
-    .cookies button.btn:not(.not) {
+    .cookies button.btn:not(.not, .has-icon) {
         max-width: 150px;
         min-width: 120px
     }
