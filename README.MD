@@ -55,7 +55,7 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
  - Translation Ready 
  
 
-### Basic Setup of the Theme
+## Basic Setup of the Theme
 
 Fresh installation!
 
@@ -63,30 +63,29 @@ Fresh installation!
 2. Activate the theme from the WP Dashboard.
 3. Done!
 
-#### Images
+### Images
 
 All images in DJS-Wallstreet-Pro are licensed under the terms of the GNU GPL.
 
-##### Top Navigation Menu
+#### Top Navigation Menu
 
 - Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
 - Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
 
-###### Page Templates
+##### Page Templates
 
 - Contact  Page Tempalte:- Create a page as you do in WordPress and select the page template with the name 'Contact'
 
-###### Front Page Added with the theme
+##### Front Page Added with the theme
 
 - It has header(logo + menus), Home Featured Image, services, recent comments widgets and footer.
 
-###### Site Title and Description
+##### Site Title and Description
 
 Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
     
 
 ## Support
--------
 
 Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
 
