@@ -21,13 +21,4 @@ function wallstreet_fonts_url($font) {
 
     return $fonts_url;
 }
-
-function get_font_family($font){
-    $result = null;
-    $current_options = get_current_options();
-    $result = str_replace("GoogleFont", $current_options["google_font"], $font);
-    echo $result;
-
-    return $result;
-}
 ?>

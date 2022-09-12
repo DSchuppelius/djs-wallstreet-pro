@@ -152,4 +152,13 @@ if (!function_exists("busiprof_customizer_preview_scripts")) {
     }
 }
 add_action("customize_preview_init", "busiprof_customizer_preview_scripts");
+
+if($current_options["remove_googlefonts"] == true && $current_options["enable_custom_typography"] == false){
+    add_filter('style_loader_src', function($href){
+        if(strpos($href, "//fonts.googleapis.com/") === false) {
+            return $href;
+        }
+        return false;
+    });
+}
 ?>

@@ -50,6 +50,10 @@ function is_noframe_with_bigborder() {
     return false;
 }
 
+function remove_umlaut($inout) {
+    return str_replace(["Ä", "Ö", "Ü", "ä", "ö", "ü", "ß"], ["Ae", "Oe", "Ue", "ae", "oe", "ue", "ss"], $inout);
+}
+
 function is_meta_enabled($zone = "all") {
     $current_options = get_current_options();
     $pages = ["page.php", "template/page-full-width.php"];

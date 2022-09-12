@@ -15,9 +15,9 @@ function youtube_nocookie_solution($original, $url, $attr, $post_ID) {
 add_filter("embed_oembed_html", "youtube_nocookie_solution", 10, 4);
 
 function iframe_cookie_lazy_load($content) {
-    $wallstreet_pro_options = theme_data_setup();
-    $current_options = wp_parse_args(get_option("wallstreet_pro_options", []), $wallstreet_pro_options);
+    $current_options = get_current_options();
     $actual_link = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
     if (empty($content)) {
         return $content;
     } else {
@@ -40,9 +40,9 @@ function iframe_cookie_lazy_load($content) {
                 }
 
                 $disclaimer  = '<hr style="width:50%;text-align:center;margin:20px auto"><div class="cookies"><h3>'.__("Third-party cookies", "wallstreet").'</h3><div class="inner cookies">';
-                $disclaimer .= '<p class="cookies justify"><b>'.__("Hint:", "wallstreet").'</b> '.__("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "wallstreet").' <a href="/impressum">'.__("Imprint", "wallstreet").'</a>, <a href="/datenschutzerklaerung">'.__("Privacy policy", "wallstreet").'</a>. '.__("Do you have any further questions on this topic? Write me via the", "wallstreet").' <a href="/kontakt">'.__("contact form", "wallstreet").'</a> '.__("or by e-mail", "wallstreet").' (<a href="mailto:' . $current_options["contact_email_number_one"] . '" >' . $current_options["contact_email_number_one"] . "</a>)</p>";
-                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);">'.__("Yes, I would like to activate the content on this page...", "wallstreet").'</button></form>';
-                $disclaimer .= '<p class="cookies justify">'.__("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "wallstreet").'</p></div></div>';
+                $disclaimer .= '<p class="cookies justify"><b>'.__("Hint:", "wallstreet").'</b> ' . utf8_decode($current_options["cookie_before"]) . "</p>";
+                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);">' . utf8_decode($current_options["cookie_link"]) . '</button></form>';
+                $disclaimer .= '<p class="cookies justify">' . utf8_encode($current_options["cookie_after"]) . '</p></div></div>';
                 $disclaimer .= '<div class="lcd crt"><a href="' . $src . '" target="_blank">' . $src . '</a></div><hr style="width:50%;text-align:center;margin:20px auto">';
 
                 $cookieNode = $post->createElement("div");
