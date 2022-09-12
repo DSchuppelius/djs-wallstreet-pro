@@ -180,14 +180,14 @@ body.error404 .error_404 {
     border-radius: var(--border-verysmallbase);
 }
 
+.attachment .row.with_background .col-md-12 img,
 .about-us .row.with_background .wp-post-image {
-    border-top-left-radius: var(--border-smallbase);
-    border-top-right-radius: var(--border-smallbase);
+    border-radius: var(--border-smallbase);
 }
 
+.attachment .row.with_background.bigborder .col-md-12 img,
 .about-us .row.with_background.bigborder .wp-post-image {
-    border-top-left-radius: var(--border-verysmallbase);
-    border-top-right-radius: var(--border-verysmallbase);
+    border-radius: var(--border-verysmallbase);
 }
 
 div.cookies {

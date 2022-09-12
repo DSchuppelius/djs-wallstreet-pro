@@ -83,7 +83,7 @@ $current_options = get_current_options(); ?>
     </head>
     <?php
     $additional_BodyClasses = [];
-    if ($current_options["fixedheader_enabled"]) {
+    if ($current_options["fixedheader_enabled"] && ($current_options["header_presets_stlyle"] != 3 && $current_options["header_presets_stlyle"] != 4)) {
         $additional_BodyClasses = ["body-static-top", "fixed_Header"];
     }
     if ($current_options["fixedfooter_enabled"]) {

@@ -227,7 +227,7 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
                     </ul>
                 <?php } else { ?>
                     <ul class="slides">
-                        <?php for ($i = 1; $i <= 2; $i++) { ?>
+                        <?php for ($i = 1; $i <= 3; $i++) { ?>
                             <li class="<?php echo $i==1 ? 'first' : 'next'; ?>">
                                 <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/slider/slide<?php echo $i; ?>.jpg">
                                 <div class="flex-slider-center">

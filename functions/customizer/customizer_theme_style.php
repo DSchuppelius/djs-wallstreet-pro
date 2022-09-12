@@ -16,21 +16,26 @@ function hotel_theme_style_customizer($wp_customize) {
         function render_content() {
             echo "<h3>" . __("Light & Dark Predefined Colors Setting", "wallstreet") . "</h3>";
             $name = "_customize-color-radio-" . $this->id;
-            foreach ($this->choices as $key => $value) { ?>
-                <label>
-                    <input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr($name); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>" <?php if ($this->value() == $key) {
-    echo 'checked="checked"';
-} ?> />
-                    <img <?php if ($this->value() == $key) {
-                        echo 'class="color_scheem_active"';
-                    } ?> src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/bg-pattern/<?php echo $value; ?>" alt="<?php echo esc_attr($value); ?>" />
-                </label>
-            <?php }?>
+            $dark = true; ?>
+            <div class="dark_mode">
+                <?php foreach ($this->choices as $key => $value) { ?>
+                    <?php if($dark && $key[0] != "#") {
+                        $dark = false; ?>
+                        </div><div class="light_mode">
+                    <?php } elseif ($key == "default.css") { ?>
+                    	</div><div class="custom_mode">
+                    <?php } ?>
+                    <label class="color_schema">
+                        <input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr($name); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>" <?php if ($this->value() == $key) { echo 'checked="checked"'; } ?> />
+                        <img <?php if ($this->value() == $key) { echo 'class="active"'; } ?> src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/bg-pattern/<?php echo $value; ?>" alt="<?php echo esc_attr($value); ?>" />
+                    </label>
+                <?php } ?>
+            </div>
             <script>
                 jQuery(document).ready(function($) {
                     $("#customize-control-wallstreet_pro_options-stylesheet label img").click(function() {
-                        $("#customize-control-wallstreet_pro_options-stylesheet label img").removeClass("color_scheem_active");
-                        $(this).addClass("color_scheem_active");
+                        $("#customize-control-wallstreet_pro_options-stylesheet label img").removeClass("active");
+                        $(this).addClass("active");
                     });
                 });
             </script>
@@ -56,16 +61,20 @@ function hotel_theme_style_customizer($wp_customize) {
             "section" => "theme_style",
             "type" => "radio",
             "choices" => [
+                "#ffc400" => "yellow-dark.jpg",                
                 "#ff8a00" => "orange-dark.jpg",
                 "#ee1d24" => "red-dark.jpg",
                 "#88be4c" => "papaya-dark.jpg",
-                "#ffc400" => "yellow-dark.jpg",
+                "#00c2a9" => "turquoise-dark.jpg",
                 "#22a1c4" => "blue-dark.jpg",
+                "#c1c1c1" => "gray-dark.jpg",
+                "ffc400" => "yellow-light.jpg",
                 "ff8a00" => "orange-light.jpg",
                 "ee1d24" => "red-light.jpg",
                 "88be4c" => "papaya-light.jpg",
-                "ffc400" => "yellow-light.jpg",
+                "00c2a9" => "turquoise-light.jpg",
                 "22a1c4" => "blue-light.jpg",
+                "c1c1c1" => "gray-light.jpg",
 
                 "default.css" => "dark.png",
                 "light.css" => "light.png",

@@ -17,7 +17,7 @@ $current_options = get_current_options(); ?>
 		</div>
         <div class="col-lg-8 col-md-12 col-sm-12">
             <div class="navbar-collapse collapse">
-	            <?php get_template_part("teamplate-parts/global/menu-search"); ?>
+	            <?php get_template_part("template-parts/global/menu-search"); ?>
 		   </div>
         </div>
     </div>

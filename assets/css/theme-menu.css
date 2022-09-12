@@ -99,7 +99,7 @@
 }
 
 /*Dropdown Menus & Submenus Css----------------------------------------------------------*/
-.dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
+    .dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
     margin: -10px 0 0 10px;
     position: relative;
     top: 2px;

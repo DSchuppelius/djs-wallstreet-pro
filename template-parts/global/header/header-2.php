@@ -14,7 +14,7 @@ $current_options = get_current_options(); ?>
 			<?php get_named_template_parts("template-parts/global/header/navbar", ["logo", "button"]); ?>
         </div>
         <div class="navbar-collapse collapse">
-			<?php get_template_part("teamplate-parts/global/menu-search"); ?>
+			<?php get_template_part("template-parts/global/menu-search"); ?>
 		</div>
     </nav>
 </header>

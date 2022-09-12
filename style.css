@@ -2089,15 +2089,6 @@ footer.site {
     float: left
 }
 
-.img-para-right {
-    margin-left: 20px !important
-}
-
-.index2 .header-module {
-    float: right;
-    padding: 37px 0
-}
-
 .index2 .header-module {
     float: right;
     padding: 37px 0
@@ -2105,14 +2096,6 @@ footer.site {
 
 .index2 .search-box-outer {
     display: inline-block
-}
-
-.index2 .search-box-outer {
-    display: inline-block
-}
-
-.index2 .site-branding-text {
-    padding: 17px 5px 10px
 }
 
 .index2 .site-branding-text {
@@ -2125,22 +2108,8 @@ footer.site {
     padding: 3px 0 5px
 }
 
-.index3 .logo-link-url {
-    display: block;
-    clear: both;
-    padding: 3px 0 5px
-}
-
 .index3 .site-branding-text .site-description {
     margin-bottom: 0
-}
-
-.index3 .site-branding-text .site-description {
-    margin-bottom: 0
-}
-
-.index3 .site-branding-text .site-title {
-    margin: 0
 }
 
 .index3 .site-branding-text .site-title {
@@ -2151,17 +2120,9 @@ footer.site {
         padding: 1px 0 4px
     }
 
-    .index3 .site-branding-text .site-title .navbar-brand {
-        padding: 1px 0 4px
-    }
-
 .logo-link-url {
     display: inline-block;
-    padding: 5px
-}
-
-.logo-link-url {
-    display: inline-block;
+    white-space: nowrap;
     padding: 5px
 }
 
@@ -2492,11 +2453,30 @@ div.collapsing ul.nav {
         margin: 0
     }
 
+.body-fixed-top .navbar-header.index3 {
+    padding: 15px 0 0 0
+}
+
+.navbar.navbar-wrapper.navbar5.header-style-6 .container {
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: unset;
+}
+
+    .navbar.navbar-wrapper.navbar5.header-style-6 .container > .navbar-header a {
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: unset;
+    }
+
 .navbar-header.index3 {
     text-align: center;
     float: none;
     padding: 17px 15px 17px 0
 }
+
 
     .navbar-header.index3 .navbar-brand {
         display: inline-block;
@@ -2504,6 +2484,25 @@ div.collapsing ul.nav {
         margin-right: 0;
         padding: 7px 0 0
     }
+
+    .navbar-header.index3 .site-logo-area {
+         display: block; 
+         flex-direction: unset; 
+         flex: unset;
+         justify-content: unset;
+    }
+
+    .navbar-header.header-style-3 .site-logo-area,
+    .navbar-header.header-style-4 .site-logo-area {
+        display: block;
+        flex-direction: unset;
+        flex: unset;
+    }
+
+.navbar-header.header-style-3 .site-logo-area {
+    width: fit-content;
+    float: left;
+}
 
 .navbar-nav .search-box-outer .open .dropdown-menu {
     position: absolute
@@ -2551,6 +2550,19 @@ div.collapsing ul.nav {
     border-top: 1px solid rgba(0,0,0,0.6);
     position: relative
 }
+
+.navbar.navbar-fixed-top.navbar4.header-style-5,
+.navbar.navbar-fixed-top.navbar5.header-style-6 {
+    position: fixed
+}
+
+    .navbar.navbar-fixed-top.navbar4.header-style-5 .navbar-header .site-logo-area {
+        max-height: 50px
+    }
+
+    .navbar.navbar-fixed-top.navbar5.header-style-6 .navbar-header .site-logo-area {
+        justify-content:center;
+    }
 
 
     .navbar.navbar4 .header-module {
@@ -2641,6 +2653,18 @@ div.collapsing ul.nav {
         .navbar5 .navbar-header .navbar-brand img {
             margin: 15px auto 0
         }
+
+.navbar.navbar-wrapper.header-style-3 .container,
+.navbar.navbar-wrapper.header-style-4 .container {
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: unset;
+}
+
+.navbar.navbar-wrapper.header-style-3 .nav li.menu-item a:hover, .nav li.menu-item.active a {
+    box-shadow: none
+}
 
 .other-service-area {
     border-radius: 0;
