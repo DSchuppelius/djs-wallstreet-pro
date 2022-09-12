@@ -81,7 +81,7 @@ Site Title and its description in not shown on home page besides this both are u
 
 Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
 
-@version 2.0.0:
+Version 2.0.0:
     1. Refactoring Theme
     2. Add Parallaxfunctions (Background and Site-elements)
     3. Add Custom Background
@@ -110,95 +110,95 @@ Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
     26. Add diffrent content-types (post-types = aside, audio, chat, gallery, image, link, quote, status, video)
     27. Add partner section
     28. Add portfolio-style-types
-@version 1.9.9:
+Version 1.9.9:
     1. Removed duplicate and unused js.
-@version 1.9.8:
+Version 1.9.8:
     1. Updated Turkish Locale.
-@version 1.9.7:
+Version 1.9.7:
     1. Changed widget name
-@version 1.9.6:
+Version 1.9.6:
     1. Removed Duplicate Strings.
-@version 1.9.5:
+Version 1.9.5:
     1. Updated Strings.
-@version 1.9.4:
+Version 1.9.4:
     1. Added Turkish Locale
-@version 1.9.3:
+Version 1.9.3:
     1. Fixed View All Project Button Issue.
-@version 1.9.2:
+Version 1.9.2:
     1. Solved Content width.
     2. Fixed Meta issue in Page Full width template.
-@version 1.9.1:
+Version 1.9.1:
     1. Update Pot File.
     2. Update Font-awesome Library 4.7.0
-@version 1.9:
+Version 1.9:
     1. Added Woocommerce support.
-@version 1.8.3:
+Version 1.8.3:
     1. Added Spanish Language Translation(po and mo file).
-@version 1.8.2:
+Version 1.8.2:
     1. Change opacity effect.
-@version 1.8.1:
+Version 1.8.1:
     1. Solved Spelling Issue and Update Pot Files.
-@version 1.8:
+Version 1.8:
     1. Fixed page seprater issue in service, aboutus, portfolio 2,3,4 template.
     2. Fixed service icon border color issue in service template.
     3. Fixed social icon issue in our team meta box.
-@version 1.7.9:
+Version 1.7.9:
     1. Added Jetpack plugin support and Gallery overlay css.
-@version 1.7.8:
+Version 1.7.8:
     1. Update Pot Files.
-@version 1.7.7:
+Version 1.7.7:
     1. Added Spanish translated Po and Mo Files.
-@version 1.7.6:
+Version 1.7.6:
     1. Fixed feature section enable issue from layout manager.
-@version 1.7.5:
+Version 1.7.5:
     1. Removed tag from page template.
-@version 1.7.4:
+Version 1.7.4:
     1. Change blog post meta class and blog post author.
-@version 1.7.3:
+Version 1.7.3:
     1. Update Font awesome 4.6.1 to 4.6.3
     2. Add Title Tag Support
     3. Add footer-widgets, blog, portfolio, featured-images, four-columns, left-sidebar Tag.
-@version 1.7.2:
+Version 1.7.2:
     1. Archive.php Issue Resolved.
     2. Translate Contact us form Placeholder.
-@version 1.7.1:
+Version 1.7.1:
     1. Add Product Texonomy Slug Field in customizer.
-@version 1.7:
+Version 1.7:
     1. Add Custom Texonomy Template.
     2. Add Custom post type Slug setting.
-@version 1.6.9:
+Version 1.6.9:
     1. testimonial pouse on hover property added.
-@version 1.6.8:
+Version 1.6.8:
     1. Added WPML Support.
-@version 1.6.7:
+Version 1.6.7:
     1. Adding background image feature of both theme feature and testimonial sections.
-@version 1.6.6:
+Version 1.6.6:
     1. Layout manager problem solved in admin customizer.
-@version 1.6.5:
+Version 1.6.5:
     1. Adding custom header settings 
-@version 1.6.4:
+Version 1.6.4:
     1. Remove Default sidebar data in blog pages and archive page 
-@version 1.6.1:
+Version 1.6.1:
     1. Hide Blog Meta Setting on Page, All Pages and Archives Pages.
-@version 1.6:
+Version 1.6:
     1. Add Color Skin control in customizer
     2. Recommend easy Instagram Feed Plugin
-@version 1.5:
+Version 1.5:
     1. Remove Unused Images & file.
     2. Added Google Font.
-@version 1.4:
+Version 1.4:
     1. Added Customizer.
-@version 1.3:
+Version 1.3:
     1. Add Theme Color Scheme.
-@version 1.2:
+Version 1.2:
     1. Delete Extra white space in function.php file.
     2. Call footer Area in Contact-us page.
-@version 1.1:
+Version 1.1:
     1. Added html text box area in the footer customization settings of the option panel.
     2. All input text fields removed from the footer customization settings of the option panel.
     3. Delete Extra white space in function.php File.
     4. Add style for monster widget Image.
-@version 1.0:
+Version 1.0:
     released
 
 
