@@ -6,9 +6,9 @@
 ## Developer
 
 - Contributors: DSchuppelius
-- Version: 2.0.0
+- Version: 2.0.1
 - Requires at least: 5.3
-- Tested up to: 6.0.0
+- Tested up to: 6.0.2
 - Requires PHP: 5.6.20
 - Requires MySQL: 5.0
 - License: GNU General Public License v3 or later
@@ -48,7 +48,15 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
  - Custom Background
  - Parallax-Features (Background and some Site-Elements)
  - Cookie Accept for external IFRAMEs
- - Diffrent Post-Types
+ - Diffrent Post-Typs
+    - Portfolio
+    - Client
+    - Partner
+    - Services
+    - Slider (Homepage)
+    - Team
+    - Testimonial
+ - Diffrent Post-Formats for Blogging
     - Aside
     - Audio
     - Chat

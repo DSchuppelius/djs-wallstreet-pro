@@ -1,5 +1,18 @@
 ### Versionhistory
 
+#### Version 2.0.1:
+    1. Add Shortcode [zdf url=""] for ZDF-Mediathek
+    2. Fixig some Headerfiles (2,5,6)
+    3. Add Github social link
+    4. Add Settings for Cookiedialog
+    5. Changing Fontbehavior
+        1. Remove GoogleFonts settings
+        2. Choose GoogleFonts in settings
+        3. Optimize local font stylesheet
+    6. Remove unneeded styles
+    7. Clean IDE Folder
+    8. Changing Readme.txt to Readme.md
+    9. Split Versions in README.MD to HISTORY.MD
 #### Version 2.0.0:
     1. Refactoring Theme
     2. Add Parallaxfunctions (Background and Site-elements)
