@@ -8,6 +8,8 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 function wallstreet_copyright_customizer($wp_customize) {
+    $current_options = get_current_options();
+
     $wp_customize->add_panel("wallstreet_copyright_setting", [
         "priority" => 900,
         "capability" => "edit_theme_options",
@@ -66,5 +68,40 @@ function wallstreet_copyright_customizer($wp_customize) {
         "section" => "copyright_section_one",
         "type" => "textarea",
     ]);
+
+    $wp_customize->add_section("cookie_section_one", [
+        "title" => __("Cookie settings", "wallstreet"),
+        "priority" => 35,
+        "panel" => "wallstreet_copyright_setting",
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[cookie_before]", [
+        "default" => __("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "wallstreet") . ' <a href="/' . urlencode(strtolower(__("Imprint", "wallstreet"))) . '">' . __("Imprint", "wallstreet") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(__("Privacy policy", "wallstreet")))) . '">' . __("Privacy policy", "wallstreet") . '</a>. ' . __("Do you have any further questions on this topic? Write me via the", "wallstreet").' <a href="/' . urlencode(strtolower(__("contact", "wallstreet"))) . '">' . __("contact form", "wallstreet") . '</a> ' . __("or by e-mail", "wallstreet") . ' (<a href="mailto:' . $current_options["contact_email_number_one"] . '" >' . $current_options["contact_email_number_one"] . "</a>)",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[cookie_before]", [
+        "label" => __("Cookietext before button", "wallstreet"),
+        "section" => "cookie_section_one",
+        "type" => "textarea",
+    ]);
+    $wp_customize->add_setting("wallstreet_pro_options[cookie_link]", [
+        "default" => __("Yes, I would like to activate the content on this page...", "wallstreet"),
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[cookie_link]", [
+        "label" => __("Buttontext", "wallstreet"),
+        "section" => "cookie_section_one",
+        "type" => "textarea",
+    ]);
+    $wp_customize->add_setting("wallstreet_pro_options[cookie_after]", [
+        "default" => __("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "wallstreet"),
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[cookie_after]", [
+        "label" => __("Cookietext after button", "wallstreet"),
+        "section" => "cookie_section_one",
+        "type" => "textarea",
+    ]);
+
 }
 add_action("customize_register", "wallstreet_copyright_customizer"); ?>

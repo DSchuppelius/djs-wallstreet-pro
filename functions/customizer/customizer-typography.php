@@ -44,6 +44,19 @@ function wallstreet_typography_customizer($wp_customize) {
         "priority" => 100,
     ]);
 
+    $wp_customize->add_setting("wallstreet_pro_options[remove_googlefonts]", [
+        "default" => false,
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[remove_googlefonts]", [
+        "label" => __("Remove GoogleFonts (Works only, if custom typography is disabled)", "wallstreet"),
+        "section" => "wallstreet_typography_section",
+        "setting" => "wallstreet_pro_options[remove_googlefonts]",
+        "type" => "checkbox",
+    ]);
+
     $font_size = [];
     for ($i = 9; $i <= 100; $i++) {
         $font_size[$i] = $i;

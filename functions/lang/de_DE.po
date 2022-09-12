@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-11 13:25+0200\n"
-"PO-Revision-Date: 2022-09-11 13:28+0200\n"
+"POT-Creation-Date: 2022-09-12 09:55+0200\n"
+"PO-Revision-Date: 2022-09-12 09:57+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -96,7 +96,7 @@ msgstr "Verlinkter Beitrag"
 #: template-parts/home/service/servic-4.php:109
 #: template-parts/home/service/servic-5.php:109
 #: template-parts/home/service/servic-6.php:119
-#: template-parts/index/index-portfolio.php:103
+#: template-parts/index/index-portfolio.php:107
 #: template-specials/service-five-template.php:108
 #: template-specials/service-four-template.php:108
 #: template-specials/service-six-template.php:108
@@ -291,63 +291,6 @@ msgstr "Cookies von Drittanbietern"
 msgid "Hint:"
 msgstr "Hinweis:"
 
-#: functions/basic/iframe.php:43
-msgid ""
-"This hidden content may leave traces of third-party vendors on your computer "
-"when activated. Perhaps your user behavior could be analyzed via these "
-"traces. Please confirm the execution of the content by clicking on the "
-"button. On the following pages you can view further information on the use "
-"of data on this website:"
-msgstr ""
-"Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von "
-"Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte Ihr "
-"Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte best&auml;"
-"tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des Buttons. Auf "
-"den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung "
-"auf dieser Website einsehen:"
-
-#: functions/basic/iframe.php:43
-msgid "Imprint"
-msgstr "Impressum"
-
-#: functions/basic/iframe.php:43
-msgid "Privacy policy"
-msgstr "Datenschutzerkl&auml;rung"
-
-#: functions/basic/iframe.php:43
-msgid "Do you have any further questions on this topic? Write me via the"
-msgstr ""
-"Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir &uuml;ber das"
-
-#: functions/basic/iframe.php:43
-msgid "contact form"
-msgstr "Kontaktformular"
-
-#: functions/basic/iframe.php:43
-msgid "or by e-mail"
-msgstr "oder per E-Mail"
-
-#: functions/basic/iframe.php:44
-msgid "Yes, I would like to activate the content on this page..."
-msgstr "Ja, ich m&ouml;chte den Inhalt auf dieser Seite aktivieren..."
-
-#: functions/basic/iframe.php:45
-msgid ""
-"Furthermore, you are aware that by activating the content, cookies can be "
-"set by third parties. In addition, you are aware that your data processing "
-"system interacts with the third-party service. This means that information "
-"from your system is transmitted to the third-party provider. If you follow "
-"the link below, cookies will probably also be set and data exchanged on the "
-"target website."
-msgstr ""
-"Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
-"Cookies von Dritten gesetzt werden k&ouml;nnen. Dar&uuml;ber hinaus ist "
-"Ihnen bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst "
-"interagiert. Das bedeutet, dass Informationen aus Ihrem System an den "
-"Drittanbieter &uuml;bermittelt werden. Wenn Sie dem untenstehenden Link "
-"folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der "
-"Zielwebsite ausgetauscht."
-
 #: functions/breadcrumbs/breadcrumbs.php:15
 #: functions/menu/theme_bootstrap_walker_page.php:94
 #: template-parts/index/index-banner.php:35
@@ -378,7 +321,7 @@ msgstr "Startseite-Blogeinstellungen"
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:220
+#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:221
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 
@@ -389,7 +332,7 @@ msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 #: functions/customizer/customizer-feature.php:151
 #: functions/customizer/customizer-feature.php:191
 #: functions/customizer/customizer-partner.php:32
-#: functions/customizer/customizer-project.php:68
+#: functions/customizer/customizer-project.php:86
 #: functions/customizer/customizer-service.php:77
 #: functions/customizer/customizer-service.php:178
 #: functions/customizer/customizer-service.php:252
@@ -407,7 +350,7 @@ msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:221
+#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:222
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
@@ -417,7 +360,7 @@ msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 #: functions/customizer/customizer-feature.php:164
 #: functions/customizer/customizer-feature.php:204
 #: functions/customizer/customizer-partner.php:46
-#: functions/customizer/customizer-project.php:81
+#: functions/customizer/customizer-project.php:99
 #: functions/customizer/customizer-service.php:89
 #: functions/customizer/customizer-service.php:193
 #: functions/customizer/customizer-service.php:264
@@ -469,12 +412,12 @@ msgstr "Anzahl der Post"
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:86
+#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:87
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
 #: functions/customizer/customizer-blog.php:117
-#: functions/customizer/customizer-project.php:108
+#: functions/customizer/customizer-project.php:126
 #: functions/customizer/customizer-service.php:277
 #: functions/meta-box/post-meta.php:37 functions/meta-box/post-meta.php:68
 #: functions/meta-box/post-meta.php:69 functions/meta-box/post-meta.php:98
@@ -483,7 +426,7 @@ msgid "Button Text"
 msgstr "Button-Text"
 
 #: functions/customizer/customizer-blog.php:130
-#: functions/customizer/customizer-project.php:122
+#: functions/customizer/customizer-project.php:140
 #: functions/customizer/customizer-service.php:290
 #: functions/meta-box/post-meta.php:39 functions/meta-box/post-meta.php:100
 #: functions/meta-box/post-meta.php:101
@@ -494,7 +437,7 @@ msgstr "Button-Link"
 #: functions/customizer/customizer-feature.php:69
 #: functions/customizer/customizer-feature.php:73
 #: functions/customizer/customizer-feature.php:236
-#: functions/customizer/customizer-project.php:137
+#: functions/customizer/customizer-project.php:155
 #: functions/customizer/customizer-service.php:304
 #: functions/customizer/customizer-social.php:85
 #: functions/customizer/customizer-social.php:110
@@ -502,11 +445,12 @@ msgstr "Button-Link"
 #: functions/customizer/customizer-social.php:160
 #: functions/customizer/customizer-social.php:185
 #: functions/customizer/customizer-social.php:210
-#: functions/customizer/customizer-social.php:236
+#: functions/customizer/customizer-social.php:235
 #: functions/customizer/customizer-social.php:261
 #: functions/customizer/customizer-social.php:286
 #: functions/customizer/customizer-social.php:311
 #: functions/customizer/customizer-social.php:336
+#: functions/customizer/customizer-social.php:361
 #: functions/meta-box/post-meta.php:41 functions/meta-box/post-meta.php:63
 #: functions/meta-box/post-meta.php:81 functions/meta-box/post-meta.php:102
 #: functions/meta-box/post-meta.php:138 functions/meta-box/post-meta.php:142
@@ -526,11 +470,11 @@ msgstr "Kunden-Einstellungen"
 msgid "Section Heading"
 msgstr "Bereichs&uuml;berschrift"
 
-#: functions/customizer/customizer-client.php:26 theme_setup_data.php:117
+#: functions/customizer/customizer-client.php:26 theme_setup_data.php:118
 msgid "Our Clients"
 msgstr "Unsere Kunden"
 
-#: functions/customizer/customizer-client.php:39 theme_setup_data.php:118
+#: functions/customizer/customizer-client.php:39 theme_setup_data.php:119
 msgid ""
 "Have a look at our clients we are growing their business and they are going "
 "up in the market by beating their competitors."
@@ -574,16 +518,16 @@ msgstr "Padding links/rechts"
 msgid "Click here to add client"
 msgstr "Klicke hier, um einen Kunden hinzuzuf&uuml;gen"
 
-#: functions/customizer/customizer-copyright.php:14
-#: functions/customizer/customizer-copyright.php:18
+#: functions/customizer/customizer-copyright.php:16
+#: functions/customizer/customizer-copyright.php:20
 msgid "Footer copyright settings"
 msgstr "Footer-Copyright-Einstellungen"
 
-#: functions/customizer/customizer-copyright.php:32
+#: functions/customizer/customizer-copyright.php:34
 msgid "Enable Footer Link-text"
 msgstr "Aktiviere Footer-Linktext"
 
-#: functions/customizer/customizer-copyright.php:38 theme_setup_data.php:313
+#: functions/customizer/customizer-copyright.php:40 theme_setup_data.php:318
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
 "\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
@@ -598,25 +542,103 @@ msgstr ""
 "\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/versandkosten\">Versandkosten</"
 "a>&nbsp;"
 
-#: functions/customizer/customizer-copyright.php:42
+#: functions/customizer/customizer-copyright.php:44
 msgid "Footer Link-text"
 msgstr "Footer-Linktext"
 
-#: functions/customizer/customizer-copyright.php:55
+#: functions/customizer/customizer-copyright.php:57
 msgid "Enable Footer Copyright"
 msgstr "Aktiviere Footer-Copyright-Einstellungen"
 
-#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:314
+#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:319
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
-#: functions/customizer/customizer-copyright.php:61 theme_setup_data.php:314
+#. Author of the plugin/theme
+#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:319
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel J&ouml;rg Schuppelius"
 
-#: functions/customizer/customizer-copyright.php:65
+#: functions/customizer/customizer-copyright.php:67
 msgid "Copyright text"
 msgstr "Copyright Text"
+
+#: functions/customizer/customizer-copyright.php:73
+msgid "Cookie settings"
+msgstr "Cookie-Einstellungen"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid ""
+"This hidden content may leave traces of third-party vendors on your computer "
+"when activated. Perhaps your user behavior could be analyzed via these "
+"traces. Please confirm the execution of the content by clicking on the "
+"button. On the following pages you can view further information on the use "
+"of data on this website:"
+msgstr ""
+"Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von "
+"Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte Ihr "
+"Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte best&auml;"
+"tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des Buttons. Auf "
+"den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung "
+"auf dieser Website einsehen:"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "Imprint"
+msgstr "Impressum"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "Privacy policy"
+msgstr "Datenschutzerkl&auml;rung"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "Do you have any further questions on this topic? Write me via the"
+msgstr ""
+"Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir &uuml;ber das"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "contact"
+msgstr "Kontakt"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "contact form"
+msgstr "Kontaktformular"
+
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+msgid "or by e-mail"
+msgstr "oder per E-Mail"
+
+#: functions/customizer/customizer-copyright.php:83
+msgid "Cookietext before button"
+msgstr "Mitteilung vor Cookie-Schaltfläche"
+
+#: functions/customizer/customizer-copyright.php:88 theme_setup_data.php:325
+msgid "Yes, I would like to activate the content on this page..."
+msgstr "Ja, ich m&ouml;chte den Inhalt auf dieser Seite aktivieren..."
+
+#: functions/customizer/customizer-copyright.php:92
+msgid "Buttontext"
+msgstr "Schaltflächentext"
+
+#: functions/customizer/customizer-copyright.php:97 theme_setup_data.php:326
+msgid ""
+"Furthermore, you are aware that by activating the content, cookies can be "
+"set by third parties. In addition, you are aware that your data processing "
+"system interacts with the third-party service. This means that information "
+"from your system is transmitted to the third-party provider. If you follow "
+"the link below, cookies will probably also be set and data exchanged on the "
+"target website."
+msgstr ""
+"Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
+"Cookies von Dritten gesetzt werden k&ouml;nnen. Dar&uuml;ber hinaus ist "
+"Ihnen bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst "
+"interagiert. Das bedeutet, dass Informationen aus Ihrem System an den "
+"Drittanbieter &uuml;bermittelt werden. Wenn Sie dem untenstehenden Link "
+"folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der "
+"Zielwebsite ausgetauscht."
+
+#: functions/customizer/customizer-copyright.php:101
+msgid "Cookietext after button"
+msgstr "Mitteilung nach Cookie-Schaltfläche"
 
 #: functions/customizer/customizer-feature.php:15
 #: functions/customizer/customizer-feature.php:19
@@ -633,7 +655,7 @@ msgstr ""
 msgid "Image Link"
 msgstr "Bildlink"
 
-#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:101
+#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:102
 msgid "Core features of theme"
 msgstr "Kernfunktionen des Themes"
 
@@ -660,8 +682,8 @@ msgstr "Icon"
 
 #: functions/customizer/customizer-feature.php:106
 #: functions/customizer/customizer-feature.php:146
-#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:103
-#: theme_setup_data.php:106 theme_setup_data.php:109
+#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:104
+#: theme_setup_data.php:107 theme_setup_data.php:110
 msgid "Incredibly flexible"
 msgstr "Unglaublich flexibel"
 
@@ -906,7 +928,7 @@ msgstr "Theme Layout Manager"
 msgid "Partner settings"
 msgstr "Partner-Einstellungen"
 
-#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:126
+#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:127
 msgid "Our Partners"
 msgstr "Unsere Partner"
 
@@ -996,30 +1018,48 @@ msgid "Portfolio Column layout section"
 msgstr "Abschnitt \"Portfoliospaltenlayout\""
 
 #: functions/customizer/customizer-project.php:51
+#, fuzzy
+#| msgid "Portfolio Column layout section"
+msgid "Portfolio item layout section"
+msgstr "Abschnitt \"Portfoliospaltenlayout\""
+
+#: functions/customizer/customizer-project.php:54
+msgid "Clover (Only for 4 Column Layout)"
+msgstr "Klee (nur für 4-Spalten-Layout)"
+
+#: functions/customizer/customizer-project.php:55
+msgid "Block"
+msgstr "Block"
+
+#: functions/customizer/customizer-project.php:56
+msgid "Single"
+msgstr "Einzeln"
+
+#: functions/customizer/customizer-project.php:69
 msgid "Number of portfolio on portfolio section"
 msgstr "Anzahl Portfolios im Portfolio-Bereich"
 
-#: functions/customizer/customizer-project.php:62
-#: functions/customizer/customizer-template.php:307 theme_setup_data.php:71
-#: theme_setup_data.php:93
+#: functions/customizer/customizer-project.php:80
+#: functions/customizer/customizer-template.php:307 theme_setup_data.php:72
+#: theme_setup_data.php:94
 msgid "Featured portfolio"
 msgstr "Vorgestelltes Portfolio"
 
-#: functions/customizer/customizer-project.php:75
-#: functions/customizer/customizer-template.php:320 theme_setup_data.php:72
-#: theme_setup_data.php:94
+#: functions/customizer/customizer-project.php:93
+#: functions/customizer/customizer-template.php:320 theme_setup_data.php:73
+#: theme_setup_data.php:95
 msgid "Most popular of our works."
 msgstr "Unsere beliebtesten Werke."
 
-#: functions/customizer/customizer-project.php:95
+#: functions/customizer/customizer-project.php:113
 msgid "Enable view all portfolios button"
 msgstr "Button zum Zeigen aller Portfolios aktivieren"
 
-#: functions/customizer/customizer-project.php:102 theme_setup_data.php:79
+#: functions/customizer/customizer-project.php:120 theme_setup_data.php:80
 msgid "View All Projects"
 msgstr "Alle Projekte anzeigen"
 
-#: functions/customizer/customizer-project.php:150
+#: functions/customizer/customizer-project.php:168
 msgid "Click here to add project"
 msgstr "Klicke hier, um ein Projekt hinzuzufügen"
 
@@ -1048,8 +1088,8 @@ msgstr "Unsere Dienstleistungen"
 #: functions/customizer/customizer-template.php:51
 #: functions/customizer/customizer-template.php:149
 #: functions/customizer/customizer-template.php:408 theme_setup_data.php:61
-#: theme_setup_data.php:63 theme_setup_data.php:74 theme_setup_data.php:146
-#: theme_setup_data.php:219
+#: theme_setup_data.php:63 theme_setup_data.php:75 theme_setup_data.php:147
+#: theme_setup_data.php:220
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
@@ -1096,7 +1136,7 @@ msgstr "Dienstleistung-Callout-Einstellungen"
 msgid "Enable Callout area section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-service.php:246 theme_setup_data.php:155
+#: functions/customizer/customizer-service.php:246 theme_setup_data.php:156
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
@@ -1219,48 +1259,52 @@ msgid "Enable social media links on footer section"
 msgstr "Links zu Sozialen Medien im Footerbereich aktivieren"
 
 #: functions/customizer/customizer-social.php:147
-msgid "Pinterest URL"
-msgstr "Pinterest URL"
+msgid "GitHub URL"
+msgstr "Webadresse (Github)"
 
 #: functions/customizer/customizer-social.php:172
-msgid "Youtube URL"
-msgstr "Youtube URL"
+msgid "Pinterest URL"
+msgstr "Webadresse (Pinterest)"
 
 #: functions/customizer/customizer-social.php:197
+msgid "Youtube URL"
+msgstr "Webadresse (Youtube)"
+
+#: functions/customizer/customizer-social.php:222
 #: functions/meta-box/post-meta.php:140 functions/meta-box/post-meta.php:141
 msgid "Skype URL"
-msgstr "Skype URL"
-
-#: functions/customizer/customizer-social.php:223
-#: functions/meta-box/post-meta.php:144 functions/meta-box/post-meta.php:145
-msgid "RSS URL"
-msgstr "RSS URL"
+msgstr "Webadresse (Skype)"
 
 #: functions/customizer/customizer-social.php:248
-msgid "WordPress URL"
-msgstr "WordPress URL"
+#: functions/meta-box/post-meta.php:144 functions/meta-box/post-meta.php:145
+msgid "RSS URL"
+msgstr "Webadresse (RSS-Feed)"
 
 #: functions/customizer/customizer-social.php:273
-msgid "Dropbox URL"
-msgstr "Dropbox URL"
+msgid "WordPress URL"
+msgstr "Webadresse (WordPress)"
 
 #: functions/customizer/customizer-social.php:298
-msgid "Instagram URL"
-msgstr "Instagram URL"
+msgid "Dropbox URL"
+msgstr "Webadresse (Dropbox)"
 
 #: functions/customizer/customizer-social.php:323
-msgid "Vimeo URL"
-msgstr "Vimeo URL"
+msgid "Instagram URL"
+msgstr "Webadresse (Instagram)"
 
-#: functions/customizer/customizer-social.php:343
+#: functions/customizer/customizer-social.php:348
+msgid "Vimeo URL"
+msgstr "Webadresse (Vimeo)"
+
+#: functions/customizer/customizer-social.php:368
 msgid "Comment Options"
 msgstr "Kommentar Optionen"
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:316
+#: functions/customizer/customizer-social.php:375 theme_setup_data.php:321
 msgid "Please Note:"
 msgstr "Bitte beachten:"
 
-#: functions/customizer/customizer-social.php:350 theme_setup_data.php:316
+#: functions/customizer/customizer-social.php:375 theme_setup_data.php:321
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -1271,11 +1315,11 @@ msgstr ""
 "Seite moderiert. Bitte haben Sie etwas Geduld, wenn Ihr Kommentar nicht "
 "sofort aktiviert wird."
 
-#: functions/customizer/customizer-social.php:356
+#: functions/customizer/customizer-social.php:381
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/customizer-social.php:363 theme_setup_data.php:317
+#: functions/customizer/customizer-social.php:388 theme_setup_data.php:322
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1284,7 +1328,7 @@ msgstr ""
 "Kontaktformular oder senden Sie mir eine E-Mail. Bitte vergessen Sie nicht, "
 "den Artikel zu erw&auml;hnen, auf den Sie sich beziehen."
 
-#: functions/customizer/customizer-social.php:369
+#: functions/customizer/customizer-social.php:394
 msgid "Next Text in Comment-Section"
 msgstr "N&auml;chster Text im Kommentar-Bereich"
 
@@ -1313,11 +1357,11 @@ msgstr "3-Spalten-Layout"
 msgid "4 Column Layout"
 msgstr "4-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:58 theme_setup_data.php:135
+#: functions/customizer/customizer-team.php:58 theme_setup_data.php:136
 msgid "The Team"
 msgstr "Das Team"
 
-#: functions/customizer/customizer-team.php:71 theme_setup_data.php:136
+#: functions/customizer/customizer-team.php:71 theme_setup_data.php:137
 msgid "Meet Our Experts"
 msgstr "Treffen Sie unsere Experten"
 
@@ -1334,7 +1378,7 @@ msgstr "„&Uuml;ber Uns“-Seite-Einstellungen"
 msgid "Enable team section"
 msgstr "Teamabschnitt aktivieren"
 
-#: functions/customizer/customizer-template.php:39 theme_setup_data.php:218
+#: functions/customizer/customizer-template.php:39 theme_setup_data.php:219
 msgid "Our great team"
 msgstr "Unser tolles Team"
 
@@ -1367,7 +1411,7 @@ msgstr "Referenz-Einstellungen"
 msgid "Enable cta section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-template.php:137 theme_setup_data.php:145
+#: functions/customizer/customizer-template.php:137 theme_setup_data.php:146
 msgid "Why choose us"
 msgstr "Warum wählen Sie uns"
 
@@ -1436,7 +1480,7 @@ msgstr "Anzahl der Portfolios auf der Seite der Portfoliokategorie"
 msgid "Portfolio template and related page setting"
 msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
 
-#: functions/customizer/customizer-template.php:341 theme_setup_data.php:75
+#: functions/customizer/customizer-template.php:341 theme_setup_data.php:76
 msgid "Our Portfolio"
 msgstr "Unser Portfolio"
 
@@ -1444,7 +1488,7 @@ msgstr "Unser Portfolio"
 msgid "Title For Portfolio Template"
 msgstr "Titel für Portfolio-Vorlage"
 
-#: functions/customizer/customizer-template.php:354 theme_setup_data.php:76
+#: functions/customizer/customizer-template.php:354 theme_setup_data.php:77
 msgid "Most popular of our works"
 msgstr "Unsere beliebtesten Werke"
 
@@ -1460,8 +1504,8 @@ msgstr "Anzahl des Portfolios auf Portfolio-Vorlage"
 msgid "Enable Related Project Setting"
 msgstr "Zugehörige Projekteinstellung aktivieren"
 
-#: functions/customizer/customizer-template.php:395 theme_setup_data.php:73
-#: theme_setup_data.php:152
+#: functions/customizer/customizer-template.php:395 theme_setup_data.php:74
+#: theme_setup_data.php:153
 msgid "Related projects"
 msgstr "Verwandte Projekte"
 
@@ -1481,7 +1525,7 @@ msgstr "Kontaktseite-Adress-Einstellungen"
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/customizer-template.php:454 theme_setup_data.php:191
+#: functions/customizer/customizer-template.php:454 theme_setup_data.php:192
 msgid "Address"
 msgstr "Adresse"
 
@@ -1534,11 +1578,11 @@ msgstr "E-Mail Zwei"
 msgid "Contact page form setting"
 msgstr "Kontaktseite-Formulareinstellung"
 
-#: functions/customizer/customizer-template.php:656 theme_setup_data.php:207
+#: functions/customizer/customizer-template.php:656 theme_setup_data.php:208
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/customizer-template.php:669 theme_setup_data.php:208
+#: functions/customizer/customizer-template.php:669 theme_setup_data.php:209
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
@@ -1550,7 +1594,7 @@ msgstr "Kontaktseite Google Maps"
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/customizer-template.php:702 theme_setup_data.php:184
+#: functions/customizer/customizer-template.php:702 theme_setup_data.php:185
 msgid "Location map"
 msgstr "Lageplan"
 
@@ -1624,45 +1668,39 @@ msgstr "Individuelle Typografie aktivieren"
 msgid "Name of GoogleFont"
 msgstr "Name des GoogleFonts"
 
-#: functions/customizer/customizer-typography.php:65
+#: functions/customizer/customizer-typography.php:54
+msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
+msgstr ""
+"Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte "
+"Typografie deaktiviert ist)"
+
+#: functions/customizer/customizer-typography.php:78
 msgid "General Paragraph"
 msgstr "Allgemeiner Absatz"
 
-#: functions/customizer/customizer-typography.php:76
-#: functions/customizer/customizer-typography.php:123
-#: functions/customizer/customizer-typography.php:170
-#: functions/customizer/customizer-typography.php:217
-#: functions/customizer/customizer-typography.php:264
-#: functions/customizer/customizer-typography.php:311
-#: functions/customizer/customizer-typography.php:358
-#: functions/customizer/customizer-typography.php:405
-#: functions/customizer/customizer-typography.php:452
+#: functions/customizer/customizer-typography.php:89
+#: functions/customizer/customizer-typography.php:136
+#: functions/customizer/customizer-typography.php:183
+#: functions/customizer/customizer-typography.php:230
+#: functions/customizer/customizer-typography.php:277
+#: functions/customizer/customizer-typography.php:324
+#: functions/customizer/customizer-typography.php:371
+#: functions/customizer/customizer-typography.php:418
+#: functions/customizer/customizer-typography.php:465
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: functions/customizer/customizer-typography.php:81
-#: functions/customizer/customizer-typography.php:128
-#: functions/customizer/customizer-typography.php:175
-#: functions/customizer/customizer-typography.php:222
-#: functions/customizer/customizer-typography.php:269
-#: functions/customizer/customizer-typography.php:316
-#: functions/customizer/customizer-typography.php:363
-#: functions/customizer/customizer-typography.php:410
-#: functions/customizer/customizer-typography.php:457
+#: functions/customizer/customizer-typography.php:94
+#: functions/customizer/customizer-typography.php:141
+#: functions/customizer/customizer-typography.php:188
+#: functions/customizer/customizer-typography.php:235
+#: functions/customizer/customizer-typography.php:282
+#: functions/customizer/customizer-typography.php:329
+#: functions/customizer/customizer-typography.php:376
+#: functions/customizer/customizer-typography.php:423
+#: functions/customizer/customizer-typography.php:470
 msgid "Pixels"
 msgstr "Pixel"
-
-#: functions/customizer/customizer-typography.php:90
-#: functions/customizer/customizer-typography.php:137
-#: functions/customizer/customizer-typography.php:184
-#: functions/customizer/customizer-typography.php:231
-#: functions/customizer/customizer-typography.php:278
-#: functions/customizer/customizer-typography.php:325
-#: functions/customizer/customizer-typography.php:372
-#: functions/customizer/customizer-typography.php:419
-#: functions/customizer/customizer-typography.php:466
-msgid "Font family"
-msgstr "Schriftart"
 
 #: functions/customizer/customizer-typography.php:103
 #: functions/customizer/customizer-typography.php:150
@@ -1673,38 +1711,50 @@ msgstr "Schriftart"
 #: functions/customizer/customizer-typography.php:385
 #: functions/customizer/customizer-typography.php:432
 #: functions/customizer/customizer-typography.php:479
+msgid "Font family"
+msgstr "Schriftart"
+
+#: functions/customizer/customizer-typography.php:116
+#: functions/customizer/customizer-typography.php:163
+#: functions/customizer/customizer-typography.php:210
+#: functions/customizer/customizer-typography.php:257
+#: functions/customizer/customizer-typography.php:304
+#: functions/customizer/customizer-typography.php:351
+#: functions/customizer/customizer-typography.php:398
+#: functions/customizer/customizer-typography.php:445
+#: functions/customizer/customizer-typography.php:492
 msgid "Font style"
 msgstr "Schriftstil"
 
-#: functions/customizer/customizer-typography.php:112
+#: functions/customizer/customizer-typography.php:125
 msgid "Menus"
 msgstr "Menüs"
 
-#: functions/customizer/customizer-typography.php:159
+#: functions/customizer/customizer-typography.php:172
 msgid "Post / Page title"
 msgstr "Beitrags- / Seitentitel"
 
-#: functions/customizer/customizer-typography.php:206
+#: functions/customizer/customizer-typography.php:219
 msgid "Service title"
 msgstr "Dienstleistungs-Titel"
 
-#: functions/customizer/customizer-typography.php:253
+#: functions/customizer/customizer-typography.php:266
 msgid "Portfolio title"
 msgstr "Portfolio-Titel"
 
-#: functions/customizer/customizer-typography.php:300
+#: functions/customizer/customizer-typography.php:313
 msgid "Widget heading title"
 msgstr "Widget-Überschrift"
 
-#: functions/customizer/customizer-typography.php:347
+#: functions/customizer/customizer-typography.php:360
 msgid "Callout title"
 msgstr "Callout-Titel"
 
-#: functions/customizer/customizer-typography.php:394
+#: functions/customizer/customizer-typography.php:407
 msgid "Callout description"
 msgstr "Callout-Beschreibung"
 
-#: functions/customizer/customizer-typography.php:441
+#: functions/customizer/customizer-typography.php:454
 msgid "Callout button"
 msgstr "Callout-Button"
 
@@ -2181,11 +2231,11 @@ msgstr "Jahresarchiv"
 msgid "Blog Archive"
 msgstr "Blog-Archiv"
 
-#: template-parts/index/index-portfolio.php:101
+#: template-parts/index/index-portfolio.php:105
 msgid "Wallstreet style"
 msgstr "Wallstreet-Stil"
 
-#: template-parts/index/index-portfolio.php:102
+#: template-parts/index/index-portfolio.php:106
 msgid ""
 "A wonderful serenity has taken possession of my entire soul, like these "
 "sweet mornings."
@@ -2193,7 +2243,7 @@ msgstr ""
 "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
 "s&uuml;ßen Frühlingsmorgen."
 
-#: template-parts/index/index-portfolio.php:116
+#: template-parts/index/index-portfolio.php:120
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -2305,7 +2355,7 @@ msgstr "Danke"
 msgid "Your information has been sent."
 msgstr "Deine Nachricht wurde versendet."
 
-#: theme_setup_data.php:127
+#: theme_setup_data.php:128
 msgid ""
 "Take a look at our partners. With their help, we expand your company and "
 "leave your competitors behind."
@@ -2313,15 +2363,15 @@ msgstr ""
 "Werfen Sie einen Blick auf unsere Partner. Mit ihrer Hilfe erweitern wir Ihr "
 "Unternehmen und Sie lassen Ihre Mitbewerber hinter sich."
 
-#: theme_setup_data.php:150
+#: theme_setup_data.php:151
 msgid "Meet our"
 msgstr "Das ist unser"
 
-#: theme_setup_data.php:151
+#: theme_setup_data.php:152
 msgid "Great team"
 msgstr "Tolles Team"
 
-#: theme_setup_data.php:157
+#: theme_setup_data.php:158
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 
@@ -2331,24 +2381,27 @@ msgstr "DJS-Wallstreet-Pro"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/DSchuppelius/djs-wallstreet-pro"
-msgstr ""
+msgstr "https://github.com/DSchuppelius/djs-wallstreet-pro"
 
 #. Description of the plugin/theme
 msgid ""
-"Wordpress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, "
-"Farben und verschiedene Formate. Das Theme basiert auf dem Webriti "
-"Wallstreet bzw. Wallstreet-Pro Theme"
+"Wordpress business theme with setting options for multiple columns, colors "
+"and different formats. This new and standalone theme is based on and "
+"compatible with the Webriti Wallstreet or Wallstreet Pro Theme"
 msgstr ""
-
-#. Author of the plugin/theme
-msgid "Daniel Jörg Schuppelius"
-msgstr "Daniel J&ouml;rg Schuppelius"
+"Wordpress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, "
+"Farben und verschiedenen Formaten. Dieses neue und eigenständige Theme "
+"basiert auf dem Webriti Wallstreet bzw. Wallstreet-Pro Theme und ist mit "
+"diesem kompatibel"
 
 #. Author URI of the plugin/theme
 #, fuzzy
 #| msgid "https://schuppelius.org/"
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
+
+#~ msgid "Daniel Jörg Schuppelius"
+#~ msgstr "Daniel J&ouml;rg Schuppelius"
 
 #~ msgid "Page Description"
 #~ msgstr "Seitenbeschreibung"

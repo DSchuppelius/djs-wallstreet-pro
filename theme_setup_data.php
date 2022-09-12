@@ -264,6 +264,8 @@ function theme_data_setup() {
         // Typography
         "enable_custom_typography" => false,
         "google_font" => "El Messiri",
+        "remove_googlefonts" => false,
+
 
         // general typography
         "general_typography_fontsize" => "16",
@@ -318,6 +320,11 @@ function theme_data_setup() {
 
         "before_comment" => "<b>" .__("Please Note:", "wallstreet"). "</b>&nbsp;" .__("Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.", "wallstreet"),
         "after_comment" => __("If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to.", "wallstreet"),
+
+        "cookie_before" => __("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "wallstreet") . ' <a href="/' . urlencode(strtolower(__("Imprint", "wallstreet"))) . '">' . __("Imprint", "wallstreet") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(__("Privacy policy", "wallstreet")))) . '">' . __("Privacy policy", "wallstreet") . '</a>. ' . __("Do you have any further questions on this topic? Write me via the", "wallstreet").' <a href="/' . urlencode(strtolower(__("contact", "wallstreet"))) . '">' . __("contact form", "wallstreet") . '</a> ' . __("or by e-mail", "wallstreet") . ' (<a href="mailto:info@schuppelius.org" >info@schuppelius.org</a>)',
+        "cookie_link" => __("Yes, I would like to activate the content on this page...", "wallstreet"),
+        "cookie_after" => __("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "wallstreet"),
+
     ];
 }
 
