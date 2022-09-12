@@ -22,9 +22,14 @@ It has a perfect design that's great for any Business/Firms Blogs who wants a ne
 Theme supports featured slider managed from Theme Option Panel.
 
 - Base Theme Homepage Url: http://webriti.com/demo/wp/wallstreet/
-  (Author: Priyanshu Mittal, Hari Maliya, Shahid Mansuri, Vibhor Purandare)
+-- Author:
+--- Priyanshu Mittal
+--- Hari Maliya
+--- Shahid Mansuri
+--- Vibhor Purandare
 - Theme Homepage Url: https://github.com/DSchuppelius/djs-wallstreet-pro/
-  (Author: Daniel Jörg Schuppelius)
+-- Author:
+--- Daniel Jörg Schuppelius
 
 ### About
 
