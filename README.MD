@@ -45,6 +45,23 @@ Feel free to use as you please. I would be very pleased if you could keep the Au
 Wallstreet supports Custom Menu, Widgets and the following extra features:
 
  - Pre-installed menu and content colors
+ - Custom Background
+ - Parallax-Features (Background and some Site-Elements)
+ - Cookie Accept for external IFRAMEs
+ - Diffrent Post-Types
+    - Aside
+    - Audio
+    - Chat
+    - Gallery
+    - Image
+    - Quote
+    - Status
+    - Video
+ - Diffrent Shortcodes
+    - ZDF-Mediathek [zdf url="mediathek_url"]description[/zdf] o. [zdf src="direct_src"]description[/zdf] o. [zdf media_id="mediaID"]description[/zdf]
+    - DIV Shortcode for code that is otherwise manipulated by WordPress
+    - PAYPAL Donationbutton
+    - And so on, the old codes are still there (but some of them are buggy)
  - Responsive
  - Custom sidebars
  - Support for post thumbnails

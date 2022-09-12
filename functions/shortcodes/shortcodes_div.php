@@ -91,3 +91,32 @@ function paypal_donation_shortcode($atts, $content = null) {
     return $result;
 }
 add_shortcode("paypal_donation", "paypal_donation_shortcode");
+
+function zdf_media($atts, $content = null) {
+    $result = "<div>no content</div>";
+    extract(shortcode_atts([
+        "media_id" => "",
+        "src" => "",
+        "url" => "",
+    ], $atts));
+
+    if(!empty($url)){
+        $src = 'https://ngp.zdf.de/miniplayer/embed/?mediaID=' . basename($url, ".html");
+    }elseif(!empty($media_id)) {
+        $src = 'https://ngp.zdf.de/miniplayer/embed/?mediaID=' . $media_id;
+    }
+
+    if(!empty($src))
+        $result =
+            '<figure class="wp-block-embed is-type-video is-provider-zdf wp-block-embed-zdf wp-embed-aspect-16-9 wp-has-aspect-ratio">
+                <div class="wp-block-embed__wrapper">
+                    <span class="embed-zdf" style="text-align:center; display: block;">
+                        <iframe loading="lazy" class="zdf-player" width="600" height="338" src="' . $src . '" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"></iframe>
+                    </span>
+                </div>
+                <figcaption>'. do_shortcode($content) .'</figcaption>
+            </figure>';
+
+    return $result;
+}
+add_shortcode("zdf", "zdf_media");
