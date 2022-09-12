@@ -17,13 +17,12 @@
 
 ## Description
 
-A Premium multi colored Business Blog theme that supports Primary menu's, Primary sidebar, Four widgets area at the footer region etc. 
+A Premium multi colored Business Blog theme for Wordpress that supports Primary menu's, Primary sidebar, Four widgets area at the footer region etc. 
 It has a perfect design that's great for any Business/Firms Blogs who wants a new look for their site. Three page templates Home, Blog and Contact Page. 
 Theme supports featured slider managed from Theme Option Panel.
 
-Author: Priyanshu Mittal, Hari Maliya, Shahid Mansuri, Vibhor Purandare and Daniel Jörg Schuppelius.
-Base Theme Homepage Url:http://webriti.com/demo/wp/wallstreet/
-Theme Homepage Url:https://github.com/DSchuppelius/djs-wallstreet-pro/
+- Base Theme Homepage Url:http://webriti.com/demo/wp/wallstreet/ (Author: Priyanshu Mittal, Hari Maliya, Shahid Mansuri, Vibhor Purandare)
+- Theme Homepage Url:https://github.com/DSchuppelius/djs-wallstreet-pro/ (Author: Daniel Jörg Schuppelius)
 
 ### About
 
@@ -47,7 +46,7 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
  - Translation Ready 
  
 
-### Basic Setup of the Theme.
+### Basic Setup of the Theme
 
 Fresh installation!
 
@@ -59,7 +58,7 @@ Fresh installation!
 
 All images in DJS-Wallstreet-Pro are licensed under the terms of the GNU GPL.
 
-##### Top Navigation Menu:
+##### Top Navigation Menu
 
 - Default the page-links start from the left! Use the Menus function in Dashboard/Appearance to rearrange the buttons and build your own Custom-menu. DO NOT USE LONG PAGE NAMES, Maximum 14 letters/numbers incl. spaces!
 - Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
@@ -82,7 +81,7 @@ Site Title and its description in not shown on home page besides this both are u
 
 Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
 
-- @version 2.0.0
+@version 2.0.0:
     1. Refactoring Theme
     2. Add Parallaxfunctions (Background and Site-elements)
     3. Add Custom Background
@@ -111,95 +110,95 @@ Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
     26. Add diffrent content-types (post-types = aside, audio, chat, gallery, image, link, quote, status, video)
     27. Add partner section
     28. Add portfolio-style-types
-- @version 1.9.9
+@version 1.9.9:
     1. Removed duplicate and unused js.
-- @version 1.9.8
+@version 1.9.8:
     1. Updated Turkish Locale.
-- @version 1.9.7
+@version 1.9.7:
     1. Changed widget name
-- @version 1.9.6
+@version 1.9.6:
     1. Removed Duplicate Strings.
-- @version 1.9.5
+@version 1.9.5:
     1. Updated Strings.
-- @version 1.9.4
+@version 1.9.4:
     1. Added Turkish Locale
-- @version 1.9.3
+@version 1.9.3:
     1. Fixed View All Project Button Issue.
-- @version 1.9.2
+@version 1.9.2:
     1. Solved Content width.
     2. Fixed Meta issue in Page Full width template.
-- @version 1.9.1
+@version 1.9.1:
     1. Update Pot File.
     2. Update Font-awesome Library 4.7.0
-- @version 1.9
+@version 1.9:
     1. Added Woocommerce support.
-- @version 1.8.3
+@version 1.8.3:
     1. Added Spanish Language Translation(po and mo file).
-- @version 1.8.2
+@version 1.8.2:
     1. Change opacity effect.
-- @version 1.8.1
+@version 1.8.1:
     1. Solved Spelling Issue and Update Pot Files.
-- @version 1.8
+@version 1.8:
     1. Fixed page seprater issue in service, aboutus, portfolio 2,3,4 template.
     2. Fixed service icon border color issue in service template.
     3. Fixed social icon issue in our team meta box.
-- @version 1.7.9
+@version 1.7.9:
     1. Added Jetpack plugin support and Gallery overlay css.
-- @version 1.7.8
+@version 1.7.8:
     1. Update Pot Files.
-- @version 1.7.7
+@version 1.7.7:
     1. Added Spanish translated Po and Mo Files.
-- @version 1.7.6
+@version 1.7.6:
     1. Fixed feature section enable issue from layout manager.
-- @version 1.7.5
+@version 1.7.5:
     1. Removed tag from page template.
-- @version 1.7.4
+@version 1.7.4:
     1. Change blog post meta class and blog post author.
-- @version 1.7.3
+@version 1.7.3:
     1. Update Font awesome 4.6.1 to 4.6.3
     2. Add Title Tag Support
     3. Add footer-widgets, blog, portfolio, featured-images, four-columns, left-sidebar Tag.
-- @version 1.7.2
+@version 1.7.2:
     1. Archive.php Issue Resolved.
     2. Translate Contact us form Placeholder.
-- @version 1.7.1
+@version 1.7.1:
     1. Add Product Texonomy Slug Field in customizer.
-- @version 1.7
+@version 1.7:
     1. Add Custom Texonomy Template.
     2. Add Custom post type Slug setting.
-- @version 1.6.9
+@version 1.6.9:
     1. testimonial pouse on hover property added.
-- @version 1.6.8
+@version 1.6.8:
     1. Added WPML Support.
-- @version 1.6.7
+@version 1.6.7:
     1. Adding background image feature of both theme feature and testimonial sections.
-- @version 1.6.6
+@version 1.6.6:
     1. Layout manager problem solved in admin customizer.
-- @version 1.6.5
+@version 1.6.5:
     1. Adding custom header settings 
-- @version 1.6.4
+@version 1.6.4:
     1. Remove Default sidebar data in blog pages and archive page 
-- @version 1.6.1
+@version 1.6.1:
     1. Hide Blog Meta Setting on Page, All Pages and Archives Pages.
-- @version 1.6
+@version 1.6:
     1. Add Color Skin control in customizer
     2. Recommend easy Instagram Feed Plugin
-- @version 1.5
+@version 1.5:
     1. Remove Unused Images & file.
     2. Added Google Font.
-- @version 1.4
+@version 1.4:
     1. Added Customizer.
-- @version 1.3
+@version 1.3:
     1. Add Theme Color Scheme.
-- @version 1.2
+@version 1.2:
     1. Delete Extra white space in function.php file.
     2. Call footer Area in Contact-us page.
-- @version 1.1
+@version 1.1:
     1. Added html text box area in the footer customization settings of the option panel.
     2. All input text fields removed from the footer customization settings of the option panel.
     3. Delete Extra white space in function.php File.
     4. Add style for monster widget Image.
-- @version 1.0
+@version 1.0:
     released
 
 
