@@ -13,22 +13,25 @@ $mapsrc .= "&amp;output=embed";
 
 get_template_parts(["template-parts/index/index", "banner"], true); ?>
 
-<div class="qua_contact_area">	
-	<?php if ($current_options["contact_google_map_enabled"] == "on") { ?>
-		<?php if (!empty($current_options["contact_google_map_title"])) { ?>
-			<div class="google-map-title">
-				<h1><?php echo $current_options["contact_google_map_title"]; ?></h1>
-			</div>
-		<?php } ?>	
-	    <div class="qua_google_map">			
-		    <iframe width="100%" scrolling="no" height="500" frameborder="0" src="<?php echo esc_url($mapsrc); ?>" marginwidth="0" marginheight="0"></iframe>	
-	    </div>
-	<?php } ?>
-	<div class="container">
-		<div class="row contact-detail-section <?php if ($current_options["contact_google_map_enabled"] != "on") { ?>map-disabled <?php } ?>">
+<div class="container contact">
+	<div class="row map <?php row_frame_border(""); ?> flexstretch">
+        <div class="col-md-12  <?php innerrow_frame_border(""); ?> ">	
+	        <?php if ($current_options["contact_google_map_enabled"] == "on") { ?>
+		        <?php if (!empty($current_options["contact_google_map_title"])) { ?>
+			        <div class="google-map-title">
+				        <h1><?php echo $current_options["contact_google_map_title"]; ?></h1>
+			        </div>
+		        <?php } ?>	
+	            <div class="qua_google_map">			
+		            <iframe width="100%" scrolling="no" height="500" frameborder="0" src="<?php echo esc_url($mapsrc); ?>" marginwidth="0" marginheight="0"></iframe>	
+	            </div>
+	        <?php } ?>
+        </div>
+    </div>
+	<div class="row <?php row_frame_border(""); ?> flexstretch contact-detail-section <?php if ($current_options["contact_google_map_enabled"] != "on") { ?>map-disabled <?php } ?>">
 			<?php if ($current_options["contact_address_settings"] == "on") { ?>
-			    <div class="col-md-4">
-				    <div class="contact-detail-area">
+			    <div class="col-md-4 col-sm-4">
+				    <div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
 					    <?php if (!empty($current_options["contact_address_icon"])): ?><span><i class="fa <?php if ($current_options["contact_address_icon"]) { echo $current_options["contact_address_icon"]; } ?>"></i></span><?php endif; ?>
     					<?php if (!empty($current_options["contact_address_title"])) { ?><h5><?php echo $current_options["contact_address_title"]; ?></h5><?php } ?>
 	    				<?php if (!empty($current_options["contact_address_designation_one"])) { ?><address><?php echo $current_options["contact_address_designation_one"]; ?> </address><?php } ?>
@@ -37,8 +40,8 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
 			    </div>
 			<?php } ?>
 			<?php if ($current_options["contact_phone_settings"] == "on") { ?>
-    			<div class="col-md-4">
-    				<div class="contact-detail-area">
+    			<div class="col-md-4 col-sm-4">
+    				<div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
     					<?php if (!empty($current_options["contact_phone_icon"])) { ?><span><i class="fa <?php echo $current_options["contact_phone_icon"]; ?>"></i></span><?php } ?>
     					<?php if (!empty($current_options["contact_phone_title"])) { ?><h5><?php echo $current_options["contact_phone_title"]; ?></h5><?php } ?>
                         <?php if (!empty($current_options["contact_phone_number_one"])) { ?><address><?php echo $current_options["contact_phone_number_one"]; ?></address><?php } ?>
@@ -47,8 +50,8 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
     			</div>
 			<?php } ?>
 			<?php if ($current_options["contact_email_settings"] == "on") { ?>
-			    <div class="col-md-4">
-				    <div class="contact-detail-area">
+			    <div class="col-md-4 col-sm-4">
+				    <div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
 					    <?php if (!empty($current_options["contact_email_icon"])) { ?><span><i class="fa <?php echo $current_options["contact_email_icon"]; ?>"></i></span><?php } ?>
 					    <?php if (!empty($current_options["contact_email_title"])) { ?><h5><?php echo $current_options["contact_email_title"]; ?></h5><?php } ?>
                         <?php if (!empty($current_options["contact_email_number_one"])) { ?><address><?php echo $current_options["contact_email_number_one"]; ?></address><?php } ?>
@@ -58,7 +61,7 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
 			<?php } ?>
 		</div>
 		
-		<div class="row contact-form-section" id="myformdata">
+		<div class="row <?php row_frame_border(""); ?> flexstretch contact-form-section" id="myformdata">
 			<div class="col-md-12">
 				<?php if (!empty($current_options["contact_form_title"]) || !empty($current_options["contact_form_description"])): ?>
     				<div class="cont-heading-title">
@@ -70,6 +73,7 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
     					<?php } ?>
     				</div>
 			    <?php endif; ?>
+                <div class="contact-form <?php innerrow_frame_border(""); ?>">
 				<form role="form" class="form-inline" method="post"  action="#">
 					<?php wp_nonce_field("wallstreet_name_nonce_check", "wallstreet_name_nonce_field"); ?>
 					<div class="cont-form-group">
@@ -95,6 +99,7 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
 					<button class="qua_contact_btn" name="contact_submit" id="contact_submit" type="submit"><?php _e("Send Message", "wallstreet"); ?>
 					<span  style="display:none; color:red" id="contact_nonce_error"><?php _e("Sorry, your nonce did not verify", "wallstreet"); ?></span>
 				</form>
+                </div>
 			</div>
 		</div>
 		<div id="mailsentbox" style="display:none">
@@ -140,4 +145,4 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
         } ?>
 	</div> <!--/contact detail-->
 </div> <!-- /Location Map Section -->
-<?php get_footer(); ?>
+</div></div><?php get_footer(); ?>

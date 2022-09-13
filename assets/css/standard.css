@@ -110,7 +110,7 @@ body.error404 .error_404 {
 .home-portfolio-showcase-media.count2.clover-items .home-portfolio-showcase-detail p:before,
 .home-portfolio-showcase-media.count4.clover-items img,
 .home-portfolio-showcase-media.count4.clover-items .home-portfolio-showcase-overlay,
-.home-portfolio-showcase-media.count4.clover-items .home-portfolio-showcase-detail p:before{
+.home-portfolio-showcase-media.count4.clover-items .home-portfolio-showcase-detail p:before {
     border-bottom-left-radius: 0px;
 }
 
@@ -124,7 +124,7 @@ body.error404 .error_404 {
 .home-portfolio-showcase-media.count6.clover-items img,
 .home-portfolio-showcase-media.count6.clover-items .home-portfolio-showcase-overlay,
 .home-portfolio-showcase-media.count8.clover-items img,
-.home-portfolio-showcase-media.count8.clover-items .home-portfolio-showcase-overlay{
+.home-portfolio-showcase-media.count8.clover-items .home-portfolio-showcase-overlay {
     border-top-left-radius: 0px;
 }
 
@@ -309,6 +309,7 @@ div.container.portfolio.preview div.row.no_background div.main-portfolio-showcas
 div.container div.row,
 div.container div.row div.main-portfolio-showcase-overlay,
 div.container div.row div.main-portfolio-showcase-media img,
+div.container div.row.contact-form-section .contact-form,
 div.container div.row div.contact-detail-area {
     border-radius: var(--border-base);
 }
@@ -455,10 +456,48 @@ div.container.blog-switcher-view.sidebar div.row .blog-pagination.no_filler {
 
 div.container div.row.bigborder div.main-portfolio-showcase-overlay,
 div.container div.row.bigborder div.main-portfolio-showcase-media img,
+div.container div.row.bigborder.contact-form-section .contact-form,
 div.container div.row.bigborder div.contact-detail-area {
     border-radius: var(--border-verysmallbase);
 }
 
+div.container.contact div.row.with_background .col-md-12 {
+    border-radius: var(--border-base);
+}
+
+    div.container.contact div.row.with_background .col-md-12 .google-map-title {
+        border-top-right-radius: var(--border-verysmallbase);
+        border-top-left-radius: var(--border-verysmallbase);
+    }
+
+    div.container.contact div.row.with_background .col-md-12 .qua_google_map iframe {
+        border-bottom-right-radius: var(--border-verysmallbase);
+        border-bottom-left-radius: var(--border-verysmallbase);
+    }
+
+div.container.contact div.row.no_background .col-md-12.bigborder {
+    border-radius: var(--border-base);
+}
+
+    div.container.contact div.row.no_background .col-md-12.bigborder .google-map-title {
+        border-top-right-radius: var(--border-verysmallbase);
+        border-top-left-radius: var(--border-verysmallbase);
+    }
+
+    div.container.contact div.row.no_background .col-md-12.bigborder .qua_google_map iframe {
+        border-bottom-right-radius: var(--border-verysmallbase);
+        border-bottom-left-radius: var(--border-verysmallbase);
+    }
+
+div.container.contact div.row.no_background .col-md-12 .google-map-title {
+    border-top-right-radius: var(--border-base);
+    border-top-left-radius: var(--border-base);
+}
+
+div.container.contact div.row.no_background .col-md-12 .qua_google_map iframe {
+    border-bottom-right-radius: var(--border-base);
+    border-bottom-left-radius: var(--border-base);
+}
 
 div.container div.row.bigborder div.col-md-4 div.sidebar-section {
     border-top-right-radius: var(--border-verysmallbase);

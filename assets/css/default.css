@@ -36,6 +36,7 @@ article figure figcaption a {
     #searchbar_fullscreen .close {
         color: #ccc
     }
+
         #searchbar_fullscreen .close:hover {
             color: darkred
         }
@@ -481,6 +482,17 @@ article figure figcaption a {
 .comment_box h1, .comment_box h2, .comment_box h3, .comment_box h4, .comment_box h5, .comment_box h6 {
     color: #fff
 }
+
+.contact-form-section .contact-form {
+    background-color: #3c3f49;
+    background-color: rgba(55,57,65,0.8);
+}
+
+.contact .row.no_background .col-md-12.bigborder {
+    background-color: #3c3f49;
+    background-color: rgba(55,57,65,0.8);
+}
+
 
 .cont-btn a {
     color: #FFF
