@@ -29,7 +29,7 @@ function partner_type() {
         "menu_position" => 20,
         "rewrite" => ["slug" => $current_options["partner_slug"]],
         "public" => true,
-        "menu_icon" => THEME_ASSETS_PATH_URI . "/images/satisfied-clients.jpg",
+        "menu_icon" => THEME_ASSETS_PATH_URI . "/images/partner.png",
     ]);
 }
 add_action("init", "partner_type");

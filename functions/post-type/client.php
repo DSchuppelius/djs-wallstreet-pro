@@ -29,7 +29,7 @@ function client_type() {
         "menu_position" => 20,
         "rewrite" => ["slug" => $current_options["client_slug"]],
         "public" => true,
-        "menu_icon" => THEME_ASSETS_PATH_URI . "/images/satisfied-clients.jpg",
+        "menu_icon" => THEME_ASSETS_PATH_URI . "/images/client.png",
     ]);
 }
 add_action("init", "client_type");
