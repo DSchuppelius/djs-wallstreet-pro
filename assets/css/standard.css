@@ -180,11 +180,13 @@ body.error404 .error_404 {
     border-radius: var(--border-verysmallbase);
 }
 
+.page-full-width .row.with_background .col-md-12 > div,
 .attachment .row.with_background .col-md-12 img,
 .about-us .row.with_background .wp-post-image {
     border-radius: var(--border-smallbase);
 }
 
+.page-full-width .row.with_background.bigborder .col-md-12 > div, 
 .attachment .row.with_background.bigborder .col-md-12 img,
 .about-us .row.with_background.bigborder .wp-post-image {
     border-radius: var(--border-verysmallbase);

@@ -21,7 +21,7 @@ function get_sidebar_excerpt() {
     return $excerpt;
 }
 
-function get_comment_sidebr($excerpt) {
+function get_comment_sidebar($excerpt) {
     $excerpt = $excerpt;
     $excerpt = preg_replace(" (\[.*?\])", "", $excerpt);
     $excerpt = strip_shortcodes($excerpt);
