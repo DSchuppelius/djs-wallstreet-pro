@@ -1056,6 +1056,10 @@ article footer .blog-post-meta {
     margin-right: 0
 }
 
+    .comment-form-section .comment-respond ~ p{
+        margin-top: 30px
+    }
+
     .comment-form-section .form-submit {
         margin: 30px 0 0 0
     }

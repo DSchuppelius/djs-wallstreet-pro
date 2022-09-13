@@ -446,6 +446,7 @@ article figure figcaption a {
 }
 
 .comment-form-section {
+    color: #fff;
     background-color: #3c3f49;
     background-color: rgba(60,62,70,0.8)
 }
