@@ -56,7 +56,7 @@ class wallstreet_latest_widget extends WP_Widget {
             <div id="popular" class="tab-pane fade active in">
                 <div class="row">	
                     <?php global $wpdb;
-                    $pop = $wpdb->get_results("SELECT id,guid,post_date,post_title, comment_count FROM {$wpdb->prefix}posts WHERE post_type='post' AND post_status='publish' ORDER BY comment_count DESC LIMIT 5");
+                    $pop = $wpdb->get_results("SELECT id, guid, post_date, post_title, comment_count FROM {$wpdb->prefix}posts WHERE post_type='post' AND post_status='publish' ORDER BY comment_count DESC LIMIT 5");
                     foreach ($pop as $post) { ?>
                         <div class="media post-media-sidebar">
                             <a class="pull-left sidebar-pull-img" href="#">
@@ -65,14 +65,14 @@ class wallstreet_latest_widget extends WP_Widget {
                             </a>
                             <div class="media-body">
                                 <h3 style="padding-bottom:0px;"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></h3>
-                                <p><?php //echo get_sidebar_excerpt(); ?></p>
+                                <p><?php echo get_sidebar_excerpt(); ?></p>
                             </div>
                             <div class="sidebar-comment-box">
                                 <span>
                                     <?php echo get_the_date("M j, Y", $post->id); ?>
                                     <small>|</small>
                                     <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                        <?php _e("By", "wallstreet"); the_author(); ?>
+                                        <?php _e("By", "wallstreet"); echo " "; the_author(); ?>
                                     </a>
                                 </span>
                             </div>									
