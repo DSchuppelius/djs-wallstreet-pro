@@ -151,7 +151,7 @@ function slider_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[slideroundcorner]", [
-        "default" => __("100", "wallstreet"),
+        "default" => 100,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);

@@ -8,12 +8,90 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 function wallstreet_global_customizer($wp_customize) {
+    $wp_customize->add_panel("global_theme_settings", [
+        "priority" => 0,
+        "capability" => "edit_theme_options",
+        "title" => __("Global options", "wallstreet"),
+    ]);
+
     //Scroll To Top Section
     $wp_customize->add_section("themeoptions_section_settings", [
         "title" => __("Global theme options", "wallstreet"),
+        "panel" => "global_theme_settings",
         "description" => "",
     ]);
 
+    $wp_customize->add_section("wallstreet_datetime_section", [
+        "title" => __("Datetime section", "wallstreet"),
+        "panel" => "global_theme_settings",
+        "description" => __('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "wallstreet"),
+        "priority" => 0,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[yearformat]", [
+        "default" => __("Y", "wallstreet"),
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[yearformat]", [
+        "label" => __("Year dateformat", "wallstreet"),
+        "section" => "wallstreet_datetime_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[monthyearformat]", [
+        "default" => __("F Y", "wallstreet"),
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[monthyearformat]", [
+        "label" => __("Month/Year dateformat", "wallstreet"),
+        "section" => "wallstreet_datetime_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[fulldateformat]", [
+        "default" => __("jS F Y", "wallstreet"),
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[fulldateformat]", [
+        "label" => __("Full dateformat", "wallstreet"),
+        "section" => "wallstreet_datetime_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[fulldatetimeformat]", [
+        "default" => __("jS F Y - h:i a", "wallstreet"),
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[fulldatetimeformat]", [
+        "label" => __("Full datetimeformat", "wallstreet"),
+        "section" => "wallstreet_datetime_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
+
+    $wp_customize->add_setting("wallstreet_pro_options[technicalfulldatetimeformat]", [
+        "default" => __("Y-m-d\TH:i:sP", "wallstreet"),
+        "capability" => "edit_theme_options",
+        "sanitize_callback" => "sanitize_text_field",
+        "type" => "option",
+    ]);
+    $wp_customize->add_control("wallstreet_pro_options[technicalfulldatetimeformat]", [
+        "label" => __("Technical full datetimeformat", "wallstreet"),
+        "section" => "wallstreet_datetime_section",
+        "type" => "text",
+        "priority" => 100,
+    ]);
     //Hide scroll to top
     $wp_customize->add_setting("wallstreet_pro_options[scroll_to_top_enabled]", [
         "default" => true,
@@ -148,7 +226,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[breadcrumbposition]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -166,7 +244,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[contentposition]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -185,7 +263,7 @@ function wallstreet_global_customizer($wp_customize) {
 
     //rellax
     $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_social_contact_header]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -203,7 +281,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_header]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -221,7 +299,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_slider]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -239,7 +317,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_breadcrumbs]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -257,7 +335,7 @@ function wallstreet_global_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[data_rellax_speed_banner]", [
-        "default" => __("0", "wallstreet"),
+        "default" => 0,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);

@@ -10,6 +10,11 @@
 function theme_data_setup() {
     return [
         //Logo and favicon header
+        "yearformat" => __("Y", "wallstreet"),
+        "monthyearformat" => __("F Y", "wallstreet"),
+        "fulldateformat" => __("jS F Y", "wallstreet"),
+        "fulldatetimeformat" => __("jS F Y - h:i a", "wallstreet"),
+        "technicalfulldatetimeformat" => __("Y-m-d\TH:i:sP", "wallstreet"),
         "upload_image_favicon" => "",
         "stylesheet" => "default.css",
         "google_analytics" => "",

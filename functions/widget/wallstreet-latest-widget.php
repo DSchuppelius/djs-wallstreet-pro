@@ -31,6 +31,8 @@ class wallstreet_latest_widget extends WP_Widget {
     function widget_posts($posts) {
         global $post;
 
+        $current_options = get_current_options();
+
         if($posts){
             foreach ($posts as $post) { 
                 setup_postdata($post); ?>
@@ -45,7 +47,7 @@ class wallstreet_latest_widget extends WP_Widget {
                     </div>
                     <div class="sidebar-comment-box">
                         <span>
-                            <?php echo get_the_date("M j, Y", $post->id); ?>
+                            <?php echo get_the_date($current_options["fulldateformat"], $post->id); ?>
                             <small>|</small>
                             <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
                                 <?php _e("By", "wallstreet"); echo "&nbsp;"; the_author(); ?>
@@ -68,6 +70,9 @@ class wallstreet_latest_widget extends WP_Widget {
      */
     public function widget($args, $instance) {
         global $wpdb;
+        
+        $current_options = get_current_options();
+
         $title = apply_filters("widget_title", $instance["title"]);
         $begin_widget = $args["before_widget"]; 
         $end_widget= $args["after_widget"]; 
@@ -119,7 +124,7 @@ class wallstreet_latest_widget extends WP_Widget {
                                 </div>
                                 <div class="sidebar-comment-box">
                                     <span>
-                                        <?php echo get_the_date("M j, Y", $post1->id); ?>
+                                        <?php echo get_the_date($current_options["fulldateformat"], $post1->id); ?>
                                         <small>|</small>
                                         <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
                                             <?php _e("By", "wallstreet"); the_author(); ?>

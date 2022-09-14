@@ -61,7 +61,7 @@ function partner_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[partner_pictureheight]", [
-        "default" => __("100", "wallstreet"),
+        "default" => 100,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -79,7 +79,7 @@ function partner_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[partner_padding_tb]", [
-        "default" => __("30", "wallstreet"),
+        "default" => 30,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
@@ -97,7 +97,7 @@ function partner_customizer($wp_customize) {
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[partner_padding_lr]", [
-        "default" => __("30", "wallstreet"),
+        "default" => 30,
         "sanitize_callback" => "sanitize_text_field",
         "type" => "option",
     ]);
