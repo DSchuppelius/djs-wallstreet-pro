@@ -96,12 +96,10 @@ function the_read_more($class = 'blog-btn-col') {
 }
 
 function get_the_show_all($link, $text, $target = false, $button_class = "more blog") {
-    $action = ""; $result = "";
+    $result = "";
 
-    if(!empty($text)) {
-        if(!empty($link)) {
-            $action = 'action="' . $link . '" ' . get_blank_target($target, 'method="get"');
-        }
+    if(!empty($text) && !empty($link)) {
+        $action = 'action="' . $link . '" ' . get_blank_target($target, 'method="get"');
         $result =
             '<div class ="row">
                 <div class="show-all-btn">
