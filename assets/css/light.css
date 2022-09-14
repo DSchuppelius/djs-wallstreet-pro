@@ -543,7 +543,7 @@ body {
     text-shadow: 0 0 1px rgba(0,0,0,0.4)
 }
 
-.flex_btn, .other-service-area:hover i, .proejct-btn a:hover {
+.flex_btn, .other-service-area:hover i, .show-all-btn a:hover {
     border: 2px solid #00c2a9
 }
 
@@ -1033,11 +1033,11 @@ footer.site {
         color: #fff
     }
 
-.proejct-btn a, .proejct-btn button {
+.show-all-btn a, .show-all-btn button {
     color: #FFF
 }
 
-    .proejct-btn a:hover {
+    .show-all-btn a:hover {
         color: #fff
     }
 

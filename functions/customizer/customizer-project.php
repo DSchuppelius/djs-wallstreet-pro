@@ -143,7 +143,7 @@ function wallstreet_project_customizer($wp_customize) {
     ]);
 
     //View all portfolio Button Link
-    $wp_customize->add_setting("wallstreet_pro_options[portfolio_more_lnik_target]", [
+    $wp_customize->add_setting("wallstreet_pro_options[portfolio_more_link_target]", [
         "default" => false,
         "capability" => "edit_theme_options",
         "sanitize_callback" => "sanitize_text_field",
@@ -151,7 +151,7 @@ function wallstreet_project_customizer($wp_customize) {
         "description" => "Open link in a new window/tab",
     ]);
 
-    $wp_customize->add_control("wallstreet_pro_options[portfolio_more_lnik_target]", [
+    $wp_customize->add_control("wallstreet_pro_options[portfolio_more_link_target]", [
         "label" => __("Open link in new tab", "wallstreet"),
         "section" => "project_section_settings",
         "type" => "checkbox",

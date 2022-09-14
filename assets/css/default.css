@@ -1149,11 +1149,11 @@ footer.site {
         color: #fff
     }
 
-.proejct-btn a, .proejct-btn button {
+.show-all-btn a, .show-all-btn button {
     color: #FFF
 }
 
-    .proejct-btn a:hover {
+    .show-all-btn a:hover {
         text-shadow: 0 1px 1px #4a4c56
     }
 

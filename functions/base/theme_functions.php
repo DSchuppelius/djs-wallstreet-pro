@@ -27,18 +27,18 @@ function values_on_current_option($option, $positive, $negative = "", $prefix = 
     echo get_values_on_current_option($option, $positive, $negative, $prefix, $suffix);
 }
 
-function get_blank_target($option){
+function get_blank_target($option, $prefix = null){
     $result = 'target="';
     if ($option) {
         $result .= '_blank"';
     } else {
         $result .=  '_self"';
     }
-    return $result;
+    return !empty($prefix) ? $prefix." ". $result : $result;
 }
 
-function blank_target($option){
-    echo get_blank_target($option);
+function blank_target($option, $prefix = null){
+    echo get_blank_target($option, $prefix);
 }
 
 function is_noframe_with_bigborder() {
@@ -126,5 +126,19 @@ function show_rellax_div() {
         return true;
 
     return false;
+}
+
+function strip_comments($content = '') {
+	return preg_replace('/<!--(.|\s)*?-->/', '', $content);
+}
+
+function strip_all($content = '') {
+    $result = preg_replace(' (\[.*?\])', '', $content);
+
+    $result = strip_tags($result);
+    $result = strip_comments($result);
+    $result = strip_shortcodes($result);
+
+    return $result;
 }
 ?>

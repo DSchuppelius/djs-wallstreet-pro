@@ -7,69 +7,51 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+function get_max_content($content, $max_chars = 45) {
+    $result = $content;
+    $result = strip_all($result);
+    $result = substr($result, 0, $max_chars);
+
+    return $result;
+}
+
 function get_sidebar_excerpt() {
-    global $post;
-    $excerpt = get_the_content();
-    $excerpt = preg_replace(" (\[.*?\])", "", $excerpt);
-    $excerpt = strip_shortcodes($excerpt);
-    $original_len = strlen($excerpt);
-    $excerpt = substr($excerpt, 0, 45);
-    $len = strlen($excerpt);
-    if ($original_len > 45) {
-        $excerpt = $excerpt;
-    }
-    return $excerpt;
+    return get_max_content(get_the_content(), 45);
 }
 
 function get_comment_sidebar($excerpt) {
-    $excerpt = $excerpt;
-    $excerpt = preg_replace(" (\[.*?\])", "", $excerpt);
-    $excerpt = strip_shortcodes($excerpt);
-    $original_len = strlen($excerpt);
-    $excerpt = substr($excerpt, 0, 45);
-    return $excerpt;
+    return get_max_content($excerpt, 45);
 }
 
 function get_home_blog_excerpt($length, $read) {
-    global $post;
     $excerpt = get_the_content();
-    $excerpt = strip_tags(preg_replace(" (\[.*?\])", "", $excerpt));
-    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_all($excerpt);
     $original_len = strlen($excerpt);
     $excerpt = substr($excerpt, 0, $length);
-    $len = strlen($excerpt);
     if ($original_len > $length) {
-        $excerpt = $excerpt . '<div class="blog-btn-col"><form action"' . get_the_permalink() . '"><button class="btn more" type="submit">' . __($read, "wallstreet") . "</button></form></div>";
+        $excerpt = $excerpt . get_the_read_more();
     }
     return $excerpt;
 }
 
 function get_post_blog_excerpt($length, $read) {
     $current_options = get_current_options();
-    global $post;
     $excerpt = get_the_excerpt();
-    $excerpt = strip_tags(preg_replace(" (\[.*?\])", "", $excerpt));
-    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_all($excerpt);
     $original_len = strlen($excerpt);
     $excerpt = substr($excerpt, 0, $length);
-    $len = strlen($excerpt);
 
     if ($original_len > $length) {
         if ($current_options["blog_template_read_more"] != null) {
-            $excerpt = $excerpt . '<div class="blog-btn-col"><form action"' . get_the_permalink() . '"><button class="btn more" type="submit" >' . __($read, "wallstreet") . "</button></form></div>";
-        } else {
-            $excerpt = $excerpt;
+            $excerpt = $excerpt . get_the_read_more();
         }
     }
     return $excerpt;
 }
 
 function get_only_post_blog_excerpt($length) {
-    global $post;
     $excerpt = get_the_excerpt();
-    $excerpt = strip_tags(preg_replace(" (\[.*?\])", "", $excerpt));
-    $excerpt = strip_shortcodes($excerpt);
-    $original_len = strlen($excerpt);
+    $excerpt = strip_all($excerpt);
     $excerpt = substr($excerpt, 0, $length);
     return $excerpt;
 }

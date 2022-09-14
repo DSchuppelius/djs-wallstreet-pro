@@ -123,7 +123,7 @@ button.close:not(.not, .has-icon):before {
     content: "";
 }
 
-input, button, .proejct-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
+input, button, .show-all-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
     border-radius: 0.25rem;
 }
 
@@ -417,14 +417,14 @@ a.btn.tab {
             display: block !important;
         }
 
-.proejct-btn {
+.show-all-btn {
     border-radius: 0;
     padding: 0;
     text-align: center;
     margin: 0 0 50px
 }
 
-    .proejct-btn a {
+    .show-all-btn a {
         display: inline-block;
         line-height: 22px;
         margin: 0;
@@ -433,7 +433,7 @@ a.btn.tab {
         vertical-align: middle
     }
 
-    .proejct-btn.switcher-style {
+    .show-all-btn.switcher-style {
         margin: 50px 0
     }
 

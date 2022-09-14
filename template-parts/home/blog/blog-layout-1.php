@@ -79,7 +79,7 @@ $post_per_page = $current_options["home_blog_counts"];
                             <?php } ?>
                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>		
                             <div class="home-blog-description"><p><?php echo get_the_excerpt(); ?></p></div>
-                            <div class="home-blog-btn"><form action="<?php the_permalink(); ?>"><button class="btn more" type="submit" ><?php _e("Read More", "wallstreet"); ?></button></form></div>							
+                            <?php the_read_more("home-blog-btn"); ?>
                         </div>
                     </div>
                 </div>
@@ -90,14 +90,6 @@ $post_per_page = $current_options["home_blog_counts"];
         } ?>
     </div>
     <?php if ($current_options["view_all_posts_btn_enabled"] == true) {
-        if ($current_options["view_all_posts_text"]) { ?>
-            <div class ="row">
-                <div class="proejct-btn">
-                    <form action="<?php if ($current_options["all_posts_link"] != "") { echo $current_options["all_posts_link"]; } ?>" <?php if ($current_options["view_all_lnik_target"] == true) { echo 'method="get" target="_blank"'; } ?>>
-                        <button class="btn more blog big" type="submit" ><?php echo $current_options["view_all_posts_text"]; ?></button>
-                    </form>
-                </div>
-            </div>
-        <?php }
+        the_show_all($current_options["all_posts_link"], $current_options["view_all_posts_text"], $current_options["view_all_link_target"]);
     } ?>
 </div>

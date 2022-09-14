@@ -838,13 +838,13 @@ footer.site {
     transition: all .3s ease 0s
 }
 
-.proejct-btn {
+.show-all-btn {
     transition: all .4s ease 0s
 }
 
-    .proejct-btn a {
-        transition: all .4s ease 0s
-    }
+.show-all-btn a {
+    transition: all .4s ease 0s
+}
 
 .qua_contact_btn {
     transition: all .4s ease 0s

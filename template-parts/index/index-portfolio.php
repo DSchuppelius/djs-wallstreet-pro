@@ -113,28 +113,14 @@
                     </div>
                 <?php } ?>
                 <div class='clearfix'></div>
-                <?php if ($current_options["view_all_projects_btn_enabled"] == true) { ?>
-                    <div class="row">
-                        <div class="proejct-btn">
-                            <form action="<?php echo $current_options["portfolio_more_link"]; ?>" <?php if ($current_options["portfolio_more_lnik_target"] != false) { echo 'method="get" target="_blank"'; } ?>>
-                                <button class="btn big project" type="submit"><?php printf(__("%s", "wallstreet"), $current_options["portfolio_more_text"]); ?></button>
-                            </form>
-                        </div>
-                    </div>
-                <?php }
+                <?php if ($current_options["view_all_projects_btn_enabled"] == true) {
+                    the_show_all($current_options["portfolio_more_link"], $current_options["portfolio_more_text"], $current_options["portfolio_more_link_target"], "project");                   
+                }
             } ?>			
         </div>
         <?php if ($portfolio->have_posts()) {
             if ($current_options["view_all_projects_btn_enabled"] == true) {
-                if ($current_options["portfolio_more_text"]) { ?>
-                    <div class ="row">
-                        <div class="proejct-btn">
-                            <form action="<?php echo $current_options["portfolio_more_link"]; ?>" <?php if ($current_options["portfolio_more_lnik_target"] != false) { echo 'method="get" target="_blank"'; } ?>>
-                                <button class="btn big project" type="submit"> <?php echo $current_options["portfolio_more_text"]; ?></button>
-                            </form>
-                        </div>
-                    </div>
-                <?php }
+                the_show_all($current_options["portfolio_more_link"], $current_options["portfolio_more_text"], $current_options["portfolio_more_link_target"], "project");                   
             }
         } ?>
     </div>	

@@ -28,6 +28,36 @@ class wallstreet_latest_widget extends WP_Widget {
         );
     }
 
+    function widget_posts($posts) {
+        global $post;
+
+        if($posts){
+            foreach ($posts as $post) { 
+                setup_postdata($post); ?>
+                <div class="media post-media-sidebar">
+                    <a class="pull-left sidebar-pull-img" href="#">
+                        <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
+                        <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>								 
+                    </a>
+                    <div class="media-body">
+                        <h3 style="padding-bottom:0px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <p><?php //echo get_sidebar_excerpt(); ?></p>
+                    </div>
+                    <div class="sidebar-comment-box">
+                        <span>
+                            <?php echo get_the_date("M j, Y", $post->id); ?>
+                            <small>|</small>
+                            <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
+                                <?php _e("By", "wallstreet"); echo "&nbsp;"; the_author(); ?>
+                            </a>
+                        </span>
+                    </div>									
+                </div>							
+            <?php } 
+            wp_reset_postdata(); 
+        }
+    }
+
     /**
      * Front-end display of widget.
      *
@@ -37,6 +67,7 @@ class wallstreet_latest_widget extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
+        global $wpdb;
         $title = apply_filters("widget_title", $instance["title"]);
         $begin_widget = $args["before_widget"]; 
         $end_widget= $args["after_widget"]; 
@@ -55,72 +86,29 @@ class wallstreet_latest_widget extends WP_Widget {
         <div class="tab-content" id="myTabContent">					
             <div id="popular" class="tab-pane fade active in">
                 <div class="row">	
-                    <?php global $wpdb;
-                    $pop = $wpdb->get_results("SELECT id, guid, post_date, post_title, comment_count FROM {$wpdb->prefix}posts WHERE post_type='post' AND post_status='publish' ORDER BY comment_count DESC LIMIT 5");
-                    foreach ($pop as $post) { ?>
-                        <div class="media post-media-sidebar">
-                            <a class="pull-left sidebar-pull-img" href="#">
-                                <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
-                                <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>								 
-                            </a>
-                            <div class="media-body">
-                                <h3 style="padding-bottom:0px;"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></h3>
-                                <p><?php echo get_sidebar_excerpt(); ?></p>
-                            </div>
-                            <div class="sidebar-comment-box">
-                                <span>
-                                    <?php echo get_the_date("M j, Y", $post->id); ?>
-                                    <small>|</small>
-                                    <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                        <?php _e("By", "wallstreet"); echo " "; the_author(); ?>
-                                    </a>
-                                </span>
-                            </div>									
-                        </div>							
-                    <?php } ?>
+                    <?php $this->widget_posts(get_posts([
+                        'numberposts'      => 5,
+                        'orderby'          => 'comment_count',
+                        'order'            => 'DESC',
+                        'post_type'        => 'post',
+                        'post_status'      => 'publish',
+                    ])); ?>
                 </div>
             </div>
             <div id="recent" class="tab-pane fade">
                 <div class="row">
-                    <?php $args = [
+                    <?php $this->widget_posts(get_posts([
                         "post_type" => "post",
                         "posts_per_page" => 5,
                         "post__not_in" => get_option("sticky_posts"),
-                    ];
-                    query_posts($args);
-                    if (query_posts($args)) {
-                        while (have_posts()) {
-                            the_post(); ?>
-                            <div class="media post-media-sidebar">
-                                <a href="#" class="pull-left sidebar-pull-img">
-                                    <?php $defalt_arg = [ "class" => "img-responsive post_sidebar_img sidebar_thumb", ];
-                                    if (has_post_thumbnail()) {
-                                        the_post_thumbnail("wall_sidebar_img", $defalt_arg);
-                                    } ?>
-                                </a>
-                                <div class="media-body">
-                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                </div>										
-                                <div class="sidebar-comment-box">
-                                    <span>
-                                        <?php echo get_the_date("M j, Y"); ?>
-                                        <small>|</small>
-                                        <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                            <?php _e("By", "wallstreet"); the_author(); ?>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>									
-                        <?php }
-                    } ?>						
+                    ])); ?>
                 </div>	
             </div>
             <div id="comment" class="tab-pane fade">
                 <div class="row">
-                    <?php $args = ["number" => "5"];
-                    $comments = get_comments($args);
+                    <?php $comments = get_comments(["number" => "5"]);
                     foreach ($comments as $comment) {
-                        $pop1 = $wpdb->get_results("SELECT id,guid  FROM {$wpdb->prefix}posts WHERE id='$comment->comment_post_ID' ORDER BY comment_count DESC LIMIT 5");
+                        $pop1 = $wpdb->get_results("SELECT id, guid FROM {$wpdb->prefix}posts WHERE id='$comment->comment_post_ID' ORDER BY comment_count DESC LIMIT 5");
                         foreach ($pop1 as $post1) { ?>
                             <div class="media post-media-sidebar">
                                 <a class="pull-left sidebar-pull-img" href="<?php echo $post1->guid; ?>">
@@ -141,6 +129,7 @@ class wallstreet_latest_widget extends WP_Widget {
                             </div>
                         <?php }
                     } ?>
+
                 </div>
             </div>       
         </div>

@@ -79,14 +79,14 @@ function theme_data_setup() {
         "portfolio_numbers_for_templates_category" => 8,
         "portfolio_more_text" => __("View All Projects", "wallstreet"),
         "portfolio_more_link" => "",
-        "portfolio_more_lnik_target" => false,
+        "portfolio_more_link_target" => false,
         "related_portfolio_project_hide_show" => true,
 
         // Blog
         "view_all_posts_btn_enabled" => true,
         "view_all_posts_text" => __("View All Posts", "wallstreet"),
         "all_posts_link" => "",
-        "view_all_lnik_target" => false,
+        "view_all_link_target" => false,
 
         //Taxonomy Archive Portfolio
         "taxonomy_portfolio_list" => 2,

@@ -85,26 +85,38 @@ function twenty_twenty_one_can_show_post_thumbnail() {
      * @param bool $show_post_thumbnail Whether to show post thumbnail.
      */
     return apply_filters("twenty_twenty_one_can_show_post_thumbnail", !post_password_required() && !is_attachment() && has_post_thumbnail());
-} 
-
-function ageOF($atts, $content = null) {
-    extract(shortcode_atts([
-        'begin' => '', /* See post for date formats */
-        'date' => 0,
-        'dateformat' => 'jS F Y' /* http://php.net/manual/en/function.date.php */
-    ], $atts));
-
-    if ($begin == '') $begin = $content;
-    $age = ($content == null) ? floor((time() - strtotime($begin)) / 31556926) : floor((time() - strtotime($content)) / 31556926);
-    return ($date) ? date($dateformat, strtotime($begin)) . ' (Alter: ' .  $age . ')' : $age;
 }
-add_shortcode('age', 'ageOF');
 
-function year_shortcode () {
-    $year = date_i18n ('Y');
-    return $year;
+function get_the_read_more($class = 'blog-btn-col') {
+    return '<div class="' . $class . '"><form action"' . get_the_permalink() . '"><button class="btn more" type="submit" >' . __("Read More", "wallstreet") . '</button></form></div>';
 }
-add_shortcode ('year', 'year_shortcode');
 
+function the_read_more($class = 'blog-btn-col') {
+    echo get_the_read_more($class);
+}
+
+function get_the_show_all($link, $text, $target = false, $button_class = "more blog") {
+    $action = ""; $result = "";
+
+    if(!empty($text)) {
+        if(!empty($link)) {
+            $action = 'action="' . $link . '" ' . get_blank_target($target, 'method="get"');
+        }
+        $result =
+            '<div class ="row">
+                <div class="show-all-btn">
+                    <form ' . $action . '>
+                        <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
+                    </form>
+                </div>
+            </div>';
+    }
+
+    return $result;
+}
+
+function the_show_all($link, $text, $target = false, $button_class = "more blog") {
+    echo get_the_show_all($link, $text, $target, $button_class);
+}
 ?>
 
