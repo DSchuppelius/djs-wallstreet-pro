@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
 "POT-Creation-Date: 2022-09-14 15:34+0200\n"
-"PO-Revision-Date: 2022-09-14 15:34+0200\n"
+"PO-Revision-Date: 2022-09-14 18:20+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -2021,7 +2021,7 @@ msgstr "Referenzen suchen"
 
 #: functions/shortcodes/shortcodes.php:23
 msgid "%y year(s) - %m month"
-msgstr "%y Jahr(e) - %m Monat"
+msgstr "%y Jahr(e) - %m Monat(e)"
 
 #: functions/shortcodes/shortcodes_iframe.php:37
 msgid "Insert Shortcode"

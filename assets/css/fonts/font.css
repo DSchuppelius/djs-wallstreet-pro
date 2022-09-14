@@ -1,7 +1,9 @@
 html,
 body {
     font-family: 'SiteFont', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em
+    font-size: 1em;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
 }
 
     body .fa-regular {
