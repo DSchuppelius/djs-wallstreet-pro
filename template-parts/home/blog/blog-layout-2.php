@@ -46,7 +46,7 @@ $post_per_page = $current_options["home_blog_counts"];
                         <div class="home-blog-info">
                             <?php if ($current_options["home_meta_section_settings"] == false) { ?>
                                 <div class="home-blog-post-detail">
-    							    <span class="date"><?php echo get_the_date(); ?> </span>
+    							    <span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?> </span>
     							    <span class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
     						    </div>
     						<?php } ?>

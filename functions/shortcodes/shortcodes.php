@@ -12,15 +12,28 @@ if (defined("WP_ADMIN") && WP_ADMIN) require_once "shortcode_popup.php";
 require_once "shortcodes_div.php";
 
 function ageOF($atts, $content = null) {
+    $current_options = get_current_options();
     extract(shortcode_atts([
         'begin' => '', /* See post for date formats */
-        'date' => 0,
-        'dateformat' => 'jS F Y' /* http://php.net/manual/en/function.date.php */
+        'end' => 'now', /* See post for date formats */
+        'date' => false,
+        'month' => false,
+        'dateformat' => $current_options["fulldateformat"],
+        'ageformat' => '%y', /* http://php.net/manual/en/function.date.php */
+        'fullageformat' => __('%y year(s) - %m month', 'wallstreet') /* http://php.net/manual/en/function.date.php */
+
     ], $atts));
 
-    if ($begin == '') $begin = $content;
-    $age = ($content == null) ? floor((time() - strtotime($begin)) / 31556926) : floor((time() - strtotime($content)) / 31556926);
-    return ($date) ? date($dateformat, strtotime($begin)) . ' (Alter: ' .  $age . ')' : $age;
+    $from_date = null;
+    $to_date = null;
+
+    if (empty($begin) && strtotime($content)) $begin = $content;
+    if (empty($end) || $end == "now" ) $to_date = new DateTime();
+
+    $from_date = new DateTime($begin);
+    $age = $from_date->diff($to_date);
+
+    return $date ? sprintf("%s - %s (%s)", $from_date->format($dateformat), $to_date->format($dateformat), $age->format($fullageformat)) : $age->format($ageformat);
 }
 add_shortcode('age', 'ageOF');
 

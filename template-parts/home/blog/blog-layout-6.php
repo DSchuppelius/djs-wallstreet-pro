@@ -54,7 +54,7 @@ $post_per_page = $current_options["home_blog_counts"]; ?>
 									<div class="blog-post-title media-body <?php if (!has_post_thumbnail()) { echo "remove-img"; } ?>">
 										<?php if ($current_options["home_meta_section_settings"] == false) { ?>
 											<div class="blog-post-date">
-												<span class="date"><?php echo get_the_date(); ?></span>
+												<span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?></span>
 												<span class="comment"><i class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
 											</div>
 										<?php } ?>

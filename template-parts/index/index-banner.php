@@ -54,13 +54,13 @@ $loaded_banner = true; ?>
                     echo "<h1>";
                     if (is_day()):
                     _e("Daily Archive", "wallstreet");
-                    echo " " . get_the_date();
+                    echo " " . get_the_date($current_options["fulldateformat"]);
                     elseif (is_month()):
                     _e("Monthly Archive", "wallstreet");
-                    echo " " . get_the_date("F Y");
+                    echo " " . get_the_date($current_options["monthyearformat"]);
                     elseif (is_year()):
                     _e("Yearly Archive", "wallstreet");
-                    echo " " . get_the_date("Y");
+                    echo " " . get_the_date($current_options["yearformat"]);
                     else:
                     _e("Blog Archive", "wallstreet");
                     endif;

@@ -10,9 +10,9 @@
 $current_options = get_current_options();
 $is_WooCommerce = class_exists("WooCommerce") && (is_account_page() || is_cart() || is_checkout());
 
-$article_datetime = '<span class="material-icons">calendar_today</span>' . get_the_date("d. F Y - H:i");
+$article_datetime = '<span class="material-icons">calendar_today</span>' . get_the_date($current_options["fulldatetimeformat"]);
 if (get_the_modified_date("Ymd") > get_the_date("Ymd")) {
-    $article_datetime .= " (" . __("Last updated:", "wallstreet") . " " . get_the_modified_date("d. F Y") . ")";
+    $article_datetime .= " (" . __("Last updated:", "wallstreet") . " " . get_the_modified_date($current_options["fulldateformat"]) . ")";
 }
 ?>
 
@@ -44,13 +44,13 @@ if (get_the_modified_date("Ymd") > get_the_date("Ymd")) {
             <?php }
             ?>
         </div>
-        <time datetime="<?php echo get_the_date("Y-m-d\TH:i:sP"); ?>"><?php echo $article_datetime; ?></time>
+        <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"><?php echo $article_datetime; ?></time>
     <?php } elseif (!$is_WooCommerce && is_page() && $current_options["page_meta_section_settings"] == false) { ?>
     	<div class="blog-post-meta">
 			<a id="blog-author" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><i class="fa fa-user"></i><?php the_author(); ?></a>
 		</div>
-        <time datetime="<?php echo get_the_date("Y-m-d\TH:i:sP"); ?>"><?php echo $article_datetime; ?></time>
+        <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"><?php echo $article_datetime; ?></time>
     <?php } else { ?>
-        <time datetime="<?php echo get_the_date("Y-m-d\TH:i:sP"); ?>"></time>
+        <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"></time>
     <?php } ?>
 </footer>

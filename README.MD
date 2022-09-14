@@ -5,14 +5,14 @@
 
 ## Developer
 
-- Contributors: DSchuppelius
-- Version: 2.0.1
-- Requires at least: 5.3
-- Tested up to: 6.0.2
-- Requires PHP: 5.6.20
-- Requires MySQL: 5.0
-- License: GNU General Public License v3 or later
-- License URI: http://www.gnu.org/licenses/gpl.html
+- *Contributors:* DSchuppelius
+- *Version:* 2.0.1
+- *Requires at least:* 5.3
+- *Tested up to:* 6.0.2
+- *Requires PHP:* 5.6.20
+- *Requires MySQL:* 5.0
+- *License:* GNU General Public License v3 or later
+- *License URI:* http://www.gnu.org/licenses/gpl.html
 
 
 ## Description
@@ -21,14 +21,14 @@ A Premium multi colored Business Blog theme for Wordpress that supports Primary 
 It has a perfect design that's great for any Business/Firms Blogs who wants a new look for their site. Three page templates Home, Blog and Contact Page. 
 Theme supports featured slider managed from Theme Option Panel.
 
-- Base Theme Wallstreet-Pro
+- Base Theme Wallstreet-Pro (Old)
     - Homepage Url: http://webriti.com/demo/wp/wallstreet/
     - Author:
         - Priyanshu Mittal
         - Hari Maliya
         - Shahid Mansuri
         - Vibhor Purandare
-- Theme DJS-Wallstreet-Pro
+- *Theme DJS-Wallstreet-Pro (This Theme)*
     - Homepage Url: https://github.com/DSchuppelius/djs-wallstreet-pro/
     - Author:
         - Daniel Jörg Schuppelius
@@ -69,6 +69,7 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
     - ZDF-Mediathek [zdf url="mediathek_url"]description[/zdf] o. [zdf src="direct_src"]description[/zdf] o. [zdf media_id="mediaID"]description[/zdf]
     - DIV Shortcode for code that is otherwise manipulated by WordPress
     - PAYPAL Donationbutton
+    - AGE for dynamic Timespans [age begin="12.12.2012"] [age date=true begin="12.12.2012" end="now"]
     - And so on, the old codes are still there (but some of them are buggy)
  - Responsive
  - Custom sidebars

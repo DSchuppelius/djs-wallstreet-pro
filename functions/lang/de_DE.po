@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-12 09:55+0200\n"
-"PO-Revision-Date: 2022-09-12 10:23+0200\n"
+"POT-Creation-Date: 2022-09-14 15:34+0200\n"
+"PO-Revision-Date: 2022-09-14 15:34+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -82,14 +82,8 @@ msgstr "Belichtungszeit:"
 msgid "Linked post"
 msgstr "Verlinkter Beitrag"
 
-#: attachment.php:64 functions.php:188 index.php:31
+#: attachment.php:64 functions.php:188 functions/basic/blog.php:91 index.php:31
 #: template-parts/content/content.php:17
-#: template-parts/home/blog/blog-layout-1.php:82
-#: template-parts/home/blog/blog-layout-2.php:56
-#: template-parts/home/blog/blog-layout-3.php:64
-#: template-parts/home/blog/blog-layout-4.php:64
-#: template-parts/home/blog/blog-layout-5.php:71
-#: template-parts/home/blog/blog-layout-6.php:75
 #: template-parts/home/service/servic-1.php:111
 #: template-parts/home/service/servic-2.php:98
 #: template-parts/home/service/servic-3.php:111
@@ -165,8 +159,8 @@ msgstr ""
 
 #: comments.php:85 functions/meta-box/post-meta.php:96
 #: functions/meta-box/post-meta.php:97 template-single/single-portfolio.php:28
-#: template-single/single-portfolio.php:52 template/contact-us.php:88
-#: template/contact-us.php:89
+#: template-single/single-portfolio.php:52 template/contact-us.php:92
+#: template/contact-us.php:93
 msgid "Website"
 msgstr "Website"
 
@@ -175,7 +169,7 @@ msgid "Name"
 msgstr "Name"
 
 #: comments.php:87 functions/customizer/customizer-template.php:597
-#: template/contact-us.php:84 template/contact-us.php:85
+#: template/contact-us.php:88 template/contact-us.php:89
 msgid "Email"
 msgstr "E-Mail"
 
@@ -195,7 +189,7 @@ msgstr "Von diesem Konto abmelden"
 msgid "Log out"
 msgstr "Abmelden"
 
-#: comments.php:101 template/contact-us.php:95
+#: comments.php:101 template/contact-us.php:99
 msgid "Send Message"
 msgstr "Nachricht senden"
 
@@ -321,7 +315,7 @@ msgstr "Startseite-Blogeinstellungen"
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:221
+#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:226
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 
@@ -346,11 +340,11 @@ msgstr "Unsere neuesten Blog-Beitr&auml;ge"
 #: functions/customizer/customizer-template.php:662
 #: functions/customizer/customizer-template.php:708
 #: functions/meta-box/post-meta.php:33 functions/meta-box/post-meta.php:34
-#: functions/widget/wallstreet-latest-widget.php:151
+#: functions/widget/wallstreet-latest-widget.php:153
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:222
+#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:227
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
@@ -412,7 +406,7 @@ msgstr "Anzahl der Post"
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:87
+#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:92
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
@@ -470,11 +464,11 @@ msgstr "Kunden-Einstellungen"
 msgid "Section Heading"
 msgstr "Bereichs&uuml;berschrift"
 
-#: functions/customizer/customizer-client.php:26 theme_setup_data.php:118
+#: functions/customizer/customizer-client.php:26 theme_setup_data.php:123
 msgid "Our Clients"
 msgstr "Unsere Kunden"
 
-#: functions/customizer/customizer-client.php:39 theme_setup_data.php:119
+#: functions/customizer/customizer-client.php:39 theme_setup_data.php:124
 msgid ""
 "Have a look at our clients we are growing their business and they are going "
 "up in the market by beating their competitors."
@@ -486,23 +480,10 @@ msgstr ""
 msgid "Client Picture Settings"
 msgstr "Einstellungen für Kundenbilder"
 
-#: functions/customizer/customizer-client.php:64
-#: functions/customizer/customizer-partner.php:64
-#: functions/customizer/customizer-slider.php:154
-msgid "100"
-msgstr "100"
-
 #: functions/customizer/customizer-client.php:70
 #: functions/customizer/customizer-partner.php:70
 msgid "Max Pictureheight"
 msgstr "Max. Bildhöhe"
-
-#: functions/customizer/customizer-client.php:82
-#: functions/customizer/customizer-client.php:100
-#: functions/customizer/customizer-partner.php:82
-#: functions/customizer/customizer-partner.php:100
-msgid "30"
-msgstr ""
 
 #: functions/customizer/customizer-client.php:88
 #: functions/customizer/customizer-partner.php:88
@@ -527,7 +508,7 @@ msgstr "Footer-Copyright-Einstellungen"
 msgid "Enable Footer Link-text"
 msgstr "Aktiviere Footer-Linktext"
 
-#: functions/customizer/customizer-copyright.php:40 theme_setup_data.php:318
+#: functions/customizer/customizer-copyright.php:40 theme_setup_data.php:323
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
 "\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
@@ -550,12 +531,12 @@ msgstr "Footer-Linktext"
 msgid "Enable Footer Copyright"
 msgstr "Aktiviere Footer-Copyright-Einstellungen"
 
-#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:319
+#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:324
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
 #. Author of the plugin/theme
-#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:319
+#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:324
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel J&ouml;rg Schuppelius"
 
@@ -567,7 +548,7 @@ msgstr "Copyright Text"
 msgid "Cookie settings"
 msgstr "Cookie-Einstellungen"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid ""
 "This hidden content may leave traces of third-party vendors on your computer "
 "when activated. Perhaps your user behavior could be analyzed via these "
@@ -582,28 +563,28 @@ msgstr ""
 "den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung "
 "auf dieser Website einsehen:"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "Imprint"
 msgstr "Impressum"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "Do you have any further questions on this topic? Write me via the"
 msgstr ""
 "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir &uuml;ber das"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "contact"
 msgstr "Kontakt"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "contact form"
 msgstr "Kontaktformular"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:324
+#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
 msgid "or by e-mail"
 msgstr "oder per E-Mail"
 
@@ -611,7 +592,7 @@ msgstr "oder per E-Mail"
 msgid "Cookietext before button"
 msgstr "Mitteilung vor Cookie-Schaltfläche"
 
-#: functions/customizer/customizer-copyright.php:88 theme_setup_data.php:325
+#: functions/customizer/customizer-copyright.php:88 theme_setup_data.php:330
 msgid "Yes, I would like to activate the content on this page..."
 msgstr "Ja, ich m&ouml;chte den Inhalt auf dieser Seite aktivieren..."
 
@@ -619,7 +600,7 @@ msgstr "Ja, ich m&ouml;chte den Inhalt auf dieser Seite aktivieren..."
 msgid "Buttontext"
 msgstr "Schaltflächentext"
 
-#: functions/customizer/customizer-copyright.php:97 theme_setup_data.php:326
+#: functions/customizer/customizer-copyright.php:97 theme_setup_data.php:331
 msgid ""
 "Furthermore, you are aware that by activating the content, cookies can be "
 "set by third parties. In addition, you are aware that your data processing "
@@ -655,7 +636,7 @@ msgstr ""
 msgid "Image Link"
 msgstr "Bildlink"
 
-#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:102
+#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:107
 msgid "Core features of theme"
 msgstr "Kernfunktionen des Themes"
 
@@ -682,8 +663,8 @@ msgstr "Icon"
 
 #: functions/customizer/customizer-feature.php:106
 #: functions/customizer/customizer-feature.php:146
-#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:104
-#: theme_setup_data.php:107 theme_setup_data.php:110
+#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:109
+#: theme_setup_data.php:112 theme_setup_data.php:115
 msgid "Incredibly flexible"
 msgstr "Unglaublich flexibel"
 
@@ -696,89 +677,135 @@ msgstr "Hintergrundbild"
 msgid "Background Image Fixed"
 msgstr "Hintergrundbild fixiert"
 
-#: functions/customizer/customizer-global.php:13
+#: functions/customizer/customizer-global.php:14
 msgid "Global theme options"
 msgstr "Globale Designoptionen"
 
-#: functions/customizer/customizer-global.php:26
+#: functions/customizer/customizer-global.php:19
+msgid "Global options"
+msgstr "Globale Einstellungen"
+
+#: functions/customizer/customizer-global.php:25
+msgid "Datetime section"
+msgstr "Datums- und Zeiteinstellungen"
+
+#: functions/customizer/customizer-global.php:27
+msgid ""
+"For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
+"format.php\">php.net (datetime.format)</a>"
+msgstr ""
+"Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
+"en/datetime.format.php\">php.net (datetime.format)</a>"
+
+#: functions/customizer/customizer-global.php:32 theme_setup_data.php:13
+msgid "Y"
+msgstr "Y"
+
+#: functions/customizer/customizer-global.php:38
+msgid "Year dateformat"
+msgstr "Jahresdatumsformat"
+
+#: functions/customizer/customizer-global.php:45 theme_setup_data.php:14
+msgid "F Y"
+msgstr "F Y"
+
+#: functions/customizer/customizer-global.php:51
+msgid "Month/Year dateformat"
+msgstr "Monat/Jahr Datumsformat"
+
+#: functions/customizer/customizer-global.php:58 theme_setup_data.php:15
+msgid "jS F Y"
+msgstr "d. F Y"
+
+#: functions/customizer/customizer-global.php:64
+msgid "Full dateformat"
+msgstr "Komplettes Datum"
+
+#: functions/customizer/customizer-global.php:71 theme_setup_data.php:16
+msgid "jS F Y - h:i a"
+msgstr "d. F Y - H:i"
+
+#: functions/customizer/customizer-global.php:77
+msgid "Full datetimeformat"
+msgstr "Komplettes Datum inkl. Zeit"
+
+#: functions/customizer/customizer-global.php:84 theme_setup_data.php:17
+msgid "Y-m-d\\TH:i:sP"
+msgstr "Y-m-d\\TH:i:sP"
+
+#: functions/customizer/customizer-global.php:90
+msgid "Technical full datetimeformat"
+msgstr "Technisches Zeitformat"
+
+#: functions/customizer/customizer-global.php:104
 msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
-#: functions/customizer/customizer-global.php:40
+#: functions/customizer/customizer-global.php:118
 msgid "Enable Contextmenu"
 msgstr "Kontextmenü aktivieren"
 
-#: functions/customizer/customizer-global.php:54
+#: functions/customizer/customizer-global.php:132
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/customizer-global.php:68
+#: functions/customizer/customizer-global.php:146
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/customizer-global.php:82
+#: functions/customizer/customizer-global.php:160
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/customizer-global.php:96
+#: functions/customizer/customizer-global.php:174
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:109
+#: functions/customizer/customizer-global.php:187
 #, fuzzy
 #| msgid "Enable/Disable Big Border"
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der großen Rahmen"
 
-#: functions/customizer/customizer-global.php:121
+#: functions/customizer/customizer-global.php:199
 #, fuzzy
 #| msgid "Enable Parallax Header"
 msgid "Enable Fader on Pageload"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:133
+#: functions/customizer/customizer-global.php:211
 msgid "Enable frame on pages"
 msgstr "Rahmen auf Seiten aktivieren"
 
-#: functions/customizer/customizer-global.php:145
+#: functions/customizer/customizer-global.php:223
 msgid "Add filling elements to pages"
 msgstr "Hinzuf&uuml;gen von Füllelementen zu Seiten"
 
-#: functions/customizer/customizer-global.php:151
-#: functions/customizer/customizer-global.php:169
-#: functions/customizer/customizer-global.php:188
-#: functions/customizer/customizer-global.php:206
-#: functions/customizer/customizer-global.php:224
-#: functions/customizer/customizer-global.php:242
-#: functions/customizer/customizer-global.php:260
-msgid "0"
-msgstr ""
-
-#: functions/customizer/customizer-global.php:156
+#: functions/customizer/customizer-global.php:234
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/customizer-global.php:174
+#: functions/customizer/customizer-global.php:252
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
-#: functions/customizer/customizer-global.php:193
+#: functions/customizer/customizer-global.php:271
 msgid "Rellax Speed (Social Contact Header)"
 msgstr "Rellax Speed (Header für Social Media und Kontakte)"
 
-#: functions/customizer/customizer-global.php:211
+#: functions/customizer/customizer-global.php:289
 msgid "Rellax Speed (Header)"
 msgstr "Rellax Speed (Kopfzeile)"
 
-#: functions/customizer/customizer-global.php:229
+#: functions/customizer/customizer-global.php:307
 msgid "Rellax Speed (Homepage Slider)"
 msgstr "Rellax Speed (Homepage Slider)"
 
-#: functions/customizer/customizer-global.php:247
+#: functions/customizer/customizer-global.php:325
 msgid "Rellax Speed (Breadcrumbs)"
 msgstr "Rellax Speed (Breadcrumbs)"
 
-#: functions/customizer/customizer-global.php:265
+#: functions/customizer/customizer-global.php:343
 msgid "Rellax Speed (Site Banner)"
 msgstr "Rellax Speed (Seiten-Banner)"
 
@@ -928,7 +955,7 @@ msgstr "Theme Layout Manager"
 msgid "Partner settings"
 msgstr "Partner-Einstellungen"
 
-#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:127
+#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:132
 msgid "Our Partners"
 msgstr "Unsere Partner"
 
@@ -1040,14 +1067,14 @@ msgid "Number of portfolio on portfolio section"
 msgstr "Anzahl Portfolios im Portfolio-Bereich"
 
 #: functions/customizer/customizer-project.php:80
-#: functions/customizer/customizer-template.php:307 theme_setup_data.php:72
-#: theme_setup_data.php:94
+#: functions/customizer/customizer-template.php:307 theme_setup_data.php:77
+#: theme_setup_data.php:99
 msgid "Featured portfolio"
 msgstr "Vorgestelltes Portfolio"
 
 #: functions/customizer/customizer-project.php:93
-#: functions/customizer/customizer-template.php:320 theme_setup_data.php:73
-#: theme_setup_data.php:95
+#: functions/customizer/customizer-template.php:320 theme_setup_data.php:78
+#: theme_setup_data.php:100
 msgid "Most popular of our works."
 msgstr "Unsere beliebtesten Werke."
 
@@ -1055,7 +1082,7 @@ msgstr "Unsere beliebtesten Werke."
 msgid "Enable view all portfolios button"
 msgstr "Button zum Zeigen aller Portfolios aktivieren"
 
-#: functions/customizer/customizer-project.php:120 theme_setup_data.php:80
+#: functions/customizer/customizer-project.php:120 theme_setup_data.php:85
 msgid "View All Projects"
 msgstr "Alle Projekte anzeigen"
 
@@ -1079,7 +1106,7 @@ msgstr "Anzahl Dienstleistungen im Dienstleistungs-Bereich"
 msgid "Select Service Style"
 msgstr "Servicestil auswählen"
 
-#: functions/customizer/customizer-service.php:71 theme_setup_data.php:60
+#: functions/customizer/customizer-service.php:71 theme_setup_data.php:65
 msgid "Our Services"
 msgstr "Unsere Dienstleistungen"
 
@@ -1087,9 +1114,9 @@ msgstr "Unsere Dienstleistungen"
 #: functions/customizer/customizer-service.php:187
 #: functions/customizer/customizer-template.php:51
 #: functions/customizer/customizer-template.php:149
-#: functions/customizer/customizer-template.php:408 theme_setup_data.php:61
-#: theme_setup_data.php:63 theme_setup_data.php:75 theme_setup_data.php:147
-#: theme_setup_data.php:220
+#: functions/customizer/customizer-template.php:408 theme_setup_data.php:66
+#: theme_setup_data.php:68 theme_setup_data.php:80 theme_setup_data.php:152
+#: theme_setup_data.php:225
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
@@ -1124,7 +1151,7 @@ msgid "Enable other services section in service template"
 msgstr ""
 "Bereich für Andere Dienstleistungen im Dienstleistung-Template aktivieren"
 
-#: functions/customizer/customizer-service.php:172 theme_setup_data.php:62
+#: functions/customizer/customizer-service.php:172 theme_setup_data.php:67
 msgid "Other services"
 msgstr "Andere Dienstleistungen"
 
@@ -1136,7 +1163,7 @@ msgstr "Dienstleistung-Callout-Einstellungen"
 msgid "Enable Callout area section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-service.php:246 theme_setup_data.php:156
+#: functions/customizer/customizer-service.php:246 theme_setup_data.php:161
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
@@ -1300,11 +1327,11 @@ msgstr "Webadresse (Vimeo)"
 msgid "Comment Options"
 msgstr "Kommentar Optionen"
 
-#: functions/customizer/customizer-social.php:375 theme_setup_data.php:321
+#: functions/customizer/customizer-social.php:375 theme_setup_data.php:326
 msgid "Please Note:"
 msgstr "Bitte beachten:"
 
-#: functions/customizer/customizer-social.php:375 theme_setup_data.php:321
+#: functions/customizer/customizer-social.php:375 theme_setup_data.php:326
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -1319,7 +1346,7 @@ msgstr ""
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/customizer-social.php:388 theme_setup_data.php:322
+#: functions/customizer/customizer-social.php:388 theme_setup_data.php:327
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1357,11 +1384,11 @@ msgstr "3-Spalten-Layout"
 msgid "4 Column Layout"
 msgstr "4-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:58 theme_setup_data.php:136
+#: functions/customizer/customizer-team.php:58 theme_setup_data.php:141
 msgid "The Team"
 msgstr "Das Team"
 
-#: functions/customizer/customizer-team.php:71 theme_setup_data.php:137
+#: functions/customizer/customizer-team.php:71 theme_setup_data.php:142
 msgid "Meet Our Experts"
 msgstr "Treffen Sie unsere Experten"
 
@@ -1378,7 +1405,7 @@ msgstr "„&Uuml;ber Uns“-Seite-Einstellungen"
 msgid "Enable team section"
 msgstr "Teamabschnitt aktivieren"
 
-#: functions/customizer/customizer-template.php:39 theme_setup_data.php:219
+#: functions/customizer/customizer-template.php:39 theme_setup_data.php:224
 msgid "Our great team"
 msgstr "Unser tolles Team"
 
@@ -1411,7 +1438,7 @@ msgstr "Referenz-Einstellungen"
 msgid "Enable cta section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-template.php:137 theme_setup_data.php:146
+#: functions/customizer/customizer-template.php:137 theme_setup_data.php:151
 msgid "Why choose us"
 msgstr "Warum wählen Sie uns"
 
@@ -1480,7 +1507,7 @@ msgstr "Anzahl der Portfolios auf der Seite der Portfoliokategorie"
 msgid "Portfolio template and related page setting"
 msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
 
-#: functions/customizer/customizer-template.php:341 theme_setup_data.php:76
+#: functions/customizer/customizer-template.php:341 theme_setup_data.php:81
 msgid "Our Portfolio"
 msgstr "Unser Portfolio"
 
@@ -1488,7 +1515,7 @@ msgstr "Unser Portfolio"
 msgid "Title For Portfolio Template"
 msgstr "Titel für Portfolio-Vorlage"
 
-#: functions/customizer/customizer-template.php:354 theme_setup_data.php:77
+#: functions/customizer/customizer-template.php:354 theme_setup_data.php:82
 msgid "Most popular of our works"
 msgstr "Unsere beliebtesten Werke"
 
@@ -1504,8 +1531,8 @@ msgstr "Anzahl des Portfolios auf Portfolio-Vorlage"
 msgid "Enable Related Project Setting"
 msgstr "Zugehörige Projekteinstellung aktivieren"
 
-#: functions/customizer/customizer-template.php:395 theme_setup_data.php:74
-#: theme_setup_data.php:153
+#: functions/customizer/customizer-template.php:395 theme_setup_data.php:79
+#: theme_setup_data.php:158
 msgid "Related projects"
 msgstr "Verwandte Projekte"
 
@@ -1525,7 +1552,7 @@ msgstr "Kontaktseite-Adress-Einstellungen"
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/customizer-template.php:454 theme_setup_data.php:192
+#: functions/customizer/customizer-template.php:454 theme_setup_data.php:197
 msgid "Address"
 msgstr "Adresse"
 
@@ -1578,11 +1605,11 @@ msgstr "E-Mail Zwei"
 msgid "Contact page form setting"
 msgstr "Kontaktseite-Formulareinstellung"
 
-#: functions/customizer/customizer-template.php:656 theme_setup_data.php:208
+#: functions/customizer/customizer-template.php:656 theme_setup_data.php:213
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/customizer-template.php:669 theme_setup_data.php:209
+#: functions/customizer/customizer-template.php:669 theme_setup_data.php:214
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
@@ -1594,7 +1621,7 @@ msgstr "Kontaktseite Google Maps"
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/customizer-template.php:702 theme_setup_data.php:185
+#: functions/customizer/customizer-template.php:702 theme_setup_data.php:190
 msgid "Location map"
 msgstr "Lageplan"
 
@@ -1762,11 +1789,11 @@ msgstr "Callout-Button"
 msgid "Light & Dark Predefined Colors Setting"
 msgstr "Helle & Dunkle Vordefinierte Farbeinstellungen"
 
-#: functions/customizer/customizer_theme_style.php:43
+#: functions/customizer/customizer_theme_style.php:48
 msgid "Theme Style settings"
 msgstr "Theme-Stil-Einstellungen"
 
-#: functions/customizer/customizer_theme_style.php:84
+#: functions/customizer/customizer_theme_style.php:93
 msgid "Change skin color for light and dark background"
 msgstr "Farbe der Oberfläche ändern für hellen oder dunklen Hintergrund"
 
@@ -1992,6 +2019,10 @@ msgstr "Alle Referenzen"
 msgid "Search Testimonials"
 msgstr "Referenzen suchen"
 
+#: functions/shortcodes/shortcodes.php:23
+msgid "%y year(s) - %m month"
+msgstr "%y Jahr(e) - %m Monat"
+
 #: functions/shortcodes/shortcodes_iframe.php:37
 msgid "Insert Shortcode"
 msgstr "Shortcode eintragen"
@@ -2058,33 +2089,32 @@ msgstr "Footer-Widget-Bereich"
 msgid "WooCommerce sidebar widget area"
 msgstr "WooCommerce Seitenleiste-Widgetbereich"
 
-#: functions/widget/wallstreet-latest-widget.php:17
+#: functions/widget/wallstreet-latest-widget.php:26
 msgid "WBR : Latest Posts"
 msgstr "WBR : Neueste Beitr&auml;ge"
 
-#: functions/widget/wallstreet-latest-widget.php:19
+#: functions/widget/wallstreet-latest-widget.php:27
 msgid "This widget allows you to display latest, popular and commented posts."
 msgstr ""
 "Dieses Widget erlaubt dir die Anzeige der neuesten, beliebtesten oder "
 "kommentierten Beiträge."
 
-#: functions/widget/wallstreet-latest-widget.php:40
+#: functions/widget/wallstreet-latest-widget.php:53
+#: functions/widget/wallstreet-latest-widget.php:130
+msgid "By"
+msgstr "Von"
+
+#: functions/widget/wallstreet-latest-widget.php:87
 msgid "Popular"
 msgstr "Populär"
 
-#: functions/widget/wallstreet-latest-widget.php:41
+#: functions/widget/wallstreet-latest-widget.php:88
 msgid "Recent"
 msgstr "Zuletzt"
 
-#: functions/widget/wallstreet-latest-widget.php:42
+#: functions/widget/wallstreet-latest-widget.php:89
 msgid "Comment"
 msgstr "Kommentar"
-
-#: functions/widget/wallstreet-latest-widget.php:64
-#: functions/widget/wallstreet-latest-widget.php:101
-#: functions/widget/wallstreet-latest-widget.php:128
-msgid "By"
-msgstr "Von"
 
 #: header.php:152 searchform.php:13 template-parts/global/menu-search.php:15
 #: template-parts/global/menu-search.php:21
@@ -2134,32 +2164,32 @@ msgid "Menu"
 msgstr "Menü"
 
 #: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:51
-#: template-parts/home/blog/blog-layout-3.php:59
-#: template-parts/home/blog/blog-layout-4.php:59
+#: template-parts/home/blog/blog-layout-2.php:50
+#: template-parts/home/blog/blog-layout-3.php:54
+#: template-parts/home/blog/blog-layout-4.php:55
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
 #: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:51
-#: template-parts/home/blog/blog-layout-3.php:59
-#: template-parts/home/blog/blog-layout-4.php:59
+#: template-parts/home/blog/blog-layout-2.php:50
+#: template-parts/home/blog/blog-layout-3.php:54
+#: template-parts/home/blog/blog-layout-4.php:55
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
 #: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:51
-#: template-parts/home/blog/blog-layout-3.php:59
-#: template-parts/home/blog/blog-layout-4.php:59
+#: template-parts/home/blog/blog-layout-2.php:50
+#: template-parts/home/blog/blog-layout-3.php:54
+#: template-parts/home/blog/blog-layout-4.php:55
 msgid "% Comments"
 msgstr "% Kommentare"
 
 #: template-parts/home/blog/blog-layout-1.php:89
-#: template-parts/home/blog/blog-layout-2.php:67
-#: template-parts/home/blog/blog-layout-3.php:71
-#: template-parts/home/blog/blog-layout-4.php:71
-#: template-parts/home/blog/blog-layout-5.php:87
-#: template-parts/home/blog/blog-layout-6.php:83
+#: template-parts/home/blog/blog-layout-2.php:65
+#: template-parts/home/blog/blog-layout-3.php:65
+#: template-parts/home/blog/blog-layout-4.php:66
+#: template-parts/home/blog/blog-layout-5.php:79
+#: template-parts/home/blog/blog-layout-6.php:72
 msgid "No posts to show"
 msgstr "Keine Beitr&auml;ge zum Anzeigen"
 
@@ -2242,11 +2272,6 @@ msgid ""
 msgstr ""
 "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
 "s&uuml;ßen Frühlingsmorgen."
-
-#: template-parts/index/index-portfolio.php:120
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: template-parts/index/index-slider.php:235
 msgid "Clean & fresh theme"
@@ -2331,31 +2356,31 @@ msgstr "Für Mobilgeräte geeignet"
 msgid "Live support"
 msgstr "Live Support"
 
-#: template/contact-us.php:76 template/contact-us.php:77
+#: template/contact-us.php:80 template/contact-us.php:81
 msgid "First name"
 msgstr "Vorname"
 
-#: template/contact-us.php:80 template/contact-us.php:81
+#: template/contact-us.php:84 template/contact-us.php:85
 msgid "Last name"
 msgstr "Nachname"
 
-#: template/contact-us.php:92 template/contact-us.php:93
+#: template/contact-us.php:96 template/contact-us.php:97
 msgid "Message"
 msgstr "Nachricht"
 
-#: template/contact-us.php:96
+#: template/contact-us.php:100
 msgid "Sorry, your nonce did not verify"
 msgstr "Deine Nonce wurde leider nicht bestätigt"
 
-#: template/contact-us.php:102
+#: template/contact-us.php:107
 msgid "Thank you"
 msgstr "Danke"
 
-#: template/contact-us.php:102
+#: template/contact-us.php:107
 msgid "Your information has been sent."
 msgstr "Deine Nachricht wurde versendet."
 
-#: theme_setup_data.php:128
+#: theme_setup_data.php:133
 msgid ""
 "Take a look at our partners. With their help, we expand your company and "
 "leave your competitors behind."
@@ -2363,15 +2388,15 @@ msgstr ""
 "Werfen Sie einen Blick auf unsere Partner. Mit ihrer Hilfe erweitern wir Ihr "
 "Unternehmen und Sie lassen Ihre Mitbewerber hinter sich."
 
-#: theme_setup_data.php:151
+#: theme_setup_data.php:156
 msgid "Meet our"
 msgstr "Das ist unser"
 
-#: theme_setup_data.php:152
+#: theme_setup_data.php:157
 msgid "Great team"
 msgstr "Tolles Team"
 
-#: theme_setup_data.php:158
+#: theme_setup_data.php:163
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 
@@ -2399,6 +2424,13 @@ msgstr ""
 #| msgid "https://schuppelius.org/"
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
+
+#~ msgid "100"
+#~ msgstr "100"
+
+#, php-format
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Daniel Jörg Schuppelius"
 #~ msgstr "Daniel J&ouml;rg Schuppelius"
