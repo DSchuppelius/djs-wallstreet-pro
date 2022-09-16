@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 400;
+    src: url('el-messiri/ElMessiri-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Regular.ttf');
+    font-display: swap;
+}
+
+/* -------- */
 html,
 body {
     font-family: 'SiteFont', "Helvetica Neue", Helvetica, Arial, sans-serif;
