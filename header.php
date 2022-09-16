@@ -44,42 +44,13 @@ $current_options = get_current_options(); ?>
         <meta name="description" content="<?php if ( is_single() ) { echo wp_trim_words($single_description, 120, '...'); } else if(!empty($page_description)) { bloginfo('name'); echo " - ". $page_description; }else { bloginfo('name'); echo " - "; bloginfo('description'); }?>" />
         <meta name="keywords" content="<?php echo $single_metakeytags; ?>" />
 
+        <base href="<?php echo get_site_url(); ?>">
+
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <?php if ($current_options["upload_image_favicon"] != "") { ?>
             <link rel="shortcut icon" href="<?php echo $current_options["upload_image_favicon"]; ?>" /> 
         <?php }
-        wp_head();
-        if ($current_options["contact_header_settings"] != "on") { ?>
-            <style type="text/css">
-                @media only screen and (min-width: 200px) and (max-width: 480px) {
-                    .header-top-area {
-                        display: none;
-                    }
-                }
-            </style>
-        <?php } ?>
-        <?php if ($current_options["parallaxbackground_enabled"]) { ?>
-            <script type="text/javascript">
-                function snap(bgParallax, scrollSize){
-                    if (bgParallax != null){
-                        var scrollPosition = window.scrollY; //window.pageYOffset;
-                        var limit = bgParallax.offsetTop + bgParallax.offsetHeight;
-                        if (scrollPosition > bgParallax.offsetTop && scrollPosition <= limit){
-                            bgParallax.style.backgroundPositionY = scrollPosition / scrollSize + 'px';
-                        }else{
-                            bgParallax.style.backgroundPositionY = '0';
-                        }
-                        setTimeout(snap, 20, bgParallax, scrollSize);
-                    }
-                }
-
-                var timeoutId = null;
-                window.addEventListener('scroll', function(){
-                    if(timeoutId) clearTimeout(timeoutId);
-                    timeoutId = setTimeout(snap, 200, document.getElementsByClassName('custom-background')[0], 68);
-                }, true);
-            </script>
-        <?php } ?>
+        wp_head(); ?>
     </head>
     <?php
     $additional_BodyClasses = [];
@@ -101,9 +72,13 @@ $current_options = get_current_options(); ?>
                     <h2 class="animate">Inhalt wird geladen...</h2>
                 </div>
             </div>
+            <script>
+                const style = document.createElement('style');
+                style.innerHTML = '#page_fader { display:flex; }';
+                document.head.appendChild(style);
+            </script>
             <noscript>
                 <div class="warning java"><span title="JavaScript Disabled" class="material-symbols-outlined">report</span></div>
-                <style>#page_fader{ display: none; }</style>
             </noscript>
         <?php } ?>
         <div id="wall_wrapper">	

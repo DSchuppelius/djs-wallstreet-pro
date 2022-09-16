@@ -99,8 +99,7 @@ if ($current_options["enable_custom_typography"] == true) { ?>
             font-weight: 700
         }
     </style>
-<?php }
-?>
+<?php } ?>
 <style type="text/css">
     :root{
         --main-slider-radius: <?php echo $current_options["slideroundcorner"]; ?>px; 
@@ -146,3 +145,13 @@ if ($current_options["enable_custom_typography"] == true) { ?>
     .custom-positions .page-breadcrumbs{ bottom:<?php echo $current_options["breadcrumbposition"]; ?>px; }
     .custom-positions .page-mycarousel:not(.home .page-mycarousel){ margin-bottom:<?php echo 80 - $current_options["contentposition"]; ?>px; }
 </style>
+
+<?php if ($current_options["contact_header_settings"] != "on") { ?>
+    <style type="text/css">
+        @media only screen and (min-width: 200px) and (max-width: 480px) {
+            .header-top-area {
+                display: none;
+            }
+        }
+    </style>
+<?php } ?>

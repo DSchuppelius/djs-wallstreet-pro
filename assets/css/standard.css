@@ -56,6 +56,10 @@ body.error404 .error_404 {
     border-bottom-left-radius: 50% var(--main-slider-radius);
 }
 
+    .homepage_mycarousel div.flexslider{
+        max-height:800px
+    }
+
     .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .page-mycarousel img {
         border-bottom-right-radius: 50% var(--sub-slider-radius);
         border-bottom-left-radius: 50% var(--sub-slider-radius);

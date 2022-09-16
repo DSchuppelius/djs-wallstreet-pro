@@ -14,7 +14,6 @@ function wallstreet_global_customizer($wp_customize) {
         "title" => __("Global options", "wallstreet"),
     ]);
 
-    //Scroll To Top Section
     $wp_customize->add_section("themeoptions_section_settings", [
         "title" => __("Global theme options", "wallstreet"),
         "panel" => "global_theme_settings",
@@ -25,7 +24,6 @@ function wallstreet_global_customizer($wp_customize) {
         "title" => __("Datetime section", "wallstreet"),
         "panel" => "global_theme_settings",
         "description" => __('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "wallstreet"),
-        "priority" => 0,
     ]);
 
     $wp_customize->add_setting("wallstreet_pro_options[yearformat]", [
@@ -351,6 +349,7 @@ function wallstreet_global_customizer($wp_customize) {
         "priority" => 650,
         "sanitize_callback" => "sanitize_text_field",
     ]);
+
 }
 add_action("customize_register", "wallstreet_global_customizer");
 

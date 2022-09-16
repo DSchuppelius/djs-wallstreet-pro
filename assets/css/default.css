@@ -806,6 +806,7 @@ footer.site {
     background: rgba(55,57,65,0.5)
 }
 
+    .homepage_mycarousel .flexslider,
     .homepage_mycarousel .overlay {
         background: rgba(0,0,0,0.45)
     }

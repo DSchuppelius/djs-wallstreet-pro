@@ -73,6 +73,10 @@ function theme_jquery_scripts() {
     wp_enqueue_script("page",                       THEME_ASSETS_PATH_URI . "/js/page.js");
     wp_enqueue_script("djs",                        THEME_ASSETS_PATH_URI . "/js/djs.js");
 
+    if ($current_options["parallaxbackground_enabled"]) {
+        wp_enqueue_script("parallax",               THEME_ASSETS_PATH_URI . "/js/parallax/enabled.js");
+    }
+
     if (class_exists("WooCommerce")) {
         wp_enqueue_style("woocommerce",             THEME_ASSETS_PATH_URI . "/css/woocommerce/woocommerce.css");
         wp_enqueue_style("woocommerce-font",        THEME_ASSETS_PATH_URI . "/css/woocommerce/font.css");
