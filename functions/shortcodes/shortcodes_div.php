@@ -3,7 +3,7 @@
  * Created on   : Wed Sep 04 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org
- * Filename     : shortcode_div.php
+ * Filename     : shortcodes_div.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
