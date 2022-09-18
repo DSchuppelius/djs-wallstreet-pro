@@ -321,9 +321,22 @@ article figure figcaption a {
     color: #e5e5e5
 }
 
-.blog-post-title-wrapper h2 a, .blog-post-title-wrapper-full h2 a {
+.blog-post-title-wrapper h2 a,
+.blog-post-title-wrapper-full h2 a {
     color: #f5f5f5
 }
+
+    .blog-post-title-wrapper h2 a > span.post_format,
+    .blog-post-title-wrapper-full h2 a > span.post_format,
+    .blog-post-title-wrapper h2 a:hover > span.post_format,
+    .blog-post-title-wrapper-full h2 a:hover > span.post_format {
+        color: #f5f5f5 !important
+    }
+
+    .blog-post-title-wrapper h2 a > span.title:not(.post_format),
+    .blog-post-title-wrapper-full h2 a > span.title:not(.post_format) {
+        animation: text-blink-animation 1s steps(10, start) infinite;
+    }
 
 .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2 {
     color: #f5f5f5

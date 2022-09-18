@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-14 15:34+0200\n"
-"PO-Revision-Date: 2022-09-14 18:20+0200\n"
+"POT-Creation-Date: 2022-09-18 20:17+0200\n"
+"PO-Revision-Date: 2022-09-18 20:32+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -82,7 +82,7 @@ msgstr "Belichtungszeit:"
 msgid "Linked post"
 msgstr "Verlinkter Beitrag"
 
-#: attachment.php:64 functions.php:188 functions/basic/blog.php:91 index.php:31
+#: attachment.php:64 functions.php:188 functions/basic/blog.php:93 index.php:31
 #: template-parts/content/content.php:17
 #: template-parts/home/service/servic-1.php:111
 #: template-parts/home/service/servic-2.php:98
@@ -219,17 +219,17 @@ msgstr "MeinBild"
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
-#: functions.php:193 functions/customizer/customizer-social.php:97
+#: functions.php:198 functions/customizer/customizer-social.php:97
 #: functions/meta-box/post-meta.php:136 functions/meta-box/post-meta.php:137
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: functions.php:194 functions/customizer/customizer-social.php:72
+#: functions.php:199 functions/customizer/customizer-social.php:72
 #: functions/meta-box/post-meta.php:152 functions/meta-box/post-meta.php:153
 msgid "Twitter URL"
 msgstr "Twitter URL"
 
-#: functions.php:195 functions/customizer/customizer-social.php:122
+#: functions.php:200 functions/customizer/customizer-social.php:122
 #: functions/meta-box/post-meta.php:148 functions/meta-box/post-meta.php:149
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
@@ -277,6 +277,10 @@ msgstr "Geschichte"
 msgid "Blog Post"
 msgstr "Blogbeitrag"
 
+#: functions/basic/blog.php:68
+msgid "More"
+msgstr "Mehr"
+
 #: functions/basic/iframe.php:42
 msgid "Third-party cookies"
 msgstr "Cookies von Drittanbietern"
@@ -289,7 +293,7 @@ msgstr "Hinweis:"
 #: functions/menu/theme_bootstrap_walker_page.php:94
 #: template-parts/index/index-banner.php:35
 msgid "Home"
-msgstr "Home"
+msgstr "Start"
 
 #: functions/breadcrumbs/breadcrumbs.php:37
 msgid "Archive by category"
@@ -678,18 +682,18 @@ msgid "Background Image Fixed"
 msgstr "Hintergrundbild fixiert"
 
 #: functions/customizer/customizer-global.php:14
-msgid "Global theme options"
-msgstr "Globale Designoptionen"
-
-#: functions/customizer/customizer-global.php:19
 msgid "Global options"
 msgstr "Globale Einstellungen"
 
-#: functions/customizer/customizer-global.php:25
+#: functions/customizer/customizer-global.php:18
+msgid "Global theme options"
+msgstr "Globale Designoptionen"
+
+#: functions/customizer/customizer-global.php:24
 msgid "Datetime section"
 msgstr "Datums- und Zeiteinstellungen"
 
-#: functions/customizer/customizer-global.php:27
+#: functions/customizer/customizer-global.php:26
 msgid ""
 "For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
 "format.php\">php.net (datetime.format)</a>"
@@ -697,115 +701,115 @@ msgstr ""
 "Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
 "en/datetime.format.php\">php.net (datetime.format)</a>"
 
-#: functions/customizer/customizer-global.php:32 theme_setup_data.php:13
+#: functions/customizer/customizer-global.php:30 theme_setup_data.php:13
 msgid "Y"
 msgstr "Y"
 
-#: functions/customizer/customizer-global.php:38
+#: functions/customizer/customizer-global.php:36
 msgid "Year dateformat"
 msgstr "Jahresdatumsformat"
 
-#: functions/customizer/customizer-global.php:45 theme_setup_data.php:14
+#: functions/customizer/customizer-global.php:43 theme_setup_data.php:14
 msgid "F Y"
 msgstr "F Y"
 
-#: functions/customizer/customizer-global.php:51
+#: functions/customizer/customizer-global.php:49
 msgid "Month/Year dateformat"
 msgstr "Monat/Jahr Datumsformat"
 
-#: functions/customizer/customizer-global.php:58 theme_setup_data.php:15
+#: functions/customizer/customizer-global.php:56 theme_setup_data.php:15
 msgid "jS F Y"
 msgstr "d. F Y"
 
-#: functions/customizer/customizer-global.php:64
+#: functions/customizer/customizer-global.php:62
 msgid "Full dateformat"
 msgstr "Komplettes Datum"
 
-#: functions/customizer/customizer-global.php:71 theme_setup_data.php:16
+#: functions/customizer/customizer-global.php:69 theme_setup_data.php:16
 msgid "jS F Y - h:i a"
 msgstr "d. F Y - H:i"
 
-#: functions/customizer/customizer-global.php:77
+#: functions/customizer/customizer-global.php:75
 msgid "Full datetimeformat"
 msgstr "Komplettes Datum inkl. Zeit"
 
-#: functions/customizer/customizer-global.php:84 theme_setup_data.php:17
+#: functions/customizer/customizer-global.php:82 theme_setup_data.php:17
 msgid "Y-m-d\\TH:i:sP"
 msgstr "Y-m-d\\TH:i:sP"
 
-#: functions/customizer/customizer-global.php:90
+#: functions/customizer/customizer-global.php:88
 msgid "Technical full datetimeformat"
 msgstr "Technisches Zeitformat"
 
-#: functions/customizer/customizer-global.php:104
+#: functions/customizer/customizer-global.php:102
 msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
-#: functions/customizer/customizer-global.php:118
+#: functions/customizer/customizer-global.php:116
 msgid "Enable Contextmenu"
 msgstr "Kontextmenü aktivieren"
 
-#: functions/customizer/customizer-global.php:132
+#: functions/customizer/customizer-global.php:130
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/customizer-global.php:146
+#: functions/customizer/customizer-global.php:144
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/customizer-global.php:160
+#: functions/customizer/customizer-global.php:158
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/customizer-global.php:174
+#: functions/customizer/customizer-global.php:172
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:187
+#: functions/customizer/customizer-global.php:185
 #, fuzzy
 #| msgid "Enable/Disable Big Border"
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der großen Rahmen"
 
-#: functions/customizer/customizer-global.php:199
+#: functions/customizer/customizer-global.php:197
 #, fuzzy
 #| msgid "Enable Parallax Header"
 msgid "Enable Fader on Pageload"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:211
+#: functions/customizer/customizer-global.php:209
 msgid "Enable frame on pages"
 msgstr "Rahmen auf Seiten aktivieren"
 
-#: functions/customizer/customizer-global.php:223
+#: functions/customizer/customizer-global.php:221
 msgid "Add filling elements to pages"
 msgstr "Hinzuf&uuml;gen von Füllelementen zu Seiten"
 
-#: functions/customizer/customizer-global.php:234
+#: functions/customizer/customizer-global.php:232
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/customizer-global.php:252
+#: functions/customizer/customizer-global.php:250
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
-#: functions/customizer/customizer-global.php:271
+#: functions/customizer/customizer-global.php:269
 msgid "Rellax Speed (Social Contact Header)"
 msgstr "Rellax Speed (Header für Social Media und Kontakte)"
 
-#: functions/customizer/customizer-global.php:289
+#: functions/customizer/customizer-global.php:287
 msgid "Rellax Speed (Header)"
 msgstr "Rellax Speed (Kopfzeile)"
 
-#: functions/customizer/customizer-global.php:307
+#: functions/customizer/customizer-global.php:305
 msgid "Rellax Speed (Homepage Slider)"
 msgstr "Rellax Speed (Homepage Slider)"
 
-#: functions/customizer/customizer-global.php:325
+#: functions/customizer/customizer-global.php:323
 msgid "Rellax Speed (Breadcrumbs)"
 msgstr "Rellax Speed (Breadcrumbs)"
 
-#: functions/customizer/customizer-global.php:343
+#: functions/customizer/customizer-global.php:341
 msgid "Rellax Speed (Site Banner)"
 msgstr "Rellax Speed (Seiten-Banner)"
 
@@ -1045,10 +1049,8 @@ msgid "Portfolio Column layout section"
 msgstr "Abschnitt \"Portfoliospaltenlayout\""
 
 #: functions/customizer/customizer-project.php:51
-#, fuzzy
-#| msgid "Portfolio Column layout section"
 msgid "Portfolio item layout section"
-msgstr "Abschnitt \"Portfoliospaltenlayout\""
+msgstr "Abschnitt \"Portfolioelementlayout\""
 
 #: functions/customizer/customizer-project.php:54
 msgid "Clover (Only for 4 Column Layout)"
@@ -1168,7 +1170,7 @@ msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
 #: functions/customizer/customizer-service.php:270
-#: template-parts/index/index-slider.php:244
+#: template-parts/index/index-slider.php:216
 msgid "Purchase Now"
 msgstr "Jetzt kaufen"
 
@@ -1182,10 +1184,8 @@ msgid "Enable home slider"
 msgstr "Slider auf Startseite aktivieren"
 
 #: functions/customizer/customizer-slider.php:47
-#, fuzzy
-#| msgid "Select slider animation"
 msgid "Select slidertype"
-msgstr "Slider-Animation auswählen"
+msgstr "Slidertyp auswählen"
 
 #: functions/customizer/customizer-slider.php:51
 msgid "Baseslider"
@@ -1427,8 +1427,6 @@ msgid "Enable client section"
 msgstr "Kundenabschnitt aktivieren"
 
 #: functions/customizer/customizer-template.php:118
-#, fuzzy
-#| msgid "Testimonial settings"
 msgid "Testimonial page setting"
 msgstr "Referenz-Einstellungen"
 
@@ -1447,8 +1445,6 @@ msgid "Enable testimonial section"
 msgstr "Referenzabschnitt aktgivieren"
 
 #: functions/customizer/customizer-template.php:183
-#, fuzzy
-#| msgid "Blog meta settings"
 msgid "Blog template data setting"
 msgstr "Blog Meta-Einstellungen"
 
@@ -2116,7 +2112,7 @@ msgstr "Zuletzt"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: header.php:152 searchform.php:13 template-parts/global/menu-search.php:15
+#: header.php:127 searchform.php:13 template-parts/global/menu-search.php:15
 #: template-parts/global/menu-search.php:21
 #: template-parts/global/menu-search.php:23
 #: template-parts/global/menu-search.php:24
@@ -2273,15 +2269,15 @@ msgstr ""
 "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
 "s&uuml;ßen Frühlingsmorgen."
 
-#: template-parts/index/index-slider.php:235
+#: template-parts/index/index-slider.php:207
 msgid "Clean & fresh theme"
 msgstr "Aufger&auml;umtes und modernes Theme"
 
-#: template-parts/index/index-slider.php:238
+#: template-parts/index/index-slider.php:210
 msgid "Welcome to wallstreet"
 msgstr "Willkommen in der WallStreet"
 
-#: template-parts/index/index-slider.php:241
+#: template-parts/index/index-slider.php:213
 msgid ""
 "The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 "
 "transition effects. Works perfect in any modern mobile."
@@ -2420,8 +2416,6 @@ msgstr ""
 "diesem kompatibel"
 
 #. Author URI of the plugin/theme
-#, fuzzy
-#| msgid "https://schuppelius.org/"
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
 

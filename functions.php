@@ -183,9 +183,14 @@ function kb_mimes($my_mime){
 add_filter( 'upload_mimes', 'kb_mimes' );
 
 // Read more tag to formatting in blog page
-function new_content_more($more) {
+function form_more_button($more = "") {
     global $post;
-    return '<form action="' . get_permalink() . "#more-" . $post->ID . '"><button class="btn more blog-btn" type="submit" >' . __("Read More", "wallstreet") . "</button></form>";
+    $more_text = empty($more) ? __("Read More", "wallstreet") : $more;
+    return '<form action="' . get_permalink() . "#more-" . $post->ID . '"><button class="btn more blog-btn" type="submit" >' . $more_text . "</button></form>";
+}
+
+function new_content_more($more) {
+    return form_more_button();
 }
 add_filter("the_content_more_link", "new_content_more");
 

@@ -64,6 +64,8 @@ function twenty_twenty_one_print_first_instance_of_block($block_name, $content =
     if ($blocks_content) {
         /** This filter is documented in wp-includes/post-template.php */
         echo apply_filters("the_content", $blocks_content); //phpcs:ignore WordPress.Security.EscapeOutput
+        if(count($blocks) > $instances)
+            echo form_more_button(__("More", "wallstreet"));
         return true;
     }
     return false;
