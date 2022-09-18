@@ -26,6 +26,8 @@ function custom_dark() {
         .pagetitle-separator-box { background: <?php echo $link_color; ?> none repeat scroll 0 0 !important;}
         .home-portfolio-showcase .home-portfolio-showcase-detail p:before, .main-portfolio-showcase .main-portfolio-showcase-detail p:before { background: linear-gradient(transparent 55%, <?php the_additional_rgba($link_color, $alpha = 0.6); ?> 70%);}
         .comment-img { border: 0.25em solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
+        .wallstreet.fixed-widget { border: 1px solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
+        .wallstreet.fixed-widget button{ background-color:<?php the_additional_rgba($link_color, $alpha = 0.15); ?>; }
         .search .blog-pagination a, .blog-pagination a, .btn.tab { background-color:<?php the_additional_rgba($link_color, $alpha = 0.65); ?>; }
     
         /* Text Colors */
@@ -53,7 +55,7 @@ function custom_dark() {
         .comment-detail > ol, .comment-detail > ol > li a, .comment-detail > ol > li > ol > li a, .comment-detail > ol > li > ol > li > ol > li a, #comment-nav-below > .nav-previous a,
         #comment-nav-below > .nav-next a, .tiled-gallery .tiled-gallery-item img, .tiled-gallery .tiled-gallery-item img:hover, #gallery-2 img, .post-content li > a:hover, .sidebar-widget > ul > li > a:hover,
         .sidebar-widget > ul > li > ul > li > a:hover, .page-links a, .nav-search a, .breadcrumbs > li a:hover, .about-us .social a:hover { color: <?php echo $link_color; ?>; }   
-        .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
+        .wallstreet.fixed-widget, .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
         .service-area:hover { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
         .main-portfolio-showcase-overlay, .home-portfolio-showcase-overlay { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
         .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: <?php echo $link_color; ?>; }

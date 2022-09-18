@@ -38,10 +38,12 @@ function custom_light() {
             .sidebar-widget > ul > li > a:hover, .sidebar-widget > ul > li > ul > li > a:hover, .menu-primary-container li a:hover, .page-links a, .nav-search a, .breadcrumbs > li a:hover { color: <?php echo $link_color; ?>; }
             .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .about-us .social a:hover { color: <?php echo $link_color; ?>; }
 
-            .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
+            .wallstreet.fixed-widget, .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
             .service-area:hover { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
             .main-portfolio-showcase-overlay, .home-portfolio-showcase-overlay { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
             .comment-img { border: 2px solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
+            .wallstreet.fixed-widget { border: 1px solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
+            .wallstreet.fixed-widget button{ background-color:<?php the_additional_rgba($link_color, $alpha = 0.15); ?>; }
 
             @media only screen and (min-width: 480px) and (max-width: 767px) {
                 .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, 
