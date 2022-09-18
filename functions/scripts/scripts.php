@@ -74,7 +74,7 @@ function theme_jquery_scripts() {
     wp_enqueue_script("djs",                        THEME_ASSETS_PATH_URI . "/js/djs.js");
 
     if ($current_options["parallaxbackground_enabled"]) {
-        wp_enqueue_script("parallax",               THEME_ASSETS_PATH_URI . "/js/parallax/enabled.js");
+        wp_enqueue_script("parallax-enabled",               THEME_ASSETS_PATH_URI . "/js/parallax/enabled.js");
     }
 
     if (class_exists("WooCommerce")) {
