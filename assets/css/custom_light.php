@@ -107,7 +107,7 @@ function custom_light() {
                 color: <?php echo $link_color; ?>;
             }
             .page_scrollup {
-                background-color: <?php echo $link_color; ?>;
+                background-color: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important;
             }
             .team1 .team-img .overlay{background-color: <?php the_reduced_rgba($link_color, $alpha = 0.85); ?>;}
             .search-form input[type="submit"] {

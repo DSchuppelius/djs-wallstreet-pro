@@ -57,7 +57,7 @@ if (show_rellax_div()){ ?></div><?php } ?>
 				<?php } ?>	
 			</div>
 			<?php if ($current_options["scroll_to_top_enabled"] == true) { ?>
-				<a href="#" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
+				<a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
 			<?php } ?>
 		</div>
 		<script> var rellax = new Rellax('.rellax'); </script>
