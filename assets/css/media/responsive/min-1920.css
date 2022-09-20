@@ -13,6 +13,11 @@
     width: 800px
 }
 
+    .blog-detail-section article section figure.wp-block-embed iframe:not(.wp-embedded-content),
+    .archive article section figure.wp-block-embed iframe:not(.wp-embedded-content) {
+        height: unset;
+    }
+
 .blog-form-group {
     width: 49.15%;
 }
