@@ -148,6 +148,10 @@ article section {
         max-width: 100%
     }
 
+    article section.excerpt pre {
+        max-height: 360px;
+    }
+
 span[id^='more'] {
     display: block;
     position: relative;
