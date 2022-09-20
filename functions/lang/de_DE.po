@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-20 21:09+0200\n"
-"PO-Revision-Date: 2022-09-20 21:12+0200\n"
+"POT-Creation-Date: 2022-09-20 21:33+0200\n"
+"PO-Revision-Date: 2022-09-20 21:35+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -202,7 +202,7 @@ msgstr "Schreiben Sie einen Kommentar"
 msgid "Leave a Reply to %s"
 msgstr "Schreiben Sie einen Kommentar zu %s"
 
-#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:122
+#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -311,6 +311,11 @@ msgstr "Archiv nach Kategorie"
 msgid "Search results for"
 msgstr "Suchergebnisse für"
 
+#: functions/breadcrumbs/breadcrumbs.php:74
+#: functions/breadcrumbs/breadcrumbs.php:118
+msgid "Archive"
+msgstr "Archiv"
+
 #: functions/breadcrumbs/breadcrumbs.php:110
 msgid "Posts tagged"
 msgstr "Markierte Beitr&auml;ge"
@@ -318,6 +323,10 @@ msgstr "Markierte Beitr&auml;ge"
 #: functions/breadcrumbs/breadcrumbs.php:114
 msgid "Articles posted by"
 msgstr "Beitr&auml;ge von"
+
+#: functions/breadcrumbs/breadcrumbs.php:120
+msgid "Unknown"
+msgstr "Unbekannt"
 
 #: functions/customizer/customizer-blog.php:13
 msgid "Home blog settings"

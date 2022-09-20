@@ -71,7 +71,7 @@ function qt_custom_breadcrumbs() {
             if (!empty($post_type)) {
                 echo $before . $post_type->labels->singular_name . $after;
             } else {
-                echo $before . "Archiv" . $after;
+                echo $before . __("Archive", "wallstreet") . $after;
             }
         } elseif (is_attachment()) {
             $parent = get_post($post->post_parent);
@@ -114,6 +114,10 @@ function qt_custom_breadcrumbs() {
             echo $before . __("Articles posted by", "wallstreet") . " " . $userdata->display_name . $after;
         } elseif (is_404()) {
             echo $before . __("Error 404", "wallstreet") . $after;
+        } elseif (is_archive()) {
+            echo $before . __("Archive", "wallstreet") . '<span class="material-icons-outlined">archive</span>' . $after;
+        } else {
+            echo $before . __("Unknown", "wallstreet") . '<span class="material-icons-outlined">device_unknown</span>' . $after;
         }
         if (get_query_var("paged")) {
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {

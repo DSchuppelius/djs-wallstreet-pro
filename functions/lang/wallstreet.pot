@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-09-20 21:09+0200\n"
+"POT-Creation-Date: 2022-09-20 21:33+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:122
+#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -291,12 +291,21 @@ msgstr ""
 msgid "Search results for"
 msgstr ""
 
+#: functions/breadcrumbs/breadcrumbs.php:74
+#: functions/breadcrumbs/breadcrumbs.php:118
+msgid "Archive"
+msgstr ""
+
 #: functions/breadcrumbs/breadcrumbs.php:110
 msgid "Posts tagged"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:114
 msgid "Articles posted by"
+msgstr ""
+
+#: functions/breadcrumbs/breadcrumbs.php:120
+msgid "Unknown"
 msgstr ""
 
 #: functions/customizer/customizer-blog.php:13
