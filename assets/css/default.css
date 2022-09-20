@@ -15,6 +15,10 @@ article figure figcaption a {
     color: #f5f5f5
 }
 
+pre, pre code {
+    background-color: #2b2b2b;
+}
+
 #blogdetail_btn {
     color: #FFF
 }
@@ -1642,6 +1646,14 @@ footer.site {
     border: 1px solid #eee !important
 }
 
+.tablepress .odd td {
+    background-color: #222 !important;
+}
+
+.tablepress .even td {
+    background-color: #444 !important;
+}
+
 .team-area {
     background: none repeat scroll 0 0 rgba(0,0,0,0);
     border: 1px solid #9da0aa
@@ -1845,6 +1857,27 @@ footer.site {
 
 .warning.java {
     color: white;
+}
+
+.widerruf form textarea {
+    color: #000;
+}
+
+.widerruf td.input input,
+.widerruf td.input textarea {
+    color: #e5e5e5;
+    background-color: transparent;
+    border: 1px solid #7b7f8c;
+}
+
+.widerruf td select {
+    color: #e5e5e5;
+    background-color: transparent;
+    border: 1px solid #7b7f8c;
+}
+
+.widerruf form input[type="submit"] {
+    background-color: #ff8a00;
 }
 
 .wc-block-product-search .wc-block-product-search__button {

@@ -60,8 +60,8 @@ body.fixed_Footer .grecaptcha-badge {
     border-bottom-left-radius: 50% var(--main-slider-radius);
 }
 
-    .homepage_mycarousel div.flexslider{
-        max-height:800px
+    .homepage_mycarousel div.flexslider {
+        max-height: 800px
     }
 
     .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .page-mycarousel img {
@@ -94,6 +94,14 @@ body.fixed_Footer .grecaptcha-badge {
     border-radius: var(--border-base);
 }
 /*Homepage Portfolio Section------------------------------------------------------------------*/
+.portfolio-detail-description,
+.home-blog-description,
+.media.features-area,
+.service-area p,
+.blog-author {
+    text-align: justify;
+}
+
 .portfolio-section {
     border-top: var(--border-base) solid rgb(0,0,0);
     border-top: var(--border-base) solid rgba(0,0,0,0.4);
@@ -194,7 +202,7 @@ body.fixed_Footer .grecaptcha-badge {
     border-radius: var(--border-smallbase);
 }
 
-.page-full-width .row.with_background.bigborder .col-md-12 > div, 
+.page-full-width .row.with_background.bigborder .col-md-12 > div,
 .attachment .row.with_background.bigborder .col-md-12 img,
 .about-us .row.with_background.bigborder .wp-post-image {
     border-radius: var(--border-verysmallbase);
@@ -585,7 +593,6 @@ footer.site.fixed:hover {
         border: 1em solid rgba(0,0,0,0.4);
     }
 
-
 .row.no_background .team-area.bigborder {
     border: 1em solid rgba(0,0,0,0.2);
 }
@@ -651,3 +658,35 @@ footer.site.fixed:hover {
 has-text-align-center {
     text-align: center;
 }
+
+.b-r025 {
+    border-radius: 0.25em;
+}
+
+.b-r05 {
+    border-radius: 0.5em;
+}
+
+.widerruf form input,
+.widerruf form select {
+    height: 35px;
+}
+
+    .widerruf form input[type="checkbox"] {
+        height: 13px;
+    }
+
+.widerruf table {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0px;
+}
+
+    .widerruf table td {
+        padding: 10px;
+    }
+
+        .widerruf table td.input input,
+        .widerruf table td.input textarea {
+            width: 100%;
+        }

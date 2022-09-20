@@ -109,6 +109,7 @@ article .wp-block-image figure {
     article figure:not(.wp-block-embed) figcaption {
         margin: 10px auto 0px;
     }
+
     article figure.wp-block-embed figcaption {
         margin: 0 auto;
     }
@@ -140,6 +141,13 @@ article ol, article ul {
 
 article section img {
     max-width: 100%
+}
+
+span[id^='more'] {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
 }
 
 .about-section {
@@ -747,7 +755,7 @@ article section img {
 .blog-post-title-wrapper figure video, .blog-post-title-wrapper figure iframe, .blog-post-title-wrapper figure img, .blog-post-title-wrapper figure figcaption, .blog-post-title-wrapper .wp-block-image, .blog-post-title-wrapper .wp-block-image img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img, #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post span {
     border-radius: 0.2em;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     max-width: 100%
 }
 
@@ -1072,7 +1080,7 @@ article section img {
     margin-right: 0
 }
 
-    .comment-form-section .comment-respond ~ p{
+    .comment-form-section .comment-respond ~ p {
         margin-top: 30px
     }
 
