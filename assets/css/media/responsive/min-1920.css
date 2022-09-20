@@ -9,9 +9,13 @@
 
 .blog-detail-section article section figure.wp-block-embed iframe,
 .archive article section figure.wp-block-embed iframe {
-    height: 480px;
     width: 800px
 }
+
+    .blog-detail-section article section figure.wp-block-embed iframe:not(.wp-embedded-content),
+    .archive article section figure.wp-block-embed iframe:not(.wp-embedded-content) {
+        height: 480px;
+    }
 
 .blog-form-group {
     width: 49.15%;
