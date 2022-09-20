@@ -17,6 +17,10 @@
         $content = get_the_content();
         if (has_block("core/paragraph", $content)) {
             twenty_twenty_one_print_first_instance_of_block("core/paragraph", $content);
+        } elseif (has_block("core/embed", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/embed", $content);
+        } elseif (has_block("core-embed/*", $content)){
+            twenty_twenty_one_print_first_instance_of_block("core-embed/*", $content);
         } else {
             the_excerpt();
         }

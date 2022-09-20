@@ -33,6 +33,9 @@ function get_content_title() {
         case "image":
             $output .= __("Image", "wallstreet");
             break;
+        case "link":
+            $output .= __("Link", "wallstreet");
+            break;
         case "quote":
             $output .= __("Quote", "wallstreet");
             break;

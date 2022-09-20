@@ -88,6 +88,10 @@ article .wp-block-image figure {
     margin-bottom: 10px;
 }
 
+article blockquote{
+    width:100%;
+}
+
     article figure > div {
         display: flex;
         justify-content: center
