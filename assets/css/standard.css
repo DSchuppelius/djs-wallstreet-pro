@@ -94,14 +94,6 @@ body.fixed_Footer .grecaptcha-badge {
     border-radius: var(--border-base);
 }
 /*Homepage Portfolio Section------------------------------------------------------------------*/
-.portfolio-detail-description,
-.home-blog-description,
-.media.features-area,
-.service-area p,
-.blog-author {
-    text-align: justify;
-}
-
 .portfolio-section {
     border-top: var(--border-base) solid rgb(0,0,0);
     border-top: var(--border-base) solid rgba(0,0,0,0.4);
@@ -164,6 +156,12 @@ body.fixed_Footer .grecaptcha-badge {
     border-bottom-left-radius: 0px;
 }
 
+.portfolio-detail-description,
+.home-blog-description,
+.media.features-area,
+.service-area p {
+    text-align: justify;
+}
 
 /*Blog Section Css----------------------------------------------------------------------------*/
 .col-md-4.col-sm-4.first_column div.home-blog-area {
