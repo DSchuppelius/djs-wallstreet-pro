@@ -140,17 +140,13 @@ article ol, article ul {
 }
 
 article section {
-    display: block;
+    display: grid;
 }
 
-    article section > div {
-        display: grid;
+    article section pre,
+    article section img {
+        max-width: 100%
     }
-
-        article section > div pre,
-        article section > div img {
-            max-width: 100%
-        }
 
 span[id^='more'] {
     display: block;

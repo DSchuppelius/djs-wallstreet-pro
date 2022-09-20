@@ -11,19 +11,15 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section>
-    <p>
-        <?php
-        $content = get_the_content();
-        if (has_block("core/paragraph", $content)) {
-            twenty_twenty_one_print_first_instance_of_block("core/paragraph", $content);
-        } elseif (has_block("core/embed", $content)) {
-            twenty_twenty_one_print_first_instance_of_block("core/embed", $content);
-        } elseif (has_block("core-embed/*", $content)){
-            twenty_twenty_one_print_first_instance_of_block("core-embed/*", $content);
-        } else {
-            the_excerpt();
-        }
-        ?>
-    </p>
+<section class="excerpt link">
+    <?php $content = get_the_content();
+    if (has_block("core/paragraph", $content)) {
+        twenty_twenty_one_print_first_instance_of_block("core/paragraph", $content);
+    } elseif (has_block("core/embed", $content)) {
+        twenty_twenty_one_print_first_instance_of_block("core/embed", $content);
+    } elseif (has_block("core-embed/*", $content)){
+        twenty_twenty_one_print_first_instance_of_block("core-embed/*", $content);
+    } else {
+        the_excerpt();
+    } ?>
 </section>

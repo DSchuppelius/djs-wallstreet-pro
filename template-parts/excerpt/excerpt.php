@@ -11,7 +11,7 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section>
-    <div class="excerpt"><?php echo the_content(); ?></div>
+<section class="excerpt">
+    <?php echo the_content(); ?>
 </section>
 

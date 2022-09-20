@@ -16,8 +16,8 @@ if (has_post_format("status")) {
     <header>
         <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
     </header>
-    <section>
-        <div class="content single"><?php the_content(); ?></div>
+    <section class="content single">
+        <?php the_content(); ?>
     </section>
 <?php }
 get_named_template_parts("template-parts/content/content", ["meta-footer", "footer"]);
