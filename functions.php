@@ -27,7 +27,6 @@ require_once THEME_FUNCTIONS_PATH . "/font/font.php";
 require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
 require_once THEME_FUNCTIONS_PATH . "/meta-box/post-meta.php";
 require_once THEME_FUNCTIONS_PATH . "/taxonomies/taxonomies.php";
-require_once THEME_FUNCTIONS_PATH . "/widget/custom-sidebar.php";
 require_once THEME_FUNCTIONS_PATH . "/breadcrumbs/breadcrumbs.php";
 require_once THEME_FUNCTIONS_PATH . "/testimonials/testimonials.php";
 require_once THEME_FUNCTIONS_PATH . "/post-type/custom-post-types.php";
@@ -43,7 +42,9 @@ require_once THEME_FUNCTIONS_PATH . "/basic/generator.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/htmlclasses.php";
 
 // Sidebar Widgets
+require_once THEME_FUNCTIONS_PATH . "/widget/custom-sidebar.php";
 require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-latest-widget.php";
+require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-post-format-widget.php";
 // Shortcodes
 require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
 

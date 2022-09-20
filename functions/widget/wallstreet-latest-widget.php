@@ -1,7 +1,7 @@
 <?php
 /*
  * Created on   : Wed Jun 22 2022
- * Author       : Daniel Jörg Schuppelius
+ * Author       : Daniel JÃ¶rg Schuppelius
  * Author Uri   : https://schuppelius.org
  * Filename     : wallstreet_latest_widget.php
  * License      : GNU General Public License v3 or later
@@ -24,7 +24,7 @@ class wallstreet_latest_widget extends WP_Widget {
         parent::__construct(
             "wallstreet_latest_widget",
             __("WBR : Latest Posts", "wallstreet"),
-            [ "description" => __("This widget allows you to display latest, popular and commented posts.", "wallstreet"), ]
+            ["description" => __("This widget allows you to display latest, popular and commented posts.", "wallstreet")]
         );
     }
 

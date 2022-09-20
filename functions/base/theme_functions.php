@@ -119,6 +119,11 @@ function contains_page_templates($templates) {
     return false;
 }
 
+function is_loaded_template($my_template){
+    global $template;
+    return basename($template) === $my_template;
+}
+
 function show_rellax_div() {
     global $loaded_banner;
 

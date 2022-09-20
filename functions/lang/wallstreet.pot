@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-09-20 10:56+0200\n"
+"POT-Creation-Date: 2022-09-20 21:09+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Linked post"
 msgstr ""
 
-#: attachment.php:64 functions.php:188 functions/basic/blog.php:93 index.php:31
+#: attachment.php:64 functions.php:189 functions/basic/blog.php:93 index.php:31
 #: template-parts/content/content.php:17
 #: template-parts/home/service/servic-1.php:111
 #: template-parts/home/service/servic-2.php:98
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: functions.php:93 functions/breadcrumbs/breadcrumbs.php:122
+#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:122
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -190,26 +190,26 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:127
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:132
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:198 functions/customizer/customizer-social.php:97
+#: functions.php:199 functions/customizer/customizer-social.php:97
 #: functions/meta-box/post-meta.php:136 functions/meta-box/post-meta.php:137
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:199 functions/customizer/customizer-social.php:72
+#: functions.php:200 functions/customizer/customizer-social.php:72
 #: functions/meta-box/post-meta.php:152 functions/meta-box/post-meta.php:153
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:200 functions/customizer/customizer-social.php:122
+#: functions.php:201 functions/customizer/customizer-social.php:122
 #: functions/meta-box/post-meta.php:148 functions/meta-box/post-meta.php:149
 msgid "LinkedIn URL"
 msgstr ""
@@ -241,19 +241,27 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: functions/base/get_content_title.php:37
-msgid "Quote"
+#: functions/base/get_content_title.php:37 functions/meta-box/post-meta.php:40
+#: functions/meta-box/post-meta.php:61 functions/meta-box/post-meta.php:62
+#: functions/meta-box/post-meta.php:79 functions/meta-box/post-meta.php:80
+#: functions/meta-box/post-meta.php:162 functions/meta-box/post-meta.php:163
+#: functions/meta-box/post-meta.php:173 functions/meta-box/post-meta.php:174
+msgid "Link"
 msgstr ""
 
 #: functions/base/get_content_title.php:40
-msgid "Status"
+msgid "Quote"
 msgstr ""
 
 #: functions/base/get_content_title.php:43
-msgid "Story"
+msgid "Status"
 msgstr ""
 
 #: functions/base/get_content_title.php:46
+msgid "Story"
+msgstr ""
+
+#: functions/base/get_content_title.php:49
 msgid "Blog Post"
 msgstr ""
 
@@ -1751,14 +1759,6 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: functions/meta-box/post-meta.php:40 functions/meta-box/post-meta.php:61
-#: functions/meta-box/post-meta.php:62 functions/meta-box/post-meta.php:79
-#: functions/meta-box/post-meta.php:80 functions/meta-box/post-meta.php:162
-#: functions/meta-box/post-meta.php:163 functions/meta-box/post-meta.php:173
-#: functions/meta-box/post-meta.php:174
-msgid "Link"
-msgstr ""
-
 #: functions/meta-box/post-meta.php:55
 msgid "(Using font awesome icons name) like:"
 msgstr ""
@@ -2041,6 +2041,90 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
+#: functions/widget/wallstreet-post-format-widget.php:21
+msgid "Post Format Archives"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:22
+msgid "Displays a list of links to post-format archives"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:76
+msgid "Browse the site"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:77
+msgid "View Aside posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:78
+msgid "View Image posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:79
+msgid "View Link posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:80
+msgid "View Quote posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:81
+msgid "View Status posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:82
+msgid "View Gallery posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:83
+msgid "View Video posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:84
+msgid "View Chat posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:85
+msgid "View Audio posts"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:103
+msgid "Link text for Aside archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:106
+msgid "Link text for Image archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:109
+msgid "Link text for Link archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:112
+msgid "Link text for Quote archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:115
+msgid "Link text for Status archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:118
+msgid "Link text for Gallery archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:121
+msgid "Link text for Video archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:124
+msgid "Link text for Chat archive"
+msgstr ""
+
+#: functions/widget/wallstreet-post-format-widget.php:127
+msgid "Link text for Audio archive"
+msgstr ""
+
 #: header.php:127 searchform.php:13 template-parts/global/menu-search.php:15
 #: template-parts/global/menu-search.php:21
 #: template-parts/global/menu-search.php:23
@@ -2051,7 +2135,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: search.php:26 template-parts/index/index-banner.php:81
+#: search.php:26 template-parts/index/index-banner.php:120
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
@@ -2158,29 +2242,70 @@ msgstr ""
 msgid "Responsive designs"
 msgstr ""
 
+#: template-parts/index/index-banner.php:43
+#, php-format
+msgid "Category Archive: %s"
+msgstr ""
+
 #: template-parts/index/index-banner.php:47
 #, php-format
-msgid "Tag Archive %s"
+msgid "Tag Archive: %s"
 msgstr ""
 
 #: template-parts/index/index-banner.php:51
 #, php-format
-msgid "Author Archive %s"
+msgid "Author Archive: %s"
 msgstr ""
 
-#: template-parts/index/index-banner.php:56
-msgid "Daily Archive"
+#: template-parts/index/index-banner.php:57
+msgid "Aside Archives"
 msgstr ""
 
-#: template-parts/index/index-banner.php:59
-msgid "Monthly Archive"
-msgstr ""
-
-#: template-parts/index/index-banner.php:62
-msgid "Yearly Archive"
+#: template-parts/index/index-banner.php:61
+msgid "Audio Archives"
 msgstr ""
 
 #: template-parts/index/index-banner.php:65
+msgid "Chat Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:69
+msgid "Gallery Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:73
+msgid "Image Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:77
+msgid "Link Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:81
+msgid "Quote Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:85
+msgid "Status Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:89
+msgid "Video Archives"
+msgstr ""
+
+#: template-parts/index/index-banner.php:94
+msgid "Daily Archive"
+msgstr ""
+
+#: template-parts/index/index-banner.php:97
+msgid "Monthly Archive"
+msgstr ""
+
+#: template-parts/index/index-banner.php:100
+msgid "Yearly Archive"
+msgstr ""
+
+#: template-parts/index/index-banner.php:103
 msgid "Blog Archive"
 msgstr ""
 
@@ -2334,4 +2459,8 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://schuppelius.org"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "archive.php"
 msgstr ""
