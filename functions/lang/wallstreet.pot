@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-09-18 20:17+0200\n"
+"POT-Creation-Date: 2022-09-20 10:56+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1929,7 +1929,7 @@ msgstr ""
 msgid "Search Testimonials"
 msgstr ""
 
-#: functions/shortcodes/shortcodes.php:23
+#: functions/shortcodes/shortcodes.php:24
 msgid "%y year(s) - %m month"
 msgstr ""
 
@@ -1979,6 +1979,23 @@ msgstr ""
 
 #: functions/shortcodes/shortcodes_iframe.php:83
 msgid "List"
+msgstr ""
+
+#: functions/shortcodes/shortcodes_jetpack.php:28
+msgid "visits"
+msgstr ""
+
+#: functions/shortcodes/shortcodes_jetpack.php:30
+msgid "not enabled"
+msgstr ""
+
+#: functions/shortcodes/shortcodes_jetpack.php:33
+#: functions/shortcodes/shortcodes_jetpack.php:58
+msgid "nonexistent"
+msgstr ""
+
+#: functions/shortcodes/shortcodes_jetpack.php:56
+msgid "messages"
 msgstr ""
 
 #: functions/taxonomies/taxonomies.php:18

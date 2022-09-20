@@ -10,6 +10,7 @@
 if (defined("WP_ADMIN") && WP_ADMIN) require_once "shortcode_popup.php";
 
 require_once "shortcodes_div.php";
+require_once "shortcodes_jetpack.php";
 
 function ageOF($atts, $content = null) {
     $current_options = get_current_options();

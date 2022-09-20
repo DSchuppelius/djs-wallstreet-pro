@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-18 20:17+0200\n"
-"PO-Revision-Date: 2022-09-18 20:32+0200\n"
+"POT-Creation-Date: 2022-09-20 10:56+0200\n"
+"PO-Revision-Date: 2022-09-20 10:58+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -766,16 +766,12 @@ msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
 #: functions/customizer/customizer-global.php:185
-#, fuzzy
-#| msgid "Enable/Disable Big Border"
 msgid "Enable Big Border"
-msgstr "Aktivieren/Deaktivieren der großen Rahmen"
+msgstr "Aktivieren/Deaktivieren der dicken Rahmen"
 
 #: functions/customizer/customizer-global.php:197
-#, fuzzy
-#| msgid "Enable Parallax Header"
 msgid "Enable Fader on Pageload"
-msgstr "Parallaxenheader aktivieren"
+msgstr "Fader beim Laden aktivieren"
 
 #: functions/customizer/customizer-global.php:209
 msgid "Enable frame on pages"
@@ -2015,7 +2011,7 @@ msgstr "Alle Referenzen"
 msgid "Search Testimonials"
 msgstr "Referenzen suchen"
 
-#: functions/shortcodes/shortcodes.php:23
+#: functions/shortcodes/shortcodes.php:24
 msgid "%y year(s) - %m month"
 msgstr "%y Jahr(e) - %m Monat(e)"
 
@@ -2066,6 +2062,23 @@ msgstr "Tooltip"
 #: functions/shortcodes/shortcodes_iframe.php:83
 msgid "List"
 msgstr "Liste"
+
+#: functions/shortcodes/shortcodes_jetpack.php:28
+msgid "visits"
+msgstr "Besuche"
+
+#: functions/shortcodes/shortcodes_jetpack.php:30
+msgid "not enabled"
+msgstr "nicht aktiviert"
+
+#: functions/shortcodes/shortcodes_jetpack.php:33
+#: functions/shortcodes/shortcodes_jetpack.php:58
+msgid "nonexistent"
+msgstr "nicht vorhanden"
+
+#: functions/shortcodes/shortcodes_jetpack.php:56
+msgid "messages"
+msgstr "Nachrichten"
 
 #: functions/taxonomies/taxonomies.php:18
 msgid "Portfolio Categories"
