@@ -16,6 +16,7 @@ article figure figcaption a {
 }
 
 pre, pre code {
+    color: #e5e5e5;
     background-color: #2b2b2b;
 }
 

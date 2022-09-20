@@ -139,9 +139,14 @@ article ol, article ul {
     margin-bottom: 20px
 }
 
-article section img {
-    max-width: 100%
+article section {
+    display: grid;
 }
+
+    article section pre,
+    article section img {
+        max-width: 100%
+    }
 
 span[id^='more'] {
     display: block;
