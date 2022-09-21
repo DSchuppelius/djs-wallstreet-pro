@@ -229,7 +229,7 @@ function theme_data_setup() {
         "home_blog_design" => 1,
 
         //Blog Meta
-        "blog_template_content_excerpt_get_setting" => "content",
+        "blog_template_content_excerpt_get_setting" => "excerpt",
         "blog_template_content_excerpt_length" => 275,
         "blog_template_read_more" => "Read More",
         "home_meta_section_settings" => false,

@@ -104,7 +104,7 @@ function qt_custom_breadcrumbs() {
                 }
             }
             if ($showCurrent == 1) {
-                echo $delimiter . $before . get_the_title() . $after;
+                echo $before . get_the_title() . $after;
             }
         } elseif (is_tag()) {
             echo $before . __("Posts tagged", "wallstreet") . ': "' . single_tag_title("", false) . '"' . $after;
