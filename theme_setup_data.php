@@ -231,7 +231,7 @@ function theme_data_setup() {
         //Blog Meta
         "blog_template_content_excerpt_get_setting" => "excerpt",
         "blog_template_content_excerpt_length" => 275,
-        "blog_template_read_more" => "Read More",
+        "blog_template_read_more" => __("Read More", "wallstreet"),
         "home_meta_section_settings" => false,
         "blog_meta_section_settings" => false,
         "page_meta_section_settings" => false,
