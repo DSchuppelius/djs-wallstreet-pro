@@ -179,24 +179,24 @@ function wallstreet_template_customizer($wp_customize) {
         "section" => "testi_page_template",
     ]);
     //Blog template setting
-    $wp_customize->add_section("blog_template_content_excerpt_seting", [
+    $wp_customize->add_section("blog_template_content_excerpt_setting", [
         "title" => __("Blog template data setting", "wallstreet"),
         "panel" => "wallstreet_template",
         "priority" => 149,
     ]);
 
-    $wp_customize->add_setting("wallstreet_pro_options[blog_template_content_excerpt_get_seting]", [
-        "default" => "content",
+    $wp_customize->add_setting("wallstreet_pro_options[blog_template_content_excerpt_get_setting]", [
+        "default" => "excerpt",
         "capability" => "edit_theme_options",
         "type" => "option",
     ]);
-    $wp_customize->add_control("wallstreet_pro_options[blog_template_content_excerpt_get_seting]", [
-        "label" => __("From which format do you want to display data", "wallstreet"),
-        "section" => "blog_template_content_excerpt_seting",
+    $wp_customize->add_control("wallstreet_pro_options[blog_template_content_excerpt_get_setting]", [
+        "label" => __("From which format do you want to display data on Archive Pages?", "wallstreet"),
+        "section" => "blog_template_content_excerpt_setting",
         "type" => "radio",
         "choices" => [
-            "excert" => "Excerpt Data",
-            "content" => "Content Data",
+            "excerpt" => __("Summary", "wallstreet"),
+            "complete" => __("Full text", "wallstreet"),
         ],
     ]);
     $wp_customize->add_setting("wallstreet_pro_options[blog_template_content_excerpt_length]", [
@@ -206,7 +206,7 @@ function wallstreet_template_customizer($wp_customize) {
     ]);
     $wp_customize->add_control("wallstreet_pro_options[blog_template_content_excerpt_length]", [
         "label" => __("Excerpt length only for excerpt option", "wallstreet"),
-        "section" => "blog_template_content_excerpt_seting",
+        "section" => "blog_template_content_excerpt_setting",
         "type" => "number",
         "input_attrs" => [
             "min" => "1",
@@ -215,13 +215,13 @@ function wallstreet_template_customizer($wp_customize) {
         ],
     ]);
     $wp_customize->add_setting("wallstreet_pro_options[blog_template_read_more]", [
-        "default" => "Read More",
+        "default" => __("Read More", "wallstreet"),
         "capability" => "edit_theme_options",
         "type" => "option",
     ]);
     $wp_customize->add_control("wallstreet_pro_options[blog_template_read_more]", [
         "label" => __("Read more button text", "wallstreet"),
-        "section" => "blog_template_content_excerpt_seting",
+        "section" => "blog_template_content_excerpt_setting",
         "type" => "text",
     ]);
     //enable/disable blog post meta content

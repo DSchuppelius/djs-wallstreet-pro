@@ -11,15 +11,17 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section class="excerpt video">
-    <?php $content = get_the_content();
-    if (has_block("core/video", $content)) {
-        twenty_twenty_one_print_first_instance_of_block("core/video", $content);
-    } elseif (has_block("core/embed", $content)) {
-        twenty_twenty_one_print_first_instance_of_block("core/embed", $content);
-    } elseif (has_block("core-embed/*", $content)){
-        twenty_twenty_one_print_first_instance_of_block("core-embed/*", $content);
-    } else {
-        the_content();
-    } ?>
+<section class="excerpt-section video">
+    <div class="excerpt">
+        <?php $content = get_the_content();
+        if (has_block("core/video", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/video", $content);
+        } elseif (has_block("core/embed", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/embed", $content);
+        } elseif (has_block("core-embed/*", $content)){
+            twenty_twenty_one_print_first_instance_of_block("core-embed/*", $content);
+        } else {
+            the_content();
+        } ?>
+    </div>
 </section>

@@ -24,6 +24,7 @@ require_once THEME_FUNCTIONS_PATH . "/base/theme_colors.php";
 require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
 require_once THEME_FUNCTIONS_PATH . "/font/font.php";
 
+require_once THEME_FUNCTIONS_PATH . "/content/content.php";
 require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
 require_once THEME_FUNCTIONS_PATH . "/meta-box/post-meta.php";
 require_once THEME_FUNCTIONS_PATH . "/taxonomies/taxonomies.php";
@@ -183,18 +184,6 @@ function kb_mimes($my_mime){
 }
 add_filter( 'upload_mimes', 'kb_mimes' );
 
-// Read more tag to formatting in blog page
-function form_more_button($more = "") {
-    global $post;
-    $more_text = empty($more) ? __("Read More", "wallstreet") : $more;
-    return '<form action="' . get_permalink() . "#more-" . $post->ID . '"><button class="btn more blog-btn" type="submit" >' . $more_text . "</button></form>";
-}
-
-function new_content_more($more) {
-    return form_more_button();
-}
-add_filter("the_content_more_link", "new_content_more");
-
 function add_to_author_profile($contactmethods) {
     $contactmethods["facebook_profile"] = __("Facebook URL", "wallstreet");
     $contactmethods["twitter_profile"] = __("Twitter URL", "wallstreet");
@@ -218,14 +207,6 @@ function prev_posts_link_attributes() {
   return 'class="btn prev"';
 }
 add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
-
-function content_width() {
-    global $content_width;
-    if (is_page_template("template/blog-fullwidth.php")) {
-        $content_width = 950;
-    }
-}
-add_action("template_redirect", "content_width");
 
 function mfields_set_default_object_terms($post_id, $post) {
     if ("publish" == $post->post_status && $post->post_type == PORTFOLIO_POST_TYPE) {

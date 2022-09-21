@@ -27,7 +27,7 @@ $theme_blog_section = "blog-section-left";
 				</h1>
 				<?php while (have_posts()) {
                     the_post();
-                    get_template_part("template-parts/content/content", get_theme_mod("display_excerpt_or_full_post", "excerpt"));
+                    get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]);
                 } ?>
 				<?php if($wp_query->found_posts > 1) { ?>
 				<div class="blog-pagination">

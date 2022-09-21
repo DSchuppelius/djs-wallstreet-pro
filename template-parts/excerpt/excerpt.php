@@ -11,7 +11,23 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section class="excerpt">
-    <?php echo the_content(); ?>
+<section class="excerpt-section">
+    <div class="excerpt">
+        <?php $content = get_the_content();
+        if(strpos($content, form_more_button()) !== false) {
+            echo $content;
+        } else {
+            $excerpt = get_the_excerpt();
+            $excerpt_length = strlen($excerpt);
+            $content_length = strlen($content);
+            if(strlen($excerpt) > 0){
+                the_excerpt();
+                if($excerpt_length<$content_length)
+                    the_read_more();
+            } else {
+            	the_content();
+            }   
+        } ?>
+    </div>
 </section>
 

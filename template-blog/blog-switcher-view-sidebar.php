@@ -68,7 +68,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                     $post_type_data->the_post();
                     $more = 0; ?>
                     <div class="blog-section-left blog-list-view <?php echo ($switcher % 2 == 0) ? "right" : "left"; ?>">
-                        <?php get_template_part("template-parts/content/content", get_theme_mod("display_excerpt_or_full_post", "excerpt")); ?>
+                        <?php get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]); ?>
                     </div>
                     <?php $switcher++;
                     $first_post = false;

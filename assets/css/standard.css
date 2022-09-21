@@ -688,3 +688,7 @@ has-text-align-center {
         .widerruf table td.input textarea {
             width: 100%;
         }
+
+.word-break {
+    word-break: break-word;
+}

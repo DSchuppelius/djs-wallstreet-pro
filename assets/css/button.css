@@ -577,7 +577,7 @@ a.btn.tab {
         border: 0.2em solid rgb(55,57,65)
     }
 
-    .blog-pagination a,
+    .blog-pagination a:not(.btn.next, .btn.prev),
     .page-links a,
     .blog-pagination span,
     .page-numbers {

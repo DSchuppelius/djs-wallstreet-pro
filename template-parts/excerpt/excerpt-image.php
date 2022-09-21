@@ -11,11 +11,13 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section class="excerpt image">
-    <?php $content = get_the_content();
-    if (has_block("core/image", $content)) {
-        twenty_twenty_one_print_first_instance_of_block("core/image", $content);
-    } else {
-        the_excerpt();
-    } ?>
+<section class="excerpt-section image">
+    <div class="excerpt">
+        <?php $content = get_the_content();
+        if (has_block("core/image", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/image", $content);
+        } else {
+            the_excerpt();
+        } ?>
+    </div>
 </section>

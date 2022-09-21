@@ -25,7 +25,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 		<?php } ?>
 				<main class="content-section <?php echo $current_options["addflexelements"] ? "with_filler" : "no_filler"; ?>">
 					<?php the_post(); ?>
-					<?php get_template_part("template-parts/content/content", get_theme_mod("display_excerpt_or_full_post", "excerpt")); ?>
+					<?php get_template_part("template-parts/content/content", "complete"); ?>
 				</main>
 				<?php comments_template("", true); ?>
 				<?php if ($current_options["addflexelements"]) { ?>

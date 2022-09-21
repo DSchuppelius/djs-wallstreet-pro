@@ -11,13 +11,15 @@
 <header>
     <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
 </header>
-<section class="excerpt quote">
-    <?php $content = get_the_content();
-    if (has_block("core/quote", $content)) {
-        twenty_twenty_one_print_first_instance_of_block("core/quote", $content);
-    } elseif (has_block("core/pullquote", $content)) {
-        twenty_twenty_one_print_first_instance_of_block("core/pullquote", $content);
-    } else {
-        the_excerpt();
-    } ?>
+<section class="excerpt-section quote">
+    <div class="excerpt">
+        <?php $content = get_the_content();
+        if (has_block("core/quote", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/quote", $content);
+        } elseif (has_block("core/pullquote", $content)) {
+            twenty_twenty_one_print_first_instance_of_block("core/pullquote", $content);
+        } else {
+            the_content();
+        } ?>
+    </div>
 </section>

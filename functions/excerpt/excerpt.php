@@ -24,10 +24,11 @@ function get_comment_sidebar($excerpt) {
 }
 
 function get_home_blog_excerpt($length, $read) {
-    $excerpt = get_the_content();
+    $excerpt = get_the_excerpt();
     $excerpt = strip_all($excerpt);
     $original_len = strlen($excerpt);
     $excerpt = substr($excerpt, 0, $length);
+
     if ($original_len > $length) {
         $excerpt = $excerpt . get_the_read_more();
     }
@@ -53,6 +54,7 @@ function get_only_post_blog_excerpt($length) {
     $excerpt = get_the_excerpt();
     $excerpt = strip_all($excerpt);
     $excerpt = substr($excerpt, 0, $length);
+    
     return $excerpt;
 }
 

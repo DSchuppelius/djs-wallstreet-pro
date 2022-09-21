@@ -88,35 +88,5 @@ function twenty_twenty_one_can_show_post_thumbnail() {
      */
     return apply_filters("twenty_twenty_one_can_show_post_thumbnail", !post_password_required() && !is_attachment() && has_post_thumbnail());
 }
-
-function get_the_read_more($class = 'blog-btn-col') {
-    return '<div class="' . $class . '"><form action"' . get_the_permalink() . '"><button class="btn more" type="submit" >' . __("Read More", "wallstreet") . '</button></form></div>';
-}
-
-function the_read_more($class = 'blog-btn-col') {
-    echo get_the_read_more($class);
-}
-
-function get_the_show_all($link, $text, $target = false, $button_class = "more blog") {
-    $result = "";
-
-    if(!empty($text) && !empty($link)) {
-        $action = 'action="' . $link . '" ' . get_blank_target($target, 'method="get"');
-        $result =
-            '<div class ="row">
-                <div class="show-all-btn">
-                    <form ' . $action . '>
-                        <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
-                    </form>
-                </div>
-            </div>';
-    }
-
-    return $result;
-}
-
-function the_show_all($link, $text, $target = false, $button_class = "more blog") {
-    echo get_the_show_all($link, $text, $target, $button_class);
-}
 ?>
 

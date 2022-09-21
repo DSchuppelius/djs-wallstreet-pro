@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-09-20 21:33+0200\n"
+"POT-Creation-Date: 2022-09-21 17:24+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,9 +65,8 @@ msgstr ""
 msgid "Linked post"
 msgstr ""
 
-#: attachment.php:64 functions.php:189 functions/basic/blog.php:93 index.php:31
-#: template-parts/content/content.php:17
-#: template-parts/home/service/servic-1.php:111
+#: attachment.php:64 functions/customizer/customizer-template.php:218
+#: index.php:31 template-parts/home/service/servic-1.php:111
 #: template-parts/home/service/servic-2.php:98
 #: template-parts/home/service/servic-3.php:111
 #: template-parts/home/service/servic-4.php:109
@@ -182,7 +181,7 @@ msgstr ""
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: functions.php:94 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:95 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -190,26 +189,26 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:128
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:133
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:199 functions/customizer/customizer-social.php:97
+#: functions.php:188 functions/customizer/customizer-social.php:97
 #: functions/meta-box/post-meta.php:136 functions/meta-box/post-meta.php:137
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:200 functions/customizer/customizer-social.php:72
+#: functions.php:189 functions/customizer/customizer-social.php:72
 #: functions/meta-box/post-meta.php:152 functions/meta-box/post-meta.php:153
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:201 functions/customizer/customizer-social.php:122
+#: functions.php:190 functions/customizer/customizer-social.php:122
 #: functions/meta-box/post-meta.php:148 functions/meta-box/post-meta.php:149
 msgid "LinkedIn URL"
 msgstr ""
@@ -1394,7 +1393,15 @@ msgid "Blog template data setting"
 msgstr ""
 
 #: functions/customizer/customizer-template.php:194
-msgid "From which format do you want to display data"
+msgid "From which format do you want to display data on Archive Pages?"
+msgstr ""
+
+#: functions/customizer/customizer-template.php:198
+msgid "Summary"
+msgstr ""
+
+#: functions/customizer/customizer-template.php:199
+msgid "Full text"
 msgstr ""
 
 #: functions/customizer/customizer-template.php:208
@@ -2468,8 +2475,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://schuppelius.org"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "archive.php"
 msgstr ""
