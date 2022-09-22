@@ -142,7 +142,7 @@ function show_rellax_div() {
 }
 
 function strip_comments($content = '') {
-	return preg_replace('/<!--(.|\s)*?-->/', '', $content);
+    return preg_replace('/<!--(.|\s)*?-->/', '', $content);
 }
 
 function strip_all($content = '') {

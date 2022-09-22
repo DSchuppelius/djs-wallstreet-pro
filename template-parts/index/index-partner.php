@@ -38,21 +38,21 @@
                         get_template_part("template-parts/partner/partner", "header");
     
                         $post_partner_url = get_post_meta(get_the_ID(), "partnerstrip_link", true) ? get_post_meta(get_the_ID(), "partnerstrip_link", true) : "#";
-                        $post_partner_url_target = get_post_meta(get_the_ID(), "meta_partner_target", true) ? "_blank" : "_self";
+                        $post_partner_url_target = blank_target(get_post_meta(get_the_ID(), "meta_partner_target", true));
     
                         if (has_post_thumbnail()) {
                             $post_thumbnail_id = get_post_thumbnail_id();
                             $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
     
                             if ($post_thumbnail_url) { ?>
-                                <a href="<?php echo $post_partner_url; ?>" target="<?php echo $post_partner_url_target; ?>" >
+                                <a href="<?php echo $post_partner_url; ?>" <?php echo $post_partner_url_target; ?>>
                                     <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                                 </a>
     					    <?php } else { ?>
                                 <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                             <?php }
                         } else { ?>
-                            <a href="<?php echo $post_partner_url; ?>" target="<?php echo $post_partner_url_target; ?>" >
+                            <a href="<?php echo $post_partner_url; ?>" <?php echo $post_partner_url_target; ?>>
                                 <h2 class="partners-text"><?php echo get_the_title(); ?></h2>
                             </a>
                         <?php }

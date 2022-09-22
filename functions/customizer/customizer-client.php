@@ -120,11 +120,9 @@ function client_customizer($wp_customize) {
         /**
          * Render the control's content.
          */
-        public function render_content() {
-            ?>
+        public function render_content() { ?>
 			<a href="<?php bloginfo("url"); ?>/wp-admin/edit.php?post_type=<?php echo CLIENT_POST_TYPE; ?>" class="button" target="_blank"><?php _e("Click here to add client", "wallstreet"); ?></a>
-		<?php
-        }
+		<?php }
     }
 
     $wp_customize->add_setting("client", [

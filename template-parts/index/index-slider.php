@@ -254,7 +254,7 @@ function render_slide($class, $style=""){
             <?php }
             if (get_post_meta(get_the_ID(), "slider_button_text", true)) { ?>
                 <div <?php if ($current_options["home_slider_desktop_button_enabled"] != true) { ?> style="display: none;" <?php } ?> class="flex_btn_div <?php if ($current_options["home_slider_mobile_button_enabled"] == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
-                    <form action="<?php echo get_post_meta(get_the_ID(), "slider_button_link", true); ?>" <?php if (get_post_meta(get_the_ID(), "slider_button_target", true)) { echo 'method="get" target="_blank"'; } ?>>
+                    <form action="<?php echo get_post_meta(get_the_ID(), "slider_button_link", true); ?>" <?php blank_target(get_post_meta(get_the_ID(), "slider_button_target", true), 'method="get"'); ?>>
                         <button class="btn more flex_btn" type="submit">
                             <?php echo get_post_meta(get_the_ID(), "slider_button_text", true); ?>
                         </button>

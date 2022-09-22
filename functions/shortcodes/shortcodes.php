@@ -68,9 +68,8 @@ function button_shortcode($atts, $content = null) {
     $style = $atts["style"];
     $url = $atts["url"];
     $target = $atts["target"];
-    $target = $target == "blank" ? ' target="_blank"' : "";
     $style = $style ? " " . $style : "";
-    $result = "<a" . $target . ' class="' . $style . " " . $size . '  " href="' . $url . '" target="' . $target . '">' . do_shortcode($content) . "</a>";
+    $result = "<a" . $target . ' class="' . $style . " " . $size . '  " href="' . $url . '" ' . get_blank_target($target == "blank") . '">' . do_shortcode($content) . "</a>";
     return $result;
 }
 add_shortcode("button", "button_shortcode");

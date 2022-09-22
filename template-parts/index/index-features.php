@@ -33,7 +33,7 @@ if ($theme_feature_enabled == true) { ?>
         		<?php if (!empty($theme_feature_image)) { ?>
         			<div class="col-md-6 col-sm-6">
         				<?php if ($current_options["feature_image_link"]) { ?>
-        				<a href="<?php echo $current_options["feature_image_link"]; ?>" <?php if ($current_options["image_link_target"] == true) { ?>target="_blank" <?php } ?>><img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>"></a>
+        				<a href="<?php echo $current_options["feature_image_link"]; ?>" <?php blank_target($current_options["image_link_target"] == true); ?>><img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>"></a>
         				<?php } else { ?>
         				<img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>">
         				<?php } ?>

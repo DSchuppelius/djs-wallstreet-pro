@@ -25,7 +25,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
             </ul>
             <div class="portfolio-detail-button">
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
-                    <p><a class="button btn loadmore project-btn" <?php if (get_post_meta(get_the_ID(), "meta_button_target", true)) { echo "target='_blank'"; } ?> href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo get_post_meta(get_the_ID(), "meta_button_link", true); } ?>" title="<?php _e("Website", "wallstreet"); ?>"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></a></p>
+                    <p><a class="button btn loadmore project-btn" <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true)); ?> href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo get_post_meta(get_the_ID(), "meta_button_link", true); } ?>" title="<?php _e("Website", "wallstreet"); ?>"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></a></p>
                 <?php } ?>
             </div>
             <?php $draught_links = [];
@@ -116,9 +116,9 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                                     <h4><?php the_title(); ?></h4>
                                                     <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
                                                     <div class="portfolio-icon">
-                                                        <a href="<?php echo $post_thumbnail_url; ?>" <?php if (get_post_meta(get_the_ID(), "meta_project_target", true)) { echo "target='_blank'"; } ?> data-lightbox="image"><i class="fa fa-picture-o"></i></a>
-                                                        <?php if ($meta_project_link) { ?>
-                                                            <a href="<?php echo $meta_project_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_project_target", true)) { echo "target='_blank'"; } ?>><i class="fa fa-link"></i></a>
+                                                        <a href="<?php echo $post_thumbnail_url; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> data-lightbox="image"><i class="fa fa-picture-o"></i></a>
+                                                        <?php if (isset($meta_project_link)) { ?>
+                                                            <a href="<?php echo $meta_project_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>><i class="fa fa-link"></i></a>
                                                         <?php } ?>
                                                     </div>
                                                 </div>

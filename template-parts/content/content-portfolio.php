@@ -132,9 +132,9 @@ if (isset($_GET["div"])) {
 																<p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
 															<?php } ?>
  															<div class="portfolio-icon">
-																<a <?php if (get_post_meta(get_the_ID(), "meta_project_target", true)) { echo "target='_blank'"; } ?> class="hover_thumb" title="<?php the_title(); ?>" data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>" ><i class="fa fa-image"></i></a>
+																<a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> class="hover_thumb" title="<?php the_title(); ?>" data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>" ><i class="fa fa-image"></i></a>
 																<?php if ($meta_project_link) { ?>
-                                                                    <a <?php if (get_post_meta(get_the_ID(), "meta_project_target", true)) { echo "target='_blank'";} ?> href="<?php echo $meta_project_link; ?>"><i class="fa fa-link"></i></a>
+                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> href="<?php echo $meta_project_link; ?>"><i class="fa fa-link"></i></a>
 																<?php } ?>
 															</div>
 														</div>

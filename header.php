@@ -18,21 +18,23 @@ $current_options = get_current_options(); ?>
         if(!empty($wp_query->post)){
             $postid = $wp_query->post->ID;
         
-            $page_description = get_post_meta($postid, 'page_description', true);
+            $page_description = htmlEntities(get_post_meta($postid, 'page_description', true));
             if(empty($page_description)) { $page_description = htmlentities(wp_strip_all_tags(tag_description()));}
             if(empty($page_description)) { $page_description = get_the_archive_title() != "Archive" ? htmlentities(wp_strip_all_tags(get_the_archive_title())) : "";}
 
             $single_description = substr(htmlentities(wp_strip_all_tags(get_the_excerpt(), true)), 0, 150);
-            if(empty($single_description)) {$single_description= get_the_title();}
+            if(empty($single_description)) { $single_description= htmlEntities(get_the_title()); }
             $single_description .= "...";
 
             $tags = get_the_tags();
             if(!empty($tags))
                 foreach($tags as $tag){ $single_metakeytags.= ", ".htmlentities(wp_strip_all_tags($tag->name)); }
         } ?>
+
         <!--[if IE]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->	
+        <![endif]-->
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="Content-Script-Type" content="text/javascript" />
         <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -41,7 +43,7 @@ $current_options = get_current_options(); ?>
         <meta name="contributor" content="Daniel J&ouml;rg Schuppelius" />
         <meta name="generator" content="Schuppelius v1.0" />
 
-        <meta name="description" content="<?php if ( is_single() ) { echo wp_trim_words($single_description, 120, '...'); } else if(!empty($page_description)) { bloginfo('name'); echo " - ". $page_description; }else { bloginfo('name'); echo " - "; bloginfo('description'); }?>" />
+        <meta name="description" content="<?php if (is_single()) { echo htmlEntities(wp_trim_words($single_description, 120, '...')); } else if (!empty($page_description)) { bloginfo('name'); echo " - " . htmlEntities($page_description); } else { bloginfo('name'); echo " - "; bloginfo('description'); }?>" />
         <meta name="keywords" content="<?php echo $single_metakeytags; ?>" />
 
         <base href="<?php echo get_site_url(); ?>">

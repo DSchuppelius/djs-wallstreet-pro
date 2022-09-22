@@ -76,11 +76,11 @@ $current_options = get_current_options(); ?>
 								</div> 
 							<?php }} ?>
 						<div class="service-area<?php big_border(" "); echo $current_options["service_middle_extrapadding"] ? "" : " not";?>">
-							<h2><a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo "target='_blank'"; } ?> > <?php echo the_title(); ?> </a></h2>
+							<h2><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php echo the_title(); ?></a></h2>
 							<p><?php echo $excerpt = get_post_meta(get_the_ID(), "service_description_text", true); ?></p>
 							<?php if (get_post_meta(get_the_ID(), "service_readmore_text", true)) { ?>
 								<div class="service-btn">
-									<form action="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'method="get" target="_blank"'; } ?>>
+									<form action="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true), 'method="get"'); ?>>
 										<button class="btn more services" ><?php echo get_post_meta(get_the_ID(), "service_readmore_text", true); ?></button>
 									</form>
 								</div>

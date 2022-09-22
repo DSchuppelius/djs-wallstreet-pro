@@ -79,7 +79,7 @@
                                                 <?php }
                                                 if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
                                                     <div class="portfolio-btn">
-                                                        <form action="<?php echo $meta_project_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_project_target", true)) { echo 'method="get" target="_blank"'; } ?>>
+                                                        <form action="<?php echo $meta_project_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true), 'method="get"'); ?>>
                                                             <button class="btn small more portfolio" type="submit"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></button>								
                                                         </form>
                                                     </div>

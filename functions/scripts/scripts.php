@@ -22,7 +22,7 @@ function theme_font_scripts() {
     if($current_options["enable_custom_typography"] == true){
         wp_enqueue_style("spicy-fonts",             wallstreet_fonts_url($current_options["google_font"]), [], null);
     } else {
-	    wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
+        wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
     }
 }
 add_action("wp_enqueue_scripts", "theme_font_scripts");

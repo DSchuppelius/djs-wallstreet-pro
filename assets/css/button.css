@@ -577,20 +577,20 @@ a.btn.tab {
         border: 0.2em solid rgb(55,57,65)
     }
 
-    .blog-pagination a:not(.btn.next, .btn.prev),
-    .page-links a,
-    .blog-pagination span,
-    .page-numbers {
-        height: 40px;
-        width: 60px;
-        cursor: pointer;
-        display: inline-block;
-        line-height: 20px;
-        margin: 9px 8px;
-        padding: 9px 0;
-        vertical-align: baseline;
-        white-space: nowrap
-    }
+        .blog-pagination a:not(.btn.next, .btn.prev),
+        .page-links a,
+        .blog-pagination span,
+        .page-numbers {
+            height: 40px;
+            width: 60px;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 20px;
+            margin: 9px 8px;
+            padding: 9px 0;
+            vertical-align: baseline;
+            white-space: nowrap
+        }
 
     .blog-pagination a,
     .blog-pagination span {

@@ -10,14 +10,13 @@
  */
 class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = []) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+        $output .= '\n' . str_repeat("    ", $depth) . '<ul class="dropdown-menu">\n';
     }
 
     function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) {
-        $indent = $depth ? str_repeat("\t", $depth) : "";
+        $indent = $depth ? str_repeat("    ", $depth) : "";
 
-        $class_names = $value = "";
+        $class_names = "";
 
         $classes = empty($item->classes) ? [] : (array) $item->classes;
         $classes[] = "menu-item-" . $item->ID;
@@ -32,7 +31,7 @@ class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
         $id = apply_filters("nav_menu_item_id", "menu-item-" . $item->ID, $item, $args);
         $id = $id ? ' id="' . esc_attr($id) . '"' : "";
 
-        $output .= $indent . "<li" . $id . $value . $class_names . ">";
+        $output .= $indent . "<li" . $id . $class_names . ">";
 
         $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : "";
         $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : "";
@@ -60,14 +59,12 @@ class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         $id_field = $this->db_fields["id"];
 
-        //display this element
         if (is_array($args[0])) {
             $args[0]["has_children"] = !empty($children_elements[$element->$id_field]);
         } elseif (is_object($args[0])) {
             $args[0]->has_children = !empty($children_elements[$element->$id_field]);
         }
-        $cb_args = array_merge([&$output, $element, $depth], $args);
-        call_user_func_array([$this, "start_el"], $cb_args);
+        call_user_func_array([$this, "start_el"], array_merge([&$output, $element, $depth], $args));
 
         $id = $element->$id_field;
 
@@ -76,24 +73,17 @@ class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
             foreach ($children_elements[$id] as $child) {
                 if (!isset($newlevel)) {
                     $newlevel = true;
-                    //start the child delimiter
-                    $cb_args = array_merge([&$output, $depth], $args);
-                    call_user_func_array([$this, "start_lvl"], $cb_args);
+                    call_user_func_array([$this, "start_lvl"], array_merge([&$output, $depth], $args));
                 }
                 $this->display_element($child, $children_elements, $max_depth, $depth + 1, $args, $output);
             }
             unset($children_elements[$id]);
-        }
 
-        if (isset($newlevel) && $newlevel) {
-            //end the child delimiter
-            $cb_args = array_merge([&$output, $depth], $args);
-            call_user_func_array([$this, "end_lvl"], $cb_args);
+            if (isset($newlevel) && $newlevel) {
+                call_user_func_array([$this, "end_lvl"], array_merge([&$output, $depth], $args));
+            }
         }
-
-        //end this element
-        $cb_args = array_merge([&$output, $element, $depth], $args);
-        call_user_func_array([$this, "end_el"], $cb_args);
+        call_user_func_array([$this, "end_el"], array_merge([&$output, $element, $depth], $args));
     }
 }
 function theme_nav_menu_css_class($classes) {

@@ -36,9 +36,9 @@ if(empty($temp_color) || $default_color == false || $temp_color === $default_col
         case 'light.css':
             $background_color = "#fff";
             break;	
-	    default:
-		    $background_color = "#000";
-		    break;
+        default:
+            $background_color = "#000";
+            break;
     }
 }else {
     $background_color = "#" . get_background_color();

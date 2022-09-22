@@ -62,7 +62,7 @@ $current_options = get_current_options(); ?>
                                 if (has_post_thumbnail()) { ?>
                                     <div class="service-box">
                                         <?php if ($meta_service_link) { ?>
-                                            <a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'target="_blank"'; } ?>>
+                                            <a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>>
                                                 <?php the_post_thumbnail("webriti_service_img", $defalt_arg); ?>
                                             </a>
                                         <?php } else { ?>
@@ -72,10 +72,10 @@ $current_options = get_current_options(); ?>
                                 <?php }
                             } ?>
                             <div class="service-area">
-                                <h2><a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo "target='_blank'"; } ?> ><?php echo the_title(); ?></a></h2>
+                                <h2><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php echo the_title(); ?></a></h2>
                                 <p><?php echo $excerpt = get_post_meta(get_the_ID(), "service_description_text", true); ?></p>
                                 <?php if (get_post_meta(get_the_ID(), "service_readmore_text", true)): ?>
-                                    <div class="service-btn"><a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo "target='_blank'"; } ?> ><?php echo get_post_meta(get_the_ID(), "service_readmore_text", true); ?></a></div>
+                                    <div class="service-btn"><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php echo get_post_meta(get_the_ID(), "service_readmore_text", true); ?></a></div>
                                 <?php endif; ?>
                             </div>
                         </div>
