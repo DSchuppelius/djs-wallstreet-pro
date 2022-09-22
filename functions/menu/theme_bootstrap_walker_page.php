@@ -10,16 +10,11 @@
  */
 class Theme_Bootstrap_Walker_Page extends Walker_Page {
     function start_lvl(&$output, $depth = 0, $args = []) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class='dropdown-menu default'>\n";
+        $output .= "\n" . str_repeat("    ", $depth) . '<ul class="dropdown-menu">' . "\n";
     }
 
     function start_el(&$output, $page, $depth = 0, $args = [], $current_page = 0) {
-        if ($depth) {
-            $indent = str_repeat("\t", $depth);
-        } else {
-            $indent = "";
-        }
+        $indent = $depth ? str_repeat("    ", $depth) : "";
 
         if ($depth === 0) {
             $child_class = "nav-link";
@@ -125,6 +120,7 @@ function theme_fallback_page_menu($args = []) {
 
     $menu = $menu . "\n";
     $menu = apply_filters("wp_page_menu", $menu, $args);
+
     if ($args["echo"]) {
         echo $menu;
     } else {
