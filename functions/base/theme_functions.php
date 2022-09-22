@@ -40,7 +40,7 @@ function get_blank_target($option, $prefix = null){
     if ($option) {
         $result .= '_blank"';
     } else {
-        $result .=  '_self"';
+        $result .= '_self"';
     }
     return !empty($prefix) ? $prefix." ". $result : $result;
 }
