@@ -10,7 +10,7 @@
  */
 class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = []) {
-        $output .= '\n' . str_repeat("    ", $depth) . '<ul class="dropdown-menu">\n';
+        $output .= "\n" . str_repeat("    ", $depth) . '<ul class="dropdown-menu">' . "\n";
     }
 
     function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) {
@@ -52,8 +52,8 @@ class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= apply_filters("walker_nav_menu_start_el", $item_output, $item, $depth, $args);
     }
 
-    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-        if (!$element) {
+    function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
+        if (!$element || !is_numeric($depth) || !is_numeric($max_depth)) {
             return;
         }
 
@@ -75,6 +75,7 @@ class Theme_Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
                     $newlevel = true;
                     call_user_func_array([$this, "start_lvl"], array_merge([&$output, $depth], $args));
                 }
+
                 $this->display_element($child, $children_elements, $max_depth, $depth + 1, $args, $output);
             }
             unset($children_elements[$id]);

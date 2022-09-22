@@ -28,7 +28,7 @@ function values_on_current_option($option, $positive, $negative = "", $prefix = 
 }
 
 function get_the_currentURL(){
-    return (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    return (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 }
 
 function the_currentURL() {
