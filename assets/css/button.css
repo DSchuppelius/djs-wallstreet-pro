@@ -582,7 +582,7 @@ a.btn.tab {
     .blog-pagination span,
     .page-numbers {
         height: 40px;
-        width: 40px;
+        width: 60px;
         cursor: pointer;
         display: inline-block;
         line-height: 20px;
