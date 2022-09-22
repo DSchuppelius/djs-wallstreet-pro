@@ -1,5 +1,17 @@
 ### Versionhistory
 
+#### Version 2.0.2:
+    1. New Icons for admin
+    2. Repair latest widget
+    3. Refactoring shortcodes
+    4. Add Roboto font to theme
+    5. Add Sytles for Plugin DJS AngualrJS Plugin
+    6. Change style for Titles
+    7. Add some depencies
+    8. Add shortcodes for jetpack-stats
+    9. Fix Breadcrumb
+    10. Oversized code and pre fixed
+    11. Fix Linkstructure
 #### Version 2.0.1:
     1. Add Shortcode [zdf url=""] for ZDF-Mediathek
     2. Fixig some Headerfiles (2,5,6)
