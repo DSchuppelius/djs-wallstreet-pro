@@ -12,7 +12,7 @@ $is_toggle_button = $current_options["search_effect_style_setting"] == "toogle" 
 if (!$is_toggle_button) {
     $menu_search_form =
         '<div class="search-box-outer dropdown">
-            <a href="#" title="' . __("Search", "wallstreet") . '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="' . get_the_currentURL() . '" title="' . __("Search", "wallstreet") . '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-magnifying-glass"></i></a>
             <ul class="dropdown-menu pull-right search-panel ' . $current_options["search_effect_style_setting"] . '" role="menu" aria-hidden="true" aria-expanded="false">
                 <li class="dropdown-item panel-outer">
                     <div class="form-container">
@@ -33,7 +33,7 @@ if (!$is_toggle_button) {
         '<div class="nav-search nav-light-search wrap">
             <div class="search-box-outer">
                 <div id="top_searchmenu" class="dropdown">
-                    <a href="#searchbar_fullscreen" title="Search" class="nav-link search-iconaria-haspopup" true"="" aria-expanded="false">
+                    <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" title="Search" class="nav-link search-iconaria-haspopup" true"="" aria-expanded="false">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>

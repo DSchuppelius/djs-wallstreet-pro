@@ -16,7 +16,7 @@ add_filter("embed_oembed_html", "youtube_nocookie_solution", 10, 4);
 
 function iframe_cookie_lazy_load($content) {
     $current_options = get_current_options();
-    $actual_link = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $actual_link = get_the_currentURL();
 
     if (empty($content)) {
         return $content;

@@ -12,23 +12,17 @@ global $woocommerce;
 $current_options = get_current_options();
 
 $menu_search_form =
-    '<a href="#" title="' .
+    '<a href="' . get_the_currentURL() . '#" title="' .
     __("Search", "wallstreet") .
     '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-search"></i></a>
     <ul class="dropdown-menu pull-right search-panel" role="menu" aria-hidden="true" aria-expanded="false">
         <li class="dropdown-item panel-outer">
             <div class="form-container">
-                <form role="search" method="get" class="search-form" action="' .
-    esc_url(home_url("/")) .
-    '">
+                <form role="search" method="get" class="search-form" action="' . esc_url(home_url("/")) . '">
                     <label>
                         <input type="search" class="search-field" placeholder="Search …" value="" name="s">
                     </label>
-                    <button type="submit" class="btn search_btn search-submit" value="' .
-    __("Search", "wallstreet") .
-    '">' .
-    __("Search", "wallstreet") .
-    '</button>
+                    <button type="submit" class="btn search_btn search-submit" value="' . __("Search", "wallstreet") . '">' . __("Search", "wallstreet") . '</button>
                 </form>                   
             </div>
         </li>
@@ -66,7 +60,7 @@ if (class_exists("WooCommerce")) {
             $shop_button .= '<div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">
                     <div class="dropdown">
-                        <a href="#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
+                        <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
                     </div>
                 </div></div>';
         }
@@ -100,7 +94,7 @@ if (class_exists("WooCommerce")) {
             <div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">
                     <div class="dropdown">
-                        <a href="#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
+                        <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
             </div></div>';

@@ -27,6 +27,14 @@ function values_on_current_option($option, $positive, $negative = "", $prefix = 
     echo get_values_on_current_option($option, $positive, $negative, $prefix, $suffix);
 }
 
+function get_the_currentURL(){
+    return (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
+
+function the_currentURL() {
+    echo get_the_currentURL();
+}
+
 function get_blank_target($option, $prefix = null){
     $result = 'target="';
     if ($option) {

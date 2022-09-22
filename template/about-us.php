@@ -127,7 +127,7 @@ the_post();
     			    	    <div class="desi-seperate"></div>
 				            <p><?php echo "Lorem ipsum dolor sit amet, conet adipis cing. Lorem ipsum dolore sit amet, consectetur adipisicings elit"; ?></p>
 				            <ul class="team-social-icons">
-				                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+				                <li><a><i class="fa-brands fa-facebook"></i></a></li>
     		    		        <li><a><i class="fa-brands fa-skype"></i></a></li>
 	        			        <li><a><i class="fa-brands fa-google-plus"></i></a></li>
 	    	    		        <li><a><i class="fa fa-rss"></i></a></li>

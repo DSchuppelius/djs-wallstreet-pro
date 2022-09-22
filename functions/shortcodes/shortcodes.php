@@ -105,7 +105,7 @@ function accordion_shortcode($atts, $content = null) {
                 '<div class="acco_panel panel-default">
                     <div class="short-panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="#' . $accordian_group . $i . '">' .
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
                                 $title[$i] . '<span class="fa fa-minus"></span>
                             </a>
                         </h4>
@@ -127,7 +127,7 @@ function accordion_shortcode($atts, $content = null) {
                 '<div class="acco_panel panel-default">
                     <div class="short-panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="#' . $accordian_group . $i . '">' .
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
                                 $title[$i] . '<span class="fa fa-plus"></span>
                             </a>
                         </h4>
@@ -169,10 +169,10 @@ if (!function_exists("tabgroup")) {
             foreach ($tab_titles as $tabs_title) {
                 if ($count == 0) {
                     $theme_tabs_title[0] = str_replace(" ", "_", $tabs_title[0]);
-                    $resultput .= '<li class="active" ><a data-toggle="tab" href="#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
+                    $resultput .= '<li class="active" ><a data-toggle="tab" href="' . get_the_currentURL() . '#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
                 } else {
                     $theme_tabs_title[0] = str_replace(" ", "_", $tabs_title[0]);
-                    $resultput .= '<li class="" ><a data-toggle="tab" href="#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
+                    $resultput .= '<li class="" ><a data-toggle="tab" href="' . get_the_currentURL() . '#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
                 }
                 $count++;
             }

@@ -37,7 +37,7 @@ class wallstreet_latest_widget extends WP_Widget {
             foreach ($posts as $post) { 
                 setup_postdata($post); ?>
                 <div class="media post-media-sidebar">
-                    <a class="pull-left sidebar-pull-img" href="#">
+                    <a class="pull-left sidebar-pull-img" href="<?php the_currentURL(); ?>">
                         <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
                         <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>								 
                     </a>
@@ -84,9 +84,9 @@ class wallstreet_latest_widget extends WP_Widget {
         } ?>
  
         <ul class="sidebar-tab sidebar-widget-tab">
-            <li class="active"><a data-toggle="tab" href="#popular"><?php _e("Popular", "wallstreet"); ?></a></li>
-            <li><a data-toggle="tab" href="#recent"><?php _e("Recent", "wallstreet"); ?></a></li>
-            <li><a data-toggle="tab" href="#comment"><?php _e("Comment", "wallstreet"); ?></a></li>
+            <li class="active"><a data-toggle="tab" href="<?php the_currentURL(); ?>#popular"><?php _e("Popular", "wallstreet"); ?></a></li>
+            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#recent"><?php _e("Recent", "wallstreet"); ?></a></li>
+            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#comment"><?php _e("Comment", "wallstreet"); ?></a></li>
         </ul>				
         <div class="tab-content" id="myTabContent">					
             <div id="popular" class="tab-pane fade active in">

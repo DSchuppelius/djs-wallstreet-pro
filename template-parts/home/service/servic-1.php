@@ -53,7 +53,7 @@ $current_options = get_current_options(); ?>
 						<?php if ($service_icon_target && $service_icon_image) { ?>
 							<div class="other-service-area1">
 								<?php if ($meta_service_link) { ?>
-									<a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'target="_blank"';} ?>>
+									<a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)) ?>>
                                         <i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i>
 									</a>
 								<?php } else { ?>
@@ -65,7 +65,7 @@ $current_options = get_current_options(); ?>
                             if (has_post_thumbnail()) { ?>
 								<div class="service-box">
 									<?php if ($meta_service_link) { ?>
-										<a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'target="_blank"'; } ?>><?php the_post_thumbnail("theme_service_img", $defalt_arg); ?></a>
+										<a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php the_post_thumbnail("theme_service_img", $defalt_arg); ?></a>
 									<?php } else { ?>
 										<?php the_post_thumbnail("theme_service_img", $defalt_arg); ?>
 									<?php } ?>
@@ -104,7 +104,7 @@ $current_options = get_current_options(); ?>
 							<img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/service<?php echo $i; ?>.jpg">
 						</div>
 						<div class="service-area<?php big_border(" "); echo $current_options["service_middle_extrapadding"] ? "" : " not";?>">
-							<h2><a href="#"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
+							<h2><a href="<?php the_currentURL(); ?>"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
 							<p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
                             <div class="service-btn">
 								<form action="#">

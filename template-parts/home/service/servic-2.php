@@ -51,7 +51,7 @@ $current_options = get_current_options(); ?>
                         <?php if ($service_icon_target && $service_icon_image) { ?>
                             <div class="service-box">
                                 <?php if ($meta_service_link) { ?>
-                                    <a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'target="_blank"'; } ?>><i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i></a>
+                                    <a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i></a>
                                 <?php } else { ?>
                                     <i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i>
                                 <?php } ?>
@@ -61,7 +61,7 @@ $current_options = get_current_options(); ?>
                             if (has_post_thumbnail()) { ?> 
                                 <div class="service-box">
                                     <?php if ($meta_service_link) { ?>
-                                        <a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo 'target="_blank"'; } ?>><?php the_post_thumbnail("theme_service_img", $defalt_arg); ?></a>
+                                        <a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php the_post_thumbnail("theme_service_img", $defalt_arg); ?></a>
                                     <?php } else { ?>
                                         <?php the_post_thumbnail("theme_service_img", $defalt_arg); ?>
                                     <?php } ?>		
@@ -70,13 +70,13 @@ $current_options = get_current_options(); ?>
                         } ?>
                         <div class="service-area">		
                             <?php if (get_the_title()) { ?>		
-                                <h2><a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo "target='_blank'"; } ?>><?php echo the_title(); ?></a></h2>
+                                <h2><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php echo the_title(); ?></a></h2>
                             <?php } ?>
                             <?php if (!empty(get_post_meta(get_the_ID(), "service_description_text", true))) { ?>
                                 <p><?php echo $excerpt = get_post_meta(get_the_ID(), "service_description_text", true); ?></p>
                             <?php } ?>
                             <?php if (get_post_meta(get_the_ID(), "service_readmore_text", true)) { ?>
-                                <div class="service-btn"><a href="<?php echo $meta_service_link; ?>" <?php if (get_post_meta(get_the_ID(), "meta_service_target", true)) { echo "target='_blank'"; } ?> ><?php echo get_post_meta(get_the_ID(), "service_readmore_text", true); ?></a></div>
+                                <div class="service-btn"><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?> ><?php echo get_post_meta(get_the_ID(), "service_readmore_text", true); ?></a></div>
                             <?php } ?>
                         </div>	
                     </div>
@@ -93,9 +93,9 @@ $current_options = get_current_options(); ?>
                             <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/service<?php echo $i; ?>.jpg">
                         </div>
                         <div class="service-area">
-                            <h2><a href="#"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
+                            <h2><a href="<?php the_currentURL(); ?>"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
                             <p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
-                            <div class="service-btn"><a href="#"><?php _e("Read More", "wallstreet"); ?></a></div>
+                            <div class="service-btn"><a href="<?php the_currentURL(); ?>"><?php _e("Read More", "wallstreet"); ?></a></div>
                         </div>
                     </div>
                 <?php }

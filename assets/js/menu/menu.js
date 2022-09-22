@@ -159,7 +159,7 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function () {
 
     // Fullscreen Serach Box         
-    jQuery('a[href="#searchbar_fullscreen"]').on("click", function (event) {
+    jQuery('#searchbar_fullscreen_menu').on("click", function (event) {
 
         event.preventDefault();
         if (!jQuery("#searchbar_fullscreen").hasClass("open")) {
