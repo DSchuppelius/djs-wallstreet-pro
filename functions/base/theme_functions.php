@@ -32,7 +32,7 @@ function get_the_currentURL(){
 }
 
 function the_currentURL() {
-    echo get_the_currentURL();
+    echo esc_url(get_the_currentURL());
 }
 
 function get_blank_target($option, $prefix = null){

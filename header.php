@@ -46,11 +46,11 @@ $current_options = get_current_options(); ?>
         <meta name="description" content="<?php if (is_single()) { echo htmlEntities(wp_trim_words($single_description, 120, '...')); } else if (!empty($page_description)) { bloginfo('name'); echo " - " . htmlEntities($page_description); } else { bloginfo('name'); echo " - "; bloginfo('description'); }?>" />
         <meta name="keywords" content="<?php echo $single_metakeytags; ?>" />
 
-        <base href="<?php echo get_site_url(); ?>">
+        <base href="<?php echo esc_url(get_site_url()); ?>">
 
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <?php if ($current_options["upload_image_favicon"] != "") { ?>
-            <link rel="shortcut icon" href="<?php echo $current_options["upload_image_favicon"]; ?>" /> 
+            <link rel="shortcut icon" href="<?php echo esc_url($current_options["upload_image_favicon"]); ?>" /> 
         <?php }
         wp_head(); ?>
     </head>

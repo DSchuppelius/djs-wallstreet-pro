@@ -34,7 +34,7 @@ if (!$has_thumbnail) {
                 <?php if (is_single()) { ?>
                     <a href="<?php echo esc_url(get_attachment_link(get_post_thumbnail_id())); ?>" <?php blank_target(is_single()); ?>><?php echo the_post_thumbnail("bigpost-thumb", $defalt_arg); ?></a>
                 <?php } else { ?>
-                    <a href="<?php the_permalink(); ?>" <?php blank_target(is_single()); ?>><?php the_post_thumbnail("blog-thumb", $defalt_arg); ?></a>                
+                    <a href="<?php esc_url(the_permalink()); ?>" <?php blank_target(is_single()); ?>><?php the_post_thumbnail("blog-thumb", $defalt_arg); ?></a>                
                 <?php } ?>
             </div>
         <?php } ?>

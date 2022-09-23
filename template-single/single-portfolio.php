@@ -16,11 +16,11 @@ get_template_part("template-parts/index/index", "banner"); ?>
             <ul class="portfolio-detail-pagi">
                 <?php $next_post = get_next_post();
                 if (!empty($next_post)): ?>
-                    <li><a class="button btn back" href="<?php echo get_permalink($next_post->ID); ?>" title="<?php _e("Back", "wallstreet"); ?>" rel="next"><?php _e("Back", "wallstreet"); ?></a></li>
+                    <li><a class="button btn back" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php _e("Back", "wallstreet"); ?>" rel="next"><?php _e("Back", "wallstreet"); ?></a></li>
                 <?php endif;
                 $prev_post = get_previous_post();
                 if (!empty($prev_post)): ?>
-                    <li><a class="button btn forward" href="<?php echo get_permalink($prev_post->ID); ?>" title="<?php _e("Next", "wallstreet"); ?>" rel="prev"><?php _e("Next", "wallstreet"); ?></a></li>    
+                    <li><a class="button btn forward" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php _e("Next", "wallstreet"); ?>" rel="prev"><?php _e("Next", "wallstreet"); ?></a></li>    
                 <?php endif; ?>	
             </ul>
             <div class="portfolio-detail-button">
@@ -100,7 +100,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                     while ($portfolio_query->have_posts()):
                         $portfolio_query->the_post();
                         if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
-                            $meta_project_link = get_post_meta(get_the_ID(), "meta_project_link", true);
+                            $meta_project_link = esc_url(get_post_meta(get_the_ID(), "meta_project_link", true));
                         } ?>
                         <div class="col-md-4 pull-left main-portfolio-area">
                             <div class="main-portfolio-showcase">
@@ -109,7 +109,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                         $class = ["class" => "img-responsive"];
                                         the_post_thumbnail("", $class);
                                         $post_thumbnail_id = get_post_thumbnail_id();
-                                        $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id); ?>
+                                        $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id)); ?>
                                         <div class="main-portfolio-showcase-overlay">
                                             <div class="main-portfolio-showcase-overlay-inner">
                                                 <div class="main-portfolio-showcase-detail">
@@ -138,13 +138,13 @@ get_template_part("template-parts/index/index", "banner"); ?>
                         <?php $next_post = get_next_post();
                         if (!empty($next_post)): ?>
                             <li>
-                                <a class="button btn back" id="project_prev" href="<?php echo get_permalink($next_post->ID); ?>" title="<?php _e("Back", "wallstreet"); ?>"><?php _e("Back", "wallstreet"); ?></a>
+                                <a class="button btn back" id="project_prev" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php _e("Back", "wallstreet"); ?>"><?php _e("Back", "wallstreet"); ?></a>
                             </li>
                         <?php endif; ?>
                         <?php $prev_post = get_previous_post();
                         if (!empty($prev_post)): ?>
                             <li>
-                                <a class="button btn forward" id="project_next" href="<?php echo get_permalink($prev_post->ID); ?>" title="<?php _e("Forward", "wallstreet"); ?>"><?php _e("Forward", "wallstreet"); ?></a>
+                                <a class="button btn forward" id="project_next" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php _e("Forward", "wallstreet"); ?>"><?php _e("Forward", "wallstreet"); ?></a>
                             </li>
                         <?php endif; ?>				
                     </ul>

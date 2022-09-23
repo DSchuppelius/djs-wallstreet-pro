@@ -48,7 +48,7 @@ $post_per_page = $current_options["home_blog_counts"]; ?>
 									<?php $defalt_arg = ["class" => "img-responsive"];
 									if (has_post_thumbnail()): ?>
 										<div class="blog-post-img">
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("", $defalt_arg); ?></a>
+											<a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail("", $defalt_arg); ?></a>
 										</div>
 									<?php endif; ?>					
 									<div class="blog-post-title media-body <?php if (!has_post_thumbnail()) { echo "remove-img"; } ?>">
@@ -59,7 +59,7 @@ $post_per_page = $current_options["home_blog_counts"]; ?>
 											</div>
 										<?php } ?>
 										<div class="blog-post-title-wrapper">
-											<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>	
+											<h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>	
 											<p><?php echo get_the_excerpt(); ?></p>		
 											<?php the_read_more("home-blog-btn"); ?>
 										</div>

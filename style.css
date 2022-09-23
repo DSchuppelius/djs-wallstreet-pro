@@ -120,7 +120,7 @@ article .wp-block-image figure {
     }
 
     article figure.wp-block-gallery.has-nested-images > figcaption {
-        margin-top:0
+        margin-top: 0
     }
 
 article footer .blog-post-meta {
@@ -3267,9 +3267,7 @@ div.collapsing ul.nav {
 }
 
     .post-media-sidebar:last-child {
-        border-bottom: 0;
         margin-bottom: 0;
-        padding-bottom: 0
     }
 
 .sidebar-widget ul.children li {
@@ -4054,6 +4052,7 @@ div.collapsing ul.nav {
 
 .sidebar-comment-box {
     display: block;
+    text-align: right;
     margin-top: 0
 }
 
@@ -4155,7 +4154,7 @@ div.collapsing ul.nav {
         line-height: 30px;
         padding-bottom: 0;
         word-wrap: break-word;
-        margin: 0 0 25px
+        margin: 0 0 3px
     }
 
     .sidebar-widget .wp-block-social-links .wp-social-link, .footer-widget-section .wp-block-social-links .wp-social-link {

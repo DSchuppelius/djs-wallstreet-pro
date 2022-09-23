@@ -14,7 +14,7 @@ if (has_post_format("status")) {
     get_template_part("template-parts/excerpt/excerpt", "status");
 } else { ?>
     <header>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_content_title(); ?></a></h2>
+        <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h2>
     </header>
     <section class="content-section single">
         <div class="content"><?php the_content(); ?></div>

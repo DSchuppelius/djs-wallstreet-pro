@@ -56,7 +56,7 @@ if (isset($_GET["div"])) {
 						<?php foreach ($tax_terms as $tax_term) { ?>
 							<li rel="tab" class="nav-item" >
                                 <span class="tab">
-								    <a id="tab-<?php echo rawurldecode($tax_term->slug); ?>" href="<?php echo $current_options["page_fader_enabled"] ? $permalink : "#"; echo rawurldecode($tax_term->slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == rawurldecode($tax_term->slug)) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
+								    <a id="tab-<?php echo rawurldecode($tax_term->slug); ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink : get_the_currentURL() . esc_url(get_the_currentURL() . "#"); echo rawurldecode($tax_term->slug)); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == rawurldecode($tax_term->slug)) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
                                 </span>
 							</li>
 						<?php } ?>
@@ -91,16 +91,16 @@ if (isset($_GET["div"])) {
                                 <?php while ($portfolio_query->have_posts()) {
                                     $portfolio_query->the_post();
                                     if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
-                                        $meta_project_link = get_post_meta(get_the_ID(), "meta_project_link", true);
+                                        $meta_project_link = esc_url(get_post_meta(get_the_ID(), "meta_project_link", true));
                                     } else {
-                                        $meta_project_link = get_post_permalink();
+                                        $meta_project_link = esc_url(get_post_permalink());
                                     }
                                     $portfolio_target = sanitize_text_field(get_post_meta(get_the_ID(), "portfolio_target", true));
                                     $project_link_chkbx = sanitize_text_field(get_post_meta(get_the_ID(), "project_link_chkbx", true));
                                     if (get_post_meta(get_the_ID(), "project_more_btn_link", true)) {
-                                        $project_more_btn_link = get_post_meta(get_the_ID(), "project_more_btn_link", true);
+                                        $project_more_btn_link = esc_url(get_post_meta(get_the_ID(), "project_more_btn_link", true));
                                     } else {
-                                        $project_more_btn_link = get_permalink();
+                                        $project_more_btn_link = esc_url(get_permalink());
                                     }
                                     $class = "";
                                     if (is_page_template("template-specials/portfolio-2-column.php")) {
@@ -120,7 +120,7 @@ if (isset($_GET["div"])) {
                                                 the_post_thumbnail("full", [ "class" => "img-responsive" . get_big_border(" ")]);
                                                 if (has_post_thumbnail()) {
                                                     $post_thumbnail_id = get_post_thumbnail_id();
-                                                    $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
+                                                    $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id));
                                                 } ?>
  												<div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
 													<div class="main-portfolio-showcase-overlay-inner">

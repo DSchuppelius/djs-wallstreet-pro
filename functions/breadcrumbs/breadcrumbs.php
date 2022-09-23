@@ -18,7 +18,7 @@ function qt_custom_breadcrumbs() {
     $after = "</li>"; // tag after the current crumb
 
     global $post;
-    $homeLink = home_url();
+    $homeLink = esc_url(home_url());
 
     if (is_home() || is_front_page()) {
         if ($showOnHome == 1) {
@@ -38,11 +38,11 @@ function qt_custom_breadcrumbs() {
         } elseif (is_search()) {
             echo $before . __("Search results for", "wallstreet") . ': "' . get_search_query() . '"' . $after;
         } elseif (is_day()) {
-            echo '<a href="' . get_year_link(get_the_time("Y")) . '">' . get_the_time("Y") . "</a>" . $delimiter;
-            echo '<a href="' . get_month_link(get_the_time("Y"), get_the_time("m")) . '">' . get_the_time("F") . "</a>" . $delimiter;
+            echo '<a href="' . esc_url(get_year_link(get_the_time("Y"))) . '">' . get_the_time("Y") . "</a>" . $delimiter;
+            echo '<a href="' . esc_url(get_month_link(get_the_time("Y"), get_the_time("m"))) . '">' . get_the_time("F") . "</a>" . $delimiter;
             echo $before . get_the_time("d") . '<span class="material-icons-outlined">calendar_today</span>' . $after;
         } elseif (is_month()) {
-            echo '<a href="' . get_year_link(get_the_time("Y")) . '">' . get_the_time("Y") . "</a>" . $delimiter;
+            echo '<a href="' . esc_url(get_year_link(get_the_time("Y"))) . '">' . get_the_time("Y") . "</a>" . $delimiter;
             echo $before . get_the_time("F") . '<span class="material-icons-outlined">calendar_today</span>' . $after;
         } elseif (is_year()) {
             echo $before . get_the_time("Y") . '<span class="material-icons-outlined">calendar_today</span>' . $after;
@@ -50,7 +50,7 @@ function qt_custom_breadcrumbs() {
             if (get_post_type() != "post") {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
-                echo '<a href="' . $homeLink . "/" . $slug["slug"] . '/">' . $post_type->labels->singular_name . "</a>";
+                echo '<a href="' . esc_url($homeLink . "/" . $slug["slug"]) . '/">' . $post_type->labels->singular_name . "</a>";
                 if ($showCurrent == 1) {
                     echo $delimiter . $before . get_the_title() . $after;
                 }
@@ -80,7 +80,7 @@ function qt_custom_breadcrumbs() {
                 $cat = $cat[0];
                 echo get_category_parents($cat, true, $delimiter);
             }
-            echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . "</a>";
+            echo '<a href="' . esc_url(get_permalink($parent)) . '">' . $parent->post_title . "</a>";
             if ($showCurrent == 1) {
                 echo "&nbsp;(" . '<span class="material-icons-outlined">image</span>' . $before . get_the_title() . "&nbsp;)" . $after;
             }
@@ -93,7 +93,7 @@ function qt_custom_breadcrumbs() {
             $breadcrumbs = [];
             while ($parent_id) {
                 $page = get_page($parent_id);
-                $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . "</a>" . $delimiter;
+                $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . "</a>" . $delimiter;
                 $parent_id = $page->post_parent;
             }
             $breadcrumbs = array_reverse($breadcrumbs);

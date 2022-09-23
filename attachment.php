@@ -29,7 +29,7 @@ if(!isset($default_arg)) $default_arg="";
     <div class="row attachment-section content <?php row_frame_border(""); ?> flexstretch">
         <div class="col-md-<?php echo (is_active_sidebar( 'sidebar_primary' )?'8':'12'); ?> flexcolumn">
             <?php get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
             <?php if(has_excerpt()) {
                 the_excerpt();
             } else if (!empty(get_the_content())) {
@@ -60,7 +60,7 @@ if(!isset($default_arg)) $default_arg="";
                 $no_thumb = false;
                 get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
                 <h4 class="linked_post"><?php _e("Linked post", "wallstreet")?></h4>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
                 <?php echo the_content(__('Read More', 'wallstreet'));
                 get_named_template_parts("template-parts/content/content", ["meta-footer", "footer", "author"]);
             }

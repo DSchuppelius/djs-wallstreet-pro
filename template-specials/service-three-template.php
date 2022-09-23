@@ -45,9 +45,9 @@ $current_options = get_current_options();
                 <div class="col-md-4 col-sm-6 sssss">
                     <div class="service-effect">
                         <?php if (get_post_meta(get_the_ID(), "meta_service_link", true)) {
-                            $meta_service_link = $meta_service_link;
+                            $meta_service_link = esc_url($meta_service_link);
                         } else {
-                            $meta_service_link = get_the_permalink();
+                            $meta_service_link = esc_url(get_the_permalink());
                         } ?>
                         <?php if ($service_icon_target && $service_icon_image) { ?>
                             <div class="service-box">

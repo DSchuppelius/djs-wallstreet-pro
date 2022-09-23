@@ -74,10 +74,10 @@ $post_per_page = $current_options["home_blog_counts"];
                             <?php if ($current_options["home_meta_section_settings"] == false) { ?>
                                 <div class="home-blog-post-detail">
                                     <span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?> </span>
-                                    <span class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
+                                    <span class="comment"><a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
                                 </div>
                             <?php } ?>
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>		
+                            <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>		
                             <div class="home-blog-description"><p><?php echo get_the_excerpt(); ?></p></div>
                             <?php the_read_more("home-blog-btn"); ?>
                         </div>

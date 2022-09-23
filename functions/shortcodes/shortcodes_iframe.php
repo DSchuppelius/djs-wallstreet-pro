@@ -36,8 +36,8 @@ if (!isset($table_prefix)) {
     <head>
         <title><?php _e("Insert Shortcode", "wallstreet"); ?></title>
         <script type="text/javascript" src="<?php echo THEME_ASSETS_PATH_URI;?>/jquery/1.6.1/jquery.js"></script>
-        <script language="javascript" type="text/javascript" src="<?php echo home_url(); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-        <style type="text/css" src="<?php echo home_url(); ?>/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/dialog.css"></style>
+        <script language="javascript" type="text/javascript" src="<?php echo esc_url(home_url()); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+        <style type="text/css" src="<?php echo esc_url(home_url()); ?>/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/dialog.css"></style>
         <link rel="stylesheet" href="css/shortcode_tinymce.css" />
         <script>
             jQuery(document).ready(function($){

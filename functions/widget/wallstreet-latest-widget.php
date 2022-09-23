@@ -42,8 +42,8 @@ class wallstreet_latest_widget extends WP_Widget {
                         <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>								 
                     </a>
                     <div class="media-body">
-                        <h3 style="padding-bottom:0px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php //echo get_sidebar_excerpt(); ?></p>
+                        <h3 style="padding-bottom:0px;"><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h3>
+                        <p><?php echo get_sidebar_excerpt(); ?></p>
                     </div>
                     <div class="sidebar-comment-box">
                         <span>
@@ -116,17 +116,17 @@ class wallstreet_latest_widget extends WP_Widget {
                         $pop1 = $wpdb->get_results("SELECT id, guid FROM {$wpdb->prefix}posts WHERE id='$comment->comment_post_ID' ORDER BY comment_count DESC LIMIT 5");
                         foreach ($pop1 as $post1) { ?>
                             <div class="media post-media-sidebar">
-                                <a class="pull-left sidebar-pull-img" href="<?php echo $post1->guid; ?>">
+                                <a class="pull-left sidebar-pull-img" href="<?php echo esc_url($post1->guid); ?>">
                                     <?php echo get_avatar($comment, 70); ?>
                                 </a>
                                 <div class="media-body">
-                                    <h3><a href="<?php echo get_permalink($comment->comment_post_ID); ?>#comment-<?php echo $comment->comment_ID; ?>"><?php echo get_comment_sidebar($comment->comment_content); ?></a></h3>
+                                    <h3><a href="<?php echo esc_url(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID); ?>"><?php echo get_comment_sidebar($comment->comment_content); ?></a></h3>
                                 </div>
                                 <div class="sidebar-comment-box">
                                     <span>
                                         <?php echo get_the_date($current_options["fulldateformat"], $post1->id); ?>
                                         <small>|</small>
-                                        <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
+                                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
                                             <?php _e("By", "wallstreet"); the_author(); ?>
                                         </a>
                                     </span>

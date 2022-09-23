@@ -13,7 +13,7 @@ function form_more_button($more = "") {
     global $post;
     $current_options = get_current_options();
     $more_text = empty($more) ? $current_options["blog_template_read_more"] : $more;
-    return '<form action="' . get_permalink() . "#more-" . $post->ID . '"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
+    return '<form action="' . esc_url(get_permalink() . "#more-" . $post->ID) . '"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
 }
 
 function get_the_read_more($class = 'blog-btn-col') {
@@ -28,7 +28,7 @@ function get_the_show_all($link, $text, $target = false, $button_class = "more b
     $result = "";
 
     if(!empty($text) && !empty($link)) {
-        $action = 'action="' . $link . '" ' . get_blank_target($target, 'method="get"');
+        $action = 'action="' . esc_url($link) . '" ' . get_blank_target($target, 'method="get"');
         $result =
             '<div class ="row">
                 <div class="show-all-btn">

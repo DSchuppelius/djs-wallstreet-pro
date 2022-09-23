@@ -16,11 +16,11 @@ function get_max_content($content, $max_chars = 45) {
 }
 
 function get_sidebar_excerpt() {
-    return get_max_content(get_the_content(), 45);
+    return get_max_content(get_the_content(), 105) . "...";
 }
 
 function get_comment_sidebar($excerpt) {
-    return get_max_content($excerpt, 45);
+    return get_max_content($excerpt, 105) . "...";
 }
 
 function get_home_blog_excerpt($length, $read) {

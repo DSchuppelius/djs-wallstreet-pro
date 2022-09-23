@@ -37,8 +37,8 @@
                         $client->the_post();
                         get_template_part("template-parts/client/client", "header");
     
-                        $post_client_url = get_post_meta(get_the_ID(), "clientstrip_link", true) ? get_post_meta(get_the_ID(), "clientstrip_link", true) : "#";
-                        $post_client_url_target = blank_target(get_post_meta(get_the_ID(), "meta_client_target", true));
+                        $post_client_url = esc_url(get_post_meta(get_the_ID(), "clientstrip_link", true) ? get_post_meta(get_the_ID(), "clientstrip_link", true) : get_the_currentURL() . "#");
+                        $post_client_url_target = get_blank_target(get_post_meta(get_the_ID(), "meta_client_target", true));
     
                         if (has_post_thumbnail()) {
                             $post_thumbnail_id = get_post_thumbnail_id();

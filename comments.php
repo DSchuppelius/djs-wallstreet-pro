@@ -23,14 +23,14 @@ if (!function_exists("wallstreet_comment")) {
         $leave_reply = $is_answer ? $comment_data["translation_reply_to_coment"] : __("Reply", "wallstreet"); ?>	
 	
 		<div <?php comment_class("media comment_box"); ?> id="comment-<?php comment_ID(); ?>">
-			<a class="pull-left-comment" href="<?php the_author_meta("user_url"); ?>">
+			<a class="pull-left-comment" href="<?php esc_url(the_author_meta("user_url")); ?>">
 				<?php echo get_avatar($comment, 70); ?>
 			</a>
 			<div class="media-body">
 				<div class="comment-detail">
-					<h4 class="comment-detail-title"><a href="<?php comment_author_url();?>"><?php comment_author(); ?></a>
+					<h4 class="comment-detail-title"><a href="<?php esc_url(comment_author_url());?>"><?php comment_author(); ?></a>
 						<span class="comment-date">
-							<a href="<?php echo get_comment_link($comment->comment_ID); ?>">
+							<a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
 								<?php _e("Posted on", "wallstreet"); echo "&nbsp;" . get_comment_date("j.M Y") . " (" . get_comment_time("H:i:s") . ")"; ?>
 							</a>
 						</span>
@@ -78,7 +78,7 @@ if (have_comments()) { ?>
 
 if ("open" == $post->comment_status) {
     if (get_option("comment_registration") && !$user_ID) { ?>
-		<p><?php echo sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', "wallstreet"), site_url("wp-login.php") . "?redirect_to=" . urlencode(get_permalink())); ?></p>
+		<p><?php echo sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', "wallstreet"), esc_url(site_url("wp-login.php")) . "?redirect_to=" . esc_url(urlencode(get_permalink()))); ?></p>
 	<?php } else { ?>
 		<div class="comment-form-section<?php innerrow_frame_border(" "); ?>">
             <?php $fields = [
@@ -95,7 +95,7 @@ if ("open" == $post->comment_status) {
             $defaults = [
                 "fields" => apply_filters("comment_form_default_fields", $fields),
                 "comment_field" => '<div class="blog-form-group-textarea" ><textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="' . __("Leave your message", "wallstreet") . '"></textarea></div>',
-                "logged_in_as" => '<p class="logged-in-as">' . __("Logged in as", "wallstreet") . ' <a href="' . admin_url("profile.php") . '">' . $user_identity . "</a>" . '<a href="' . wp_logout_url(get_permalink()) . '" title="' . __("Log out from this Account", "wallstreet") . '"> ' . __("Log out", "wallstreet") . "</a>" . "</p>",
+                "logged_in_as" => '<p class="logged-in-as">' . __("Logged in as", "wallstreet") . ' <a href="' . esc_url(admin_url("profile.php")) . '">' . $user_identity . "</a>" . '<a href="' . esc_url(wp_logout_url(get_permalink())) . '" title="' . __("Log out from this Account", "wallstreet") . '"> ' . __("Log out", "wallstreet") . "</a>" . "</p>",
                 "id_submit" => "blogdetail_btn",
                 "class_submit" => "btn submit",
                 "label_submit" => __("Send Message", "wallstreet"),

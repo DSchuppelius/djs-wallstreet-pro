@@ -62,7 +62,7 @@ if (class_exists("WooCommerce")) {
 
     $shop_button .= '<div class="cart-header ">';
     global $woocommerce;
-    $link = function_exists("wc_get_cart_url") ? wc_get_cart_url() : $woocommerce->cart->get_cart_url();
+    $link = esc_url(function_exists("wc_get_cart_url") ? wc_get_cart_url() : $woocommerce->cart->get_cart_url());
 
     $shop_button .= '<a class="cart-icon" href="' . $link . '" >';
     if ($woocommerce->cart->cart_contents_count == 0) {

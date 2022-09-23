@@ -848,12 +848,12 @@ footer.site p {
 
 .post-media-sidebar h3 {
     font-weight: 400;
-    font-size: 0.9em
+    font-size: 1em
 }
 
 .post-media-sidebar p {
     font-weight: 300;
-    font-size: 1em
+    font-size: 0.875em
 }
 
 .post-password-form input[type="submit"] {

@@ -37,8 +37,8 @@
                         $partner->the_post();
                         get_template_part("template-parts/partner/partner", "header");
     
-                        $post_partner_url = get_post_meta(get_the_ID(), "partnerstrip_link", true) ? get_post_meta(get_the_ID(), "partnerstrip_link", true) : "#";
-                        $post_partner_url_target = blank_target(get_post_meta(get_the_ID(), "meta_partner_target", true));
+                        $post_partner_url = esc_url(get_post_meta(get_the_ID(), "partnerstrip_link", true) ? get_post_meta(get_the_ID(), "partnerstrip_link", true) : get_the_currentURL() . "#");
+                        $post_partner_url_target = get_blank_target(get_post_meta(get_the_ID(), "meta_partner_target", true));
     
                         if (has_post_thumbnail()) {
                             $post_thumbnail_id = get_post_thumbnail_id();
