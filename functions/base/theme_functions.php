@@ -42,7 +42,7 @@ function get_blank_target($option, $prefix = null){
     } else {
         $result .= '_self"';
     }
-    return !empty($prefix) ? $prefix." ". $result : $result;
+    return !empty($prefix) ? $prefix . " " . $result : $result;
 }
 
 function blank_target($option, $prefix = null){
