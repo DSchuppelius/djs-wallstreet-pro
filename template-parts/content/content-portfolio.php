@@ -57,7 +57,7 @@ if (isset($_GET["div"])) {
                             $decoded_slug = rawurldecode($tax_term->slug); ?>
 							<li rel="tab" class="nav-item" >
                                 <span class="tab">
-								    <a id="tab-<?php echo $decoded_slug; ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink : get_the_currentURL() . "#" . $decoded_slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
+								    <a id="tab-<?php echo $decoded_slug; ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
                                 </span>
 							</li>
 						<?php } ?>
