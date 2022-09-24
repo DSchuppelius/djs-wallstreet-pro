@@ -38,7 +38,7 @@ Theme supports featured slider managed from Theme Option Panel.
 
 DJS-Wallstreet-Pro a theme for business, consultancy firms etc. Initial created by Webriti and continued by Daniel Jörg Schuppelius (Base Author URI: http://webriti.com) (Author URI: http://schuppelius.org). 
 
-The CSS, XHTML and design is released under GPL:
+The CSS, HTML5 and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 
 Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
