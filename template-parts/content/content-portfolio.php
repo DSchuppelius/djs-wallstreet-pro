@@ -53,10 +53,11 @@ if (isset($_GET["div"])) {
 			<div class="col-md-12">
 				<div class="portfolio-tabs-section">
 					<ul id="tabs" class="portfolio-tabs" role="tablist">
-						<?php foreach ($tax_terms as $tax_term) { ?>
+						<?php foreach ($tax_terms as $tax_term) {
+                            $decoded_slug = rawurldecode($tax_term->slug); ?>
 							<li rel="tab" class="nav-item" >
                                 <span class="tab">
-								    <a id="tab-<?php echo rawurldecode($tax_term->slug); ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink : get_the_currentURL() . esc_url(get_the_currentURL() . "#"); echo rawurldecode($tax_term->slug)); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == rawurldecode($tax_term->slug)) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
+								    <a id="tab-<?php echo $decoded_slug; ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink : get_the_currentURL() . "#" . $decoded_slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
                                 </span>
 							</li>
 						<?php } ?>
@@ -75,6 +76,7 @@ if (isset($_GET["div"])) {
             $is_active = true;
             if ($tax_terms) {
                 foreach ($tax_terms as $tax_term) {
+                    $decoded_slug = rawurldecode($tax_term->slug);
                     $args = [
                         "post_type" => PORTFOLIO_POST_TYPE,
                         "post_status" => "publish",
@@ -86,7 +88,7 @@ if (isset($_GET["div"])) {
                     $portfolio_query = null;
                     $portfolio_query = new WP_Query($args);
                     if ($portfolio_query->have_posts()) { ?>
-                        <div id="<?php echo rawurldecode($tax_term->slug); ?>" class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == rawurldecode($tax_term->slug)) { echo "active"; } ?>" role="tabpanel" aria-labelledby="tab-<?php echo rawurldecode($tax_term->slug); ?>">
+                        <div id="<?php echo $decoded_slug; ?>" class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == $decoded_slug) { echo "active"; } ?>" role="tabpanel" aria-labelledby="tab-<?php echo $decoded_slug; ?>">
                             <div class="row">
                                 <?php while ($portfolio_query->have_posts()) {
                                     $portfolio_query->the_post();
@@ -150,7 +152,7 @@ if (isset($_GET["div"])) {
 						</div>
 						<?php wp_reset_query();
                     } else { ?>
-						<div id="<?php echo rawurldecode($tax_term->slug); ?>" class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == rawurldecode($tax_term->slug)) { echo "active"; } ?>"></div>
+						<div id="<?php echo $decoded_slug; ?>" class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == $decoded_slug) { echo "active"; } ?>"></div>
 					<?php }
                 }
             } ?>	
