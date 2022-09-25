@@ -50,24 +50,28 @@ require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-post-format-widget.php";
 require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
 
 // Customizer
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-blog.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-home.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-team.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-global.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-client.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-layout.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-slider.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-social.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-feature.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-partner.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-service.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-project.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-template.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-copyright.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-typography.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-testimonial.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer_theme_style.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-post-type-slugs.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/customizer.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-controls.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-relationship.php";
+
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-blog.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-home.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-team.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-global.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-client.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-layout.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-slider.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-social.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-feature.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-partner.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-service.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-project.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-template.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-copyright.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-typography.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-testimonial.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-theme_style.php";
+require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-post-type-slugs.php";
 
 require_once THEME_FUNCTIONS_PATH . "/customizer/single-blog-options.php";
 

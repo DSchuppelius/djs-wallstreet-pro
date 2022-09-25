@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-09-21 17:24+0200\n"
-"PO-Revision-Date: 2022-09-21 17:28+0200\n"
+"POT-Creation-Date: 2022-09-25 20:21+0200\n"
+"PO-Revision-Date: 2022-09-25 21:26+0200\n"
 "Last-Translator: Stefan Apel <apel.s@sebakmt.com>, 2017\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -82,19 +82,19 @@ msgstr "Belichtungszeit:"
 msgid "Linked post"
 msgstr "Verlinkter Beitrag"
 
-#: attachment.php:64 functions/customizer/customizer-template.php:218
+#: attachment.php:64 functions/customizer/childs/customizer-template.php:324
 #: index.php:31 template-parts/home/service/servic-1.php:111
 #: template-parts/home/service/servic-2.php:98
-#: template-parts/home/service/servic-3.php:111
-#: template-parts/home/service/servic-4.php:109
-#: template-parts/home/service/servic-5.php:109
-#: template-parts/home/service/servic-6.php:119
+#: template-parts/home/service/servic-3.php:94
+#: template-parts/home/service/servic-4.php:93
+#: template-parts/home/service/servic-5.php:101
+#: template-parts/home/service/servic-6.php:99
 #: template-parts/index/index-portfolio.php:107
-#: template-specials/service-five-template.php:108
-#: template-specials/service-four-template.php:108
-#: template-specials/service-six-template.php:108
-#: template-specials/service-three-template.php:109
-#: template-specials/service-two-template.php:106
+#: template-specials/service-five-template.php:95
+#: template-specials/service-four-template.php:95
+#: template-specials/service-six-template.php:95
+#: template-specials/service-three-template.php:95
+#: template-specials/service-two-template.php:91 theme_setup_data.php:234
 msgid "Read More"
 msgstr "Weiterlesen"
 
@@ -102,8 +102,8 @@ msgstr "Weiterlesen"
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Dieser Beitrag ist passwortgesch&uuml;tzt. Um Kommentare anschauen zu k&ouml;"
-"nnen musst du das Passwort angeben."
+"Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu k&ouml;nnen "
+"musst du das Passwort angeben."
 
 #: comments.php:23
 msgid "Reply"
@@ -136,7 +136,7 @@ msgstr "% Kommentare bisher"
 
 #: comments.php:70
 msgid "Comment navigation"
-msgstr "Kommentar-Navigation"
+msgstr "Kommentarnavigation"
 
 #: comments.php:71
 msgid "&larr; Older Comments"
@@ -161,13 +161,13 @@ msgstr ""
 #: template-single/single-portfolio.php:52 template/contact-us.php:92
 #: template/contact-us.php:93
 msgid "Website"
-msgstr "Website"
+msgstr "Webseite"
 
 #: comments.php:86
 msgid "Name"
 msgstr "Name"
 
-#: comments.php:87 functions/customizer/customizer-template.php:597
+#: comments.php:87 functions/customizer/childs/customizer-template.php:684
 #: template/contact-us.php:88 template/contact-us.php:89
 msgid "Email"
 msgstr "E-Mail"
@@ -201,7 +201,7 @@ msgstr "Schreiben Sie einen Kommentar"
 msgid "Leave a Reply to %s"
 msgstr "Schreiben Sie einen Kommentar zu %s"
 
-#: functions.php:95 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:99 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -209,26 +209,26 @@ msgstr "Schreiben Sie einen Kommentar zu %s"
 msgid "Page"
 msgstr "Seite"
 
-#: functions.php:128
+#: functions.php:132
 msgctxt "header image description"
 msgid "MyPic"
 msgstr "MeinBild"
 
-#: functions.php:133
+#: functions.php:137
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
-#: functions.php:188 functions/customizer/customizer-social.php:97
+#: functions.php:192 functions/customizer/childs/customizer-social.php:121
 #: functions/meta-box/post-meta.php:136 functions/meta-box/post-meta.php:137
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: functions.php:189 functions/customizer/customizer-social.php:72
+#: functions.php:193 functions/customizer/childs/customizer-social.php:94
 #: functions/meta-box/post-meta.php:152 functions/meta-box/post-meta.php:153
 msgid "Twitter URL"
 msgstr "Twitter URL"
 
-#: functions.php:190 functions/customizer/customizer-social.php:122
+#: functions.php:194 functions/customizer/childs/customizer-social.php:148
 #: functions/meta-box/post-meta.php:148 functions/meta-box/post-meta.php:149
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
@@ -254,9 +254,9 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #: functions/base/get_content_title.php:34
-#: functions/customizer/customizer-feature.php:44
-#: functions/customizer/customizer-feature.php:225
-#: functions/customizer/customizer-testimonial.php:168
+#: functions/customizer/childs/customizer-feature.php:64
+#: functions/customizer/childs/customizer-feature.php:249
+#: functions/customizer/childs/customizer-testimonial.php:166
 msgid "Image"
 msgstr "Bild"
 
@@ -297,7 +297,7 @@ msgid "Hint:"
 msgstr "Hinweis:"
 
 #: functions/breadcrumbs/breadcrumbs.php:15
-#: functions/menu/theme_bootstrap_walker_page.php:94
+#: functions/menu/theme_bootstrap_walker_page.php:89
 #: template-parts/index/index-banner.php:35
 msgid "Home"
 msgstr "Start"
@@ -317,72 +317,74 @@ msgstr "Archiv"
 
 #: functions/breadcrumbs/breadcrumbs.php:110
 msgid "Posts tagged"
-msgstr "Markierte Beitr&auml;ge"
+msgstr "Markierte Beiträge"
 
 #: functions/breadcrumbs/breadcrumbs.php:114
 msgid "Articles posted by"
-msgstr "Beitr&auml;ge von"
+msgstr "Beiträge von"
 
 #: functions/breadcrumbs/breadcrumbs.php:120
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: functions/customizer/customizer-blog.php:13
-msgid "Home blog settings"
-msgstr "Startseite-Blogeinstellungen"
+#: functions/customizer/childs/customizer-blog.php:22
+msgid "Blog settings"
+msgstr "Einstellungen (Blog)"
 
-#: functions/customizer/customizer-blog.php:25
+#: functions/customizer/childs/customizer-blog.php:28
+msgid "Home blog settings"
+msgstr "Blogeinstellungen (Startseite)"
+
+#: functions/customizer/childs/customizer-blog.php:43
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/customizer-blog.php:32 theme_setup_data.php:226
+#: functions/customizer/childs/customizer-blog.php:50 theme_setup_data.php:226
 msgid "Our latest blog post"
-msgstr "Unsere neuesten Blog-Beitr&auml;ge"
+msgstr "Unsere neuesten Blog-Beiträge"
 
-#: functions/customizer/customizer-blog.php:38
-#: functions/customizer/customizer-client.php:32
-#: functions/customizer/customizer-feature.php:87
-#: functions/customizer/customizer-feature.php:111
-#: functions/customizer/customizer-feature.php:151
-#: functions/customizer/customizer-feature.php:191
-#: functions/customizer/customizer-partner.php:32
-#: functions/customizer/customizer-project.php:86
-#: functions/customizer/customizer-service.php:77
-#: functions/customizer/customizer-service.php:178
-#: functions/customizer/customizer-service.php:252
-#: functions/customizer/customizer-team.php:64
-#: functions/customizer/customizer-template.php:45
-#: functions/customizer/customizer-template.php:143
-#: functions/customizer/customizer-template.php:313
-#: functions/customizer/customizer-template.php:460
-#: functions/customizer/customizer-template.php:531
-#: functions/customizer/customizer-template.php:603
-#: functions/customizer/customizer-template.php:662
-#: functions/customizer/customizer-template.php:708
+#: functions/customizer/childs/customizer-blog.php:56
+#: functions/customizer/childs/customizer-feature.php:108
+#: functions/customizer/childs/customizer-feature.php:134
+#: functions/customizer/childs/customizer-feature.php:177
+#: functions/customizer/childs/customizer-feature.php:220
+#: functions/customizer/childs/customizer-project.php:101
+#: functions/customizer/childs/customizer-service.php:104
+#: functions/customizer/childs/customizer-service.php:191
+#: functions/customizer/childs/customizer-service.php:250
+#: functions/customizer/childs/customizer-team.php:78
+#: functions/customizer/childs/customizer-template.php:156
+#: functions/customizer/childs/customizer-template.php:248
+#: functions/customizer/childs/customizer-template.php:417
+#: functions/customizer/childs/customizer-template.php:557
+#: functions/customizer/childs/customizer-template.php:623
+#: functions/customizer/childs/customizer-template.php:690
+#: functions/customizer/childs/customizer-template.php:744
+#: functions/customizer/childs/customizer-template.php:785
+#: functions/customizer/customizer-relationship.php:57
 #: functions/meta-box/post-meta.php:33 functions/meta-box/post-meta.php:34
 #: functions/widget/wallstreet-latest-widget.php:153
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/customizer-blog.php:44 theme_setup_data.php:227
+#: functions/customizer/childs/customizer-blog.php:62 theme_setup_data.php:227
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
-#: functions/customizer/customizer-blog.php:50
-#: functions/customizer/customizer-client.php:46
-#: functions/customizer/customizer-feature.php:124
-#: functions/customizer/customizer-feature.php:164
-#: functions/customizer/customizer-feature.php:204
-#: functions/customizer/customizer-partner.php:46
-#: functions/customizer/customizer-project.php:99
-#: functions/customizer/customizer-service.php:89
-#: functions/customizer/customizer-service.php:193
-#: functions/customizer/customizer-service.php:264
-#: functions/customizer/customizer-team.php:76
-#: functions/customizer/customizer-template.php:57
-#: functions/customizer/customizer-template.php:155
-#: functions/customizer/customizer-template.php:326
-#: functions/customizer/customizer-template.php:675
+#: functions/customizer/childs/customizer-blog.php:68
+#: functions/customizer/childs/customizer-feature.php:148
+#: functions/customizer/childs/customizer-feature.php:191
+#: functions/customizer/childs/customizer-feature.php:234
+#: functions/customizer/childs/customizer-project.php:115
+#: functions/customizer/childs/customizer-service.php:117
+#: functions/customizer/childs/customizer-service.php:207
+#: functions/customizer/childs/customizer-service.php:263
+#: functions/customizer/childs/customizer-team.php:91
+#: functions/customizer/childs/customizer-template.php:168
+#: functions/customizer/childs/customizer-template.php:260
+#: functions/customizer/childs/customizer-template.php:430
+#: functions/customizer/childs/customizer-template.php:757
+#: functions/customizer/customizer-relationship.php:70
 #: functions/meta-box/post-meta.php:35 functions/meta-box/post-meta.php:36
 #: functions/meta-box/post-meta.php:65 functions/meta-box/post-meta.php:66
 #: functions/meta-box/post-meta.php:109 functions/meta-box/post-meta.php:110
@@ -390,81 +392,81 @@ msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: functions/customizer/customizer-blog.php:62
+#: functions/customizer/childs/customizer-blog.php:80
 msgid "Blog design style"
-msgstr "Blog-Design-Stil"
+msgstr "Stil (Blogdesign)"
 
-#: functions/customizer/customizer-blog.php:65
+#: functions/customizer/childs/customizer-blog.php:83
 msgid "Grid View"
 msgstr "Gitteransicht"
 
-#: functions/customizer/customizer-blog.php:66
+#: functions/customizer/childs/customizer-blog.php:84
 msgid "Masonry 2 Column"
 msgstr "Masonry 2 Spalten"
 
-#: functions/customizer/customizer-blog.php:67
+#: functions/customizer/childs/customizer-blog.php:85
 msgid "Masonry 3 Column"
 msgstr "Masonry 3 Spalten"
 
-#: functions/customizer/customizer-blog.php:68
+#: functions/customizer/childs/customizer-blog.php:86
 msgid "Masonry 4 Column"
 msgstr "Masonry 4 Spalten"
 
-#: functions/customizer/customizer-blog.php:69
+#: functions/customizer/childs/customizer-blog.php:87
 msgid "List Style"
 msgstr "Listenstil"
 
-#: functions/customizer/customizer-blog.php:70
+#: functions/customizer/childs/customizer-blog.php:88
 msgid "Switcher List Style"
 msgstr "Switcher-Listenstil"
 
-#: functions/customizer/customizer-blog.php:80
+#: functions/customizer/childs/customizer-blog.php:98
 msgid "No of Post"
 msgstr "Anzahl der Post"
 
-#: functions/customizer/customizer-blog.php:104
+#: functions/customizer/childs/customizer-blog.php:122
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/customizer-blog.php:111 theme_setup_data.php:92
+#: functions/customizer/childs/customizer-blog.php:129 theme_setup_data.php:92
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
-#: functions/customizer/customizer-blog.php:117
-#: functions/customizer/customizer-project.php:126
-#: functions/customizer/customizer-service.php:277
+#: functions/customizer/childs/customizer-blog.php:135
+#: functions/customizer/childs/customizer-project.php:143
+#: functions/customizer/childs/customizer-service.php:276
 #: functions/meta-box/post-meta.php:37 functions/meta-box/post-meta.php:68
 #: functions/meta-box/post-meta.php:69 functions/meta-box/post-meta.php:98
 #: functions/meta-box/post-meta.php:99
 msgid "Button Text"
 msgstr "Button-Text"
 
-#: functions/customizer/customizer-blog.php:130
-#: functions/customizer/customizer-project.php:140
-#: functions/customizer/customizer-service.php:290
+#: functions/customizer/childs/customizer-blog.php:148
+#: functions/customizer/childs/customizer-project.php:157
+#: functions/customizer/childs/customizer-service.php:289
 #: functions/meta-box/post-meta.php:39 functions/meta-box/post-meta.php:100
 #: functions/meta-box/post-meta.php:101
 msgid "Button Link"
 msgstr "Button-Link"
 
-#: functions/customizer/customizer-blog.php:144
-#: functions/customizer/customizer-feature.php:69
-#: functions/customizer/customizer-feature.php:73
-#: functions/customizer/customizer-feature.php:236
-#: functions/customizer/customizer-project.php:155
-#: functions/customizer/customizer-service.php:304
-#: functions/customizer/customizer-social.php:85
-#: functions/customizer/customizer-social.php:110
-#: functions/customizer/customizer-social.php:135
-#: functions/customizer/customizer-social.php:160
-#: functions/customizer/customizer-social.php:185
-#: functions/customizer/customizer-social.php:210
-#: functions/customizer/customizer-social.php:235
-#: functions/customizer/customizer-social.php:261
-#: functions/customizer/customizer-social.php:286
-#: functions/customizer/customizer-social.php:311
-#: functions/customizer/customizer-social.php:336
-#: functions/customizer/customizer-social.php:361
+#: functions/customizer/childs/customizer-blog.php:162
+#: functions/customizer/childs/customizer-feature.php:90
+#: functions/customizer/childs/customizer-feature.php:94
+#: functions/customizer/childs/customizer-feature.php:260
+#: functions/customizer/childs/customizer-project.php:172
+#: functions/customizer/childs/customizer-service.php:303
+#: functions/customizer/childs/customizer-social.php:108
+#: functions/customizer/childs/customizer-social.php:135
+#: functions/customizer/childs/customizer-social.php:162
+#: functions/customizer/childs/customizer-social.php:189
+#: functions/customizer/childs/customizer-social.php:216
+#: functions/customizer/childs/customizer-social.php:243
+#: functions/customizer/childs/customizer-social.php:270
+#: functions/customizer/childs/customizer-social.php:297
+#: functions/customizer/childs/customizer-social.php:324
+#: functions/customizer/childs/customizer-social.php:351
+#: functions/customizer/childs/customizer-social.php:378
+#: functions/customizer/childs/customizer-social.php:405
 #: functions/meta-box/post-meta.php:41 functions/meta-box/post-meta.php:63
 #: functions/meta-box/post-meta.php:81 functions/meta-box/post-meta.php:102
 #: functions/meta-box/post-meta.php:138 functions/meta-box/post-meta.php:142
@@ -474,61 +476,42 @@ msgstr "Button-Link"
 msgid "Open link in new tab"
 msgstr "Link in neuem Tab öffnen"
 
-#: functions/customizer/customizer-client.php:15
-#: functions/customizer/customizer-client.php:54
-msgid "Client settings"
-msgstr "Kunden-Einstellungen"
-
-#: functions/customizer/customizer-client.php:19
-#: functions/customizer/customizer-partner.php:19
-msgid "Section Heading"
-msgstr "Bereichs&uuml;berschrift"
-
-#: functions/customizer/customizer-client.php:26 theme_setup_data.php:123
+#: functions/customizer/childs/customizer-client.php:19
+#: theme_setup_data.php:123
 msgid "Our Clients"
 msgstr "Unsere Kunden"
 
-#: functions/customizer/customizer-client.php:39 theme_setup_data.php:124
+#: functions/customizer/childs/customizer-client.php:23
+#: theme_setup_data.php:124
 msgid ""
 "Have a look at our clients we are growing their business and they are going "
 "up in the market by beating their competitors."
 msgstr ""
 "Schau dir unseren Kundenstamm an. Wir erweitern ihr Unternehmen und sie "
-"bewegen sich im Markt aufw&auml;rts und lassen ihre Konkurrenten hinter sich."
+"bewegen sich im Markt aufwärts und lassen ihre Konkurrenten hinter sich."
 
-#: functions/customizer/customizer-client.php:58
-msgid "Client Picture Settings"
-msgstr "Einstellungen für Kundenbilder"
+#: functions/customizer/childs/customizer-client.php:27
+msgid "Client settings"
+msgstr "Einstellungen (Kunden)"
 
-#: functions/customizer/customizer-client.php:70
-#: functions/customizer/customizer-partner.php:70
-msgid "Max Pictureheight"
-msgstr "Max. Bildhöhe"
+#: functions/customizer/childs/customizer-copyright.php:21
+msgid "Copyright and cookie settings"
+msgstr "Einstellungen (Copyright- und Cookies)"
 
-#: functions/customizer/customizer-client.php:88
-#: functions/customizer/customizer-partner.php:88
-msgid "Top/Bottom Padding"
-msgstr "Padding oben/unten"
-
-#: functions/customizer/customizer-client.php:106
-#: functions/customizer/customizer-partner.php:106
-msgid "Left/Right Padding"
-msgstr "Padding links/rechts"
-
-#: functions/customizer/customizer-client.php:125
-msgid "Click here to add client"
-msgstr "Klicke hier, um einen Kunden hinzuzuf&uuml;gen"
-
-#: functions/customizer/customizer-copyright.php:16
-#: functions/customizer/customizer-copyright.php:20
+#: functions/customizer/childs/customizer-copyright.php:27
 msgid "Footer copyright settings"
-msgstr "Footer-Copyright-Einstellungen"
+msgstr "Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/customizer-copyright.php:34
+#: functions/customizer/childs/customizer-copyright.php:33
+msgid "Cookie settings"
+msgstr "Cookieeinstellungen"
+
+#: functions/customizer/childs/customizer-copyright.php:51
 msgid "Enable Footer Link-text"
-msgstr "Aktiviere Footer-Linktext"
+msgstr "Aktiviere Fußzeilenlinktext"
 
-#: functions/customizer/customizer-copyright.php:40 theme_setup_data.php:323
+#: functions/customizer/childs/customizer-copyright.php:57
+#: theme_setup_data.php:323
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
 "\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
@@ -543,32 +526,31 @@ msgstr ""
 "\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/versandkosten\">Versandkosten</"
 "a>&nbsp;"
 
-#: functions/customizer/customizer-copyright.php:44
+#: functions/customizer/childs/customizer-copyright.php:62
 msgid "Footer Link-text"
-msgstr "Footer-Linktext"
+msgstr "Fußzeilenlinktext"
 
-#: functions/customizer/customizer-copyright.php:57
+#: functions/customizer/childs/customizer-copyright.php:75
 msgid "Enable Footer Copyright"
-msgstr "Aktiviere Footer-Copyright-Einstellungen"
+msgstr "Aktiviere Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:324
+#: functions/customizer/childs/customizer-copyright.php:81
+#: theme_setup_data.php:324
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
 #. Author of the plugin/theme
-#: functions/customizer/customizer-copyright.php:63 theme_setup_data.php:324
+#: functions/customizer/childs/customizer-copyright.php:81
+#: theme_setup_data.php:324
 msgid "Daniel Joerg Schuppelius"
-msgstr "Daniel J&ouml;rg Schuppelius"
+msgstr "Daniel Jörg Schuppelius"
 
-#: functions/customizer/customizer-copyright.php:67
+#: functions/customizer/childs/customizer-copyright.php:86
 msgid "Copyright text"
-msgstr "Copyright Text"
+msgstr "Copyrighttext"
 
-#: functions/customizer/customizer-copyright.php:73
-msgid "Cookie settings"
-msgstr "Cookie-Einstellungen"
-
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid ""
 "This hidden content may leave traces of third-party vendors on your computer "
 "when activated. Perhaps your user behavior could be analyzed via these "
@@ -583,44 +565,51 @@ msgstr ""
 "den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung "
 "auf dieser Website einsehen:"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "Imprint"
 msgstr "Impressum"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "Do you have any further questions on this topic? Write me via the"
-msgstr ""
-"Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir &uuml;ber das"
+msgstr "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "contact"
 msgstr "Kontakt"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "contact form"
 msgstr "Kontaktformular"
 
-#: functions/customizer/customizer-copyright.php:79 theme_setup_data.php:329
+#: functions/customizer/childs/customizer-copyright.php:92
+#: theme_setup_data.php:329
 msgid "or by e-mail"
 msgstr "oder per E-Mail"
 
-#: functions/customizer/customizer-copyright.php:83
+#: functions/customizer/childs/customizer-copyright.php:97
 msgid "Cookietext before button"
 msgstr "Mitteilung vor Cookie-Schaltfläche"
 
-#: functions/customizer/customizer-copyright.php:88 theme_setup_data.php:330
+#: functions/customizer/childs/customizer-copyright.php:103
+#: theme_setup_data.php:330
 msgid "Yes, I would like to activate the content on this page..."
-msgstr "Ja, ich m&ouml;chte den Inhalt auf dieser Seite aktivieren..."
+msgstr "Ja, ich möchte den Inhalt auf dieser Seite aktivieren..."
 
-#: functions/customizer/customizer-copyright.php:92
+#: functions/customizer/childs/customizer-copyright.php:108
 msgid "Buttontext"
 msgstr "Schaltflächentext"
 
-#: functions/customizer/customizer-copyright.php:97 theme_setup_data.php:331
+#: functions/customizer/childs/customizer-copyright.php:114
+#: theme_setup_data.php:331
 msgid ""
 "Furthermore, you are aware that by activating the content, cookies can be "
 "set by third parties. In addition, you are aware that your data processing "
@@ -630,86 +619,87 @@ msgid ""
 "target website."
 msgstr ""
 "Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
-"Cookies von Dritten gesetzt werden k&ouml;nnen. Dar&uuml;ber hinaus ist "
-"Ihnen bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst "
-"interagiert. Das bedeutet, dass Informationen aus Ihrem System an den "
-"Drittanbieter &uuml;bermittelt werden. Wenn Sie dem untenstehenden Link "
-"folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der "
-"Zielwebsite ausgetauscht."
+"Cookies von Dritten gesetzt werden können. Darüber hinaus ist Ihnen bekannt, "
+"dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst interagiert. "
+"Das bedeutet, dass Informationen aus Ihrem System an den Drittanbieter "
+"übermittelt werden. Wenn Sie dem untenstehenden Link folgen, werden "
+"wahrscheinlich auch Cookies gesetzt und Daten auf der Zielwebsite "
+"ausgetauscht."
 
-#: functions/customizer/customizer-copyright.php:101
+#: functions/customizer/childs/customizer-copyright.php:119
 msgid "Cookietext after button"
-msgstr "Mitteilung nach Cookie-Schaltfläche"
+msgstr "Mitteilung nach Cookieschaltfläche"
 
-#: functions/customizer/customizer-feature.php:15
-#: functions/customizer/customizer-feature.php:19
+#: functions/customizer/childs/customizer-feature.php:23
+#: functions/customizer/childs/customizer-feature.php:29
 msgid "Theme feature settings"
-msgstr "Theme-Funktionen-Einstellungen"
+msgstr "Einstellungen (Themefunktionen)"
 
-#: functions/customizer/customizer-feature.php:32
-msgid "Check to enable theme featured section on homepage"
-msgstr ""
-"Ausw&auml;hlen, um einen Bereich für Theme-Funktionen auf der Startseite zu "
-"aktivieren"
-
-#: functions/customizer/customizer-feature.php:58
-msgid "Image Link"
-msgstr "Bildlink"
-
-#: functions/customizer/customizer-feature.php:80 theme_setup_data.php:107
-msgid "Core features of theme"
-msgstr "Kernfunktionen des Themes"
-
-#: functions/customizer/customizer-feature.php:99
-#: functions/customizer/customizer-feature.php:139
-#: functions/customizer/customizer-feature.php:179
-#: functions/customizer/customizer-template.php:447
-#: functions/customizer/customizer-template.php:518
-#: functions/customizer/customizer-template.php:590
-#: functions/meta-box/post-meta.php:55 functions/meta-box/post-meta.php:59
-#: template-parts/home/service/servic-1.php:75
-#: template-specials/service-five-template.php:79
-#: template-specials/service-five-template.php:181
-#: template-specials/service-four-template.php:79
-#: template-specials/service-four-template.php:181
-#: template-specials/service-six-template.php:79
-#: template-specials/service-six-template.php:181
-#: template-specials/service-three-template.php:79
-#: template-specials/service-three-template.php:182
-#: template-specials/service-two-template.php:78
-#: template-specials/service-two-template.php:179
-msgid "Icon"
-msgstr "Icon"
-
-#: functions/customizer/customizer-feature.php:106
-#: functions/customizer/customizer-feature.php:146
-#: functions/customizer/customizer-feature.php:186 theme_setup_data.php:109
-#: theme_setup_data.php:112 theme_setup_data.php:115
-msgid "Incredibly flexible"
-msgstr "Unglaublich flexibel"
-
-#: functions/customizer/customizer-feature.php:211
-#: functions/customizer/customizer-testimonial.php:154
+#: functions/customizer/childs/customizer-feature.php:35
+#: functions/customizer/childs/customizer-testimonial.php:152
 msgid "Background Image"
 msgstr "Hintergrundbild"
 
-#: functions/customizer/customizer-feature.php:240
+#: functions/customizer/childs/customizer-feature.php:51
+msgid "Check to enable theme featured section on homepage"
+msgstr ""
+"Auswählen, um einen Bereich für Themefunktionen auf der Startseite zu "
+"aktivieren"
+
+#: functions/customizer/childs/customizer-feature.php:79
+msgid "Image Link"
+msgstr "Bildlink"
+
+#: functions/customizer/childs/customizer-feature.php:101
+#: theme_setup_data.php:107
+msgid "Core features of theme"
+msgstr "Kernfunktionen des Themes"
+
+#: functions/customizer/childs/customizer-feature.php:121
+#: functions/customizer/childs/customizer-feature.php:164
+#: functions/customizer/childs/customizer-feature.php:207
+#: functions/customizer/childs/customizer-template.php:544
+#: functions/customizer/childs/customizer-template.php:610
+#: functions/customizer/childs/customizer-template.php:677
+#: functions/meta-box/post-meta.php:55 functions/meta-box/post-meta.php:59
+#: template-parts/home/service/servic-1.php:75
+#: template-specials/service-five-template.php:69
+#: template-specials/service-five-template.php:159
+#: template-specials/service-four-template.php:69
+#: template-specials/service-four-template.php:160
+#: template-specials/service-six-template.php:69
+#: template-specials/service-six-template.php:158
+#: template-specials/service-three-template.php:69
+#: template-specials/service-three-template.php:159
+#: template-specials/service-two-template.php:67
+#: template-specials/service-two-template.php:155
+msgid "Icon"
+msgstr "Icon"
+
+#: functions/customizer/childs/customizer-feature.php:128
+#: functions/customizer/childs/customizer-feature.php:171
+#: functions/customizer/childs/customizer-feature.php:214
+#: theme_setup_data.php:109 theme_setup_data.php:112 theme_setup_data.php:115
+msgid "Incredibly flexible"
+msgstr "Unglaublich flexibel"
+
+#: functions/customizer/childs/customizer-feature.php:264
 msgid "Background Image Fixed"
 msgstr "Hintergrundbild fixiert"
 
-#: functions/customizer/customizer-global.php:14
+#: functions/customizer/childs/customizer-global.php:22
 msgid "Global options"
 msgstr "Globale Einstellungen"
 
-#: functions/customizer/customizer-global.php:18
+#: functions/customizer/childs/customizer-global.php:28
 msgid "Global theme options"
 msgstr "Globale Designoptionen"
 
-#: functions/customizer/customizer-global.php:24
+#: functions/customizer/childs/customizer-global.php:34
 msgid "Datetime section"
 msgstr "Datums- und Zeiteinstellungen"
 
-#: functions/customizer/customizer-global.php:26
+#: functions/customizer/childs/customizer-global.php:36
 msgid ""
 "For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
 "format.php\">php.net (datetime.format)</a>"
@@ -717,265 +707,243 @@ msgstr ""
 "Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
 "en/datetime.format.php\">php.net (datetime.format)</a>"
 
-#: functions/customizer/customizer-global.php:30 theme_setup_data.php:13
+#: functions/customizer/childs/customizer-global.php:43 theme_setup_data.php:13
 msgid "Y"
 msgstr "Y"
 
-#: functions/customizer/customizer-global.php:36
+#: functions/customizer/childs/customizer-global.php:50
 msgid "Year dateformat"
 msgstr "Jahresdatumsformat"
 
-#: functions/customizer/customizer-global.php:43 theme_setup_data.php:14
+#: functions/customizer/childs/customizer-global.php:57 theme_setup_data.php:14
 msgid "F Y"
 msgstr "F Y"
 
-#: functions/customizer/customizer-global.php:49
+#: functions/customizer/childs/customizer-global.php:64
 msgid "Month/Year dateformat"
 msgstr "Monat/Jahr Datumsformat"
 
-#: functions/customizer/customizer-global.php:56 theme_setup_data.php:15
+#: functions/customizer/childs/customizer-global.php:71 theme_setup_data.php:15
 msgid "jS F Y"
 msgstr "d. F Y"
 
-#: functions/customizer/customizer-global.php:62
+#: functions/customizer/childs/customizer-global.php:78
 msgid "Full dateformat"
 msgstr "Komplettes Datum"
 
-#: functions/customizer/customizer-global.php:69 theme_setup_data.php:16
+#: functions/customizer/childs/customizer-global.php:85 theme_setup_data.php:16
 msgid "jS F Y - h:i a"
 msgstr "d. F Y - H:i"
 
-#: functions/customizer/customizer-global.php:75
+#: functions/customizer/childs/customizer-global.php:92
 msgid "Full datetimeformat"
 msgstr "Komplettes Datum inkl. Zeit"
 
-#: functions/customizer/customizer-global.php:82 theme_setup_data.php:17
+#: functions/customizer/childs/customizer-global.php:99 theme_setup_data.php:17
 msgid "Y-m-d\\TH:i:sP"
 msgstr "Y-m-d\\TH:i:sP"
 
-#: functions/customizer/customizer-global.php:88
+#: functions/customizer/childs/customizer-global.php:106
 msgid "Technical full datetimeformat"
 msgstr "Technisches Zeitformat"
 
-#: functions/customizer/customizer-global.php:102
+#: functions/customizer/childs/customizer-global.php:120
 msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
-#: functions/customizer/customizer-global.php:116
+#: functions/customizer/childs/customizer-global.php:134
 msgid "Enable Contextmenu"
 msgstr "Kontextmenü aktivieren"
 
-#: functions/customizer/customizer-global.php:130
+#: functions/customizer/childs/customizer-global.php:148
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/customizer-global.php:144
+#: functions/customizer/childs/customizer-global.php:162
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/customizer-global.php:158
+#: functions/customizer/childs/customizer-global.php:176
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/customizer-global.php:172
+#: functions/customizer/childs/customizer-global.php:190
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/customizer-global.php:185
+#: functions/customizer/childs/customizer-global.php:203
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der dicken Rahmen"
 
-#: functions/customizer/customizer-global.php:197
+#: functions/customizer/childs/customizer-global.php:215
 msgid "Enable Fader on Pageload"
 msgstr "Fader beim Laden aktivieren"
 
-#: functions/customizer/customizer-global.php:209
+#: functions/customizer/childs/customizer-global.php:227
 msgid "Enable frame on pages"
 msgstr "Rahmen auf Seiten aktivieren"
 
-#: functions/customizer/customizer-global.php:221
+#: functions/customizer/childs/customizer-global.php:239
 msgid "Add filling elements to pages"
-msgstr "Hinzuf&uuml;gen von Füllelementen zu Seiten"
+msgstr "Hinzufügen von Füllelementen zu Seiten"
 
-#: functions/customizer/customizer-global.php:232
+#: functions/customizer/childs/customizer-global.php:251
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/customizer-global.php:250
+#: functions/customizer/childs/customizer-global.php:270
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
-#: functions/customizer/customizer-global.php:269
+#: functions/customizer/childs/customizer-global.php:290
 msgid "Rellax Speed (Social Contact Header)"
 msgstr "Rellax Speed (Header für Social Media und Kontakte)"
 
-#: functions/customizer/customizer-global.php:287
+#: functions/customizer/childs/customizer-global.php:309
 msgid "Rellax Speed (Header)"
 msgstr "Rellax Speed (Kopfzeile)"
 
-#: functions/customizer/customizer-global.php:305
+#: functions/customizer/childs/customizer-global.php:328
 msgid "Rellax Speed (Homepage Slider)"
 msgstr "Rellax Speed (Homepage Slider)"
 
-#: functions/customizer/customizer-global.php:323
+#: functions/customizer/childs/customizer-global.php:347
 msgid "Rellax Speed (Breadcrumbs)"
 msgstr "Rellax Speed (Breadcrumbs)"
 
-#: functions/customizer/customizer-global.php:341
+#: functions/customizer/childs/customizer-global.php:366
 msgid "Rellax Speed (Site Banner)"
 msgstr "Rellax Speed (Seiten-Banner)"
 
-#: functions/customizer/customizer-home.php:15
+#: functions/customizer/childs/customizer-home.php:23
 msgid "Header settings"
-msgstr "Header-Einstellungen"
+msgstr "Einstellungen (Header)"
 
-#: functions/customizer/customizer-home.php:20
+#: functions/customizer/childs/customizer-home.php:30
 msgid "Site Favicon"
-msgstr "Website-Favicon"
+msgstr "Webseiten Favicon"
 
-#: functions/customizer/customizer-home.php:22
+#: functions/customizer/childs/customizer-home.php:32
 msgid "Upload a Favicon"
 msgstr "Ein Favicon hochladen"
 
-#: functions/customizer/customizer-home.php:34
+#: functions/customizer/childs/customizer-home.php:38
+msgid "Social Links"
+msgstr "Soziale Links"
+
+#: functions/customizer/childs/customizer-home.php:45
+#: functions/customizer/childs/customizer-home.php:86
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+#: functions/customizer/childs/customizer-home.php:52
+msgid "Header contact settings"
+msgstr "Headerkontakteinstellungen"
+
+#: functions/customizer/childs/customizer-home.php:59
+msgid "Header Preset settings"
+msgstr "Einstellungen für Headervoreinstellungen"
+
+#: functions/customizer/childs/customizer-home.php:74
 msgid "Upload a Favicon (ideal width and height is 16x16 or 32x32)"
 msgstr ""
 "Ein Favicon hochladen (ideale Breite und H&ouml;he ist 16x16 oder 32x32)"
 
-#: functions/customizer/customizer-home.php:41
-#: functions/customizer/customizer-social.php:20
-msgid "Social Links"
-msgstr "Soziale Links"
-
-#: functions/customizer/customizer-home.php:48
-#: functions/customizer/customizer-home.php:60
-msgid "Custom CSS"
-msgstr "Benutzerdefiniertes CSS"
-
-#: functions/customizer/customizer-home.php:68
-msgid "Header contact settings"
-msgstr "Header-Kontakt-Einstellungen"
-
-#: functions/customizer/customizer-home.php:81
+#: functions/customizer/childs/customizer-home.php:100
 msgid "Enable/Disable contact header"
-msgstr "Header-Kontakt de/aktivieren"
+msgstr "Headerkontakt de/aktivieren"
 
-#: functions/customizer/customizer-home.php:93
+#: functions/customizer/childs/customizer-home.php:112
 msgid "Header contact info"
 msgstr "Kontaktinformationen für die Kopfzeile"
 
-#: functions/customizer/customizer-home.php:105
+#: functions/customizer/childs/customizer-home.php:124
 msgid "Header email info"
-msgstr "Header-E-Mail-Informationen"
+msgstr "Mailinformationen (Header)"
 
-#: functions/customizer/customizer-home.php:112
-msgid "Header Preset settings"
-msgstr "Einstellungen für Header-Voreinstellungen"
-
-#: functions/customizer/customizer-home.php:124
+#: functions/customizer/childs/customizer-home.php:137
 msgid "Select header preset style"
-msgstr "Header-Voreinstellungsstil auswählen"
+msgstr "Voreinstellungsstil auswählen (Header)"
 
-#: functions/customizer/customizer-home.php:127
-#: functions/customizer/customizer-service.php:60
-#: functions/customizer/customizer-team.php:34
-#: functions/customizer/customizer-testimonial.php:53
+#: functions/customizer/childs/customizer-home.php:140
+#: functions/customizer/childs/customizer-service.php:86
+#: functions/customizer/childs/customizer-team.php:47
+#: functions/customizer/childs/customizer-testimonial.php:65
 msgid "Style 1"
 msgstr "Stil 1"
 
-#: functions/customizer/customizer-home.php:128
-#: functions/customizer/customizer-service.php:61
-#: functions/customizer/customizer-team.php:35
-#: functions/customizer/customizer-testimonial.php:54
+#: functions/customizer/childs/customizer-home.php:141
+#: functions/customizer/childs/customizer-service.php:87
+#: functions/customizer/childs/customizer-team.php:48
+#: functions/customizer/childs/customizer-testimonial.php:66
 msgid "Style 2"
 msgstr "Stil 2"
 
-#: functions/customizer/customizer-home.php:129
-#: functions/customizer/customizer-service.php:62
-#: functions/customizer/customizer-team.php:36
-#: functions/customizer/customizer-testimonial.php:55
+#: functions/customizer/childs/customizer-home.php:142
+#: functions/customizer/childs/customizer-service.php:88
+#: functions/customizer/childs/customizer-team.php:49
+#: functions/customizer/childs/customizer-testimonial.php:67
 msgid "Style 3"
 msgstr "Stil 3"
 
-#: functions/customizer/customizer-home.php:130
-#: functions/customizer/customizer-service.php:63
-#: functions/customizer/customizer-team.php:37
-#: functions/customizer/customizer-testimonial.php:56
+#: functions/customizer/childs/customizer-home.php:143
+#: functions/customizer/childs/customizer-service.php:89
+#: functions/customizer/childs/customizer-team.php:50
+#: functions/customizer/childs/customizer-testimonial.php:68
 msgid "Style 4"
 msgstr "Stil 4"
 
-#: functions/customizer/customizer-home.php:131
-#: functions/customizer/customizer-service.php:64
+#: functions/customizer/childs/customizer-home.php:144
+#: functions/customizer/childs/customizer-service.php:90
 msgid "Style 5"
 msgstr "Stil 5"
 
-#: functions/customizer/customizer-home.php:132
-#: functions/customizer/customizer-service.php:65
+#: functions/customizer/childs/customizer-home.php:145
+#: functions/customizer/childs/customizer-service.php:91
 msgid "Style 6"
 msgstr "Stil 6"
 
-#: functions/customizer/customizer-home.php:144
+#: functions/customizer/childs/customizer-home.php:157
 msgid "Enable/Disable Search Icon"
 msgstr "Suchsymbol aktivieren/deaktivieren"
 
-#: functions/customizer/customizer-home.php:157
+#: functions/customizer/childs/customizer-home.php:170
 msgid "Choose Position"
-msgstr "Position w&auml;hlen"
+msgstr "Position wählen"
 
-#: functions/customizer/customizer-home.php:161
+#: functions/customizer/childs/customizer-home.php:174
 msgid "Toogle"
 msgstr "Toogle"
 
-#: functions/customizer/customizer-home.php:162
+#: functions/customizer/childs/customizer-home.php:175
 msgid "Pop up light"
 msgstr "Helle vordefinierte Farbeinstellungen"
 
-#: functions/customizer/customizer-home.php:163
+#: functions/customizer/childs/customizer-home.php:176
 msgid "Pop up dark"
 msgstr "Dunkle vordefinierte Farbeinstellungen"
 
-#: functions/customizer/customizer-layout.php:22
-#: functions/customizer/customizer-layout.php:115
+#: functions/customizer/childs/customizer-layout.php:22
+#: functions/customizer/childs/customizer-layout.php:28
+msgid "Theme layout manager"
+msgstr "Layoutmanager (Theme)"
+
+#: functions/customizer/childs/customizer-layout.php:55
+#: functions/customizer/customizer-controls.php:68
 msgid "Enable"
 msgstr "Aktivieren"
 
-#: functions/customizer/customizer-layout.php:31
-#: functions/customizer/customizer-layout.php:125
+#: functions/customizer/childs/customizer-layout.php:66
+#: functions/customizer/customizer-controls.php:77
 msgid "Disable"
 msgstr "Deaktivieren"
 
-#: functions/customizer/customizer-layout.php:41
-msgid "Slider section always top on the home page"
-msgstr "Slider-Abschnitt ist auf der Startseite immer oben"
-
-#: functions/customizer/customizer-layout.php:42
-msgid "Note :"
-msgstr "Hinweis:"
-
-#: functions/customizer/customizer-layout.php:42
-msgid ""
-"By default, all the sections are enabled on the homepage. If you do not want "
-"to display any section just drag that section to the disabled box."
-msgstr ""
-"Standardmäßig werden alle Bereiche auf der Startseite aktiviert. Falls du "
-"einen Bereich nicht anzeigen willst, ziehe ihn mit der Maus in die "
-"Deaktivieren-Box."
-
-#: functions/customizer/customizer-layout.php:89
-#: functions/customizer/customizer-layout.php:93
-msgid "Theme layout manager"
-msgstr "Theme Layout Manager"
-
-#: functions/customizer/customizer-partner.php:15
-#: functions/customizer/customizer-partner.php:54
-msgid "Partner settings"
-msgstr "Partner-Einstellungen"
-
-#: functions/customizer/customizer-partner.php:26 theme_setup_data.php:132
+#: functions/customizer/childs/customizer-partner.php:19
+#: theme_setup_data.php:132
 msgid "Our Partners"
 msgstr "Unsere Partner"
 
-#: functions/customizer/customizer-partner.php:39
+#: functions/customizer/childs/customizer-partner.php:23
 msgid ""
 "Have a look at our partners we are growing their business and they are going "
 "up in the market by beating their competitors."
@@ -984,522 +952,524 @@ msgstr ""
 "Geschäft aus und sie steigen auf dem Markt auf, indem sie ihre Konkurrenten "
 "schlagen."
 
-#: functions/customizer/customizer-partner.php:58
-msgid "Partner Picture Settings"
-msgstr "Einstellungen für Partnerbilder"
+#: functions/customizer/childs/customizer-partner.php:27
+msgid "Partner settings"
+msgstr "Einstellungen (Partner)"
 
-#: functions/customizer/customizer-partner.php:125
-msgid "Click here to add partner"
-msgstr "Klicke hier, um einen Partner hinzuzufügen"
-
-#: functions/customizer/customizer-post-type-slugs.php:15
+#: functions/customizer/childs/customizer-post-type-slugs.php:19
 msgid "SEO Friendly URL"
 msgstr "SEO-freundliche URLs"
 
-#: functions/customizer/customizer-post-type-slugs.php:20
-msgid "SEO Friendly Url's"
-msgstr "SEO-freundliche URLs"
-
-#: functions/customizer/customizer-post-type-slugs.php:31
+#: functions/customizer/childs/customizer-post-type-slugs.php:32
 msgid "Slider slug"
 msgstr "Slider-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:43
+#: functions/customizer/childs/customizer-post-type-slugs.php:44
 msgid "Service slug"
 msgstr "Dienstleistung-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:55
+#: functions/customizer/childs/customizer-post-type-slugs.php:57
 msgid "Team slug"
 msgstr "Team-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:67
+#: functions/customizer/childs/customizer-post-type-slugs.php:70
 msgid "Portfolio slug"
 msgstr "Portfolio-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:79
+#: functions/customizer/childs/customizer-post-type-slugs.php:83
 msgid "Portfolio category slug"
 msgstr "Portfolio-Kategorie-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:91
+#: functions/customizer/childs/customizer-post-type-slugs.php:96
 msgid "Testimonial slug"
 msgstr "Referenz-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:103
+#: functions/customizer/childs/customizer-post-type-slugs.php:109
 msgid "Client slug"
 msgstr "Kunde-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:115
+#: functions/customizer/childs/customizer-post-type-slugs.php:122
 msgid "Partner slug"
 msgstr "Partner-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:123
-msgid ""
-"After changing the slug, please do not forget to save the permalinks. "
-"Without saving, the old permalinks will not update."
-msgstr ""
-"Nach dem Ändern der Titelform bitte nicht vergessen, die Permalinks zu "
-"speichern. Ohne zu Speichern werden diese nicht aktualisiert."
-
-#: functions/customizer/customizer-post-type-slugs.php:135
+#: functions/customizer/childs/customizer-post-type-slugs.php:135
 msgid "Wallstreet slug"
 msgstr "Wallstreet-Titelform"
 
-#: functions/customizer/customizer-post-type-slugs.php:148
-msgid "Click here permalinks setting"
-msgstr "Hier klicken für Permalink-Einstellungen"
-
-#: functions/customizer/customizer-project.php:15
+#: functions/customizer/childs/customizer-project.php:22
 msgid "Project settings"
-msgstr "Projekteinstellungen"
+msgstr "Einstellungen (Projekte)"
 
-#: functions/customizer/customizer-project.php:19
+#: functions/customizer/childs/customizer-project.php:28
 msgid "Homepage project settings"
-msgstr "Startseite-Projekteinstellungen"
+msgstr "Projekteinstellungen (Startseite)"
 
-#: functions/customizer/customizer-project.php:33
+#: functions/customizer/childs/customizer-project.php:45
 msgid "Portfolio Column layout section"
 msgstr "Abschnitt \"Portfoliospaltenlayout\""
 
-#: functions/customizer/customizer-project.php:51
+#: functions/customizer/childs/customizer-project.php:64
 msgid "Portfolio item layout section"
 msgstr "Abschnitt \"Portfolioelementlayout\""
 
-#: functions/customizer/customizer-project.php:54
+#: functions/customizer/childs/customizer-project.php:67
 msgid "Clover (Only for 4 Column Layout)"
 msgstr "Klee (nur für 4-Spalten-Layout)"
 
-#: functions/customizer/customizer-project.php:55
+#: functions/customizer/childs/customizer-project.php:68
 msgid "Block"
 msgstr "Block"
 
-#: functions/customizer/customizer-project.php:56
+#: functions/customizer/childs/customizer-project.php:69
 msgid "Single"
 msgstr "Einzeln"
 
-#: functions/customizer/customizer-project.php:69
+#: functions/customizer/childs/customizer-project.php:83
 msgid "Number of portfolio on portfolio section"
 msgstr "Anzahl Portfolios im Portfolio-Bereich"
 
-#: functions/customizer/customizer-project.php:80
-#: functions/customizer/customizer-template.php:307 theme_setup_data.php:77
-#: theme_setup_data.php:99
+#: functions/customizer/childs/customizer-project.php:94
+#: functions/customizer/childs/customizer-template.php:411
+#: theme_setup_data.php:77 theme_setup_data.php:99
 msgid "Featured portfolio"
 msgstr "Vorgestelltes Portfolio"
 
-#: functions/customizer/customizer-project.php:93
-#: functions/customizer/customizer-template.php:320 theme_setup_data.php:78
-#: theme_setup_data.php:100
+#: functions/customizer/childs/customizer-project.php:108
+#: functions/customizer/childs/customizer-template.php:424
+#: theme_setup_data.php:78 theme_setup_data.php:100
 msgid "Most popular of our works."
 msgstr "Unsere beliebtesten Werke."
 
-#: functions/customizer/customizer-project.php:113
+#: functions/customizer/childs/customizer-project.php:129
 msgid "Enable view all portfolios button"
 msgstr "Button zum Zeigen aller Portfolios aktivieren"
 
-#: functions/customizer/customizer-project.php:120 theme_setup_data.php:85
+#: functions/customizer/childs/customizer-project.php:136
+#: theme_setup_data.php:85
 msgid "View All Projects"
 msgstr "Alle Projekte anzeigen"
 
-#: functions/customizer/customizer-project.php:168
-msgid "Click here to add project"
-msgstr "Klicke hier, um ein Projekt hinzuzufügen"
-
-#: functions/customizer/customizer-service.php:15
+#: functions/customizer/childs/customizer-service.php:23
 msgid "Service settings"
-msgstr "Dienstleistungs-Einstellungen"
+msgstr "Einstellungen (Dienstleistungen)"
 
-#: functions/customizer/customizer-service.php:19
+#: functions/customizer/childs/customizer-service.php:29
 msgid "Service heading"
-msgstr "Dienstleistungs-Überschrift"
+msgstr "Dienstleistungsüberschrift"
 
-#: functions/customizer/customizer-service.php:33
+#: functions/customizer/childs/customizer-service.php:36
+msgid "Other services section"
+msgstr "Weiterer Dienstleistungsbereich"
+
+#: functions/customizer/childs/customizer-service.php:43
+msgid "Service Call-to-Action settings"
+msgstr "Call-to-Action-Einstellungen für Dienstleistungen"
+
+#: functions/customizer/childs/customizer-service.php:59
 msgid "Number of services on service section"
-msgstr "Anzahl Dienstleistungen im Dienstleistungs-Bereich"
+msgstr "Anzahl Dienstleistungen im Dienstleistungsbereich"
 
-#: functions/customizer/customizer-service.php:56
+#: functions/customizer/childs/customizer-service.php:82
 msgid "Select Service Style"
 msgstr "Servicestil auswählen"
 
-#: functions/customizer/customizer-service.php:71 theme_setup_data.php:65
+#: functions/customizer/childs/customizer-service.php:97
+#: theme_setup_data.php:65
 msgid "Our Services"
 msgstr "Unsere Dienstleistungen"
 
-#: functions/customizer/customizer-service.php:84
-#: functions/customizer/customizer-service.php:187
-#: functions/customizer/customizer-template.php:51
-#: functions/customizer/customizer-template.php:149
-#: functions/customizer/customizer-template.php:408 theme_setup_data.php:66
-#: theme_setup_data.php:68 theme_setup_data.php:80 theme_setup_data.php:152
-#: theme_setup_data.php:225
+#: functions/customizer/childs/customizer-service.php:111
+#: functions/customizer/childs/customizer-service.php:200
+#: functions/customizer/childs/customizer-template.php:162
+#: functions/customizer/childs/customizer-template.php:254
+#: functions/customizer/childs/customizer-template.php:510
+#: theme_setup_data.php:66 theme_setup_data.php:68 theme_setup_data.php:80
+#: theme_setup_data.php:152 theme_setup_data.php:225
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
-#: functions/customizer/customizer-service.php:102
+#: functions/customizer/childs/customizer-service.php:131
 msgid "Give middle element more size"
 msgstr "Geben Sie dem mittleren Element mehr Größe"
 
-#: functions/customizer/customizer-service.php:103
+#: functions/customizer/childs/customizer-service.php:132
 msgid "This setting will work with only service design 1"
 msgstr "Diese Einstellung funktioniert nur mit Service Design 1"
 
-#: functions/customizer/customizer-service.php:116
+#: functions/customizer/childs/customizer-service.php:146
 msgid "Enable service animation effect"
 msgstr "Effekt \"Dienstanimation aktivieren\""
 
-#: functions/customizer/customizer-service.php:117
+#: functions/customizer/childs/customizer-service.php:147
 msgid "This setting will work with only service design 1 and service design 6"
 msgstr ""
 "Diese Einstellung funktioniert nur mit Service Design 1 und Service Design 6"
 
-#: functions/customizer/customizer-service.php:132
-#: functions/customizer/customizer-service.php:207
-msgid "Click here to add service"
-msgstr "Klicke hier, um eine Dienstleistung hinzuzufügen"
-
-#: functions/customizer/customizer-service.php:151
-msgid "Other services section"
-msgstr "Andere Dienstleistungen Bereich"
-
-#: functions/customizer/customizer-service.php:164
+#: functions/customizer/childs/customizer-service.php:176
 msgid "Enable other services section in service template"
 msgstr ""
-"Bereich für Andere Dienstleistungen im Dienstleistung-Template aktivieren"
+"Bereich für weitere Dienstleistungen im Dienstleistungstemplate aktivieren"
 
-#: functions/customizer/customizer-service.php:172 theme_setup_data.php:67
+#: functions/customizer/childs/customizer-service.php:184
+#: theme_setup_data.php:67
 msgid "Other services"
 msgstr "Andere Dienstleistungen"
 
-#: functions/customizer/customizer-service.php:226
-msgid "Service callout settings"
-msgstr "Dienstleistung-Callout-Einstellungen"
-
-#: functions/customizer/customizer-service.php:239
+#: functions/customizer/childs/customizer-service.php:236
 msgid "Enable Callout area section"
 msgstr "Callout-Bereich aktivieren"
 
-#: functions/customizer/customizer-service.php:246 theme_setup_data.php:161
+#: functions/customizer/childs/customizer-service.php:243
+#: theme_setup_data.php:161
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
-#: functions/customizer/customizer-service.php:270
+#: functions/customizer/childs/customizer-service.php:269
 #: template-parts/index/index-slider.php:216
 msgid "Purchase Now"
 msgstr "Jetzt kaufen"
 
-#: functions/customizer/customizer-slider.php:17
-#: functions/customizer/customizer-slider.php:21
+#: functions/customizer/childs/customizer-slider.php:23
+#: functions/customizer/childs/customizer-slider.php:29
 msgid "Slider settings"
-msgstr "Slider-Einstellungen"
+msgstr "Einstellungen (Slider)"
 
-#: functions/customizer/customizer-slider.php:34
+#: functions/customizer/childs/customizer-slider.php:36
+msgid "Slider desktop view settings"
+msgstr "Einstellungen für den Slider (Desktopansicht)"
+
+#: functions/customizer/childs/customizer-slider.php:43
+msgid "Slider mobile view settings"
+msgstr "Einstellungen für den Slider (mobile Ansicht)"
+
+#: functions/customizer/childs/customizer-slider.php:59
 msgid "Enable home slider"
 msgstr "Slider auf Startseite aktivieren"
 
-#: functions/customizer/customizer-slider.php:47
+#: functions/customizer/childs/customizer-slider.php:73
 msgid "Select slidertype"
 msgstr "Slidertyp auswählen"
 
-#: functions/customizer/customizer-slider.php:51
+#: functions/customizer/childs/customizer-slider.php:77
 msgid "Baseslider"
 msgstr "Basisslider"
 
-#: functions/customizer/customizer-slider.php:52
+#: functions/customizer/childs/customizer-slider.php:78
 msgid "Revolution"
 msgstr "Revolutionslider"
 
-#: functions/customizer/customizer-slider.php:64
+#: functions/customizer/childs/customizer-slider.php:91
 msgid "Slidername"
 msgstr "Slidername"
 
-#: functions/customizer/customizer-slider.php:76
+#: functions/customizer/childs/customizer-slider.php:104
 msgid "Select slider animation"
-msgstr "Slider-Animation auswählen"
+msgstr "Slideranimation auswählen"
 
-#: functions/customizer/customizer-slider.php:80
+#: functions/customizer/childs/customizer-slider.php:108
 msgid "Slide"
 msgstr "Gleiten"
 
-#: functions/customizer/customizer-slider.php:81
+#: functions/customizer/childs/customizer-slider.php:109
 msgid "Fade"
 msgstr "Blenden"
 
-#: functions/customizer/customizer-slider.php:93
+#: functions/customizer/childs/customizer-slider.php:122
 msgid "Slide direction"
 msgstr "Bewegungsrichtung"
 
-#: functions/customizer/customizer-slider.php:97
+#: functions/customizer/childs/customizer-slider.php:126
 msgid "horizontal"
 msgstr "horizontal"
 
-#: functions/customizer/customizer-slider.php:98
+#: functions/customizer/childs/customizer-slider.php:127
 msgid "vertical"
 msgstr "vertikal"
 
-#: functions/customizer/customizer-slider.php:109
+#: functions/customizer/childs/customizer-slider.php:139
 msgid "Animation speed"
 msgstr "Animationsgeschwindigkeit"
 
-#: functions/customizer/customizer-slider.php:135
+#: functions/customizer/childs/customizer-slider.php:166
 msgid "Slideshow speed"
 msgstr "Diashow-Geschwindigkeit"
 
-#: functions/customizer/customizer-slider.php:159
+#: functions/customizer/childs/customizer-slider.php:191
 msgid "Round Corner Value"
 msgstr "Wert für runde Ecken"
 
-#: functions/customizer/customizer-slider.php:173
-msgid "Slider desktop view settings"
-msgstr "Einstellungen für die Slider-Desktopansicht"
-
-#: functions/customizer/customizer-slider.php:185
-#: functions/customizer/customizer-slider.php:244
+#: functions/customizer/childs/customizer-slider.php:211
+#: functions/customizer/childs/customizer-slider.php:267
 msgid "Enable slider title"
 msgstr "Slidertitel auf Startseite aktivieren"
 
-#: functions/customizer/customizer-slider.php:198
-#: functions/customizer/customizer-slider.php:257
+#: functions/customizer/childs/customizer-slider.php:225
+#: functions/customizer/childs/customizer-slider.php:281
 msgid "Enable slider subtitle"
 msgstr "Slideruntertitel auf Startseite aktivieren"
 
-#: functions/customizer/customizer-slider.php:211
-#: functions/customizer/customizer-slider.php:270
+#: functions/customizer/childs/customizer-slider.php:239
+#: functions/customizer/childs/customizer-slider.php:295
 msgid "Enable slider description"
 msgstr "Sliderbeschreibung auf Startseite aktivieren"
 
-#: functions/customizer/customizer-slider.php:224
-#: functions/customizer/customizer-slider.php:283
-#, fuzzy
-#| msgid "Callout button"
-msgid "Enable button"
-msgstr "Callout-Button"
+#: functions/customizer/childs/customizer-slider.php:253
+#: functions/customizer/childs/customizer-slider.php:309
+#: functions/customizer/childs/customizer-typography.php:92
+msgid "Call-to-Action button"
+msgstr "Call-to-Action-Schaltfläche"
 
-#: functions/customizer/customizer-slider.php:232
-msgid "Slider mobile view settings"
-msgstr "Einstellungen für die mobile Slider-Ansicht"
+#: functions/customizer/childs/customizer-social.php:23
+msgid "Social-Media settings"
+msgstr "Einstellungen (Soziale Medien)"
 
-#: functions/customizer/customizer-slider.php:297
-msgid "Click here to add slider"
-msgstr "Klicke hier, um einen Slider hinzuzufügen"
+#: functions/customizer/childs/customizer-social.php:30
+msgid "Social-Media links"
+msgstr "Links (Soziale Medien)"
 
-#: functions/customizer/customizer-social.php:15
-msgid "Social link settings"
-msgstr "Soziale Links Einstellungen"
+#: functions/customizer/childs/customizer-social.php:36
+msgid "Comment Options"
+msgstr "Kommentar Optionen"
 
-#: functions/customizer/customizer-social.php:33
+#: functions/customizer/childs/customizer-social.php:52
 msgid "Enable social media links on header section"
 msgstr "Links zu Sozialen Medien im Headerbereich aktivieren"
 
-#: functions/customizer/customizer-social.php:46
+#: functions/customizer/childs/customizer-social.php:66
 msgid "Enable social media links on about us section"
 msgstr "Links zu Sozialen Medien im „Über Uns“-Bereich aktivieren"
 
-#: functions/customizer/customizer-social.php:59
+#: functions/customizer/childs/customizer-social.php:80
 msgid "Enable social media links on footer section"
 msgstr "Links zu Sozialen Medien im Footerbereich aktivieren"
 
-#: functions/customizer/customizer-social.php:147
+#: functions/customizer/childs/customizer-social.php:175
 msgid "GitHub URL"
 msgstr "Webadresse (Github)"
 
-#: functions/customizer/customizer-social.php:172
+#: functions/customizer/childs/customizer-social.php:202
 msgid "Pinterest URL"
 msgstr "Webadresse (Pinterest)"
 
-#: functions/customizer/customizer-social.php:197
+#: functions/customizer/childs/customizer-social.php:229
 msgid "Youtube URL"
 msgstr "Webadresse (Youtube)"
 
-#: functions/customizer/customizer-social.php:222
+#: functions/customizer/childs/customizer-social.php:256
 #: functions/meta-box/post-meta.php:140 functions/meta-box/post-meta.php:141
 msgid "Skype URL"
 msgstr "Webadresse (Skype)"
 
-#: functions/customizer/customizer-social.php:248
+#: functions/customizer/childs/customizer-social.php:283
 #: functions/meta-box/post-meta.php:144 functions/meta-box/post-meta.php:145
 msgid "RSS URL"
 msgstr "Webadresse (RSS-Feed)"
 
-#: functions/customizer/customizer-social.php:273
+#: functions/customizer/childs/customizer-social.php:310
 msgid "WordPress URL"
 msgstr "Webadresse (WordPress)"
 
-#: functions/customizer/customizer-social.php:298
+#: functions/customizer/childs/customizer-social.php:337
 msgid "Dropbox URL"
 msgstr "Webadresse (Dropbox)"
 
-#: functions/customizer/customizer-social.php:323
+#: functions/customizer/childs/customizer-social.php:364
 msgid "Instagram URL"
 msgstr "Webadresse (Instagram)"
 
-#: functions/customizer/customizer-social.php:348
+#: functions/customizer/childs/customizer-social.php:391
 msgid "Vimeo URL"
 msgstr "Webadresse (Vimeo)"
 
-#: functions/customizer/customizer-social.php:368
-msgid "Comment Options"
-msgstr "Kommentar Optionen"
-
-#: functions/customizer/customizer-social.php:375 theme_setup_data.php:326
+#: functions/customizer/childs/customizer-social.php:412
+#: theme_setup_data.php:326
 msgid "Please Note:"
 msgstr "Bitte beachten:"
 
-#: functions/customizer/customizer-social.php:375 theme_setup_data.php:326
+#: functions/customizer/childs/customizer-social.php:412
+#: theme_setup_data.php:326
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
 "moderated. Please be patient if your comment is not activated immediately."
 msgstr ""
-"Ihre E-Mail-Adresse wird nicht ver&ouml;ffentlicht, jedoch Ihr Name. Vorname "
-"oder ein Nickname ist ausreichend. Des Weiteren werden Kommentare auf dieser "
+"Ihre E-Mail-Adresse wird nicht veröffentlicht, jedoch Ihr Name. Vorname oder "
+"ein Nickname ist ausreichend. Des Weiteren werden Kommentare auf dieser "
 "Seite moderiert. Bitte haben Sie etwas Geduld, wenn Ihr Kommentar nicht "
 "sofort aktiviert wird."
 
-#: functions/customizer/customizer-social.php:381
+#: functions/customizer/childs/customizer-social.php:419
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/customizer-social.php:388 theme_setup_data.php:327
+#: functions/customizer/childs/customizer-social.php:426
+#: theme_setup_data.php:327
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
 msgstr ""
-"Wenn Sie sich nicht &ouml;ffentlich &auml;ußern m&ouml;chten, nutzen Sie das "
+"Wenn Sie sich nicht öffentlich äußern möchten, nutzen Sie das "
 "Kontaktformular oder senden Sie mir eine E-Mail. Bitte vergessen Sie nicht, "
-"den Artikel zu erw&auml;hnen, auf den Sie sich beziehen."
+"den Artikel zu erwähnen, auf den Sie sich beziehen."
 
-#: functions/customizer/customizer-social.php:394
+#: functions/customizer/childs/customizer-social.php:433
 msgid "Next Text in Comment-Section"
-msgstr "N&auml;chster Text im Kommentar-Bereich"
+msgstr "Nächster Text im Kommentar-Bereich"
 
-#: functions/customizer/customizer-team.php:15
+#: functions/customizer/childs/customizer-team.php:23
 msgid "Team settings"
-msgstr "Team Einstellungen"
+msgstr "Einstellungen (Team)"
 
-#: functions/customizer/customizer-team.php:19
+#: functions/customizer/childs/customizer-team.php:29
 msgid "Homepage team settings"
-msgstr "Startseite-Teameinstellungen"
+msgstr "Teameinstellungen (Startseite)"
 
-#: functions/customizer/customizer-team.php:31
-#: functions/customizer/customizer-team.php:48
+#: functions/customizer/childs/customizer-team.php:44
+#: functions/customizer/childs/customizer-team.php:61
 msgid "Team design style"
-msgstr "Team-Design-Stil"
+msgstr "Layoutstil Team"
 
-#: functions/customizer/customizer-team.php:51
+#: functions/customizer/childs/customizer-team.php:64
 msgid "2 Column Layout"
 msgstr "2-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:52
+#: functions/customizer/childs/customizer-team.php:65
 msgid "3 Column Layout"
 msgstr "3-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:53
+#: functions/customizer/childs/customizer-team.php:66
 msgid "4 Column Layout"
 msgstr "4-Spalten-Layout"
 
-#: functions/customizer/customizer-team.php:58 theme_setup_data.php:141
+#: functions/customizer/childs/customizer-team.php:71 theme_setup_data.php:141
 msgid "The Team"
 msgstr "Das Team"
 
-#: functions/customizer/customizer-team.php:71 theme_setup_data.php:142
+#: functions/customizer/childs/customizer-team.php:85 theme_setup_data.php:142
 msgid "Meet Our Experts"
 msgstr "Treffen Sie unsere Experten"
 
-#: functions/customizer/customizer-template.php:15
+#: functions/customizer/childs/customizer-template.php:23
 msgid "Template settings"
-msgstr "Vorlagen-Einstellungen"
+msgstr "Einstellungen (Vorlagen)"
 
-#: functions/customizer/customizer-template.php:20
+#: functions/customizer/childs/customizer-template.php:30
 msgid "About page setting"
-msgstr "„&Uuml;ber Uns“-Seite-Einstellungen"
+msgstr "„Über Uns“-Seiteneinstellungen"
 
-#: functions/customizer/customizer-template.php:34
-#: functions/customizer/customizer-template.php:88
-msgid "Enable team section"
-msgstr "Teamabschnitt aktivieren"
-
-#: functions/customizer/customizer-template.php:39 theme_setup_data.php:224
-msgid "Our great team"
-msgstr "Unser tolles Team"
-
-#: functions/customizer/customizer-template.php:68
-msgid "Enable Callout section"
-msgstr "Abschnitt \"Callout\" aktivieren"
-
-#: functions/customizer/customizer-template.php:74
+#: functions/customizer/childs/customizer-template.php:37
 msgid "Team page setting"
 msgstr "Einstellung der Teamseite"
 
-#: functions/customizer/customizer-template.php:100
+#: functions/customizer/childs/customizer-template.php:44
+msgid "Testimonial page setting"
+msgstr "Referenzeinstellungen"
+
+#: functions/customizer/childs/customizer-template.php:51
+msgid "Blog template data setting"
+msgstr "Vorlageneinstellungen (Blog)"
+
+#: functions/customizer/childs/customizer-template.php:58
+msgid "Blog meta settings"
+msgstr "Meta-Einstellungen (Blog)"
+
+#: functions/customizer/childs/customizer-template.php:65
+msgid "Portfolio category page setting"
+msgstr "Portfoliokategorieeinstellungen"
+
+#: functions/customizer/childs/customizer-template.php:72
+msgid "Portfolio template and related page setting"
+msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
+
+#: functions/customizer/childs/customizer-template.php:79
+msgid "Contact page address settings"
+msgstr "Kontaktseite Adresseinstellungen"
+
+#: functions/customizer/childs/customizer-template.php:86
+msgid "Contact page phone settings"
+msgstr "Kontaktseite Telefonnummerneinstellungen"
+
+#: functions/customizer/childs/customizer-template.php:93
+msgid "Contact page email settings"
+msgstr "Kontaktseite Maileinstellungen"
+
+#: functions/customizer/childs/customizer-template.php:100
+msgid "Contact page form setting"
+msgstr "Kontaktseite Formulareinstellung"
+
+#: functions/customizer/childs/customizer-template.php:107
+msgid "Contact page Google Maps"
+msgstr "Kontaktseite Google Maps"
+
+#: functions/customizer/childs/customizer-template.php:144
+#: functions/customizer/childs/customizer-template.php:195
+msgid "Enable team section"
+msgstr "Teamabschnitt aktivieren"
+
+#: functions/customizer/childs/customizer-template.php:150
+#: theme_setup_data.php:224
+msgid "Our great team"
+msgstr "Unser tolles Team"
+
+#: functions/customizer/childs/customizer-template.php:180
+#: functions/customizer/childs/customizer-template.php:236
+msgid "Enable Call-to-Action section"
+msgstr "Call-to-Action-Abschnitt aktivieren"
+
+#: functions/customizer/childs/customizer-template.php:208
 msgid "Enable feature section"
 msgstr "Featureabschnitt aktivieren"
 
-#: functions/customizer/customizer-template.php:112
-#: functions/customizer/customizer-template.php:178
+#: functions/customizer/childs/customizer-template.php:221
+#: functions/customizer/childs/customizer-template.php:284
 msgid "Enable client section"
 msgstr "Kundenabschnitt aktivieren"
 
-#: functions/customizer/customizer-template.php:118
-msgid "Testimonial page setting"
-msgstr "Referenz-Einstellungen"
-
-#: functions/customizer/customizer-template.php:132
-#, fuzzy
-#| msgid "Enable Callout area section"
-msgid "Enable cta section"
-msgstr "Callout-Bereich aktivieren"
-
-#: functions/customizer/customizer-template.php:137 theme_setup_data.php:151
+#: functions/customizer/childs/customizer-template.php:242
+#: theme_setup_data.php:151
 msgid "Why choose us"
 msgstr "Warum wählen Sie uns"
 
-#: functions/customizer/customizer-template.php:166
+#: functions/customizer/childs/customizer-template.php:271
 msgid "Enable testimonial section"
 msgstr "Referenzabschnitt aktgivieren"
 
-#: functions/customizer/customizer-template.php:183
-msgid "Blog template data setting"
-msgstr "Blog Template-Einstellungen"
-
-#: functions/customizer/customizer-template.php:194
+#: functions/customizer/childs/customizer-template.php:297
 msgid "From which format do you want to display data on Archive Pages?"
 msgstr "Aus welchem Format möchten Sie Daten auf Archivseiten anzeigen?"
 
-#: functions/customizer/customizer-template.php:198
+#: functions/customizer/childs/customizer-template.php:301
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: functions/customizer/customizer-template.php:199
+#: functions/customizer/childs/customizer-template.php:302
 msgid "Full text"
 msgstr "Vollständiger Text"
 
-#: functions/customizer/customizer-template.php:208
+#: functions/customizer/childs/customizer-template.php:313
 msgid "Excerpt length only for excerpt option"
 msgstr "Auszugslänge nur für die Option \"Auszug\""
 
-#: functions/customizer/customizer-template.php:223
+#: functions/customizer/childs/customizer-template.php:330
 msgid "Read more button text"
 msgstr "Weiterlesen-Schaltflächentext"
 
-#: functions/customizer/customizer-template.php:229
-msgid "Blog meta settings"
-msgstr "Blog Meta-Einstellungen"
-
-#: functions/customizer/customizer-template.php:240
+#: functions/customizer/childs/customizer-template.php:344
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from "
 "posts page"
 msgstr ""
-"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagw&ouml;rter "
-"von Beitragsseiten"
+"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
+"Beitragsseiten"
 
-#: functions/customizer/customizer-template.php:251
+#: functions/customizer/childs/customizer-template.php:356
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from page"
 msgstr ""
-"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagw&ouml;rter "
-"von Seiten"
+"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
+"Seiten"
 
-#: functions/customizer/customizer-template.php:262
+#: functions/customizer/childs/customizer-template.php:368
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from "
 "archive page"
@@ -1507,311 +1477,352 @@ msgstr ""
 "Beitrags-Metadaten, wie Autorname, Erstellungsdatum, Kategorie, Schlagworte "
 "auf der Archivseite verbergen"
 
-#: functions/customizer/customizer-template.php:270
-msgid "Portfolio category page setting"
-msgstr "Portfolio-Kategorie-Seite-Einstellung"
-
-#: functions/customizer/customizer-template.php:283
+#: functions/customizer/childs/customizer-template.php:384
 msgid "Select column layout"
 msgstr "Spaltenlayout auswählen"
 
-#: functions/customizer/customizer-template.php:296
+#: functions/customizer/childs/customizer-template.php:399
 msgid "Numbers of portfolio in portfolio category page"
 msgstr "Anzahl der Portfolios auf der Seite der Portfoliokategorie"
 
-#: functions/customizer/customizer-template.php:333
-msgid "Portfolio template and related page setting"
-msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
-
-#: functions/customizer/customizer-template.php:341 theme_setup_data.php:81
+#: functions/customizer/childs/customizer-template.php:439
+#: theme_setup_data.php:81
 msgid "Our Portfolio"
 msgstr "Unser Portfolio"
 
-#: functions/customizer/customizer-template.php:347
+#: functions/customizer/childs/customizer-template.php:445
 msgid "Title For Portfolio Template"
 msgstr "Titel für Portfolio-Vorlage"
 
-#: functions/customizer/customizer-template.php:354 theme_setup_data.php:82
+#: functions/customizer/childs/customizer-template.php:452
+#: theme_setup_data.php:82
 msgid "Most popular of our works"
 msgstr "Unsere beliebtesten Werke"
 
-#: functions/customizer/customizer-template.php:360
+#: functions/customizer/childs/customizer-template.php:458
 msgid "Description For Portfolio Template"
-msgstr "Beschreibung für Portfolio-Vorlage"
+msgstr "Beschreibung für Portfoliovorlage"
 
-#: functions/customizer/customizer-template.php:372
+#: functions/customizer/childs/customizer-template.php:472
 msgid "Number of portfolio on portfolio template"
-msgstr "Anzahl des Portfolios auf Portfolio-Vorlage"
+msgstr "Anzahl des Portfolios auf Portfoliovorlage"
 
-#: functions/customizer/customizer-template.php:389
+#: functions/customizer/childs/customizer-template.php:490
 msgid "Enable Related Project Setting"
 msgstr "Zugehörige Projekteinstellung aktivieren"
 
-#: functions/customizer/customizer-template.php:395 theme_setup_data.php:79
-#: theme_setup_data.php:158
+#: functions/customizer/childs/customizer-template.php:497
+#: theme_setup_data.php:79 theme_setup_data.php:158
 msgid "Related projects"
 msgstr "Verwandte Projekte"
 
-#: functions/customizer/customizer-template.php:401
+#: functions/customizer/childs/customizer-template.php:503
 msgid "Title For Related projects"
 msgstr "Titel Für verwandte Projekte"
 
-#: functions/customizer/customizer-template.php:414
+#: functions/customizer/childs/customizer-template.php:516
 msgid "Description For Related projects"
 msgstr "Beschreibung für verwandte Projekte"
 
-#: functions/customizer/customizer-template.php:421
-msgid "Contact page address settings"
-msgstr "Kontaktseite-Adress-Einstellungen"
-
-#: functions/customizer/customizer-template.php:434
+#: functions/customizer/childs/customizer-template.php:531
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/customizer-template.php:454 theme_setup_data.php:197
+#: functions/customizer/childs/customizer-template.php:551
+#: theme_setup_data.php:197
 msgid "Address"
 msgstr "Adresse"
 
-#: functions/customizer/customizer-template.php:473
+#: functions/customizer/childs/customizer-template.php:570
 msgid "Address one"
 msgstr "Adresse Eins"
 
-#: functions/customizer/customizer-template.php:485
+#: functions/customizer/childs/customizer-template.php:582
 msgid "Address two"
 msgstr "Adresse Zwei"
 
-#: functions/customizer/customizer-template.php:491
-msgid "Contact page phone settings"
-msgstr "Kontaktseite-Telefonnummer-Einstellungen"
-
-#: functions/customizer/customizer-template.php:505
+#: functions/customizer/childs/customizer-template.php:597
 msgid "Enable contact page phone section"
 msgstr "Kontaktseite-Telefonbereich aktivieren"
 
-#: functions/customizer/customizer-template.php:525
+#: functions/customizer/childs/customizer-template.php:617
 msgid "Phone"
 msgstr "Telefon"
 
-#: functions/customizer/customizer-template.php:544
+#: functions/customizer/childs/customizer-template.php:636
 msgid "Phone number one"
 msgstr "Telefonnummer Eins"
 
-#: functions/customizer/customizer-template.php:557
+#: functions/customizer/childs/customizer-template.php:649
 msgid "Phone number two"
 msgstr "Telefonnummer Zwei"
 
-#: functions/customizer/customizer-template.php:563
-msgid "Contact page email settings"
-msgstr "Kontaktseite-E-Mail-Einstellungen"
-
-#: functions/customizer/customizer-template.php:577
+#: functions/customizer/childs/customizer-template.php:664
 msgid "Enable contact page email section"
 msgstr "Kontaktseite-E-Mail-Bereich aktivieren"
 
-#: functions/customizer/customizer-template.php:616
-#: functions/customizer/customizer-template.php:629
+#: functions/customizer/childs/customizer-template.php:703
+#: functions/customizer/childs/customizer-template.php:716
 msgid "Email one"
 msgstr "E-Mail Eins"
 
-#: functions/customizer/customizer-template.php:642
+#: functions/customizer/childs/customizer-template.php:729
 msgid "Email two"
 msgstr "E-Mail Zwei"
 
-#: functions/customizer/customizer-template.php:648
-msgid "Contact page form setting"
-msgstr "Kontaktseite-Formulareinstellung"
-
-#: functions/customizer/customizer-template.php:656 theme_setup_data.php:213
+#: functions/customizer/childs/customizer-template.php:738
+#: theme_setup_data.php:213
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/customizer-template.php:669 theme_setup_data.php:214
+#: functions/customizer/childs/customizer-template.php:751
+#: theme_setup_data.php:214
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
-#: functions/customizer/customizer-template.php:681
-msgid "Contact page Google Maps"
-msgstr "Kontaktseite Google Maps"
-
-#: functions/customizer/customizer-template.php:695
+#: functions/customizer/childs/customizer-template.php:772
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/customizer-template.php:702 theme_setup_data.php:190
+#: functions/customizer/childs/customizer-template.php:779
+#: theme_setup_data.php:190
 msgid "Location map"
 msgstr "Lageplan"
 
-#: functions/customizer/customizer-template.php:722
+#: functions/customizer/childs/customizer-template.php:798
 msgid "URL"
 msgstr "URL"
 
-#: functions/customizer/customizer-testimonial.php:15
+#: functions/customizer/childs/customizer-testimonial.php:23
 msgid "Testimonial settings"
-msgstr "Referenz-Einstellungen"
+msgstr "Einstellungen (Referenzen)"
 
-#: functions/customizer/customizer-testimonial.php:19
+#: functions/customizer/childs/customizer-testimonial.php:29
 msgid "Home testimonial settings"
-msgstr "Startseite-Referenz-Einstellungen"
+msgstr "Referenzeinstellungen (Startseite)"
 
-#: functions/customizer/customizer-testimonial.php:32
+#: functions/customizer/childs/customizer-testimonial.php:44
 msgid "Slide type variations"
-msgstr "Slidertyp-Varianten"
+msgstr "Varianten (Slidertyp)"
 
-#: functions/customizer/customizer-testimonial.php:35
+#: functions/customizer/childs/customizer-testimonial.php:47
 msgid "scroll"
 msgstr "Mitscrollen"
 
-#: functions/customizer/customizer-testimonial.php:36
+#: functions/customizer/childs/customizer-testimonial.php:48
 msgid "fade"
 msgstr "Überblenden"
 
-#: functions/customizer/customizer-testimonial.php:37
+#: functions/customizer/childs/customizer-testimonial.php:49
 msgid "crossfade"
 msgstr "crossfade"
 
-#: functions/customizer/customizer-testimonial.php:38
+#: functions/customizer/childs/customizer-testimonial.php:50
 msgid "cover-fade"
 msgstr "cover-fade"
 
-#: functions/customizer/customizer-testimonial.php:50
-#, fuzzy
-#| msgid "Testimonial settings"
+#: functions/customizer/childs/customizer-testimonial.php:62
 msgid "Testimonial design style"
-msgstr "Referenz-Einstellungen"
+msgstr "Layoutstil (Referenzen)"
 
-#: functions/customizer/customizer-testimonial.php:69
+#: functions/customizer/childs/customizer-testimonial.php:80
 msgid "Scroll items"
 msgstr "Scroll-Elemente"
 
-#: functions/customizer/customizer-testimonial.php:83
+#: functions/customizer/childs/customizer-testimonial.php:94
 msgid "Scroll duration"
 msgstr "Scroll-Dauer"
 
-#: functions/customizer/customizer-testimonial.php:110
+#: functions/customizer/childs/customizer-testimonial.php:121
 msgid "Time out duration"
 msgstr "Timeout-Dauer"
 
-#: functions/customizer/customizer-testimonial.php:136
-msgid "Click here to add testimonial"
-msgstr "Klicke hier, um eine Referenz hinzuzufügen"
+#: functions/customizer/childs/customizer-theme_style.php:17
+msgid "Theme Style settings"
+msgstr "Einstellungen (Themestil)"
 
-#: functions/customizer/customizer-typography.php:14
+#: functions/customizer/childs/customizer-theme_style.php:65
+msgid "Change skin color for light and dark background"
+msgstr "Farbe der Oberfläche ändern für hellen oder dunklen Hintergrund"
+
+#: functions/customizer/childs/customizer-typography.php:22
 msgid "Typography settings"
-msgstr "Typografie-Einstellungen"
+msgstr "Einstellungen (Typografie)"
 
-#: functions/customizer/customizer-typography.php:18
+#: functions/customizer/childs/customizer-typography.php:29
 msgid "Typhography enable / disable"
 msgstr "Typografie de/aktivieren"
 
-#: functions/customizer/customizer-typography.php:29
+#: functions/customizer/childs/customizer-typography.php:36
+msgid "General Paragraph"
+msgstr "Allgemeiner Absatz"
+
+#: functions/customizer/childs/customizer-typography.php:43
+msgid "Menus"
+msgstr "Menüs"
+
+#: functions/customizer/childs/customizer-typography.php:50
+msgid "Post / Page title"
+msgstr "Beitrags- / Seitentitel"
+
+#: functions/customizer/childs/customizer-typography.php:57
+msgid "Service title"
+msgstr "Dienstleistungstitel"
+
+#: functions/customizer/childs/customizer-typography.php:64
+msgid "Portfolio title"
+msgstr "Portfoliotitel"
+
+#: functions/customizer/childs/customizer-typography.php:71
+msgid "Widget heading title"
+msgstr "Widgetüberschrift"
+
+#: functions/customizer/childs/customizer-typography.php:78
+msgid "Call-to-Action title"
+msgstr "Call-to-Action-Titel"
+
+#: functions/customizer/childs/customizer-typography.php:85
+msgid "Call-to-Action description"
+msgstr "Call-to-Action-Beschreibung"
+
+#: functions/customizer/childs/customizer-typography.php:107
 msgid "Enable custom typography"
 msgstr "Individuelle Typografie aktivieren"
 
-#: functions/customizer/customizer-typography.php:41
+#: functions/customizer/childs/customizer-typography.php:121
 msgid "Name of GoogleFont"
 msgstr "Name des GoogleFonts"
 
-#: functions/customizer/customizer-typography.php:54
+#: functions/customizer/childs/customizer-typography.php:135
 msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
 msgstr ""
 "Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte "
 "Typografie deaktiviert ist)"
 
-#: functions/customizer/customizer-typography.php:78
-msgid "General Paragraph"
-msgstr "Allgemeiner Absatz"
-
-#: functions/customizer/customizer-typography.php:89
-#: functions/customizer/customizer-typography.php:136
-#: functions/customizer/customizer-typography.php:183
-#: functions/customizer/customizer-typography.php:230
-#: functions/customizer/customizer-typography.php:277
-#: functions/customizer/customizer-typography.php:324
-#: functions/customizer/customizer-typography.php:371
-#: functions/customizer/customizer-typography.php:418
-#: functions/customizer/customizer-typography.php:465
+#: functions/customizer/childs/customizer-typography.php:165
+#: functions/customizer/childs/customizer-typography.php:211
+#: functions/customizer/childs/customizer-typography.php:257
+#: functions/customizer/childs/customizer-typography.php:303
+#: functions/customizer/childs/customizer-typography.php:349
+#: functions/customizer/childs/customizer-typography.php:395
+#: functions/customizer/childs/customizer-typography.php:441
+#: functions/customizer/childs/customizer-typography.php:487
+#: functions/customizer/childs/customizer-typography.php:533
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: functions/customizer/customizer-typography.php:94
-#: functions/customizer/customizer-typography.php:141
-#: functions/customizer/customizer-typography.php:188
-#: functions/customizer/customizer-typography.php:235
-#: functions/customizer/customizer-typography.php:282
-#: functions/customizer/customizer-typography.php:329
-#: functions/customizer/customizer-typography.php:376
-#: functions/customizer/customizer-typography.php:423
-#: functions/customizer/customizer-typography.php:470
+#: functions/customizer/childs/customizer-typography.php:170
+#: functions/customizer/childs/customizer-typography.php:216
+#: functions/customizer/childs/customizer-typography.php:262
+#: functions/customizer/childs/customizer-typography.php:308
+#: functions/customizer/childs/customizer-typography.php:354
+#: functions/customizer/childs/customizer-typography.php:400
+#: functions/customizer/childs/customizer-typography.php:446
+#: functions/customizer/childs/customizer-typography.php:492
+#: functions/customizer/childs/customizer-typography.php:538
 msgid "Pixels"
 msgstr "Pixel"
 
-#: functions/customizer/customizer-typography.php:103
-#: functions/customizer/customizer-typography.php:150
-#: functions/customizer/customizer-typography.php:197
-#: functions/customizer/customizer-typography.php:244
-#: functions/customizer/customizer-typography.php:291
-#: functions/customizer/customizer-typography.php:338
-#: functions/customizer/customizer-typography.php:385
-#: functions/customizer/customizer-typography.php:432
-#: functions/customizer/customizer-typography.php:479
+#: functions/customizer/childs/customizer-typography.php:181
+#: functions/customizer/childs/customizer-typography.php:227
+#: functions/customizer/childs/customizer-typography.php:273
+#: functions/customizer/childs/customizer-typography.php:319
+#: functions/customizer/childs/customizer-typography.php:365
+#: functions/customizer/childs/customizer-typography.php:411
+#: functions/customizer/childs/customizer-typography.php:457
+#: functions/customizer/childs/customizer-typography.php:503
+#: functions/customizer/childs/customizer-typography.php:549
 msgid "Font family"
 msgstr "Schriftart"
 
-#: functions/customizer/customizer-typography.php:116
-#: functions/customizer/customizer-typography.php:163
-#: functions/customizer/customizer-typography.php:210
-#: functions/customizer/customizer-typography.php:257
-#: functions/customizer/customizer-typography.php:304
-#: functions/customizer/customizer-typography.php:351
-#: functions/customizer/customizer-typography.php:398
-#: functions/customizer/customizer-typography.php:445
-#: functions/customizer/customizer-typography.php:492
+#: functions/customizer/childs/customizer-typography.php:196
+#: functions/customizer/childs/customizer-typography.php:242
+#: functions/customizer/childs/customizer-typography.php:288
+#: functions/customizer/childs/customizer-typography.php:334
+#: functions/customizer/childs/customizer-typography.php:380
+#: functions/customizer/childs/customizer-typography.php:426
+#: functions/customizer/childs/customizer-typography.php:472
+#: functions/customizer/childs/customizer-typography.php:518
+#: functions/customizer/childs/customizer-typography.php:564
 msgid "Font style"
 msgstr "Schriftstil"
 
-#: functions/customizer/customizer-typography.php:125
-msgid "Menus"
-msgstr "Menüs"
-
-#: functions/customizer/customizer-typography.php:172
-msgid "Post / Page title"
-msgstr "Beitrags- / Seitentitel"
-
-#: functions/customizer/customizer-typography.php:219
-msgid "Service title"
-msgstr "Dienstleistungs-Titel"
-
-#: functions/customizer/customizer-typography.php:266
-msgid "Portfolio title"
-msgstr "Portfolio-Titel"
-
-#: functions/customizer/customizer-typography.php:313
-msgid "Widget heading title"
-msgstr "Widget-Überschrift"
-
-#: functions/customizer/customizer-typography.php:360
-msgid "Callout title"
-msgstr "Callout-Titel"
-
-#: functions/customizer/customizer-typography.php:407
-msgid "Callout description"
-msgstr "Callout-Beschreibung"
-
-#: functions/customizer/customizer-typography.php:454
-msgid "Callout button"
-msgstr "Callout-Button"
-
-#: functions/customizer/customizer_theme_style.php:17
+#: functions/customizer/customizer-controls.php:28
 msgid "Light & Dark Predefined Colors Setting"
 msgstr "Helle & Dunkle Vordefinierte Farbeinstellungen"
 
-#: functions/customizer/customizer_theme_style.php:48
-msgid "Theme Style settings"
-msgstr "Theme-Stil-Einstellungen"
+#: functions/customizer/customizer-controls.php:87
+msgid "Slider section always top on the home page"
+msgstr "Slider-Abschnitt ist auf der Startseite immer oben"
 
-#: functions/customizer/customizer_theme_style.php:93
-msgid "Change skin color for light and dark background"
-msgstr "Farbe der Oberfläche ändern für hellen oder dunklen Hintergrund"
+#: functions/customizer/customizer-controls.php:88
+msgid "Note :"
+msgstr "Hinweis:"
+
+#: functions/customizer/customizer-controls.php:88
+msgid ""
+"By default, all the sections are enabled on the homepage. If you do not want "
+"to display any section just drag that section to the disabled box."
+msgstr ""
+"Standardmäßig werden alle Bereiche auf der Startseite aktiviert. Falls du "
+"einen Bereich nicht anzeigen willst, ziehe ihn mit der Maus in die "
+"Deaktivieren-Box."
+
+#: functions/customizer/customizer-controls.php:169
+msgid ""
+"After changing the slug, please do not forget to save the permalinks. "
+"Without saving, the old permalinks will not update."
+msgstr ""
+"Nach dem Ändern der Titelform bitte nicht vergessen, die Permalinks zu "
+"speichern. Ohne zu Speichern werden diese nicht aktualisiert."
+
+#: functions/customizer/customizer-controls.php:192
+msgid "Click here permalinks setting"
+msgstr "Hier klicken für Permalink-Einstellungen"
+
+#: functions/customizer/customizer-controls.php:203
+msgid "Click here to add client"
+msgstr "Klicke hier, um einen Kunden hinzuzuf&uuml;gen"
+
+#: functions/customizer/customizer-controls.php:212
+msgid "Click here to add partner"
+msgstr "Klicke hier, um einen Partner hinzuzufügen"
+
+#: functions/customizer/customizer-controls.php:221
+msgid "Click here to add project"
+msgstr "Klicke hier, um ein Projekt hinzuzufügen"
+
+#: functions/customizer/customizer-controls.php:230
+msgid "Click here to add service"
+msgstr "Klicke hier, um eine Dienstleistung hinzuzufügen"
+
+#: functions/customizer/customizer-controls.php:239
+msgid "Click here to add slider"
+msgstr "Klicke hier, um einen Slider hinzuzufügen"
+
+#: functions/customizer/customizer-controls.php:248
+msgid "Click here to add testimonial"
+msgstr "Klicke hier, um eine Referenz hinzuzufügen"
+
+#: functions/customizer/customizer-relationship.php:36
+msgid "Section Heading"
+msgstr "Bereichsüberschrift"
+
+#: functions/customizer/customizer-relationship.php:42
+msgid "Picture Settings"
+msgstr "Bildeinstellungen"
+
+#: functions/customizer/customizer-relationship.php:90
+msgid "Max Pictureheight"
+msgstr "Max. Bildhöhe"
+
+#: functions/customizer/customizer-relationship.php:108
+msgid "Top/Bottom Padding"
+msgstr "Padding oben/unten"
+
+#: functions/customizer/customizer-relationship.php:126
+msgid "Left/Right Padding"
+msgstr "Padding links/rechts"
 
 #: functions/customizer/single-blog-options.php:18
 msgid "Logo Width"
@@ -1819,35 +1830,35 @@ msgstr "Logobreite"
 
 #: functions/meta-box/post-meta.php:11
 msgid "Slider Details"
-msgstr "Sliderdetails"
+msgstr "Details (Slider)"
 
 #: functions/meta-box/post-meta.php:12
 msgid "Service Details"
-msgstr "Dienstleistungs-Details"
+msgstr "Details (Dienstleistungen)"
 
 #: functions/meta-box/post-meta.php:13
 msgid "Portfolio Details"
-msgstr "Portfolio-Details"
+msgstr "Details (Portfolio)"
 
 #: functions/meta-box/post-meta.php:14
 msgid "Portfolio Featured Details"
-msgstr "Portfolio Hervorgehobene Details"
+msgstr "Hervorgehobene Details (Portfolio)"
 
 #: functions/meta-box/post-meta.php:16
 msgid "Team Details"
-msgstr "Team Details"
+msgstr "Details (Team)"
 
 #: functions/meta-box/post-meta.php:17
 msgid "Client Details"
-msgstr "Kundendetails"
+msgstr "Details (Kunden)"
 
 #: functions/meta-box/post-meta.php:18
 msgid "Partner Details"
-msgstr "Partner Details"
+msgstr "Details (Partner)"
 
 #: functions/meta-box/post-meta.php:19
 msgid "Testimonial Detail"
-msgstr "Referenz-Details"
+msgstr "Details (Referenzen)"
 
 #: functions/meta-box/post-meta.php:38
 msgid "Text"
@@ -1880,7 +1891,7 @@ msgstr "Bezeichnung"
 
 #: functions/meta-box/post-meta.php:134
 msgid "Social Media Settings"
-msgstr "Soziale Medien Einstellungen"
+msgstr "Einstellungen (Soziale Medien)"
 
 #: functions/meta-box/post-meta.php:165
 msgid ""
@@ -2225,13 +2236,12 @@ msgstr "Linktext für Archiv (Chat)"
 msgid "Link text for Audio archive"
 msgstr "Linktext für Archiv (Audio)"
 
-#: header.php:127 searchform.php:13 template-parts/global/menu-search.php:15
+#: header.php:129 searchform.php:13 template-parts/global/menu-search.php:15
 #: template-parts/global/menu-search.php:21
 #: template-parts/global/menu-search.php:23
 #: template-parts/global/menu-search.php:24
 #: template-parts/global/separate-search-cart.php:16
-#: template-parts/global/separate-search-cart.php:28
-#: template-parts/global/separate-search-cart.php:30
+#: template-parts/global/separate-search-cart.php:25
 msgid "Search"
 msgstr "Suchen"
 
@@ -2300,47 +2310,47 @@ msgstr "% Kommentare"
 #: template-parts/home/blog/blog-layout-5.php:79
 #: template-parts/home/blog/blog-layout-6.php:72
 msgid "No posts to show"
-msgstr "Keine Beitr&auml;ge zum Anzeigen"
+msgstr "Keine Beiträge zum Anzeigen"
 
 #: template-parts/home/service/servic-1.php:97
 #: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:100
-#: template-parts/home/service/servic-4.php:98
-#: template-parts/home/service/servic-5.php:98
-#: template-parts/home/service/servic-6.php:104
-#: template-specials/service-five-template.php:98
-#: template-specials/service-four-template.php:98
-#: template-specials/service-six-template.php:98
-#: template-specials/service-three-template.php:99
-#: template-specials/service-two-template.php:97
+#: template-parts/home/service/servic-3.php:84
+#: template-parts/home/service/servic-4.php:83
+#: template-parts/home/service/servic-5.php:91
+#: template-parts/home/service/servic-6.php:89
+#: template-specials/service-five-template.php:85
+#: template-specials/service-four-template.php:85
+#: template-specials/service-six-template.php:85
+#: template-specials/service-three-template.php:85
+#: template-specials/service-two-template.php:82
 msgid "Product designing"
 msgstr "Produktdesign"
 
 #: template-parts/home/service/servic-1.php:97
 #: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:100
-#: template-parts/home/service/servic-4.php:98
-#: template-parts/home/service/servic-5.php:98
-#: template-parts/home/service/servic-6.php:104
-#: template-specials/service-five-template.php:98
-#: template-specials/service-five-template.php:198
-#: template-specials/service-four-template.php:98
-#: template-specials/service-four-template.php:198
-#: template-specials/service-six-template.php:98
-#: template-specials/service-six-template.php:198
-#: template-specials/service-three-template.php:99
-#: template-specials/service-three-template.php:199
-#: template-specials/service-two-template.php:97
-#: template-specials/service-two-template.php:196
+#: template-parts/home/service/servic-3.php:84
+#: template-parts/home/service/servic-4.php:83
+#: template-parts/home/service/servic-5.php:91
+#: template-parts/home/service/servic-6.php:89
+#: template-specials/service-five-template.php:85
+#: template-specials/service-five-template.php:172
+#: template-specials/service-four-template.php:85
+#: template-specials/service-four-template.php:173
+#: template-specials/service-six-template.php:85
+#: template-specials/service-six-template.php:171
+#: template-specials/service-three-template.php:85
+#: template-specials/service-three-template.php:172
+#: template-specials/service-two-template.php:82
+#: template-specials/service-two-template.php:168
 msgid "WordPress themes"
 msgstr "WordPress Themes"
 
 #: template-parts/home/service/servic-1.php:97
 #: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:100
-#: template-parts/home/service/servic-4.php:98
-#: template-parts/home/service/servic-5.php:98
-#: template-parts/home/service/servic-6.php:104
+#: template-parts/home/service/servic-3.php:84
+#: template-parts/home/service/servic-4.php:83
+#: template-parts/home/service/servic-5.php:91
+#: template-parts/home/service/servic-6.php:89
 msgid "Responsive designs"
 msgstr "Responsives Design"
 
@@ -2421,11 +2431,11 @@ msgid ""
 "sweet mornings."
 msgstr ""
 "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
-"s&uuml;ßen Frühlingsmorgen."
+"süßen Frühlingsmorgen."
 
 #: template-parts/index/index-slider.php:207
 msgid "Clean & fresh theme"
-msgstr "Aufger&auml;umtes und modernes Theme"
+msgstr "Aufgeräumtes und modernes Theme"
 
 #: template-parts/index/index-slider.php:210
 msgid "Welcome to wallstreet"
@@ -2443,7 +2453,7 @@ msgstr ""
 #: template-parts/team/team-3.php:92 template-parts/team/team-4.php:89
 #: template/about-us.php:119
 msgid "FOUNDER"
-msgstr "GR&Uuml;NDER"
+msgstr "GRÜNDER"
 
 #: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
 #: template-parts/team/team-3.php:92 template-parts/team/team-4.php:89
@@ -2474,35 +2484,35 @@ msgstr "Kategorien"
 msgid "Forward"
 msgstr "Vorwärts"
 
-#: template-specials/service-five-template.php:98
-#: template-specials/service-four-template.php:98
-#: template-specials/service-six-template.php:98
-#: template-specials/service-three-template.php:99
-#: template-specials/service-two-template.php:97
+#: template-specials/service-five-template.php:85
+#: template-specials/service-four-template.php:85
+#: template-specials/service-six-template.php:85
+#: template-specials/service-three-template.php:85
+#: template-specials/service-two-template.php:82
 msgid "Responsive Design"
 msgstr "Responsives Design"
 
-#: template-specials/service-five-template.php:198
-#: template-specials/service-four-template.php:198
-#: template-specials/service-six-template.php:198
-#: template-specials/service-three-template.php:199
-#: template-specials/service-two-template.php:196
+#: template-specials/service-five-template.php:172
+#: template-specials/service-four-template.php:173
+#: template-specials/service-six-template.php:171
+#: template-specials/service-three-template.php:172
+#: template-specials/service-two-template.php:168
 msgid "Responsive"
 msgstr "Responsive"
 
-#: template-specials/service-five-template.php:198
-#: template-specials/service-four-template.php:198
-#: template-specials/service-six-template.php:198
-#: template-specials/service-three-template.php:199
-#: template-specials/service-two-template.php:196
+#: template-specials/service-five-template.php:172
+#: template-specials/service-four-template.php:173
+#: template-specials/service-six-template.php:171
+#: template-specials/service-three-template.php:172
+#: template-specials/service-two-template.php:168
 msgid "Mobile ready"
 msgstr "Für Mobilgeräte geeignet"
 
-#: template-specials/service-five-template.php:198
-#: template-specials/service-four-template.php:198
-#: template-specials/service-six-template.php:198
-#: template-specials/service-three-template.php:199
-#: template-specials/service-two-template.php:196
+#: template-specials/service-five-template.php:172
+#: template-specials/service-four-template.php:173
+#: template-specials/service-six-template.php:171
+#: template-specials/service-three-template.php:172
+#: template-specials/service-two-template.php:168
 msgid "Live support"
 msgstr "Live Support"
 
@@ -2572,6 +2582,28 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
+
+#, fuzzy
+#~| msgid "Callout button"
+#~ msgid "Enable button"
+#~ msgstr "Callout-Button"
+
+#~ msgid "Callout title"
+#~ msgstr "Callout-Titel"
+
+#~ msgid "Social link settings"
+#~ msgstr "Soziale Links Einstellungen"
+
+#, fuzzy
+#~| msgid "Enable Callout area section"
+#~ msgid "Enable cta section"
+#~ msgstr "Callout-Bereich aktivieren"
+
+#~ msgid "SEO Friendly Url's"
+#~ msgstr "SEO-freundliche URLs"
+
+#~ msgid "Partner Picture Settings"
+#~ msgstr "Einstellungen für Partnerbilder"
 
 #~ msgid "100"
 #~ msgstr "100"
