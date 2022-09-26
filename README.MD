@@ -7,7 +7,7 @@
 ## Developing
 
 - **Contributors:** DSchuppelius
-- **Version:** 2.0.2
+- **Version:** 2.0.3
 - **Requires at least:** 5.3
 - **Tested up to:** 6.0.2
 - **Requires PHP:** 5.6.20
@@ -79,6 +79,13 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
  - 4 widgetized areas in the footer
  - Customise Front Page 
  - Custom footer
+ - Support for GoogleFonts (not recommended in Germany)
+ - Local fonts installed and available in customizer with a GoogleFont remover (check your code (plugins/css?))
+    - Anonyous Pro
+    - Danincing Script
+    - El Messiri
+    - Montserrat
+    - Roboto (default)
  - Translation Ready 
  
 

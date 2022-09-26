@@ -1,5 +1,12 @@
 ### Versionhistory
 
+#### Version 2.0.3:
+    1. Remove query parameters from currentURL to prevent errors in Walker_Nav (öäü - quit the code)
+    2. Fix some styles in comment-block, figcaption
+    3. Repair brocken code from link changes
+    4. Change code for customizer (organize in classes)
+    5. Remove utf8_decode from cookie iframe (deprecated in php8.2)
+    6. Add more local fonts 
 #### Version 2.0.2:
     1. New Icons for admin
     2. Repair latest widget
