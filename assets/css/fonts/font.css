@@ -14,6 +14,30 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Anonymous Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url('anonymous-pro/AnonymousPro-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    font-style: normal;
+    font-weight: 400;
+    src: url('danicing-script/DanicingScript-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url('montserrat/Montserrat-Regular.ttf');
+    font-display: swap;
+}
+
 /* -------- */
 html,
 body {
@@ -160,7 +184,7 @@ article figure figcaption {
 
 .blog-pagination a, .page-links a, .blog-pagination span, .page-numbers {
     font-weight: 400;
-    font-size: 18px
+    font-size: 1em
 }
 
 .blog-post-date {
@@ -1401,7 +1425,7 @@ div.wpcf7-validation-errors {
     font-size: 0.9em
 }
 
-a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a.button {
+a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a.button, .wp-block-search__button {
     font-family: 'SiteFontSemi'
 }
 

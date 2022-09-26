@@ -2,15 +2,15 @@
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Regular.ttf');
+    src: url('montserrat/Montserrat-Regular.ttf');
     font-display: swap;
 }
 
 @font-face {
     font-family: "SiteFontLight";
     font-style: normal;
-    font-weight: 200;
-    src: url('el-messiri/ElMessiri-Regular.ttf');
+    font-weight: 400;
+    src: url('montserrat/Montserrat-Light.ttf');
     font-display: swap;
 }
 
@@ -18,7 +18,7 @@
     font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Bold.ttf');
+    src: url('montserrat/Montserrat-Bold.ttf');
     font-display: swap;
 }
 
@@ -26,7 +26,7 @@
     font-family: "SiteFontSemi";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-SemiBold.ttf');
+    src: url('montserrat/Montserrat-SemiBold.ttf');
     font-display: swap;
 }
 
@@ -35,10 +35,10 @@
     font-family: "SiteFontMedium";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Medium.ttf');
+    src: url('montserrat/Montserrat-Medium.ttf');
     font-display: swap;
 }
 
-.btn:not(.not, .has-icon), button:not(.not, .has-icon), a.button:not(.not, .has-icon), input[type="submit"]:not(.not, .has-icon), a.comment-edit-link:not(.not, .has-icon), a.comment-reply-link:not(.not, .has-icon) {
-    padding: 0.85em 1em 0.55em 3.5em !important;
+.blog-pagination a:not(.btn.next, .btn.prev), .page-links a, .blog-pagination span, .page-numbers {
+    padding: 8px 0 !important;
 }

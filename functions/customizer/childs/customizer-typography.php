@@ -24,78 +24,107 @@ class theme_typography_customizer extends theme_customizer {
 	}
 
     public function customize_register_section($wp_customize) {
+        //Local typography section
+        $wp_customize->add_section("wallstreet_localfont_section", [
+            "title" => __("Local font", "wallstreet"),
+            "panel" => "wallstreet_typography_setting",
+            "priority" => 0,
+            "description" => __("if typography is disabled", "wallstreet"),
+        ]);
+
         //Enable/Disable typography section
         $wp_customize->add_section("wallstreet_typography_section", [
             "title" => __("Typhography enable / disable", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 0,
+            "priority" => 5,
         ]);
 
         //General typography section
         $wp_customize->add_section("wallstreet_general_typography", [
             "title" => __("General Paragraph", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 1,
+            "priority" => 10,
         ]);
 
         //Menus typography section
         $wp_customize->add_section("wallstreet_menus_typography", [
             "title" => __("Menus", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 2,
+            "priority" => 20,
         ]);
 
         //Post and page title typography section
         $wp_customize->add_section("wallstreet_post_page_title_typography", [
             "title" => __("Post / Page title", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 3,
+            "priority" => 30,
         ]);
 
         //Service typography section
         $wp_customize->add_section("service_typography", [
             "title" => __("Service title", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 4,
+            "priority" => 40,
         ]);
     
         //Portfolio title typography section
         $wp_customize->add_section("portfolio_typography", [
             "title" => __("Portfolio title", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 5,
+            "priority" => 50,
         ]);
 
         //Widget heading title typography section
         $wp_customize->add_section("wallstreet_widget_title_typography", [
             "title" => __("Widget heading title", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 6,
+            "priority" => 60,
         ]);
 
         //Call Out Area title typography section
         $wp_customize->add_section("wallstreet_site_intro_typography", [
             "title" => __("Call-to-Action title", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 7,
+            "priority" => 70,
         ]);
 
         //Call Out Area description typography section
         $wp_customize->add_section("wallstreet_callout_desc_typography", [
             "title" => __("Call-to-Action description", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 8,
+            "priority" => 80,
         ]);
 
         //Call Out Area button typography section
         $wp_customize->add_section("wallstreet_callout_button_typography", [
             "title" => __("Call-to-Action button", "wallstreet"),
             "panel" => "wallstreet_typography_setting",
-            "priority" => 9,
+            "priority" => 90,
         ]);
     }
 
     public function customize_register_settings_and_controls($wp_customize) {
+        $wp_customize->add_setting($this->theme_options_name . "[local_font_style]", [
+            "default" => "el-messiri",
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[local_font_style]", [
+            "label" => __("Font style", "wallstreet"),
+            "section" => "wallstreet_localfont_section",
+            "setting" => $this->theme_options_name . "[local_font_style]",
+            "type" => "select",
+            "choices" => [
+                "anonymous-pro" => "Anonymous Pro",
+                "dancing-script" => "Dancing Script",
+                "el-messiri" => "El Messiri",
+                "montserrat" => "Montserrat",
+                "roboto" => "Roboto",
+            ],
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[enable_custom_typography]", [
             "default" => false,
             "capability" => "edit_theme_options",

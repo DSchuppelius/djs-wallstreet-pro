@@ -267,6 +267,8 @@ function theme_data_setup() {
         "vimeo_link_new_tab" => false,
 
         // Typography
+        "local_font_style" => "roboto",
+
         "enable_custom_typography" => false,
         "google_font" => "El Messiri",
         "remove_googlefonts" => false,

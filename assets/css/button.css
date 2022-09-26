@@ -182,6 +182,7 @@ a.comment-reply-link {
     button.wp-block-button__link,
     button.wp-block-search__button,
     .search-form button.btn.search_btn {
+        word-break: keep-all;
         border: 1px solid transparent;
         box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
     }
@@ -238,7 +239,7 @@ a.comment-reply-link {
         display: inline-block;
         line-height: 1em;
         overflow: hidden;
-        padding: 0.85em 1em 0.55em 3.5em;
+        padding: 0.75em 1em 0.65em 3.5em;
         position: relative;
         user-select: none;
         z-index: 3
@@ -466,7 +467,6 @@ a.btn.tab {
 .search-form button[type="submit"] {
     cursor: pointer;
     width: auto;
-    padding: 0.825em 4.5em 0.525em 5.75em;
     line-height: 1em;
     border-radius: 0 3px 3px 0
 }

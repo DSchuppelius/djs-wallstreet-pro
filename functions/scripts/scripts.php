@@ -19,8 +19,16 @@ function theme_font_scripts() {
     wp_enqueue_style("font-awesome-min",            THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/all.min.css");
     wp_enqueue_style("icon_font-faces",             THEME_ASSETS_PATH_URI . "/css/fonts/icon_font-faces.css");
     wp_enqueue_style("wallstreet-fonts",            THEME_ASSETS_PATH_URI . "/css/fonts/font.css");
-    if($current_options["enable_custom_typography"] == true){
+    if ($current_options["enable_custom_typography"] == true) {
         wp_enqueue_style("spicy-fonts",             wallstreet_fonts_url($current_options["google_font"]), [], null);
+    } elseif ($current_options["local_font_style"] == "roboto") {
+        wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_roboto.css");
+    } elseif ($current_options["local_font_style"] == "montserrat") {
+        wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_montserrat.css");
+    } elseif ($current_options["local_font_style"] == "dancing-script") {
+        wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_dancing-script.css");
+    } elseif ($current_options["local_font_style"] == "anonymous-pro") {
+        wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_anonymous-pro.css");
     } else {
         wp_enqueue_style("site_font-faces",         THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
     }

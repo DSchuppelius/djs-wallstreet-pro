@@ -1,9 +1,9 @@
 <?php
 /*
- * Created on   : Wed Jun 22 2022
+ * Created on   : Sun Sep 25 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org
- * Filename     : customizer_theme_style.php
+ * Filename     : customizer.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
@@ -31,9 +31,8 @@ if (!class_exists('theme_customizer')) {
             add_action("customize_register", [$this, "customize_register_settings_and_controls"]);
         }
 
-        abstract public function customize_register_section($wp_customize);
         abstract public function customize_register_panel($wp_customize);
-
+        abstract public function customize_register_section($wp_customize);
         abstract public function customize_register_settings_and_controls($wp_customize);
     }
 }

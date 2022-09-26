@@ -13,6 +13,7 @@ function wallstreet_single_blog_customizer($wp_customize) {
         "transport" => "postMessage",
         "sanitize_callback" => "absint",
     ]);
+
     $wp_customize->add_control(
         new Wallsteet_Slider_Custom_Control($wp_customize, "busiprof_logo_length", [
             "label" => esc_html__("Logo Width", "busiprof"),

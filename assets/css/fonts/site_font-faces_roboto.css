@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontLight";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontBold";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontSemi";
+    font-style: normal;
+    font-weight: 200;
+    src: url('roboto/Roboto-Bold.ttf');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "SiteFontMedium";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Medium.ttf');
+    font-display: swap;
+}
