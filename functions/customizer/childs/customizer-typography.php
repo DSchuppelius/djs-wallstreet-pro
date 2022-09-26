@@ -105,7 +105,7 @@ class theme_typography_customizer extends theme_customizer {
 
     public function customize_register_settings_and_controls($wp_customize) {
         $wp_customize->add_setting($this->theme_options_name . "[local_font_style]", [
-            "default" => "el-messiri",
+            "default" => "roboto",
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
@@ -123,6 +123,20 @@ class theme_typography_customizer extends theme_customizer {
                 "montserrat" => "Montserrat",
                 "roboto" => "Roboto",
             ],
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[remove_googlefonts]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[remove_googlefonts]", [
+            "label" => __("Remove GoogleFonts (Works only, if custom typography is disabled)", "wallstreet"),
+            "section" => "wallstreet_localfont_section",
+            "setting" => $this->theme_options_name . "[remove_googlefonts]",
+            "type" => "checkbox",
         ]);
 
         $wp_customize->add_setting($this->theme_options_name . "[enable_custom_typography]", [
@@ -151,20 +165,6 @@ class theme_typography_customizer extends theme_customizer {
             "section" => "wallstreet_typography_section",
             "type" => "text",
             "priority" => 100,
-        ]);
-    
-        $wp_customize->add_setting($this->theme_options_name . "[remove_googlefonts]", [
-            "default" => false,
-            "capability" => "edit_theme_options",
-            "sanitize_callback" => "sanitize_text_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[remove_googlefonts]", [
-            "label" => __("Remove GoogleFonts (Works only, if custom typography is disabled)", "wallstreet"),
-            "section" => "wallstreet_typography_section",
-            "setting" => $this->theme_options_name . "[remove_googlefonts]",
-            "type" => "checkbox",
         ]);
     
         $font_size = [];
