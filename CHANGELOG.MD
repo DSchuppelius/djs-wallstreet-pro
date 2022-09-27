@@ -4,6 +4,8 @@
     1. Fix wrong height in portfolio-single
     2. Change some picture heights in portfolio
     3: Change font-size of wp-caption and remove unneeded css
+    4. Add customizer to underline and mark links
+    5. Add customizer to limit the archivlists
 #### Version 2.0.3:
     1. Remove query parameters from currentURL to prevent errors in Walker_Nav (öäü - quit the code)
     2. Fix some styles in comment-block, figcaption
