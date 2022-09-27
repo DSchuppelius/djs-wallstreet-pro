@@ -1,5 +1,9 @@
 ### Versionhistory
 
+#### Version 2.0.4:
+    1. Fix wrong height in portfolio-single
+    2. Change some picture heights in portfolio
+    3: Change font-size of wp-caption and remove unneeded css
 #### Version 2.0.3:
     1. Remove query parameters from currentURL to prevent errors in Walker_Nav (öäü - quit the code)
     2. Fix some styles in comment-block, figcaption

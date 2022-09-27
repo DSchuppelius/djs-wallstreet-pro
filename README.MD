@@ -7,7 +7,7 @@
 ## Developing
 
 - **Contributors:** DSchuppelius
-- **Version:** 2.0.3
+- **Version:** 2.0.4
 - **Requires at least:** 5.3
 - **Tested up to:** 6.0.2
 - **Requires PHP:** 5.6.20
