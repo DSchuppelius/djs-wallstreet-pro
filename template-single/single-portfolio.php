@@ -107,7 +107,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                 <div class="main-portfolio-showcase-media">
                                     <?php if (has_post_thumbnail()) {
                                         $class = ["class" => "img-responsive"];
-                                        the_post_thumbnail("port-thumb", $class);
+                                        the_post_thumbnail("index-thumb", $class);
                                         $post_thumbnail_id = get_post_thumbnail_id();
                                         $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id)); ?>
                                         <div class="main-portfolio-showcase-overlay">
