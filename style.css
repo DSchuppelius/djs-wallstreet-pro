@@ -4171,6 +4171,8 @@ div.collapsing ul.nav {
     }
 
         .sidebar-widget ul li a:before, .footer_widget_column ul li a:before {
+            position: relative;
+            bottom: 1px;
             line-height: 10px;
             margin-right: 10px;
             content: "\f152";

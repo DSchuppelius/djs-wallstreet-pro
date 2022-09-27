@@ -127,28 +127,32 @@ input, button, .show-all-btn a, .service-btn a, .portfolio-btn a, .blog-post-dat
     border-radius: 0.25rem;
 }
 
-body.a_mark_targets a[target=_blank]:not(a.btn, .gcard-about a, .head-contact-social a, .about-contact-social a, .team-social-icons a):after {
+body.a_mark_targets a[target=_blank]:not(a.btn, .gcard-about a, .head-contact-social a, .about-contact-social a, .team-social-icons a, .service-box a):after {
     content: "\f35d";
     margin: 0 1px 0 3px;
     position: relative;
     bottom: 1px
-} 
+}
 
-    /* End Contentpart*/
-    button.btn.navbar-toggle {
-        border-radius: 3px 3px 3px 3px;
-        cursor: pointer;
-        display: inline-block;
-        line-height: 1em;
-        margin-top: 12px;
-        margin-bottom: 0;
-        padding: 8px 18px 8px 55px;
-        text-align: center;
-        vertical-align: middle;
-        white-space: nowrap;
-        color: #fff;
-        text-decoration: none
-    }
+body.a_mark_targets .service-area a[target=_blank]:not(a.btn):after {
+    bottom: 2px
+}
+
+/* End Contentpart*/
+button.btn.navbar-toggle {
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1em;
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding: 8px 18px 8px 55px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none
+}
 
 a.blog-btn,
 a.comment-edit-link,
