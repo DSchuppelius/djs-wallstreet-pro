@@ -34,7 +34,7 @@ if (class_exists("WP_Customize_Control")) {
                         $dark = false; ?>
                         </div><div class="light_mode">
                     <?php } elseif ($key == "default.css") { ?>
-                    	</div><div class="custom_mode">
+                        </div><div class="custom_mode">
                     <?php } ?>
                     <label class="color_schema">
                         <input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr($name); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>" <?php if ($this->value() == $key) { echo 'checked="checked"'; } ?> />
@@ -65,67 +65,67 @@ if (class_exists("WP_Customize_Control")) {
             $defaultenableddata = ["service", "portfolio", "team", "blog", "testimonials", "features", "client", "partner"];
             $layout_disable = array_diff($defaultenableddata, $data_enable);
             ?>
-			<h3><?php _e("Enable", "wallstreet"); ?></h3>
-			<ul class="sortable customizer_layout" id="enable">
-				<?php if (!empty($data_enable[0])) {
+            <h3><?php _e("Enable", "wallstreet"); ?></h3>
+            <ul class="sortable customizer_layout" id="enable">
+                <?php if (!empty($data_enable[0])) {
                     foreach ($data_enable as $value) { ?>
-						<li class="ui-state" id="<?php echo $value; ?>"><?php echo $value; ?></li>
+                        <li class="ui-state" id="<?php echo $value; ?>"><?php echo $value; ?></li>
                     <?php }
                 } ?>
-			</ul>
+            </ul>
 
-			<h3><?php _e("Disable", "wallstreet"); ?></h3>
-			<ul class="sortable customizer_layout" id="disable">
-				<?php if (!empty($layout_disable)) {
+            <h3><?php _e("Disable", "wallstreet"); ?></h3>
+            <ul class="sortable customizer_layout" id="disable">
+                <?php if (!empty($layout_disable)) {
                     foreach ($layout_disable as $val) { ?>
-						<li class="ui-state" id="<?php echo $val; ?>"><?php echo $val; ?></li>
-					<?php }
+                        <li class="ui-state" id="<?php echo $val; ?>"><?php echo $val; ?></li>
+                    <?php }
                 } ?>
-			</ul>
+            </ul>
 
-			<div class="section">
-				<p><b><?php _e("Slider section always top on the home page", "wallstreet"); ?></b></p>
-				<p><b><?php _e("Note :", "wallstreet"); ?></b> <?php _e("By default, all the sections are enabled on the homepage. If you do not want to display any section just drag that section to the disabled box.", "wallstreet"); ?></p>
-				<p></p>
-			</div>
+            <div class="section">
+                <p><b><?php _e("Slider section always top on the home page", "wallstreet"); ?></b></p>
+                <p><b><?php _e("Note :", "wallstreet"); ?></b> <?php _e("By default, all the sections are enabled on the homepage. If you do not want to display any section just drag that section to the disabled box.", "wallstreet"); ?></p>
+                <p></p>
+            </div>
 
-			<script>
-				jQuery(document).ready(function($) {
-					$(".sortable").sortable({
-						connectWith: '.sortable'
-					});
-				});
+            <script>
+                jQuery(document).ready(function($) {
+                    $(".sortable").sortable({
+                        connectWith: '.sortable'
+                    });
+                });
 
-				jQuery(document).ready(function($) {
-					// Get items id you can chose
-					function enabledItems(layoutItems) {
-						var columns = [];
-						$(layoutItems + ' #enable').each(function() {
-							columns.push($(this).sortable('toArray').join(','));
-						});
-						return columns.join('|');
-					}
+                jQuery(document).ready(function($) {
+                    // Get items id you can chose
+                    function enabledItems(layoutItems) {
+                        var columns = [];
+                        $(layoutItems + ' #enable').each(function() {
+                            columns.push($(this).sortable('toArray').join(','));
+                        });
+                        return columns.join('|');
+                    }
 
-					function disabledItems(layoutItems) {
-						var columns = [];
-						$(layoutItems + ' #disable').each(function() {
-							columns.push($(this).sortable('toArray').join(','));
-						});
-						return columns.join('|');
-					}
+                    function disabledItems(layoutItems) {
+                        var columns = [];
+                        $(layoutItems + ' #disable').each(function() {
+                            columns.push($(this).sortable('toArray').join(','));
+                        });
+                        return columns.join('|');
+                    }
 
-					//onclick check id
-					$('#enable .ui-state,#disable .ui-state').mouseleave(function() {
-						var enable = enabledItems('#customize-control-wallstreet_pro_options-layout_manager');
-						var disable = disabledItems('#customize-control-wallstreet_pro_options-layout_manager');
+                    //onclick check id
+                    $('#enable .ui-state,#disable .ui-state').mouseleave(function() {
+                        var enable = enabledItems('#customize-control-wallstreet_pro_options-layout_manager');
+                        var disable = disabledItems('#customize-control-wallstreet_pro_options-layout_manager');
 
-						$("#customize-control-wallstreet_pro_options-front_page_data input[type = 'text']").val(enable);
-						$("#customize-control-wallstreet_pro_options-layout_textbox_disable input[type = 'text']").val(disable);
-						$("#customize-control-wallstreet_pro_options-front_page_data input[type = 'text']").change();
-					});
-				});
-			</script>
-		<?php }
+                        $("#customize-control-wallstreet_pro_options-front_page_data input[type = 'text']").val(enable);
+                        $("#customize-control-wallstreet_pro_options-layout_textbox_disable input[type = 'text']").val(disable);
+                        $("#customize-control-wallstreet_pro_options-front_page_data input[type = 'text']").change();
+                    });
+                });
+            </script>
+        <?php }
     }
 
     class Wallstreet_Range_Slider_Control extends WP_Customize_Control {
@@ -156,18 +156,18 @@ if (class_exists("WP_Customize_Control")) {
          */
         public function render_content() {
             ?>
-			<div class="slider-custom-control">
-				<span class="customize-control-title"><?php echo esc_html($this->label); ?></span><input type="number" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
-				<div class="slider" slider-min-value="<?php echo esc_attr($this->input_attrs["min"]); ?>" slider-max-value="<?php echo esc_attr($this->input_attrs["max"]); ?>" slider-step-value="<?php echo esc_attr($this->input_attrs["step"]); ?>"></div><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr($this->value()); ?>"></span>
-			</div>
-		<?php
+            <div class="slider-custom-control">
+                <span class="customize-control-title"><?php echo esc_html($this->label); ?></span><input type="number" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
+                <div class="slider" slider-min-value="<?php echo esc_attr($this->input_attrs["min"]); ?>" slider-max-value="<?php echo esc_attr($this->input_attrs["max"]); ?>" slider-step-value="<?php echo esc_attr($this->input_attrs["step"]); ?>"></div><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr($this->value()); ?>"></span>
+            </div>
+        <?php
         }
     }
 
     class Wallstreet_Customize_Slug extends WP_Customize_Control {
         public function render_content() { ?>
-			<h3><?php _e("After changing the slug, please do not forget to save the permalinks. Without saving, the old permalinks will not update.", "wallstreet"); ?>
-		<?php }
+            <h3><?php _e("After changing the slug, please do not forget to save the permalinks. Without saving, the old permalinks will not update.", "wallstreet"); ?>
+        <?php }
     }
 }
 

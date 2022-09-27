@@ -46,7 +46,7 @@ function the_show_all($link, $text, $target = false, $button_class = "more blog"
     echo get_the_show_all($link, $text, $target, $button_class);
 }
 
-// Wordpress filter and action section
+// WordPress filter and action section
 function new_content_more($more) {
     return form_more_button();
 }

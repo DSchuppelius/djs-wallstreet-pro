@@ -1,7 +1,7 @@
 <?php
 /*
  * Created on   : Wed Aug 31 2022
- * Author       : Daniel Jörg Schuppelius
+ * Author       : Daniel JÃ¶rg Schuppelius
  * Author Uri   : https://schuppelius.org
  * Filename     : archive.php
  * License      : GNU General Public License v3 or later
@@ -9,15 +9,19 @@
  */
  
 function archives_view($args) {
+    $current_options = get_current_options();
     switch ($args['type']) {
     	case 'yearly':
-    		$args['limit'] = 5;
+            if ($current_options["max_archive_year"] > 0)
+    		    $args['limit'] = $current_options["max_archive_year"];
     		break;
     	case 'monthly':
-    		$args['limit'] = 12;
+            if ($current_options["max_archive_month"] > 0)
+        		$args['limit'] = $current_options["max_archive_month"];
     		break;
     	case 'daily':
-            $args['limit'] = 7;
+            if ($current_options["max_archive_day"] > 0)
+                $args['limit'] = $current_options["max_archive_day"];
     		break;
     	default:
     		$args['limit'] = 10;

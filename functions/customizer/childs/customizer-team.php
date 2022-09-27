@@ -16,13 +16,13 @@ class theme_team_customizer extends theme_customizer {
     }
 
     public function customize_register_panel($wp_customize) {
-	    //Home project Section
+        //Home project Section
         $wp_customize->add_panel("team_setting", [
             "priority" => 699,
             "capability" => "edit_theme_options",
             "title" => __("Team settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("team_section_settings", [
@@ -94,7 +94,7 @@ class theme_team_customizer extends theme_customizer {
             "sanitize_callback" => "sanitize_text_field",
             "priority" => 200,
         ]);
-	}
+    }
 }
 
 global $customizer_team;

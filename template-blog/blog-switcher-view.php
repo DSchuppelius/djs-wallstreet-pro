@@ -17,68 +17,68 @@ $theme_blog_section = "media";
 get_template_parts(["template-parts/index/index", "banner"], true);
 ?>
 <style type="text/css">
-	.blog-post-title-wrapper-full div .blog-btn {
-		visibility: hidden;
-		border-radius: 3px 3px 3px 3px;
-		cursor: pointer;
-		display: contents;
-	    font-family: 'SiteFont';
-	    font-weight: 100;
-	    font-size: 0;
-	    line-height: 0;
-	    margin-top: 0;
-	    margin-bottom: 0;
-	    padding: 0;
-	}
-	.blog-post-title-wrapper-full div .blog-btn:after {
-		content:'<?php echo $current_options["blog_template_read_more"]; ?>'; 
-		visibility: visible;
-		background-color: #00c2a9;
-		border-radius: 3px 3px 3px 3px;
-		cursor: pointer;
-		display: inline-block;
-		font-family: 'SiteFont';
-		font-weight: 400;
-		font-size: 13px;
-		line-height: 20px;
-		margin-top: 12px;
-		margin-bottom: 35px;
-		padding: 9px 18px;
-		text-align: center;
-		vertical-align: middle;
-		white-space: nowrap;
-		text-decoration: none;
-		float: left;
-	}
-	.blog-section { padding-top: 50px; padding-bottom: 40px; }
-	.blog-section-left {
-		background-color: transparent;
-		border: none;
-		margin: 0;
+    .blog-post-title-wrapper-full div .blog-btn {
+        visibility: hidden;
+        border-radius: 3px 3px 3px 3px;
+        cursor: pointer;
+        display: contents;
+        font-family: 'SiteFont';
+        font-weight: 100;
+        font-size: 0;
+        line-height: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .blog-post-title-wrapper-full div .blog-btn:after {
+        content:'<?php echo $current_options["blog_template_read_more"]; ?>'; 
+        visibility: visible;
+        background-color: #00c2a9;
+        border-radius: 3px 3px 3px 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'SiteFont';
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 12px;
+        margin-bottom: 35px;
+        padding: 9px 18px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        text-decoration: none;
+        float: left;
+    }
+    .blog-section { padding-top: 50px; padding-bottom: 40px; }
+    .blog-section-left {
+        background-color: transparent;
+        border: none;
+        margin: 0;
         border-bottom: 1px solid #e0e0e0;
-	}
+    }
     .static-banner {
         position: relative;
         overflow: hidden;
         max-height: 750px;
     }
-	.blog-section-left:last-child { border-bottom: none; }
-	@media (min-width: 991px) {
-	  	.blog-section-left.blog-list-view .blog-post-img {
-		    width: 370px;
-		}
+    .blog-section-left:last-child { border-bottom: none; }
+    @media (min-width: 991px) {
+        .blog-section-left.blog-list-view .blog-post-img {
+            width: 370px;
+        }
         .right .blog-post-img { float: right; }
         .blog-section-left.blog-list-view.right .blog-post-title {
             width: auto;
             padding: 20px 30px 20px 0;
         }
-	}
+    }
 </style>
 <div class="blog6 blog-section">
-	<div class="container blog-switcher-view">
-		<div class="row <?php row_frame_border(""); ?>">		
-			<div class="col-md-12">
-				<?php
+    <div class="container blog-switcher-view">
+        <div class="row <?php row_frame_border(""); ?>">		
+            <div class="col-md-12">
+                <?php
                 $switcher = 1;
                 $paged = get_query_var("paged") ? get_query_var("paged") : 1;
                 $args = ["post_type" => "post", "paged" => $paged];
@@ -88,16 +88,16 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                 while ($post_type_data->have_posts()) {
                     $post_type_data->the_post();
                     $more = 0; ?>
-					<div class="blog-section-left blog-list-view <?php echo ($switcher % 2 == 0) ? "right" : "left"; ?>">
-						<?php get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]); ?>
-					</div>
-					<?php $switcher++;
+                    <div class="blog-section-left blog-list-view <?php echo ($switcher % 2 == 0) ? "right" : "left"; ?>">
+                        <?php get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]); ?>
+                    </div>
+                    <?php $switcher++;
                     $first_post = false;
                 }
                 the_pagination($paged, $post_type_data);
                 ?>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>			
 <?php get_footer(); ?>

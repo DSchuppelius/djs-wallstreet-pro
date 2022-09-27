@@ -25,7 +25,7 @@ class theme_template_customizer extends theme_customizer {
     }
 
     public function customize_register_section($wp_customize) {
-	    // add section to manage Section heading
+        // add section to manage Section heading
         $wp_customize->add_section("section_heading", [
             "title" => __("About page setting", "wallstreet"),
             "panel" => "wallstreet_template",
@@ -129,7 +129,7 @@ class theme_template_customizer extends theme_customizer {
         $this->customize_register_contact_mail($wp_customize);
         $this->customize_register_contact_form($wp_customize);
         $this->customize_register_contact_map($wp_customize);
-	}
+    }
 
     private function customize_register_heading($wp_customize) {
         // About us page Heading

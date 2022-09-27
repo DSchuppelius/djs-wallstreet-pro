@@ -13,7 +13,7 @@ class theme_post_type_slugs_customizer extends theme_customizer {
     public function customize_register_panel($wp_customize) {}
 
     public function customize_register_section($wp_customize) {
-	    $wp_customize->add_section("slugs_section", [
+        $wp_customize->add_section("slugs_section", [
             "priority" => 950,
             "capability" => "edit_theme_options",
             "title" => __("SEO Friendly URL", "wallstreet"),
@@ -150,7 +150,7 @@ class theme_post_type_slugs_customizer extends theme_customizer {
             ])
         );
 
-	}
+    }
 }
 
 global $customizer_post_type_slugs;

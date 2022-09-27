@@ -58,6 +58,10 @@ function theme_data_setup() {
         "home_slider_mobile_desc_enabled" => true,
         "home_slider_mobile_button_enabled" => true,
 
+        "max_archive_year" => 5,
+        "max_archive_month" => 12,
+        "max_archive_day" => 7,
+
         // service
         "other_service_section_enabled" => true,
         "service_list" => 3,

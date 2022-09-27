@@ -11,24 +11,24 @@
 <!-- wallstreet Partners Section ---->
 <?php $current_options = get_current_options(); ?>
 <partners>
-	<div class="container partner-section">	
-		<div class="row">	
-			<?php if (!empty($current_options["home_partner_title"]) || !empty($current_options["home_partner_description"])): ?>		
-				<div class="section_heading_title">
-					<?php if ($current_options["home_partner_title"]) { ?>
-						<h1><?php echo $current_options["home_partner_title"]; ?></h1>
-						<div class="pagetitle-separator">
-							<div class="pagetitle-separator-border">
-								<div class="pagetitle-separator-box"></div>
-							</div>
-						</div>
-					<?php } ?>
-					<?php if ($current_options["home_partner_description"]) { ?>
-						<p><?php echo $current_options["home_partner_description"]; ?></p>
-					<?php } ?>
-				</div>	
-			<?php endif; ?>	
-			<div class="row flexstretch">
+    <div class="container partner-section">	
+        <div class="row">	
+            <?php if (!empty($current_options["home_partner_title"]) || !empty($current_options["home_partner_description"])): ?>		
+                <div class="section_heading_title">
+                    <?php if ($current_options["home_partner_title"]) { ?>
+                        <h1><?php echo $current_options["home_partner_title"]; ?></h1>
+                        <div class="pagetitle-separator">
+                            <div class="pagetitle-separator-border">
+                                <div class="pagetitle-separator-box"></div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <?php if ($current_options["home_partner_description"]) { ?>
+                        <p><?php echo $current_options["home_partner_description"]; ?></p>
+                    <?php } ?>
+                </div>	
+            <?php endif; ?>	
+            <div class="row flexstretch">
                 <?php $j = 1;
                 $args = ["post_type" => PARTNER_POST_TYPE, "posts_per_page" => -1];
                 $partner = new WP_Query($args);
@@ -48,7 +48,7 @@
                                 <a href="<?php echo $post_partner_url; ?>" <?php echo $post_partner_url_target; ?>>
                                     <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                                 </a>
-    					    <?php } else { ?>
+                            <?php } else { ?>
                                 <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                             <?php }
                         } else { ?>
@@ -66,8 +66,8 @@
                 } else {
                     get_template_part("template-parts/partner/partner", "demo");
                 } ?>			
-			</div>		
-		</div> 		
-	</div>
+            </div>		
+        </div> 		
+    </div>
 </partners>
 <!-- /wallstreet wallstreet Cliens Section Section ---->

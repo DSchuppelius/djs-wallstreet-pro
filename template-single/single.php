@@ -14,16 +14,16 @@ $theme_blog_section = "blog-detail-section";
 get_template_part("template-parts/index/index", "banner");
 ?>
 <div class="container single">
-	<div class="row <?php row_frame_border(""); ?> flexstretch">
-		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
-			<?php while (have_posts()) {
+    <div class="row <?php row_frame_border(""); ?> flexstretch">
+        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
+            <?php while (have_posts()) {
                 the_post();
                 get_template_part("template-parts/content/content", "single");
             }
             comments_template("", true);
             get_template_part("template-parts/content/filler");
             ?>
-		</div>
-		<?php get_sidebar(); ?>
-	</div>
+        </div>
+        <?php get_sidebar(); ?>
+    </div>
 </div>

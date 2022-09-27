@@ -22,7 +22,7 @@ class theme_service_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Service settings", "wallstreet"),
         ]);	
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("service_section_head", [
@@ -303,7 +303,7 @@ class theme_service_customizer extends theme_customizer {
             "label" => __("Open link in new tab", "wallstreet"),
             "section" => "service_callout_settings",
         ]);
-	}
+    }
 }
 
 global $customizer_service;

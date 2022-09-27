@@ -21,10 +21,10 @@ class theme_project_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Project settings", "wallstreet"),
         ]);        
-	}
+    }
 
     public function customize_register_section($wp_customize) {
-	    $wp_customize->add_section("project_section_settings", [
+        $wp_customize->add_section("project_section_settings", [
             "title" => __("Homepage project settings", "wallstreet"),
             "panel" => "project_setting",
             "description" => ""
@@ -185,7 +185,7 @@ class theme_project_customizer extends theme_customizer {
                 "section" => "project_section_settings",
             ])
         );
-	}
+    }
 }
 
 global $customizer_project;

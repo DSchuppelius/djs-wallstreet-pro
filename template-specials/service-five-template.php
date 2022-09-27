@@ -13,21 +13,21 @@ $current_options = get_current_options();
 ?>
 <!-- Service Section -->
 <div class="container">
-	<div class="row">
-		<div class="section_heading_title">
-			<?php if ($current_options["service_title"] != ""); ?>
-			<h1><?php echo $current_options["service_title"]; ?></h1>
-			<div class="pagetitle-separator">
-				<div class="pagetitle-separator-border">
-					<div class="pagetitle-separator-box"></div>
-				</div>
-			</div>
-			<?php if ($current_options["service_description"] != ""); ?>
-			<p><?php echo $current_options["service_description"]; ?></p>
-		</div>
-	</div>
-	<div class="row service4">
-		<?php $count_posts = wp_count_posts(SERVICE_POST_TYPE)->publish;
+    <div class="row">
+        <div class="section_heading_title">
+            <?php if ($current_options["service_title"] != ""); ?>
+            <h1><?php echo $current_options["service_title"]; ?></h1>
+            <div class="pagetitle-separator">
+                <div class="pagetitle-separator-border">
+                    <div class="pagetitle-separator-box"></div>
+                </div>
+            </div>
+            <?php if ($current_options["service_description"] != ""); ?>
+            <p><?php echo $current_options["service_description"]; ?></p>
+        </div>
+    </div>
+    <div class="row service4">
+        <?php $count_posts = wp_count_posts(SERVICE_POST_TYPE)->publish;
         if ($count_posts > 3) {
             $count_posts = 3;
         }
@@ -104,15 +104,15 @@ $current_options = get_current_options();
 
 <!-- Our Other Service Section -->
 <div class="container">
-	<?php get_template_part("template-parts/index/index", "calloutarea"); ?>
-	
-	<?php if ($current_options["other_service_section_enabled"] == true) { ?>
-	    <?php $count_posts = wp_count_posts("service")->publish;
+    <?php get_template_part("template-parts/index/index", "calloutarea"); ?>
+    
+    <?php if ($current_options["other_service_section_enabled"] == true) { ?>
+        <?php $count_posts = wp_count_posts("service")->publish;
         if ($count_posts >= 4 || $count_posts == 0) { ?>
             <div class="row">
                 <div class="section_heading_title">
                     <?php if ($current_options["other_service_title"] != "") { ?>
-			            <h1><?php echo $current_options["other_service_title"]; ?></h1>
+                        <h1><?php echo $current_options["other_service_title"]; ?></h1>
                     <?php } ?>
                     <div class="pagetitle-separator">
                         <div class="pagetitle-separator-border">
@@ -120,13 +120,13 @@ $current_options = get_current_options();
                         </div>
                     </div>
                     <?php if ($current_options["other_service_description"] != "") { ?>
-			            <p><?php echo $current_options["other_service_description"]; ?></p>
+                        <p><?php echo $current_options["other_service_description"]; ?></p>
                     <?php } ?>
                 </div>
             </div>
         <?php } ?>
         <div class="row service4">
-		    <?php $j = 1;
+            <?php $j = 1;
             $count_posts = wp_count_posts(SERVICE_POST_TYPE)->publish;
             $arg = [
                 "offset" => "3",
@@ -182,7 +182,7 @@ $current_options = get_current_options();
                 }
             } ?>
         </div>
-	<?php } ?>
+    <?php } ?>
 </div>
 <?php get_footer(); ?>	
 <!-- /Our Other Service Section -->

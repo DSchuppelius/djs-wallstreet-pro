@@ -21,13 +21,19 @@ class theme_blog_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Blog settings", "wallstreet"),
         ]);        
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("news_section_settings", [
             "title" => __("Home blog settings", "wallstreet"),
             "panel" => "blog_setting",
             "priority" => 750,
+        ]);
+
+        $wp_customize->add_section("archive_section_settings", [
+            "title" => __("Archive settings", "wallstreet"),
+            "panel" => "blog_setting",
+            "priority" => 850,
         ]);
     }
 
@@ -39,6 +45,7 @@ class theme_blog_customizer extends theme_customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[home_meta_section_settings]", [
             "label" => __("Hide blog meta from home page", "wallstreet"),
             "section" => "news_section_settings",
@@ -52,6 +59,7 @@ class theme_blog_customizer extends theme_customizer {
             "type" => "option",
             "sanitize_callback" => "sanitize_text_field",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[home_blog_heading]", [
             "label" => __("Title", "wallstreet"),
             "section" => "news_section_settings",
@@ -64,6 +72,7 @@ class theme_blog_customizer extends theme_customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[home_blog_description]", [
             "label" => __("Description", "wallstreet"),
             "section" => "news_section_settings",
@@ -75,6 +84,7 @@ class theme_blog_customizer extends theme_customizer {
             "default" => 1,
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[home_blog_design]", [
             "type" => "select",
             "label" => __("Blog design style", "wallstreet"),
@@ -93,6 +103,7 @@ class theme_blog_customizer extends theme_customizer {
             "default" => 3,
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[home_blog_counts]", [
             "type" => "select",
             "label" => __("No of Post", "wallstreet"),
@@ -131,6 +142,7 @@ class theme_blog_customizer extends theme_customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[view_all_posts_text]", [
             "label" => __("Button Text", "wallstreet"),
             "section" => "news_section_settings",
@@ -144,6 +156,7 @@ class theme_blog_customizer extends theme_customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[all_posts_link]", [
             "label" => __("Button Link", "wallstreet"),
             "section" => "news_section_settings",
@@ -158,10 +171,71 @@ class theme_blog_customizer extends theme_customizer {
             "type" => "option",
             "description" => "Open link in a new window/tab",
         ]);
+
         $wp_customize->add_control($this->theme_options_name . "[view_all_link_target]", [
             "label" => __("Open link in new tab", "wallstreet"),
             "section" => "news_section_settings",
             "type" => "checkbox",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[max_archive_year]", [
+            "default" => 5,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[max_archive_year]", [
+            "label" => __("Max items in year archive", "wallstreet"),
+            "section" => "archive_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "10",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+            "description" => __("0 for full archive", "wallstreet"),
+        ]);
+        
+        $wp_customize->add_setting($this->theme_options_name . "[max_archive_month]", [
+            "default" => 12,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[max_archive_month]", [
+            "label" => __("Max items in month archive", "wallstreet"),
+            "section" => "archive_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "12",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+            "description" => __("0 for full archive", "wallstreet"),
+        ]);
+        
+        $wp_customize->add_setting($this->theme_options_name . "[max_archive_day]", [
+            "default" => 7,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[max_archive_day]", [
+            "label" => __("Max items in day archive", "wallstreet"),
+            "section" => "archive_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "31",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+            "description" => __("0 for full archive", "wallstreet"),
         ]);
     }
 }

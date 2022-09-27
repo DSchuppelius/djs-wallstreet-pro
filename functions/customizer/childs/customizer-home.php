@@ -16,16 +16,16 @@ class theme_home_customizer extends theme_customizer {
     }
     
     public function customize_register_panel($wp_customize) {
-	    /* Header Section */
+        /* Header Section */
         $wp_customize->add_panel("header_options", [
             "priority" => 450,
             "capability" => "edit_theme_options",
             "title" => __("Header settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
-	    /* favicon option */
+        /* favicon option */
         $wp_customize->add_section("wallstreet_favicon", [
             "title" => __("Site Favicon", "wallstreet"),
             "priority" => 300,
@@ -176,7 +176,7 @@ class theme_home_customizer extends theme_customizer {
                 "popup_dark" => esc_html__("Pop up dark", "wallstreet"),
             ],
         ]);
-	}
+    }
 }
 
 global $customizer_home;

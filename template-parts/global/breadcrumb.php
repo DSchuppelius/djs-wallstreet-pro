@@ -10,15 +10,15 @@
 $current_options = get_current_options(); ?>
 
 <div class="page-breadcrumbs rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_breadcrumbs"]; ?>">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ol class="breadcrumbs">
-					<?php if (function_exists("qt_custom_breadcrumbs")) {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumbs">
+                    <?php if (function_exists("qt_custom_breadcrumbs")) {
                         qt_custom_breadcrumbs();
                     } ?>
-				</ol>
-			</div>
-		</div>	
-	</div>
+                </ol>
+            </div>
+        </div>	
+    </div>
 </div>

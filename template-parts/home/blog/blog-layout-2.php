@@ -11,25 +11,25 @@ $current_options = get_current_options();
 $post_per_page = $current_options["home_blog_counts"];
 ?>	
 <div class="container home-blog-section wow fadeInDown" data-wow-delay="1s">
-	<?php if (!empty($current_options["home_blog_heading"]) || !empty($current_options["home_blog_description"])): ?>
-    	<div class="row">
-	       	<div class="section_heading_title">
-	    	    <?php if ($current_options["home_blog_heading"]) { ?>
-			        <h1><?php echo $current_options["home_blog_heading"]; ?></h1>
-		        <?php } ?>
-		        <?php if ($current_options["home_blog_description"]) { ?>
-			        <div class="pagetitle-separator">
-    			        <div class="pagetitle-separator-border">
-	    			        <div class="pagetitle-separator-box"></div>
-    		    	    </div>
-	    	        </div>
-		    	    <p><?php echo $current_options["home_blog_description"]; ?></p>
-		        <?php } ?>
-		    </div>
-	    </div>
+    <?php if (!empty($current_options["home_blog_heading"]) || !empty($current_options["home_blog_description"])): ?>
+        <div class="row">
+            <div class="section_heading_title">
+                <?php if ($current_options["home_blog_heading"]) { ?>
+                    <h1><?php echo $current_options["home_blog_heading"]; ?></h1>
+                <?php } ?>
+                <?php if ($current_options["home_blog_description"]) { ?>
+                    <div class="pagetitle-separator">
+                        <div class="pagetitle-separator-border">
+                            <div class="pagetitle-separator-box"></div>
+                        </div>
+                    </div>
+                    <p><?php echo $current_options["home_blog_description"]; ?></p>
+                <?php } ?>
+            </div>
+        </div>
     <?php endif; ?>
-	<div class="row masonry-2">
-		<?php $j = 1;
+    <div class="row masonry-2">
+        <?php $j = 1;
         $args = [
             "post_type" => "post",
             "posts_per_page" => $post_per_page,
@@ -46,17 +46,17 @@ $post_per_page = $current_options["home_blog_counts"];
                         <div class="home-blog-info">
                             <?php if ($current_options["home_meta_section_settings"] == false) { ?>
                                 <div class="home-blog-post-detail">
-    							    <span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?> </span>
-    							    <span class="comment"><a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
-    						    </div>
-    						<?php } ?>
-    						<h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>		
-    						<div class="home-blog-description"><p><?php echo get_the_excerpt(); ?></p></div>
-    						<?php the_read_more("home-blog-btn"); ?>
-    					</div>
-    			    </div>
-    		    </div>
-    		    <?php if ($j % 3 == 0) {
+                                    <span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?> </span>
+                                    <span class="comment"><a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
+                                </div>
+                            <?php } ?>
+                            <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>		
+                            <div class="home-blog-description"><p><?php echo get_the_excerpt(); ?></p></div>
+                            <?php the_read_more("home-blog-btn"); ?>
+                        </div>
+                    </div>
+                </div>
+                <?php if ($j % 3 == 0) {
                     echo "<div class='clearfix'></div>";
                 }
                 $j++;    
@@ -65,7 +65,7 @@ $post_per_page = $current_options["home_blog_counts"];
             echo "<div class='post_message'>" . __("No posts to show", "wallstreet") . "</div>";
         } ?>
     </div>
-	<?php if ($current_options["view_all_posts_btn_enabled"] == true) {
+    <?php if ($current_options["view_all_posts_btn_enabled"] == true) {
         the_show_all($current_options["all_posts_link"], $current_options["view_all_posts_text"], $current_options["view_all_link_target"]);
     } ?>
 </div>

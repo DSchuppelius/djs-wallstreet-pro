@@ -14,12 +14,12 @@ $theme_blog_section = "blog-detail-section no-meta";
 ?>
 <?php get_template_parts(["template-parts/index/index", "banner"], true); ?>
 <div class="container page-full-width">
-	<div class="row <?php row_frame_border(""); ?>">		
-		<div class="col-md-12">
-			<?php the_post(); ?>
-			<?php get_template_part("template-parts/content/content"); ?>
-			<?php comments_template("", true); ?>
-		</div>		
-	</div>
+    <div class="row <?php row_frame_border(""); ?>">		
+        <div class="col-md-12">
+            <?php the_post(); ?>
+            <?php get_template_part("template-parts/content/content"); ?>
+            <?php comments_template("", true); ?>
+        </div>		
+    </div>
 </div>
 <?php get_footer(); ?>

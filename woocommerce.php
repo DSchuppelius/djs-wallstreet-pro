@@ -14,16 +14,16 @@ $current_options = get_current_options(); ?>
 
 <!-- Blog & Sidebar Section -->
 <div class="container">
-	<div class="row">
-		<!--Blog Detail-->
-		<div class="col-md-<?php echo is_active_sidebar("woocommerce") ? "8" : "12"; ?> col-xs-12">
-			<div id="post-<?php the_ID(); ?>">
-				<?php woocommerce_content(); ?>
-			</div>	
-		</div>
-		<!--/End of Blog Detail-->
-		<?php get_sidebar("woocommerce"); ?>
-	</div>	
+    <div class="row">
+        <!--Blog Detail-->
+        <div class="col-md-<?php echo is_active_sidebar("woocommerce") ? "8" : "12"; ?> col-xs-12">
+            <div id="post-<?php the_ID(); ?>">
+                <?php woocommerce_content(); ?>
+            </div>	
+        </div>
+        <!--/End of Blog Detail-->
+        <?php get_sidebar("woocommerce"); ?>
+    </div>	
 </div>
 <!-- End of Blog & Sidebar Section -->
 <div class="clearfix"></div>

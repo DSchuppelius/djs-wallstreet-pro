@@ -9,24 +9,24 @@
  */
 $current_options = get_current_options(); ?>
 <div class="container">
-	<?php
+    <?php
  if (!empty($current_options["testimonial_cta_title"]) || !empty($current_options["testimonial_cta_description"])) { ?>
-		<div class="row">
-			<div class="section_heading_title">
-				<?php if ($current_options["testimonial_cta_title"] != "") { ?>
-					<h1><?php echo $current_options["testimonial_cta_title"]; ?></h1>
-					<div class="pagetitle-separator">
-						<div class="pagetitle-separator-border">
-							<div class="pagetitle-separator-box"></div>
-						</div>
-					</div>
-				<?php } ?>
-				<?php if ($current_options["testimonial_cta_description"] != "") { ?>
-					<p><?php echo $current_options["testimonial_cta_description"]; ?></p>
-				<?php } ?>
-			</div>
-		</div>
-	<?php }
+        <div class="row">
+            <div class="section_heading_title">
+                <?php if ($current_options["testimonial_cta_title"] != "") { ?>
+                    <h1><?php echo $current_options["testimonial_cta_title"]; ?></h1>
+                    <div class="pagetitle-separator">
+                        <div class="pagetitle-separator-border">
+                            <div class="pagetitle-separator-box"></div>
+                        </div>
+                    </div>
+                <?php } ?>
+                <?php if ($current_options["testimonial_cta_description"] != "") { ?>
+                    <p><?php echo $current_options["testimonial_cta_description"]; ?></p>
+                <?php } ?>
+            </div>
+        </div>
+    <?php }
  get_template_part("template-parts/index/index", "calloutarea");
  ?>
 </div>

@@ -18,7 +18,7 @@
 
 ## Description
 
-A Premium multi colored Business Blog theme for Wordpress that supports Primary menu's, Primary sidebar, Four widgets area at the footer region etc. 
+A Premium multi colored Business Blog theme for WordPress that supports Primary menu's, Primary sidebar, Four widgets area at the footer region etc. 
 It has a perfect design that's great for any Business/Firms Blogs who wants a new look for their site. Three page templates Home, Blog and Contact Page. 
 Theme supports featured slider managed from Theme Option Panel.
 

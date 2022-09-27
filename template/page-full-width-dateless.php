@@ -17,14 +17,14 @@ $theme_blog_section = "blog-detail-section";
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
 <div class="container page-full-width">
-	<div class="row <?php row_frame_border(""); ?>">		
-		<!--Blog Area-->
-		<div class="col-md-12">
-			<?php the_post(); ?>
-			<?php get_template_part("template-parts/content/content"); ?>
-			<?php comments_template("", true); ?>
-		</div>		
-		<!--/Blog Area-->
-	</div>
+    <div class="row <?php row_frame_border(""); ?>">		
+        <!--Blog Area-->
+        <div class="col-md-12">
+            <?php the_post(); ?>
+            <?php get_template_part("template-parts/content/content"); ?>
+            <?php comments_template("", true); ?>
+        </div>		
+        <!--/Blog Area-->
+    </div>
 </div>
 <?php get_footer(); ?>

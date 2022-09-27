@@ -21,7 +21,7 @@ class theme_typography_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Typography settings", "wallstreet"),
         ]);        
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         //Local typography section
@@ -596,7 +596,7 @@ class theme_typography_customizer extends theme_customizer {
             "type" => "select",
             "choices" => $font_style,
         ]);
-	}
+    }
 }
 
 global $customizer_typography;

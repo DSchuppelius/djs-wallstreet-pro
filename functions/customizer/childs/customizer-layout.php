@@ -16,15 +16,15 @@ class theme_layout_customizer extends theme_customizer {
     }
     
     public function customize_register_panel($wp_customize) {
-	    $wp_customize->add_panel("wallstreet_layout_setting", [
+        $wp_customize->add_panel("wallstreet_layout_setting", [
             "priority" => 1000,
             "capability" => "edit_theme_options",
             "title" => __("Theme layout manager", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
-	    $wp_customize->add_section("wallstreet_layout_section", [
+        $wp_customize->add_section("wallstreet_layout_section", [
             "title" => __("Theme layout manager", "wallstreet"),
             "panel" => "wallstreet_layout_setting",
         ]);
@@ -67,7 +67,7 @@ class theme_layout_customizer extends theme_customizer {
             "section" => "wallstreet_layout_section",
             "type" => "text",
         ]);
-	}
+    }
 }
 
 global $customizer_layout;

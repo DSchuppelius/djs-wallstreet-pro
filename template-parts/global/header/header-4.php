@@ -13,7 +13,7 @@ $current_options = get_current_options(); ?>
 </div>
 <div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar3 header-style-<?php echo $current_options["header_presets_stlyle"]; ?>" role="navigation">
     <div class="container">
-		<?php get_template_part("template-parts/global/header/navbar", "button"); ?>
+        <?php get_template_part("template-parts/global/header/navbar", "button"); ?>
         <div class="navbar-collapse collapse">
             <?php get_template_part("template-parts/global/menu-search"); ?>
         </div>

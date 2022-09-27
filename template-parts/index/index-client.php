@@ -11,24 +11,24 @@
 <!-- wallstreet Clients Section ---->
 <?php $current_options = get_current_options(); ?>
 <clients>
-	<div class="container client-section">	
-		<div class="row">	
-			<?php if (!empty($current_options["home_client_title"]) || !empty($current_options["home_client_description"])): ?>		
-				<div class="section_heading_title">
-					<?php if ($current_options["home_client_title"]) { ?>
-						<h1><?php echo $current_options["home_client_title"]; ?></h1>
-						<div class="pagetitle-separator">
-							<div class="pagetitle-separator-border">
-								<div class="pagetitle-separator-box"></div>
-							</div>
-						</div>
-					<?php } ?>
-					<?php if ($current_options["home_client_description"]) { ?>
-						<p><?php echo $current_options["home_client_description"]; ?></p>
-					<?php } ?>
-				</div>	
-			<?php endif; ?>	
-			<div class="row flexstretch">
+    <div class="container client-section">	
+        <div class="row">	
+            <?php if (!empty($current_options["home_client_title"]) || !empty($current_options["home_client_description"])): ?>		
+                <div class="section_heading_title">
+                    <?php if ($current_options["home_client_title"]) { ?>
+                        <h1><?php echo $current_options["home_client_title"]; ?></h1>
+                        <div class="pagetitle-separator">
+                            <div class="pagetitle-separator-border">
+                                <div class="pagetitle-separator-box"></div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <?php if ($current_options["home_client_description"]) { ?>
+                        <p><?php echo $current_options["home_client_description"]; ?></p>
+                    <?php } ?>
+                </div>	
+            <?php endif; ?>	
+            <div class="row flexstretch">
                 <?php $j = 1;
                 $args = ["post_type" => CLIENT_POST_TYPE, "posts_per_page" => -1];
                 $client = new WP_Query($args);
@@ -48,7 +48,7 @@
                                 <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
                                     <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                                 </a>
-    					    <?php } else { ?>
+                            <?php } else { ?>
                                 <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
                             <?php }
                         } else { ?>
@@ -67,8 +67,8 @@
                 } else {
                     get_template_part("template-parts/client/client", "demo");
                 } ?>			
-			</div>		
-		</div> 		
-	</div>
+            </div>		
+        </div> 		
+    </div>
 </clients>
 <!-- /wallstreet wallstreet Cliens Section Section ---->

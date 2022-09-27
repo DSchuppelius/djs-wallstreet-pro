@@ -22,7 +22,7 @@ class theme_testimonial_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Testimonial settings", "wallstreet"),
         ]);	
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("test_section_settings", [
@@ -168,7 +168,7 @@ class theme_testimonial_customizer extends theme_customizer {
                 "settings" => $this->theme_options_name . "[testimonial_background]",
             ])
         );
-	}
+    }
 }
 
 global $customizer_testimonial;

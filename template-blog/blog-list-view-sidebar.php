@@ -17,9 +17,9 @@ $theme_blog_section = "blog-section-left blog-list-view";
 get_template_parts(["template-parts/index/index", "banner"], true);
 ?>
 <div class="container blog-list-view sidebar">
-	<div class="row <?php row_frame_border(""); ?> flexstretch">
-		<div class="col-md-8">
-			<?php
+    <div class="row <?php row_frame_border(""); ?> flexstretch">
+        <div class="col-md-8">
+            <?php
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;
             $args = ["post_type" => "post", "paged" => $paged];
             $post_type_data = new WP_Query($args);
@@ -34,8 +34,8 @@ get_template_parts(["template-parts/index/index", "banner"], true);
             the_pagination($paged, $post_type_data);
             get_template_part("template-parts/content/filler");
             ?>
-		</div>
-		<?php get_sidebar(); ?>
-	</div>
+        </div>
+        <?php get_sidebar(); ?>
+    </div>
 </div>
 <?php get_footer(); ?>

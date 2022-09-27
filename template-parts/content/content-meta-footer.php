@@ -46,9 +46,9 @@ if (get_the_modified_date("Ymd") > get_the_date("Ymd")) {
         </div>
         <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"><?php echo $article_datetime; ?></time>
     <?php } elseif (!$is_WooCommerce && is_page() && $current_options["page_meta_section_settings"] == false) { ?>
-    	<div class="blog-post-meta">
-			<a id="blog-author" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><i class="fa fa-user"></i><?php the_author(); ?></a>
-		</div>
+        <div class="blog-post-meta">
+            <a id="blog-author" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><i class="fa fa-user"></i><?php the_author(); ?></a>
+        </div>
         <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"><?php echo $article_datetime; ?></time>
     <?php } else { ?>
         <time datetime="<?php echo get_the_date($current_options["technicalfulldatetimeformat"]); ?>"></time>

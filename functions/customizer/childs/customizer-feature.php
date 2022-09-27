@@ -16,13 +16,13 @@ class theme_feature_customizer extends theme_customizer {
     }
 
     public function customize_register_panel($wp_customize) {
-	    //Service section panel
+        //Service section panel
         $wp_customize->add_panel("wallstreet_features_options", [
             "priority" => 700,
             "capability" => "edit_theme_options",
             "title" => __("Theme feature settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("features_section", [

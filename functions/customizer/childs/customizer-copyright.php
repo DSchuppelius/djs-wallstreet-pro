@@ -15,12 +15,12 @@ class theme_copyright_customizer extends theme_customizer {
     }
 
     public function customize_register_panel($wp_customize) {
-	    $wp_customize->add_panel("wallstreet_copyright_setting", [
+        $wp_customize->add_panel("wallstreet_copyright_setting", [
             "priority" => 900,
             "capability" => "edit_theme_options",
             "title" => __("Copyright and cookie settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("copyright_section_one", [

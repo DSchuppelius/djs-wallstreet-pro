@@ -16,13 +16,13 @@ class theme_slider_customizer extends theme_customizer {
     }
 
     public function customize_register_panel($wp_customize) {
-	    //slider Section
+        //slider Section
         $wp_customize->add_panel("slider_setting", [
             "priority" => 500,
             "capability" => "edit_theme_options",
             "title" => __("Slider settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("slider_section_settings", [
@@ -324,7 +324,7 @@ class theme_slider_customizer extends theme_customizer {
                 "priority" => 500,
             ])
         );
-	}
+    }
 }
 
 global $customizer_slider;

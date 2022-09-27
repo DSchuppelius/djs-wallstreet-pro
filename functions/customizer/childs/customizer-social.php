@@ -22,10 +22,10 @@ class theme_social_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Social-Media settings", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
-	    //Header social Icon
+        //Header social Icon
         $wp_customize->add_section("social_icon", [
             "title" => __("Social-Media links", "wallstreet"),
             "priority" => 400,
@@ -339,7 +339,7 @@ class theme_social_customizer extends theme_customizer {
             "type" => "text",
         ]);
     
-        //Wordpress link new tab/window
+        //WordPress link new tab/window
         $wp_customize->add_setting($this->theme_options_name . "[db_link_new_tab]", [
             "default" => false,
             "capability" => "edit_theme_options",
@@ -434,7 +434,7 @@ class theme_social_customizer extends theme_customizer {
             "section" => "comment_icon",
             "type" => "textarea",
         ]);
-	}
+    }
 }
 
 global $customizer_social;

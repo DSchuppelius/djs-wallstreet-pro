@@ -18,9 +18,9 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 
 <!-- Blog & Sidebar Section -->
 <div class="container">
-	<div class="row">
-		<div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?>">
-			<?php
+    <div class="row">
+        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?>">
+            <?php
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;
             $args = ["post_type" => "post", "paged" => $paged];
             $post_type_data = new WP_Query($args);
@@ -33,9 +33,9 @@ get_template_parts(["template-parts/index/index", "banner"], true);
             }
             the_pagination($paged, $post_type_data);
             ?>
-		</div><!--/Blog Area-->
-		<?php get_sidebar(); ?>
-	</div>
+        </div><!--/Blog Area-->
+        <?php get_sidebar(); ?>
+    </div>
 </div>
 <?php get_footer(); ?>
 <!-- /Blog & Sidebar Section -->

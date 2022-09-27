@@ -21,10 +21,10 @@ class theme_global_customizer extends theme_customizer {
             "capability" => "edit_theme_options",
             "title" => __("Global options", "wallstreet"),
         ]);
-	}
+    }
 
     public function customize_register_section($wp_customize) {
-	    $wp_customize->add_section("themeoptions_section_settings", [
+        $wp_customize->add_section("themeoptions_section_settings", [
             "title" => __("Global theme options", "wallstreet"),
             "panel" => "global_theme_settings",
             "description" => "",
@@ -374,7 +374,7 @@ class theme_global_customizer extends theme_customizer {
             "priority" => 650,
             "sanitize_callback" => "sanitize_text_field",
         ]);
-	}
+    }
 }
 
 global $customizer_global;
