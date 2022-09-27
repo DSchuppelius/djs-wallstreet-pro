@@ -119,7 +119,7 @@ if (isset($_GET["div"])) {
                                         <div class="main-portfolio-showcase">
 											<div class="<?php echo $class1; ?> main-portfolio-showcase-media">
 												<?php
-                                                the_post_thumbnail("full", [ "class" => "img-responsive" . get_big_border(" ")]);
+                                                the_post_thumbnail("port-thumb", [ "class" => "img-responsive" . get_big_border(" ")]);
                                                 if (has_post_thumbnail()) {
                                                     $post_thumbnail_id = get_post_thumbnail_id();
                                                     $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id));
