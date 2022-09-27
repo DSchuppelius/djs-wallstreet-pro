@@ -2228,7 +2228,7 @@ footer.site {
 
         .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon {
             position: absolute;
-            bottom: 0px;
+            top: 200px;
             left: 50%;
             margin-left: -50px
         }
