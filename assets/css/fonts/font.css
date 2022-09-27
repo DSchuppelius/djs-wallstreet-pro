@@ -1367,12 +1367,7 @@ footer.site p {
 
 .wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
     font-style: italic;
-    font-size: 1.257143rem
-}
-
-.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
-    font-size: 1.25714rem;
-    font-style: italic
+    font-size: 0.8em
 }
 
 .wpcf7-submit {

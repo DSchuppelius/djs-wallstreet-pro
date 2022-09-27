@@ -2228,7 +2228,7 @@ footer.site {
 
         .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon {
             position: absolute;
-            bottom: 0px;
+            bottom: 20px;
             left: 50%;
             margin-left: -50px
         }
@@ -2247,6 +2247,7 @@ footer.site {
 
     .main-portfolio-showcase-media img {
         object-fit: cover;
+        width: 100%;
         max-width: 100%
     }
 
@@ -3039,16 +3040,16 @@ div.collapsing ul.nav {
     margin-bottom: 35px;
 }
 
+.portfolio.preview .row:has(.caroufredsel_wrapper) {
+    padding: 15px 0 0 17px;
+}
+
     .portfolio.preview .row {
         margin-bottom: 20px;
     }
 
         .portfolio.preview .row.pagi {
             margin-bottom: 0px;
-        }
-
-        .portfolio.preview .row .caroufredsel_wrapper {
-            max-height: 300px;
         }
 
         .portfolio.preview .row .related-project-section {
@@ -3338,12 +3339,12 @@ div.collapsing ul.nav {
     overflow: hidden
 }
 
-.edit-link a,
-.reply a {
-    line-height: 20px;
-    padding: 2px 11px;
-    display: inline-block
-}
+    .edit-link a,
+    .reply a {
+        line-height: 20px;
+        padding: 2px 11px;
+        display: inline-block
+    }
 
 
 .row.flexstretch,

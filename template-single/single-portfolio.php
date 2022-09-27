@@ -107,7 +107,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                 <div class="main-portfolio-showcase-media">
                                     <?php if (has_post_thumbnail()) {
                                         $class = ["class" => "img-responsive"];
-                                        the_post_thumbnail("", $class);
+                                        the_post_thumbnail("port-thumb", $class);
                                         $post_thumbnail_id = get_post_thumbnail_id();
                                         $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id)); ?>
                                         <div class="main-portfolio-showcase-overlay">
@@ -116,7 +116,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                                     <h4><?php the_title(); ?></h4>
                                                     <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
                                                     <div class="portfolio-icon">
-                                                        <a href="<?php echo $post_thumbnail_url; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> data-lightbox="image"><i class="fa fa-picture-o"></i></a>
+                                                        <a href="<?php echo $post_thumbnail_url; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> data-lightbox="image"><i class="fa fa-image"></i></a>
                                                         <?php if (isset($meta_project_link)) { ?>
                                                             <a href="<?php echo $meta_project_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>><i class="fa fa-link"></i></a>
                                                         <?php } ?>

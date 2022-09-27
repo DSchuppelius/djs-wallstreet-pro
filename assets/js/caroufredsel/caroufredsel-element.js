@@ -5,7 +5,7 @@ jQuery(function () {
         responsive : true,
         circular: true,
         items: {
-            height: '85%',
+            height: '100%',
             visible: {
                 min: 1,
                 max: 3,
