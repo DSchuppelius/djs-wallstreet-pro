@@ -65,6 +65,12 @@ $current_options = get_current_options(); ?>
     if ($current_options["breadcrumbposition"] > 0 || $current_options["contentposition"] > 0) {
         $additional_BodyClasses[] = "custom-positions";
     }
+    if ($current_options["a_underlined"]) {
+        $additional_BodyClasses[] = "a_underlined";
+    }
+    if ($current_options["a_mark_targets"]) {
+        $additional_BodyClasses[] = "a_mark_targets";
+    }
     ?>
     <body id="djs-body" <?php body_class($additional_BodyClasses); ?> <?php if (!$current_options["contextmenu_enabled"]) { echo 'oncontextmenu="return false;"'; } ?>>
         <?php if ($current_options["page_fader_enabled"]) { ?>

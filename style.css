@@ -79,105 +79,6 @@ Text Domain: wallstreet
         opacity: 1
     }
 
-article blockquote {
-    width: 100%;
-}
-
-article figure,
-article .wp-block-image figure {
-    margin-bottom: 10px;
-}
-
-    article figure > div {
-        display: flex;
-        justify-content: center
-    }
-
-    article figure:not(.alignright, .alignleft, .aligncenter) {
-        width: 100%;
-        margin-bottom: 1em
-    }
-
-    article figure > img {
-        margin: 0 auto
-    }
-
-    article figure figcaption {
-        text-align: center
-    }
-
-    article figure:not(.wp-block-embed) figcaption {
-        margin: 10px auto 0px;
-    }
-
-    article figure.wp-block-embed figcaption {
-        margin: 0 auto;
-    }
-
-    article figure.wp-block-gallery > figcaption {
-        margin-top: -15px;
-        margin-bottom: 15px
-    }
-
-    article figure.wp-block-gallery.has-nested-images > figcaption {
-        margin-top: 0
-    }
-
-article footer .blog-post-meta {
-    display: flex;
-    justify-content: space-between;
-}
-
-    article footer .blog-post-meta > a {
-        display: flex;
-        flex-grow: 1;
-        white-space: nowrap;
-    }
-
-    article footer .blog-post-meta > div {
-        display: flex;
-        flex-grow: 2;
-    }
-
-        article footer .blog-post-meta > div:last-child {
-            flex-grow: 1;
-            justify-content: flex-end
-        }
-
-article ol, article ul {
-    margin-bottom: 20px
-}
-
-article section {
-    display: grid;
-    width: 100%
-}
-
-    article section > div:has(code[class*='language-'], pre[class*='language-']) {
-        display: grid;
-        width: 100%
-    }
-
-    article section > div pre {
-        width: 100%
-    }
-
-    article section > div pre,
-    article section > div img {
-        max-width: 100%
-    }
-
-    article section.excerpt-section pre {
-        max-height: 360px;
-    }
-
-span[id^='more'] {
-    display: block;
-    position: relative;
-    top: -100px;
-    visibility: hidden;
-}
-
 .about-section {
     margin-bottom: 20px
 }
@@ -3040,9 +2941,9 @@ div.collapsing ul.nav {
     margin-bottom: 35px;
 }
 
-.portfolio.preview .row:has(.caroufredsel_wrapper) {
-    padding: 15px 0 0 17px;
-}
+    .portfolio.preview .row:has(.caroufredsel_wrapper) {
+        padding: 15px 0 0 17px;
+    }
 
     .portfolio.preview .row {
         margin-bottom: 20px;
@@ -3339,12 +3240,12 @@ div.collapsing ul.nav {
     overflow: hidden
 }
 
-    .edit-link a,
-    .reply a {
-        line-height: 20px;
-        padding: 2px 11px;
-        display: inline-block
-    }
+.edit-link a,
+.reply a {
+    line-height: 20px;
+    padding: 2px 11px;
+    display: inline-block
+}
 
 
 .row.flexstretch,
@@ -5324,6 +5225,103 @@ article footer time {
     padding-left: 5px
 }
 
+article blockquote {
+    width: 100%;
+}
+
+article figure,
+article .wp-block-image figure {
+    margin-bottom: 10px;
+}
+
+    article figure > div {
+        display: flex;
+        justify-content: center
+    }
+
+    article figure:not(.alignright, .alignleft, .aligncenter) {
+        width: 100%;
+        margin-bottom: 1em
+    }
+
+    article figure > img {
+        margin: 0 auto
+    }
+
+    article figure figcaption {
+        text-align: center
+    }
+
+    article figure:not(.wp-block-embed) figcaption {
+        margin: 10px auto 0px;
+    }
+
+    article figure.wp-block-embed figcaption {
+        margin: 0 auto;
+    }
+
+    article figure.wp-block-gallery > figcaption {
+        margin-top: -15px;
+        margin-bottom: 15px
+    }
+
+    article figure.wp-block-gallery.has-nested-images > figcaption {
+        margin-top: 0
+    }
+
+article footer .blog-post-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+    article footer .blog-post-meta > a {
+        display: flex;
+        flex-grow: 1;
+        white-space: nowrap;
+    }
+
+    article footer .blog-post-meta > div {
+        display: flex;
+        flex-grow: 2;
+    }
+
+        article footer .blog-post-meta > div:last-child {
+            flex-grow: 1;
+            justify-content: flex-end
+        }
+
+article ol, article ul {
+    margin-bottom: 20px
+}
+
+article section {
+    display: grid;
+    width: 100%
+}
+
+    article section > div:has(code[class*='language-'], pre[class*='language-']) {
+        display: grid;
+        width: 100%
+    }
+
+    article section > div pre {
+        width: 100%
+    }
+
+    article section > div pre,
+    article section > div img {
+        max-width: 100%
+    }
+
+    article section.excerpt-section pre {
+        max-height: 360px;
+    }
+
+    article section a:hover,
+    .comment-section .comment-detail a:not(.comment-detail-title a, a.btn, a.comment-reply-link, a.comment-edit-link):hover {
+        text-decoration: underline;
+    }
+
 article.format-aside .aside {
     padding: 1.71429rem
 }
@@ -5333,7 +5331,19 @@ body {
     margin: 0;
 }
 
-    body a:hover {
+    body.a_underlined a:not(.comment-detail-title a, a.btn, a.comment-reply-link, a.comment-edit-link) {
+        text-decoration: underline;
+    }
+
+    body.a_underlined a:has(.title.post_format) {
+        text-decoration: none;
+    }
+
+        body.a_underlined a:has(.title.post_format) > .title:not(.post_format) {
+            text-decoration: underline;
+        }
+
+    body:not(.a_underlined) a:hover {
         text-decoration: none;
     }
 
@@ -5371,6 +5381,13 @@ p.short-tabs-content {
     line-height: 27px;
     margin-bottom: 10px;
     padding: 20px
+}
+
+span[id^='more'] {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
 }
 
 td {

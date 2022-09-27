@@ -6,6 +6,16 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     color: var(--theme-color);
 }
 
+.grav-grav {
+    border-radius: 100%;
+    margin: 0 5px 20px 0;
+}
+
+.gcard a,
+.gcard .grav-inner {
+    font-family: 'SiteFont',Helvetica,Arial,Tahoma,sans-serif !important;
+}
+
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form {
     display: flex;
     flex: auto;

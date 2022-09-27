@@ -109,6 +109,34 @@ class theme_global_customizer extends theme_customizer {
             "priority" => 100,
         ]);
 
+        $wp_customize->add_setting($this->theme_options_name . "[a_underlined]", [
+            "default" => true,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+    
+        $wp_customize->add_control($this->theme_options_name . "[a_underlined]", [
+            "label" => __("Enable underline in links", "wallstreet"),
+            "section" => "themeoptions_section_settings",
+            "type" => "checkbox",
+            "priority" => 100,
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[a_mark_targets]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+    
+        $wp_customize->add_control($this->theme_options_name . "[a_mark_targets]", [
+            "label" => __("Mark blank targets in links", "wallstreet"),
+            "section" => "themeoptions_section_settings",
+            "type" => "checkbox",
+            "priority" => 100,
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[scroll_to_top_enabled]", [
             "default" => true,
             "capability" => "edit_theme_options",

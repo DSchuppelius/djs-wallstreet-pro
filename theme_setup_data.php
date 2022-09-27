@@ -58,6 +58,9 @@ function theme_data_setup() {
         "home_slider_mobile_desc_enabled" => true,
         "home_slider_mobile_button_enabled" => true,
 
+        "a_mark_targets" => false,
+        "a_underlined" => true,
+
         "max_archive_year" => 5,
         "max_archive_month" => 12,
         "max_archive_day" => 7,
