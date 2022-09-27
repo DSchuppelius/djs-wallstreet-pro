@@ -139,7 +139,7 @@ body.a_mark_targets a[target=_blank]:not(a.btn, .gcard-about a, .head-contact-so
         border-radius: 3px 3px 3px 3px;
         cursor: pointer;
         display: inline-block;
-        line-height: 20px;
+        line-height: 1em;
         margin-top: 12px;
         margin-bottom: 0;
         padding: 8px 18px 8px 55px;

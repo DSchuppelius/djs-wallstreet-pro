@@ -152,8 +152,6 @@ jQuery(document).ready(function ($) {
             return false;
         });
     });
-
-
 });
 
 jQuery(document).ready(function () {

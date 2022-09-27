@@ -144,24 +144,32 @@ if (!function_exists("theme_setup")) {
 
         // custom header
         add_theme_support("custom-header", [
-            "default-image" => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
-            "width" => "2560",
-            "height" => "640",
-            "flex-height" => false,
-            "flex-width" => false,
-            "header-text" => true,
-            "default-text-color" => "#143745",
+            "default-image"         => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
+            "width"                 => "2560",
+            "height"                => "640",
+            "flex-height"           => false,
+            "flex-width"            => false,
+            "header-text"           => true,
+            "default-text-color"    => "#143745",
         ]);
 
         add_theme_support("custom-logo", [
-            "width" => 300,
-            "height" => 50,
-            "flex-width" => true,
-            "flex-height" => true,
-            "header-text" => ["site-title", "site-description"],
+            "width"                 => 300,
+            "height"                => 50,
+            "flex-width"            => true,
+            "flex-height"           => true,
+            "header-text"           => ["site-title", "site-description"],
         ]);
 
-        add_theme_support("custom-background", ["default-color" => "000000"]);
+        add_theme_support("custom-background", [
+            "default-color"         => "000000",
+            'default-repeat'        => 'no-repeat',
+            'default-position-x'    => 'center',
+            'default-position-y'    => 'center',
+            'default-size'          => 'auto',
+            'default-attachment'    => 'fixed',
+            "default-image"         => THEME_ASSETS_PATH_URI . "/images/page-bg.jpg",
+        ]);
 
         // Woocommerce support
         add_theme_support("woocommerce");

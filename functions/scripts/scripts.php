@@ -38,17 +38,17 @@ add_action("wp_enqueue_scripts", "theme_font_scripts");
 function theme_scripts() {
     $current_options = get_current_options();
 
-    wp_enqueue_style("wallstreet-style",            get_stylesheet_uri());
+    wp_enqueue_style("djs-wallstreet-pro-style",    get_stylesheet_uri());
 
-    wp_enqueue_style("wallstreet-default",          THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_options));
-    wp_enqueue_style("wallstreet-standard",         THEME_ASSETS_PATH_URI . "/css/standard.css");
+    wp_enqueue_style("djs-wallstreet-pro-default",  THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_options));
+    wp_enqueue_style("djs-wallstreet-pro-standard", THEME_ASSETS_PATH_URI . "/css/standard.css");
 
-    wp_enqueue_style("wallstreet-jetpack",          THEME_ASSETS_PATH_URI . "/css/jetpack.css");
-    wp_enqueue_style("wallstreet-button",           THEME_ASSETS_PATH_URI . "/css/button.css");
-    wp_enqueue_style("wallstreet-fx",               THEME_ASSETS_PATH_URI . "/css/fx.css");
+    wp_enqueue_style("djs-wallstreet-pro-jetpack",  THEME_ASSETS_PATH_URI . "/css/jetpack.css");
+    wp_enqueue_style("djs-wallstreet-pro-button",   THEME_ASSETS_PATH_URI . "/css/button.css");
+    wp_enqueue_style("djs-wallstreet-pro-fx",       THEME_ASSETS_PATH_URI . "/css/fx.css");
 
-    wp_enqueue_style("theme-menu",                  THEME_ASSETS_PATH_URI . "/css/theme-menu.css");
-    wp_enqueue_style("tool-tip",                    THEME_ASSETS_PATH_URI . "/css/css-tooltips.css");
+    wp_enqueue_style("djs-wallstreet-pro-menu",     THEME_ASSETS_PATH_URI . "/css/menu/menu.css");
+    wp_enqueue_style("djs-wallstreet-pro-tool-tip", THEME_ASSETS_PATH_URI . "/css/menu/tooltips.css");
 
     wp_enqueue_style("media-responsive-min-1920",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1920.css",                   [], '1.0.0', 'only screen and (min-width: 1920px)');
     wp_enqueue_style("media-responsive-min-1136",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1136.css",                   [], '1.0.0', 'only screen and (min-width: 1136px)');
@@ -120,9 +120,9 @@ function theme_custom_enqueue_css() {
     global $pagenow;
 
     if (in_array($pagenow, ["post.php", "post-new.php", "page-new.php", "page.php"])) {
-        wp_enqueue_style("meta-box-css",            THEME_ASSETS_PATH_URI . "/css/meta-box.css");
+        wp_enqueue_style("meta-box-css",            THEME_ASSETS_PATH_URI . "/customizer/meta-box.css");
     }
-    wp_enqueue_style("drag-drop",                   THEME_ASSETS_PATH_URI . "/css/drag-drop.css");
+    wp_enqueue_style("drag-drop",                   THEME_ASSETS_PATH_URI . "/customizer/drag-drop.css");
 }
 add_action("admin_print_styles", "theme_custom_enqueue_css", 10);
 
