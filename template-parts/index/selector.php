@@ -7,8 +7,9 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
-$data = is_array($current_options["front_page_data"]) ? $current_options["front_page_data"] : explode(",", $current_options["front_page_data"]);
+$current_setup_posttypes = defined("DJS_POSTTYPE_PLUGIN") ? PostTypes_Plugin_Setup::instance() : DJS_Wallstreet_Pro_Theme_Setup::instance();
+
+$data = is_array($current_setup_posttypes->get("front_page_data")) ? $current_setup_posttypes->get("front_page_data") : explode(",", $current_setup_posttypes->get("front_page_data"));
 
 if ($data) {
     foreach ($data as $key => $value) {

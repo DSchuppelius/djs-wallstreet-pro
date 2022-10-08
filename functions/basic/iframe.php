@@ -15,7 +15,7 @@ function youtube_nocookie_solution($original, $url, $attr, $post_ID) {
 add_filter("embed_oembed_html", "youtube_nocookie_solution", 10, 4);
 
 function iframe_cookie_lazy_load($content) {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $actual_link = get_the_currentURL();
 
     if (empty($content)) {
@@ -39,10 +39,10 @@ function iframe_cookie_lazy_load($content) {
                     continue;
                 }
 
-                $disclaimer  = '<hr style="width:50%;text-align:center;margin:20px auto"><div class="cookies"><h3>'.__("Third-party cookies", "wallstreet").'</h3><div class="inner cookies">';
-                $disclaimer .= '<p class="cookies justify"><b>'.__("Hint:", "wallstreet").'</b> ' . mb_convert_encoding($current_options["cookie_before"], 'HTML-ENTITIES') . "</p>";
-                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);">' . mb_convert_encoding($current_options["cookie_link"], 'HTML-ENTITIES') . '</button></form>';
-                $disclaimer .= '<p class="cookies justify">' . mb_convert_encoding($current_options["cookie_after"], 'HTML-ENTITIES') . '</p></div></div>';
+                $disclaimer  = '<hr style="width:50%;text-align:center;margin:20px auto"><div class="cookies"><h3>'. esc_html__("Third-party cookies", "djs-wallstreet-pro").'</h3><div class="inner cookies">';
+                $disclaimer .= '<p class="cookies justify"><b>'. esc_html__("Hint:", "djs-wallstreet-pro").'</b> ' . mb_convert_encoding($current_setup->get("cookie_before"), 'HTML-ENTITIES') . "</p>";
+                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);">' . mb_convert_encoding($current_setup->get("cookie_link"), 'HTML-ENTITIES') . '</button></form>';
+                $disclaimer .= '<p class="cookies justify">' . mb_convert_encoding($current_setup->get("cookie_after"), 'HTML-ENTITIES') . '</p></div></div>';
                 $disclaimer .= '<div class="lcd crt"><a href="' . $src . '" target="_blank">' . $src . '</a></div><hr style="width:50%;text-align:center;margin:20px auto">';
 
                 $cookieNode = $post->createElement("div");

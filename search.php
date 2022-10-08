@@ -10,7 +10,7 @@
 global $wp_query;
 global $theme_blog_section;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $theme_blog_section = "blog-section-left";
 ?>
 <!-- Page Title Section -->
@@ -23,23 +23,23 @@ $theme_blog_section = "blog-section-left";
         <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
             <?php if (have_posts()) { ?>
                 <h1 class="search_heading">
-                    <?php printf(__("Search results for: %s", "wallstreet"), '<span>"' . get_search_query() . '"</span>'); ?>
+                    <?php printf(esc_html__("Search results for: %s", "djs-wallstreet-pro"), '<span>"' . get_search_query() . '"</span>'); ?>
                 </h1>
                 <?php while (have_posts()) {
                     the_post();
-                    get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]);
+                    get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting"));
                 } ?>
                 <?php if($wp_query->found_posts > 1) { ?>
                 <div class="blog-pagination">
-                    <?php next_posts_link(__("Previous", "wallstreet")); ?>
-                    <?php previous_posts_link(__("Next", "wallstreet")); ?>
+                    <?php next_posts_link(esc_html__("Previous", "djs-wallstreet-pro")); ?>
+                    <?php previous_posts_link(esc_html__("Next", "djs-wallstreet-pro")); ?>
                 </div>
                 <?php } ?>
             <?php } else { ?>
                 <div class="search_error">
-                    <div class="search_err_heading"><h2><?php _e("Nothing Found", "wallstreet"); ?></h2></div>
+                    <div class="search_err_heading"><h2><?php esc_html_e("Nothing Found", "djs-wallstreet-pro"); ?></h2></div>
                     <div class="wallstreet_searching">
-                        <p><?php _e("Sorry, but nothing matched your search criteria. Please try again with some different keywords.", "wallstreet"); ?></p>
+                        <p><?php esc_html_e("Sorry, but nothing matched your search criteria. Please try again with some different keywords.", "djs-wallstreet-pro"); ?></p>
                     </div>	
                 </div>
                 <?php get_search_form(); ?>

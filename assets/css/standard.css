@@ -23,7 +23,8 @@ body.error404:not(.fixed_Footer) footer {
     right: 0
 }
 
-body.error404 .container.error .row .col-md-12 {
+body.error404 .container.error .row .col-md-12,
+body.denied_template_loaded .container.error .row .col-md-12 {
     position: absolute;
     top: 0;
     bottom: 0;

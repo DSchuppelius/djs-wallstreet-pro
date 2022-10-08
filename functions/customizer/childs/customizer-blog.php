@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-class theme_blog_customizer extends theme_customizer {
+class theme_blog_customizer extends Theme_Customizer {
     
     public function __construct() {
         parent::__construct();
@@ -17,21 +17,21 @@ class theme_blog_customizer extends theme_customizer {
 
     public function customize_register_panel($wp_customize) {
         $wp_customize->add_panel("blog_setting", [
-            "priority" => 200,
+            "priority" => 225,
             "capability" => "edit_theme_options",
-            "title" => __("Blog settings", "wallstreet"),
+            "title" => esc_html__("Blog settings", "djs-wallstreet-pro"),
         ]);        
     }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("news_section_settings", [
-            "title" => __("Home blog settings", "wallstreet"),
+            "title" => esc_html__("Home blog settings", "djs-wallstreet-pro"),
             "panel" => "blog_setting",
             "priority" => 750,
         ]);
 
         $wp_customize->add_section("archive_section_settings", [
-            "title" => __("Archive settings", "wallstreet"),
+            "title" => esc_html__("Archive settings", "djs-wallstreet-pro"),
             "panel" => "blog_setting",
             "priority" => 850,
         ]);
@@ -47,34 +47,34 @@ class theme_blog_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[home_meta_section_settings]", [
-            "label" => __("Hide blog meta from home page", "wallstreet"),
+            "label" => esc_html__("Hide blog meta from home page", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "checkbox",
         ]);
     
         // add section to manage News
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_heading]", [
-            "default" => __("Our latest blog post", "wallstreet"),
+            "default" => esc_html__("Our latest blog post", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "type" => "option",
             "sanitize_callback" => "sanitize_text_field",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[home_blog_heading]", [
-            "label" => __("Title", "wallstreet"),
+            "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "text",
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_description]", [
-            "default" => __("We work with new customers and grow their businesses", "wallstreet"),
+            "default" => esc_html__("We work with new customers and grow their businesses", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[home_blog_description]", [
-            "label" => __("Description", "wallstreet"),
+            "label" => esc_html__("Description", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "textarea",
         ]);
@@ -82,31 +82,33 @@ class theme_blog_customizer extends theme_customizer {
         // Blog Design layout
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_design]", [
             "default" => 1,
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[home_blog_design]", [
             "type" => "select",
-            "label" => __("Blog design style", "wallstreet"),
+            "label" => esc_html__("Blog design style", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "choices" => [
-                1 => __("Grid View", "wallstreet"),
-                2 => __("Masonry 2 Column", "wallstreet"),
-                3 => __("Masonry 3 Column", "wallstreet"),
-                4 => __("Masonry 4 Column", "wallstreet"),
-                5 => __("List Style", "wallstreet"),
-                6 => __("Switcher List Style", "wallstreet"),
+                1 => esc_html__("Grid View", "djs-wallstreet-pro"),
+                2 => esc_html__("Masonry 2 Column", "djs-wallstreet-pro"),
+                3 => esc_html__("Masonry 3 Column", "djs-wallstreet-pro"),
+                4 => esc_html__("Masonry 4 Column", "djs-wallstreet-pro"),
+                5 => esc_html__("List Style", "djs-wallstreet-pro"),
+                6 => esc_html__("Switcher List Style", "djs-wallstreet-pro"),
             ],
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_counts]", [
             "default" => 3,
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[home_blog_counts]", [
             "type" => "select",
-            "label" => __("No of Post", "wallstreet"),
+            "label" => esc_html__("No of Post", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "choices" => [
                 1 => 1,
@@ -130,21 +132,21 @@ class theme_blog_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[view_all_posts_btn_enabled]", [
-            "label" => __("Enable view all posts button", "wallstreet"),
+            "label" => esc_html__("Enable view all posts button", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "checkbox",
         ]);
     
         //View all posts Button text
         $wp_customize->add_setting($this->theme_options_name . "[view_all_posts_text]", [
-            "default" => __("View All Posts", "wallstreet"),
+            "default" => esc_html__("View All Posts", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[view_all_posts_text]", [
-            "label" => __("Button Text", "wallstreet"),
+            "label" => esc_html__("Button Text", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "text",
         ]);
@@ -153,12 +155,12 @@ class theme_blog_customizer extends theme_customizer {
         $wp_customize->add_setting($this->theme_options_name . "[all_posts_link]", [
             "default" => "#",
             "capability" => "edit_theme_options",
-            "sanitize_callback" => "sanitize_text_field",
+            "sanitize_callback" => "sanitize_url",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[all_posts_link]", [
-            "label" => __("Button Link", "wallstreet"),
+            "label" => esc_html__("Button Link", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "text",
         ]);
@@ -173,7 +175,7 @@ class theme_blog_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[view_all_link_target]", [
-            "label" => __("Open link in new tab", "wallstreet"),
+            "label" => esc_html__("Open link in new tab", "djs-wallstreet-pro"),
             "section" => "news_section_settings",
             "type" => "checkbox",
         ]);
@@ -185,7 +187,7 @@ class theme_blog_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[max_archive_year]", [
-            "label" => __("Max items in year archive", "wallstreet"),
+            "label" => esc_html__("Max items in year archive", "djs-wallstreet-pro"),
             "section" => "archive_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -195,7 +197,7 @@ class theme_blog_customizer extends theme_customizer {
             ],
             "priority" => 600,
             "sanitize_callback" => "sanitize_text_field",
-            "description" => __("0 for full archive", "wallstreet"),
+            "description" => esc_html__("0 for full archive", "djs-wallstreet-pro"),
         ]);
         
         $wp_customize->add_setting($this->theme_options_name . "[max_archive_month]", [
@@ -205,7 +207,7 @@ class theme_blog_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[max_archive_month]", [
-            "label" => __("Max items in month archive", "wallstreet"),
+            "label" => esc_html__("Max items in month archive", "djs-wallstreet-pro"),
             "section" => "archive_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -215,7 +217,7 @@ class theme_blog_customizer extends theme_customizer {
             ],
             "priority" => 600,
             "sanitize_callback" => "sanitize_text_field",
-            "description" => __("0 for full archive", "wallstreet"),
+            "description" => esc_html__("0 for full archive", "djs-wallstreet-pro"),
         ]);
         
         $wp_customize->add_setting($this->theme_options_name . "[max_archive_day]", [
@@ -225,7 +227,7 @@ class theme_blog_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[max_archive_day]", [
-            "label" => __("Max items in day archive", "wallstreet"),
+            "label" => esc_html__("Max items in day archive", "djs-wallstreet-pro"),
             "section" => "archive_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -235,7 +237,7 @@ class theme_blog_customizer extends theme_customizer {
             ],
             "priority" => 600,
             "sanitize_callback" => "sanitize_text_field",
-            "description" => __("0 for full archive", "wallstreet"),
+            "description" => esc_html__("0 for full archive", "djs-wallstreet-pro"),
         ]);
     }
 }

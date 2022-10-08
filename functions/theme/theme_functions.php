@@ -8,10 +8,10 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 function get_values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = "") {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-    if (array_key_exists($option, $current_options)) {
-        if ($current_options[$option]) {
+    if (!empty($current_setup->get($option))) {
+        if ($current_setup->get($option)) {
             return $prefix . $positive . $suffix;
         } elseif (!empty($negative)) {
             return $prefix . $negative . $suffix;
@@ -50,20 +50,16 @@ function blank_target($option, $prefix = null){
 }
 
 function is_noframe_with_bigborder() {
-    $current_options = get_current_options();
-    if (!$current_options["addframe"] && $current_options["bigborder"]) {
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+    if (!$current_setup->get("addframe") && $current_setup->get("bigborder")) {
         return true;
     }
 
     return false;
 }
 
-function remove_umlaut($inout) {
-    return str_replace(["Ä", "Ö", "Ü", "ä", "ö", "ü", "ß"], ["Ae", "Oe", "Ue", "ae", "oe", "ue", "ss"], $inout);
-}
-
 function is_meta_enabled($zone = "all") {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $pages = ["page.php", "template/page-full-width.php"];
     $pages_dateless = ["template/page-full-width-dateless.php", "template/page-full-width-no-meta.php", "template/about-us.php"];
     $archives = ["search.php"];
@@ -72,7 +68,7 @@ function is_meta_enabled($zone = "all") {
 
     switch ($zone) {
         case "blog":
-            if (!contains_page_templates($combined) && $current_options["blog_meta_section_settings"] == false) {
+            if (!contains_page_templates($combined) && $current_setup->get("blog_meta_section_settings") == false) {
                 return true;
             }
             break;
@@ -82,17 +78,17 @@ function is_meta_enabled($zone = "all") {
             }
             break;
         case "archive":
-            if (contains_page_templates($archives) && $current_options["archive_page_meta_section_settings"] == false) {
+            if (contains_page_templates($archives) && $current_setup->get("archive_page_meta_section_settings") == false) {
                 return true;
             }
             break;
         case "page_date":
-            if (contains_page_templates($pages) && $current_options["page_meta_section_settings"] == false) {
+            if (contains_page_templates($pages) && $current_setup->get("page_meta_section_settings") == false) {
                 return true;
             }
             break;
         case "page_dateless":
-            if (contains_page_templates($pages_dateless) && $current_options["page_meta_section_settings"] == false) {
+            if (contains_page_templates($pages_dateless) && $current_setup->get("page_meta_section_settings") == false) {
                 return true;
             }
             break;
@@ -132,26 +128,16 @@ function is_loaded_template($my_template){
     return basename($template) === $my_template;
 }
 
+function is_denied_specialtemplate() {
+    return !defined("DJS_POSTTYPE_PLUGIN") && str_contains(get_page_template_slug(), "template-specials");
+}
+
 function show_rellax_div() {
     global $loaded_banner;
-
-    if(!is_404() && $loaded_banner)
+    
+    if(!is_404() && $loaded_banner && !is_denied_specialtemplate())
         return true;
 
     return false;
-}
-
-function strip_comments($content = '') {
-    return preg_replace('/<!--(.|\s)*?-->/', '', $content);
-}
-
-function strip_all($content = '') {
-    $result = preg_replace(' (\[.*?\])', '', $content);
-
-    $result = strip_tags($result);
-    $result = strip_comments($result);
-    $result = strip_shortcodes($result);
-
-    return $result;
 }
 ?>

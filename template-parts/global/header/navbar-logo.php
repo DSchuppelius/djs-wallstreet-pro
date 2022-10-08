@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+?>
 
 <div class="site-logo-area <?php echo has_custom_logo() ? "with-Logo" : "no-Logo"; ?> <?php echo display_header_text() ? "with-Text" : "no-Text"; ?>">
     <?php if(has_custom_logo()) {

@@ -9,12 +9,12 @@
  */
 global $loaded_banner;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 if (show_rellax_div()){ ?></div><?php } ?>
-                <footer class="site<?php if ($current_options["fixedfooter_enabled"]) { echo " fixed"; } ?>">
+                <footer class="site<?php if ($current_setup->get("fixedfooter_enabled")) { echo " fixed"; } ?>">
                     <i class="show-me fa fa-info-circle fa-4x"></i>
-                    <?php if ($current_options["footer_social_media_enabled"] == true) { ?>
+                    <?php if ($current_setup->get("footer_social_media_enabled") == true) { ?>
                         <div class="footer-social-area">
                             <?php
                             global $ul_class;
@@ -30,14 +30,14 @@ if (show_rellax_div()){ ?></div><?php } ?>
                                 <?php dynamic_sidebar("footer-widget-area"); ?>
                             </div>
                         <?php }
-                        if ($current_options["footerbar_enabled"] == true) { ?>
+                        if ($current_setup->get("footerbar_enabled") == true) { ?>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="footer-copyright">
-                                        <?php if($current_options["footer_link_enabled"] == true) { ?>
-                                            <p><?php echo $current_options["footer_link"];?></p>
+                                        <?php if($current_setup->get("footer_link_enabled") == true) { ?>
+                                            <p><?php echo $current_setup->get("footer_link");?></p>
                                         <?php } ?>
-                                        <p><?php echo $current_options["footer_copyright"]; ?></p>
+                                        <p><?php echo $current_setup->get("footer_copyright"); ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -45,19 +45,19 @@ if (show_rellax_div()){ ?></div><?php } ?>
                     </div>
                 </footer>
                 <?php
-                if ($current_options["webrit_custom_css"] != "") { ?>
+                if ($current_setup->get("webrit_custom_css") != "") { ?>
                     <style type="text/css">
-                        <?php echo $current_options["webrit_custom_css"]; ?>
+                        <?php echo $current_setup->get("webrit_custom_css"); ?>
                     </style>
                 <?php }
-                if ($current_options["google_analytics"] != "") { ?>
+                if ($current_setup->get("google_analytics") != "") { ?>
                     <script type="text/javascript">
-                        <?php echo $current_options["google_analytics"]; ?>
+                        <?php echo $current_setup->get("google_analytics"); ?>
                     </script>
                 <?php } ?>	
             </div>
-            <?php if ($current_options["scroll_to_top_enabled"] == true) { ?>
-                <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
+            <?php if ($current_setup->get("scroll_to_top_enabled") == true) { ?>
+                <a href="<?php the_currentURL(); ?>" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
             <?php } ?>
         </div>
         <script> var rellax = new Rellax('.rellax'); </script>

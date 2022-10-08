@@ -7,13 +7,13 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 $testimonial_columns = get_testimonial_columns();
 
 get_template_part("template-parts/testimonial/carousel", "script");
 ?>
 <!-- Testimonial Section -->
-<div class="testimonial-section testimonial3" style="background: url('<?php echo $current_options["testimonial_background"]; ?>'); background-size:cover;">
+<div class="testimonial-section testimonial3" style="background: url('<?php echo $current_setup_posttypes->get("testimonial_background"); ?>'); background-size:cover;">
     <div class="overlay">
         <div class="container">
             <div class="row" <?php if (is_testimonial_carousel()): ?> id="testimonial-scroll" <?php endif; ?>>

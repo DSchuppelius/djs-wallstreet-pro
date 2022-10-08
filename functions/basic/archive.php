@@ -9,19 +9,19 @@
  */
  
 function archives_view($args) {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     switch ($args['type']) {
     	case 'yearly':
-            if ($current_options["max_archive_year"] > 0)
-    		    $args['limit'] = $current_options["max_archive_year"];
+            if ($current_setup->get("max_archive_year") > 0)
+    		    $args['limit'] = $current_setup->get("max_archive_year");
     		break;
     	case 'monthly':
-            if ($current_options["max_archive_month"] > 0)
-        		$args['limit'] = $current_options["max_archive_month"];
+            if ($current_setup->get("max_archive_month") > 0)
+        		$args['limit'] = $current_setup->get("max_archive_month");
     		break;
     	case 'daily':
-            if ($current_options["max_archive_day"] > 0)
-                $args['limit'] = $current_options["max_archive_day"];
+            if ($current_setup->get("max_archive_day") > 0)
+                $args['limit'] = $current_setup->get("max_archive_day");
     		break;
     	default:
     		$args['limit'] = 10;

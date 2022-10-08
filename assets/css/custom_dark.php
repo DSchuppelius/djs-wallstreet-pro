@@ -10,7 +10,7 @@
 function custom_dark() {
     global $link_color;
 
-    $current_options = get_current_options(); ?>
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 
     <style type="text/css">
         button.wp-block-button__link, .portfolio-detail-section a.btn, .portfolio-detail-section a.button, .prelated-project-btn li a, .portfolio-detail-pagi li a, .header-top-area, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,

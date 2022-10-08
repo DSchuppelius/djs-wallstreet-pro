@@ -7,7 +7,9 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
-
+?>
 <noscript><style>.testimonial-area.next { display: none; }</style></noscript>
-<?php get_template_part("template-parts/testimonial/testimonial", $current_options["testimonial_design_style"]); ?>
+<?php if(defined("DJS_POSTTYPE_PLUGIN")) {
+    $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
+    get_template_part("template-parts/testimonial/testimonial", $current_setup_posttypes->get("testimonial_design_style"));
+} ?>

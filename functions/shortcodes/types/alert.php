@@ -63,7 +63,7 @@ tinyMCEPopup.onInit.add(AlertDialog.init, AlertDialog);
                 </td>
             </tr>				
             <tr><td class="lable-all">Title</td>
-                <td><input class="input-medium" placeholder="http://facebook.com" type="text" id="alert_heading" value="" name="alert_heading"></td>
+                <td><input class="input-medium" placeholder="<?php echo FACEBOOK_URL; ?>" type="text" id="alert_heading" value="" name="alert_heading"></td>
             </tr>
             <tr><td class="lable-all">Content</td>
                 <td class="text-box"><textarea class="input-xlarge"  id="alert_text" value="This text area show all text....." name="alert_text" type="text">This text area show all text.....</textarea></td>

@@ -2,7 +2,7 @@
     font-family: "Material Icons";
     font-style: normal;
     font-weight: 400;
-    src: url('icon-material-design/MaterialIcons-Regular.ttf'), url('icon-material-design/MaterialIconsRound-Regular.ttf'), url('icon-material-design/MaterialIconsSharp-Regular.ttf'), url('icon-material-design/MaterialIconsOutlined-Regular.ttf'), url('icon-material-design/MaterialIconsTwoTone-Regular.ttf');
+    src: url('icon-material-design/MaterialIcons-Regular.ttf'), url('icon-material-design/MaterialIconsRound-Regular.otf'), url('icon-material-design/MaterialIconsSharp-Regular.otf'), url('icon-material-design/MaterialIconsOutlined-Regular.otf'), url('icon-material-design/MaterialIconsTwoTone-Regular.otf');
     font-display: swap;
 }
 

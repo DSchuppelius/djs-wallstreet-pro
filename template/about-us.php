@@ -9,7 +9,7 @@
  */
 global $ul_class;
 
-$current_options = get_current_options();
+$current_setup_posttypes = defined("DJS_POSTTYPE_PLUGIN") ? PostTypes_Plugin_Setup::instance() : DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 get_template_parts(["template-parts/index/index", "banner"], true);
 
@@ -27,7 +27,7 @@ the_post();
     <div class="row <?php row_frame_border(""); ?> about-section text flexstretch">
         <div class="col-md-8 flexcolumn">
             <?php get_template_part("template-parts/content/content", "about"); ?>	
-            <?php if ($current_options["about_social_media_enabled"] == true) { ?>
+            <?php if ($current_setup_posttypes->get("about_social_media_enabled") == true) { ?>
                 <div class="social<?php innerrow_frame_border(" "); ?>">
                 <?php $ul_class = "about";
                 get_template_part("template-parts/global/social-media");?>
@@ -42,18 +42,18 @@ the_post();
 
 <!-- Team Section -->
 <div class="container page about-us team">
-    <?php if ($current_options["about_team_section_show_hide"] == true): ?>
-        <?php if (!empty($current_options["about_team_title"]) || !empty($current_options["about_team_description"])): ?>
+    <?php if ($current_setup_posttypes->get("about_team_section_show_hide") == true): ?>
+        <?php if (!empty($current_setup_posttypes->get("about_team_title")) || !empty($current_setup_posttypes->get("about_team_description"))): ?>
             <div class="row <?php row_frame_border(""); ?> about-section text team-title">
                 <div class="section_heading_title<?php innerrow_frame_border(" "); ?>">
-                    <?php if ($current_options["about_team_title"] != "") { ?><h1><?php echo $current_options["about_team_title"]; ?></h1>
+                    <?php if ($current_setup_posttypes->get("about_team_title") != "") { ?><h1><?php echo $current_setup_posttypes->get("about_team_title"); ?></h1>
                         <div class="pagetitle-separator">
                             <div class="pagetitle-separator-border">
                                 <div class="pagetitle-separator-box"></div>
                             </div>
                         </div>
                     <?php } ?>
-                    <?php if ($current_options["about_team_description"] != "") { ?><p><?php echo $current_options["about_team_description"]; ?></p><?php } ?>
+                    <?php if ($current_setup_posttypes->get("about_team_description") != "") { ?><p><?php echo $current_setup_posttypes->get("about_team_description"); ?></p><?php } ?>
                 </div>
             </div>
         <?php endif; ?>
@@ -116,7 +116,7 @@ the_post();
                 endwhile;
             } else {
                 $team_title = ["Danial Creg", "Alexia Doe", "John Doe", "Beatrix Doe"];
-                $team_designation = [__("FOUNDER", "wallstreet"), __("DEVELOPER", "wallstreet"), __("DESIGNER", "wallstreet"), __("DEVELOPER", "wallstreet")];
+                $team_designation = [__("FOUNDER", "djs-wallstreet-pro"), esc_html__("DEVELOPER", "djs-wallstreet-pro"), esc_html__("DESIGNER", "djs-wallstreet-pro"), esc_html__("DEVELOPER", "djs-wallstreet-pro")];
                 for ($i = 1; $i <= 4; $i++) { ?>
                     <div class="col-md-3 col-sm-6 team-effect">
                         <div class="team-box">
@@ -141,7 +141,7 @@ the_post();
         </div>	
     <?php endif; ?>
 
-    <?php if ($current_options["about_callout_section_show_hide"] == true):
+    <?php if ($current_setup_posttypes->get("about_callout_section_show_hide") == true):
         get_template_part("template-parts/index/index", "calloutarea");
     endif; ?>
 </div>

@@ -8,13 +8,13 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-class theme_style_customizer extends theme_customizer {
+class theme_style_customizer extends Theme_Customizer {
 
     public function customize_register_panel($wp_customize) {}
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("theme_style", [
-            "title" => __("Theme Style settings", "wallstreet"),
+            "title" => esc_html__("Theme Style settings", "djs-wallstreet-pro"),
             "priority" => 0,
         ]);
     }
@@ -25,6 +25,7 @@ class theme_style_customizer extends theme_customizer {
         $wp_customize->add_setting($this->theme_options_name . "[stylesheet]", [
             "default" => "#00c2a9",
             "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
@@ -57,12 +58,13 @@ class theme_style_customizer extends theme_customizer {
         $wp_customize->add_setting($this->theme_options_name . "[link_color]", [
             "capability" => "edit_theme_options",
             "default" => "#00c2a9",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control(
             new WP_Customize_Color_Control($wp_customize, $this->theme_options_name . "[link_color]", [
-                "label" => __("Change skin color for light and dark background", "wallstreet"),
+                "label" => esc_html__("Change skin color for light and dark background", "djs-wallstreet-pro"),
                 "section" => "theme_style",
                 "settings" => $this->theme_options_name . "[link_color]",
             ])

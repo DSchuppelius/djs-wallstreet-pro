@@ -7,6 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
-get_template_part("template-parts/team/team", $current_options["team_design_style"]);
-?>
+if(defined("DJS_POSTTYPE_PLUGIN")) {
+    $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
+    get_template_part("template-parts/team/team", $current_setup_posttypes->get("team_design_style"));
+} ?>

@@ -9,7 +9,7 @@
  */
 global $theme_blog_section;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $theme_blog_section = "blog-detail-section";
 get_template_part("template-parts/index/index", "banner");
 ?>

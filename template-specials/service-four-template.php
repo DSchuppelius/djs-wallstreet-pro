@@ -9,21 +9,21 @@
  */
 get_header();
 get_template_part("template-parts/index/index", "banner");
-$current_options = get_current_options();
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 ?>
 <!-- Service Section -->
 <div class="container">
     <div class="row">
         <div class="section_heading_title">
-            <?php if ($current_options["service_title"] != ""); ?>
-            <h1><?php echo $current_options["service_title"]; ?></h1>
+            <?php if ($current_setup_posttypes->get("service_title") != ""); ?>
+            <h1><?php echo $current_setup_posttypes->get("service_title"); ?></h1>
             <div class="pagetitle-separator">
                 <div class="pagetitle-separator-border">
                     <div class="pagetitle-separator-box"></div>
                 </div>
             </div>
-            <?php if ($current_options["service_description"] != ""); ?>
-            <p><?php echo $current_options["service_description"]; ?></p>
+            <?php if ($current_setup_posttypes->get("service_description") != ""); ?>
+            <p><?php echo $current_setup_posttypes->get("service_description"); ?></p>
         </div>
     </div>
     <div class="row service-section service3">
@@ -66,7 +66,7 @@ $current_options = get_current_options();
                             <?php } else { ?>
                                 <div class="other-service-area1">
                                     <a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>>
-                                        <i class="fa" style="font-size:24px;"><?php _e("Icon", "wallstreet"); ?></i>
+                                        <i class="fa" style="font-size:24px;"><?php esc_html_e("Icon", "djs-wallstreet-pro"); ?></i>
                                     </a>
                                 </div>
                             <?php }
@@ -82,7 +82,7 @@ $current_options = get_current_options();
                 </div>
             <?php }
         } else {
-            $service_title = ["", __("Product designing", "wallstreet"), __("WordPress themes", "wallstreet"), __("Responsive Design", "wallstreet")];
+            $service_title = ["", esc_html__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive Design", "djs-wallstreet-pro")];
             for ($i = 1; $i <= 3; $i++) { ?>
                 <div class="col-md-4 col-sm-6">
                     <div class="service-effect">
@@ -92,7 +92,7 @@ $current_options = get_current_options();
                         <div class="service-area">
                             <h2><a href="<?php the_currentURL(); ?>"><?php echo $service_title[$i]; ?></a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.</p>
-                            <div class="service-btn"><a href="<?php the_currentURL(); ?>"><?php _e("Read More", "wallstreet"); ?></a></div>
+                            <div class="service-btn"><a href="<?php the_currentURL(); ?>"><?php esc_html_e("Read More", "djs-wallstreet-pro"); ?></a></div>
                         </div>
                     </div>
                 </div>
@@ -106,21 +106,21 @@ $current_options = get_current_options();
 <div class="container">
     <?php get_template_part("template-parts/index/index", "calloutarea"); ?>
     
-    <?php if ($current_options["other_service_section_enabled"] == true) { ?>
+    <?php if ($current_setup_posttypes->get("other_service_section_enabled") == true) { ?>
         <?php $count_posts = wp_count_posts("service")->publish;
         if ($count_posts >= 4 || $count_posts == 0) { ?>
             <div class="row">
                 <div class="section_heading_title">
-                    <?php if ($current_options["other_service_title"] != "") { ?>
-                        <h1><?php echo $current_options["other_service_title"]; ?></h1>
+                    <?php if ($current_setup_posttypes->get("other_service_title") != "") { ?>
+                        <h1><?php echo $current_setup_posttypes->get("other_service_title"); ?></h1>
                     <?php } ?>
                     <div class="pagetitle-separator">
                         <div class="pagetitle-separator-border">
                             <div class="pagetitle-separator-box"></div>
                         </div>
                     </div>
-                    <?php if ($current_options["other_service_description"] != "") { ?>
-                        <p><?php echo $current_options["other_service_description"]; ?></p>
+                    <?php if ($current_setup_posttypes->get("other_service_description") != "") { ?>
+                        <p><?php echo $current_setup_posttypes->get("other_service_description"); ?></p>
                     <?php } ?>
                 </div>
             </div>
@@ -157,7 +157,7 @@ $current_options = get_current_options();
                             </div>
                         <?php } else { ?>
                             <div class="col-md-3 other-service-area">
-                                <i class="fa" style="font-size:16px;"><?php _e("Icon", "wallstreet"); ?></i>
+                                <i class="fa" style="font-size:16px;"><?php esc_html_e("Icon", "djs-wallstreet-pro"); ?></i>
                                 <h2><?php the_title(); ?></h2>
                                 <p><?php if ($service_description_text) { echo $service_description_text; } ?></p>
                             </div>
@@ -170,7 +170,7 @@ $current_options = get_current_options();
                 }
             } else {
                 $count_posts = wp_count_posts("service")->publish;
-                $service_title = [__("Responsive", "wallstreet"), __("WordPress themes", "wallstreet"), __("Mobile ready", "wallstreet"), __("Live support", "wallstreet")];
+                $service_title = [__("Responsive", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Mobile ready", "djs-wallstreet-pro"), esc_html__("Live support", "djs-wallstreet-pro")];
                 $other_service_icon = ["fa-tablet", "fa-tachometer", "fa-mobile", "fa-support"];
                 if ($count_posts >= 4 || $count_posts == 0) {
                     for ($i = 0; $i <= 3; $i++) { ?>

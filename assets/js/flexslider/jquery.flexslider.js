@@ -15,7 +15,7 @@
 
     var namespace = slider.vars.namespace,
         msGesture = window.navigator && window.navigator.msPointerEnabled && window.MSGesture,
-        touch = (( "ontouchstart" in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch) && slider.vars.touch,
+        touch = (("ontouchstart" in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch) && slider.vars.touch,
         // depricating this idea, as devices are being released with both of these events
         //eventType = (touch) ? "touchend" : "click",
         eventType = "click touchend MSPointerUp",
@@ -163,7 +163,7 @@
                 var $slide = $(this),
                     target = $slide.index();
                 var posFromLeft = $slide.offset().left - $(slider).scrollLeft(); // Find position of slide relative to left of slider container
-                if( posFromLeft <= 0 && $slide.hasClass( namespace + 'active-slide' ) ) {
+                if( posFromLeft <= 0 && $slide.hasClass( namespace + 'active-slide') ) {
                   slider.flexAnimate(slider.getTarget("prev"), true);
                 } else if (!$(slider.vars.asNavFor).data('flexslider').animating && !$slide.hasClass(namespace + "active-slide")) {
                   slider.direction = (slider.currentItem < target) ? "next" : "prev";
@@ -213,10 +213,10 @@
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
               slide = slider.slides.eq(i);
-              item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr( 'data-thumb' ) + '"/>' : '<a>' + j + '</a>';
-              if ( 'thumbnails' === slider.vars.controlNav && true === slider.vars.thumbCaptions ) {
-                var captn = slide.attr( 'data-thumbcaption' );
-                if ( '' != captn && undefined != captn ) item += '<span class="' + namespace + 'caption">' + captn + '</span>';
+              item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr('data-thumb') + '"/>' : '<a>' + j + '</a>';
+              if ('thumbnails' === slider.vars.controlNav && true === slider.vars.thumbCaptions ) {
+                var captn = slide.attr('data-thumbcaption');
+                if ('' != captn && undefined != captn ) item += '<span class="' + namespace + 'caption">' + captn + '</span>';
               }
               slider.controlNavScaffold.append('<li>' + item + '</li>');
               j++;
@@ -594,9 +594,9 @@
         }
       },
       uniqueID: function($clone) {
-        $clone.find( '[id]' ).each(function() {
+        $clone.find('[id]').each(function() {
           var $this = $(this);
-          $this.attr( 'id', $this.attr( 'id' ) + '_clone' );
+          $this.attr('id', $this.attr('id') + '_clone');
         });
         return $clone;
       },

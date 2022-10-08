@@ -14,7 +14,7 @@ global $archive_type;
 global $only_one_post;
 global $theme_blog_section;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $theme_blog_section = "blog-section-left";
 get_template_parts(["template-parts/index/index", "banner"], true);
 
@@ -35,7 +35,7 @@ $post_type_data = $wp_query;
             while ($post_type_data->have_posts()) {
                 $post_type_data->the_post();
                 $more = 0;
-                get_template_part("template-parts/content/content", $current_options["blog_template_content_excerpt_get_setting"]);
+                get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting"));
                 $first_post = false;
             }
             the_pagination($paged, $post_type_data);

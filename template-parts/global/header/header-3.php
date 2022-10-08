@@ -7,8 +7,8 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
-<div class="navbar-header index2 header-style-<?php echo $current_options["header_presets_stlyle"]; ?>">
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
+<div class="navbar-header index2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>">
     <div class="container">
         <?php
   get_template_part("template-parts/global/header/navbar", "logo");
@@ -19,7 +19,7 @@ $current_options = get_current_options(); ?>
 <!--/Header Details Section-->	
     
 <!--Logo & Menu Section-->
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar2 header-style-<?php echo $current_options["header_presets_stlyle"]; ?>" role="navigation">
+<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>" role="navigation">
     <div class="container">
         <?php get_template_part("template-parts/global/header/navbar", "button"); ?>
         <div class="navbar-collapse collapse">

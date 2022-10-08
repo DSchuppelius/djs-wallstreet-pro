@@ -1,4 +1,3 @@
-
 # DJS-Wallstreet-Pro
 
 ![Theme](screenshot.png)
@@ -7,7 +6,7 @@
 ## Developing
 
 - **Contributors:** DSchuppelius
-- **Version:** 2.0.4
+- **Version:** 2.1.0
 - **Requires at least:** 5.3
 - **Tested up to:** 6.0.2
 - **Requires PHP:** 5.6.20
@@ -48,8 +47,8 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
  - Pre-installed menu and content colors
  - Custom Background
  - Parallax-Features (Background and some Site-Elements)
- - Cookie Accept for external IFRAMEs
- - Diffrent Post-Typs
+ - Cookie Accept for external IFRAMEs (if you load plugin "DJS-Wallstreet-Pro Extensions")
+ - Diffrent Post-Typs (if you load plugin "DJS-Wallstreet-Pro Post-Types")
     - Portfolio
     - Client
     - Partner
@@ -66,7 +65,7 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
     - Quote
     - Status
     - Video
- - Diffrent Shortcodes
+ - Diffrent Shortcodes (if you load plugin "DJS-Wallstreet-Pro Extensions")
     - ZDF-Mediathek [zdf url="mediathek_url"]description[/zdf] o. [zdf src="direct_src"]description[/zdf] o. [zdf media_id="mediaID"]description[/zdf]
     - DIV Shortcode for code that is otherwise manipulated by WordPress
     - PAYPAL Donationbutton
@@ -85,6 +84,7 @@ Wallstreet supports Custom Menu, Widgets and the following extra features:
     - Danincing Script
     - El Messiri
     - Montserrat
+    - Rubik
     - Roboto (default)
  - Translation Ready 
  
@@ -126,4 +126,3 @@ Do you enjoy this theme? Send your ideas - issues - on the github. Thank you!
 
 ### Imagesources
 
-https://pixabay.com/get/427e9e99971233d123e4/1438949836/smart-watch-821557_1920.jpg?direct

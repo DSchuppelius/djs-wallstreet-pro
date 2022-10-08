@@ -14,23 +14,25 @@ define("THEME_ASSETS_PATH_URI", TEMPLATE_DIR_URI . "/assets");
 define("THEME_FUNCTIONS_PATH", TEMPLATE_DIR . "/functions");
 define("THEME_OPTIONS_PATH", TEMPLATE_DIR_URI . "/functions/theme_options");
 
+if (!defined('DJS_POSTTYPE_PLUGIN_DIR')) {
+    add_action('admin_notices', function() { echo "<div class='notice'><p>" . sprintf(__('To use all features of the theme "DJS-Wallstreet-Pro" download the plugin <a href="%s">%s</a>', "djs-wallstreet-pro"), "https://github.com/DSchuppelius/djs-wallstreet-pro-post-types/releases/latest/", "DJS-Wallstreet-Pro Post-Types") . "</p></div>"; });
+}
+
 require_once "theme_setup_data.php";
 
 require_once THEME_FUNCTIONS_PATH . "/base/get_template_parts.php";
 require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
-require_once THEME_FUNCTIONS_PATH . "/base/theme_functions.php";
-require_once THEME_FUNCTIONS_PATH . "/base/theme_colors.php";
+require_once THEME_FUNCTIONS_PATH . "/theme/theme_functions.php";
+require_once THEME_FUNCTIONS_PATH . "/theme/theme_sanitizer.php";
+require_once THEME_FUNCTIONS_PATH . "/theme/theme_colors.php";
 
 require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
 require_once THEME_FUNCTIONS_PATH . "/font/font.php";
 
 require_once THEME_FUNCTIONS_PATH . "/content/content.php";
 require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
-require_once THEME_FUNCTIONS_PATH . "/meta-box/post-meta.php";
-require_once THEME_FUNCTIONS_PATH . "/taxonomies/taxonomies.php";
 require_once THEME_FUNCTIONS_PATH . "/breadcrumbs/breadcrumbs.php";
 require_once THEME_FUNCTIONS_PATH . "/testimonials/testimonials.php";
-require_once THEME_FUNCTIONS_PATH . "/post-type/custom-post-types.php";
 require_once THEME_FUNCTIONS_PATH . "/pagination/theme_pagination.php";
 require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_page.php";
 require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_nav_menu.php";
@@ -52,26 +54,15 @@ require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
 // Customizer
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-controls.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-relationship.php";
 
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-blog.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-home.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-team.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-global.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-client.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-layout.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-slider.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-social.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-feature.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-partner.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-service.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-project.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-template.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-copyright.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-typography.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-testimonial.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-theme_style.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-post-type-slugs.php";
 
 require_once THEME_FUNCTIONS_PATH . "/customizer/single-blog-options.php";
 
@@ -96,7 +87,7 @@ function theme_head($title, $sep) {
 
     // Add a page number if necessary.
     if ($paged >= 2 || $page >= 2) {
-        $title = "$title $sep " . sprintf(_e("Page", "wallstreet"), max($paged, $page));
+        $title = "$title $sep " . sprintf(esc_html__("Page", "djs-wallstreet-pro"), max($paged, $page));
     }
 
     return $title;
@@ -111,7 +102,7 @@ if (!function_exists("theme_setup")) {
         } //in px
 
         // Load text domain for translation-ready
-        load_theme_textdomain("wallstreet", THEME_FUNCTIONS_PATH . "/lang");
+        load_theme_textdomain("djs-wallstreet-pro", THEME_FUNCTIONS_PATH . "/lang");
 
         add_image_size("index-thumb", 493, 300, true);
         add_image_size("blog-thumb", 1000, 400, true);
@@ -129,17 +120,24 @@ if (!function_exists("theme_setup")) {
             "mypic" => [
                 "url" => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
                 "thumbnail_url" => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
-                "description" => _x("MyPic", "header image description", "wallstreet"),
+                "description" => _x("MyPic", "header image description", "djs-wallstreet-pro"),
             ],
         ]);
 
         // This theme uses wp_nav_menu() in one location.
-        register_nav_menu("primary", __("Primary Menu", "wallstreet")); //Navigation
+        register_nav_menu("primary", esc_html__("Primary Menu", "djs-wallstreet-pro")); //Navigation
 
         // theme support
         add_theme_support("automatic-feed-links");
+        add_theme_support("responsive-embeds");
         add_theme_support("post-thumbnails");
+        add_theme_support("wp-block-styles");
+        add_theme_support('editor-style');
         add_theme_support("title-tag");
+
+        set_post_thumbnail_size(1000, 400, true);
+
+        add_theme_support('html5', ['comment-list', 'search-form', 'comment-form']);
         add_theme_support("post-formats", ["link", "aside", "gallery", "image", "quote", "status", "video", "audio", "chat"]);
 
         // custom header
@@ -178,9 +176,6 @@ if (!function_exists("theme_setup")) {
         add_theme_support("wc-product-gallery-zoom");
         add_theme_support("wc-product-gallery-lightbox");
         add_theme_support("wc-product-gallery-slider");
-
-        // Setup admin pannel default data for index page
-        $wallstreet_pro_options = theme_data_setup(); // TODO ?
     }
 }
 add_action("after_setup_theme", "theme_setup");
@@ -194,12 +189,12 @@ function kb_mimes($my_mime){
     $my_mime['mp3']   = 'audio/mp3';
     return $my_mime;
 }
-add_filter( 'upload_mimes', 'kb_mimes' );
+add_filter('upload_mimes', 'kb_mimes');
 
 function add_to_author_profile($contactmethods) {
-    $contactmethods["facebook_profile"] = __("Facebook URL", "wallstreet");
-    $contactmethods["twitter_profile"] = __("Twitter URL", "wallstreet");
-    $contactmethods["linkedin_profile"] = __("LinkedIn URL", "wallstreet");
+    $contactmethods["facebook_profile"] = esc_html__("Facebook URL", "djs-wallstreet-pro");
+    $contactmethods["twitter_profile"] = esc_html__("Twitter URL", "djs-wallstreet-pro");
+    $contactmethods["linkedin_profile"] = esc_html__("LinkedIn URL", "djs-wallstreet-pro");
     return $contactmethods;
 }
 add_filter("user_contactmethods", "add_to_author_profile", 10, 1);
@@ -219,29 +214,3 @@ function prev_posts_link_attributes() {
   return 'class="btn prev"';
 }
 add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
-
-function mfields_set_default_object_terms($post_id, $post) {
-    if ("publish" == $post->post_status && $post->post_type == PORTFOLIO_POST_TYPE) {
-        $taxonomies = get_object_taxonomies($post->post_type, "object");
-        foreach ($taxonomies as $taxonomy) {
-            $terms = wp_get_post_terms($post_id, $taxonomy->name);
-            $myid = get_option("wallstreet_theme_default_term_id");
-            $a = get_term_by("id", $myid, PORTFOLIO_TAXONOMY);
-            if (empty($terms)) {
-                wp_set_object_terms($post_id, $a->slug, $taxonomy->name);
-            }
-        }
-    }
-}
-add_action("save_post", "mfields_set_default_object_terms", 100, 2);
-
-function wallstreet_taxonomies_paged_function($query) {
-    if (!is_admin() && $query->is_main_query() && is_tax(PORTFOLIO_TAXONOMY)) {
-        $current_options = get_current_options();
-        $tax_page = $current_options["portfolio_numbers_for_templates_category"];
-        $paged = get_query_var("paged") ? get_query_var("paged") : 1;
-        $query->set("posts_per_page", $tax_page);
-        $query->set("paged", $paged);
-    }
-}
-add_action("pre_get_posts", "wallstreet_taxonomies_paged_function");

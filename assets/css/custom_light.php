@@ -11,7 +11,7 @@ function custom_light() {
     global $link_color;
     global $reduce_color;
 
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
     if ($link_color != "#ff0000"): ?>
         <style type="text/css">

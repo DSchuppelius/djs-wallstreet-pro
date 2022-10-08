@@ -9,15 +9,15 @@
  */
 ?>
 <!-- wallstreet Callout Section -->
-<?php $current_options = get_current_options(); ?>
-<?php if ($current_options["call_out_area_enabled"] == true) { ?>
+<?php $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
+<?php if ($current_setup->get("call_out_area_enabled") == true) { ?>
 <div class="row <?php row_frame_border(""); ?> callout">		
     <div class="callout-section">
-        <h3><?php if ($current_options["call_out_title"] != "") { echo $current_options["call_out_title"]; } ?></h3>
+        <h3><?php if ($current_setup->get("call_out_title") != "") { echo $current_setup->get("call_out_title"); } ?></h3>
         <p>
-            <?php if ($current_options["call_out_text"] != "") { echo $current_options["call_out_text"]; } ?><br>
-            <?php if ($current_options["call_out_button_text"] != "") { ?> 
-                <a <?php blank_target($current_options["call_out_button_link_target"] == "on"); ?> class="normal-button  reverse" href="<?php if ($current_options["call_out_button_link"] != "") { echo $current_options["call_out_button_link"]; } ?>" ><?php echo $current_options["call_out_button_text"]; ?></a>
+            <?php if ($current_setup->get("call_out_text") != "") { echo $current_setup->get("call_out_text"); } ?><br>
+            <?php if ($current_setup->get("call_out_button_text") != "") { ?> 
+                <a <?php blank_target($current_setup->get("call_out_button_link_target") == "on"); ?> class="normal-button  reverse" href="<?php if ($current_setup->get("call_out_button_link") != "") { echo $current_setup->get("call_out_button_link"); } ?>" ><?php echo $current_setup->get("call_out_button_text"); ?></a>
             <?php } ?>
         </p>
     </div>		

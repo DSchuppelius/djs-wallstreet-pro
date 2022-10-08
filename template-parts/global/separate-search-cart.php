@@ -9,12 +9,10 @@
  */
 global $woocommerce;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 $menu_search_form =
-    '<a href="' . get_the_currentURL() . '#" title="' .
-    __("Search", "wallstreet") .
-    '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-search"></i></a>
+    '<a href="' . get_the_currentURL() . '#" title="' . esc_html__("Search", "djs-wallstreet-pro") . '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-search"></i></a>
     <ul class="dropdown-menu pull-right search-panel" role="menu" aria-hidden="true" aria-expanded="false">
         <li class="dropdown-item panel-outer">
             <div class="form-container">
@@ -22,7 +20,7 @@ $menu_search_form =
                     <label>
                         <input type="search" class="search-field" placeholder="Search …" value="" name="s">
                     </label>
-                    <button type="submit" class="btn search_btn search-submit" value="' . __("Search", "wallstreet") . '">' . __("Search", "wallstreet") . '</button>
+                    <button type="submit" class="btn search_btn search-submit" value="' . esc_html__("Search", "djs-wallstreet-pro") . '">' . esc_html__("Search", "djs-wallstreet-pro") . '</button>
                 </form>                   
             </div>
         </li>
@@ -30,9 +28,9 @@ $menu_search_form =
 $shop_button = "";
 
 if (class_exists("WooCommerce")) {
-    if ($current_options["search_effect_style_setting"] == "toogle") {
+    if ($current_setup->get("search_effect_style_setting") == "toogle") {
         $shop_button .= '<div class="header-module">';
-        if ($current_options["enable_search_btn"] == true) {
+        if ($current_setup->get("enable_search_btn") == true) {
             $shop_button .= '<div class="search-box-outer dropdown menu-item">' . $menu_search_form . "</div>";
         }
         $shop_button .= '<div class="cart-header ">';
@@ -51,12 +49,12 @@ if (class_exists("WooCommerce")) {
             $link .
             '" class="cart-total"><span class="cart-total">
             ' .
-            sprintf(_n("%d item", $woocommerce->cart->cart_contents_count, "wallstreet"), $woocommerce->cart->cart_contents_count) .
+            sprintf(_n("%d item", "%d items", $woocommerce->cart->cart_contents_count, "djs-wallstreet-pro"), $woocommerce->cart->cart_contents_count) .
             "</span></a>";
         $shop_button .= "</div></div>";
-    } elseif ($current_options["search_effect_style_setting"] == "popup_light" || $current_options["search_effect_style_setting"] == "popup_dark") {
+    } elseif ($current_setup->get("search_effect_style_setting") == "popup_light" || $current_setup->get("search_effect_style_setting") == "popup_dark") {
         $shop_button .= '<div class="header-module">';
-        if ($current_options["enable_search_btn"] == true) {
+        if ($current_setup->get("enable_search_btn") == true) {
             $shop_button .= '<div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">
                     <div class="dropdown">
@@ -78,18 +76,17 @@ if (class_exists("WooCommerce")) {
         $shop_button .= "</a>";
 
         $shop_button .=
-            '<a href="' .
-            $link .
-            '" class="cart-total"><span class="cart-total">
-            ' .
-            sprintf(_n("%d item", $woocommerce->cart->cart_contents_count, "wallstreet"), $woocommerce->cart->cart_contents_count) .
-            "</span></a>";
+            '<a href="' . $link . '" class="cart-total">
+                <span class="cart-total">' .
+                    sprintf(_n("%d item", "%d items", $woocommerce->cart->cart_contents_count, "djs-wallstreet-pro"), $woocommerce->cart->cart_contents_count) .
+                '</span>
+            </a>';
         $shop_button .= "</div></div>";
     }
 } else {
-    if ($current_options["search_effect_style_setting"] == "toogle" && $current_options["enable_search_btn"] == true) {
+    if ($current_setup->get("search_effect_style_setting") == "toogle" && $current_setup->get("enable_search_btn") == true) {
         $shop_button .= '<div class="header-module"><div class="search-box-outer dropdown">' . $menu_search_form . "</div></div></div>";
-    } elseif (($current_options["search_effect_style_setting"] == "popup_light" || $current_options["search_effect_style_setting"] == "popup_dark") && $current_options["enable_search_btn"] == true) {
+    } elseif (($current_setup->get("search_effect_style_setting") == "popup_light" || $current_setup->get("search_effect_style_setting") == "popup_dark") && $current_setup->get("enable_search_btn") == true) {
         $shop_button .= '<div class="header-module">
             <div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">

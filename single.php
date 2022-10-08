@@ -7,14 +7,16 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-switch (get_post_type()) {
-    case PORTFOLIO_POST_TYPE:
-        get_template_parts(["template-single/single", "portfolio"], true, true);
-        break;
-    case SERVICE_POST_TYPE:
-        get_template_parts(["template-single/single", "service"], true, true);
-        break;
-    default:
-        get_template_parts(["template-single/single"], true, true);
-        break;
-} ?>
+if(defined("DJS_POSTTYPE_PLUGIN")) {
+    switch (get_post_type()) {
+        case PORTFOLIO_POST_TYPE:
+            get_template_parts(["template-single/single", "portfolio"], true, true);
+            break;
+        case SERVICE_POST_TYPE:
+            get_template_parts(["template-single/single", "service"], true, true);
+            break;
+        default:
+            get_template_parts(["template-single/single"], true, true);
+            break;
+    }
+} else { get_template_parts(["template-single/single"], true, true); } ?>

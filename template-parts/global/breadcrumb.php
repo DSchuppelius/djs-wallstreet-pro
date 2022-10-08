@@ -7,9 +7,9 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 
-<div class="page-breadcrumbs rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_breadcrumbs"]; ?>">
+<div class="page-breadcrumbs rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_breadcrumbs"); ?>">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

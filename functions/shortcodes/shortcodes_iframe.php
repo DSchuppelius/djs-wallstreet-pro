@@ -34,7 +34,7 @@ if (!isset($table_prefix)) {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php _e("Insert Shortcode", "wallstreet"); ?></title>
+        <title><?php esc_html_e("Insert Shortcode", "djs-wallstreet-pro"); ?></title>
         <script type="text/javascript" src="<?php echo THEME_ASSETS_PATH_URI;?>/jquery/1.6.1/jquery.js"></script>
         <script language="javascript" type="text/javascript" src="<?php echo esc_url(home_url()); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
         <style type="text/css" src="<?php echo esc_url(home_url()); ?>/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/dialog.css"></style>
@@ -65,22 +65,22 @@ if (!isset($table_prefix)) {
     </head>
     <body>
         <div id="wpex-shortcodes-popup">
-            <h2 id="shortcode-selector-title"><?php _e("Shortcode Selector", "wallstreet"); ?></h2>
+            <h2 id="shortcode-selector-title"><?php esc_html_e("Shortcode Selector", "djs-wallstreet-pro"); ?></h2>
             <div id="select-shortcode">
                 <div id="select-shortcode-inner">
                     <form action="/" method="get" accept-charset="utf-8">
                         <div>
                             <select name="shortcode-select" id="shortcode-select" size="1">
-                                <option value="default" selected="selected"><?php _e("Shortcodes", "wallstreet"); ?></option>  
-                                <option value="column"><?php _e("column", "wallstreet"); ?></option>
-                                <option value="tabs"><?php _e("Tabs", "wallstreet"); ?></option>
-                                <option value="accordion"><?php _e("Accordion", "wallstreet"); ?></option>	
-                                <option value="alert"><?php _e("Alert", "wallstreet"); ?></option>
-                                <option value="drop"><?php _e("Drop-Caps", "wallstreet"); ?></option>
-                                <option value="button"><?php _e("Button", "wallstreet"); ?></option>
-                                <option value="heading"><?php _e("Heading", "wallstreet"); ?></option>
-                                <option value="tooltip"><?php _e("Tool Tip", "wallstreet"); ?></option>
-                                <option value="list"><?php _e("List", "wallstreet"); ?></option>
+                                <option value="default" selected="selected"><?php esc_html_e("Shortcodes", "djs-wallstreet-pro"); ?></option>  
+                                <option value="column"><?php esc_html_e("column", "djs-wallstreet-pro"); ?></option>
+                                <option value="tabs"><?php esc_html_e("Tabs", "djs-wallstreet-pro"); ?></option>
+                                <option value="accordion"><?php esc_html_e("Accordion", "djs-wallstreet-pro"); ?></option>	
+                                <option value="alert"><?php esc_html_e("Alert", "djs-wallstreet-pro"); ?></option>
+                                <option value="drop"><?php esc_html_e("Drop-Caps", "djs-wallstreet-pro"); ?></option>
+                                <option value="button"><?php esc_html_e("Button", "djs-wallstreet-pro"); ?></option>
+                                <option value="heading"><?php esc_html_e("Heading", "djs-wallstreet-pro"); ?></option>
+                                <option value="tooltip"><?php esc_html_e("Tool Tip", "djs-wallstreet-pro"); ?></option>
+                                <option value="list"><?php esc_html_e("List", "djs-wallstreet-pro"); ?></option>
                             </select>
                         </div>
                     </form>

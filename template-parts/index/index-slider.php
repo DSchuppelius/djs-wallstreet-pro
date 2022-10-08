@@ -7,20 +7,17 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
-$animation = $current_options["animation"];
-$animationSpeed = $current_options["animationSpeed"];
-$direction = $current_options["slide_direction"];
-$slideshowSpeed = $current_options["slideshowSpeed"];
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+$current_setup_posttypes = defined("DJS_POSTTYPE_PLUGIN") ? PostTypes_Plugin_Setup::instance() : $current_setup;
 
-if ($current_options["home_slider_enabled"] == true && $current_options["slidertype"] == "base") { ?>
+if (defined("DJS_POSTTYPE_PLUGIN") && $current_setup_posttypes->get("home_slider_enabled") == true && $current_setup_posttypes->get("slidertype") == "base") { ?>
     <script>
         jQuery(window).load(function(){
             jQuery('.flexslider').flexslider({
-                animation: "<?php echo $animation; ?>",
-                animationSpeed: <?php echo $animationSpeed; ?>,
-                direction: "<?php echo $direction; ?>",
-                slideshowSpeed: <?php echo $slideshowSpeed; ?>,
+                animation: "<?php echo $current_setup_posttypes->get("animation"); ?>",
+                animationSpeed: <?php echo $current_setup_posttypes->get("animationSpeed"); ?>,
+                direction: "<?php echo $current_setup_posttypes->get("slide_direction"); ?>",
+                slideshowSpeed: <?php echo $current_setup_posttypes->get("slideshowSpeed"); ?>,
                 pauseOnHover: true, 
                 slideshow: true,
                 start: function(slider){
@@ -176,8 +173,8 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
 </style>
 
 <!-- /Slider Section -->
-<?php if ($current_options["home_slider_enabled"] == true && $current_options["slidertype"] == "base") { ?>
-    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_slider"]; ?>">		
+<?php if (defined("DJS_POSTTYPE_PLUGIN") && $current_setup_posttypes->get("home_slider_enabled") == true && $current_setup_posttypes->get("slidertype") == "base") { ?>
+    <div class="homepage_mycarousel<?php echo $current_setup_posttypes->get("home_slider_enabled") ? " " . $current_setup_posttypes->get("revolutionslidername") . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_slider"); ?>">		
         <div class="flexslider">
             <div class="flex-viewport">
                 <?php $count_posts = wp_count_posts(SLIDER_POST_TYPE)->publish;
@@ -203,17 +200,17 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
                             <li class="<?php echo $i==1 ? 'first' : 'next'; ?>">
                                 <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/slider/slide<?php echo $i; ?>.jpg">
                                 <div class="flex-slider-center">
-                                    <div <?php if ($current_options["home_slider_desktop_title_enabled"] != true) { ?> style="display: none;"  <?php } ?> class="slide-text-bg1 <?php if ($current_options["home_slider_desktop_title_enabled"] == true) { echo "desktop-active"; } ?> <?php if ($current_options["home_slider_mobile_title_enabled"] == true) { echo "mobile-active"; } ?>">
-                                        <h2><?php _e("Clean & fresh theme", "wallstreet"); ?></h2>
+                                    <div <?php if ($current_setup_posttypes->get("home_slider_desktop_title_enabled") != true) { ?> style="display: none;"  <?php } ?> class="slide-text-bg1 <?php if ($current_setup->get("home_slider_desktop_title_enabled") == true) { echo "desktop-active"; } ?> <?php if ($current_setup->get("home_slider_mobile_title_enabled") == true) { echo "mobile-active"; } ?>">
+                                        <h2><?php esc_html_e("Clean & fresh theme", "djs-wallstreet-pro"); ?></h2>
                                     </div>
-                                    <div <?php if ($current_options["home_slider_desktop_subtitle_enabled"] != true) { ?> style="display: none;"  <?php } ?> <?php if ($current_options["home_slider_desktop_title_enabled"] != true) { ?> id="slider_desktop_slider_title" <?php } ?> class="slide-text-bg2 <?php if ($current_options["home_slider_mobile_title_enabled"] == true) { echo "mobile-active"; } else { echo "mobile-deactive"; } ?> <?php if ($current_options["home_slider_mobile_subtitle_enabled"] == true) { echo "mobile-subtitle-active"; } else { echo "mobile-subtitle-deactive"; } ?>">
-                                        <h1><?php _e("Welcome to wallstreet", "wallstreet"); ?></h1>
+                                    <div <?php if ($current_setup_posttypes->get("home_slider_desktop_subtitle_enabled") != true) { ?> style="display: none;"  <?php } ?> <?php if ($current_setup->get("home_slider_desktop_title_enabled") != true) { ?> id="slider_desktop_slider_title" <?php } ?> class="slide-text-bg2 <?php if ($current_setup->get("home_slider_mobile_title_enabled") == true) { echo "mobile-active"; } else { echo "mobile-deactive"; } ?> <?php if ($current_setup->get("home_slider_mobile_subtitle_enabled") == true) { echo "mobile-subtitle-active"; } else { echo "mobile-subtitle-deactive"; } ?>">
+                                        <h1><?php esc_html_e("Welcome to wallstreet", "djs-wallstreet-pro"); ?></h1>
                                     </div>
-                                    <div <?php if ($current_options["home_slider_desktop_desc_enabled"] != true) { ?> style="display: none;" <?php } ?> class="slide-text-bg3 <?php if ($current_options["home_slider_mobile_desc_enabled"] == true) { echo "mobile-description-active"; } else { echo "mobile-description-deactive"; } ?>">
-                                        <p><?php _e("The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile.", "wallstreet"); ?></p>
+                                    <div <?php if ($current_setup_posttypes->get("home_slider_desktop_desc_enabled") != true) { ?> style="display: none;" <?php } ?> class="slide-text-bg3 <?php if ($current_setup->get("home_slider_mobile_desc_enabled") == true) { echo "mobile-description-active"; } else { echo "mobile-description-deactive"; } ?>">
+                                        <p><?php esc_html_e("The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile.", "djs-wallstreet-pro"); ?></p>
                                     </div>
-                                    <div <?php if ($current_options["home_slider_desktop_button_enabled"] != true) { ?> style="display: none;" <?php } ?> class="flex_btn_div <?php if ($current_options["home_slider_mobile_button_enabled"] == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
-                                        <form action="#"><button class="btn buy flex_btn" type="submit"><?php _e("Purchase Now", "wallstreet"); ?></button></form>
+                                    <div <?php if ($current_setup_posttypes->get("home_slider_desktop_button_enabled") != true) { ?> style="display: none;" <?php } ?> class="flex_btn_div <?php if ($current_setup->get("home_slider_mobile_button_enabled") == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
+                                        <form action="#"><button class="btn buy flex_btn" type="submit"><?php esc_html_e("Purchase Now", "djs-wallstreet-pro"); ?></button></form>
                                     </div>		
                                 </div>
                             </li>				
@@ -223,37 +220,37 @@ if ($current_options["home_slider_enabled"] == true && $current_options["slidert
             </div>
         </div>  
     </div>
-<?php } elseif ($current_options["home_slider_enabled"] == true && $current_options["slidertype"] == "revolution" && function_exists("add_revslider")) { ?>
-    <div class="homepage_mycarousel<?php echo $current_options["home_slider_enabled"] ? " " . $current_options["revolutionslidername"] . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_slider"]; ?>">		
-        <?php add_revslider($current_options["revolutionslidername"]); ?>
+<?php } elseif ($current_setup_posttypes->get("home_slider_enabled") == true && $current_setup_posttypes->get("slidertype") == "revolution" && function_exists("add_revslider")) { ?>
+    <div class="homepage_mycarousel<?php echo $current_setup_posttypes->get("home_slider_enabled") ? " " . $current_setup_posttypes->get("revolutionslidername") . " " : " "; ?>rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_slider"); ?>">		
+        <?php add_revslider($current_setup_posttypes->get("revolutionslidername")); ?>
     </div>
 <?php } else { ?>
     <?php get_template_part("template-parts/index/index", "banner"); ?>
 <?php }
 
 function render_slide($class, $style=""){ 
-    $current_options = get_current_options(); ?>
+    $current_setup_posttypes = defined("DJS_POSTTYPE_PLUGIN") ? PostTypes_Plugin_Setup::instance() : null; ?>
     <li class="<?php echo $class; ?>" <?php if(!empty($style)) { echo 'style="' . $style . '"'; } ?>>
         <?php if (has_post_thumbnail()): ?>
             <?php $defalt_arg = ["class" => "img-responsive"]; ?>
             <?php the_post_thumbnail("bigbanner-thumb", $defalt_arg); ?>
         <?php endif; ?>
         <div class="flex-slider-center">
-            <div <?php if ($current_options["home_slider_desktop_title_enabled"] != true) { ?> style="display: none;"  <?php } ?> class="slide-text-bg1 <?php if ($current_options["home_slider_desktop_title_enabled"] == true) { echo "desktop-active"; } ?> <?php if ($current_options["home_slider_mobile_title_enabled"] == true) { echo "mobile-active"; } ?>">
+            <div <?php if ($current_setup_posttypes->get("home_slider_desktop_title_enabled") != true) { ?> style="display: none;"  <?php } ?> class="slide-text-bg1 <?php if ($current_setup_posttypes->get("home_slider_desktop_title_enabled") == true) { echo "desktop-active"; } ?> <?php if ($current_setup_posttypes->get("home_slider_mobile_title_enabled") == true) { echo "mobile-active"; } ?>">
                 <h2><?php the_title(); ?></h2>
             </div>
             <?php if (get_post_meta(get_the_ID(), "slider_title", true)) { ?>
-                <div <?php if ($current_options["home_slider_desktop_subtitle_enabled"] != true) { ?> style="display: none;"  <?php } ?> <?php if ($current_options["home_slider_desktop_title_enabled"] != true) { ?> id="slider_desktop_slider_title" <?php } ?> class="slide-text-bg2 <?php if ($current_options["home_slider_mobile_title_enabled"] == true) { echo "mobile-active"; } else { echo "mobile-deactive"; } ?> <?php if ($current_options["home_slider_mobile_subtitle_enabled"] == true) { echo "mobile-subtitle-active"; } else { echo "mobile-subtitle-deactive";} ?>">
+                <div <?php if ($current_setup_posttypes->get("home_slider_desktop_subtitle_enabled") != true) { ?> style="display: none;"  <?php } ?> <?php if ($current_setup_posttypes->get("home_slider_desktop_title_enabled") != true) { ?> id="slider_desktop_slider_title" <?php } ?> class="slide-text-bg2 <?php if ($current_setup_posttypes->get("home_slider_mobile_title_enabled") == true) { echo "mobile-active"; } else { echo "mobile-deactive"; } ?> <?php if ($current_setup_posttypes->get("home_slider_mobile_subtitle_enabled") == true) { echo "mobile-subtitle-active"; } else { echo "mobile-subtitle-deactive";} ?>">
                     <h1><?php echo get_post_meta(get_the_ID(), "slider_title", true); ?></h1>
                 </div>
             <?php }
             if (get_post_meta(get_the_ID(), "slider_description", true)) { ?>
-                <div <?php if ($current_options["home_slider_desktop_desc_enabled"] != true) { ?> style="display: none;" <?php } ?> class="slide-text-bg3 <?php if ($current_options["home_slider_mobile_desc_enabled"] == true) { echo "mobile-description-active"; } else { echo "mobile-description-deactive"; } ?>">
+                <div <?php if ($current_setup_posttypes->get("home_slider_desktop_desc_enabled") != true) { ?> style="display: none;" <?php } ?> class="slide-text-bg3 <?php if ($current_setup_posttypes->get("home_slider_mobile_desc_enabled") == true) { echo "mobile-description-active"; } else { echo "mobile-description-deactive"; } ?>">
                     <p><?php echo get_post_meta(get_the_ID(), "slider_description", true); ?></p>
                 </div>
             <?php }
             if (get_post_meta(get_the_ID(), "slider_button_text", true)) { ?>
-                <div <?php if ($current_options["home_slider_desktop_button_enabled"] != true) { ?> style="display: none;" <?php } ?> class="flex_btn_div <?php if ($current_options["home_slider_mobile_button_enabled"] == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
+                <div <?php if ($current_setup_posttypes->get("home_slider_desktop_button_enabled") != true) { ?> style="display: none;" <?php } ?> class="flex_btn_div <?php if ($current_setup_posttypes->get("home_slider_mobile_button_enabled") == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
                     <form action="<?php echo get_post_meta(get_the_ID(), "slider_button_link", true); ?>" <?php blank_target(get_post_meta(get_the_ID(), "slider_button_target", true), 'method="get"'); ?>>
                         <button class="btn more flex_btn" type="submit">
                             <?php echo get_post_meta(get_the_ID(), "slider_button_text", true); ?>

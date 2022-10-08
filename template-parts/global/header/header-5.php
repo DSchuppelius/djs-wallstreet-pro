@@ -7,8 +7,8 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top  navbar4 header-style-<?php echo $current_options["header_presets_stlyle"]; ?>" role="navigation">
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
+<div class="navbar navbar-wrapper navbar-inverse navbar-static-top  navbar4 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>" role="navigation">
     <div class="container">
         <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="navbar-header">

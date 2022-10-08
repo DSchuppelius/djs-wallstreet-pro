@@ -7,23 +7,23 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
-$post_per_page = $current_options["home_blog_counts"];
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+$post_per_page = $current_setup->get("home_blog_counts");
 ?>	
 <div class="container home-blog-section">
-    <?php if (!empty($current_options["home_blog_heading"]) || !empty($current_options["home_blog_description"])): ?>
+    <?php if (!empty($current_setup->get("home_blog_heading")) || !empty($current_setup->get("home_blog_description"))): ?>
         <div class="row">
             <div class="section_heading_title">
-                <?php if ($current_options["home_blog_heading"]) { ?>
-                    <h1><?php echo $current_options["home_blog_heading"]; ?></h1>
+                <?php if ($current_setup->get("home_blog_heading")) { ?>
+                    <h1><?php echo $current_setup->get("home_blog_heading"); ?></h1>
                 <?php } ?>
-                <?php if ($current_options["home_blog_description"]) { ?>
+                <?php if ($current_setup->get("home_blog_description")) { ?>
                     <div class="pagetitle-separator">
                         <div class="pagetitle-separator-border">
                             <div class="pagetitle-separator-box"></div>
                         </div>
                     </div>
-                    <p><?php echo $current_options["home_blog_description"]; ?></p>
+                    <p><?php echo $current_setup->get("home_blog_description"); ?></p>
                 <?php } ?>
             </div>
         </div>
@@ -71,10 +71,10 @@ $post_per_page = $current_options["home_blog_counts"];
                             endif; ?>
                         </div>
                         <div class="home-blog-info">						
-                            <?php if ($current_options["home_meta_section_settings"] == false) { ?>
+                            <?php if ($current_setup->get("home_meta_section_settings") == false) { ?>
                                 <div class="home-blog-post-detail">
-                                    <span class="date"><?php echo get_the_date($current_options["fulldateformat"]); ?> </span>
-                                    <span class="comment"><a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-comment"></i><?php comments_number(__("No Comments", "wallstreet"), __("1 Comment", "wallstreet"), __("% Comments", "wallstreet")); ?></a></span>
+                                    <span class="date"><?php echo get_the_date($current_setup->get("fulldateformat")); ?> </span>
+                                    <span class="comment"><a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-comment"></i><?php comments_number(esc_html__("No Comments", "djs-wallstreet-pro"), esc_html__("1 Comment", "djs-wallstreet-pro"), esc_html__("% Comments", "djs-wallstreet-pro")); ?></a></span>
                                 </div>
                             <?php } ?>
                             <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>		
@@ -86,10 +86,10 @@ $post_per_page = $current_options["home_blog_counts"];
                 <?php $j++; ?>
             <?php endwhile;
         } else {
-            echo "<div class='post_message'>" . __("No posts to show", "wallstreet") . "</div>";
+            echo "<div class='post_message'>" . esc_html__("No posts to show", "djs-wallstreet-pro") . "</div>";
         } ?>
     </div>
-    <?php if ($current_options["view_all_posts_btn_enabled"] == true) {
-        the_show_all($current_options["all_posts_link"], $current_options["view_all_posts_text"], $current_options["view_all_link_target"]);
+    <?php if ($current_setup->get("view_all_posts_btn_enabled") == true) {
+        the_show_all($current_setup->get("all_posts_link"), $current_setup->get("view_all_posts_text"), $current_setup->get("view_all_link_target"));
     } ?>
 </div>

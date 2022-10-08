@@ -10,18 +10,18 @@
 global $link_color;
 global $background_color;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-if ($current_options["stylesheet"] == "default.css" || $current_options["stylesheet"] == "light.css") {
-    $link_color = $current_options["link_color"];
+if ($current_setup->get("stylesheet") == "default.css" || $current_setup->get("stylesheet") == "light.css") {
+    $link_color = $current_setup->get("link_color");
 } else {
-    $hash = substr($current_options["stylesheet"], 0, 1);
-    $color = substr($current_options["stylesheet"], 1);
+    $hash = substr($current_setup->get("stylesheet"), 0, 1);
+    $color = substr($current_setup->get("stylesheet"), 1);
 
     if ($hash == "#") {
-        $link_color = $current_options["stylesheet"];
+        $link_color = $current_setup->get("stylesheet");
     } else {
-        $link_color = "#" . $current_options["stylesheet"];
+        $link_color = "#" . $current_setup->get("stylesheet");
     }
 }
 
@@ -46,19 +46,19 @@ if(empty($temp_color) || $default_color == false || $temp_color === $default_col
 
 function get_custom_stylesheet($options = null) {
     if (empty($options)) {
-        $current_options = get_current_options();
+        $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     } else {
-        $current_options = $options;
+        $current_setup = $options;
     }
 
     $output = null;
 
-    if ($current_options["stylesheet"] == "light.css") {
+    if ($current_setup->get("stylesheet") == "light.css") {
         $output = "light.css";
-    } elseif ($current_options["stylesheet"] == "default.css") {
+    } elseif ($current_setup->get("stylesheet") == "default.css") {
         $output = "default.css";
     } else {
-        $hash = substr($current_options["stylesheet"], 0, 1);
+        $hash = substr($current_setup->get("stylesheet"), 0, 1);
         if ($hash == "#") {
             $output = "default.css";
         } else {

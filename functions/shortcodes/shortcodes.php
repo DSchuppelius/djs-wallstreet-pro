@@ -13,15 +13,15 @@ require_once "shortcodes_div.php";
 require_once "shortcodes_jetpack.php";
 
 function ageOF($atts, $content = null) {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     extract(shortcode_atts([
         'begin' => '', /* See post for date formats */
         'end' => 'now', /* See post for date formats */
         'date' => false,
         'month' => false,
-        'dateformat' => $current_options["fulldateformat"],
+        'dateformat' => $current_setup->get("fulldateformat"),
         'ageformat' => '%y', /* http://php.net/manual/en/function.date.php */
-        'fullageformat' => __('%y year(s) - %m month', 'wallstreet') /* http://php.net/manual/en/function.date.php */
+        'fullageformat' => esc_html__('%y year(s) - %m month', "djs-wallstreet-pro") /* http://php.net/manual/en/function.date.php */
 
     ], $atts));
 
@@ -29,7 +29,7 @@ function ageOF($atts, $content = null) {
     $to_date = null;
 
     if (empty($begin) && strtotime($content)) $begin = $content;
-    if (empty($end) || $end == "now" ) $to_date = new DateTime();
+    if (empty($end) || $end == "now") $to_date = new DateTime();
 
     $from_date = new DateTime($begin);
     $age = $from_date->diff($to_date);

@@ -12,7 +12,7 @@
 function theme_shortcode_clear_both() {
     return '<div style="clear:both"></div>';
 }
-add_shortcode( 'clear_both', 'theme_shortcode_clear_both' );
+add_shortcode('clear_both', 'theme_shortcode_clear_both');
 
 // The [div class="class"] shortcode
 function theme_shortcode_div($atts, $content=null) {

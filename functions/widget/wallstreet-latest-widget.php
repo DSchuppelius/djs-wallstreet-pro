@@ -23,15 +23,15 @@ class wallstreet_latest_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             "wallstreet_latest_widget",
-            __("WBR : Latest Posts", "wallstreet"),
-            ["description" => __("This widget allows you to display latest, popular and commented posts.", "wallstreet")]
+            esc_html__("WBR : Latest Posts", "djs-wallstreet-pro"),
+            ["description" => esc_html__("This widget allows you to display latest, popular and commented posts.", "djs-wallstreet-pro")]
         );
     }
 
     function widget_posts($posts) {
         global $post;
 
-        $current_options = get_current_options();
+        $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
         if($posts){
             foreach ($posts as $post) { 
@@ -47,10 +47,10 @@ class wallstreet_latest_widget extends WP_Widget {
                     </div>
                     <div class="sidebar-comment-box">
                         <span>
-                            <?php echo get_the_date($current_options["fulldateformat"], $post->id); ?>
+                            <?php echo get_the_date($current_setup->get("fulldateformat"), $post->id); ?>
                             <small>|</small>
                             <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                <?php _e("By", "wallstreet"); echo "&nbsp;"; the_author(); ?>
+                                <?php esc_html_e("By", "djs-wallstreet-pro"); echo "&nbsp;"; the_author(); ?>
                             </a>
                         </span>
                     </div>									
@@ -71,7 +71,7 @@ class wallstreet_latest_widget extends WP_Widget {
     public function widget($args, $instance) {
         global $wpdb;
         
-        $current_options = get_current_options();
+        $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
         $title = apply_filters("widget_title", $instance["title"]);
         $begin_widget = $args["before_widget"]; 
@@ -84,9 +84,9 @@ class wallstreet_latest_widget extends WP_Widget {
         } ?>
  
         <ul class="sidebar-tab sidebar-widget-tab">
-            <li class="active"><a data-toggle="tab" href="<?php the_currentURL(); ?>#popular"><?php _e("Popular", "wallstreet"); ?></a></li>
-            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#recent"><?php _e("Recent", "wallstreet"); ?></a></li>
-            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#comment"><?php _e("Comment", "wallstreet"); ?></a></li>
+            <li class="active"><a data-toggle="tab" href="<?php the_currentURL(); ?>#popular"><?php esc_html_e("Popular", "djs-wallstreet-pro"); ?></a></li>
+            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#recent"><?php esc_html_e("Recent", "djs-wallstreet-pro"); ?></a></li>
+            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#comment"><?php esc_html_e("Comment", "djs-wallstreet-pro"); ?></a></li>
         </ul>				
         <div class="tab-content" id="myTabContent">					
             <div id="popular" class="tab-pane fade active in">
@@ -124,10 +124,10 @@ class wallstreet_latest_widget extends WP_Widget {
                                 </div>
                                 <div class="sidebar-comment-box">
                                     <span>
-                                        <?php echo get_the_date($current_options["fulldateformat"], $post1->id); ?>
+                                        <?php echo get_the_date($current_setup->get("fulldateformat"), $post1->id); ?>
                                         <small>|</small>
                                         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
-                                            <?php _e("By", "wallstreet"); the_author(); ?>
+                                            <?php esc_html_e("By", "djs-wallstreet-pro"); the_author(); ?>
                                         </a>
                                     </span>
                                 </div>
@@ -150,8 +150,8 @@ class wallstreet_latest_widget extends WP_Widget {
             $title = "Tabs Content";
         } ?>
         <p>
-            <label for="<?php echo $this->get_field_id("title"); ?>"><?php _e("Title", "wallstreet"); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
+            <label for="<?php echo $this->get_field_id("title"); ?>"><?php esc_html_e("Title", "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
     <?php }
 

@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-$current_options = get_current_options(); ?>
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
     <head>
@@ -46,60 +46,49 @@ $current_options = get_current_options(); ?>
         <meta name="description" content="<?php if (is_single()) { echo htmlEntities(wp_trim_words($single_description, 120, '...')); } else if (!empty($page_description)) { bloginfo('name'); echo " - " . htmlEntities($page_description); } else { bloginfo('name'); echo " - "; bloginfo('description'); }?>" />
         <meta name="keywords" content="<?php echo $single_metakeytags; ?>" />
 
-        <base href="<?php echo esc_url(get_site_url()); ?>">
+        <base href="<?php echo esc_url(home_url("/")); ?>">
 
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <?php if ($current_options["upload_image_favicon"] != "") { ?>
-            <link rel="shortcut icon" href="<?php echo esc_url($current_options["upload_image_favicon"]); ?>" /> 
+        <?php if ($current_setup->get("upload_image_favicon") != "") { ?>
+            <link rel="shortcut icon" href="<?php echo esc_url($current_setup->get("upload_image_favicon")); ?>" /> 
         <?php }
         wp_head(); ?>
     </head>
     <?php
     $additional_BodyClasses = [];
-    if ($current_options["fixedheader_enabled"] && ($current_options["header_presets_stlyle"] != 3 && $current_options["header_presets_stlyle"] != 4)) {
+    if ($current_setup->get("fixedheader_enabled") && ($current_setup->get("header_presets_stlyle") != 3 && $current_setup->get("header_presets_stlyle") != 4)) {
         $additional_BodyClasses = ["body-static-top", "fixed_Header"];
     }
-    if ($current_options["fixedfooter_enabled"]) {
+    if ($current_setup->get("fixedfooter_enabled")) {
         $additional_BodyClasses[] = "fixed_Footer";
     }
-    if ($current_options["breadcrumbposition"] > 0 || $current_options["contentposition"] > 0) {
+    if ($current_setup->get("breadcrumbposition") > 0 || $current_setup->get("contentposition") > 0) {
         $additional_BodyClasses[] = "custom-positions";
     }
-    if ($current_options["a_underlined"]) {
+    if ($current_setup->get("a_underlined")) {
         $additional_BodyClasses[] = "a_underlined";
     }
-    if ($current_options["a_mark_targets"]) {
+    if ($current_setup->get("a_mark_targets")) {
         $additional_BodyClasses[] = "a_mark_targets";
     }
+    if (is_denied_specialtemplate()) {
+        $additional_BodyClasses[] = "denied_template_loaded";
+    }
     ?>
-    <body id="djs-body" <?php body_class($additional_BodyClasses); ?> <?php if (!$current_options["contextmenu_enabled"]) { echo 'oncontextmenu="return false;"'; } ?>>
-        <?php if ($current_options["page_fader_enabled"]) { ?>
-            <div id="page_fader">
-                <div class="page_fader logo <?php row_frame_border(""); ?>">
-                    <?php get_template_part("template-parts/global/header/navbar", "logo"); ?>
-                    <h2 class="animate">Inhalt wird geladen...</h2>
-                </div>
-            </div>
-            <script>
-                const style = document.createElement('style');
-                style.innerHTML = '#page_fader { display:flex; }';
-                document.head.appendChild(style);
-            </script>
-            <noscript>
-                <div class="warning java"><span title="JavaScript Disabled" class="material-symbols-outlined">report</span></div>
-            </noscript>
-        <?php } ?>
+    <body id="djs-body" <?php body_class($additional_BodyClasses); ?> <?php if (!$current_setup->get("contextmenu_enabled")) { echo 'oncontextmenu="return false;"'; } ?>>
+        <?php wp_body_open(); ?>
+        <?php if ($current_setup->get("page_fader_enabled")) { get_template_part("template-parts/global/header/page", "fader"); } ?>
         <div id="wall_wrapper">	
             <!--Header Top Layer Section-->
-            <?php if (!$current_options["fixedheader_enabled"]) { ?>
-                <div class="rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_header"]; ?>">
+            <?php if (!$current_setup->get("fixedheader_enabled")) { ?>
+                <div class="rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_header"); ?>">
             <?php } ?>
-            <?php if ($current_options["header_social_media_enabled"] == true || $current_options["contact_header_settings"] == "on") { ?>
-                <div class="header-top-area rellax" data-rellax-speed="<?php echo $current_options["data_rellax_speed_social_contact_header"]; ?>">
+            <?php if ($current_setup->get("header_social_media_enabled") == true || $current_setup->get("contact_header_settings") == "on") { ?>
+                <div class="header-top-area rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_social_contact_header"); ?>">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
-                                <?php if ($current_options["header_social_media_enabled"] == true) { ?>
+                                <?php if ($current_setup->get("header_social_media_enabled") == true) { ?>
                                     <?php
                                     global $ul_class;
                                     $ul_class = "head";
@@ -107,13 +96,13 @@ $current_options = get_current_options(); ?>
                                 } ?>	
                             </div>
                             <div class="col-sm-6">
-                                <?php if ($current_options["contact_header_settings"] == "on") { ?>
+                                <?php if ($current_setup->get("contact_header_settings") == "on") { ?>
                                     <ul class="head-contact-info">
-                                        <?php if ($current_options["contact_header_contact_settings"] != "") { ?>
-                                            <li><i class="fa fa-phone-square"></i><?php echo $current_options["contact_header_contact_settings"]; ?></li>
+                                        <?php if ($current_setup->get("contact_header_contact_settings") != "") { ?>
+                                            <li><i class="fa fa-phone-square"></i><?php echo $current_setup->get("contact_header_contact_settings"); ?></li>
                                         <?php } ?>
-                                        <?php if ($current_options["contact_header_email_settings"] != "") { ?>
-                                            <li><i class="fa fa-envelope"></i><?php echo $current_options["contact_header_email_settings"]; ?></li>
+                                        <?php if ($current_setup->get("contact_header_email_settings") != "") { ?>
+                                            <li><i class="fa fa-envelope"></i><?php echo $current_setup->get("contact_header_email_settings"); ?></li>
                                         <?php } ?>			
                                     </ul>
                                 <?php } ?>
@@ -125,13 +114,13 @@ $current_options = get_current_options(); ?>
             <!--/Header Top Layer Section.-->	
     
             <!--Header Logo & Menus-->
-            <?php get_template_part("template-parts/global/header/header", $current_options["header_presets_stlyle"]); ?>
-            <?php if (!$current_options["fixedheader_enabled"]): ?>
+            <?php get_template_part("template-parts/global/header/header", $current_setup->get("header_presets_stlyle")); ?>
+            <?php if (!$current_setup->get("fixedheader_enabled")): ?>
                 </div>
             <?php endif; ?>
-            <?php if ($current_options["search_effect_style_setting"] == "toogle") { ?>
-                <div id="searchbar_fullscreen" <?php if ($current_options["search_effect_style_setting"] == "popup_light") { ?> class="bg-light" <?php } ?>>
+            <?php if ($current_setup->get("search_effect_style_setting") == "toogle") { ?>
+                <div id="searchbar_fullscreen" <?php if ($current_setup->get("search_effect_style_setting") == "popup_light") { ?> class="bg-light" <?php } ?>>
                     <button type="button" class="close material-icons-outlined has-icon">close</button>
-                    <form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url(home_url("/")); ?>"><label><input type="search" class="search-field" placeholder="<?php echo esc_html__("Search", "wallstreet"); ?> …" value="" name="s" id="s" required></label><button type="submit" class="search-submit btn" value="<?php echo esc_html__("Search", "wallstreet"); ?>"><?php echo esc_html__("Search", "wallstreet"); ?></button></form>
+                    <form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url(home_url("/")); ?>"><label><input type="search" class="search-field" placeholder="<?php esc_attr_e("Search", "djs-wallstreet-pro"); ?> …" value="" name="s" id="s" required></label><button type="submit" class="search-submit btn" value="<?php echo esc_attr_e("Search", "djs-wallstreet-pro"); ?>"><?php esc_html_e("Search", "djs-wallstreet-pro"); ?></button></form>
                 </div>
             <?php } ?>

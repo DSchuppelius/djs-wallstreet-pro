@@ -8,20 +8,20 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 global $template;
-$current_options = get_current_options();
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 $templates = ["template-parts/index/index", "banner"];
 
 get_template_parts($templates, true);
 
-if ($current_options["team_template_team_section_show_hide"] == true) {
+if ($current_setup_posttypes->get("team_template_team_section_show_hide") == true) {
     get_template_part("template-parts/team/team", ltrim(filter_var(basename($template), FILTER_SANITIZE_NUMBER_INT), "-"));
 }
 
-if ($current_options["team_template_feature_section_show_hide"] == true) {
+if ($current_setup_posttypes->get("team_template_feature_section_show_hide") == true) {
     get_template_part("template-parts/index/index", "features");
 }
 
-if ($current_options["team_template_client_section_show_hide"] == true) {
+if ($current_setup_posttypes->get("team_template_client_section_show_hide") == true) {
     get_template_part("template-parts/index/index", "client");
 }
 

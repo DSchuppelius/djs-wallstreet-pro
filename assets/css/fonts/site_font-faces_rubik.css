@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontLight";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontBold";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontSemi";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-SemiBold.ttf');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "SiteFontMedium";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-Medium.ttf');
+    font-display: swap;
+}
+
+/*.blog-pagination a:not(.btn.next, .btn.prev), .page-links a, .blog-pagination span, .page-numbers {
+    padding: 8px 0 !important;
+}*/

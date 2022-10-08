@@ -36,14 +36,14 @@ function get_home_blog_excerpt($length, $read) {
 }
 
 function get_post_blog_excerpt($length, $read) {
-    $current_options = get_current_options();
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $excerpt = get_the_excerpt();
     $excerpt = strip_all($excerpt);
     $original_len = strlen($excerpt);
     $excerpt = substr($excerpt, 0, $length);
 
     if ($original_len > $length) {
-        if ($current_options["blog_template_read_more"] != null) {
+        if ($current_setup->get("blog_template_read_more") != null) {
             $excerpt = $excerpt . get_the_read_more();
         }
     }

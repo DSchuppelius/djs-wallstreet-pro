@@ -66,8 +66,13 @@ a[target=_blank]:after {
     font-size: 0.6em;
 }
 
-article figure figcaption {
+article figure figcaption,
+article figure[class*="wp-block-"] figcaption {
     text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 0.8em
+}
+
+article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
     font-size: 0.8em
 }
 
@@ -81,7 +86,10 @@ article figure figcaption {
     font-weight: 400
 }
 
-.about-us .social a {
+.about-us .social a,
+.about-us .social a .bi,
+.about-us .social a .fa,
+.about-us .social a .material-icons {
     font-size: 30px;
 }
 
@@ -191,6 +199,10 @@ article figure figcaption {
     font-weight: 400;
     font-size: 1em
 }
+
+    .blog-pagination a .fa, .page-links a .fa {
+        font-size: 1em
+    }
 
 .blog-post-date {
     font-weight: 600

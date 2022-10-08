@@ -1,6 +1,6 @@
-jQuery( document ).ready(function($) {
+jQuery(document).ready(function($) {
 	// Change the width of logo
-	wp.customize('busiprof_logo_length', function(control) {
+	wp.customize('wallstreet_logo_length', function(control) {
 		control.bind(function( controlValue ) {
 			$('.custom-logo').css('max-width', '500px');
 			$('.custom-logo').css('width', controlValue + 'px');

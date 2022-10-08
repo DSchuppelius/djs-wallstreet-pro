@@ -11,7 +11,8 @@ body {
         background-color: rgba(0, 0, 0, 0.6);
     }
 
-article figure figcaption {
+article figure figcaption,
+article figure[class*="wp-block-"] figcaption {
     color: #f5f5f5
 }
 

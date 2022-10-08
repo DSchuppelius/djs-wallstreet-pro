@@ -1,9 +1,28 @@
 ### Versionhistory
 
+#### Version 2.1.0:
+    1. Preparing for WordPress Themes
+        1. Split theme-functions from plugin-functions (Post-Types and Shortcodes)
+        2. Change Textdomains
+            1. Update pot file
+            2. Update german locale
+    2. Add errorpage for required plugin
+    3. New theme-setup classes and new config-load
+#### Version 2.0.7:
+    1. Fix some picture height in team
+    2. Fix some translations in menu-search* (single and more)
+    3. Add some constants for social-media
+#### Version 2.0.6:
+    1. Escaping some scripts and texts
+    2. Remove unneeded code
+#### Version 2.0.5:
+    1. Change theme-setup
+    2. Add some sanitizers
+    3. Add some css fixes
 #### Version 2.0.4:
     1. Fix wrong height in portfolio-single
     2. Change some picture heights in portfolio
-    3: Change font-size of wp-caption and remove unneeded css
+    3. Change font-size of wp-caption and remove unneeded css
     4. Add customizer to underline and mark links
     5. Add customizer to limit the archivlists
 #### Version 2.0.3:
@@ -37,7 +56,7 @@
     6. Remove unneeded styles
     7. Clean IDE Folder
     8. Changing Readme.txt to Readme.md
-    9. Split Versions in README.MD to HISTORY.MD
+    9. Split Versions in README.MD to CHANGELOG.MD
 #### Version 2.0.0:
     1. Refactoring Theme
     2. Add Parallaxfunctions (Background and Site-elements)

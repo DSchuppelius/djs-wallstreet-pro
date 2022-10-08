@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <!-- Page Title Section -->
 <?php get_template_parts(["template-parts/index/index", "banner"], true); ?>
 <!-- /Page Title Section -->

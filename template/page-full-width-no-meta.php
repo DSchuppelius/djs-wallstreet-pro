@@ -9,7 +9,6 @@
  */
 global $theme_blog_section;
 
-$current_options = get_current_options();
 $theme_blog_section = "blog-detail-section no-meta";
 ?>
 <?php get_template_parts(["template-parts/index/index", "banner"], true); ?>

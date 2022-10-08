@@ -10,7 +10,7 @@
 global $theme_blog_section;
 global $no_thumb;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $theme_blog_section = "blog-detail-section";
 $no_thumb = true;
 
@@ -23,11 +23,11 @@ if(!isset($default_arg)) $default_arg="";
         <!--Blog Area-->
         <?php the_post(); ?>
         <div class="blog-section-attachment col-md-12<?php innerrow_frame_border(" ");?>">
-            <?php echo wp_get_attachment_link(get_post_thumbnail_id(), 'fullpost-thumb', true, false, false, array( "class" => "img-responsive" )); ?>
+            <?php echo wp_get_attachment_link(get_post_thumbnail_id(), 'fullpost-thumb', true, false, false, array("class" => "img-responsive")); ?>
         </div>
     </div>
     <div class="row attachment-section content <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo (is_active_sidebar( 'sidebar_primary' )?'8':'12'); ?> flexcolumn">
+        <div class="col-md-<?php echo (is_active_sidebar('sidebar_primary')?'8':'12'); ?> flexcolumn">
             <?php get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
             <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
             <?php if(has_excerpt()) {
@@ -35,15 +35,15 @@ if(!isset($default_arg)) $default_arg="";
             } else if (!empty(get_the_content())) {
                 the_content();
             } else {
-                echo "<p>".__("No description available.", "wallstreet")."</p>";
+                echo "<p>". esc_html__("No description available.", "djs-wallstreet-pro")."</p>";
             }
             $data = get_post_meta( $post->ID, '_wp_attachment_metadata', true );
             if(!empty($data)){
-                echo '<h4 style="margin-top:30px;">'.__("Properties of the media", "wallstreet").'</h4>';
-                if(!empty($data['width'])) { echo __("Resolution (width/height):", "wallstreet")." ".$data['width']."/".$data['height']." Pixel<br />";}
-                if(!empty($data['image_meta']['camera'])) { echo __("Camera model:", "wallstreet")." ".$data['image_meta']['camera']."<br />";}
-                if(!empty($data['image_meta']['iso'])) { echo __("ISO:", "wallstreet")." ".$data['image_meta']['iso']."<br />";}
-                if(!empty($data['image_meta']['shutter_speed'])) { echo __("Exposure time:", "wallstreet")." ".$data['image_meta']['shutter_speed']."<br />";}
+                echo '<h4 style="margin-top:30px;">'. esc_html__("Properties of the media", "djs-wallstreet-pro").'</h4>';
+                if(!empty($data['width'])) { esc_html_e("Resolution (width/height):", "djs-wallstreet-pro")." ".$data['width']."/".$data['height']." Pixel<br />";}
+                if(!empty($data['image_meta']['camera'])) { esc_html_e("Camera model:", "djs-wallstreet-pro")." ".$data['image_meta']['camera']."<br />";}
+                if(!empty($data['image_meta']['iso'])) { esc_html_e("ISO:", "djs-wallstreet-pro")." ".$data['image_meta']['iso']."<br />";}
+                if(!empty($data['image_meta']['shutter_speed'])) { esc_html_e("Exposure time:", "djs-wallstreet-pro")." ".$data['image_meta']['shutter_speed']."<br />";}
             }
             get_named_template_parts("template-parts/content/content", ["meta-footer", "footer"]);
 
@@ -59,9 +59,9 @@ if(!isset($default_arg)) $default_arg="";
                 setup_postdata($post);
                 $no_thumb = false;
                 get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
-                <h4 class="linked_post"><?php _e("Linked post", "wallstreet")?></h4>
+                <h4 class="linked_post"><?php esc_html_e("Linked post", "djs-wallstreet-pro")?></h4>
                 <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
-                <?php echo the_content(__('Read More', 'wallstreet'));
+                <?php echo the_content(esc_html__('Read More', "djs-wallstreet-pro"));
                 get_named_template_parts("template-parts/content/content", ["meta-footer", "footer", "author"]);
             }
             get_template_part("template-parts/content/filler"); ?>            

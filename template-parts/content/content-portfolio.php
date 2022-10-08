@@ -7,10 +7,11 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 
 $term_args = ["hide_empty" => true, "orderby" => "id"];
-$posts_per_page = $current_options["portfolio_numbers_on_templates"];
+$posts_per_page = $current_setup_posttypes->get("portfolio_numbers_on_templates");
 $tax_terms = get_terms(PORTFOLIO_TAXONOMY, $term_args);
 $default_tax_id = get_option("wallstreet_theme_default_term_id");
 $j = 1;
@@ -36,16 +37,16 @@ if (isset($_GET["div"])) {
     <div class="container<?php big_border(" "); ?>">
         <div class="row">
             <div class="section_heading_title">
-                <?php if ($current_options["two_thre_four_col_port_tem_title"]) { ?>
-                    <h1><?php echo $current_options["two_thre_four_col_port_tem_title"]; ?></h1>
+                <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_title")) { ?>
+                    <h1><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_title"); ?></h1>
                     <div class="pagetitle-separator">
                         <div class="pagetitle-separator-border">
                             <div class="pagetitle-separator-box"></div>
                         </div>
                     </div>
                 <?php } ?>
-                <?php if ($current_options["two_thre_four_col_port_tem_desc"]) { ?>
-                    <p><?php echo $current_options["two_thre_four_col_port_tem_desc"]; ?></p>
+                <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_desc")) { ?>
+                    <p><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_desc"); ?></p>
                 <?php } ?>				
             </div>
         </div>
@@ -57,7 +58,7 @@ if (isset($_GET["div"])) {
                             $decoded_slug = rawurldecode($tax_term->slug); ?>
                             <li rel="tab" class="nav-item" >
                                 <span class="tab">
-                                    <a id="tab-<?php echo $decoded_slug; ?>" href="<?php echo esc_url($current_options["page_fader_enabled"] ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
+                                    <a id="tab-<?php echo $decoded_slug; ?>" href="<?php echo esc_url($current_setup->get("page_fader_enabled") ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>" class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo $tax_term->name; ?></a>
                                 </span>
                             </li>
                         <?php } ?>
@@ -159,7 +160,7 @@ if (isset($_GET["div"])) {
         </div>
     </div>
 </section>
-<?php if (!$current_options["page_fader_enabled"]) { ?>
+<?php if (!$current_setup->get("page_fader_enabled")) { ?>
     <script type="text/javascript">
         jQuery('.lightbox').hide();
         jQuery('#lightbox').hide();

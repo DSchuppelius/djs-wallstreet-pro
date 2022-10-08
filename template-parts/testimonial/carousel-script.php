@@ -7,11 +7,11 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
-$testimonial_slide_type = $current_options["testimonial_slide_type"];
-$testimonial_scroll_items = $current_options["testimonial_scroll_items"];
-$testimonial_scroll_duration = $current_options["testimonial_scroll_duration"];
-$testimonial_timeout_duration = $current_options["testimonial_timeout_duration"];
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
+$testimonial_slide_type = $current_setup_posttypes->get("testimonial_slide_type");
+$testimonial_scroll_items = $current_setup_posttypes->get("testimonial_scroll_items");
+$testimonial_scroll_duration = $current_setup_posttypes->get("testimonial_scroll_duration");
+$testimonial_timeout_duration = $current_setup_posttypes->get("testimonial_timeout_duration");
 
 if (!is_testimonial_grid()): ?>
     <script>

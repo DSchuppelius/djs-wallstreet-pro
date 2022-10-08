@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-class theme_copyright_customizer extends theme_customizer {
+class theme_copyright_customizer extends Theme_Customizer {
 
     public function __construct() {
         parent::__construct();
@@ -18,27 +18,32 @@ class theme_copyright_customizer extends theme_customizer {
         $wp_customize->add_panel("wallstreet_copyright_setting", [
             "priority" => 900,
             "capability" => "edit_theme_options",
-            "title" => __("Copyright and cookie settings", "wallstreet"),
+            "title" => esc_html__("Copyright and cookie settings", "djs-wallstreet-pro"),
         ]);
     }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("copyright_section_one", [
-            "title" => __("Footer copyright settings", "wallstreet"),
+            "title" => esc_html__("Footer copyright settings", "djs-wallstreet-pro"),
             "priority" => 35,
             "panel" => "wallstreet_copyright_setting",
         ]);
 
         $wp_customize->add_section("cookie_section_one", [
-            "title" => __("Cookie settings", "wallstreet"),
+            "title" => esc_html__("Cookie settings", "djs-wallstreet-pro"),
             "priority" => 35,
             "panel" => "wallstreet_copyright_setting",
         ]);
 
     }
 
+    //HACK Theme Check - required to add theme in WordPress theme library (found no sanitizer)
+    private function hack_4_theme_check__footer_link(){
+        return sanitize_link_field(esc_html__('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "djs-wallstreet-pro"));
+    }
+
     public function customize_register_settings_and_controls($wp_customize) {
-        $current_options = get_current_options();
+        $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
         $wp_customize->add_setting($this->theme_options_name . "[footer_link_enabled]", [
             "default" => true,
@@ -48,18 +53,20 @@ class theme_copyright_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[footer_link_enabled]", [
-            "label" => __("Enable Footer Link-text", "wallstreet"),
+            "label" => esc_html__("Enable Footer Link-text", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
             "type" => "checkbox",
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[footer_link]", [
-            "default" => __('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "wallstreet"),
+            "default" => $this->hack_4_theme_check__footer_link(),
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_link_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[footer_link]", [
-            "label" => __("Footer Link-text", "wallstreet"),
+            "label" => esc_html__("Footer Link-text", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
             "type" => "textarea",
         ]);
@@ -72,51 +79,55 @@ class theme_copyright_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[footerbar_enabled]", [
-            "label" => __("Enable Footer Copyright", "wallstreet"),
+            "label" => esc_html__("Enable Footer Copyright", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
             "type" => "checkbox",
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[footer_copyright]", [
-            "default" => __("Copyright @ 2022 - DJS-WallStreet-Pro. Designed by", "wallstreet") . " " . '<a href="https://schuppelius.org" rel="nofollow" target="_blank">' . __("Daniel Joerg Schuppelius", "wallstreet") . "</a>",
+            "default" => esc_html__("Copyright @ 2022 - DJS-WallStreet-Pro. Designed by", "djs-wallstreet-pro") . " " . '<a href="https://schuppelius.org" rel="nofollow" target="_blank">' . esc_html__("Daniel Joerg Schuppelius", "djs-wallstreet-pro") . "</a>",
+            "sanitize_callback" => "sanitize_link_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[footer_copyright]", [
-            "label" => __("Copyright text", "wallstreet"),
+            "label" => esc_html__("Copyright text", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
             "type" => "textarea",
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[cookie_before]", [
-            "default" => __("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "wallstreet") . ' <a href="/' . urlencode(strtolower(__("Imprint", "wallstreet"))) . '">' . __("Imprint", "wallstreet") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(__("Privacy policy", "wallstreet")))) . '">' . __("Privacy policy", "wallstreet") . '</a>. ' . __("Do you have any further questions on this topic? Write me via the", "wallstreet").' <a href="/' . urlencode(strtolower(__("contact", "wallstreet"))) . '">' . __("contact form", "wallstreet") . '</a> ' . __("or by e-mail", "wallstreet") . ' (<a href="mailto:' . $current_options["contact_email_number_one"] . '" >' . $current_options["contact_email_number_one"] . "</a>)",
+            "default" => esc_html__("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:' . $current_setup->get("contact_email_number_one") . '" >' . $current_setup->get("contact_email_number_one") . "</a>)",
+            "sanitize_callback" => "sanitize_link_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[cookie_before]", [
-            "label" => __("Cookietext before button", "wallstreet"),
+            "label" => esc_html__("Cookietext before button", "djs-wallstreet-pro"),
             "section" => "cookie_section_one",
             "type" => "textarea",
         ]);
 
         $wp_customize->add_setting($this->theme_options_name . "[cookie_link]", [
-            "default" => __("Yes, I would like to activate the content on this page...", "wallstreet"),
+            "default" => esc_html__("Yes, I would like to activate the content on this page...", "djs-wallstreet-pro"),
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[cookie_link]", [
-            "label" => __("Buttontext", "wallstreet"),
+            "label" => esc_html__("Buttontext", "djs-wallstreet-pro"),
             "section" => "cookie_section_one",
             "type" => "textarea",
         ]);
 
         $wp_customize->add_setting($this->theme_options_name . "[cookie_after]", [
-            "default" => __("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "wallstreet"),
+            "default" => esc_html__("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "djs-wallstreet-pro"),
+            "sanitize_callback" => "sanitize_link_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[cookie_after]", [
-            "label" => __("Cookietext after button", "wallstreet"),
+            "label" => esc_html__("Cookietext after button", "djs-wallstreet-pro"),
             "section" => "cookie_section_one",
             "type" => "textarea",
         ]);

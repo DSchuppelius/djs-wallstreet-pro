@@ -7,29 +7,29 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
 <div class="service-section">
     <div class="container wow fadeInDown" data-wow-delay="1s">
-    	<?php if (!empty($current_options["service_title"]) || !empty($current_options["service_description"])): ?>
+    	<?php if (!empty($current_setup_posttypes->get("service_title")) || !empty($current_setup_posttypes->get("service_description"))): ?>
     	<div class="row">
     		<div class="section_heading_title">
-    		<?php if ($current_options["service_title"]) { ?>
-    			<h1><?php echo $current_options["service_title"]; ?></h1>
+    		<?php if ($current_setup_posttypes->get("service_title")) { ?>
+    			<h1><?php echo $current_setup_posttypes->get("service_title"); ?></h1>
     		<div class="pagetitle-separator">
     			<div class="pagetitle-separator-border">
     				<div class="pagetitle-separator-box"></div>
     			</div>
     		</div>
     		<?php } ?>
-    		<?php if ($current_options["service_description"]) { ?>
-    			<p><?php echo $current_options["service_description"]; ?></p>
+    		<?php if ($current_setup_posttypes->get("service_description")) { ?>
+    			<p><?php echo $current_setup_posttypes->get("service_description"); ?></p>
     		<?php } ?>
     		</div>
     	</div>
     	<?php endif; ?>
     	<div class="row service3">
     		<?php $j = 1;
-            $total_services = $current_options["service_list"];
+            $total_services = $current_setup_posttypes->get("service_list");
             $args = [
                 "post_type" => SERVICE_POST_TYPE,
                 "posts_per_page" => $total_services,
@@ -80,7 +80,7 @@ $current_options = get_current_options(); ?>
                     $j++;
                 endwhile;
             } else {
-                $service_defaulttext = [__("Product designing", "wallstreet"), __("WordPress themes", "wallstreet"), __("Responsive designs", "wallstreet")];
+                $service_defaulttext = [__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive designs", "djs-wallstreet-pro")];
                 for ($i = 1; $i <= 3; $i++) { ?>
                     <div class="col-md-4 col-sm-6">
                         <div class="service-effect">
@@ -90,7 +90,7 @@ $current_options = get_current_options(); ?>
                             <div class="service-area">
                                 <h2><a href="<?php the_currentURL(); ?>"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
                                 <p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
-                                <div class="service-btn"><a href="<?php the_currentURL(); ?>"><?php _e("Read More", "wallstreet"); ?></a></div>
+                                <div class="service-btn"><a href="<?php the_currentURL(); ?>"><?php esc_html_e("Read More", "djs-wallstreet-pro"); ?></a></div>
                             </div>
                         </div>
                     </div>

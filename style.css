@@ -7,15 +7,15 @@ Author URI: https://schuppelius.org
 Base Author: Webriti
 Base Author URI: https://webriti.com
 Description: WordPress business theme with setting options for multiple columns, colors and different formats. This new and standalone theme is based on and compatible with the Webriti Wallstreet or Wallstreet Pro Theme
-Tags: full-width-template, threaded-comments, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, featured-images, footer-widgets, blog, sticky-post, custom-background, custom-menu, translation-ready, portfolio, fixed-header, fixed-footer, parallax-background, diffrent-borders, 
-Version: 2.0.1
+Tags: full-width-template, threaded-comments, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, featured-images, footer-widgets, blog, sticky-post, custom-background, custom-menu, translation-ready, portfolio
+Version: 2.1.0
 Requires at least: 5.3
-Tested up to: 6.0.2
-Requires PHP: 5.6.20
+Tested up to: 6.0
+Requires PHP: 5.6
 Requires MySQL: 5.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
-Text Domain: wallstreet
+Text Domain: djs-wallstreet-pro
 */
 #comment-nav-below > .nav-previous, #comment-nav-below > .nav-next {
     float: none;
@@ -2793,10 +2793,10 @@ div.collapsing ul.nav {
 
 .pagetitle-separator-border {
     width: 101px;
-    height: 5px;
+    height: 6px;
     margin: 0 auto;
     position: relative;
-    top: -.15rem;
+    top: -0.1em;
     border-radius: 3px
 }
 
@@ -2804,7 +2804,7 @@ div.collapsing ul.nav {
     height: 12px;
     margin: 23px auto 45px;
     position: relative;
-    top: -.28em;
+    top: -0.225em;
     width: 12px;
     border-radius: 3px
 }
@@ -4494,6 +4494,12 @@ div.collapsing ul.nav {
         border-radius: 50px
     }
 
+        .team-section1 .team-img .overlay .custom-social-icons li > a > i {
+            position: relative;
+            bottom: 0.165em;
+            left: 0.015em;
+        }
+
     .team-section1.team3 {
         padding: 70px 0
     }
@@ -5145,6 +5151,10 @@ div.collapsing ul.nav {
     line-height: 2
 }
 
+.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper::before {
+    padding-top: 56.5%;
+}
+
 .wpcf7 p {
     margin-top: 10px
 }
@@ -5254,21 +5264,13 @@ article .wp-block-image figure {
         text-align: center
     }
 
-    article figure:not(.wp-block-embed) figcaption {
-        margin: 10px auto 0px;
-    }
-
-    article figure.wp-block-embed figcaption {
-        margin: 0 auto;
-    }
-
     article figure.wp-block-gallery > figcaption {
         margin-top: -15px;
         margin-bottom: 15px
     }
 
     article figure.wp-block-gallery.has-nested-images > figcaption {
-        margin-top: 0
+        margin: 0
     }
 
 article footer .blog-post-meta {

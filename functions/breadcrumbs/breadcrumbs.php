@@ -12,7 +12,7 @@ function qt_custom_breadcrumbs() {
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $firstDelimiter = '<span class="first material-icons-outlined">home_work</span>';
     $delimiter = '<span class="material-icons-outlined">double_arrow</span>'; // delimiter between crumbs
-    $home = __("Home", "wallstreet"); // text for the 'Home' link
+    $home = esc_html__("Home", "djs-wallstreet-pro"); // text for the 'Home' link
     $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $before = '<li class="active">'; // tag before the current crumb
     $after = "</li>"; // tag after the current crumb
@@ -34,9 +34,9 @@ function qt_custom_breadcrumbs() {
             if ($thisCat->parent != 0) {
                 echo get_category_parents($thisCat->parent, true, $delimiter);
             }
-            echo $before . __("Archive by category", "wallstreet") . ' "' . single_cat_title("", false) . '"' . $after;
+            echo $before . esc_html__("Archive by category", "djs-wallstreet-pro") . ' "' . single_cat_title("", false) . '"' . $after;
         } elseif (is_search()) {
-            echo $before . __("Search results for", "wallstreet") . ': "' . get_search_query() . '"' . $after;
+            echo $before . esc_html__("Search results for", "djs-wallstreet-pro") . ': "' . get_search_query() . '"' . $after;
         } elseif (is_day()) {
             echo '<a href="' . esc_url(get_year_link(get_the_time("Y"))) . '">' . get_the_time("Y") . "</a>" . $delimiter;
             echo '<a href="' . esc_url(get_month_link(get_the_time("Y"), get_the_time("m"))) . '">' . get_the_time("F") . "</a>" . $delimiter;
@@ -71,7 +71,7 @@ function qt_custom_breadcrumbs() {
             if (!empty($post_type)) {
                 echo $before . $post_type->labels->singular_name . $after;
             } else {
-                echo $before . __("Archive", "wallstreet") . $after;
+                echo $before . esc_html__("Archive", "djs-wallstreet-pro") . $after;
             }
         } elseif (is_attachment()) {
             $parent = get_post($post->post_parent);
@@ -107,23 +107,23 @@ function qt_custom_breadcrumbs() {
                 echo $before . get_the_title() . $after;
             }
         } elseif (is_tag()) {
-            echo $before . __("Posts tagged", "wallstreet") . ': "' . single_tag_title("", false) . '"' . $after;
+            echo $before . esc_html__("Posts tagged", "djs-wallstreet-pro") . ': "' . single_tag_title("", false) . '"' . $after;
         } elseif (is_author()) {
             global $author;
             $userdata = get_userdata($author);
-            echo $before . __("Articles posted by", "wallstreet") . " " . $userdata->display_name . $after;
+            echo $before . esc_html__("Articles posted by", "djs-wallstreet-pro") . " " . $userdata->display_name . $after;
         } elseif (is_404()) {
-            echo $before . __("Error 404", "wallstreet") . $after;
+            echo $before . esc_html__("Error 404", "djs-wallstreet-pro") . $after;
         } elseif (is_archive()) {
-            echo $before . __("Archive", "wallstreet") . '<span class="material-icons-outlined">archive</span>' . $after;
+            echo $before . esc_html__("Archive", "djs-wallstreet-pro") . '<span class="material-icons-outlined">archive</span>' . $after;
         } else {
-            echo $before . __("Unknown", "wallstreet") . '<span class="material-icons-outlined">device_unknown</span>' . $after;
+            echo $before . esc_html__("Unknown", "djs-wallstreet-pro") . '<span class="material-icons-outlined">device_unknown</span>' . $after;
         }
         if (get_query_var("paged")) {
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
                 echo "";
             }
-            echo " ( " . __("Page", "wallstreet") . "&nbsp;" . get_query_var("paged") . " )";
+            echo " (" . esc_html__("Page", "djs-wallstreet-pro") . "&nbsp;" . get_query_var("paged") . ")";
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
                 echo "";
             }

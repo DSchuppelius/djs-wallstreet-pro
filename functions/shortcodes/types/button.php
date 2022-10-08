@@ -122,7 +122,7 @@ tinyMCEPopup.onInit.add(BUTTONDialog.init, BUTTONDialog);
             
             <tr>
                 <td class="lable-all">Link</td>
-                <td><input class="input-medium" placeholder="http://facebook.com" type="text" id="button-link" value="" name="button-link"></td>
+                <td><input class="input-medium" placeholder="<?php echo FACEBOOK_URL; ?>" type="text" id="button-link" value="" name="button-link"></td>
             </tr>
             <tr>
                 <td class="lable-all">Text</td>

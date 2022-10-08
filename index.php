@@ -10,7 +10,7 @@
 global $more;
 global $theme_blog_section;
 
-$current_options = get_current_options();
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $theme_blog_section = "blog-section-left";
 
 get_template_parts(["template-parts/index/index", "banner"], true);
@@ -28,7 +28,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                 $post_type_data->the_post();
                 $more = 0;
                 get_named_template_parts("template-parts/content/content", ["head", "title"]);
-                the_content(__("Read More", "wallstreet"));
+                the_content(esc_html__("Read More", "djs-wallstreet-pro"));
                 get_named_template_parts("template-parts/content/content", ["meta", "footer"]);
             }
             the_pagination($paged, $post_type_data);

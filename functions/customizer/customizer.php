@@ -9,8 +9,8 @@
  */
 if (!defined('ABSPATH')) exit;
 
-if (!class_exists('theme_customizer')) {
-    abstract class theme_customizer {
+if (!class_exists('Theme_Customizer')) {
+    abstract class Theme_Customizer {
         protected string $theme_options_name;
 
         protected bool $register_section;

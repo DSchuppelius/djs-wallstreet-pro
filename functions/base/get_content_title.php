@@ -16,37 +16,37 @@ function get_content_title() {
 
     switch ($post_format) {
         case "aside":
-            $output .= __("Aside", "wallstreet");
+            $output .= esc_html__("Aside", "djs-wallstreet-pro");
             break;
         case "audio":
-            $output .= __("Audio", "wallstreet");
+            $output .= esc_html__("Audio", "djs-wallstreet-pro");
             break;
         case "video":
-            $output .= __("Video", "wallstreet");
+            $output .= esc_html__("Video", "djs-wallstreet-pro");
             break;
         case "chat":
-            $output .= __("Chat", "wallstreet");
+            $output .= esc_html__("Chat", "djs-wallstreet-pro");
             break;
         case "gallery":
-            $output .= __("Gallery", "wallstreet");
+            $output .= esc_html__("Gallery", "djs-wallstreet-pro");
             break;
         case "image":
-            $output .= __("Image", "wallstreet");
+            $output .= esc_html__("Image", "djs-wallstreet-pro");
             break;
         case "link":
-            $output .= __("Link", "wallstreet");
+            $output .= esc_html__("Link", "djs-wallstreet-pro");
             break;
         case "quote":
-            $output .= __("Quote", "wallstreet");
+            $output .= esc_html__("Quote", "djs-wallstreet-pro");
             break;
         case "status":
-            $output .= __("Status", "wallstreet");
+            $output .= esc_html__("Status", "djs-wallstreet-pro");
             break;
         case "story":
-            $output .= __("Story", "wallstreet");
+            $output .= esc_html__("Story", "djs-wallstreet-pro");
             break;
         case "standard":
-            $output .= __("Blog Post", "wallstreet");
+            $output .= esc_html__("Blog Post", "djs-wallstreet-pro");
             break;
         default:
             $print_doublepoint = false;

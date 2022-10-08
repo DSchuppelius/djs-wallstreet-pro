@@ -7,7 +7,10 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$templates = [["template-parts/index/index", "banner"], ["template-parts/content/content", "portfolio"]];
-
-get_template_parts($templates, true, true);
+if(defined("DJS_POSTTYPE_PLUGIN")) {
+    $templates = [["template-parts/index/index", "banner"], ["template-parts/content/content", "portfolio"]];
+    get_template_parts($templates, true, true);
+} else {
+    get_template_part("template-specials/not_loaded", "plugin");
+}
 ?>

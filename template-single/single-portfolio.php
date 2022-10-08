@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options();
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 
 get_template_part("template-parts/index/index", "banner"); ?>
 <div class="container single portfolio">
@@ -16,16 +16,16 @@ get_template_part("template-parts/index/index", "banner"); ?>
             <ul class="portfolio-detail-pagi">
                 <?php $next_post = get_next_post();
                 if (!empty($next_post)): ?>
-                    <li><a class="button btn back" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php _e("Back", "wallstreet"); ?>" rel="next"><?php _e("Back", "wallstreet"); ?></a></li>
+                    <li><a class="button btn back" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php esc_attr_e("Back", "djs-wallstreet-pro"); ?>" rel="next"><?php esc_html_e("Back", "djs-wallstreet-pro"); ?></a></li>
                 <?php endif;
                 $prev_post = get_previous_post();
                 if (!empty($prev_post)): ?>
-                    <li><a class="button btn forward" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php _e("Next", "wallstreet"); ?>" rel="prev"><?php _e("Next", "wallstreet"); ?></a></li>    
+                    <li><a class="button btn forward" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php esc_attr_e("Next", "djs-wallstreet-pro"); ?>" rel="prev"><?php esc_html_e("Next", "djs-wallstreet-pro"); ?></a></li>    
                 <?php endif; ?>	
             </ul>
             <div class="portfolio-detail-button">
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
-                    <p><a class="button btn loadmore project-btn" <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true)); ?> href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo get_post_meta(get_the_ID(), "meta_button_link", true); } ?>" title="<?php _e("Website", "wallstreet"); ?>"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></a></p>
+                    <p><a class="button btn loadmore project-btn" <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true)); ?> href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo esc_html(get_post_meta(get_the_ID(), "meta_button_link", true)); } ?>" title="<?php esc_attr_e("Website", "djs-wallstreet-pro"); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), "portfolio_project_button_text", true)); ?></a></p>
                 <?php } ?>
             </div>
             <?php $draught_links = [];
@@ -43,13 +43,13 @@ get_template_part("template-parts/index/index", "banner"); ?>
             </div>
             <div class="portfolio-detail-info">
                 <?php if (get_post_meta(get_the_ID(), "portfolio_client_project_title", true)) { ?>
-                    <p><?php _e("Clients", "wallstreet"); ?>: <small><?php echo get_post_meta(get_the_ID(), "portfolio_client_project_title", true); ?></small></p>
+                    <p><?php esc_html_e("Clients", "djs-wallstreet-pro"); ?>: <small><?php echo get_post_meta(get_the_ID(), "portfolio_client_project_title", true); ?></small></p>
                 <?php } ?>
-                <p><?php _e("Date", "wallstreet"); ?>: <small><?php the_time("d M, Y"); ?> </small></p>
-                <p><?php _e("Categories", "wallstreet"); ?>: <small><?php echo $on_draught; ?></small></p>
+                <p><?php esc_html_e("Date", "djs-wallstreet-pro"); ?>: <small><?php the_time("d M, Y"); ?> </small></p>
+                <p><?php esc_html_e("Categories", "djs-wallstreet-pro"); ?>: <small><?php echo $on_draught; ?></small></p>
                     
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_visit_site", true)) { ?>
-                    <p><?php _e("Website", "wallstreet"); ?>: <small><?php echo get_post_meta(get_the_ID(), "portfolio_project_visit_site", true); ?></small></p>
+                    <p><?php esc_html_e("Website", "djs-wallstreet-pro"); ?>: <small><?php echo get_post_meta(get_the_ID(), "portfolio_project_visit_site", true); ?></small></p>
                 <?php } ?>
             </div>
             <div class="portfolio-detail-filler"></div>
@@ -67,17 +67,17 @@ get_template_part("template-parts/index/index", "banner"); ?>
 <!-- /Project Section Detail-->
 
 <!-- Realted Project ---->
-<?php if ($current_options["related_portfolio_project_hide_show"] == true) { ?>
+<?php if ($current_setup_posttypes->get("related_portfolio_project_hide_show") == true) { ?>
     <div class="container single portfolio preview">
-        <?php if (!empty($current_options["related_portfolio_title"]) || !empty($current_options["related_portfolio_description"])): ?>
+        <?php if (!empty($current_setup_posttypes->get("related_portfolio_title")) || !empty($current_setup_posttypes->get("related_portfolio_description"))): ?>
             <div class="row <?php row_frame_border(""); ?>">
                 <div class="section_heading_title">
-                    <?php if ($current_options["related_portfolio_title"]) { ?>
-                        <h1><?php echo $current_options["related_portfolio_title"]; ?></h1>
+                    <?php if ($current_setup_posttypes->get("related_portfolio_title")) { ?>
+                        <h1><?php echo $current_setup_posttypes->get("related_portfolio_title"); ?></h1>
                         <div class="pagetitle-separator"></div>
                     <?php } ?>
-                    <?php if ($current_options["related_portfolio_description"]) { ?>
-                        <p><?php echo $current_options["related_portfolio_description"]; ?></p>
+                    <?php if ($current_setup_posttypes->get("related_portfolio_description")) { ?>
+                        <p><?php echo $current_setup_posttypes->get("related_portfolio_description"); ?></p>
                     <?php } ?>				
                 </div>
             </div>
@@ -138,13 +138,13 @@ get_template_part("template-parts/index/index", "banner"); ?>
                         <?php $next_post = get_next_post();
                         if (!empty($next_post)): ?>
                             <li>
-                                <a class="button btn back" id="project_prev" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php _e("Back", "wallstreet"); ?>"><?php _e("Back", "wallstreet"); ?></a>
+                                <a class="button btn back" id="project_prev" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" title="<?php esc_attr_e("Back", "djs-wallstreet-pro"); ?>"><?php esc_html_e("Back", "djs-wallstreet-pro"); ?></a>
                             </li>
                         <?php endif; ?>
                         <?php $prev_post = get_previous_post();
                         if (!empty($prev_post)): ?>
                             <li>
-                                <a class="button btn forward" id="project_next" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php _e("Forward", "wallstreet"); ?>"><?php _e("Forward", "wallstreet"); ?></a>
+                                <a class="button btn forward" id="project_next" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" title="<?php esc_attr_e("Forward", "djs-wallstreet-pro"); ?>"><?php esc_html_e("Forward", "djs-wallstreet-pro"); ?></a>
                             </li>
                         <?php endif; ?>				
                     </ul>

@@ -11,8 +11,8 @@
 // Read more tag to formatting in blog page
 function form_more_button($more = "") {
     global $post;
-    $current_options = get_current_options();
-    $more_text = empty($more) ? $current_options["blog_template_read_more"] : $more;
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+    $more_text = empty($more) ? $current_setup->get("blog_template_read_more") : $more;
     return '<form action="' . esc_url(get_permalink() . "#more-" . $post->ID) . '"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
 }
 

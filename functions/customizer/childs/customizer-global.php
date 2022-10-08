@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-class theme_global_customizer extends theme_customizer {
+class theme_global_customizer extends Theme_Customizer {
 
     public function __construct() {
         parent::__construct();
@@ -19,91 +19,91 @@ class theme_global_customizer extends theme_customizer {
         $wp_customize->add_panel("global_theme_settings", [
             "priority" => 0,
             "capability" => "edit_theme_options",
-            "title" => __("Global options", "wallstreet"),
+            "title" => esc_html__("Global options", "djs-wallstreet-pro"),
         ]);
     }
 
     public function customize_register_section($wp_customize) {
         $wp_customize->add_section("themeoptions_section_settings", [
-            "title" => __("Global theme options", "wallstreet"),
+            "title" => esc_html__("Global theme options", "djs-wallstreet-pro"),
             "panel" => "global_theme_settings",
             "description" => "",
         ]);
 
         $wp_customize->add_section("wallstreet_datetime_section", [
-            "title" => __("Datetime section", "wallstreet"),
+            "title" => esc_html__("Datetime section", "djs-wallstreet-pro"),
             "panel" => "global_theme_settings",
-            "description" => __('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "wallstreet"),
+            "description" => esc_html__('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "djs-wallstreet-pro"),
         ]);
     }
 
 
     public function customize_register_settings_and_controls($wp_customize) {    
         $wp_customize->add_setting($this->theme_options_name . "[yearformat]", [
-            "default" => __("Y", "wallstreet"),
+            "default" => esc_html__("Y", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[yearformat]", [
-            "label" => __("Year dateformat", "wallstreet"),
+            "label" => esc_html__("Year dateformat", "djs-wallstreet-pro"),
             "section" => "wallstreet_datetime_section",
             "type" => "text",
             "priority" => 100,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[monthyearformat]", [
-            "default" => __("F Y", "wallstreet"),
+            "default" => esc_html__("F Y", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[monthyearformat]", [
-            "label" => __("Month/Year dateformat", "wallstreet"),
+            "label" => esc_html__("Month/Year dateformat", "djs-wallstreet-pro"),
             "section" => "wallstreet_datetime_section",
             "type" => "text",
             "priority" => 100,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[fulldateformat]", [
-            "default" => __("jS F Y", "wallstreet"),
+            "default" => esc_html__("jS F Y", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[fulldateformat]", [
-            "label" => __("Full dateformat", "wallstreet"),
+            "label" => esc_html__("Full dateformat", "djs-wallstreet-pro"),
             "section" => "wallstreet_datetime_section",
             "type" => "text",
             "priority" => 100,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[fulldatetimeformat]", [
-            "default" => __("jS F Y - h:i a", "wallstreet"),
+            "default" => esc_html__("jS F Y - h:i a", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[fulldatetimeformat]", [
-            "label" => __("Full datetimeformat", "wallstreet"),
+            "label" => esc_html__("Full datetimeformat", "djs-wallstreet-pro"),
             "section" => "wallstreet_datetime_section",
             "type" => "text",
             "priority" => 100,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[technicalfulldatetimeformat]", [
-            "default" => __("Y-m-d\TH:i:sP", "wallstreet"),
+            "default" => esc_html__("Y-m-d\TH:i:sP", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[technicalfulldatetimeformat]", [
-            "label" => __("Technical full datetimeformat", "wallstreet"),
+            "label" => esc_html__("Technical full datetimeformat", "djs-wallstreet-pro"),
             "section" => "wallstreet_datetime_section",
             "type" => "text",
             "priority" => 100,
@@ -112,12 +112,12 @@ class theme_global_customizer extends theme_customizer {
         $wp_customize->add_setting($this->theme_options_name . "[a_underlined]", [
             "default" => true,
             "capability" => "edit_theme_options",
-            "sanitize_callback" => "sanitize_text_field",
+            "sanitize_callback" => "sanitize_boolean_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[a_underlined]", [
-            "label" => __("Enable underline in links", "wallstreet"),
+            "label" => esc_html__("Enable underline in links", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 100,
@@ -126,12 +126,12 @@ class theme_global_customizer extends theme_customizer {
         $wp_customize->add_setting($this->theme_options_name . "[a_mark_targets]", [
             "default" => false,
             "capability" => "edit_theme_options",
-            "sanitize_callback" => "sanitize_text_field",
+            "sanitize_callback" => "sanitize_boolean_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[a_mark_targets]", [
-            "label" => __("Mark blank targets in links", "wallstreet"),
+            "label" => esc_html__("Mark blank targets in links", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 100,
@@ -145,7 +145,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[scroll_to_top_enabled]", [
-            "label" => __("Enable Scroll To Top Setting", "wallstreet"),
+            "label" => esc_html__("Enable Scroll To Top Setting", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 100,
@@ -159,7 +159,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[contextmenu_enabled]", [
-            "label" => __("Enable Contextmenu", "wallstreet"),
+            "label" => esc_html__("Enable Contextmenu", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 10,
@@ -173,7 +173,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[fixedheader_enabled]", [
-            "label" => __("Fixed header", "wallstreet"),
+            "label" => esc_html__("Fixed header", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 10,
@@ -187,7 +187,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[fixedfooter_enabled]", [
-            "label" => __("Fixed footer", "wallstreet"),
+            "label" => esc_html__("Fixed footer", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 200,
@@ -201,7 +201,7 @@ class theme_global_customizer extends theme_customizer {
             "type" => "option",
         ]);
         $wp_customize->add_control($this->theme_options_name . "[parallaxbackground_enabled]", [
-            "label" => __("Enable Parallax Background", "wallstreet"),
+            "label" => esc_html__("Enable Parallax Background", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 210,
@@ -215,7 +215,7 @@ class theme_global_customizer extends theme_customizer {
             "type" => "option",
         ]);
         $wp_customize->add_control($this->theme_options_name . "[parallaxheader_enabled]", [
-            "label" => __("Enable Parallax Header", "wallstreet"),
+            "label" => esc_html__("Enable Parallax Header", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "checkbox",
             "priority" => 220,
@@ -223,48 +223,56 @@ class theme_global_customizer extends theme_customizer {
     
         $wp_customize->add_setting($this->theme_options_name . "[bigborder]", [
             "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[bigborder]", [
             "type" => "checkbox",
-            "label" => __("Enable Big Border", "wallstreet"),
+            "label" => esc_html__("Enable Big Border", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "priority" => 300,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[page_fader_enabled]", [
             "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[page_fader_enabled]", [
             "type" => "checkbox",
-            "label" => __("Enable Fader on Pageload", "wallstreet"),
+            "label" => esc_html__("Enable Fader on Pageload", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "priority" => 400,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[addframe]", [
             "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[addframe]", [
             "type" => "checkbox",
-            "label" => __("Enable frame on pages", "wallstreet"),
+            "label" => esc_html__("Enable frame on pages", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "priority" => 500,
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[addflexelements]", [
             "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
         $wp_customize->add_control($this->theme_options_name . "[addflexelements]", [
             "type" => "checkbox",
-            "label" => __("Add filling elements to pages", "wallstreet"),
+            "label" => esc_html__("Add filling elements to pages", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "priority" => 500,
         ]);
@@ -276,7 +284,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[breadcrumbposition]", [
-            "label" => __("Custom breadcrumb position", "wallstreet"),
+            "label" => esc_html__("Custom breadcrumb position", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -295,7 +303,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[contentposition]", [
-            "label" => __("Custom content position", "wallstreet"),
+            "label" => esc_html__("Custom content position", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -315,7 +323,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[data_rellax_speed_social_contact_header]", [
-            "label" => __("Rellax Speed (Social Contact Header)", "wallstreet"),
+            "label" => esc_html__("Rellax Speed (Social Contact Header)", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -334,7 +342,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[data_rellax_speed_header]", [
-            "label" => __("Rellax Speed (Header)", "wallstreet"),
+            "label" => esc_html__("Rellax Speed (Header)", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -353,7 +361,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[data_rellax_speed_slider]", [
-            "label" => __("Rellax Speed (Homepage Slider)", "wallstreet"),
+            "label" => esc_html__("Rellax Speed (Homepage Slider)", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -372,7 +380,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[data_rellax_speed_breadcrumbs]", [
-            "label" => __("Rellax Speed (Breadcrumbs)", "wallstreet"),
+            "label" => esc_html__("Rellax Speed (Breadcrumbs)", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -381,7 +389,6 @@ class theme_global_customizer extends theme_customizer {
                 "max" => "20",
             ],
             "priority" => 650,
-            "sanitize_callback" => "sanitize_text_field",
         ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[data_rellax_speed_banner]", [
@@ -391,7 +398,7 @@ class theme_global_customizer extends theme_customizer {
         ]);
 
         $wp_customize->add_control($this->theme_options_name . "[data_rellax_speed_banner]", [
-            "label" => __("Rellax Speed (Site Banner)", "wallstreet"),
+            "label" => esc_html__("Rellax Speed (Site Banner)", "djs-wallstreet-pro"),
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
@@ -400,7 +407,6 @@ class theme_global_customizer extends theme_customizer {
                 "max" => "10",
             ],
             "priority" => 650,
-            "sanitize_callback" => "sanitize_text_field",
         ]);
     }
 }

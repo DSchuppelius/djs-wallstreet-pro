@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <!-- Page Title Section -->
 <?php get_template_part("template-parts/index/index", "banner"); ?>
 <!-- /Page Title Section -->
@@ -31,7 +31,7 @@ $current_options = get_current_options(); ?>
                         <?php } ?>
                         <div class="clear"></div>
                         <div class="blog-post-title">
-                            <?php if ($current_options["archive_page_meta_section_settings"] == false) { ?>
+                            <?php if ($current_setup->get("archive_page_meta_section_settings") == false) { ?>
                                 <div class="blog-post-date"><span class="date"><?php echo get_the_date("j"); ?><small><?php echo get_the_date("M"); ?></small></span>
                                     <span class="comment"><i class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
                                 </div>
@@ -42,10 +42,10 @@ $current_options = get_current_options(); ?>
                                     <h2><a><?php the_title(); ?></a></h2>
                                     <?php echo "<p>" . get_post_meta(get_the_ID(), "service_description_text", true) . "</p>"; ?>
                                     <?php wp_link_pages([
-                                        "before" => '<div class="page-links">' . __("Page", "wallstreet"),
+                                        "before" => '<div class="page-links">' . esc_html__("Page", "djs-wallstreet-pro"),
                                         "after" => "</div>",
                                     ]); ?>
-                                    <?php if ($current_options["archive_page_meta_section_settings"] == false) { ?>
+                                    <?php if ($current_setup->get("archive_page_meta_section_settings") == false) { ?>
                                         <div class="blog-post-meta">
 
                                             <a id="blog-author" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>

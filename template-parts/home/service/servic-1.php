@@ -7,22 +7,22 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_options = get_current_options(); ?>
+$current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
 <div class="service-section">
     <div class="container">
-        <?php if (!empty($current_options["service_title"]) || !empty($current_options["service_description"])) { ?>
+        <?php if (!empty($current_setup_posttypes->get("service_title")) || !empty($current_setup_posttypes->get("service_description"))) { ?>
             <div class="row">
                 <div class="section_heading_title">
-                    <?php if ($current_options["service_title"]) { ?>
-                        <h1><?php echo $current_options["service_title"]; ?></h1>
+                    <?php if ($current_setup_posttypes->get("service_title")) { ?>
+                        <h1><?php echo $current_setup_posttypes->get("service_title"); ?></h1>
                         <div class="pagetitle-separator">
                             <div class="pagetitle-separator-border">
                                 <div class="pagetitle-separator-box"></div>
                             </div>
                         </div>
                     <?php } ?>
-                    <?php if ($current_options["service_description"]) { ?>
-                        <p><?php echo $current_options["service_description"]; ?></p>
+                    <?php if ($current_setup_posttypes->get("service_description")) { ?>
+                        <p><?php echo $current_setup_posttypes->get("service_description"); ?></p>
                     <?php } ?>
                 </div>
             </div>	
@@ -30,7 +30,7 @@ $current_options = get_current_options(); ?>
         <div class="row service">
             <?php $j = 1;
             $col_count = 3;
-            $total_services = $current_options["service_list"];
+            $total_services = $current_setup_posttypes->get("service_list");
             $args = [
                 "post_type" => SERVICE_POST_TYPE,
                 "posts_per_page" => $total_services,
@@ -44,7 +44,7 @@ $current_options = get_current_options(); ?>
                     $service_row_pos = get_first_middle_last_row($j, $service->post_count, $col_count, " ");
                     $service_item_pos = get_first_middle_last($j, $service->post_count, " "); ?>
 
-                    <div class="col-md-4 col-sm-6 <?php echo $current_options["service_hover_change_effect"] == true ? "service-effect" : "stop-service-effect"; echo $service_item_pos . $service_row_pos; ?>">
+                    <div class="col-md-4 col-sm-6 <?php echo $current_setup_posttypes->get("service_hover_change_effect") == true ? "service-effect" : "stop-service-effect"; echo $service_item_pos . $service_row_pos; ?>">
                         <?php if (get_post_meta(get_the_ID(), "meta_service_link", true)) {
                             $meta_service_link = esc_url(get_post_meta(get_the_ID(), "meta_service_link", true));
                         } else {
@@ -72,10 +72,10 @@ $current_options = get_current_options(); ?>
                                 </div>
                             <?php } else { ?>
                                 <div class="other-service-area1">
-                                    <i class="fa" style="font-size:24px;"><?php _e("Icon", "wallstreet"); ?></i>
+                                    <i class="fa" style="font-size:24px;"><?php esc_html_e("Icon", "djs-wallstreet-pro"); ?></i>
                                 </div> 
                             <?php }} ?>
-                        <div class="service-area<?php big_border(" "); echo $current_options["service_middle_extrapadding"] ? "" : " not";?>">
+                        <div class="service-area<?php big_border(" "); echo $current_setup_posttypes->get("service_middle_extrapadding") ? "" : " not";?>">
                             <h2><a href="<?php echo $meta_service_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php echo the_title(); ?></a></h2>
                             <p><?php echo $excerpt = get_post_meta(get_the_ID(), "service_description_text", true); ?></p>
                             <?php if (get_post_meta(get_the_ID(), "service_readmore_text", true)) { ?>
@@ -94,21 +94,21 @@ $current_options = get_current_options(); ?>
                     $j++;
                 }
             } else {
-                $service_defaulttext = [__("Product designing", "wallstreet"), __("WordPress themes", "wallstreet"), __("Responsive designs", "wallstreet")];
+                $service_defaulttext = [__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive designs", "djs-wallstreet-pro")];
                 for ($i = 1; $i <= 3; $i++) {
                     $service_row_pos = get_first_middle_last_row($i, 3, 3, " ");
                     $service_item_pos = get_first_middle_last($i, 3, " "); ?>
                 
-                    <div class="col-md-4 col-sm-6 <?php echo $current_options["service_hover_change_effect"] == true ? "service-effect" : "stop-service-effect"; echo $service_item_pos . $service_row_pos; ?>">
+                    <div class="col-md-4 col-sm-6 <?php echo $current_setup_posttypes->get("service_hover_change_effect") == true ? "service-effect" : "stop-service-effect"; echo $service_item_pos . $service_row_pos; ?>">
                         <div class="service-box">
                             <img class="img-responsive" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/service<?php echo $i; ?>.jpg">
                         </div>
-                        <div class="service-area<?php big_border(" "); echo $current_options["service_middle_extrapadding"] ? "" : " not";?>">
+                        <div class="service-area<?php big_border(" "); echo $current_setup_posttypes->get("service_middle_extrapadding") ? "" : " not";?>">
                             <h2><a href="<?php the_currentURL(); ?>"><?php echo $service_defaulttext[$i - 1]; ?></a></h2>
                             <p><?php echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."; ?></p>
                             <div class="service-btn">
                                 <form action="#">
-                                    <button class="btn more services" ><?php _e("Read More", "wallstreet"); ?></button>
+                                    <button class="btn more services" ><?php esc_html_e("Read More", "djs-wallstreet-pro"); ?></button>
                                 </form>
                             </div>
                         </div>
