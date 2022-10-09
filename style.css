@@ -17,6 +17,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: djs-wallstreet-pro
 */
+
 #comment-nav-below > .nav-previous, #comment-nav-below > .nav-next {
     float: none;
     margin: 0 10px 50px 0
@@ -364,7 +365,7 @@ Text Domain: djs-wallstreet-pro
     height: 46px;
     padding: 6px 12px;
     line-height: 20px;
-    border-radius: 0;
+    border-radius: var(--input-base);
     margin-bottom: 20px
 }
 
@@ -374,7 +375,7 @@ Text Domain: djs-wallstreet-pro
     vertical-align: middle;
     padding: 6px 12px;
     line-height: 20px;
-    border-radius: 0;
+    border-radius: var(--input-base);
     margin-bottom: 25px
 }
 
@@ -1019,7 +1020,7 @@ Text Domain: djs-wallstreet-pro
 
     .comment-form-section textarea,
     .comment-form-section input {
-        border-radius: 3px 3px 3px 3px
+        border-radius: var(--input-base)
     }
 
 .comment-img {
@@ -1040,6 +1041,10 @@ Text Domain: djs-wallstreet-pro
         margin-left: 0px;
         border-top-left-radius: 35px;
         border-bottom-left-radius: 35px;
+    }
+
+    .comment-section .comment-img {
+        margin: 5px 0 5px 5px;
     }
 
     .comment-section ul.children {
@@ -1107,7 +1112,7 @@ Text Domain: djs-wallstreet-pro
 }
 
 .contact-form-section textarea, .contact-form-section input {
-    border-radius: 3px 3px 3px 3px;
+    border-radius: var(--input-base);
 }
 
 .cont-form-control {
@@ -1401,6 +1406,11 @@ Text Domain: djs-wallstreet-pro
     margin-bottom: 55px;
     margin-top: 0;
     word-wrap: break-word
+}
+
+.fill > main, .fill > main > div,
+.fill > div:last-child, .fill > div.sidebar-section, .fill > div.blog-detail-section {
+    height: 100%;
 }
 
 .flex-slider-center {
@@ -1747,6 +1757,7 @@ footer.site {
     display: block;
     float: right;
     margin: 10px 0;
+    text-align:right;
     padding: 0
 }
 
@@ -1757,7 +1768,7 @@ footer.site {
 
     .head-contact-info li {
         display: inline-block;
-        margin-right: 26px;
+        margin-left: 26px;
         padding: 0
     }
 
@@ -1766,6 +1777,7 @@ footer.site {
         }
 
 .head-contact-social {
+    display:flex;
     float: left;
     margin: 0;
     padding: 0
@@ -1895,6 +1907,16 @@ footer.site {
     .home-blog-section .col-md-4:nth-child(3n+1) {
         clear: both
     }
+
+    .home-blog-section .col-md-4:first-child:last-child {
+        width: 100%;
+    }
+
+    .home-blog-section .col-md-4:nth-last-child(n+2):nth-last-child(-n+2):first-child,
+    .home-blog-section .col-md-4:nth-last-child(n+2):nth-last-child(-n+2):first-child ~ div {
+        width: 50%;
+    }
+
 
 .home-blog6.home-blog-section {
     padding: 70px 0 0
@@ -2369,7 +2391,7 @@ div.collapsing ul.nav {
             left: auto;
             width: 430px !important;
             margin: 0 !important;
-            border-radius: 5px
+            border-radius: var(--border-verysmallbase);
         }
 
 .navbar-brand {
@@ -2766,7 +2788,7 @@ div.collapsing ul.nav {
     }
 
 .page_scrollup {
-    border-radius: 3px 3px 0px 0px;
+    border-radius: var(--input-base) var(--input-base) 0px 0px;
     bottom: 0;
     padding: 7px;
     display: none;
@@ -3562,7 +3584,7 @@ div.collapsing ul.nav {
     height: 40px;
     line-height: 24px;
     border: 1px solid #727272;
-    border-radius: 3px;
+    border-radius: var(--input-base);
     padding: 7px 125px 7px 7px
 }
 
@@ -4056,7 +4078,7 @@ div.collapsing ul.nav {
         line-height: 30px;
         padding-bottom: 0;
         word-wrap: break-word;
-        margin: 0 0 3px
+        margin: 0 0 10px
     }
 
     .sidebar-widget .wp-block-social-links .wp-social-link, .footer-widget-section .wp-block-social-links .wp-social-link {
@@ -5107,7 +5129,7 @@ div.collapsing ul.nav {
         }
 
     .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
-        border-radius: 0.1em;
+        border-radius: var(--input-smallerbase);
         line-height: 20px;
         margin: 0;
         height: 46px;
@@ -5335,8 +5357,12 @@ body {
     margin: 0;
 }
 
-    body.a_underlined a:not(.comment-detail-title a, a.btn, a.comment-reply-link, a.comment-edit-link, .flex-direction-nav a) {
+    body.a_underlined a:not(.comment-detail-title a, a.btn, a.comment-reply-link, a.comment-edit-link, .flex-direction-nav a, .sidebar-widget ul li a) {
         text-decoration: underline;
+    }
+
+    body.a_underlined .sidebar-widget ul li a:hover {
+        text-decoration: none;
     }
 
     body.a_underlined a:has(.title.post_format) {

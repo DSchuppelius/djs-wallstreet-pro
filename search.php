@@ -20,7 +20,7 @@ $theme_blog_section = "blog-section-left";
 <!-- Blog & Sidebar Section -->
 <div class="container search">
     <div class="row <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
+        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php if (have_posts()) { ?>
                 <h1 class="search_heading">
                     <?php printf(esc_html__("Search results for: %s", "djs-wallstreet-pro"), '<span>"' . get_search_query() . '"</span>'); ?>

@@ -38,6 +38,14 @@
         box-shadow: 0 7px 10px -10px #000;
     }
 
+    div.container div.row div.col-md-8 .search_heading,
+    div.container div.row div.col-md-4 div.sidebar-section,
+    div.container div.row div.col-md-8 div.blog-detail-section,
+    div.container div.row div.col-md-8 div.blog-section-left.first,
+    div.container div.row div.col-md-8 .with_filler div.blog-detail-section {
+        border-radius: 4px;
+    }
+
     .portfolio-detail-section {
         display: block
     }

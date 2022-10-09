@@ -21,7 +21,7 @@ function custom_dark() {
         .blog-author-social li:hover, .edit-link a:hover, .reply a:hover, .blogdetail-btn a, #blogdetail_btn, .portfolio-tabs li.active > a, .portfolio-tabs li > a:hover, 
         .portfolio-detail-pagi li a:hover, .portfolio-detail-info .project-btn:hover, .prelated-project-btn li a:hover, .google-map-title, .contact-detail-area i, .cont-btn a, .qua_contact_btn,
         .short-btn-green, .dropcape-square span, .dropcape-circle span, .panel-default > .short-panel-heading h4, .short-tabs li a, .wallstreet_page_heading, .post-password-form input[type="submit"],
-        .blog-pagination span.current, button.btn, a.comment-edit-link, a.comment-reply-link { background-color:<?php echo $link_color; ?>; }
+        .blog-pagination span.current, a.btn, button.btn, a.comment-edit-link, a.comment-reply-link { background-color:<?php echo $link_color; ?>; }
         .pagetitle-separator-border { background: <?php echo $link_color; ?> !important;}
         .pagetitle-separator-box { background: <?php echo $link_color; ?> none repeat scroll 0 0 !important;}
         .home-portfolio-showcase .home-portfolio-showcase-detail p:before, .main-portfolio-showcase .main-portfolio-showcase-detail p:before { background: linear-gradient(transparent 55%, <?php the_additional_rgba($link_color, $alpha = 0.6); ?> 70%);}

@@ -3,6 +3,14 @@
         border-radius: 0;
     }
 
+    .container.page-title-col {
+        padding-bottom: 30px !important;
+    }
+
+    .page-breadcrumbs {
+        margin-bottom: unset;
+    }
+
     body.custom-positions .page-title-col {
         margin-top: 40px
     }

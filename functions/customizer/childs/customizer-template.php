@@ -150,7 +150,7 @@ class theme_template_customizer extends Theme_Customizer {
             "input_attrs" => [
                 "min" => "1",
                 "step" => "1",
-                "max" => "1000",
+                "max" => "300",
             ],
             "priority" => 400,
             "sanitize_callback" => "sanitize_text_field",

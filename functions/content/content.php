@@ -10,10 +10,18 @@
 
 // Read more tag to formatting in blog page
 function form_more_button($more = "") {
-    global $post;
+    global $post; $result = "";
+
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+    $form_url = esc_url(get_permalink() . "#more-" . $post->ID);
     $more_text = empty($more) ? $current_setup->get("blog_template_read_more") : $more;
-    return '<form action="' . esc_url(get_permalink() . "#more-" . $post->ID) . '"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
+
+    if (get_option('permalink_structure') == "")
+        $result = '<a href="' . $form_url . '" class="button btn more blog-btn" type="button">' . $more_text . "</a>";
+    else
+        $result = '<form action="' . $form_url . '"><button class="btn more blog-btn" type="button">' . $more_text . "</button></form>";
+
+    return $result;
 }
 
 function get_the_read_more($class = 'blog-btn-col') {
@@ -28,15 +36,26 @@ function get_the_show_all($link, $text, $target = false, $button_class = "more b
     $result = "";
 
     if(!empty($text) && !empty($link)) {
-        $action = 'action="' . esc_url($link) . '" ' . get_blank_target($target, 'method="get"');
-        $result =
-            '<div class ="row">
-                <div class="show-all-btn">
-                    <form ' . $action . '>
-                        <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
-                    </form>
-                </div>
-            </div>';
+        $action = esc_url($link) . '" ' . get_blank_target($target, 'method="get"');
+        if (get_option('permalink_structure') == "") {
+            $action = 'href="' . $action;
+            $result =
+                '<div class ="row">
+                    <div class="show-all-btn">
+                        <a ' . $action . ' class="button btn big ' . $button_class . '">' . $text . '</a>
+                    </div>
+                </div>';
+        } else {
+            $action = 'action="' . $action;
+            $result =
+                '<div class ="row">
+                    <div class="show-all-btn">
+                        <form ' . $action . '>
+                            <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
+                        </form>
+                    </div>
+                </div>';
+        }
     }
 
     return $result;

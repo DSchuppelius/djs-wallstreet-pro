@@ -19,9 +19,9 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 <div class="container page">
     <div class="row <?php row_frame_border(); ?> flexstretch">
         <?php if ($is_WooCommerce) { ?>
-            <div class="col-md-<?php echo !is_active_sidebar("woocommerce") ? "12" : "8"; ?> flexcolumn"> 
+            <div class="col-md-<?php echo !is_active_sidebar("woocommerce") ? "12" : "8"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>"> 
         <?php } else { ?>
-            <div class="col-md-<?php echo !is_active_sidebar("sidebar_primary") ? "12" : "8"; ?> flexcolumn">
+            <div class="col-md-<?php echo !is_active_sidebar("sidebar_primary") ? "12" : "8"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
         <?php } ?>
                 <main class="content-section <?php values_on_current_option("addflexelements", "with_filler", "no_filler"); ?>">
                     <?php the_post(); ?>

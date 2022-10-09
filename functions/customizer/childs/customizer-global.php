@@ -30,6 +30,12 @@ class theme_global_customizer extends Theme_Customizer {
             "description" => "",
         ]);
 
+        $wp_customize->add_section("themecorner_section_settings", [
+            "title" => esc_html__("Corner options", "djs-wallstreet-pro"),
+            "panel" => "global_theme_settings",
+            "description" => "",
+        ]);
+
         $wp_customize->add_section("wallstreet_datetime_section", [
             "title" => esc_html__("Datetime section", "djs-wallstreet-pro"),
             "panel" => "global_theme_settings",
@@ -276,6 +282,20 @@ class theme_global_customizer extends Theme_Customizer {
             "section" => "themeoptions_section_settings",
             "priority" => 500,
         ]);
+            
+        $wp_customize->add_setting($this->theme_options_name . "[flexelements]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+    
+        $wp_customize->add_control($this->theme_options_name . "[flexelements]", [
+            "type" => "checkbox",
+            "label" => esc_html__("fill existing elements on pages", "djs-wallstreet-pro"),
+            "section" => "themeoptions_section_settings",
+            "priority" => 500,
+        ]);
     
         $wp_customize->add_setting($this->theme_options_name . "[breadcrumbposition]", [
             "default" => 0,
@@ -407,6 +427,101 @@ class theme_global_customizer extends Theme_Customizer {
                 "max" => "10",
             ],
             "priority" => 650,
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[border_base]", [
+            "default" => 20,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[border_base]", [
+            "label" => esc_html__("Base border-radius", "djs-wallstreet-pro"),
+            "section" => "themecorner_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "100",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[border_bigbase]", [
+            "default" => 40,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[border_bigbase]", [
+            "label" => esc_html__("Big border-radius", "djs-wallstreet-pro"),
+            "section" => "themecorner_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "100",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[border_smallbase]", [
+            "default" => 10,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[border_smallbase]", [
+            "label" => esc_html__("Small border-radius", "djs-wallstreet-pro"),
+            "section" => "themecorner_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "100",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[border_verysmallbase]", [
+            "default" => 5,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[border_verysmallbase]", [
+            "label" => esc_html__("Very small border-radius", "djs-wallstreet-pro"),
+            "section" => "themecorner_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "1",
+                "max" => "100",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+        ]);
+        
+        $wp_customize->add_setting($this->theme_options_name . "[input_base]", [
+            "default" => 0.25,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[input_base]", [
+            "label" => esc_html__("Button border-radius", "djs-wallstreet-pro"),
+            "section" => "themecorner_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "0",
+                "step" => "0.01",
+                "max" => "10",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
         ]);
     }
 }

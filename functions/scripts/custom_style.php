@@ -12,6 +12,8 @@ global $background_color;
 
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
+$header_correctize = $current_setup->get("fixedheader_enabled") ? 80 : 0;
+
 if ($current_setup->get("enable_custom_typography") == true) { ?>
     <style type="text/css">
         body {
@@ -103,21 +105,23 @@ if ($current_setup->get("enable_custom_typography") == true) { ?>
 <style type="text/css">
     :root{
         <?php if (!defined("DJS_POSTTYPE_PLUGIN")) { ?>
-            --main-slider-radius: <?php echo $current_setup->get("slideroundcorner"); ?>px; 
-            --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20; ?>px;
+            --main-slider-radius: <?php echo $current_setup->get("slideroundcorner"); ?>px !important; 
+            --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20; ?>px !important;
         <?php } ?>
-        --theme-background-color: <?php echo $background_color; ?>;
-        --theme-color: <?php echo $link_color; ?>;
-    }
+        --theme-background-color: <?php echo $background_color; ?> !important;
+        --theme-color: <?php echo $link_color; ?> !important;
 
-    #djs-body{
-        background-color: <?php echo $background_color; ?>;
+        --input-base: <?php echo $current_setup->get("input_base"); ?>em !important;
+        --input-biggerbase: <?php echo $current_setup->get("input_base") + 0.2; ?>em !important;
+        --input-smallerbase: <?php echo $current_setup->get("input_base") - 0.1; ?>em !important;
+
+        --border-base: <?php echo $current_setup->get("border_base"); ?>px !important;
+        --border-bigbase: <?php echo $current_setup->get("border_bigbase"); ?>px !important;
+        --border-smallbase: <?php echo $current_setup->get("border_smallbase"); ?>px !important;
+        --border-verysmallbase: <?php echo $current_setup->get("border_verysmallbase"); ?>px !important;
     }
 
     #page_fader {
-        color:<?php echo $link_color; ?>;
-        text-shadow: 0 0 1px <?php echo $link_color; ?>;
-        background-color: <?php echo $background_color; ?>;
         <?php if($background = set_url_scheme(get_background_image())) { ?>
             background-image: url('<?php echo esc_url($background); ?>');
             background-size: <?php esc_html_e(get_theme_mod('background_size', get_theme_support('custom-background', 'default-size'))); ?>;
@@ -127,9 +131,10 @@ if ($current_setup->get("enable_custom_typography") == true) { ?>
         <?php } ?>
     }
 
-    .custom-logo{ width: <?php esc_html_e(get_theme_mod("wallstreet_logo_length", "156")); ?>px; height: auto;}
-    .custom-positions .page-breadcrumbs{ bottom:<?php echo $current_setup->get("breadcrumbposition"); ?>px; }
-    .custom-positions .page-mycarousel:not(.home .page-mycarousel){ margin-bottom:<?php echo 80 - $current_setup->get("contentposition"); ?>px; }
+    .custom-logo { width: <?php esc_html_e(get_theme_mod("wallstreet_logo_length", "156")); ?>px; height: auto;}
+    .custom-positions .page-breadcrumbs { bottom:<?php echo $current_setup->get("breadcrumbposition"); ?>px; }
+    .custom-positions .container.page-title-col { padding-bottom:<?php echo $current_setup->get("slideroundcorner") - 20 + $current_setup->get("breadcrumbposition") - $header_correctize; ?>px; }
+    .custom-positions .page-mycarousel:not(.home .page-mycarousel) { margin-bottom:<?php echo 80 - $current_setup->get("contentposition"); ?>px; }
 </style>
 
 <?php if ($current_setup->get("contact_header_settings") != "on") { ?>

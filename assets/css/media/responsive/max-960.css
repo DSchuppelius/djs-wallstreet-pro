@@ -331,6 +331,10 @@
     .head-contact-social {
         display: none;
     }
+
+    .head-contact-info li:first-child{
+        margin-left:0px
+    }
     /*Flexslider--------------------------*/
     .flex-slider-center {
         top: 18%;

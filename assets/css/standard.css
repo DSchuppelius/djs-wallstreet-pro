@@ -1,9 +1,13 @@
 /*Variables Section---------------------------------------------------------------------------*/
 :root {
-    --border-base: 20px;
-    --border-bigbase: 40px;
-    --border-smallbase: 10px;
-    --border-verysmallbase: 5px;
+    --border-base: 0px;
+    --border-bigbase: 0px;
+    --border-smallbase: 0px;
+    --border-verysmallbase: 0px;
+    --main-slider-radius: 0px;
+    --sub-slider-radius: 0px;
+    --theme-color: #fff;
+    --theme-background-color: #000;
 }
 
 /*HTML Section--------------------------------------------------------------------------------*/
@@ -48,6 +52,25 @@ body.fixed_Footer .grecaptcha-badge {
 
 .body-fixed-top.admin-bar .navbar-fixed-top {
     top: 32px;
+}
+
+#djs-body {
+    background-color: var(--theme-background-color);
+}
+
+
+#page_fader {
+    color: var(--theme-color);
+    text-shadow: 0 0 1px var(--theme-color);
+    background-color: var(--theme-background-color);
+}
+
+.container.page-title-col {
+    padding-bottom: var(--sub-slider-radius);
+}
+
+.page-breadcrumbs {
+    margin-bottom: var(--sub-slider-radius);
 }
 
 /*Homepage Flex Slider Section----------------------------------------------------------------*/
@@ -170,6 +193,15 @@ body.fixed_Footer .grecaptcha-badge {
     border-bottom-left-radius: var(--border-bigbase);
 }
 
+.col-md-4.col-sm-4.first_column:first-child:last-child div.home-blog-area {
+    border-radius: var(--border-bigbase);
+}
+
+.col-md-4.col-sm-4.first_column:nth-last-child(n+2):nth-last-child(-n+2):first-child ~ div div.home-blog-area {
+    border-top-right-radius: var(--border-bigbase);
+    border-bottom-right-radius: var(--border-bigbase);
+}
+
 .col-md-4.col-sm-4.last_column div.home-blog-area {
     border-top-right-radius: var(--border-bigbase);
     border-bottom-right-radius: var(--border-bigbase);
@@ -242,7 +274,8 @@ div.blog-right-sidebar div.row div.col-md-8 div.columnfiller,
 div.blog-list-view.sidebar div.row div.col-md-8 div.columnfiller,
 div.blog-list-view.sidebar div.row div.col-md-8 div.blog-pagination.no_filler,
 div.blog-switcher-view.sidebar div.row div.col-md-8 div.columnfiller,
-div.blog-switcher-view.sidebar div.row div.col-md-8 div.blog-pagination.no_filler {
+div.blog-switcher-view.sidebar div.row div.col-md-8 div.blog-pagination.no_filler,
+div.single div.row div.col-md-8 > div:last-child {
     border-top-left-radius: 0px;
     border-bottom-left-radius: var(--border-smallbase);
 }

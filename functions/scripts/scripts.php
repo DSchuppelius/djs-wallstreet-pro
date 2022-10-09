@@ -140,6 +140,8 @@ function theme_custom_enqueue_css() {
     if (in_array($pagenow, ["post.php", "post-new.php", "page-new.php", "page.php"])) {
         wp_enqueue_style("meta-box-css",            THEME_ASSETS_PATH_URI . "/css/admin/meta-box.css");
     }
+    wp_enqueue_style("color-schema",                THEME_ASSETS_PATH_URI . "/customizer/color-schema.css");
+
 }
 add_action("admin_print_styles", "theme_custom_enqueue_css", 10);
 

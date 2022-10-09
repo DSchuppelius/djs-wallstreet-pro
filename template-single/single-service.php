@@ -16,7 +16,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
     <div class="row <?php row_frame_border(""); ?> flexstretch">
 
         <!--Blog Area-->
-        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn">
+        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php if (have_posts()) {
                 while (have_posts()) {
                     the_post(); ?>

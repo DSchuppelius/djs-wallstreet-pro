@@ -27,7 +27,7 @@ if(!isset($default_arg)) $default_arg="";
         </div>
     </div>
     <div class="row attachment-section content <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo (is_active_sidebar('sidebar_primary')?'8':'12'); ?> flexcolumn">
+        <div class="col-md-<?php echo (is_active_sidebar('sidebar_primary')?'8':'12'); ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
             <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
             <?php if(has_excerpt()) {

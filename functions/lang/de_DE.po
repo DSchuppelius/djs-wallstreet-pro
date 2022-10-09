@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-10-07 17:23+0200\n"
-"PO-Revision-Date: 2022-10-07 17:30+0200\n"
+"POT-Creation-Date: 2022-10-09 15:57+0200\n"
+"PO-Revision-Date: 2022-10-09 15:57+0200\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@schuppelius.org>\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -94,7 +94,7 @@ msgstr "Verlinkter Beitrag"
 #: template-specials/service-four-template.php:95
 #: template-specials/service-six-template.php:95
 #: template-specials/service-three-template.php:95
-#: template-specials/service-two-template.php:92 theme_setup_data.php:130
+#: template-specials/service-two-template.php:92 theme_setup_data.php:136
 msgid "Read More"
 msgstr "Weiterlesen"
 
@@ -191,7 +191,7 @@ msgstr "Abmelden"
 msgid "Send Message"
 msgstr "Nachricht senden"
 
-#: comments.php:103 theme_setup_data.php:226
+#: comments.php:103 theme_setup_data.php:232
 msgid "Please Note:"
 msgstr "Bitte beachten:"
 
@@ -230,15 +230,15 @@ msgstr "MeinBild"
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
-#: functions.php:193 functions/customizer/childs/customizer-social.php:125
+#: functions.php:195 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: functions.php:194 functions/customizer/childs/customizer-social.php:98
+#: functions.php:196 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr "Twitter URL"
 
-#: functions.php:195 functions/customizer/childs/customizer-social.php:152
+#: functions.php:197 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
 
@@ -345,7 +345,7 @@ msgstr "Archiveinstellungen"
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:122
+#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:128
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beiträge"
 
@@ -362,7 +362,7 @@ msgstr "Unsere neuesten Blog-Beiträge"
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:123
+#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:129
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
@@ -410,7 +410,7 @@ msgstr "Anzahl der Post"
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:76
+#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:82
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
@@ -469,7 +469,7 @@ msgid "Cookie settings"
 msgstr "Cookieeinstellungen"
 
 #: functions/customizer/childs/customizer-copyright.php:42
-#: theme_setup_data.php:223
+#: theme_setup_data.php:229
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
 "\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
@@ -497,13 +497,13 @@ msgid "Enable Footer Copyright"
 msgstr "Aktiviere Fußzeilencopyrighteinstellungen"
 
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:224
+#: theme_setup_data.php:230
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
 #. Author of the plugin/theme
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:224
+#: theme_setup_data.php:230
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel Jörg Schuppelius"
 
@@ -512,7 +512,7 @@ msgid "Copyright text"
 msgstr "Copyrighttext"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid ""
 "This hidden content may leave traces of third-party vendors on your computer "
 "when activated. Perhaps your user behavior could be analyzed via these "
@@ -528,32 +528,32 @@ msgstr ""
 "auf dieser Website einsehen:"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "Imprint"
 msgstr "Impressum"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "Privacy policy"
 msgstr "Datenschutzerklärung"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "Do you have any further questions on this topic? Write me via the"
 msgstr "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "contact"
 msgstr "Kontakt"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "contact form"
 msgstr "Kontaktformular"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:229
+#: theme_setup_data.php:235
 msgid "or by e-mail"
 msgstr "oder per E-Mail"
 
@@ -562,7 +562,7 @@ msgid "Cookietext before button"
 msgstr "Mitteilung vor Cookie-Schaltfläche"
 
 #: functions/customizer/childs/customizer-copyright.php:112
-#: theme_setup_data.php:230
+#: theme_setup_data.php:236
 msgid "Yes, I would like to activate the content on this page..."
 msgstr "Ja, ich möchte den Inhalt auf dieser Seite aktivieren..."
 
@@ -571,7 +571,7 @@ msgid "Buttontext"
 msgstr "Schaltflächentext"
 
 #: functions/customizer/childs/customizer-copyright.php:124
-#: theme_setup_data.php:231
+#: theme_setup_data.php:237
 msgid ""
 "Furthermore, you are aware that by activating the content, cookies can be "
 "set by third parties. In addition, you are aware that your data processing "
@@ -598,13 +598,17 @@ msgstr "Globale Einstellungen"
 
 #: functions/customizer/childs/customizer-global.php:28
 msgid "Global theme options"
-msgstr "Globale Designoptionen"
+msgstr "Designoptionen (Global)"
 
 #: functions/customizer/childs/customizer-global.php:34
+msgid "Corner options"
+msgstr "Designoptionen (Ecken)"
+
+#: functions/customizer/childs/customizer-global.php:40
 msgid "Datetime section"
 msgstr "Datums- und Zeiteinstellungen"
 
-#: functions/customizer/childs/customizer-global.php:36
+#: functions/customizer/childs/customizer-global.php:42
 msgid ""
 "For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
 "format.php\">php.net (datetime.format)</a>"
@@ -612,121 +616,146 @@ msgstr ""
 "Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
 "en/datetime.format.php\">php.net (datetime.format)</a>"
 
-#: functions/customizer/childs/customizer-global.php:43 theme_setup_data.php:33
+#: functions/customizer/childs/customizer-global.php:49 theme_setup_data.php:38
 msgid "Y"
 msgstr "Y"
 
-#: functions/customizer/childs/customizer-global.php:50
+#: functions/customizer/childs/customizer-global.php:56
 msgid "Year dateformat"
 msgstr "Jahresdatumsformat"
 
-#: functions/customizer/childs/customizer-global.php:57 theme_setup_data.php:34
+#: functions/customizer/childs/customizer-global.php:63 theme_setup_data.php:39
 msgid "F Y"
 msgstr "F Y"
 
-#: functions/customizer/childs/customizer-global.php:64
+#: functions/customizer/childs/customizer-global.php:70
 msgid "Month/Year dateformat"
 msgstr "Monat/Jahr Datumsformat"
 
-#: functions/customizer/childs/customizer-global.php:71 theme_setup_data.php:35
+#: functions/customizer/childs/customizer-global.php:77 theme_setup_data.php:40
 msgid "jS F Y"
 msgstr "d. F Y"
 
-#: functions/customizer/childs/customizer-global.php:78
+#: functions/customizer/childs/customizer-global.php:84
 msgid "Full dateformat"
 msgstr "Komplettes Datum"
 
-#: functions/customizer/childs/customizer-global.php:85 theme_setup_data.php:36
+#: functions/customizer/childs/customizer-global.php:91 theme_setup_data.php:41
 msgid "jS F Y - h:i a"
 msgstr "d. F Y - H:i"
 
-#: functions/customizer/childs/customizer-global.php:92
+#: functions/customizer/childs/customizer-global.php:98
 msgid "Full datetimeformat"
 msgstr "Komplettes Datum inkl. Zeit"
 
-#: functions/customizer/childs/customizer-global.php:99 theme_setup_data.php:37
+#: functions/customizer/childs/customizer-global.php:105
+#: theme_setup_data.php:42
 msgid "Y-m-d\\TH:i:sP"
 msgstr "Y-m-d\\TH:i:sP"
 
-#: functions/customizer/childs/customizer-global.php:106
+#: functions/customizer/childs/customizer-global.php:112
 msgid "Technical full datetimeformat"
 msgstr "Technisches Zeitformat"
 
-#: functions/customizer/childs/customizer-global.php:120
+#: functions/customizer/childs/customizer-global.php:126
 msgid "Enable underline in links"
 msgstr "Unterstreichung in Links aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:134
+#: functions/customizer/childs/customizer-global.php:140
 msgid "Mark blank targets in links"
 msgstr "Target in Links markieren (target=_blank)"
 
-#: functions/customizer/childs/customizer-global.php:148
+#: functions/customizer/childs/customizer-global.php:154
 msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:162
+#: functions/customizer/childs/customizer-global.php:168
 msgid "Enable Contextmenu"
 msgstr "Kontextmenü aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:176
+#: functions/customizer/childs/customizer-global.php:182
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/childs/customizer-global.php:190
+#: functions/customizer/childs/customizer-global.php:196
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/childs/customizer-global.php:204
+#: functions/customizer/childs/customizer-global.php:210
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:218
+#: functions/customizer/childs/customizer-global.php:224
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:233
+#: functions/customizer/childs/customizer-global.php:239
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der dicken Rahmen"
 
-#: functions/customizer/childs/customizer-global.php:247
+#: functions/customizer/childs/customizer-global.php:253
 msgid "Enable Fader on Pageload"
 msgstr "Fader beim Laden aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:261
+#: functions/customizer/childs/customizer-global.php:267
 msgid "Enable frame on pages"
 msgstr "Rahmen auf Seiten aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:275
+#: functions/customizer/childs/customizer-global.php:281
 msgid "Add filling elements to pages"
 msgstr "Hinzufügen von Füllelementen zu Seiten"
 
-#: functions/customizer/childs/customizer-global.php:287
+#: functions/customizer/childs/customizer-global.php:295
+msgid "fill existing elements on pages"
+msgstr "Vorhandene Elemente auf Seiten füllen"
+
+#: functions/customizer/childs/customizer-global.php:307
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/childs/customizer-global.php:306
+#: functions/customizer/childs/customizer-global.php:326
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
-#: functions/customizer/childs/customizer-global.php:326
+#: functions/customizer/childs/customizer-global.php:346
 msgid "Rellax Speed (Social Contact Header)"
 msgstr "Rellax Speed (Header für Social Media und Kontakte)"
 
-#: functions/customizer/childs/customizer-global.php:345
+#: functions/customizer/childs/customizer-global.php:365
 msgid "Rellax Speed (Header)"
 msgstr "Rellax Speed (Kopfzeile)"
 
-#: functions/customizer/childs/customizer-global.php:364
+#: functions/customizer/childs/customizer-global.php:384
 msgid "Rellax Speed (Homepage Slider)"
 msgstr "Rellax Speed (Homepage Slider)"
 
-#: functions/customizer/childs/customizer-global.php:383
+#: functions/customizer/childs/customizer-global.php:403
 msgid "Rellax Speed (Breadcrumbs)"
 msgstr "Rellax Speed (Breadcrumbs)"
 
-#: functions/customizer/childs/customizer-global.php:401
+#: functions/customizer/childs/customizer-global.php:421
 msgid "Rellax Speed (Site Banner)"
 msgstr "Rellax Speed (Seiten-Banner)"
+
+#: functions/customizer/childs/customizer-global.php:439
+msgid "Base border-radius"
+msgstr "Basisradius"
+
+#: functions/customizer/childs/customizer-global.php:458
+msgid "Big border-radius"
+msgstr "Großer Radius"
+
+#: functions/customizer/childs/customizer-global.php:477
+msgid "Small border-radius"
+msgstr "Kleiner Radius"
+
+#: functions/customizer/childs/customizer-global.php:496
+msgid "Very small border-radius"
+msgstr "Sehr kleiner Radius"
+
+#: functions/customizer/childs/customizer-global.php:515
+msgid "Button border-radius"
+msgstr "Schaltflächenradius"
 
 #: functions/customizer/childs/customizer-home.php:23
 msgid "Header settings"
@@ -883,7 +912,7 @@ msgid "Vimeo URL"
 msgstr "Webadresse (Vimeo)"
 
 #: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:226
+#: theme_setup_data.php:232
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -899,7 +928,7 @@ msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
 #: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:227
+#: theme_setup_data.php:233
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1122,7 +1151,7 @@ msgid "Icon"
 msgstr "Icon"
 
 #: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:97
+#: theme_setup_data.php:103
 msgid "Address"
 msgstr "Adresse"
 
@@ -1163,12 +1192,12 @@ msgid "Email two"
 msgstr "E-Mail Zwei"
 
 #: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:113
+#: theme_setup_data.php:119
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
 #: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:114
+#: theme_setup_data.php:120
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
@@ -1177,7 +1206,7 @@ msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
 #: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:90
+#: theme_setup_data.php:96
 msgid "Location map"
 msgstr "Lageplan"
 
@@ -1790,13 +1819,10 @@ msgid "Forward"
 msgstr "Vorwärts"
 
 #: template-specials/not_loaded-plugin.php:15
-#, fuzzy
 msgid "Plugin Error"
 msgstr "Plugin-Fehler"
 
 #: template-specials/not_loaded-plugin.php:16
-#, fuzzy
-#| msgid "Oops! Page not found"
 msgid "Oops! Page can not load"
 msgstr "Oops! Seite nicht gefunden"
 
@@ -1866,11 +1892,11 @@ msgstr "Danke"
 msgid "Your information has been sent."
 msgstr "Deine Nachricht wurde versendet."
 
-#: theme_setup_data.php:81
+#: theme_setup_data.php:87
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 
-#: theme_setup_data.php:83
+#: theme_setup_data.php:89
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 

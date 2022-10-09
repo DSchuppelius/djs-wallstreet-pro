@@ -25,7 +25,7 @@ the_post();
         </div>
     <?php } ?>
     <div class="row <?php row_frame_border(""); ?> about-section text flexstretch">
-        <div class="col-md-8 flexcolumn">
+        <div class="col-md-8 flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php get_template_part("template-parts/content/content", "about"); ?>	
             <?php if ($current_setup_posttypes->get("about_social_media_enabled") == true) { ?>
                 <div class="social<?php innerrow_frame_border(" "); ?>">

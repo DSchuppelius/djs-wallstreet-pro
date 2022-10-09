@@ -1,0 +1,33 @@
+#customize-control-wallstreet_pro_options-front_page_data label, #customize-control-wallstreet_pro_options-layout_textbox_disable label {
+    display: none !important;
+}
+
+#customize-control-wallstreet_pro_options-stylesheet > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+    #customize-control-wallstreet_pro_options-stylesheet > div > label:last-child {
+        margin-right: 15px;
+    }
+
+#customize-control-wallstreet_pro_options-stylesheet input {
+    display: none !important;
+}
+
+#customize-control-wallstreet_pro_options-stylesheet label {
+    display: inline;
+    margin-left: 12px;
+}
+
+#customize-control-wallstreet_pro_options-stylesheet img {
+    margin-top: 20px;
+}
+
+.color_schema img {
+    border: 2px solid #F0F0F1 !important;
+}
+
+    .color_schema img.active {
+        border: 2px solid yellow !important;
+    }

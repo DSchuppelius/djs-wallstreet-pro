@@ -28,6 +28,12 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
 
     protected function get_initial_setup() {
         return [
+            "border_base" => 20,
+            "border_bigbase" => 40,
+            "border_smallbase" => 10,
+            "border_verysmallbase" => 5,
+            "input_base" => 0.25,
+
             // Logo and favicon header
             "yearformat" => esc_html__("Y", "djs-wallstreet-pro"),
             "monthyearformat" => esc_html__("F Y", "djs-wallstreet-pro"),
@@ -42,6 +48,7 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
             "addframe" => false,
             "contextmenu_enabled" => true,
             "addflexelements" => false,
+            "flexelements" => false,
             "page_fader_enabled" => false,
             "fixedheader_enabled" => false,
             "fixedfooter_enabled" => false,
