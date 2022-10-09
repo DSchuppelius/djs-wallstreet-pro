@@ -308,7 +308,7 @@ class theme_global_customizer extends Theme_Customizer {
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
-                "min" => "0",
+                "min" => "-300",
                 "step" => "1",
                 "max" => "90",
             ],
@@ -327,7 +327,7 @@ class theme_global_customizer extends Theme_Customizer {
             "section" => "themeoptions_section_settings",
             "type" => "number",
             "input_attrs" => [
-                "min" => "0",
+                "min" => "-380",
                 "step" => "1",
                 "max" => "210",
             ],

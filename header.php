@@ -62,7 +62,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
     if ($current_setup->get("fixedfooter_enabled")) {
         $additional_BodyClasses[] = "fixed_Footer";
     }
-    if ($current_setup->get("breadcrumbposition") > 0 || $current_setup->get("contentposition") > 0) {
+    if ($current_setup->get("breadcrumbposition") != 0 || $current_setup->get("contentposition") != 0) {
         $additional_BodyClasses[] = "custom-positions";
     }
     if ($current_setup->get("a_underlined")) {

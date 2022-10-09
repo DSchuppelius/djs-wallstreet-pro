@@ -13,6 +13,7 @@ global $background_color;
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 $header_correctize = $current_setup->get("fixedheader_enabled") ? 80 : 0;
+$sub_slider_correctize = $current_setup->get("slideroundcorner") > 0 ? $current_setup->get("slideroundcorner") - 20 : 0;
 
 if ($current_setup->get("enable_custom_typography") == true) { ?>
     <style type="text/css">
@@ -131,10 +132,13 @@ if ($current_setup->get("enable_custom_typography") == true) { ?>
         <?php } ?>
     }
 
+    div.page-mycarousel:not(.home .page-mycarousel) { margin-bottom: <?php echo 80 - $sub_slider_correctize; ?>px; }
+
     .custom-logo { width: <?php esc_html_e(get_theme_mod("wallstreet_logo_length", "156")); ?>px; height: auto;}
+
     .custom-positions .page-breadcrumbs { bottom:<?php echo $current_setup->get("breadcrumbposition"); ?>px; }
-    .custom-positions .container.page-title-col { padding-bottom:<?php echo $current_setup->get("slideroundcorner") - 20 + $current_setup->get("breadcrumbposition") - $header_correctize; ?>px; }
-    .custom-positions .page-mycarousel:not(.home .page-mycarousel) { margin-bottom:<?php echo 80 - $current_setup->get("contentposition"); ?>px; }
+    .custom-positions .container.page-title-col { padding-bottom:<?php echo $sub_slider_correctize + $current_setup->get("breadcrumbposition") - $header_correctize; ?>px; }
+    .custom-positions .page-mycarousel:not(.home .page-mycarousel) { margin-bottom:<?php echo 80 - $current_setup->get("contentposition") - $sub_slider_correctize; ?>px; }
 </style>
 
 <?php if ($current_setup->get("contact_header_settings") != "on") { ?>
