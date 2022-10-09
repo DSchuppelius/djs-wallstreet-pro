@@ -1757,7 +1757,7 @@ footer.site {
     display: block;
     float: right;
     margin: 10px 0;
-    text-align:right;
+    text-align: right;
     padding: 0
 }
 
@@ -1777,7 +1777,7 @@ footer.site {
         }
 
 .head-contact-social {
-    display:flex;
+    display: flex;
     float: left;
     margin: 0;
     padding: 0
@@ -5028,6 +5028,10 @@ div.collapsing ul.nav {
 
 .admin-bar .warning.java {
     top: 33px;
+}
+
+.wallstreet.fixed-widget > div a {
+    background: none;
 }
 
 .warning.java {

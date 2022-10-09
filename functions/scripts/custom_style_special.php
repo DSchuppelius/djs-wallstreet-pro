@@ -11,8 +11,8 @@ $current_setup = PostTypes_Plugin_Setup::instance(); ?>
 
 <style type="text/css">
     :root{
-        --main-slider-radius: <?php echo $current_setup->get("slideroundcorner"); ?>px; 
-        --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20; ?>px;
+        --main-slider-radius: <?php echo $current_setup->get("slideroundcorner"); ?>px !important; 
+        --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20; ?>px !important;
     }
 
     .clients-logo {
