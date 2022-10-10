@@ -5277,7 +5277,7 @@ article .wp-block-image figure {
         justify-content: center
     }
 
-    article figure:not(.alignright, .alignleft, .aligncenter) {
+    article figure:not(.alignright, .alignleft, .aligncenter, .tiled-gallery__item) {
         width: 100%;
         margin-bottom: 1em
     }
@@ -5329,10 +5329,22 @@ article section {
     width: 100%
 }
 
-    article section > div:has(code[class*='language-'], pre[class*='language-']) {
+    article section > div:has(code[class*='language-'], pre[class*='language-'], .wp-block-jetpack-tiled-gallery) {
         display: grid;
         width: 100%
     }
+
+    article section > div > .wp-block-jetpack-tiled-gallery{
+        display: block;
+        width: 100%
+    }
+        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery {
+            display: contents;
+        }
+
+            article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery figure img {
+                height: 100%;
+            }
 
     article section > div pre {
         width: 100%
