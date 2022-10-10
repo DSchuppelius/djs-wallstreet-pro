@@ -19,7 +19,7 @@ function form_more_button($more = "") {
     if (get_option('permalink_structure') == "")
         $result = '<a href="' . $form_url . '" class="button btn more blog-btn" type="button">' . $more_text . "</a>";
     else
-        $result = '<form action="' . $form_url . '"><button class="btn more blog-btn" type="button">' . $more_text . "</button></form>";
+        $result = '<form action="' . $form_url . '" method="get"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
 
     return $result;
 }
@@ -50,7 +50,7 @@ function get_the_show_all($link, $text, $target = false, $button_class = "more b
             $result =
                 '<div class ="row">
                     <div class="show-all-btn">
-                        <form ' . $action . '>
+                        <form ' . $action . ' method="get">
                             <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
                         </form>
                     </div>
