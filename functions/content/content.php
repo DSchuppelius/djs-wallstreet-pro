@@ -17,7 +17,7 @@ function form_more_button($more = "") {
     $more_text = empty($more) ? $current_setup->get("blog_template_read_more") : $more;
 
     if (get_option('permalink_structure') == "")
-        $result = '<a href="' . $form_url . '" class="button btn more blog-btn" type="button">' . $more_text . "</a>";
+        $result = '<a href="' . $form_url . '" class="button btn more blog-btn">' . $more_text . "</a>";
     else
         $result = '<form action="' . $form_url . '" method="get"><button class="btn more blog-btn" type="submit">' . $more_text . "</button></form>";
 
@@ -36,21 +36,18 @@ function get_the_show_all($link, $text, $target = false, $button_class = "more b
     $result = "";
 
     if(!empty($text) && !empty($link)) {
-        $action = esc_url($link) . '" ' . get_blank_target($target, 'method="get"');
         if (get_option('permalink_structure') == "") {
-            $action = 'href="' . $action;
             $result =
                 '<div class ="row">
                     <div class="show-all-btn">
-                        <a ' . $action . ' class="button btn big ' . $button_class . '">' . $text . '</a>
+                        <a href="' . esc_url($link) . '" ' . get_blank_target($target) . ' class="button btn big ' . $button_class . '">' . $text . '</a>
                     </div>
                 </div>';
         } else {
-            $action = 'action="' . $action;
             $result =
                 '<div class ="row">
                     <div class="show-all-btn">
-                        <form ' . $action . ' method="get">
+                        <form action="' . esc_url($link) . '" ' . get_blank_target($target) . ' method="get">
                             <button class="btn big ' . $button_class . '" type="submit" >' . $text . '</button>
                         </form>
                     </div>

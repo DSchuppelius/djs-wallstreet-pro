@@ -41,7 +41,7 @@ function iframe_cookie_lazy_load($content) {
 
                 $disclaimer  = '<hr style="width:50%;text-align:center;margin:20px auto"><div class="cookies"><h3>'. esc_html__("Third-party cookies", "djs-wallstreet-pro").'</h3><div class="inner cookies">';
                 $disclaimer .= '<p class="cookies justify"><b>'. esc_html__("Hint:", "djs-wallstreet-pro").'</b> ' . mb_convert_encoding($current_setup->get("cookie_before"), 'HTML-ENTITIES') . "</p>";
-                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);">' . mb_convert_encoding($current_setup->get("cookie_link"), 'HTML-ENTITIES') . '</button></form>';
+                $disclaimer .= '<form class="cookies center" action="' . $actual_link . '"><button class="btn" onclick="document.cookie=\'cookieconsent_estatus=allow;path=/;SameSite=Lax\'; location.reload(true);" type="button">' . mb_convert_encoding($current_setup->get("cookie_link"), 'HTML-ENTITIES') . '</button></form>';
                 $disclaimer .= '<p class="cookies justify">' . mb_convert_encoding($current_setup->get("cookie_after"), 'HTML-ENTITIES') . '</p></div></div>';
                 $disclaimer .= '<div class="lcd crt"><a href="' . $src . '" target="_blank">' . $src . '</a></div><hr style="width:50%;text-align:center;margin:20px auto">';
 
