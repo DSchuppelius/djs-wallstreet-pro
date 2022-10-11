@@ -1,3 +1,24 @@
+article section > div > .wp-block-jetpack-tiled-gallery {
+    display: block;
+    width: 100%
+}
+
+    article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery {
+        display: contents;
+    }
+
+        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery figure img {
+            height: 100%;
+        }
+
+        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery .tiled-gallery__col + .tiled-gallery__col {
+            margin-left: 8px;
+        }
+
+        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery .tiled-gallery__item + .tiled-gallery__item {
+            margin-top: 8px;
+        }
+
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px;
 }

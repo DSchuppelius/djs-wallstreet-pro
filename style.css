@@ -5334,18 +5334,6 @@ article section {
         width: 100%
     }
 
-    article section > div > .wp-block-jetpack-tiled-gallery{
-        display: block;
-        width: 100%
-    }
-        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery {
-            display: contents;
-        }
-
-            article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery figure img {
-                height: 100%;
-            }
-
     article section > div pre {
         width: 100%
     }
