@@ -7,11 +7,15 @@
     min-width: 560px;
 }
 
+.blog-left-sidebar article section figure.wp-block-embed iframe,
+.blog-right-sidebar article section figure.wp-block-embed iframe,
 .blog-detail-section article section figure.wp-block-embed iframe,
 .archive article section figure.wp-block-embed iframe {
     width: 800px
 }
 
+    .blog-left-sidebar article section figure.wp-block-embed iframe:not(.wp-embedded-content),
+    .blog-right-sidebar article section figure.wp-block-embed iframe:not(.wp-embedded-content),
     .blog-detail-section article section figure.wp-block-embed iframe:not(.wp-embedded-content),
     .archive article section figure.wp-block-embed iframe:not(.wp-embedded-content) {
         height: 480px;

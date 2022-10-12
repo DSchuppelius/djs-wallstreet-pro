@@ -338,6 +338,8 @@ Text Domain: djs-wallstreet-pro
     margin-right: 0
 }
 
+    .blog-left-sidebar article section figure.wp-block-embed iframe,
+    .blog-right-sidebar article section figure.wp-block-embed iframe,
     .blog-detail-section article section figure.wp-block-embed iframe,
     .archive article section figure.wp-block-embed iframe {
         width: 600px
@@ -5329,6 +5331,10 @@ article .wp-block-image figure {
 
     article figure.wp-block-gallery.has-nested-images > figcaption {
         margin: 0
+    }
+
+    article figure.wp-block-embed div + figcaption {
+        margin-top: 5px
     }
 
     article figure.wp-block-embed.wp-has-aspect-ratio iframe {

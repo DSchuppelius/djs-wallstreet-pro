@@ -67,7 +67,8 @@ a[target=_blank]:after {
 }
 
 article figure figcaption,
-article figure[class*="wp-block-"] figcaption {
+article figure[class*="wp-block-"] figcaption,
+article div[class*="wp-block-"] figure figcaption {
     text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
     font-size: 0.8em
 }

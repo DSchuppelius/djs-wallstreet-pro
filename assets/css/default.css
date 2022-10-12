@@ -12,7 +12,8 @@ body {
     }
 
 article figure figcaption,
-article figure[class*="wp-block-"] figcaption {
+article figure[class*="wp-block-"] figcaption,
+article div[class*="wp-block-"] figure figcaption {
     color: #f5f5f5
 }
 

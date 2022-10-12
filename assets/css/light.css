@@ -2,8 +2,14 @@ body {
     color: #333333;
 }
 
+article figure figcaption,
+article figure[class*="wp-block-"] figcaption,
+article div[class*="wp-block-"] figure figcaption {
+    color: #fff
+}
+
 #blogdetail_btn {
-    color: #FFF
+    color: #fff
 }
 
 #gallery-2 img {
