@@ -5264,12 +5264,12 @@ article footer time {
 }
 
 article blockquote {
-    width: 100%;
+    width: 100%
 }
 
 article figure,
 article .wp-block-image figure {
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
     article figure > div {
@@ -5290,29 +5290,61 @@ article .wp-block-image figure {
         text-align: center
     }
 
-    article figure.wp-block-gallery > figcaption {
-        margin-top: -15px;
+    article figure.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-image,
+    article figure.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-item,
+    article figure.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-image,
+    article figure.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-item {
+        margin-right: 8px
+    }
+
+    article figure.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image,
+    article figure.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item,
+    article figure.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image,
+    article figure.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item {
+        margin: 0 8px 8px 0
+    }
+
+    article figure.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-image,
+    article figure.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-item,
+    article figure.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-image,
+    article figure.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-item {
+        margin-right: 8px
+    }
+
+    article figure.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image:last-child,
+    article figure.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item:last-child,
+    article figure.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image:last-child,
+    article figure.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item:last-child {
+        margin-right: 0
+    }
+
+    article figure.wp-block-gallery:not(.has-nested-images),
+    article figure.blocks-gallery-grid:not(.has-nested-images) {
         margin-bottom: 15px
     }
 
-    article figure.wp-block-gallery.has-nested-images > figcaption {
-        margin: 0
-    }
+        article figure.wp-block-gallery > figcaption {
+            margin-top: -10px
+        }
+
+        article figure.wp-block-gallery.has-nested-images > figcaption {
+            margin: 0
+        }
 
 article footer .blog-post-meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
     article footer .blog-post-meta > a {
         display: flex;
         flex-grow: 1;
-        white-space: nowrap;
+        white-space: nowrap
     }
 
     article footer .blog-post-meta > div {
         display: flex;
-        flex-grow: 2;
+        flex-grow: 2
     }
 
         article footer .blog-post-meta > div:last-child {
