@@ -5323,13 +5323,21 @@ article .wp-block-image figure {
         margin-bottom: 15px
     }
 
-        article figure.wp-block-gallery > figcaption {
-            margin-top: -10px
-        }
+    article figure.wp-block-gallery > figcaption {
+        margin-top: -10px
+    }
 
-        article figure.wp-block-gallery.has-nested-images > figcaption {
-            margin: 0
-        }
+    article figure.wp-block-gallery.has-nested-images > figcaption {
+        margin: 0
+    }
+
+    article figure.wp-block-embed.wp-has-aspect-ratio iframe {
+        position: relative;
+    }
+
+    article figure.wp-block-embed figcaption {
+        margin-top: 0
+    }
 
 article footer .blog-post-meta {
     display: flex;
