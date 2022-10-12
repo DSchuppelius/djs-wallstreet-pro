@@ -5341,6 +5341,10 @@ article .wp-block-image figure {
         position: relative;
     }
 
+    article figure.wp-block-embed span:has(iframe) {
+        display: contents !important;
+    }
+
     article figure.wp-block-embed figcaption {
         margin-top: 0
     }
