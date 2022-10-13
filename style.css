@@ -5337,10 +5337,6 @@ article .wp-block-image figure {
         margin-top: 5px
     }
 
-    article figure.wp-block-embed.wp-has-aspect-ratio iframe {
-        position: relative;
-    }
-
     article figure.wp-block-embed span:has(iframe) {
         display: contents !important;
     }
