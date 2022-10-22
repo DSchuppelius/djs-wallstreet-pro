@@ -490,7 +490,7 @@ article section figure:has(.cookies) {
         min-width: 130px;
     }
 
-    .cookies button.btn:not(.not, .has-icon) {
+    .cookies button.btn:not(.not, .has-icon, .swiper-pagination-bullet) {
         max-width: 150px;
         min-width: 120px
     }

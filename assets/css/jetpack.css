@@ -19,6 +19,14 @@ article section > div > .wp-block-jetpack-tiled-gallery {
             margin-top: 8px
         }
 
+article section .wp-block-jetpack-slideshow {
+    display: grid;
+    max-width: 100%;
+}
+    article section .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
+        width: 100%;
+    }
+
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px
 }

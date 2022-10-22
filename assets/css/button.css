@@ -1,125 +1,125 @@
-.btn:not(.not, .has-icon):before,
-button:not(.not, .has-icon):before,
-a.button:not(.not, .has-icon):before {
+.btn:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button:not(.not, .has-icon, .swiper-pagination-bullet):before,
+a.button:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "chevron_right";
 }
 
-button[type="submit"]:not(.not, .has-icon):before {
+button[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "send";
 }
 
-a.button.btn.warning:not(.not, .has-icon):before,
-button.btn.warning:not(.not, .has-icon):before {
+a.button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "warning"
 }
 
-a.button.btn.back:not(.not, .has-icon):before,
-button.btn.back:not(.not, .has-icon):before {
+a.button.btn.back:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.back:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "fast_rewind"
 }
 
-a.button.btn.forward:not(.not, .has-icon):before,
-button.btn.forward:not(.not, .has-icon):before {
+a.button.btn.forward:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.forward:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "fast_forward"
 }
 
-a.button.btn.buy:not(.not, .has-icon):before,
-button.btn.buy:not(.not, .has-icon):before {
+a.button.btn.buy:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.buy:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "euro_symbol"
 }
 
-a.button.btn.menu:not(.not, .has-icon):before,
-button.btn.menu:not(.not, .has-icon):before,
-button.btn.navbar-toggle.collapsed:not(.not, .has-icon):before {
+a.button.btn.menu:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.menu:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.navbar-toggle.collapsed:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "menu"
 }
 
-button.btn.navbar-toggle:not(.not, .has-icon):before {
+button.btn.navbar-toggle:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "menu_open"
 }
 
-a.button.btn.more:not(.not, .has-icon):before,
-button.btn.more:not(.not, .has-icon):before {
+a.button.btn.more:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.more:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "read_more"
 }
 
-a.button.btn.loadmore:not(.not, .has-icon):before,
-button.btn.loadmore:not(.not, .has-icon):before {
+a.button.btn.loadmore:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.loadmore:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "drive_folder_upload"
 }
 
-a.button.btn.more.blog:not(.not, .has-icon):before,
-button.btn.more.blog:not(.not, .has-icon):before {
+a.button.btn.more.blog:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.more.blog:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "dashboard"
 }
 
-a.button.btn.more.history:not(.not, .has-icon):before,
-button.btn.more.history:not(.not, .has-icon):before {
+a.button.btn.more.history:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.more.history:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "history"
 }
 
-a.button.btn.more.portfolio:not(.not, .has-icon):before,
-button.btn.more.portfolio:not(.not, .has-icon):before {
+a.button.btn.more.portfolio:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.more.portfolio:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "collections_bookmark"
 }
 
-a.button.btn.more.services:not(.not, .has-icon):before,
-button.btn.more.services:not(.not, .has-icon):before {
+a.button.btn.more.services:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.more.services:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "engineering"
 }
 
-a.button.btn.project:not(.not, .has-icon):before,
-button.btn.project:not(.not, .has-icon):before {
+a.button.btn.project:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.project:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "developer_board"
 }
 
-a.button.search:not(.not, .has-icon):before,
-button.btn.search_btn:not(.not, .has-icon):before,
-button.search-submit.btn:not(.not, .has-icon):before,
-button.wp-block-search__button:not(.not, .has-icon):before {
+a.button.search:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.btn.search_btn:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.search-submit.btn:not(.not, .has-icon, .swiper-pagination-bullet):before,
+button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "search"
 }
 
-#subscribe-submit button:not(.not, .has-icon):before {
+#subscribe-submit button:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "stars";
 }
 
-.btn.search_btn:not(.not, .has-icon):before {
+.btn.search_btn:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "search";
 }
 
-.btn.tab:not(.not, .has-icon):before {
+.btn.tab:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "local_activity";
 }
 
-.btn.next:not(.not, .has-icon):before,
-.btn.history:not(.not, .has-icon):before {
+.btn.next:not(.not, .has-icon, .swiper-pagination-bullet):before,
+.btn.history:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "history";
 }
 
-.btn.prev:not(.not, .has-icon):before,
-.btn.update:not(.not, .has-icon):before {
+.btn.prev:not(.not, .has-icon, .swiper-pagination-bullet):before,
+.btn.update:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "update";
 }
 
-.home-blog-info .home-blog-btn a:not(.not, .has-icon):before,
-.btn.blog-btn:not(.not, .has-icon):before {
+.home-blog-info .home-blog-btn a:not(.not, .has-icon, .swiper-pagination-bullet):before,
+.btn.blog-btn:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "article";
 }
 
-.cookies .btn:not(.not, .has-icon):before {
+.cookies .btn:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "visibility";
 }
 
-a.comment-reply-link:not(.not, .has-icon):before {
+a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "reply";
 }
 
-a.comment-edit-link:not(.not, .has-icon):before {
+a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "edit";
 }
 
-button.close:not(.not, .has-icon):before {
+button.close:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "";
 }
 
@@ -198,29 +198,29 @@ a.comment-reply-link {
         box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
     }
 
-        button.wp-block-search__button:not(.not, .has-icon) {
+        button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet) {
             min-width: 150px
         }
 
-            button.wp-block-search__button:not(.not, .has-icon):before {
+            button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet):before {
                 line-height: 2.5em
             }
 
-    .btn:not(.not, .has-icon):hover,
-    button:not(.not, .has-icon):hover,
-    a.button:not(.not, .has-icon):hover,
-    input[type="submit"]:not(.not, .has-icon):hover,
-    a.comment-edit-link:not(.not, .has-icon):hover,
-    a.comment-reply-link:not(.not, .has-icon):hover {
+    .btn:not(.not, .has-icon, .swiper-pagination-bullet):hover,
+    button:not(.not, .has-icon, .swiper-pagination-bullet):hover,
+    a.button:not(.not, .has-icon, .swiper-pagination-bullet):hover,
+    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet):hover,
+    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet):hover,
+    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet):hover {
         text-shadow: 0 0 1px #18191b
     }
 
-    .btn:not(.not, .has-icon):before,
-    button:not(.not, .has-icon):before,
-    a.button:not(.not, .has-icon):before,
-    input[type="submit"]:not(.not, .has-icon):before,
-    a.comment-edit-link:not(.not, .has-icon):before,
-    a.comment-reply-link:not(.not, .has-icon):before {
+    .btn:not(.not, .has-icon, .swiper-pagination-bullet):before,
+    button:not(.not, .has-icon, .swiper-pagination-bullet):before,
+    a.button:not(.not, .has-icon, .swiper-pagination-bullet):before,
+    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet):before,
+    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet):before,
+    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet):before {
         left: 0;
         line-height: 2em;
         position: absolute;
@@ -231,21 +231,21 @@ a.comment-reply-link {
         z-index: -1
     }
 
-    .btn:not(.not, .has-icon):hover:before,
-    button:not(.not, .has-icon):hover:before,
-    a.button:not(.not, .has-icon):hover:before,
-    input[type="submit"]:not(.not, .has-icon):hover:before,
-    a.comment-edit-link:not(.not, .has-icon):hover:before,
-    a.comment-reply-link:not(.not, .has-icon):hover:before {
+    .btn:not(.not, .has-icon, .swiper-pagination-bullet):hover:before,
+    button:not(.not, .has-icon, .swiper-pagination-bullet):hover:before,
+    a.button:not(.not, .has-icon, .swiper-pagination-bullet):hover:before,
+    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet):hover:before,
+    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet):hover:before,
+    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet):hover:before {
         width: 100%
     }
 
-    .btn:not(.not, .has-icon),
-    button:not(.not, .has-icon),
-    a.button:not(.not, .has-icon),
-    input[type="submit"]:not(.not, .has-icon),
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
+    .btn:not(.not, .has-icon, .swiper-pagination-bullet),
+    button:not(.not, .has-icon, .swiper-pagination-bullet, .swiper-pagination-bullet),
+    a.button:not(.not, .has-icon, .swiper-pagination-bullet),
+    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet),
+    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet),
+    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet) {
         min-width: 250px;
         display: inline-block;
         text-align: center;
@@ -257,22 +257,22 @@ a.comment-reply-link {
         z-index: 3
     }
 
-    .btn.big:not(.not, .has-icon),
-    button.big:not(.not, .has-icon),
-    a.button.big:not(.not, .has-icon),
-    input[type="submit"].big:not(.not, .has-icon) {
+    .btn.big:not(.not, .has-icon, .swiper-pagination-bullet),
+    button.big:not(.not, .has-icon, .swiper-pagination-bullet),
+    a.button.big:not(.not, .has-icon, .swiper-pagination-bullet),
+    input[type="submit"].big:not(.not, .has-icon, .swiper-pagination-bullet) {
         min-width: 300px;
     }
 
-    .btn.small:not(.not, .has-icon),
-    button.small:not(.not, .has-icon),
-    a.button.small:not(.not, .has-icon),
-    input[type="submit"].small:not(.not, .has-icon) {
+    .btn.small:not(.not, .has-icon, .swiper-pagination-bullet),
+    button.small:not(.not, .has-icon, .swiper-pagination-bullet),
+    a.button.small:not(.not, .has-icon, .swiper-pagination-bullet),
+    input[type="submit"].small:not(.not, .has-icon, .swiper-pagination-bullet) {
         min-width: 180px;
     }
 
-    a.comment-edit-link:not(.not, .has-icon),
-    a.comment-reply-link:not(.not, .has-icon) {
+    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet),
+    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet) {
         min-width: 210px
     }
 

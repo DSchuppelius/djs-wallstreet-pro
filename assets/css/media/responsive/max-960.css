@@ -276,7 +276,7 @@
             margin: 0 0 5px;
         }
 
-    .cookies button.btn:not(.not, .has-icon) {
+    .cookies button.btn:not(.not, .has-icon, .swiper-pagination-bullet) {
         max-width: 200px;
         min-width: 150px
     }
