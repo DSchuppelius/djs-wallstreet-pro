@@ -14,13 +14,6 @@
     width: 800px
 }
 
-    .blog-left-sidebar article section figure.wp-block-embed iframe:not(.wp-embedded-content),
-    .blog-right-sidebar article section figure.wp-block-embed iframe:not(.wp-embedded-content),
-    .blog-detail-section article section figure.wp-block-embed iframe:not(.wp-embedded-content),
-    .archive article section figure.wp-block-embed iframe:not(.wp-embedded-content) {
-        height: 480px;
-    }
-
 .blog-form-group {
     width: 49.15%;
 }
