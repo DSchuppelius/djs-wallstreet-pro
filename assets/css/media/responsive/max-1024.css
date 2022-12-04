@@ -20,6 +20,12 @@
         display: contents;
         align-items: normal;
     }
+
+    .col-md-4.col-sm-4.first_column div.home-blog-area,
+    .col-md-4.col-sm-4.middle_column div.home-blog-area,
+    .col-md-4.col-sm-4.last_column div.home-blog-area {
+        border-radius: var(--border-smallbase);
+    }
 }
 
 @media (max-width: 991px) {
@@ -116,12 +122,6 @@
 
     div.home-portfolio-showcase-media div.home-portfolio-showcase-detail p:before {
         border-radius: 0px;
-    }
-
-    .col-md-4.col-sm-4.first_column div.home-blog-area,
-    .col-md-4.col-sm-4.middle_column div.home-blog-area,
-    .col-md-4.col-sm-4.last_column div.home-blog-area {
-        border-radius: var(--border-smallbase);
     }
 }
 

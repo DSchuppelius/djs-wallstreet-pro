@@ -5108,7 +5108,6 @@ div.collapsing ul.nav {
         display: none
     }
 
-.wp-block-search .wp-block-search__input:focus-visible,
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:has( .wp-block-search__input:focus-visible) {
     outline: -webkit-focus-ring-color auto 1px;
 }
