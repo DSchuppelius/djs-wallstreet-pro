@@ -88,6 +88,19 @@ class theme_home_customizer extends Theme_Customizer {
             "type" => "textarea",
             "priority" => 100,
         ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[home_blog_same_height]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+        $wp_customize->add_control($this->theme_options_name . "[home_blog_same_height]", [
+            "label" => esc_html__("Same height for home blogview", "djs-wallstreet-pro"),
+            "section" => "custom_css",
+            "type" => "checkbox",
+            "priority" => 100,
+        ]);
     
         //Text logo
         $wp_customize->add_setting($this->theme_options_name . "[contact_header_settings]", [

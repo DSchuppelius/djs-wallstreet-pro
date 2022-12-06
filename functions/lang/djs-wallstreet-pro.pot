@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-10-09 15:57+0200\n"
+"POT-Creation-Date: 2022-12-06 16:23+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -77,7 +77,7 @@ msgstr ""
 #: template-specials/service-four-template.php:95
 #: template-specials/service-six-template.php:95
 #: template-specials/service-three-template.php:95
-#: template-specials/service-two-template.php:92 theme_setup_data.php:136
+#: template-specials/service-two-template.php:92 theme_setup_data.php:138
 msgid "Read More"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:103 theme_setup_data.php:232
+#: comments.php:103 theme_setup_data.php:234
 msgid "Please Note:"
 msgstr ""
 
@@ -323,7 +323,7 @@ msgstr ""
 msgid "Hide blog meta from home page"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:128
+#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:130
 msgid "Our latest blog post"
 msgstr ""
 
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:129
+#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:131
 msgid "We work with new customers and grow their businesses"
 msgstr ""
 
@@ -447,13 +447,13 @@ msgid "Cookie settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:42
-#: theme_setup_data.php:229
+#: theme_setup_data.php:231
 msgid ""
-"&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress"
-"\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|"
-"&nbsp;<a href=\"/terms\">General Terms and Conditions</a>&nbsp;|&nbsp;<a "
-"href=\"/rights\">Rights of withdrawal</a>&nbsp;|&nbsp;<a href=\"/shipping-"
-"costs\">Shipping costs</a>&nbsp;"
+"&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
+"impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</"
+"a>&nbsp;|&nbsp;<a href=\"/terms\">General Terms and Conditions</a>&nbsp;|"
+"&nbsp;<a href=\"/rights\">Rights of withdrawal</a>&nbsp;|&nbsp;<a href=\"/"
+"shipping-costs\">Shipping costs</a>&nbsp;"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:56
@@ -469,13 +469,13 @@ msgid "Enable Footer Copyright"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:230
+#: theme_setup_data.php:232
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr ""
 
 #. Author of the plugin/theme
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:230
+#: theme_setup_data.php:232
 msgid "Daniel Joerg Schuppelius"
 msgstr ""
 
@@ -484,7 +484,7 @@ msgid "Copyright text"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid ""
 "This hidden content may leave traces of third-party vendors on your computer "
 "when activated. Perhaps your user behavior could be analyzed via these "
@@ -494,32 +494,32 @@ msgid ""
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "Imprint"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "Privacy policy"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "Do you have any further questions on this topic? Write me via the"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "contact"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "contact form"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:235
+#: theme_setup_data.php:237
 msgid "or by e-mail"
 msgstr ""
 
@@ -528,7 +528,7 @@ msgid "Cookietext before button"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:112
-#: theme_setup_data.php:236
+#: theme_setup_data.php:238
 msgid "Yes, I would like to activate the content on this page..."
 msgstr ""
 
@@ -537,7 +537,7 @@ msgid "Buttontext"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:124
-#: theme_setup_data.php:237
+#: theme_setup_data.php:239
 msgid ""
 "Furthermore, you are aware that by activating the content, cookies can be "
 "set by third parties. In addition, you are aware that your data processing "
@@ -747,63 +747,67 @@ msgstr ""
 msgid "Upload a Favicon (ideal width and height is 16x16 or 32x32)"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:101
-msgid "Enable/Disable contact header"
+#: functions/customizer/childs/customizer-home.php:99
+msgid "Same height for home blogview"
 msgstr ""
 
 #: functions/customizer/childs/customizer-home.php:114
-msgid "Header contact info"
+msgid "Enable/Disable contact header"
 msgstr ""
 
 #: functions/customizer/childs/customizer-home.php:127
-msgid "Header email info"
+msgid "Header contact info"
 msgstr ""
 
 #: functions/customizer/childs/customizer-home.php:140
+msgid "Header email info"
+msgstr ""
+
+#: functions/customizer/childs/customizer-home.php:153
 msgid "Select header preset style"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:143
+#: functions/customizer/childs/customizer-home.php:156
 msgid "Style 1"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:144
+#: functions/customizer/childs/customizer-home.php:157
 msgid "Style 2"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:145
+#: functions/customizer/childs/customizer-home.php:158
 msgid "Style 3"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:146
+#: functions/customizer/childs/customizer-home.php:159
 msgid "Style 4"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:147
+#: functions/customizer/childs/customizer-home.php:160
 msgid "Style 5"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:148
+#: functions/customizer/childs/customizer-home.php:161
 msgid "Style 6"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:161
+#: functions/customizer/childs/customizer-home.php:174
 msgid "Enable/Disable Search Icon"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:174
+#: functions/customizer/childs/customizer-home.php:187
 msgid "Choose Position"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:178
+#: functions/customizer/childs/customizer-home.php:191
 msgid "Toogle"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:179
+#: functions/customizer/childs/customizer-home.php:192
 msgid "Pop up light"
 msgstr ""
 
-#: functions/customizer/childs/customizer-home.php:180
+#: functions/customizer/childs/customizer-home.php:193
 msgid "Pop up dark"
 msgstr ""
 
@@ -868,7 +872,7 @@ msgid "Vimeo URL"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:232
+#: theme_setup_data.php:234
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -880,7 +884,7 @@ msgid "First Text in Comment-Section"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:233
+#: theme_setup_data.php:235
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1094,7 +1098,7 @@ msgid "Icon"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:103
+#: theme_setup_data.php:105
 msgid "Address"
 msgstr ""
 
@@ -1135,12 +1139,12 @@ msgid "Email two"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:119
+#: theme_setup_data.php:121
 msgid "Drop us a mail"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:120
+#: theme_setup_data.php:122
 msgid "Feel free to write us a message"
 msgstr ""
 
@@ -1149,7 +1153,7 @@ msgid "Enable Google map in contact page"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:96
+#: theme_setup_data.php:98
 msgid "Location map"
 msgstr ""
 

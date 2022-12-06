@@ -89,6 +89,8 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
             "call_out_button_text" => esc_html__("See All Features", "djs-wallstreet-pro"),
             "call_out_button_link" => "#",
             "call_out_button_link_target" => "on",
+
+            "home_blog_same_height" => false,
     
             // Contact page settings
             "contact_header_settings" => "on",
