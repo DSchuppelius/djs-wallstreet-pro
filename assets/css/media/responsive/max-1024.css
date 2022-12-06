@@ -26,6 +26,15 @@
     .col-md-4.col-sm-4.last_column div.home-blog-area {
         border-radius: var(--border-smallbase);
     }
+
+    .col-md-4.col-sm-4.first_column div.home-blog-post-img,
+    .col-md-4.col-sm-4.middle_column div.home-blog-post-img,
+    .col-md-4.col-sm-4.last_column div.home-blog-post-img,
+    .col-md-4.col-sm-4.first_column div.home-blog-post-img img,
+    .col-md-4.col-sm-4.middle_column div.home-blog-post-img img,
+    .col-md-4.col-sm-4.last_column div.home-blog-post-img img {
+        border-radius: unset;
+    }
 }
 
 @media (max-width: 991px) {
