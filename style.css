@@ -4841,6 +4841,18 @@ div.collapsing ul.nav {
         opacity: .8
     }
 
+.title.post_format .fa-solid {
+    top: -4px;
+    margin: 0px 10px 0px 0px;
+    position: relative;
+}
+
+.title.post_format .material-symbols-outlined {
+    top: 10px;
+    margin: 0px -5px 0px 0px;
+    position: relative;
+}
+
 .top-header-widget ul {
     padding: 0 25px
 }

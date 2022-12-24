@@ -1242,6 +1242,14 @@ footer.site p {
     font-size: 62px
 }
 
+.title.post_format .fa-solid {
+    font-size: 0.5em
+}
+
+.title.post_format .material-symbols-outlined {
+    font-size: 0.8em
+}
+
 .tweet-area h2 {
     font-weight: 400;
     font-size: 18px
