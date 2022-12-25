@@ -5295,7 +5295,8 @@ article .wp-block-image figure {
         margin-bottom: 1em
     }
 
-    article figure > img {
+    article figure > img,
+    article figure > a:has(img) {
         margin: 0 auto
     }
 
@@ -5386,7 +5387,7 @@ article section {
     width: 100%
 }
 
-    article section > div:has(code[class*='language-'], pre[class*='language-'], .wp-block-jetpack-tiled-gallery) {
+    article section > div:has(code[class*='language-'], pre[class*='language-']) {
         display: grid;
         width: 100%
     }
