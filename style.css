@@ -5163,16 +5163,16 @@ div.collapsing ul.nav {
 }
 
 .wp-block-table {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.wp-block-table thead {
-    border-bottom: 3px solid #888;
-}
+    .wp-block-table thead {
+        border-bottom: 3px solid #888;
+    }
 
-.wp-block-table td, .wp-block-table th {
-    border: 0px none;
-}
+    .wp-block-table td, .wp-block-table th {
+        border: 0px none;
+    }
 
 .wp-block-tag-cloud {
     margin: 0;
