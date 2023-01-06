@@ -38,7 +38,8 @@ get_template_part("template-parts/index/index", "banner"); ?>
             endif; ?>
             <div class="portfolio-detail-description">
                 <div class="qua-separator-small" id=""></div>
-                <?php the_post(); ?>
+                <?php the_post();
+                $website_portfolio = get_post_meta(get_the_ID(), "portfolio_project_visit_site", true); ?>
                 <p><?php the_content(); ?></p>	
             </div>
             <div class="portfolio-detail-info">
@@ -49,7 +50,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                 <p><?php esc_html_e("Categories", "djs-wallstreet-pro"); ?>: <small><?php echo $on_draught; ?></small></p>
                     
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_visit_site", true)) { ?>
-                    <p><?php esc_html_e("Website", "djs-wallstreet-pro"); ?>: <small><?php echo get_post_meta(get_the_ID(), "portfolio_project_visit_site", true); ?></small></p>
+                    <p><?php esc_html_e("Website", "djs-wallstreet-pro"); ?>: <small><a href="<?php echo $website_portfolio ?>"><?php echo $website_portfolio ?></a></small></p>
                 <?php } ?>
             </div>
             <div class="portfolio-detail-filler"></div>
@@ -109,7 +110,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                                         $class = ["class" => "img-responsive"];
                                         the_post_thumbnail("index-thumb", $class);
                                         $post_thumbnail_id = get_post_thumbnail_id();
-                                        $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id)); ?>
+                                        $post_thumbnail_url = esc_url(get_attachment_link($post_thumbnail_id)); ?>
                                         <div class="main-portfolio-showcase-overlay">
                                             <div class="main-portfolio-showcase-overlay-inner">
                                                 <div class="main-portfolio-showcase-detail">

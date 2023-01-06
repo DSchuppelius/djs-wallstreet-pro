@@ -129,7 +129,7 @@ if (isset($_GET["div"])) {
                                                 the_post_thumbnail("port-thumb", [ "class" => "img-responsive" . get_big_border(" ")]);
                                                 if (has_post_thumbnail()) {
                                                     $post_thumbnail_id = get_post_thumbnail_id();
-                                                    $post_thumbnail_url = esc_url(wp_get_attachment_url($post_thumbnail_id));
+                                                    $post_thumbnail_url = esc_url(get_attachment_link($post_thumbnail_id));
                                                 } ?>
                                                 <div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
                                                     <div class="main-portfolio-showcase-overlay-inner">
