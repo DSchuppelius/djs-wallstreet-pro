@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2022-12-06 16:23+0100\n"
-"PO-Revision-Date: 2022-12-06 16:25+0100\n"
+"POT-Creation-Date: 2023-01-06 13:38+0100\n"
+"PO-Revision-Date: 2023-01-06 13:40+0100\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@schuppelius.org>\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -242,47 +242,47 @@ msgstr "Twitter URL"
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
 
-#: functions/base/get_content_title.php:19
+#: functions/base/get_content_title.php:21
 msgid "Aside"
 msgstr "Bemerkung"
 
-#: functions/base/get_content_title.php:22
+#: functions/base/get_content_title.php:24
 msgid "Audio"
 msgstr "Audio"
 
-#: functions/base/get_content_title.php:25
+#: functions/base/get_content_title.php:27
 msgid "Video"
 msgstr "Video"
 
-#: functions/base/get_content_title.php:28
+#: functions/base/get_content_title.php:30
 msgid "Chat"
 msgstr "Chat"
 
-#: functions/base/get_content_title.php:31
+#: functions/base/get_content_title.php:33
 msgid "Gallery"
 msgstr "Galerie"
 
-#: functions/base/get_content_title.php:34
+#: functions/base/get_content_title.php:36
 msgid "Image"
 msgstr "Bild"
 
-#: functions/base/get_content_title.php:37
+#: functions/base/get_content_title.php:39
 msgid "Link"
 msgstr "Link"
 
-#: functions/base/get_content_title.php:40
+#: functions/base/get_content_title.php:42
 msgid "Quote"
 msgstr "Zitat"
 
-#: functions/base/get_content_title.php:43
+#: functions/base/get_content_title.php:45
 msgid "Status"
 msgstr "Status"
 
-#: functions/base/get_content_title.php:46
+#: functions/base/get_content_title.php:48
 msgid "Story"
 msgstr "Geschichte"
 
-#: functions/base/get_content_title.php:49
+#: functions/base/get_content_title.php:51
 msgid "Blog Post"
 msgstr "Blogbeitrag"
 
@@ -1591,6 +1591,10 @@ msgstr "Hier suchen"
 msgid "Last updated:"
 msgstr "Letztes Update:"
 
+#: template-parts/content/content-portfolio.php:109
+msgid "Detail"
+msgstr "Details"
+
 #: template-parts/global/header/navbar-button.php:11
 msgid "Menu"
 msgstr "Menü"
@@ -2274,9 +2278,6 @@ msgstr "https://schuppelius.org/"
 
 #~ msgid "Portfolio Featured Details"
 #~ msgstr "Hervorgehobene Details (Portfolio)"
-
-#~ msgid "Team Details"
-#~ msgstr "Details (Team)"
 
 #~ msgid "Client Details"
 #~ msgstr "Details (Kunden)"

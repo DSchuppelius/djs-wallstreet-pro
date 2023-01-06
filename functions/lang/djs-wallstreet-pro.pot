@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2022-12-06 16:23+0100\n"
+"POT-Creation-Date: 2023-01-06 13:38+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -220,47 +220,47 @@ msgstr ""
 msgid "LinkedIn URL"
 msgstr ""
 
-#: functions/base/get_content_title.php:19
+#: functions/base/get_content_title.php:21
 msgid "Aside"
 msgstr ""
 
-#: functions/base/get_content_title.php:22
+#: functions/base/get_content_title.php:24
 msgid "Audio"
 msgstr ""
 
-#: functions/base/get_content_title.php:25
+#: functions/base/get_content_title.php:27
 msgid "Video"
 msgstr ""
 
-#: functions/base/get_content_title.php:28
+#: functions/base/get_content_title.php:30
 msgid "Chat"
 msgstr ""
 
-#: functions/base/get_content_title.php:31
+#: functions/base/get_content_title.php:33
 msgid "Gallery"
 msgstr ""
 
-#: functions/base/get_content_title.php:34
+#: functions/base/get_content_title.php:36
 msgid "Image"
 msgstr ""
 
-#: functions/base/get_content_title.php:37
+#: functions/base/get_content_title.php:39
 msgid "Link"
 msgstr ""
 
-#: functions/base/get_content_title.php:40
+#: functions/base/get_content_title.php:42
 msgid "Quote"
 msgstr ""
 
-#: functions/base/get_content_title.php:43
+#: functions/base/get_content_title.php:45
 msgid "Status"
 msgstr ""
 
-#: functions/base/get_content_title.php:46
+#: functions/base/get_content_title.php:48
 msgid "Story"
 msgstr ""
 
-#: functions/base/get_content_title.php:49
+#: functions/base/get_content_title.php:51
 msgid "Blog Post"
 msgstr ""
 
@@ -1526,6 +1526,10 @@ msgstr ""
 
 #: template-parts/content/content-meta-footer.php:15
 msgid "Last updated:"
+msgstr ""
+
+#: template-parts/content/content-portfolio.php:109
+msgid "Detail"
 msgstr ""
 
 #: template-parts/global/header/navbar-button.php:11
