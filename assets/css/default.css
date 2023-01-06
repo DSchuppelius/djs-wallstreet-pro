@@ -1928,6 +1928,19 @@ footer.site {
         background-color: #565963;
     }
 
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) td {
+    color: #333
+}
+
+.wp-block-table.is-style-stripes thead th {
+    color: #ddd;
+    background: #2a2c33;
+}
+
+.wp-block-table.is-style-stripes tfoot {
+    border-top: 3px solid #888;
+}
+
 .wp-block-tag-cloud {
     color: #fff
 }

@@ -52,8 +52,8 @@ if(defined("DJS_POSTTYPE_PLUGIN")) { ?>
                         if($col_count != 4 && $current_setup_posttypes->get("portfolio_homepage_item_layouts") == "clover-items")
                             $portfolio_item_type = null;
     
-                        if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
-                            $meta_project_link = get_post_meta(get_the_ID(), "meta_project_link", true);
+                        if (get_post_meta(get_the_ID(), "meta_button_link", true)) {
+                            $meta_project_link = get_post_meta(get_the_ID(), "meta_button_link", true);
                         } else {
                             $meta_project_link = get_post_permalink();
                         } ?>
@@ -80,7 +80,7 @@ if(defined("DJS_POSTTYPE_PLUGIN")) { ?>
                                                     <?php }
                                                     if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
                                                         <div class="portfolio-btn">
-                                                            <form action="<?php echo $meta_project_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true), 'method="get"'); ?>>
+                                                            <form action="<?php echo $meta_project_link; ?>" <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true), 'method="get"'); ?>>
                                                                 <button class="btn small more portfolio" type="submit"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></button>								
                                                             </form>
                                                         </div>

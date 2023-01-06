@@ -100,11 +100,17 @@ if (isset($_GET["div"])) {
                                     }
                                     $portfolio_target = sanitize_text_field(get_post_meta(get_the_ID(), "portfolio_target", true));
                                     $project_link_chkbx = sanitize_text_field(get_post_meta(get_the_ID(), "project_link_chkbx", true));
+                                    $show_project_picture_link = sanitize_text_field(get_post_meta(get_the_ID(), "show_project_picture_link", true));
                                     if (get_post_meta(get_the_ID(), "project_more_btn_link", true)) {
                                         $project_more_btn_link = esc_url(get_post_meta(get_the_ID(), "project_more_btn_link", true));
                                     } else {
                                         $project_more_btn_link = esc_url(get_permalink());
                                     }
+                                    $portfolio_project_summary = esc_html__("Detail", "djs-wallstreet-pro");
+                                    if (get_post_meta(get_the_ID(), "portfolio_project_summary", true)) {
+                                        $portfolio_project_summary = get_post_meta(get_the_ID(), "portfolio_project_summary", true);
+                                    }                                    
+
                                     $class = "";
                                     if (is_page_template("template-specials/portfolio-2-column.php")) {
                                         $class = "col-md-6 col-sm-6";
@@ -134,10 +140,12 @@ if (isset($_GET["div"])) {
                                                             <?php } else { ?>
                                                                 <p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
                                                             <?php } ?>
-                                                            <div class="portfolio-icon">
+                                                            <div class="portfolio-icon <?php echo $show_project_picture_link? "":"without_image"; ?>">
+                                                                <?php if ($show_project_picture_link) { ?>
                                                                 <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> class="hover_thumb" title="<?php the_title(); ?>" data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>" ><i class="fa fa-image"></i></a>
+                                                                <?php } ?>
                                                                 <?php if ($meta_project_link) { ?>
-                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> href="<?php echo $meta_project_link; ?>"><i class="fa fa-link"></i></a>
+                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?> href="<?php echo $meta_project_link; ?>" alt="<?php echo $portfolio_project_summary; ?>"><i class="fa fa-link"></i></a>
                                                                 <?php } ?>
                                                             </div>
                                                         </div>

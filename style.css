@@ -2153,9 +2153,13 @@ footer.site {
 
         .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             margin-left: -50px
+        }
+
+        .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon.without_image {
+            margin-left: -23px
         }
 
 .main-portfolio-showcase-fade {
