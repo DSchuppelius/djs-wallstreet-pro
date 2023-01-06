@@ -1048,7 +1048,7 @@ footer.site {
     box-shadow: 0 0 15px rgba(0,0,0,0.8)
 }
 
-.portfolio-btn a, .portfolio-btn button.btn {
+.portfolio-btn a, .portfolio-btn a.btn, .portfolio-btn button.btn {
     background-color: #32343c;
     color: #FFF
 }
