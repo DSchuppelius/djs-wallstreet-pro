@@ -51,17 +51,34 @@ Text Domain: djs-wallstreet-pro
         text-decoration: underline
     }
 
+#script_fullscreen {
+    padding-bottom: 20px;
+    left: 20%;
+    width: 60%;
+}
+
+    #script_fullscreen h3 {
+        margin-left: 20px;
+    }
+    #script_fullscreen p {
+        margin: 20px;
+        text-align:justify;
+    }
+
 #searchbar_fullscreen {
-    position: fixed;
-    top: 30%;
+    height: 40%;
     left: 10%;
     width: 80%;
-    height: 40%;
+}
+
+#script_fullscreen, #searchbar_fullscreen {
+    position: fixed;
+    top: 30%;
     opacity: 0;
     z-index: 1000
 }
 
-    #searchbar_fullscreen input[type="search"] {
+    #script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
         position: absolute;
         top: 50%;
         width: 100%;
@@ -76,7 +93,7 @@ Text Domain: djs-wallstreet-pro
         cursor: default
     }
 
-    #searchbar_fullscreen.open {
+    #script_fullscreen.open, #searchbar_fullscreen.open {
         opacity: 1
     }
 
@@ -2158,9 +2175,9 @@ footer.site {
             margin-left: -50px
         }
 
-        .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon.without_image {
-            margin-left: -23px
-        }
+            .main-portfolio-showcase .main-portfolio-showcase-detail .portfolio-icon.without_image {
+                margin-left: -23px
+            }
 
 .main-portfolio-showcase-fade {
     opacity: .2

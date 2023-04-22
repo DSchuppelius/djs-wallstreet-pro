@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2023-01-06 13:38+0100\n"
+"POT-Creation-Date: 2023-04-23 01:42+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -72,7 +72,7 @@ msgstr ""
 #: template-parts/home/service/servic-4.php:93
 #: template-parts/home/service/servic-5.php:101
 #: template-parts/home/service/servic-6.php:99
-#: template-parts/index/index-portfolio.php:108
+#: template-parts/index/index-portfolio.php:114
 #: template-specials/service-five-template.php:95
 #: template-specials/service-four-template.php:95
 #: template-specials/service-six-template.php:95
@@ -137,7 +137,7 @@ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
 #: comments.php:85 template-single/single-portfolio.php:28
-#: template-single/single-portfolio.php:52 template/contact-us.php:92
+#: template-single/single-portfolio.php:53 template/contact-us.php:92
 #: template/contact-us.php:93
 msgid "Website"
 msgstr ""
@@ -191,7 +191,7 @@ msgid ""
 "<a href=\"%s\">%s</a>"
 msgstr ""
 
-#: functions.php:90 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -199,24 +199,24 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:124
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:129
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:195 functions/customizer/childs/customizer-social.php:125
+#: functions.php:196 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:196 functions/customizer/childs/customizer-social.php:98
+#: functions.php:197 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:197 functions/customizer/childs/customizer-social.php:152
+#: functions.php:198 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -274,6 +274,10 @@ msgstr ""
 
 #: functions/basic/iframe.php:43
 msgid "Hint:"
+msgstr ""
+
+#: functions/basic/jscript.php:28
+msgid "Third-party scripts"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:15
@@ -494,32 +498,38 @@ msgid ""
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "Imprint"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "Privacy policy"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "Do you have any further questions on this topic? Write me via the"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "contact"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "contact form"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:237 theme_setup_data.php:240
 msgid "or by e-mail"
 msgstr ""
 
@@ -549,6 +559,40 @@ msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:130
 msgid "Cookietext after button"
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:136
+#: theme_setup_data.php:240
+msgid ""
+"This site uses third-party program code that may allow conclusions to be "
+"drawn about your user behavior. Some of these program codes are loaded from "
+"external servers. We use this code to determine what content is of interest "
+"to you or to make the behavior and appearance of this website more pleasant "
+"for you. Would you like to support us and unlock these external scripts and "
+"styles? You can find more information about the use of data on these "
+"websites on the following pages:"
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:142
+msgid "Load scripts question"
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:148
+#: theme_setup_data.php:241
+msgid "Yes, I would like to activate the external scripts on this page..."
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:154
+msgid "Load external Skripts"
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:160
+#: theme_setup_data.php:242
+msgid "No, I do not like to activate the external scripts on this page..."
+msgstr ""
+
+#: functions/customizer/childs/customizer-copyright.php:166
+msgid "No external Skripts"
 msgstr ""
 
 #: functions/customizer/childs/customizer-global.php:22
@@ -1692,11 +1736,11 @@ msgstr ""
 msgid "Blog Archive"
 msgstr ""
 
-#: template-parts/index/index-portfolio.php:106
+#: template-parts/index/index-portfolio.php:112
 msgid "Wallstreet style"
 msgstr ""
 
-#: template-parts/index/index-portfolio.php:107
+#: template-parts/index/index-portfolio.php:113
 msgid ""
 "A wonderful serenity has taken possession of my entire soul, like these "
 "sweet mornings."
@@ -1739,23 +1783,23 @@ msgid "DESIGNER"
 msgstr ""
 
 #: template-single/single-portfolio.php:19
-#: template-single/single-portfolio.php:141
+#: template-single/single-portfolio.php:142
 msgid "Back"
 msgstr ""
 
-#: template-single/single-portfolio.php:46
+#: template-single/single-portfolio.php:47
 msgid "Clients"
 msgstr ""
 
-#: template-single/single-portfolio.php:48
+#: template-single/single-portfolio.php:49
 msgid "Date"
 msgstr ""
 
-#: template-single/single-portfolio.php:49
+#: template-single/single-portfolio.php:50
 msgid "Categories"
 msgstr ""
 
-#: template-single/single-portfolio.php:147
+#: template-single/single-portfolio.php:148
 msgid "Forward"
 msgstr ""
 

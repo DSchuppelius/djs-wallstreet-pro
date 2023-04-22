@@ -27,6 +27,24 @@ body.error404:not(.fixed_Footer) footer {
     right: 0
 }
 
+body .container.escript .row .col-md-12 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.error404 .container.escript{
+    display:none;
+}
+
 body.error404 .container.error .row .col-md-12,
 body.denied_template_loaded .container.error .row .col-md-12 {
     position: absolute;
@@ -344,7 +362,7 @@ div.blog-switcher-view.sidebar div.row.bigborder div.col-md-4 div.columnfiller {
     border-bottom: var(--border-base) solid rgba(0,0,0,0.4);
 }
 
-#searchbar_fullscreen {
+#script_fullscreen, #searchbar_fullscreen {
     border-radius: var(--border-base);
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }

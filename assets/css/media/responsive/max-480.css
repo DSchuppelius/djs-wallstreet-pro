@@ -6,6 +6,14 @@ article section figure:has(.cookies) {
     overflow-x: auto;
     overflow-y: hidden;
 }
+#script_fullscreen{
+    width:100%;
+    left:0%;
+}
+#script_fullscreen .btn {
+    max-width: 150px;
+    min-width: 120px;
+}
 
 .portfolio-detail-pagi .button.btn {
     min-width: 155px;

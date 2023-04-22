@@ -446,16 +446,16 @@ body.fixed_Header .navbar.navbar-fixed-top {
     transition: all .4s ease 0s
 }
 
-#searchbar_fullscreen {
+#script_fullscreen, #searchbar_fullscreen {
     backdrop-filter: blur(5px)
 }
 
-#searchbar_fullscreen {
+#script_fullscreen, #searchbar_fullscreen {
     transition: all .5s ease-in-out;
     transform: translate(0px,-100%) scale(0,0)
 }
 
-    #searchbar_fullscreen.open {
+    #script_fullscreen.open, #searchbar_fullscreen.open {
         transform: translate(0px,0px) scale(1,1)
     }
 

@@ -121,7 +121,7 @@ function custom_dark() {
             background-color: <?php echo $link_color; ?>;
             border: 1px solid <?php echo $link_color; ?>;
         }
-        #searchbar_fullscreen .close {
+        #script_fullscreen .close, #searchbar_fullscreen .close {
             background-color: <?php echo $link_color; ?>;
         }
         .navbar4 .navbar-header {

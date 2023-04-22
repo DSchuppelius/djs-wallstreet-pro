@@ -17,20 +17,20 @@ article div[class*="wp-block-"] figure figcaption {
     border: 2px solid #cfcfcf
 }
 
-#searchbar_fullscreen {
+#script_fullscreen, #searchbar_fullscreen {
     background-color: rgba(190,190,190,0.95);
     border: 15px rgba(255,255,255,.95) solid
 }
 
-    #searchbar_fullscreen .btn {
+    #script_fullscreen .btn, #searchbar_fullscreen .btn {
         color: #FFF
     }
 
-    #searchbar_fullscreen .close {
+    #script_fullscreen .close, #searchbar_fullscreen .close {
         color: #fff
     }
 
-    #searchbar_fullscreen input[type="search"] {
+    #script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
         background: rgba(255,255,255,.95);
         color: gray;
         caret-color: #2a2c33

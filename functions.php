@@ -40,6 +40,7 @@ require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_nav_menu.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/blog.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/iframe.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/archive.php";
+require_once THEME_FUNCTIONS_PATH . "/basic/jscript.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/lazyload.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/generator.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/htmlclasses.php";

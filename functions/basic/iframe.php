@@ -25,7 +25,7 @@ function iframe_cookie_lazy_load($content) {
         $post = new DOMDocument();
         $post->loadHTML(mb_convert_encoding($content, "HTML-ENTITIES", "UTF-8"));
         $iframes = $post->getElementsByTagName("iframe");
-        if (!isset($_COOKIE["cookieconsent_estatus"]) || $_COOKIE["cookieconsent_estatus"] != "allow") {
+        if ((!isset($_COOKIE["cookieconsent_estatus"]) || $_COOKIE["cookieconsent_estatus"] != "allow") && !isWebBot()) {
             if (count($iframes) > 0 && !headers_sent()) {
                 header("Cache-Control: no-cache, no-store, must-revalidate");
             }
@@ -77,5 +77,9 @@ function appendHTML(DOMNode $parent, $source) {
         $node = $parent->ownerDocument->importNode($node, true);
         $parent->appendChild($node);
     }
+}
+
+function isWebBot() {
+    return (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/rambler|abacho|acoi|accona|aspseek|altavista|estyle|scrubby|lycos|geona|ia_archiver|alexa|sogou|skype|facebook|twitter|pinterest|linkedin|naver|bing|google|yahoo|duckduckgo|yandex|baidu|teoma|xing|bot|crawl|slurp|spider|mediapartners|\sask\s|\saol\s/i', $_SERVER['HTTP_USER_AGENT']));
 }
 ?>

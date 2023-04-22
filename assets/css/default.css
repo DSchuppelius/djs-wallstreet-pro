@@ -31,28 +31,28 @@ pre, pre code {
     border: 2px solid #cfcfcf
 }
 
-#searchbar_fullscreen {
+#script_fullscreen, #searchbar_fullscreen {
     background-color: rgba(35,37,45,0.95);
     border: 15px rgba(55,57,65,0.6) solid
 }
 
-    #searchbar_fullscreen .btn {
+    #script_fullscreen .btn, #searchbar_fullscreen .btn {
         color: #FFF
     }
 
-    #searchbar_fullscreen .close {
-        color: #ccc
-    }
+        #script_fullscreen .close, #searchbar_fullscreen .close {
+            color: #ccc
+        }
 
-        #searchbar_fullscreen .close:hover {
+        #script_fullscreen .close:hover, #searchbar_fullscreen .close:hover {
             color: darkred
         }
 
-    #searchbar_fullscreen input[type="search"] {
-        background: rgba(55,57,65,0.6);
-        color: #64646d;
-        caret-color: #fff
-    }
+            #script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
+                background: rgba(55,57,65,0.6);
+                color: #64646d;
+                caret-color: #fff
+            }
 
 .about-section h3 {
     color: #fff

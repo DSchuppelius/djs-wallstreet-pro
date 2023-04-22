@@ -82,7 +82,7 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 0.9em
 }
 
-#searchbar_fullscreen input[type="search"] {
+#script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
     font-size: 3em;
     font-weight: 400
 }

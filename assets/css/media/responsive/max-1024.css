@@ -35,6 +35,15 @@
     .col-md-4.col-sm-4.last_column div.home-blog-post-img img {
         border-radius: unset;
     }
+
+    #script_fullscreen .btn {
+        padding: 0.825em 2.5em 0.525em 3.75em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 240px;
+        min-width: 130px;
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 991px) {
@@ -120,7 +129,7 @@
         display: none;
     }
 
-    #searchbar_fullscreen input[type="search"] {
+    #script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
         font-size: 34px;
         margin-top: -20px;
     }

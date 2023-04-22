@@ -131,6 +131,42 @@ class theme_copyright_customizer extends Theme_Customizer {
             "section" => "cookie_section_one",
             "type" => "textarea",
         ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[script_before]", [
+            "default" => esc_html__("This site uses third-party program code that may allow conclusions to be drawn about your user behavior. Some of these program codes are loaded from external servers. We use this code to determine what content is of interest to you or to make the behavior and appearance of this website more pleasant for you. Would you like to support us and unlock these external scripts and styles? You can find more information about the use of data on these websites on the following pages:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:info@schuppelius.org" >info@schuppelius.org</a>)',
+            "sanitize_callback" => "sanitize_link_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[script_before]", [
+            "label" => esc_html__("Load scripts question", "djs-wallstreet-pro"),
+            "section" => "cookie_section_one",
+            "type" => "textarea",
+        ]);
+        
+        $wp_customize->add_setting($this->theme_options_name . "[script_link]", [
+            "default" => esc_html__("Yes, I would like to activate the external scripts on this page...", "djs-wallstreet-pro"),
+            "sanitize_callback" => "sanitize_link_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[script_link]", [
+            "label" => esc_html__("Load external Skripts", "djs-wallstreet-pro"),
+            "section" => "cookie_section_one",
+            "type" => "textarea",
+        ]);
+        
+        $wp_customize->add_setting($this->theme_options_name . "[noscript_link]", [
+            "default" => esc_html__("No, I do not like to activate the external scripts on this page...", "djs-wallstreet-pro"),
+            "sanitize_callback" => "sanitize_link_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[noscript_link]", [
+            "label" => esc_html__("No external Skripts", "djs-wallstreet-pro"),
+            "section" => "cookie_section_one",
+            "type" => "textarea",
+        ]);
     }
 }
 
