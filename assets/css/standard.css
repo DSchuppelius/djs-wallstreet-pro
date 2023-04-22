@@ -41,8 +41,8 @@ body .container.escript .row .col-md-12 {
     justify-content: center;
 }
 
-body.error404 .container.escript{
-    display:none;
+body.error404 .container.escript {
+    display: none;
 }
 
 body.error404 .container.error .row .col-md-12,

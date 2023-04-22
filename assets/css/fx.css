@@ -856,9 +856,9 @@ footer.site {
     transition: all .4s ease 0s
 }
 
-.show-all-btn a {
-    transition: all .4s ease 0s
-}
+    .show-all-btn a {
+        transition: all .4s ease 0s
+    }
 
 .qua_contact_btn {
     transition: all .4s ease 0s

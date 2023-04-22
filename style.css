@@ -60,9 +60,10 @@ Text Domain: djs-wallstreet-pro
     #script_fullscreen h3 {
         margin-left: 20px;
     }
+
     #script_fullscreen p {
         margin: 20px;
-        text-align:justify;
+        text-align: justify;
     }
 
 #searchbar_fullscreen {
