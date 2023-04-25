@@ -27,6 +27,24 @@ article section .wp-block-jetpack-slideshow {
         width: 100%;
     }
 
+article section .jp-relatedposts .jp-relatedposts-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay,
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay:before {
+        border-radius: 5px
+    }
+        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay::before {
+            content: url(../images/img/nopreview.png);
+            object-fit: contain;
+            overflow: hidden;
+            z-index: -1;
+            border-radius:5px;
+            position:relative
+        }
+
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px
 }
