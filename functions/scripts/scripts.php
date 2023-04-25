@@ -87,8 +87,6 @@ add_action("wp_enqueue_scripts", "theme_scripts");
 function theme_jquery_scripts() {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-    wp_enqueue_script("parallaxsss",                   "https://localhost/js/parallax/parallax.min.js");
-
     wp_enqueue_script("menu",                       THEME_ASSETS_PATH_URI . "/js/menu/menu.js",                                     ["jquery"]);
     if ($current_setup->get("page_fader_enabled")) {
         wp_enqueue_script("page_fader",             THEME_ASSETS_PATH_URI . "/js/page_fader/page_fader.js",                         ["jquery"], '1.0.0', true);
