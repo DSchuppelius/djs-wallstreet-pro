@@ -32,18 +32,26 @@ article section .jp-relatedposts .jp-relatedposts-items {
     justify-content: space-between;
     align-items: stretch;
 }
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay,
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay:before {
-        border-radius: 5px
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
     }
-        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-a.jp-relatedposts-post-aoverlay::before {
-            content: url(../images/img/nopreview.png);
-            object-fit: contain;
-            overflow: hidden;
-            z-index: -1;
-            border-radius:5px;
-            position:relative
-        }
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs > * {
+        display: flex;
+        flex-direction: column;
+    }
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a {
+        flex: 1;
+    }
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
+        background: url('../images/img/nopreview.png') no-repeat center top;
+        background-size:contain;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+        content: '';
+    }
 
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px
