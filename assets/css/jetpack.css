@@ -41,10 +41,10 @@ article section .jp-relatedposts .jp-relatedposts-items {
         display: flex;
         flex-direction: column;
     }
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a {
+    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
         flex: 1;
-        display:inherit;
-        position: inherit; 
+        display: inherit;
+        position: inherit;
     }
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
         background: url('../images/img/nopreview.png') no-repeat center center;
