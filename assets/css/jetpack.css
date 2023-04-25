@@ -43,13 +43,15 @@ article section .jp-relatedposts .jp-relatedposts-items {
     }
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a {
         flex: 1;
+        display:inherit;
+        position: inherit; 
     }
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
-        background: url('../images/img/nopreview.png') no-repeat center top;
-        background-size:contain;
+        background: url('../images/img/nopreview.png') no-repeat center center;
+        background-size:cover;
         height: 100%;
         object-fit: contain;
-        border-radius: 5px;
+        border-radius: 0.2em;
         content: '';
     }
 
