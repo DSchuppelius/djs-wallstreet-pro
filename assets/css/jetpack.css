@@ -33,6 +33,7 @@ article section .jp-relatedposts .jp-relatedposts-items {
     align-items: stretch;
 }
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+        min-height:260px;
         display: flex;
         flex-direction: column;
         flex-basis: 100%;
