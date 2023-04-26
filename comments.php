@@ -36,7 +36,8 @@ if (!function_exists("wallstreet_comment")) {
                         </span>
                     </h4>
                     <?php comment_text(); ?>
-                    <?php edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<div class="edit-link">', "</div>"); ?>
+                    <?php edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<div class="edit-link">', "</div>");
+                    if(comments_open()) { ?>
                     <div class="<?php echo $is_answer ? 'reply answer' : 'reply'; ?>">
                         <?php comment_reply_link(array_merge($args, [
                             "reply_text" => $leave_reply,
@@ -47,7 +48,8 @@ if (!function_exists("wallstreet_comment")) {
                         ); ?>
                     </div>
                     
-                    <?php if ($comment->comment_approved == "0") { ?>
+                    <?php }
+                    if ($comment->comment_approved == "0") { ?>
                         <em class="comment-awaiting-moderation"><?php esc_html_e("Your comment is awaiting moderation.", "djs-wallstreet-pro"); ?></em>
                         <br/>
                     <?php } ?>
@@ -71,9 +73,11 @@ if (have_comments()) { ?>
             <div class="nav-previous"><?php previous_comments_link(esc_html__("&larr; Older Comments", "djs-wallstreet-pro")); ?></div>
             <div class="nav-next"><?php next_comments_link(esc_html__("Newer Comments &rarr;", "djs-wallstreet-pro")); ?></div>
         </nav>
-    <?php } elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), "comments")) {
-     esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro");
-    }
+    <?php } elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), "comments")) { ?>
+        <div class="comment-section closed">
+            <?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?>
+        </div>     
+    <?php }
 }
 
 if ("open" == $post->comment_status) {

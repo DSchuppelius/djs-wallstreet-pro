@@ -1328,7 +1328,7 @@ Text Domain: djs-wallstreet-pro
     background: none !important
 }
 
-.edit-link {
+.edit-link:has(~ .reply){
     float: left;
     margin-right: 10px;
 }

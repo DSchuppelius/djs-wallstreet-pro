@@ -486,6 +486,11 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
+.comment-section.closed {
+    text-align:center;
+    font-size: 1.5em
+}
+
 .cont-btn a {
     font-weight: 400;
     font-size: 1em
