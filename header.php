@@ -52,22 +52,6 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
             <link rel="shortcut icon" href="<?php echo esc_url($current_setup->get("upload_image_favicon")); ?>" /> 
         <?php } ?>
 
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "url": "<?php echo esc_url(home_url("/")); ?>",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": "<?php echo esc_url(home_url("/")); ?>?s={search_term_string}"
-                    },
-                "query-input": "required name=search_term_string"
-            }
-        }
-        </script>
-
         <?php wp_head(); ?>
     </head>
     <?php
