@@ -50,8 +50,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <?php if ($current_setup->get("upload_image_favicon") != "") { ?>
             <link rel="shortcut icon" href="<?php echo esc_url($current_setup->get("upload_image_favicon")); ?>" /> 
-        <?php }
-        wp_head(); ?>
+
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -66,7 +65,10 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
                 "query-input": "required name=search_term_string"
             }
         }
-    </script>
+        </script>
+
+        <?php }
+        wp_head(); ?>
     </head>
     <?php
     $additional_BodyClasses = [];
