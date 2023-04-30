@@ -28,7 +28,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 
             $tags = get_the_tags();
             if(!empty($tags))
-                foreach($tags as $tag){ $single_metakeytags.= ", ".htmlentities(wp_strip_all_tags($tag->name)); }
+                foreach($tags as $tag){ $single_metakeytags.= ", " . htmlentities(wp_strip_all_tags($tag->name)); }
         } ?>
         <!--[if IE]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

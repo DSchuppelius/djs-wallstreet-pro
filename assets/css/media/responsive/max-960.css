@@ -113,6 +113,10 @@
 }
 
 @media (max-width: 768px) {
+    .comment-detail {
+        padding: 0px 0px 20px 20px;
+    }
+
     .navbar-header.index2 .contact-social.right {
         float: none;
         padding: 5px 0 10px;

@@ -916,11 +916,13 @@ Text Domain: djs-wallstreet-pro
 }
 
 .comment-date a {
-    line-height: 20px;
-    margin: 7px;
-    padding-left: 7px;
-    float: right;
-    vertical-align: middle
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    margin: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .comment-detail {
@@ -930,6 +932,9 @@ Text Domain: djs-wallstreet-pro
     padding: 0 0 25px
 }
 
+.comment-detail a{
+    word-break:break-all;
+}
     .comment-detail .comment-detail-title {
         margin-right: -20px;
     }
