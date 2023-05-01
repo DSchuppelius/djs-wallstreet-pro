@@ -6,17 +6,19 @@ article section figure:has(.cookies) {
     overflow-x: auto;
     overflow-y: hidden;
 }
-#script_fullscreen{
-    width:100%;
-    left:0%;
-}
-#script_fullscreen .btn {
-    max-width: 150px;
-    min-width: 120px;
+
+#script_fullscreen {
+    width: 100%;
+    left: 0%;
 }
 
-.footer-copyright p{
-    word-break:break-word;
+    #script_fullscreen .btn {
+        max-width: 150px;
+        min-width: 120px;
+    }
+
+.footer-copyright p {
+    word-break: break-word;
 }
 
 .portfolio-detail-pagi .button.btn {
@@ -67,16 +69,19 @@ article section figure:has(.cookies) {
 .blog-author .media-body {
     display: contents;
 }
+
     .blog-author .media-body h6 {
         line-height: 30px;
         margin: 0 0 20px;
     }
+
 .comment-date a {
     position: inherit;
     float: right;
     margin: 0px 20px 0px 10px
 }
-    .page-title-col h1 {
+
+.page-title-col h1 {
     font-size: 25px;
     line-height: 30px;
 }

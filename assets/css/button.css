@@ -111,6 +111,7 @@ button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet):b
 .cookies .btn:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "visibility";
 }
+
 #script_fullscreen .btn.no:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "visibility_off";
 }
@@ -294,6 +295,7 @@ a.btn.tab {
     margin-top: 30px;
     border-radius: var(--input-base);
 }
+
 #searchbar_fullscreen .btn {
     position: absolute;
     top: 50%;

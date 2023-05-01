@@ -14,7 +14,7 @@
     }
 }
 
-@media (max-width: 782px){
+@media (max-width: 782px) {
     .body-fixed-top.admin-bar .navbar-fixed-top {
         top: 46px;
     }
@@ -293,9 +293,9 @@
         display: block;
     }
 
-    .navbar .container{
-        margin: auto 0;
-    }
+        .navbar .container {
+            margin: auto 0;
+        }
 
     .page-title-col {
         top: 50%;
@@ -336,8 +336,8 @@
         display: none;
     }
 
-    .head-contact-info li:first-child{
-        margin-left:0px
+    .head-contact-info li:first-child {
+        margin-left: 0px
     }
     /*Flexslider--------------------------*/
     .flex-slider-center {

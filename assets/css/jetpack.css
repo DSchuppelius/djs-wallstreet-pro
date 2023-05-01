@@ -23,6 +23,7 @@ article section .wp-block-jetpack-slideshow {
     display: grid;
     max-width: 100%;
 }
+
     article section .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
         width: 100%;
     }
@@ -32,24 +33,28 @@ article section .jp-relatedposts .jp-relatedposts-items {
     justify-content: space-between;
     align-items: stretch;
 }
+
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
-        min-height:230px;
+        min-height: 230px;
         display: flex;
         flex-direction: column;
         flex-basis: 100%;
     }
+
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs > * {
         display: flex;
         flex-direction: column;
     }
+
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
         flex: 1;
         display: inherit !important;
         position: inherit !important;
     }
+
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
         background: url('../images/img/nopreview.png') no-repeat center center;
-        background-size:cover;
+        background-size: cover;
         height: 100%;
         object-fit: contain;
         border-radius: 0.2em;
@@ -150,10 +155,13 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     padding-right: 0px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
     #jp-relatedposts .jp-relatedposts-items-visual {
         margin-right: 0px;
     }
+}
+
+@media only screen and (max-width: 480px) {
 
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
         word-break: break-word;

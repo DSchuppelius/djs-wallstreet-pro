@@ -932,9 +932,10 @@ Text Domain: djs-wallstreet-pro
     padding: 0 0 25px
 }
 
-.comment-detail a{
-    word-break:break-all;
-}
+    .comment-detail a {
+        word-break: break-all;
+    }
+
     .comment-detail .comment-detail-title {
         margin-right: -20px;
     }
@@ -1333,7 +1334,7 @@ Text Domain: djs-wallstreet-pro
     background: none !important
 }
 
-.edit-link:has(~ .reply){
+.edit-link:has(~ .reply) {
     float: left;
     margin-right: 10px;
 }
