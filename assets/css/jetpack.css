@@ -145,3 +145,17 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
         .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button:before {
             line-height: 2.5em
         }
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
+    padding-right: 0px;
+}
+
+@media only screen and (max-width: 480px) {
+    #jp-relatedposts .jp-relatedposts-items-visual {
+        margin-right: 0px;
+    }
+
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+        word-break: break-word;
+    }
+}
