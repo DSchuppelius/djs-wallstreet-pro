@@ -157,8 +157,11 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 
 @media only screen and (max-width: 640px) {
     #jp-relatedposts .jp-relatedposts-items-visual {
-        margin-right: 0px;
+        margin-right: 0px !important;
     }
+        #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
+            padding-right: 0px !important;
+        }
 }
 
 @media only screen and (max-width: 480px) {
