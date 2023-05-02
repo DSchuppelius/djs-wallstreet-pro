@@ -74,6 +74,7 @@ body.fixed_Footer .grecaptcha-badge {
 
 #djs-body {
     background-color: var(--theme-background-color);
+    overflow-y: scroll;
 }
 
 
