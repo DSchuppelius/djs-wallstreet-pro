@@ -128,6 +128,10 @@ button.close:not(.not, .has-icon, .swiper-pagination-bullet):before {
     content: "";
 }
 
+#searchbar_fullscreen input.search-field{
+    border-radius:0px;
+}
+
 input, button, .btn, .show-all-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
     border-radius: var(--input-base);
 }
@@ -301,7 +305,7 @@ a.btn.tab {
     top: 50%;
     left: 50%;
     right: auto;
-    margin-top: 50px;
+    margin-top: 75px;
     margin-left: -125px;
     border-radius: var(--input-base);
 }

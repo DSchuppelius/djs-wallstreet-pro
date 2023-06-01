@@ -10,6 +10,10 @@
 }
 
 @media (max-width: 992px) {
+    #script_fullscreen, #searchbar_fullscreen {
+        position: absolute;
+    }
+
     .blog-masonry-3-column .innerrow, .blog-masonry-4-column .innerrow, .blog-masonry-5-column .innerrow, .blog-masonry-6-column .innerrow {
         -webkit-column-count: 3;
         -moz-column-count: 3;
