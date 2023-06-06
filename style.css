@@ -3376,7 +3376,7 @@ div.collapsing ul.nav {
 
 .blog-post-title-wrapper .readable {
     border-radius: 5px;
-    padding:10px;
+    padding: 10px;
 }
 
 .contact .row.no_background .col-md-12 {
@@ -5239,6 +5239,10 @@ div.collapsing ul.nav {
         vertical-align: baseline;
         white-space: nowrap
     }
+
+.wp-block-video figcaption {
+    margin-top: 0
+}
 
 .wp-calendar-nav {
     text-align: left
