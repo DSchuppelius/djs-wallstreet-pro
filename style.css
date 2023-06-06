@@ -5132,6 +5132,18 @@ div.collapsing ul.nav {
         line-height: 1.9375
     }
 
+.wp-block-columns {
+    margin-bottom: 15px
+}
+
+    .wp-block-columns .wp-block-column p:last-child {
+        margin: 0px
+    }
+
+:where(.wp-block-columns.small-gap.is-layout-flex) {
+    gap: 1em
+}
+
 .wp-block-group__inner-container .wp-block-search__label {
     display: none
 }
