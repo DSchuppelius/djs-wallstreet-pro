@@ -328,6 +328,10 @@ pre, pre code {
     color: #e5e5e5
 }
 
+.blog-post-title-wrapper .readable {
+    background-color: rgba(255,255,255,0.4);
+}
+
 .blog-post-title-wrapper h2 a,
 .blog-post-title-wrapper-full h2 a {
     color: #f5f5f5

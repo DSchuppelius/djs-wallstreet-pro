@@ -3374,6 +3374,11 @@ div.collapsing ul.nav {
     margin: 0px 0px 10px 10px;
 }
 
+.blog-post-title-wrapper .readable {
+    border-radius: 5px;
+    padding:10px;
+}
+
 .contact .row.no_background .col-md-12 {
     padding: 0px
 }
