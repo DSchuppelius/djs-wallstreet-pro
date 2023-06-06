@@ -292,6 +292,9 @@ article div[class*="wp-block-"] figure figcaption {
 .blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
     color: #727272
 }
+.blog-post-title-wrapper .readable {
+    background-color: rgba(0,0,0,0.4);
+}
 
 .blog-section-full,
 .blog-section-left,
