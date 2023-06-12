@@ -5144,10 +5144,6 @@ div.collapsing ul.nav {
         margin: 0px
     }
 
-:where(.wp-block-columns.small-gap.is-layout-flex) {
-    gap: 1em
-}
-
 .wp-block-group__inner-container .wp-block-search__label {
     display: none
 }

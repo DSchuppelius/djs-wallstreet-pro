@@ -10,14 +10,19 @@
     --theme-background-color: #000;
 }
 
+:where(.wp-block-columns.small-gap.is-layout-flex) {
+    gap: 1em
+}
+
 /*HTML Section--------------------------------------------------------------------------------*/
 html,
 body {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y proximity
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-padding-top:100px;
+    scroll-behavior: smooth
 }
 
 body.error404:not(.fixed_Footer) footer {
