@@ -17,7 +17,7 @@
         if (has_block("core/image", $content)) {
             twenty_twenty_one_print_first_instance_of_block("core/image", $content);
         } else {
-            the_excerpt();
+            the_content();
         } ?>
     </div>
 </section>
