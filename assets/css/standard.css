@@ -21,7 +21,7 @@ body {
 }
 
 html {
-    scroll-padding-top:100px;
+    scroll-padding-top: 100px;
     scroll-behavior: smooth
 }
 
@@ -71,6 +71,10 @@ body.error404 .error_404 {
 
 body.fixed_Footer .grecaptcha-badge {
     bottom: 140px !important
+}
+
+div.juxtapose {
+    margin-bottom: 5px;
 }
 
 .body-fixed-top.admin-bar .navbar-fixed-top {
