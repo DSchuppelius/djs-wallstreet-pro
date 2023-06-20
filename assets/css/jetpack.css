@@ -61,6 +61,10 @@ article section .jp-relatedposts .jp-relatedposts-items {
         content: '';
     }
 
+article section .wp-block-jetpack-tiled-gallery.is-style-columns .tiled-gallery__item, article section .wp-block-jetpack-tiled-gallery.is-style-rectangular .tiled-gallery__item {
+    width: auto !important;
+}
+
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     margin-top: 20px
 }
@@ -159,6 +163,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     #jp-relatedposts .jp-relatedposts-items-visual {
         margin-right: 0px !important;
     }
+
         #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
             padding-right: 0px !important;
         }
