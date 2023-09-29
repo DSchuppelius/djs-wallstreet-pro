@@ -77,6 +77,7 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
             "max_archive_month" => 12,
             "max_archive_day" => 7,
     
+            "max_page_buttons" => 11,
             // Blog
             "view_all_posts_btn_enabled" => true,
             "view_all_posts_text" => esc_html__("View All Posts", "djs-wallstreet-pro"),

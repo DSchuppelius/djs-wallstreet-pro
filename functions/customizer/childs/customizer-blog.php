@@ -239,6 +239,25 @@ class theme_blog_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "description" => esc_html__("0 for full archive", "djs-wallstreet-pro"),
         ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[max_page_buttons]", [
+            "default" => 7,
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[max_page_buttons]", [
+            "label" => esc_html__("Max buttons for blog pagination (excl. 2 buttons for next or previous page)", "djs-wallstreet-pro"),
+            "section" => "archive_section_settings",
+            "type" => "number",
+            "input_attrs" => [
+                "min" => "5",
+                "step" => "1",
+                "max" => "999",
+            ],
+            "priority" => 600,
+            "sanitize_callback" => "sanitize_text_field",
+        ]);
     }
 }
 

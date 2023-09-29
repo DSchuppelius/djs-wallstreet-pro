@@ -100,6 +100,10 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
         outline: 1px auto -webkit-focus-ring-color
     }
 
+    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form .wp-block-jetpack-subscriptions__form-elements {
+        width: 100%;
+    }
+
 .wp-block-jetpack-subscriptions #subscribe-email {
     width: 100%;
     margin: 0

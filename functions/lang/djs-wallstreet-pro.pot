@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2023-04-23 01:42+0200\n"
+"POT-Creation-Date: 2023-09-29 14:23+0200\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -77,7 +77,7 @@ msgstr ""
 #: template-specials/service-four-template.php:95
 #: template-specials/service-six-template.php:95
 #: template-specials/service-three-template.php:95
-#: template-specials/service-two-template.php:92 theme_setup_data.php:138
+#: template-specials/service-two-template.php:92 theme_setup_data.php:139
 msgid "Read More"
 msgstr ""
 
@@ -98,88 +98,88 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:53
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:63
+#: comments.php:65
 msgid "No comments so far"
 msgstr ""
 
-#: comments.php:63
+#: comments.php:65
 msgid "1 comment so far"
 msgstr ""
 
-#: comments.php:63
-#, php-format
+#: comments.php:65
+#, no-php-format
 msgid "% comments so far"
 msgstr ""
 
-#: comments.php:70
+#: comments.php:72
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:73
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:74
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:78
 msgid "Comments Are Closed!!!"
 msgstr ""
 
-#: comments.php:81
+#: comments.php:85
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:85 template-single/single-portfolio.php:28
+#: comments.php:89 template-single/single-portfolio.php:28
 #: template-single/single-portfolio.php:53 template/contact-us.php:92
 #: template/contact-us.php:93
 msgid "Website"
 msgstr ""
 
-#: comments.php:86
+#: comments.php:90
 msgid "Name"
 msgstr ""
 
-#: comments.php:87 functions/customizer/childs/customizer-template.php:746
+#: comments.php:91 functions/customizer/childs/customizer-template.php:746
 #: template/contact-us.php:88 template/contact-us.php:89
 msgid "Email"
 msgstr ""
 
-#: comments.php:97
+#: comments.php:101
 msgid "Leave your message"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:102
 msgid "Logged in as"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:102
 msgid "Log out from this Account"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:102
 msgid "Log out"
 msgstr ""
 
-#: comments.php:101 template/contact-us.php:99
+#: comments.php:105 template/contact-us.php:99
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:103 theme_setup_data.php:234
+#: comments.php:107
 msgid "Please Note:"
 msgstr ""
 
-#: comments.php:105
+#: comments.php:109
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:106
+#: comments.php:110
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
@@ -327,7 +327,7 @@ msgstr ""
 msgid "Hide blog meta from home page"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:130
+#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:131
 msgid "Our latest blog post"
 msgstr ""
 
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:131
+#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:132
 msgid "We work with new customers and grow their businesses"
 msgstr ""
 
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Enable view all posts button"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:82
+#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:83
 msgid "View All Posts"
 msgstr ""
 
@@ -438,6 +438,11 @@ msgstr ""
 msgid "Max items in day archive"
 msgstr ""
 
+#: functions/customizer/childs/customizer-blog.php:250
+msgid ""
+"Max buttons for blog pagination (excl. 2 buttons for next or previous page)"
+msgstr ""
+
 #: functions/customizer/childs/customizer-copyright.php:21
 msgid "Copyright and cookie settings"
 msgstr ""
@@ -451,7 +456,7 @@ msgid "Cookie settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:42
-#: theme_setup_data.php:231
+#: theme_setup_data.php:232
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
 "impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</"
@@ -473,13 +478,13 @@ msgid "Enable Footer Copyright"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:232
+#: theme_setup_data.php:233
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr ""
 
 #. Author of the plugin/theme
 #: functions/customizer/childs/customizer-copyright.php:88
-#: theme_setup_data.php:232
+#: theme_setup_data.php:233
 msgid "Daniel Joerg Schuppelius"
 msgstr ""
 
@@ -488,7 +493,7 @@ msgid "Copyright text"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:237
+#: theme_setup_data.php:238
 msgid ""
 "This hidden content may leave traces of third-party vendors on your computer "
 "when activated. Perhaps your user behavior could be analyzed via these "
@@ -499,37 +504,37 @@ msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "Imprint"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "Privacy policy"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "Do you have any further questions on this topic? Write me via the"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "contact"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "contact form"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:237 theme_setup_data.php:240
+#: theme_setup_data.php:238 theme_setup_data.php:241
 msgid "or by e-mail"
 msgstr ""
 
@@ -538,7 +543,7 @@ msgid "Cookietext before button"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:112
-#: theme_setup_data.php:238
+#: theme_setup_data.php:239
 msgid "Yes, I would like to activate the content on this page..."
 msgstr ""
 
@@ -547,7 +552,7 @@ msgid "Buttontext"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:124
-#: theme_setup_data.php:239
+#: theme_setup_data.php:240
 msgid ""
 "Furthermore, you are aware that by activating the content, cookies can be "
 "set by third parties. In addition, you are aware that your data processing "
@@ -562,7 +567,7 @@ msgid "Cookietext after button"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:240
+#: theme_setup_data.php:241
 msgid ""
 "This site uses third-party program code that may allow conclusions to be "
 "drawn about your user behavior. Some of these program codes are loaded from "
@@ -578,7 +583,7 @@ msgid "Load scripts question"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:148
-#: theme_setup_data.php:241
+#: theme_setup_data.php:242
 msgid "Yes, I would like to activate the external scripts on this page..."
 msgstr ""
 
@@ -587,7 +592,7 @@ msgid "Load external Skripts"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:160
-#: theme_setup_data.php:242
+#: theme_setup_data.php:243
 msgid "No, I do not like to activate the external scripts on this page..."
 msgstr ""
 
@@ -916,7 +921,7 @@ msgid "Vimeo URL"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:234
+#: theme_setup_data.php:235
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -928,7 +933,7 @@ msgid "First Text in Comment-Section"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:235
+#: theme_setup_data.php:236
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1142,7 +1147,7 @@ msgid "Icon"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:105
+#: theme_setup_data.php:106
 msgid "Address"
 msgstr ""
 
@@ -1183,12 +1188,12 @@ msgid "Email two"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:121
+#: theme_setup_data.php:122
 msgid "Drop us a mail"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:122
+#: theme_setup_data.php:123
 msgid "Feel free to write us a message"
 msgstr ""
 
@@ -1197,7 +1202,7 @@ msgid "Enable Google map in contact page"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:98
+#: theme_setup_data.php:99
 msgid "Location map"
 msgstr ""
 
@@ -1874,11 +1879,11 @@ msgstr ""
 msgid "Your information has been sent."
 msgstr ""
 
-#: theme_setup_data.php:87
+#: theme_setup_data.php:88
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr ""
 
-#: theme_setup_data.php:89
+#: theme_setup_data.php:90
 msgid "See All Features"
 msgstr ""
 
