@@ -241,7 +241,7 @@ class theme_blog_customizer extends Theme_Customizer {
         ]);
 
         $wp_customize->add_setting($this->theme_options_name . "[max_page_buttons]", [
-            "default" => 7,
+            "default" => 11,
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);

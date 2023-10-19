@@ -19,7 +19,7 @@ class Theme_Pagination {
         $firstbutton = $curpage - $maxpagebuttons / 2;
         $lastbutton = $curpage + $maxpagebuttons / 2;
         $lastbutton = $firstbutton < 1 ? $lastbutton + $firstbutton * -1 : $lastbutton;
-        $firstbutton = $firstbutton < 1 ? 1 : $firstbutton;
+        $firstbutton = $lastbutton >= $post_type_data->max_num_pages ? $firstbutton - ($lastbutton - $post_type_data->max_num_pages) : $firstbutton;
         ?>
         <div class="blog-pagination <?php echo get_with_filler() . get_innerrow_frame_border(" "); ?>">
             <?php
