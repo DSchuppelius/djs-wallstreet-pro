@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (anchors[idx].hostname !== window.location.hostname ||
             anchors[idx].pathname === window.location.pathname ||
             anchors[idx].hasAttribute('data-carousel-extra') ||
+            anchors[idx].hasAttribute('data-vc-accordion') ||
             anchors[idx].target === "_blank") {
             continue;
         }
