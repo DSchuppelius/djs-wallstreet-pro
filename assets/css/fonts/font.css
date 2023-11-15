@@ -38,6 +38,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Sulphur Point";
+    font-style: normal;
+    font-weight: 400;
+    src: url('sulphurpoint/SulphurPoint-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Philosopher";
+    font-style: normal;
+    font-weight: 400;
+    src: url('philosopher/Philosopher-Regular.ttf');
+    font-display: swap;
+}
+
 /* -------- */
 html,
 body {

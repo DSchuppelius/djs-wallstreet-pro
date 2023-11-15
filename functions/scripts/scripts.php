@@ -35,6 +35,12 @@ function theme_font_scripts() {
 		    case 'rubik':
 		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_rubik.css");
 		        break;
+		    case 'sulphurpoint':
+		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_sulphurpoint.css");
+		        break;
+		    case 'philosopher':
+		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_philosopher.css");
+		        break;
         	case 'anonymous-pro':
 		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_anonymous-pro.css");
 		        break;

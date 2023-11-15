@@ -149,6 +149,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
                 "montserrat" => "Montserrat",
                 "roboto" => "Roboto",
                 "rubik" => "Rubik",
+                "philosopher" => "Philosopher",
+                "sulphurpoint" => "Sulphur Point",
             ],
         ]);
 
@@ -213,6 +215,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
                 "montserrat" => "Montserrat",
                 "roboto" => "Roboto",
                 "rubik" => "Rubik",
+                "philosopher" => "Philosopher",
+                "sulphurpoint" => "Sulphur Point",
             ],
         ]);
 
