@@ -2,7 +2,7 @@
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('philosopher/Philosopher-Regular.ttf');
+    src: url('overlock/Overlock-Regular.ttf');
     font-display: swap;
 }
 
@@ -10,7 +10,7 @@
     font-family: "SiteFontLight";
     font-style: normal;
     font-weight: 200;
-    src: url('philosopher/Philosopher-Regular.ttf');
+    src: url('overlock/Overlock-Regular.ttf');
     font-display: swap;
 }
 
@@ -18,15 +18,15 @@
     font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('philosopher/Philosopher-Bold.ttf');
+    src: url('overlock/Overlock-Black.ttf');
     font-display: swap;
 }
 
 @font-face {
     font-family: "SiteFontSemi";
     font-style: normal;
-    font-weight: 200;
-    src: url('philosopher/Philosopher-Bold.ttf');
+    font-weight: 400;
+    src: url('overlock/Overlock-Bold.ttf');
     font-display: swap;
 }
 
@@ -34,8 +34,8 @@
 @font-face {
     font-family: "SiteFontMedium";
     font-style: normal;
-    font-weight: 500;
-    src: url('philosopher/Philosopher-Regular.ttf');
+    font-weight: 200;
+    src: url('overlock/Overlock-Bold.ttf');
     font-display: swap;
 }
 

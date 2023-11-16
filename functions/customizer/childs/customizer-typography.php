@@ -149,7 +149,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
                 "montserrat" => "Montserrat",
                 "roboto" => "Roboto",
                 "rubik" => "Rubik",
-                "philosopher" => "Philosopher",
+                "overlock" => "Overlock",
+                "opensans" => "Open Sans",
                 "sulphurpoint" => "Sulphur Point",
             ],
         ]);
@@ -215,7 +216,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
                 "montserrat" => "Montserrat",
                 "roboto" => "Roboto",
                 "rubik" => "Rubik",
-                "philosopher" => "Philosopher",
+                "overlock" => "Overlock",
+                "opensans" => "Open Sans",
                 "sulphurpoint" => "Sulphur Point",
             ],
         ]);

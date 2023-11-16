@@ -47,10 +47,10 @@
 }
 
 @font-face {
-    font-family: "Philosopher";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    src: url('philosopher/Philosopher-Regular.ttf');
+    src: url('opensans/OpenSans_Condensed-Regular.ttf');
     font-display: swap;
 }
 
