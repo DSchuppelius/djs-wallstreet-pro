@@ -1,6 +1,6 @@
-html, body{
+html, body {
     height: auto;
-    background : none;
+    background: none;
 }
 
     body.home .homepage_mycarousel,
@@ -17,6 +17,15 @@ html, body{
         display: none;
     }
 
+.blog-post-title-wrapper h2 a > span.post_format, .blog-post-title-wrapper-full h2 a > span.post_format, .blog-post-title-wrapper h2 a:hover > span.post_format, .blog-post-title-wrapper-full h2 a:hover > span.post_format {
+    color: black !important;
+}
+
+article figure.is-type-video, article figure.is-type-video div.wp-block-embed__wrapper, .blog-left-sidebar article section figure.wp-block-embed iframe, .blog-right-sidebar article section figure.wp-block-embed iframe, .blog-detail-section article section figure.wp-block-embed iframe, .archive article section figure.wp-block-embed iframe {
+    display: block;
+    width: 100%;
+}
+
 .header-top-area {
     transform: translate3d(0px, 0px, 0px) !important;
     position: absolute;
@@ -29,7 +38,7 @@ html, body{
         margin-top: 60px;
     }
 
-footer, .page_scrollup i {
+footer, .page_scrollup i, .page_scrollup {
     display: none;
 }
 
@@ -41,6 +50,7 @@ footer, .page_scrollup i {
 body.page #wall_wrapper .site.rellax {
     margin-top: 50px;
 }
+
     body.page #wall_wrapper .site.rellax .col-md-8 {
         width: 100%
     }
@@ -125,16 +135,16 @@ img {
     page-break-inside: avoid;
 }
 
-.blog-post-date span.comment {
-    background-color: #BBB !important;
-    -webkit-print-color-adjust: exact;
-}
+    .blog-post-date span.comment {
+        background-color: #BBB !important;
+        -webkit-print-color-adjust: exact;
+    }
 
-.blog-post-date span.date,
-.blog-btn {
-    background-color: #999 !important;
-    -webkit-print-color-adjust: exact;
-}
+    .blog-post-date span.date,
+    .blog-btn {
+        background-color: #999 !important;
+        -webkit-print-color-adjust: exact;
+    }
 
 .main-portfolio-area {
     width: 165px;
@@ -149,6 +159,7 @@ img {
 div.bigborder {
     border: none !important;
 }
+
 .do-not-print {
     display: none;
     visibility: hidden;

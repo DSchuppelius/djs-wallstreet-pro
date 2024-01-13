@@ -28,7 +28,7 @@ function custom_dark() {
         .comment-img { border: 0.25em solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
         .wallstreet.fixed-widget { border: 1px solid <?php the_additional_rgba($link_color, $alpha = 0.15); ?> }
         .wallstreet.fixed-widget button{ background-color:<?php the_additional_rgba($link_color, $alpha = 0.15); ?>; }
-        .search .blog-pagination a, .blog-pagination a, .btn.tab { background-color:<?php the_additional_rgba($link_color, $alpha = 0.65); ?>; }
+        .search .blog-pagination a, .blog-pagination a, .btn.tab, .btn-default.active { background-color:<?php the_additional_rgba($link_color, $alpha = 0.65); ?>; }
     
         /* Text Colors */
         article a, article a:hover, #script_fullscreen h3, .comment-form-section a, .portfolio-detail-section a, .footer-contact-social li > a > i:hover, .comment-detail-title a, .head-contact-social li:hover i, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .home-blog-area:hover .home-blog-info h2 > a, .tweet-icon i, .tweet-area p > a, 
@@ -56,7 +56,7 @@ function custom_dark() {
         #comment-nav-below > .nav-next a, .tiled-gallery .tiled-gallery-item img, .tiled-gallery .tiled-gallery-item img:hover, #gallery-2 img, .post-content li > a:hover, .sidebar-widget > ul > li > a:hover,
         .sidebar-widget > ul > li > ul > li > a:hover, .page-links a, .nav-search a, .breadcrumbs > li a:hover, .about-us .social a:hover { color: <?php echo $link_color; ?>; }   
         .wallstreet.fixed-widget, .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
-        .service-area:hover { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
+        .service-area:hover, .btn-default:hover { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
         .main-portfolio-showcase-overlay, .home-portfolio-showcase-overlay { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
         .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: <?php echo $link_color; ?>; }
     

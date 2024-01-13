@@ -405,6 +405,14 @@ pre, pre code {
         color: #fff
     }
 
+.btn {
+    color: #fff
+}
+
+.btn-default, .btn-danger, .btn-success, .btn-info {
+    border-color: transparent !important
+}
+
 .callout-section a {
     color: #fff
 }
@@ -1850,9 +1858,29 @@ footer.site {
     background: #00c2a9
 }
 
-.wallstreet_page_heading {
+.uib-datepicker th {
+    background: none !important;
+    color: #e5e5e5
+}
+.uib-datepicker button,
+.uib-datepicker button.active span {
     color: #fff
 }
+
+    .uib-datepicker button .text-muted {
+        color: #ddd
+    }
+
+    .uib-datepicker button:has(.text-info) {
+        background-color: #31b0d5;
+    }
+    .uib-datepicker button .text-info {
+        color: #fff;
+    }
+
+    .wallstreet_page_heading {
+        color: #fff
+    }
 
 .wallstreet_searching {
     color: #fff
