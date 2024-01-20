@@ -54,4 +54,8 @@
         float: right;
         padding: 25px 0;
     }
+
+    .page_fader.logo {
+        min-width: 570px;
+    }
 }

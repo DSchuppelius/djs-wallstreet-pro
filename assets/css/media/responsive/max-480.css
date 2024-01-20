@@ -366,6 +366,18 @@ article section figure:has(.cookies) {
     margin: 0 0 15px;
 }
 
+.page_fader.logo {
+    min-width: 315px;
+}
+
+    .page_fader.logo .site-logo-area {
+        padding-bottom: 0px;
+    }
+
+.page_fader h2.animate {
+    font-size: 20px;
+}
+
 .portfolio-icon a {
     padding: 4px 8px;
     border-radius: 10%;
