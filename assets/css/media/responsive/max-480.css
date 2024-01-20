@@ -8,13 +8,15 @@ article section figure:has(.cookies) {
 }
 
 #script_fullscreen {
-    width: 100%;
-    left: 0%;
+    min-width: 315px;
+    width: 90%;
+    left: 5%;
+    top: 15%
 }
 
     #script_fullscreen .btn {
-        max-width: 150px;
-        min-width: 120px;
+        max-width: 145px;
+        min-width: 100px;
     }
 
 .footer-copyright p {

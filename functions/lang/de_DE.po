@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2023-09-29 14:23+0200\n"
-"PO-Revision-Date: 2023-09-29 14:24+0200\n"
+"POT-Creation-Date: 2024-01-20 12:58+0100\n"
+"PO-Revision-Date: 2024-01-20 12:58+0100\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@schuppelius.org>\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -1339,67 +1339,67 @@ msgid "Call-to-Action button"
 msgstr "Call-to-Action-Schaltfläche"
 
 #: functions/customizer/childs/customizer-typography.php:141
-#: functions/customizer/childs/customizer-typography.php:205
-#: functions/customizer/childs/customizer-typography.php:272
-#: functions/customizer/childs/customizer-typography.php:318
-#: functions/customizer/childs/customizer-typography.php:364
-#: functions/customizer/childs/customizer-typography.php:410
-#: functions/customizer/childs/customizer-typography.php:456
-#: functions/customizer/childs/customizer-typography.php:502
-#: functions/customizer/childs/customizer-typography.php:548
-#: functions/customizer/childs/customizer-typography.php:596
-#: functions/customizer/childs/customizer-typography.php:642
+#: functions/customizer/childs/customizer-typography.php:208
+#: functions/customizer/childs/customizer-typography.php:278
+#: functions/customizer/childs/customizer-typography.php:324
+#: functions/customizer/childs/customizer-typography.php:370
+#: functions/customizer/childs/customizer-typography.php:416
+#: functions/customizer/childs/customizer-typography.php:462
+#: functions/customizer/childs/customizer-typography.php:508
+#: functions/customizer/childs/customizer-typography.php:554
+#: functions/customizer/childs/customizer-typography.php:602
+#: functions/customizer/childs/customizer-typography.php:648
 msgid "Font style"
 msgstr "Schriftstil"
 
-#: functions/customizer/childs/customizer-typography.php:163
-#: functions/customizer/childs/customizer-typography.php:227
+#: functions/customizer/childs/customizer-typography.php:166
+#: functions/customizer/childs/customizer-typography.php:233
 msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
 msgstr ""
 "Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte "
 "Typografie deaktiviert ist)"
 
-#: functions/customizer/childs/customizer-typography.php:177
+#: functions/customizer/childs/customizer-typography.php:180
 msgid "Enable custom typography"
 msgstr "Individuelle Typografie aktivieren"
 
-#: functions/customizer/childs/customizer-typography.php:191
+#: functions/customizer/childs/customizer-typography.php:194
 msgid "Name of GoogleFont"
 msgstr "Name des GoogleFonts"
 
-#: functions/customizer/childs/customizer-typography.php:241
-#: functions/customizer/childs/customizer-typography.php:287
-#: functions/customizer/childs/customizer-typography.php:333
-#: functions/customizer/childs/customizer-typography.php:379
-#: functions/customizer/childs/customizer-typography.php:425
-#: functions/customizer/childs/customizer-typography.php:471
-#: functions/customizer/childs/customizer-typography.php:517
-#: functions/customizer/childs/customizer-typography.php:565
-#: functions/customizer/childs/customizer-typography.php:611
+#: functions/customizer/childs/customizer-typography.php:247
+#: functions/customizer/childs/customizer-typography.php:293
+#: functions/customizer/childs/customizer-typography.php:339
+#: functions/customizer/childs/customizer-typography.php:385
+#: functions/customizer/childs/customizer-typography.php:431
+#: functions/customizer/childs/customizer-typography.php:477
+#: functions/customizer/childs/customizer-typography.php:523
+#: functions/customizer/childs/customizer-typography.php:571
+#: functions/customizer/childs/customizer-typography.php:617
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: functions/customizer/childs/customizer-typography.php:246
-#: functions/customizer/childs/customizer-typography.php:292
-#: functions/customizer/childs/customizer-typography.php:338
-#: functions/customizer/childs/customizer-typography.php:384
-#: functions/customizer/childs/customizer-typography.php:430
-#: functions/customizer/childs/customizer-typography.php:476
-#: functions/customizer/childs/customizer-typography.php:522
-#: functions/customizer/childs/customizer-typography.php:570
-#: functions/customizer/childs/customizer-typography.php:616
+#: functions/customizer/childs/customizer-typography.php:252
+#: functions/customizer/childs/customizer-typography.php:298
+#: functions/customizer/childs/customizer-typography.php:344
+#: functions/customizer/childs/customizer-typography.php:390
+#: functions/customizer/childs/customizer-typography.php:436
+#: functions/customizer/childs/customizer-typography.php:482
+#: functions/customizer/childs/customizer-typography.php:528
+#: functions/customizer/childs/customizer-typography.php:576
+#: functions/customizer/childs/customizer-typography.php:622
 msgid "Pixels"
 msgstr "Pixel"
 
-#: functions/customizer/childs/customizer-typography.php:257
-#: functions/customizer/childs/customizer-typography.php:303
-#: functions/customizer/childs/customizer-typography.php:349
-#: functions/customizer/childs/customizer-typography.php:395
-#: functions/customizer/childs/customizer-typography.php:441
-#: functions/customizer/childs/customizer-typography.php:487
-#: functions/customizer/childs/customizer-typography.php:533
-#: functions/customizer/childs/customizer-typography.php:581
-#: functions/customizer/childs/customizer-typography.php:627
+#: functions/customizer/childs/customizer-typography.php:263
+#: functions/customizer/childs/customizer-typography.php:309
+#: functions/customizer/childs/customizer-typography.php:355
+#: functions/customizer/childs/customizer-typography.php:401
+#: functions/customizer/childs/customizer-typography.php:447
+#: functions/customizer/childs/customizer-typography.php:493
+#: functions/customizer/childs/customizer-typography.php:539
+#: functions/customizer/childs/customizer-typography.php:587
+#: functions/customizer/childs/customizer-typography.php:633
 msgid "Font family"
 msgstr "Schriftart"
 
@@ -1990,6 +1990,33 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
+
+#, fuzzy
+#~| msgid ""
+#~| "This site uses third-party program code that may allow conclusions to be "
+#~| "drawn about your user behavior. Some of these program codes are loaded "
+#~| "from external servers. We use this code to determine what content is of "
+#~| "interest to you or to make the behavior and appearance of this website "
+#~| "more pleasant for you. Would you like to support us and unlock these "
+#~| "external scripts and styles? You can find more information about the use "
+#~| "of data on these websites on the following pages:"
+#~ msgid ""
+#~ "This site uses third-party program code that may allow conclusions to be "
+#~ "drawn about your user behavior. Some of these program codes are loaded "
+#~ "from external servers. We use this code to determine what content is of "
+#~ "interest to you or to make the behavior and appearance of this website "
+#~ "more pleasant for you.<br>Would you like to support us and unlock these "
+#~ "external scripts and styles? You can find more information about the use "
+#~ "of data on these websites on the following pages:"
+#~ msgstr ""
+#~ "Diese Seite verwendet Programmcode von Drittanbietern, der evtl. "
+#~ "Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen "
+#~ "Programmcodes werden von externen Servern geladen. Wir verwenden diesen "
+#~ "Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder "
+#~ "das Verhalten und Aussehen dieser Webseite für Sie angenehmer zu "
+#~ "gestalten. Möchten Sie uns dabei unterstützen und diese externen Skripte "
+#~ "und Styles freischalten? Auf den folgenden Seiten können Sie weitere "
+#~ "Informationen zur Datennutzung auf dieser Webseite einsehen:"
 
 #~ msgid "Our Clients"
 #~ msgstr "Unsere Kunden"
