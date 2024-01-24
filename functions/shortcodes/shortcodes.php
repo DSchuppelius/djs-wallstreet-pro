@@ -225,7 +225,7 @@ function alert_shortcode($atts, $content = null) {
         '<div class="' .
         $alert_style .
         '">
-            <button data-dismiss="alert" class="close material-icons-outlined" type="button">close</button>
+            <button data-dismiss="alert" class="not close material-icons-outlined" type="button">close</button>
             <strong>' .
         $alert_heading .
         "</strong>&nbsp;&nbsp;" .
