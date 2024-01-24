@@ -15,12 +15,12 @@ button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-
 
 a.button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "pin"
+    content: "lock"
 }
 
 a.button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "encrypted"
+    content: "enhanced_encryption"
 }
 
 a.button.btn.date:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
