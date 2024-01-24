@@ -18,6 +18,11 @@ button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn
     content: "lock"
 }
 
+a.button.btn.copy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.copy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "content_copy"
+}
+
 a.button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "enhanced_encryption"
