@@ -31,7 +31,7 @@ button.btn.copy:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
 
 a.button.btn.encrypted:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
 button.btn.encrypted:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "encryption"
+    content: "encrypted"
 }
 
 a.button.btn.date:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
