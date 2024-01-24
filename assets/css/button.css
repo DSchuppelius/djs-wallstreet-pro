@@ -268,6 +268,33 @@ a.comment-reply-link {
         width: 100%
     }
 
+    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled {
+        text-shadow: unset
+    }
+
+        .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+        button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+        a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+        input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+        a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+        a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before {
+            text-shadow: unset
+        }
+
+        .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+        button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+        a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+        input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+        a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+        a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before {
+            width: 2.125em
+        }
+
     .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
     button:not(.not, .swiper-pagination-bullet, [class*="btn-"], .swiper-pagination-bullet),
     a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
