@@ -13,6 +13,16 @@ button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-
     content: "warning"
 }
 
+a.button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "pin"
+}
+
+a.button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "encrypted"
+}
+
 a.button.btn.date:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 button.btn.date:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "event"
