@@ -1,3 +1,16 @@
+::-webkit-scrollbar-track {
+    background-color: #404040;
+}
+
+::-webkit-scrollbar {
+    background-color: #404040;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(239,239,239,.7);
+    background-color: var(--theme-color);
+}
+
 body {
     color: #e5e5e5;
 }
@@ -408,6 +421,18 @@ pre, pre code {
 .btn {
     color: #fff
 }
+
+    .btn.okay {
+        background-color: #2ab230
+    }
+
+    .btn.warn {
+        background-color: #ffa500;
+    }
+
+    .btn.fail {
+        background-color: #ef4136;
+    }
 
 .btn-default, .btn-danger, .btn-success, .btn-info {
     border-color: transparent !important

@@ -1,157 +1,150 @@
-.btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
-button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
-a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before {
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before {
     content: attr(symbol-name);
 }
 
-.btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "chevron_right";
 }
 
-button[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+button[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "send";
 }
 
-a.button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.warning:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.warning:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.warning:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "warning"
 }
 
-a.button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.password:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "lock"
+a.button.btn.password:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.password:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "password"
 }
 
-a.button.btn.copy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.copy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.copy:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.copy:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "content_copy"
 }
 
-a.button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.encrypted:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "enhanced_encryption"
+a.button.btn.encrypted:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.encrypted:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "encryption"
 }
 
-a.button.btn.date:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.date:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.date:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.date:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "event"
 }
 
-a.button.btn.back:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.back:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.back:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.back:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "fast_rewind"
 }
 
-a.button.btn.forward:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.forward:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.forward:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.forward:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "fast_forward"
 }
 
-a.button.btn.buy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.buy:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.buy:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.buy:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "euro_symbol"
 }
 
-a.button.btn.menu:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.menu:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.navbar-toggle.collapsed:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.menu:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.menu:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.navbar-toggle.collapsed:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "menu"
 }
 
-button.btn.navbar-toggle:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+button.btn.navbar-toggle:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "menu_open"
 }
 
-a.button.btn.more:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.more:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.more:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.more:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "read_more"
 }
 
-a.button.btn.loadmore:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.loadmore:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.loadmore:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.loadmore:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "drive_folder_upload"
 }
 
-a.button.btn.more.blog:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.more.blog:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.more.blog:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.more.blog:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "dashboard"
 }
 
-a.button.btn.more.history:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.more.history:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.more.history:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.more.history:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "history"
 }
 
-a.button.btn.more.portfolio:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.more.portfolio:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.more.portfolio:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.more.portfolio:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "collections_bookmark"
 }
 
-a.button.btn.more.services:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.more.services:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.more.services:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.more.services:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "engineering"
 }
 
-a.button.btn.project:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.project:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.button.btn.project:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.project:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "developer_board"
 }
 
-a.button.search:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.btn.search_btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.search-submit.btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+.btn.search_btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+a.button.search:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.btn.search_btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.search-submit.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "search"
 }
 
-#subscribe-submit button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "stars";
+#subscribe-submit button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "subscriptions";
 }
 
-.btn.search_btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "search";
+.btn.tab:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "tab";
 }
 
-.btn.tab:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "local_activity";
-}
-
-.btn.next:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-.btn.history:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+.btn.next:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+.btn.history:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "history";
 }
 
-.btn.prev:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-.btn.update:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+.btn.prev:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+.btn.update:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "update";
 }
 
-.home-blog-info .home-blog-btn a:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-.btn.blog-btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+.home-blog-info .home-blog-btn a:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+.btn.blog-btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "article";
 }
 
-#script_fullscreen .btn.ok:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-.cookies .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+#script_fullscreen .btn.ok:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+.cookies .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "visibility";
 }
 
-#script_fullscreen .btn.no:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+#script_fullscreen .btn.no:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "visibility_off";
 }
 
-a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "reply";
 }
 
-a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "edit";
-}
-
-button.close:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
-    content: "";
 }
 
 #searchbar_fullscreen input.search-field {
@@ -233,29 +226,29 @@ a.comment-reply-link {
         box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
     }
 
-        button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+        button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
             min-width: 150px
         }
 
-            button.wp-block-search__button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+            button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
                 line-height: 2.5em
             }
 
-    .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover {
+    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover {
         text-shadow: 0 0 1px #18191b
     }
 
-    .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-    button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
+    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
         left: 0;
         line-height: 2em;
         position: absolute;
@@ -266,21 +259,21 @@ a.comment-reply-link {
         z-index: -1
     }
 
-    .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):hover:before {
+    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before {
         width: 100%
     }
 
-    .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"], .swiper-pagination-bullet),
-    a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    button:not(.not, .swiper-pagination-bullet, [class*="btn-"], .swiper-pagination-bullet),
+    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
         min-width: 250px;
         display: inline-block;
         text-align: center;
@@ -292,29 +285,29 @@ a.comment-reply-link {
         z-index: 3
     }
 
-    .btn.big:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    button.big:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.big:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].big:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+    .btn.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    input[type="submit"].big:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
         min-width: 300px;
     }
 
-    .btn.small:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    button.small:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.small:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].small:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+    .btn.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    input[type="submit"].small:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
         min-width: 180px;
     }
 
-    .btn.smaller:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    button.smaller:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.smaller:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].smaller:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+    .btn.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    input[type="submit"].smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
         min-width: 120px;
     }
 
-    a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
         min-width: 210px
     }
 

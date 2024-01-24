@@ -39,6 +39,6 @@
     font-display: swap;
 }
 
-.btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]), button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]), a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]), input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]), a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]), a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]) {
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]), button:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]), input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
     padding: 0.85em 1em 0.55em 3.5em !important;
 }

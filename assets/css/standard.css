@@ -14,6 +14,20 @@
     gap: 1em
 }
 
+::-webkit-scrollbar-track {
+    border-radius: 0
+}
+
+::-webkit-scrollbar {
+    width: 0.75em
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.5)
+}
+
+
 /*HTML Section--------------------------------------------------------------------------------*/
 html,
 body {

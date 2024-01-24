@@ -1190,6 +1190,6 @@ input#pwbox-1168 {
     transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s
 }
 
-a.comment-edit-link:not(.not, .has-icon, .swiper-pagination-bullet), a.comment-reply-link:not(.not, .has-icon, .swiper-pagination-bullet), input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet), button:not(.not, .has-icon, .swiper-pagination-bullet), .btn:not(.not, .has-icon, .swiper-pagination-bullet), a.button:not(.not, .has-icon, .swiper-pagination-bullet) {
+a.comment-edit-link:not(.not, .swiper-pagination-bullet), a.comment-reply-link:not(.not, .swiper-pagination-bullet), input[type="submit"]:not(.not, .swiper-pagination-bullet), button:not(.not, .swiper-pagination-bullet), .btn:not(.not, .swiper-pagination-bullet), a.button:not(.not, .swiper-pagination-bullet) {
     transition: all .3s
 }

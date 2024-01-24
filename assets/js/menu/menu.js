@@ -171,7 +171,7 @@ jQuery(document).ready(function () {
     jQuery("#searchbar_fullscreen, #searchbar_fullscreen button.close").on("click keyup", function (event) {
         if (
             // event.target == this ||
-            event.target.className == "close material-icons-outlined has-icon" ||
+            event.target.className == "not close material-icons-outlined" ||
             event.keyCode == 27
         ) {
             jQuery(this).removeClass("open");
@@ -192,7 +192,7 @@ jQuery(document).ready(function () {
     jQuery("#script_fullscreen, #script_fullscreen button.close").on("click keyup", function (event) {
         if (
             // event.target == this ||
-            event.target.className == "close material-icons-outlined has-icon" ||
+            event.target.className == "not close material-icons-outlined" ||
             event.keyCode == 27
         ) {
             jQuery(this).removeClass("open");

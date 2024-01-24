@@ -1482,7 +1482,7 @@ input#pwbox-1168 {
     font-size: 0.9em
 }
 
-input[type="submit"]:not(.not, .has-icon, .swiper-pagination-bullet), button:not(.not, .has-icon, .swiper-pagination-bullet), .btn:not(.not, .has-icon, .swiper-pagination-bullet), a.button:not(.not, .has-icon, .swiper-pagination-bullet) {
+input[type="submit"]:not(.not, .swiper-pagination-bullet), button:not(.not, .swiper-pagination-bullet), .btn:not(.not, .swiper-pagination-bullet), a.button:not(.not, .swiper-pagination-bullet) {
     font-size: 0.9em
 }
 
