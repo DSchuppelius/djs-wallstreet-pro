@@ -319,6 +319,13 @@ a.comment-reply-link {
         min-width: 300px;
     }
 
+    .btn.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    a.button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+    input[type="submit"].dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+        min-width: 215px;
+    }
+
     .btn.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
     button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
     a.button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
