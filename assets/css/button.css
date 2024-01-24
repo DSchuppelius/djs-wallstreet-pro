@@ -1,3 +1,9 @@
+.btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before {
+    content: attr(symbol-name);
+}
+
 .btn:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before,
 a.button:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):before {
@@ -148,8 +154,8 @@ button.close:not(.not, .has-icon, .swiper-pagination-bullet, [class*="btn-"]):be
     content: "";
 }
 
-#searchbar_fullscreen input.search-field{
-    border-radius:0px;
+#searchbar_fullscreen input.search-field {
+    border-radius: 0px;
 }
 
 input, button, .btn, .show-all-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
