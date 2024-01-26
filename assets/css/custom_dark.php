@@ -31,7 +31,7 @@ function custom_dark() {
         .search .blog-pagination a, .blog-pagination a, .btn.tab, .btn-default.active { background-color:<?php the_additional_rgba($link_color, $alpha = 0.65); ?>; }
     
         /* Text Colors */
-        article a, article a:hover, #script_fullscreen h3, .comment-form-section a, .portfolio-detail-section a, .footer-contact-social li > a > i:hover, .comment-detail-title a, .head-contact-social li:hover i, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .home-blog-area:hover .home-blog-info h2 > a, .tweet-icon i, .tweet-area p > a, 
+        article a, article a:hover, #script_fullscreen h3, .comment-form-section a, .portfolio-detail-section a, .footer-contact-social li > a > i:hover, .comment-detail-title a, .head-contact-social li:hover i, .dropdown-menu > li > a:focus, .home-blog-area:hover .home-blog-info h2 > a, .tweet-icon i, .tweet-area p > a, 
         .footer-blog-post:hover h3 a, .footer-blog-post:hover .post-date span.date, .footer-blog-post:hover .post-date span.month, .footer-copyright p a, .page-header-title h1 a, .page-breadcrumbs,
         .breadcrumbs > .active, .about-social-icons li > a > i:hover, .team-area h5 > span, .blog-post-title > .blog-post-title-wrapper > h1, .blog-post-title > .blog-post-title-wrapper > h2, 
         .blog-post-title > .blog-post-title-wrapper > h3, .blog-post-title > .blog-post-title-wrapper > h4, .blog-post-title > .blog-post-title-wrapper > h5, .blog-post-title > .blog-post-title-wrapper > h6,
@@ -55,10 +55,11 @@ function custom_dark() {
         .comment-detail > ol, .comment-detail > ol > li a, .comment-detail > ol > li > ol > li a, .comment-detail > ol > li > ol > li > ol > li a, #comment-nav-below > .nav-previous a,
         #comment-nav-below > .nav-next a, .tiled-gallery .tiled-gallery-item img, .tiled-gallery .tiled-gallery-item img:hover, #gallery-2 img, .post-content li > a:hover, .sidebar-widget > ul > li > a:hover,
         .sidebar-widget > ul > li > ul > li > a:hover, .page-links a, .nav-search a, .breadcrumbs > li a:hover, .about-us .social a:hover { color: <?php echo $link_color; ?>; }   
-        .wallstreet.fixed-widget, .testimonial-section .overlay { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
+        .wallstreet.fixed-widget, .testimonial-section .overlay, .dropdown-menu, .nav > li.menu-item > a:after { background: <?php the_reduced_rgba($link_color, $alpha = 0.7); ?> !important; }
         .service-area:hover, .btn-default:hover { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
         .main-portfolio-showcase-overlay, .home-portfolio-showcase-overlay { background: <?php the_additional_rgba($link_color, $alpha = 0.7); ?> !important;}
-        .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: <?php echo $link_color; ?>; }
+        .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus { color: <?php the_additional_rgba($link_color, $alpha = 1, "#303030") ?>; }
+        .dropdown-menu > li > a:hover { color: <?php the_additional_rgba($link_color, $alpha = 1, "#303030") ?>; }
     
         @media only screen and (min-width: 480px) and (max-width: 767px) {
             .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus, 

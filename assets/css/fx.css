@@ -593,7 +593,7 @@ body.fixed_Header .navbar.navbar-fixed-top {
 }
 
 .features-section {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px)
 }
 
 footer.site {
@@ -741,7 +741,7 @@ footer.site {
 
     .nav li.menu-item a:after {
         transform: scale3d(0,1,1);
-        transform-origin: left;
+        transform-origin: right;
         transition: transform .3s ease-in-out .2s;
     }
 
@@ -753,6 +753,9 @@ footer.site {
             transform: scale3d(1,1,1);
         }
 
+.nav > li.menu-item > a:after {
+    transform-origin: left;
+}
 .nav li.menu-item.active a {
     transition: none;
 }

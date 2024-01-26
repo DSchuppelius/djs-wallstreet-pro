@@ -13,6 +13,15 @@
         right: 0px;
     }
 
+    .navbar-right > li > .dropdown-menu {
+        margin: 0px
+    }
+
+    .navbar-right .dropdown-menu {
+        margin: 0px;
+        left: 0
+    }
+
     .navbar.navbar-wrapper .container > .navbar-header {
         display: flex;
         align-items: center;
