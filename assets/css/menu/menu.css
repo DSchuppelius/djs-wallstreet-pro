@@ -111,7 +111,7 @@
     border-radius: 0px var(--input-base) var(--input-base) var(--input-base);
     border: 0 none;
     box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.7), 5px 5px 15px 5px rgba(0,0,0,0);
-    padding: 5px
+    padding: 5px;
 }
 
     .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
@@ -131,10 +131,6 @@
         white-space: nowrap
     }
 
-    .dropdown-menu > li + a:hover {
-        border-radius: 0 0 var(--input-base) var(--input-base);
-    }
-
     .dropdown-menu > li > a:last-child {
         border-bottom: 0px;
         border-bottom: 0
@@ -147,6 +143,7 @@
     }
 
 .dropdown-submenu {
+    z-index:9999;
     position: relative
 }
 
@@ -187,7 +184,6 @@
 }
 
 .navbar-right .dropdown-menu {
-    margin-left: -57px;
     border: solid 1px #fff;
     left: 50%;
 }
