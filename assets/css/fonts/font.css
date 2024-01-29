@@ -568,7 +568,12 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
 }
 
 .dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
-    font-size: 0.8em;
+    font-size: 0.8em
+}
+
+.dropdown-menu > li > a {
+    font-weight: 400;
+    font-size: 1em
 }
 
 .entry-content dt, .comment-content dt {

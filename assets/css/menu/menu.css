@@ -107,7 +107,7 @@
 
 .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.7);
-    min-width: 225px;
+    min-width: 226px;
     border-radius: 0px var(--input-base) var(--input-base) var(--input-base);
     border: 0 none;
     box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.7), 5px 5px 15px 5px rgba(0,0,0,0);
@@ -120,8 +120,6 @@
 
     .dropdown-menu > li > a {
         color: #ffffff;
-        font-weight: 400;
-        font-size: 15px;
         line-height: 20px;
         padding: 15px 20px;
         transition: color 0.2s ease-in-out 0s;
@@ -131,19 +129,19 @@
         white-space: nowrap
     }
 
-    .dropdown-menu > li > a:last-child {
-        border-bottom: 0px;
-        border-bottom: 0
-    }
+        .dropdown-menu > li > a:last-child {
+            border-bottom: 0px;
+            border-bottom: 0
+        }
 
-    .dropdown-menu > li > a:hover,
-    .dropdown-menu > li > a:focus {
-        text-decoration: none;
-        background-color: transparent
-    }
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus {
+            text-decoration: none;
+            background-color: transparent
+        }
 
 .dropdown-submenu {
-    z-index:9999;
+    z-index: 9999;
     position: relative
 }
 
@@ -173,19 +171,25 @@
             border-radius: var(--input-base)
         }
 
+.navbar-nav .dropdown-menu {
+    border: solid 1px #fff;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    border-radius: var(--input-base);
+    border: none;
+}
+
 .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
     padding: 15px
 }
 
-.navbar-right > li > .dropdown-menu {
-    border-radius: var(--input-base);
-    margin-left: -107px;
-    border: none;
+.navbar-right .dropdown-menu {
+    right: 0%;
 }
 
-.navbar-right .dropdown-menu {
-    border: solid 1px #fff;
-    left: 50%;
+.navbar-left .dropdown-menu {
+    left: 0%;
 }
 
 .uib-datepicker-popup.dropdown-menu li {
