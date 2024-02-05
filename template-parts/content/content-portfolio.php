@@ -13,7 +13,6 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 $term_args = ["hide_empty" => true, "orderby" => "id"];
 $posts_per_page = $current_setup_posttypes->get("portfolio_numbers_on_templates");
 $tax_terms = get_terms(PORTFOLIO_TAXONOMY, $term_args);
-$default_tax_id = get_option("wallstreet_theme_default_term_id");
 $j = 1;
 $tab = "";
 

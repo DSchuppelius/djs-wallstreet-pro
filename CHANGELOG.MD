@@ -138,9 +138,9 @@
     1. Archive.php Issue Resolved.
     2. Translate Contact us form Placeholder.
 #### Version 1.7.1:
-    1. Add Product Texonomy Slug Field in customizer.
+    1. Add Product taxonomy Slug Field in customizer.
 #### Version 1.7:
-    1. Add Custom Texonomy Template.
+    1. Add Custom taxonomy Template.
     2. Add Custom post type Slug setting.
 #### Version 1.6.9:
     1. testimonial pouse on hover property added.

@@ -47,14 +47,14 @@ class theme_template_customizer extends Theme_Customizer {
                 "priority" => 100,
             ]);
     
-            //Portfolio Texonomy Setting
-            $wp_customize->add_section("portfolio_texonomy", [
+            //Portfolio taxonomy Setting
+            $wp_customize->add_section("portfolio_taxonomy", [
                 "title" => esc_html__("Portfolio category page setting", "djs-wallstreet-pro"),
                 "panel" => "wallstreet_template",
                 "priority" => 100,
             ]);
     
-            //Project Texonomy Setting
+            //Project taxonomy Setting
             $wp_customize->add_section("project_realted", [
                 "title" => esc_html__("Portfolio template and related page setting", "djs-wallstreet-pro"),
                 "panel" => "wallstreet_template",
@@ -335,7 +335,7 @@ class theme_template_customizer extends Theme_Customizer {
         $wp_customize->add_control($this->theme_options_name . "[taxonomy_portfolio_list]", [
             "type" => "select",
             "label" => esc_html__("Select column layout", "djs-wallstreet-pro"),
-            "section" => "portfolio_texonomy",
+            "section" => "portfolio_taxonomy",
             "choices" => [2 => 2, 3 => 3, 4 => 4],
         ]);
 
@@ -350,7 +350,7 @@ class theme_template_customizer extends Theme_Customizer {
         $wp_customize->add_control($this->theme_options_name . "[portfolio_numbers_for_templates_category]", [
             "type" => "number",
             "label" => esc_html__("Numbers of portfolio in portfolio category page", "djs-wallstreet-pro"),
-            "section" => "portfolio_texonomy",
+            "section" => "portfolio_taxonomy",
             "input_attrs" => [
                 "min" => "1",
                 "step" => "1",
@@ -358,32 +358,32 @@ class theme_template_customizer extends Theme_Customizer {
             ],
         ]);
 
-        //texonomy Title
-        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_texonomy_title]", [
+        //taxonomy Title
+        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_taxonomy_title]", [
             "capability" => "edit_theme_options",
             "default" => esc_html__("Featured portfolio", "djs-wallstreet-pro"),
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
-        $wp_customize->add_control($this->theme_options_name . "[wallstreet_texonomy_title]", [
+        $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
-            "section" => "portfolio_texonomy",
+            "section" => "portfolio_taxonomy",
         ]);
     
-        //texonomy Description
-        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_texonomy_desc]", [
+        //taxonomy Description
+        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
             "capability" => "edit_theme_options",
             "default" => esc_html__("Most popular of our works.", "djs-wallstreet-pro"),
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
     
-        $wp_customize->add_control($this->theme_options_name . "[wallstreet_texonomy_desc]", [
+        $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
             "type" => "textarea",
             "label" => esc_html__("Description", "djs-wallstreet-pro"),
-            "section" => "portfolio_texonomy",
+            "section" => "portfolio_taxonomy",
         ]);   
     }
 
