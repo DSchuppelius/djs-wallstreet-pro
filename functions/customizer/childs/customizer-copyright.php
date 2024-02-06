@@ -29,8 +29,8 @@ class theme_copyright_customizer extends Theme_Customizer {
             "panel" => "wallstreet_copyright_setting",
         ]);
 
-        $wp_customize->add_section("cookie_section_one", [
-            "title" => esc_html__("Cookie settings", "djs-wallstreet-pro"),
+        $wp_customize->add_section("cookie_section_two", [
+            "title" => esc_html__("Thirdparty Script settings", "djs-wallstreet-pro"),
             "priority" => 35,
             "panel" => "wallstreet_copyright_setting",
         ]);
@@ -96,51 +96,9 @@ class theme_copyright_customizer extends Theme_Customizer {
             "type" => "textarea",
         ]);
     
-        $wp_customize->add_setting($this->theme_options_name . "[cookie_before]", [
-            "default" => esc_html__("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:' . $current_setup->get("contact_email_number_one") . '" >' . $current_setup->get("contact_email_number_one") . "</a>)",
-            "sanitize_callback" => "sanitize_link_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[cookie_before]", [
-            "label" => esc_html__("Cookietext before button", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
-            "type" => "textarea",
-        ]);
-
-        $wp_customize->add_setting($this->theme_options_name . "[cookie_link]", [
-            "default" => esc_html__("Yes, I would like to activate the content on this page...", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_text_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[cookie_link]", [
-            "label" => esc_html__("Buttontext", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
-            "type" => "textarea",
-        ]);
-
-        $wp_customize->add_setting($this->theme_options_name . "[cookie_after]", [
-            "default" => esc_html__("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_link_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[cookie_after]", [
-            "label" => esc_html__("Cookietext after button", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
-            "type" => "textarea",
-        ]);
-
-        $wp_customize->add_setting($this->theme_options_name . "[script_before]", [
-            "default" => esc_html__("This site uses third-party program code that may allow conclusions to be drawn about your user behavior. Some of these program codes are loaded from external servers. We use this code to determine what content is of interest to you or to make the behavior and appearance of this website more pleasant for you. Would you like to support us and unlock these external scripts and styles? You can find more information about the use of data on these websites on the following pages:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:info@schuppelius.org" >info@schuppelius.org</a>)',
-            "sanitize_callback" => "sanitize_link_field",
-            "type" => "option",
-        ]);
-
         $wp_customize->add_control($this->theme_options_name . "[script_before]", [
             "label" => esc_html__("Load scripts question", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
+            "section" => "cookie_section_two",
             "type" => "textarea",
         ]);
         
@@ -152,7 +110,7 @@ class theme_copyright_customizer extends Theme_Customizer {
 
         $wp_customize->add_control($this->theme_options_name . "[script_link]", [
             "label" => esc_html__("Load external Skripts", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
+            "section" => "cookie_section_two",
             "type" => "textarea",
         ]);
         
@@ -164,7 +122,7 @@ class theme_copyright_customizer extends Theme_Customizer {
 
         $wp_customize->add_control($this->theme_options_name . "[noscript_link]", [
             "label" => esc_html__("No external Skripts", "djs-wallstreet-pro"),
-            "section" => "cookie_section_one",
+            "section" => "cookie_section_two",
             "type" => "textarea",
         ]);
     }

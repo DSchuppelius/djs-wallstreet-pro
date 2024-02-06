@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-01-20 12:58+0100\n"
+"POT-Creation-Date: 2024-02-05 23:21+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -148,6 +148,7 @@ msgstr ""
 
 #: comments.php:91 functions/customizer/childs/customizer-template.php:746
 #: template/contact-us.php:88 template/contact-us.php:89
+#: theme_setup_data.php:118
 msgid "Email"
 msgstr ""
 
@@ -191,7 +192,7 @@ msgid ""
 "<a href=\"%s\">%s</a>"
 msgstr ""
 
-#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -199,24 +200,24 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:125
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:130
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:196 functions/customizer/childs/customizer-social.php:125
+#: functions.php:197 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:197 functions/customizer/childs/customizer-social.php:98
+#: functions.php:198 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:198 functions/customizer/childs/customizer-social.php:152
+#: functions.php:199 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -266,14 +267,6 @@ msgstr ""
 
 #: functions/basic/blog.php:68
 msgid "More"
-msgstr ""
-
-#: functions/basic/iframe.php:42
-msgid "Third-party cookies"
-msgstr ""
-
-#: functions/basic/iframe.php:43
-msgid "Hint:"
 msgstr ""
 
 #: functions/basic/jscript.php:28
@@ -452,7 +445,7 @@ msgid "Footer copyright settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:33
-msgid "Cookie settings"
+msgid "Thirdparty Script settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:42
@@ -493,110 +486,24 @@ msgid "Copyright text"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:238
-msgid ""
-"This hidden content may leave traces of third-party vendors on your computer "
-"when activated. Perhaps your user behavior could be analyzed via these "
-"traces. Please confirm the execution of the content by clicking on the "
-"button. On the following pages you can view further information on the use "
-"of data on this website:"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Imprint"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Privacy policy"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Do you have any further questions on this topic? Write me via the"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "contact"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "contact form"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "or by e-mail"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:106
-msgid "Cookietext before button"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:112
-#: theme_setup_data.php:239
-msgid "Yes, I would like to activate the content on this page..."
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:118
-msgid "Buttontext"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:124
-#: theme_setup_data.php:240
-msgid ""
-"Furthermore, you are aware that by activating the content, cookies can be "
-"set by third parties. In addition, you are aware that your data processing "
-"system interacts with the third-party service. This means that information "
-"from your system is transmitted to the third-party provider. If you follow "
-"the link below, cookies will probably also be set and data exchanged on the "
-"target website."
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:130
-msgid "Cookietext after button"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:241
-msgid ""
-"This site uses third-party program code that may allow conclusions to be "
-"drawn about your user behavior. Some of these program codes are loaded from "
-"external servers. We use this code to determine what content is of interest "
-"to you or to make the behavior and appearance of this website more pleasant "
-"for you. Would you like to support us and unlock these external scripts and "
-"styles? You can find more information about the use of data on these "
-"websites on the following pages:"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:142
 msgid "Load scripts question"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:148
-#: theme_setup_data.php:242
+#: functions/customizer/childs/customizer-copyright.php:106
+#: theme_setup_data.php:239
 msgid "Yes, I would like to activate the external scripts on this page..."
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:154
+#: functions/customizer/childs/customizer-copyright.php:112
 msgid "Load external Skripts"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:160
-#: theme_setup_data.php:243
+#: functions/customizer/childs/customizer-copyright.php:118
+#: theme_setup_data.php:240
 msgid "No, I do not like to activate the external scripts on this page..."
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:166
+#: functions/customizer/childs/customizer-copyright.php:124
 msgid "No external Skripts"
 msgstr ""
 
@@ -1164,6 +1071,7 @@ msgid "Enable contact page phone section"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:674
+#: theme_setup_data.php:112
 msgid "Phone"
 msgstr ""
 
@@ -1577,7 +1485,7 @@ msgstr ""
 msgid "Last updated:"
 msgstr ""
 
-#: template-parts/content/content-portfolio.php:109
+#: template-parts/content/content-portfolio.php:108
 msgid "Detail"
 msgstr ""
 
@@ -1885,6 +1793,41 @@ msgstr ""
 
 #: theme_setup_data.php:90
 msgid "See All Features"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid ""
+"This site uses third-party program code that may allow conclusions to be "
+"drawn about your user behavior. Some of these program codes are loaded from "
+"external servers. We use this code to determine what content is of interest "
+"to you or to make the behavior and appearance of this website more pleasant "
+"for you. Would you like to support us and unlock these external scripts and "
+"styles? You can find more information about the use of data on these "
+"websites on the following pages:"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "Imprint"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "Privacy policy"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "Do you have any further questions on this topic? Write me via the"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "contact"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "contact form"
+msgstr ""
+
+#: theme_setup_data.php:238
+msgid "or by e-mail"
 msgstr ""
 
 #. Theme Name of the plugin/theme

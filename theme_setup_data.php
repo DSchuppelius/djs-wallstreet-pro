@@ -109,13 +109,13 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
     
             "contact_phone_settings" => "on",
             "contact_phone_icon" => "fa-phone",
-            "contact_phone_title" => "Phone",
+            "contact_phone_title" => esc_html__("Phone", "djs-wallstreet-pro"),
             "contact_phone_number_one" => "1-800-123-789",
             "contact_phone_number_two" => "1-800-123-789",
     
             "contact_email_settings" => "on",
             "contact_email_icon" => "fa-inbox",
-            "contact_email_title" => "Email",
+            "contact_email_title" => esc_html__("Email", "djs-wallstreet-pro"),
             "contact_email_number_one" => "info@schuppelius.org",
             "contact_email_number_two" => "schuppelius.org",
     
@@ -235,9 +235,6 @@ class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
             "before_comment" => esc_html__("Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.", "djs-wallstreet-pro"),
             "after_comment" => esc_html__("If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to.", "djs-wallstreet-pro"),
     
-            "cookie_before" => esc_html__("This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:info@schuppelius.org" >info@schuppelius.org</a>)',
-            "cookie_link" => esc_html__("Yes, I would like to activate the content on this page...", "djs-wallstreet-pro"),
-            "cookie_after" => esc_html__("Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website.", "djs-wallstreet-pro"),
             "script_before" => esc_html__("This site uses third-party program code that may allow conclusions to be drawn about your user behavior. Some of these program codes are loaded from external servers. We use this code to determine what content is of interest to you or to make the behavior and appearance of this website more pleasant for you. Would you like to support us and unlock these external scripts and styles? You can find more information about the use of data on these websites on the following pages:", "djs-wallstreet-pro") . ' <a href="/' . urlencode(strtolower(esc_html__("Imprint", "djs-wallstreet-pro"))) . '">' . esc_html__("Imprint", "djs-wallstreet-pro") . '</a>, <a href="/' . urlencode(remove_umlaut(strtolower(esc_html__("Privacy policy", "djs-wallstreet-pro")))) . '">' . esc_html__("Privacy policy", "djs-wallstreet-pro") . '</a>. ' . esc_html__("Do you have any further questions on this topic? Write me via the", "djs-wallstreet-pro").' <a href="/' . urlencode(strtolower(esc_html__("contact", "djs-wallstreet-pro"))) . '">' . esc_html__("contact form", "djs-wallstreet-pro") . '</a> ' . esc_html__("or by e-mail", "djs-wallstreet-pro") . ' (<a href="mailto:info@schuppelius.org" >info@schuppelius.org</a>)',
             "script_link" => esc_html__("Yes, I would like to activate the external scripts on this page...", "djs-wallstreet-pro"),
             "noscript_link" => esc_html__("No, I do not like to activate the external scripts on this page...", "djs-wallstreet-pro"),

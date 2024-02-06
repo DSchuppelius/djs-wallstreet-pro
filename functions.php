@@ -22,6 +22,8 @@ require_once "theme_setup_data.php";
 
 require_once THEME_FUNCTIONS_PATH . "/base/get_template_parts.php";
 require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
+require_once THEME_FUNCTIONS_PATH . "/base/web_functions.php";
+
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_functions.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_sanitizer.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_colors.php";
@@ -38,7 +40,6 @@ require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_page.php";
 require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_nav_menu.php";
 
 require_once THEME_FUNCTIONS_PATH . "/basic/blog.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/iframe.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/archive.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/jscript.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/lazyload.php";

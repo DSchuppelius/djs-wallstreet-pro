@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2024-01-20 12:58+0100\n"
-"PO-Revision-Date: 2024-01-20 12:58+0100\n"
+"POT-Creation-Date: 2024-02-05 23:21+0100\n"
+"PO-Revision-Date: 2024-02-05 23:36+0100\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@schuppelius.org>\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -168,6 +168,7 @@ msgstr "Name"
 
 #: comments.php:91 functions/customizer/childs/customizer-template.php:746
 #: template/contact-us.php:88 template/contact-us.php:89
+#: theme_setup_data.php:118
 msgid "Email"
 msgstr "E-Mail"
 
@@ -213,7 +214,7 @@ msgstr ""
 "Um alle Funktionen des Themas \"DJS-Wallstreet-Pro\" nutzen zu können, laden "
 "Sie das Plugin <a href=\"%s\">%s</a> herunter"
 
-#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -221,24 +222,24 @@ msgstr ""
 msgid "Page"
 msgstr "Seite"
 
-#: functions.php:124
+#: functions.php:125
 msgctxt "header image description"
 msgid "MyPic"
 msgstr "MeinBild"
 
-#: functions.php:129
+#: functions.php:130
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
-#: functions.php:196 functions/customizer/childs/customizer-social.php:125
+#: functions.php:197 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: functions.php:197 functions/customizer/childs/customizer-social.php:98
+#: functions.php:198 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr "Twitter URL"
 
-#: functions.php:198 functions/customizer/childs/customizer-social.php:152
+#: functions.php:199 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr "LinkedIn URL"
 
@@ -289,14 +290,6 @@ msgstr "Blogbeitrag"
 #: functions/basic/blog.php:68
 msgid "More"
 msgstr "Mehr"
-
-#: functions/basic/iframe.php:42
-msgid "Third-party cookies"
-msgstr "Cookies von Drittanbietern"
-
-#: functions/basic/iframe.php:43
-msgid "Hint:"
-msgstr "Hinweis:"
 
 #: functions/basic/jscript.php:28
 msgid "Third-party scripts"
@@ -476,8 +469,8 @@ msgid "Footer copyright settings"
 msgstr "Fußzeilencopyrighteinstellungen"
 
 #: functions/customizer/childs/customizer-copyright.php:33
-msgid "Cookie settings"
-msgstr "Cookieeinstellungen"
+msgid "Thirdparty Script settings"
+msgstr "Einstellungen für Skripte von Drittanbietern"
 
 #: functions/customizer/childs/customizer-copyright.php:42
 #: theme_setup_data.php:232
@@ -523,132 +516,25 @@ msgid "Copyright text"
 msgstr "Copyrighttext"
 
 #: functions/customizer/childs/customizer-copyright.php:100
-#: theme_setup_data.php:238
-msgid ""
-"This hidden content may leave traces of third-party vendors on your computer "
-"when activated. Perhaps your user behavior could be analyzed via these "
-"traces. Please confirm the execution of the content by clicking on the "
-"button. On the following pages you can view further information on the use "
-"of data on this website:"
-msgstr ""
-"Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von "
-"Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte Ihr "
-"Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte best&auml;"
-"tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des Buttons. Auf "
-"den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung "
-"auf dieser Website einsehen:"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Imprint"
-msgstr "Impressum"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Privacy policy"
-msgstr "Datenschutzerklärung"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "Do you have any further questions on this topic? Write me via the"
-msgstr "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "contact"
-msgstr "Kontakt"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "contact form"
-msgstr "Kontaktformular"
-
-#: functions/customizer/childs/customizer-copyright.php:100
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:238 theme_setup_data.php:241
-msgid "or by e-mail"
-msgstr "oder per E-Mail"
-
-#: functions/customizer/childs/customizer-copyright.php:106
-msgid "Cookietext before button"
-msgstr "Mitteilung vor Cookie-Schaltfläche"
-
-#: functions/customizer/childs/customizer-copyright.php:112
-#: theme_setup_data.php:239
-msgid "Yes, I would like to activate the content on this page..."
-msgstr "Ja, ich möchte den Inhalt auf dieser Seite aktivieren..."
-
-#: functions/customizer/childs/customizer-copyright.php:118
-msgid "Buttontext"
-msgstr "Schaltflächentext"
-
-#: functions/customizer/childs/customizer-copyright.php:124
-#: theme_setup_data.php:240
-msgid ""
-"Furthermore, you are aware that by activating the content, cookies can be "
-"set by third parties. In addition, you are aware that your data processing "
-"system interacts with the third-party service. This means that information "
-"from your system is transmitted to the third-party provider. If you follow "
-"the link below, cookies will probably also be set and data exchanged on the "
-"target website."
-msgstr ""
-"Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
-"Cookies von Dritten gesetzt werden können. Darüber hinaus ist Ihnen bekannt, "
-"dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst interagiert. "
-"Das bedeutet, dass Informationen aus Ihrem System an den Drittanbieter "
-"übermittelt werden. Wenn Sie dem untenstehenden Link folgen, werden "
-"wahrscheinlich auch Cookies gesetzt und Daten auf der Zielwebsite "
-"ausgetauscht."
-
-#: functions/customizer/childs/customizer-copyright.php:130
-msgid "Cookietext after button"
-msgstr "Mitteilung nach Cookieschaltfläche"
-
-#: functions/customizer/childs/customizer-copyright.php:136
-#: theme_setup_data.php:241
-msgid ""
-"This site uses third-party program code that may allow conclusions to be "
-"drawn about your user behavior. Some of these program codes are loaded from "
-"external servers. We use this code to determine what content is of interest "
-"to you or to make the behavior and appearance of this website more pleasant "
-"for you. Would you like to support us and unlock these external scripts and "
-"styles? You can find more information about the use of data on these "
-"websites on the following pages:"
-msgstr ""
-"Diese Seite verwendet Programmcode von Drittanbietern, der evtl. "
-"Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen "
-"Programmcodes werden von externen Servern geladen. Wir verwenden diesen "
-"Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder das "
-"Verhalten und Aussehen dieser Webseite für Sie angenehmer zu gestalten. "
-"Möchten Sie uns dabei unterstützen und diese externen Skripte und Styles "
-"freischalten? Auf den folgenden Seiten können Sie weitere Informationen zur "
-"Datennutzung auf dieser Webseite einsehen:"
-
-#: functions/customizer/childs/customizer-copyright.php:142
 msgid "Load scripts question"
 msgstr "Frage zum Laden von Skripten"
 
-#: functions/customizer/childs/customizer-copyright.php:148
-#: theme_setup_data.php:242
+#: functions/customizer/childs/customizer-copyright.php:106
+#: theme_setup_data.php:239
 msgid "Yes, I would like to activate the external scripts on this page..."
 msgstr "Ja, ich möchte die externen Skripte auf dieser Seite aktivieren..."
 
-#: functions/customizer/childs/customizer-copyright.php:154
+#: functions/customizer/childs/customizer-copyright.php:112
 msgid "Load external Skripts"
 msgstr "Externe Skripte laden"
 
-#: functions/customizer/childs/customizer-copyright.php:160
-#: theme_setup_data.php:243
+#: functions/customizer/childs/customizer-copyright.php:118
+#: theme_setup_data.php:240
 msgid "No, I do not like to activate the external scripts on this page..."
 msgstr ""
 "Nein, ich möchte die externen Skripte auf dieser Seite nicht aktivieren..."
 
-#: functions/customizer/childs/customizer-copyright.php:166
+#: functions/customizer/childs/customizer-copyright.php:124
 msgid "No external Skripts"
 msgstr "Keine externen Skripte"
 
@@ -1232,6 +1118,7 @@ msgid "Enable contact page phone section"
 msgstr "Kontaktseite-Telefonbereich aktivieren"
 
 #: functions/customizer/childs/customizer-template.php:674
+#: theme_setup_data.php:112
 msgid "Phone"
 msgstr "Telefon"
 
@@ -1651,7 +1538,7 @@ msgstr "Hier suchen"
 msgid "Last updated:"
 msgstr "Letztes Update:"
 
-#: template-parts/content/content-portfolio.php:109
+#: template-parts/content/content-portfolio.php:108
 msgid "Detail"
 msgstr "Details"
 
@@ -1968,6 +1855,49 @@ msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 
+#: theme_setup_data.php:238
+msgid ""
+"This site uses third-party program code that may allow conclusions to be "
+"drawn about your user behavior. Some of these program codes are loaded from "
+"external servers. We use this code to determine what content is of interest "
+"to you or to make the behavior and appearance of this website more pleasant "
+"for you. Would you like to support us and unlock these external scripts and "
+"styles? You can find more information about the use of data on these "
+"websites on the following pages:"
+msgstr ""
+"Diese Seite verwendet Programmcode von Drittanbietern, der evtl. "
+"Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen "
+"Programmcodes werden von externen Servern geladen. Wir verwenden diesen "
+"Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder das "
+"Verhalten und Aussehen dieser Webseite für Sie angenehmer zu gestalten. "
+"Möchten Sie uns dabei unterstützen und diese externen Skripte und Styles "
+"freischalten? Auf den folgenden Seiten können Sie weitere Informationen zur "
+"Datennutzung auf dieser Webseite einsehen:"
+
+#: theme_setup_data.php:238
+msgid "Imprint"
+msgstr "Impressum"
+
+#: theme_setup_data.php:238
+msgid "Privacy policy"
+msgstr "Datenschutzerklärung"
+
+#: theme_setup_data.php:238
+msgid "Do you have any further questions on this topic? Write me via the"
+msgstr "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
+
+#: theme_setup_data.php:238
+msgid "contact"
+msgstr "Kontakt"
+
+#: theme_setup_data.php:238
+msgid "contact form"
+msgstr "Kontaktformular"
+
+#: theme_setup_data.php:238
+msgid "or by e-mail"
+msgstr "oder per E-Mail"
+
 #. Theme Name of the plugin/theme
 msgid "DJS-Wallstreet-Pro"
 msgstr "DJS-Wallstreet-Pro"
@@ -1990,6 +1920,57 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://schuppelius.org"
 msgstr "https://schuppelius.org/"
+
+#~ msgid "Third-party cookies"
+#~ msgstr "Cookies von Drittanbietern"
+
+#~ msgid "Hint:"
+#~ msgstr "Hinweis:"
+
+#~ msgid "Cookie settings"
+#~ msgstr "Cookieeinstellungen"
+
+#~ msgid ""
+#~ "This hidden content may leave traces of third-party vendors on your "
+#~ "computer when activated. Perhaps your user behavior could be analyzed via "
+#~ "these traces. Please confirm the execution of the content by clicking on "
+#~ "the button. On the following pages you can view further information on "
+#~ "the use of data on this website:"
+#~ msgstr ""
+#~ "Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von "
+#~ "Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte "
+#~ "Ihr Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte "
+#~ "best&auml;tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des "
+#~ "Buttons. Auf den folgenden Seiten k&ouml;nnen Sie weitere Informationen "
+#~ "zur Datennutzung auf dieser Website einsehen:"
+
+#~ msgid "Cookietext before button"
+#~ msgstr "Mitteilung vor Cookie-Schaltfläche"
+
+#~ msgid "Yes, I would like to activate the content on this page..."
+#~ msgstr "Ja, ich möchte den Inhalt auf dieser Seite aktivieren..."
+
+#~ msgid "Buttontext"
+#~ msgstr "Schaltflächentext"
+
+#~ msgid ""
+#~ "Furthermore, you are aware that by activating the content, cookies can be "
+#~ "set by third parties. In addition, you are aware that your data "
+#~ "processing system interacts with the third-party service. This means that "
+#~ "information from your system is transmitted to the third-party provider. "
+#~ "If you follow the link below, cookies will probably also be set and data "
+#~ "exchanged on the target website."
+#~ msgstr ""
+#~ "Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
+#~ "Cookies von Dritten gesetzt werden können. Darüber hinaus ist Ihnen "
+#~ "bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst "
+#~ "interagiert. Das bedeutet, dass Informationen aus Ihrem System an den "
+#~ "Drittanbieter übermittelt werden. Wenn Sie dem untenstehenden Link "
+#~ "folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der "
+#~ "Zielwebsite ausgetauscht."
+
+#~ msgid "Cookietext after button"
+#~ msgstr "Mitteilung nach Cookieschaltfläche"
 
 #, fuzzy
 #~| msgid ""
