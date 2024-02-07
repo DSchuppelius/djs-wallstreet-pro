@@ -28,13 +28,6 @@ class theme_copyright_customizer extends Theme_Customizer {
             "priority" => 35,
             "panel" => "wallstreet_copyright_setting",
         ]);
-
-        $wp_customize->add_section("cookie_section_two", [
-            "title" => esc_html__("Thirdparty Script settings", "djs-wallstreet-pro"),
-            "priority" => 35,
-            "panel" => "wallstreet_copyright_setting",
-        ]);
-
     }
 
     //HACK Theme Check - required to add theme in WordPress theme library (found no sanitizer)
@@ -93,36 +86,6 @@ class theme_copyright_customizer extends Theme_Customizer {
         $wp_customize->add_control($this->theme_options_name . "[footer_copyright]", [
             "label" => esc_html__("Copyright text", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
-            "type" => "textarea",
-        ]);
-    
-        $wp_customize->add_control($this->theme_options_name . "[script_before]", [
-            "label" => esc_html__("Load scripts question", "djs-wallstreet-pro"),
-            "section" => "cookie_section_two",
-            "type" => "textarea",
-        ]);
-        
-        $wp_customize->add_setting($this->theme_options_name . "[script_link]", [
-            "default" => esc_html__("Yes, I would like to activate the external scripts on this page...", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_link_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[script_link]", [
-            "label" => esc_html__("Load external Skripts", "djs-wallstreet-pro"),
-            "section" => "cookie_section_two",
-            "type" => "textarea",
-        ]);
-        
-        $wp_customize->add_setting($this->theme_options_name . "[noscript_link]", [
-            "default" => esc_html__("No, I do not like to activate the external scripts on this page...", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_link_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[noscript_link]", [
-            "label" => esc_html__("No external Skripts", "djs-wallstreet-pro"),
-            "section" => "cookie_section_two",
             "type" => "textarea",
         ]);
     }

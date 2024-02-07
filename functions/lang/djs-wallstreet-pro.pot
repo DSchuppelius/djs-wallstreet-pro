@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-02-05 23:21+0100\n"
+"POT-Creation-Date: 2024-02-07 08:11+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -192,7 +192,7 @@ msgid ""
 "<a href=\"%s\">%s</a>"
 msgstr ""
 
-#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -200,24 +200,24 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:124
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:129
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:197 functions/customizer/childs/customizer-social.php:125
+#: functions.php:196 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:198 functions/customizer/childs/customizer-social.php:98
+#: functions.php:197 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:199 functions/customizer/childs/customizer-social.php:152
+#: functions.php:198 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -267,10 +267,6 @@ msgstr ""
 
 #: functions/basic/blog.php:68
 msgid "More"
-msgstr ""
-
-#: functions/basic/jscript.php:28
-msgid "Third-party scripts"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:15
@@ -444,11 +440,7 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:33
-msgid "Thirdparty Script settings"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:42
+#: functions/customizer/childs/customizer-copyright.php:35
 #: theme_setup_data.php:232
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
@@ -458,53 +450,31 @@ msgid ""
 "shipping-costs\">Shipping costs</a>&nbsp;"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:56
+#: functions/customizer/childs/customizer-copyright.php:49
 msgid "Enable Footer Link-text"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:69
+#: functions/customizer/childs/customizer-copyright.php:62
 msgid "Footer Link-text"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:82
+#: functions/customizer/childs/customizer-copyright.php:75
 msgid "Enable Footer Copyright"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:88
+#: functions/customizer/childs/customizer-copyright.php:81
 #: theme_setup_data.php:233
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions/customizer/childs/customizer-copyright.php:88
+#: functions/customizer/childs/customizer-copyright.php:81
 #: theme_setup_data.php:233
 msgid "Daniel Joerg Schuppelius"
 msgstr ""
 
-#: functions/customizer/childs/customizer-copyright.php:94
+#: functions/customizer/childs/customizer-copyright.php:87
 msgid "Copyright text"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:100
-msgid "Load scripts question"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:106
-#: theme_setup_data.php:239
-msgid "Yes, I would like to activate the external scripts on this page..."
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:112
-msgid "Load external Skripts"
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:118
-#: theme_setup_data.php:240
-msgid "No, I do not like to activate the external scripts on this page..."
-msgstr ""
-
-#: functions/customizer/childs/customizer-copyright.php:124
-msgid "No external Skripts"
 msgstr ""
 
 #: functions/customizer/childs/customizer-global.php:22
@@ -1249,10 +1219,6 @@ msgstr ""
 msgid "Logo Width"
 msgstr ""
 
-#: functions/shortcodes/shortcodes.php:24
-msgid "%y year(s) - %m month"
-msgstr ""
-
 #: functions/shortcodes/shortcodes_iframe.php:37
 msgid "Insert Shortcode"
 msgstr ""
@@ -1299,23 +1265,6 @@ msgstr ""
 
 #: functions/shortcodes/shortcodes_iframe.php:83
 msgid "List"
-msgstr ""
-
-#: functions/shortcodes/shortcodes_jetpack.php:28
-msgid "visits"
-msgstr ""
-
-#: functions/shortcodes/shortcodes_jetpack.php:30
-msgid "not enabled"
-msgstr ""
-
-#: functions/shortcodes/shortcodes_jetpack.php:33
-#: functions/shortcodes/shortcodes_jetpack.php:58
-msgid "nonexistent"
-msgstr ""
-
-#: functions/shortcodes/shortcodes_jetpack.php:56
-msgid "messages"
 msgstr ""
 
 #: functions/theme/theme_setup.php:32 functions/theme/theme_setup.php:37
@@ -1793,41 +1742,6 @@ msgstr ""
 
 #: theme_setup_data.php:90
 msgid "See All Features"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid ""
-"This site uses third-party program code that may allow conclusions to be "
-"drawn about your user behavior. Some of these program codes are loaded from "
-"external servers. We use this code to determine what content is of interest "
-"to you or to make the behavior and appearance of this website more pleasant "
-"for you. Would you like to support us and unlock these external scripts and "
-"styles? You can find more information about the use of data on these "
-"websites on the following pages:"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "Imprint"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "Privacy policy"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "Do you have any further questions on this topic? Write me via the"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "contact"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "contact form"
-msgstr ""
-
-#: theme_setup_data.php:238
-msgid "or by e-mail"
 msgstr ""
 
 #. Theme Name of the plugin/theme
