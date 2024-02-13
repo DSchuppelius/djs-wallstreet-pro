@@ -27,14 +27,6 @@ function values_on_current_option($option, $positive, $negative = "", $prefix = 
     echo get_values_on_current_option($option, $positive, $negative, $prefix, $suffix);
 }
 
-function get_the_currentURL(){
-    return (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-}
-
-function the_currentURL() {
-    echo esc_url(get_the_currentURL());
-}
-
 function get_blank_target($option, $prefix = null){
     $result = 'target="';
     if ($option) {
@@ -139,5 +131,18 @@ function show_rellax_div() {
         return true;
 
     return false;
+}
+
+// Load functions if djs-wallstreet-pro-extensions is not loaded
+if (!function_exists('get_the_currentURL')) {
+    function get_the_currentURL(){
+        return (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === "on" ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+    }
+}
+
+if (!function_exists('the_currentURL')) {
+    function the_currentURL() {
+        echo esc_url(get_the_currentURL());
+    }
 }
 ?>
