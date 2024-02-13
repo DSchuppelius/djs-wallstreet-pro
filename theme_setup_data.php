@@ -8,9 +8,9 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-require_once THEME_FUNCTIONS_PATH . "/theme/theme_setup.php";
+require_once THEME_FUNCTIONS_PATH . "/theme/djs_setup.php";
 
-class DJS_Wallstreet_Pro_Theme_Setup extends Theme_Setup {
+class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
     // @return plugin|null
     public static function instance() {
         // Store the instance locally to avoid private static replication

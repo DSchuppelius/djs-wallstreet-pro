@@ -3,15 +3,30 @@
  * Created on   : Wed Jun 22 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org
- * Filename     : theme_setup.php
+ * Filename     : djs_base.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+defined('ABSPATH') or die('Hm, Are you ok?');
 
-if(!class_exists('Theme_Setup')) {
-    abstract class Theme_Setup {
-        protected array $data;
-        protected array $current_data;
+if(!class_exists('DJS_Base')) {
+    abstract class DJS_Base {
+        protected $data;
+
+        // @var mixed False when not logged in; WP_User object when logged in
+        public $current_user = false;
+
+        // @var obj Add-ons append to this (Akismet, BuddyPress, etc...)
+        public $extend;
+
+        // @var array Topic views
+        public $views = [];
+
+        // @var array Overloads get_option()
+        public $options = [];
+
+        // @var array Overloads get_user_meta()
+        public $user_options = [];
 
         // @return plugin|null
         abstract public static function instance();
@@ -19,8 +34,8 @@ if(!class_exists('Theme_Setup')) {
         /**
          * A dummy constructor to prevent plugin from being loaded more than once.
          *
-         * @since Theme_Setup (v2.0.4)
-         * @see Theme_Setup::instance()
+         * @since DJS_Base (v2.0.4)
+         * @see DJS_Base::instance()
          * @see plugin();
          */
         protected function __construct() {
@@ -61,38 +76,6 @@ if(!class_exists('Theme_Setup')) {
         public function __call($name = '', $args = []) {
             unset($name, $args);
             return null;
-        }
-
-        public function get($key) {
-            $result = null;
-
-            if (array_diff($this->data, $this->get_initial_setup()) != []) {
-                $this->load_current_setup();
-            }
-
-            if (array_key_exists($key, $this->current_data)) {
-                if(is_bool($this->__get($key))) {
-                    $result = sanitize_boolean_field($this->current_data[$key]);
-                } else {
-                    $result = $this->current_data[$key];
-                }
-            } else {
-                $result = $this->__get($key);
-            }
-
-            return $result;
-        }
-
-        // @return initial_setup|null
-        abstract protected function get_initial_setup();
-
-        protected function load_current_setup() {
-            $this->data = $this->get_initial_setup();
-            $this->current_data = $this->get_current_setup();
-        }
-
-        public function get_current_setup() {
-            return wp_parse_args(get_option("wallstreet_pro_options", []), $this->data);
         }
     }
 }
