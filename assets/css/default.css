@@ -1552,6 +1552,12 @@ footer.site {
     color: #fff
 }
 
+.sidebar-widget:has(h2)::before {
+    background: rgba(0,0,0,0.15);
+    background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+
 .sidebar-widget .wp-block-search .wp-block-search__label, .sidebar-widget h1, .sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4, .sidebar-widget h5, .sidebar-widget h6 {
     color: #fff
 }
