@@ -391,6 +391,11 @@ div.blog-switcher-view.sidebar div.row.bigborder div.col-md-4 div.columnfiller {
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
+    #script_fullscreen .title_row {
+        border-top-right-radius: var(--border-verysmallbase);
+        border-top-left-radius: var(--border-verysmallbase);
+    }
+
 div.container.portfolio.preview div.row .row,
 div.container.portfolio.preview div.row.no_background .row.related-project-section,
 div.container.portfolio.preview div.row.no_background div.main-portfolio-showcase-media img {

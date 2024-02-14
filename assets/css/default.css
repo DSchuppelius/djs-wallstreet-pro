@@ -49,6 +49,10 @@ pre, pre code {
     border: 15px rgba(55,57,65,0.6) solid
 }
 
+    #script_fullscreen .title_row {
+        background-color: rgba(0,0,0,0.2);
+    }
+
     #script_fullscreen .btn, #searchbar_fullscreen .btn {
         color: #FFF
     }

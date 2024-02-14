@@ -57,7 +57,12 @@ Text Domain: djs-wallstreet-pro
     width: 70%;
 }
 
+#script_fullscreen .title_row{
+    margin-top:-19px;
+}
+
     #script_fullscreen h3 {
+        padding: 20px 0px;
         margin-left: 20px;
         margin-right: 70px
     }
