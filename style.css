@@ -57,9 +57,9 @@ Text Domain: djs-wallstreet-pro
     width: 70%;
 }
 
-#script_fullscreen .title_row{
-    margin-top:-19px;
-}
+    #script_fullscreen .title_row {
+        margin-top: -19px;
+    }
 
     #script_fullscreen h3 {
         padding: 20px 0px;
@@ -3229,27 +3229,26 @@ div.collapsing ul.nav {
         margin-bottom: 0;
     }
 
-    .sidebar-widget
-{
+.sidebar-widget {
     position: relative;
     user-select: none;
     z-index: 3
 }
 
-        .sidebar-widget:has(h2)::before {
-            position: absolute;
-            left: 0;
-            line-height: 46px;
-            top: 0;
-            right: 0;
-            margin: -10px -20px 0px -20px;
-            content: url('assets/images/transparent.png');
-            z-index: -1
-        }
+    .sidebar-widget:has(h2)::before {
+        position: absolute;
+        left: 0;
+        line-height: 46px;
+        top: 0;
+        right: 0;
+        margin: -10px -20px 0px -20px;
+        content: url('assets/images/transparent.png');
+        z-index: -1
+    }
 
-.sidebar-widget ul.children li {
-    border-bottom: none
-}
+    .sidebar-widget ul.children li {
+        border-bottom: none
+    }
 
 .post-password-form input[type="submit"] {
     border: 0 none;
