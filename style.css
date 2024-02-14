@@ -3229,27 +3229,6 @@ div.collapsing ul.nav {
         margin-bottom: 0;
     }
 
-.sidebar-widget {
-    position: relative;
-    user-select: none;
-    z-index: 3
-}
-
-    .sidebar-widget:has(h2)::before {
-        position: absolute;
-        left: 0;
-        line-height: 46px;
-        top: 0;
-        right: 0;
-        margin: -10px -20px 0px -20px;
-        content: url('assets/images/transparent.png');
-        z-index: -1
-    }
-
-    .sidebar-widget ul.children li {
-        border-bottom: none
-    }
-
 .post-password-form input[type="submit"] {
     border: 0 none;
     border-radius: 0;
@@ -4114,8 +4093,22 @@ div.collapsing ul.nav {
 .sidebar-widget {
     margin-bottom: 70px;
     margin-top: 0;
-    padding: 0
+    padding: 0;
+    position: relative;
+    user-select: none;
+    z-index: 3
 }
+
+    .sidebar-widget:has(h2)::before {
+        position: absolute;
+        left: 0;
+        line-height: 46px;
+        top: 0;
+        right: 0;
+        margin: -10px -20px 0px -20px;
+        content: url('assets/images/transparent.png');
+        z-index: -1
+    }
 
     .sidebar-widget canvas {
         width: 100%
@@ -4263,17 +4256,21 @@ div.collapsing ul.nav {
             padding-top: 0
         }
 
-    .sidebar-widget ul.children li a:before, .footer_widget_column ul.children li a:before {
-        content: "\f144";
+    .sidebar-widget ul.children li {
+        border-bottom: none
     }
 
-    .sidebar-widget ul.children li:first-child {
-        padding-top: 10px
-    }
+        .sidebar-widget ul.children li a:before, .footer_widget_column ul.children li a:before {
+            content: "\f144";
+        }
 
-    .sidebar-widget ul.children li:last-child {
-        padding-bottom: 0
-    }
+        .sidebar-widget ul.children li:first-child {
+            padding-top: 10px
+        }
+
+        .sidebar-widget ul.children li:last-child {
+            padding-bottom: 0
+        }
 
     .sidebar-widget article div {
         padding-left: 20px

@@ -466,6 +466,10 @@ pre, pre code {
         background: none repeat scroll 0 0 rgba(100, 100, 100, 0.8);
     }
 
+.col-md-8 .post:not(:first-child) {
+    background: linear-gradient(184deg, rgba(80,82,90,0.2) 0%, rgba(80,82,90,0.8) 70px);
+}
+
 .column-box p {
     color: #e5e5e5
 }
