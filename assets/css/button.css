@@ -1,13 +1,13 @@
-.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
-button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
-a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before {
-    content: attr(symbol-name);
-}
-
 .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
 button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
 a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "chevron_right";
+}
+
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"])[symbol-name]:before {
+    content: attr(symbol-name);
 }
 
 button[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
