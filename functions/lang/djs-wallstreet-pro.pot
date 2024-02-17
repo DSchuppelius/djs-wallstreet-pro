@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-02-07 08:11+0100\n"
+"POT-Creation-Date: 2024-02-18 00:10+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1267,7 +1267,7 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: functions/theme/theme_setup.php:32 functions/theme/theme_setup.php:37
+#: functions/theme/djs_base.php:47 functions/theme/djs_base.php:52
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
