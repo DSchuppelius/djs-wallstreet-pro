@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-02-18 00:10+0100\n"
+"POT-Creation-Date: 2024-02-22 10:38+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -433,7 +433,7 @@ msgid ""
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:21
-msgid "Copyright and cookie settings"
+msgid "Copyright and disclaimer settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:27

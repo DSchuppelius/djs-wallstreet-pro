@@ -18,7 +18,7 @@ class theme_copyright_customizer extends Theme_Customizer {
         $wp_customize->add_panel("wallstreet_copyright_setting", [
             "priority" => 900,
             "capability" => "edit_theme_options",
-            "title" => esc_html__("Copyright and cookie settings", "djs-wallstreet-pro"),
+            "title" => esc_html__("Copyright and disclaimer settings", "djs-wallstreet-pro"),
         ]);
     }
 
