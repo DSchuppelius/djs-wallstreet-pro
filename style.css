@@ -5227,7 +5227,7 @@ div.collapsing ul.nav {
 }
 
 .wp-block-table {
-    overflow: hidden;
+    overflow: auto;
 }
 
     .wp-block-table figcaption {
@@ -5354,6 +5354,10 @@ article footer time {
         position: relative;
         top: 2px;
         margin-right: 5px
+    }
+
+    article section > .content{
+        overflow-x:auto
     }
 
 .sidebar-widget article footer time {
