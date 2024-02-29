@@ -45,6 +45,10 @@ article section .jp-relatedposts .jp-relatedposts-items {
             padding-right: 20px !important
         }
 
+        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+            padding-right: 0px !important
+        }
+
         article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-excerpt {
             display: none
         }
@@ -169,20 +173,6 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 
 #jp-relatedposts .jp-relatedposts-items-visual {
     margin-right: 0px !important;
-}
-
-    #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
-        padding-right: 0px 
-    }
-
-@media only screen and (max-width: 640px) {
-    #jp-relatedposts .jp-relatedposts-items-visual {
-        margin-right: 0px !important
-    }
-
-        #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
-            padding-right: 0px !important
-        }
 }
 
 @media only screen and (max-width: 480px) {
