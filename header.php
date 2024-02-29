@@ -87,7 +87,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
                 <div class="header-top-area rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_social_contact_header"); ?>">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <?php if ($current_setup->get("header_social_media_enabled") == true) { ?>
                                     <?php
                                     global $ul_class;
@@ -95,7 +95,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
                                     get_template_part("template-parts/global/social-media");
                                 } ?>	
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <?php if ($current_setup->get("contact_header_settings") == "on") { ?>
                                     <ul class="head-contact-info">
                                         <?php if ($current_setup->get("contact_header_contact_settings") != "") { ?>

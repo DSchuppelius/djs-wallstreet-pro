@@ -326,6 +326,9 @@
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+    .header-top-area .container .row {
+        display: block
+    }
     /*Header Top Area----------------*/
     .head-contact-social, .head-contact-info {
         float: none;

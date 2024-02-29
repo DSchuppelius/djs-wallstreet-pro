@@ -21,35 +21,43 @@ article section > div > .wp-block-jetpack-tiled-gallery {
 
 article section .wp-block-jetpack-slideshow {
     display: grid;
-    max-width: 100%;
+    max-width: 100%
 }
 
     article section .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
-        width: 100%;
+        width: 100%
     }
 
 article section .jp-relatedposts .jp-relatedposts-items {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: stretch
 }
 
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
         min-height: 230px;
         display: flex;
         flex-direction: column;
-        flex-basis: 100%;
+        flex-basis: 100%
     }
+
+        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:not(:last-child) {
+            margin-right: 5px
+        }
+
+        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-excerpt {
+            display: none
+        }
 
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs > * {
         display: flex;
-        flex-direction: column;
+        flex-direction: column
     }
 
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
         flex: 1;
         display: inherit !important;
-        position: inherit !important;
+        position: inherit !important
     }
 
     article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
@@ -58,11 +66,11 @@ article section .jp-relatedposts .jp-relatedposts-items {
         height: 100%;
         object-fit: contain;
         border-radius: 0.2em;
-        content: '';
+        content: ''
     }
 
 article section .wp-block-jetpack-tiled-gallery.is-style-columns .tiled-gallery__item, article section .wp-block-jetpack-tiled-gallery.is-style-rectangular .tiled-gallery__item {
-    width: auto !important;
+    width: auto !important
 }
 
 div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
@@ -70,7 +78,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 }
 
 .comment-like-link {
-    color: var(--theme-color);
+    color: var(--theme-color)
 }
 
 .grav-grav {
@@ -80,7 +88,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 
 .gcard a,
 .gcard .grav-inner {
-    font-family: 'SiteFont',Helvetica,Arial,Tahoma,sans-serif !important;
+    font-family: 'SiteFont',Helvetica,Arial,Tahoma,sans-serif !important
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form {
@@ -101,7 +109,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     }
 
     .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form .wp-block-jetpack-subscriptions__form-elements {
-        width: 100%;
+        width: 100%
     }
 
 .wp-block-jetpack-subscriptions #subscribe-email {
@@ -160,22 +168,22 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
         }
 
 #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
-    padding-right: 0px;
+    padding-right: 0px
 }
 
 @media only screen and (max-width: 640px) {
     #jp-relatedposts .jp-relatedposts-items-visual {
-        margin-right: 0px !important;
+        margin-right: 0px !important
     }
 
         #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post2 {
-            padding-right: 0px !important;
+            padding-right: 0px !important
         }
 }
 
 @media only screen and (max-width: 480px) {
 
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
-        word-break: break-word;
+        word-break: break-word
     }
 }

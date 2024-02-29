@@ -1834,6 +1834,10 @@ footer.site {
     min-height: 45px
 }
 
+    .header-top-area .container .row {
+        display: flex
+    }
+
 .home .page-breadcrumbs, .home .page-title-col {
     display: none
 }
