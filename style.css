@@ -950,12 +950,13 @@ Text Domain: djs-wallstreet-pro
         line-height: 28px
     }
 
-    .comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li {
-        margin: 0 0 7px;
-        line-height: 20px
+    .comment-detail > ol {
+        margin: 0 0 27px;
+        line-height: 20px;
+        text-align: justify
     }
 
-        .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
+        .comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
             margin: 0 0 7px;
             line-height: 20px
         }
@@ -997,7 +998,13 @@ Text Domain: djs-wallstreet-pro
             padding: 8px !important
         }
 
-    .comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
+    .comment-detail > ul {
+        margin: 0 0 27px;
+        line-height: 20px;
+        text-align: justify
+    }
+
+    .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
         margin: 0 0 7px;
         line-height: 20px
     }
@@ -5356,9 +5363,9 @@ article footer time {
         margin-right: 5px
     }
 
-    article section > .content{
-        overflow-x:auto
-    }
+article section > .content {
+    overflow-x: auto
+}
 
 .sidebar-widget article footer time {
     margin-top: 3px;
