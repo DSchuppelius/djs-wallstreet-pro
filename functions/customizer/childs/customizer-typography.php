@@ -9,6 +9,9 @@
  */
 
 class plugin_theme_typography_customizer extends Theme_Customizer {
+    private $font_size;
+    private $font_family;
+    private $font_style;
 
     public function __construct() {
         parent::__construct();
@@ -50,7 +53,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
 
         //Enable/Disable typography section
         $wp_customize->add_section("wallstreet_typography_section", [
-            "title" => esc_html__("Typhography enable / disable", "djs-wallstreet-pro"),
+            "title" => esc_html__("Typography enable / disable", "djs-wallstreet-pro"),
             "panel" => "wallstreet_typography_setting",
             "priority" => 5,
         ]);
@@ -659,4 +662,5 @@ global $customizer_typography;
 if(!isset($customizer_typography)) {
     $customizer_typography = new plugin_theme_typography_customizer();
     $customizer_typography->register();
-} ?>
+}
+?>

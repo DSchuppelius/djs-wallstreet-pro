@@ -19,6 +19,15 @@ article section figure:has(.cookies) {
         min-width: 100px;
     }
 
+#script_fullscreen, #searchbar_fullscreen {
+    min-width: 270px;
+}
+
+    #searchbar_fullscreen .btn {
+        min-width: 140px;
+        margin-left: -70px;
+    }
+
 .footer-copyright p {
     word-break: break-word;
 }
