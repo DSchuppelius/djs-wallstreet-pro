@@ -548,7 +548,6 @@ article section figure:has(.cookies) {
     }
 }
 
-
 @media (max-width: 350px) {
     .navbar .search-box-outer .dropdown-menu {
         width: 17.5rem !important;
