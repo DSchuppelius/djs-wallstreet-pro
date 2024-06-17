@@ -5363,7 +5363,7 @@ article footer time {
         margin-right: 5px
     }
 
-article section > .content {
+article section > .content:has(:not inner.cookies) {
     overflow-x: auto
 }
 
