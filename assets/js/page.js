@@ -53,3 +53,11 @@ function setClassesOnPage($) {
 }
 
 jQuery(document).ready(setClassesOnPage);
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.wp-block-embed__wrapper').forEach(function (parent) {
+        if (parent.children.length === 0) {
+            parent.classList.add('no-element');
+        }
+    });
+});

@@ -7,4 +7,3 @@ jQuery(document).ready(function ($) {
         $("div.home-blog-area").height(maxHeight + 15);
     });
 });
-

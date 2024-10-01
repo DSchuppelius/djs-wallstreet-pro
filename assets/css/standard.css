@@ -776,3 +776,28 @@ has-text-align-center {
 .word-break {
     word-break: break-word;
 }
+
+/* Versteckt den Link-Text im Wrapper */
+.wp-block-embed__wrapper.no-element {
+    min-height: 200px;
+    /*text-indent: -9999px;*/ /* Text verstecken */
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+    background-size: 100% 50%;
+    background-position: 0px 70px;
+    background-repeat: no-repeat;
+}
+
+    /* Optional: Füge eine Textmeldung hinzu */
+    .wp-block-embed__wrapper.no-element::before {
+        content: "Inhalt nicht mehr verfügbar..." !important;
+        font-size: 1.3em;
+        transform: translate(0px, 105px);
+        text-indent: 0;
+        position: absolute;
+        color: red;
+        text-shadow: 2px 2px black;
+    }
+
+.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper.no-element:before {
+    padding-top: 0px;
+}
