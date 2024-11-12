@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     document.querySelectorAll(".col-md-8 .post:not(:first-child)").forEach((post) => {
         // Zufällige Verzögerung zwischen 0 und 13 Sekunden
-        const randomDelay = Math.floor(Math.random() * 10 + 2);
+        const randomDelay = Math.floor(Math.random() * 6 + 2);
         post.style.cssText += `animation: gradientShift ${randomDelay}s ease-in-out infinite;`;
     });
 });
