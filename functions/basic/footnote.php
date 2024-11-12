@@ -17,14 +17,15 @@ function adjust_footnote_links($content) {
         return $content; // Keine Änderungen bei Nicht-Beiträgen
     }
 
-    // Anpassung der Links in <sup>-Tags mit Klasse fn (Rückverweise)
+    // Anpassung der Links in <sup>-Tags mit Klasse fn und data-fn Attribut (Rückverweise)
     $content = preg_replace_callback(
-        '/<sup class="fn"><a href="([^"]+)" id="([^"]+)-link">/',
+        '/<sup data-fn="([^"]+)" class="fn"><a href="([^"]+)" id="([^"]+)-link">/',
         function($matches) use ($post_url) {
-            $href = $matches[1];
-            $id = $matches[2];
-            $corrected_href = esc_url($post_url . '#' . $id);
-            return '<sup class="fn"><a href="' . $corrected_href . '" id="' . $id . '-link">';
+            $data_fn = $matches[1]; // Extrahiere den data-fn Wert
+            $href = $matches[2];
+            $id = $matches[3];
+            $corrected_href = esc_url($post_url . $href);
+            return '<sup data-fn="' . $data_fn . '" class="fn"><a href="' . $corrected_href . '" id="' . $id . '-link">';
         },
         $content
     );
