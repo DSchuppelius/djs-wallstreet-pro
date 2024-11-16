@@ -14,7 +14,10 @@ define("THEME_ASSETS_PATH_URI", TEMPLATE_DIR_URI . "/assets");
 define("THEME_FUNCTIONS_PATH", TEMPLATE_DIR . "/functions");
 define("THEME_OPTIONS_PATH", TEMPLATE_DIR_URI . "/functions/theme_options");
 
-if (!defined('DJS_POSTTYPE_PLUGIN_DIR')) {
+if (!defined('DJS_CORE_PLUGIN_DIR')) {
+    add_action('admin_notices', function() { echo "<div class='notice'><p>" . sprintf(__('To use the theme "DJS-Wallstreet-Pro" download the plugin <a href="%s">%s</a>', "djs-wallstreet-pro"), "https://github.com/DSchuppelius/djs-wallstreet-pro-core/releases/latest/", "DJS-Wallstreet-Pro Core") . "</p></div>"; });
+    switch_theme(WP_DEFAULT_THEME);
+} elseif (!defined('DJS_POSTTYPE_PLUGIN_DIR')) {
     add_action('admin_notices', function() { echo "<div class='notice'><p>" . sprintf(__('To use all features of the theme "DJS-Wallstreet-Pro" download the plugin <a href="%s">%s</a>', "djs-wallstreet-pro"), "https://github.com/DSchuppelius/djs-wallstreet-pro-post-types/releases/latest/", "DJS-Wallstreet-Pro Post-Types") . "</p></div>"; });
 }
 
@@ -22,15 +25,11 @@ require_once "theme_setup_data.php";
 
 require_once THEME_FUNCTIONS_PATH . "/base/get_template_parts.php";
 require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
-require_once THEME_FUNCTIONS_PATH . "/base/web_functions.php";
-
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_functions.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_sanitizer.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_colors.php";
-
 require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
 require_once THEME_FUNCTIONS_PATH . "/font/font.php";
-
 require_once THEME_FUNCTIONS_PATH . "/content/content.php";
 require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
 require_once THEME_FUNCTIONS_PATH . "/breadcrumbs/breadcrumbs.php";
@@ -38,25 +37,21 @@ require_once THEME_FUNCTIONS_PATH . "/testimonials/testimonials.php";
 require_once THEME_FUNCTIONS_PATH . "/pagination/theme_pagination.php";
 require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_page.php";
 require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_nav_menu.php";
-
 require_once THEME_FUNCTIONS_PATH . "/basic/blog.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/footnote.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/archive.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/lazyload.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/generator.php";
 require_once THEME_FUNCTIONS_PATH . "/basic/htmlclasses.php";
-
 // Sidebar Widgets
 require_once THEME_FUNCTIONS_PATH . "/widget/custom-sidebar.php";
 require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-latest-widget.php";
 require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-post-format-widget.php";
 // Shortcodes
 require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
-
 // Customizer
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-controls.php";
-
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-blog.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-home.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-global.php";
@@ -65,12 +60,9 @@ require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-template.php"
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-copyright.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-typography.php";
 require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-theme_style.php";
-
 require_once THEME_FUNCTIONS_PATH . "/customizer/single-blog-options.php";
-
 require_once THEME_ASSETS_PATH . "/css/custom_dark.php";
 require_once THEME_ASSETS_PATH . "/css/custom_light.php";
-
 // Title
 function theme_head($title, $sep) {
     global $paged, $page;
@@ -96,6 +88,28 @@ function theme_head($title, $sep) {
 }
 add_filter("wp_title", "theme_head", 10, 2);
 
+if(!function_exists("language_theme_setup")) {
+    function language_theme_setup() {
+        $domain = 'djs-wallstreet-pro';
+
+        // Workaround nur für WordPress 6.7
+        if (version_compare(get_bloginfo('version'), '6.7', '>=') && version_compare(get_bloginfo('version'), '6.7.1', '<')) {
+            global $l10n, $wp_textdomain_registry;
+            $locale = get_locale();
+
+            if (isset($wp_textdomain_registry)) {
+                $wp_textdomain_registry->set($domain, $locale, THEME_FUNCTIONS_PATH . '/lang');
+            }
+
+            if (isset($l10n[$domain])) {
+                unset($l10n[$domain]);
+            }
+        }
+
+        load_theme_textdomain($domain, THEME_FUNCTIONS_PATH . '/lang');
+    }
+}
+
 if (!function_exists("theme_setup")) {
     function theme_setup() {
         global $content_width;
@@ -103,8 +117,7 @@ if (!function_exists("theme_setup")) {
             $content_width = 600;
         } //in px
 
-        // Load text domain for translation-ready
-        load_theme_textdomain("djs-wallstreet-pro", THEME_FUNCTIONS_PATH . "/lang");
+        language_theme_setup();
 
         add_image_size("index-thumb", 493, 300, true);
         add_image_size("blog-thumb", 1000, 400, true);

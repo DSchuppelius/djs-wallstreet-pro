@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
-"POT-Creation-Date: 2024-02-22 10:38+0100\n"
-"PO-Revision-Date: 2024-02-22 10:38+0100\n"
+"POT-Creation-Date: 2024-11-14 11:15+0100\n"
+"PO-Revision-Date: 2024-11-14 11:15+0100\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@schuppelius.org>\n"
 "Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
 "teams/64435/de_DE/)\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -38,434 +38,233 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:15 functions/breadcrumbs/breadcrumbs.php:116
-msgid "Error 404"
-msgstr "Fehler 404"
-
-#: 404.php:16
-msgid "Oops! Page not found"
-msgstr "Oops! Seite nicht gefunden"
-
-#: 404.php:17
-msgid "We are sorry, but the page you are looking for does not exist."
-msgstr "Es tut uns leid, aber die Seite, die du suchst, existiert nicht."
-
-#: 404.php:18 template-specials/not_loaded-plugin.php:18
-msgid "Go back"
-msgstr "Zurück gehen"
-
-#: attachment.php:38
-msgid "No description available."
-msgstr "Keine Beschreibung verfügbar."
-
-#: attachment.php:42
-msgid "Properties of the media"
-msgstr "Eigenschaften der Mediendatei"
-
-#: attachment.php:43
-msgid "Resolution (width/height):"
-msgstr "Aufl&ouml;sung (Breite/Höhe):"
-
-#: attachment.php:44
-msgid "Camera model:"
-msgstr "Kameramodell:"
-
-#: attachment.php:45
-msgid "ISO:"
-msgstr "ISO:"
-
-#: attachment.php:46
-msgid "Exposure time:"
-msgstr "Belichtungszeit:"
-
-#: attachment.php:62
-msgid "Linked post"
-msgstr "Verlinkter Beitrag"
-
-#: attachment.php:64 functions/customizer/childs/customizer-template.php:517
-#: index.php:31 template-parts/home/service/servic-1.php:111
-#: template-parts/home/service/servic-2.php:98
-#: template-parts/home/service/servic-3.php:94
-#: template-parts/home/service/servic-4.php:93
-#: template-parts/home/service/servic-5.php:101
-#: template-parts/home/service/servic-6.php:99
-#: template-parts/index/index-portfolio.php:114
-#: template-specials/service-five-template.php:95
-#: template-specials/service-four-template.php:95
-#: template-specials/service-six-template.php:95
-#: template-specials/service-three-template.php:95
-#: template-specials/service-two-template.php:92 theme_setup_data.php:139
-msgid "Read More"
-msgstr "Weiterlesen"
-
-#: comments.php:14
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-"Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu k&ouml;nnen "
-"musst du das Passwort angeben."
-
-#: comments.php:23
-msgid "Reply"
-msgstr "Antworten"
-
-#: comments.php:34
-msgid "Posted on"
-msgstr "Eingestellt am"
-
-#: comments.php:39
-msgid "Edit"
-msgstr "Bearbeiten"
-
-#: comments.php:53
-msgid "Your comment is awaiting moderation."
-msgstr "Dein Kommentar wartet auf Freischaltung."
-
-#: comments.php:65
-msgid "No comments so far"
-msgstr "Bisher keine Kommentare"
-
-#: comments.php:65
-msgid "1 comment so far"
-msgstr "Bisher 1 Kommentar"
-
-#: comments.php:65
-#, no-php-format
-msgid "% comments so far"
-msgstr "% Kommentare bisher"
-
-#: comments.php:72
-msgid "Comment navigation"
-msgstr "Kommentarnavigation"
-
-#: comments.php:73
-msgid "&larr; Older Comments"
-msgstr "&larr; Ältere Kommentare"
-
-#: comments.php:74
-msgid "Newer Comments &rarr;"
-msgstr "Neuere Kommentare &rarr;"
-
-#: comments.php:78
-msgid "Comments Are Closed!!!"
-msgstr "Kommentare sind geschlossen!!!"
-
-#: comments.php:85
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-"Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
-
-#: comments.php:89 template-single/single-portfolio.php:28
-#: template-single/single-portfolio.php:53 template/contact-us.php:92
-#: template/contact-us.php:93
-msgid "Website"
-msgstr "Webseite"
-
-#: comments.php:90
-msgid "Name"
-msgstr "Name"
-
-#: comments.php:91 functions/customizer/childs/customizer-template.php:746
-#: template/contact-us.php:88 template/contact-us.php:89
-#: theme_setup_data.php:118
-msgid "Email"
-msgstr "E-Mail"
-
-#: comments.php:101
-msgid "Leave your message"
-msgstr "Schreibe eine Nachricht"
-
-#: comments.php:102
-msgid "Logged in as"
-msgstr "Angemeldet als"
-
-#: comments.php:102
-msgid "Log out from this Account"
-msgstr "Von diesem Konto abmelden"
-
-#: comments.php:102
-msgid "Log out"
-msgstr "Abmelden"
-
-#: comments.php:105 template/contact-us.php:99
-msgid "Send Message"
-msgstr "Nachricht senden"
-
-#: comments.php:107
-msgid "Please Note:"
-msgstr "Bitte beachten:"
-
-#: comments.php:109
-msgid "Leave a Reply"
-msgstr "Schreiben Sie einen Kommentar"
-
-#: comments.php:110
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Schreiben Sie einen Kommentar zu %s"
-
-#: functions.php:18
-#, php-format
-msgid ""
-"To use all features of the theme \"DJS-Wallstreet-Pro\" download the plugin "
-"<a href=\"%s\">%s</a>"
-msgstr ""
-"Um alle Funktionen des Themas \"DJS-Wallstreet-Pro\" nutzen zu können, laden "
-"Sie das Plugin <a href=\"%s\">%s</a> herunter"
-
-#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
-#: template-parts/content/content-about.php:31
-#: template-parts/content/content-meta-footer.php:22
-#: template-parts/content/content-single.php:26
-#: template-single/single-service.php:45
-msgid "Page"
-msgstr "Seite"
-
-#: functions.php:124
-msgctxt "header image description"
-msgid "MyPic"
-msgstr "MeinBild"
-
-#: functions.php:129
-msgid "Primary Menu"
-msgstr "Primäres Menü"
-
-#: functions.php:196 functions/customizer/childs/customizer-social.php:125
-msgid "Facebook URL"
-msgstr "Facebook URL"
-
-#: functions.php:197 functions/customizer/childs/customizer-social.php:98
-msgid "Twitter URL"
-msgstr "Twitter URL"
-
-#: functions.php:198 functions/customizer/childs/customizer-social.php:152
-msgid "LinkedIn URL"
-msgstr "LinkedIn URL"
-
-#: functions/base/get_content_title.php:21
+#: base/get_content_title.php:21
 msgid "Aside"
 msgstr "Bemerkung"
 
-#: functions/base/get_content_title.php:24
+#: base/get_content_title.php:24
 msgid "Audio"
 msgstr "Audio"
 
-#: functions/base/get_content_title.php:27
+#: base/get_content_title.php:27
 msgid "Video"
 msgstr "Video"
 
-#: functions/base/get_content_title.php:30
+#: base/get_content_title.php:30
 msgid "Chat"
 msgstr "Chat"
 
-#: functions/base/get_content_title.php:33
+#: base/get_content_title.php:33
 msgid "Gallery"
 msgstr "Galerie"
 
-#: functions/base/get_content_title.php:36
+#: base/get_content_title.php:36
 msgid "Image"
 msgstr "Bild"
 
-#: functions/base/get_content_title.php:39
+#: base/get_content_title.php:39
 msgid "Link"
 msgstr "Link"
 
-#: functions/base/get_content_title.php:42
+#: base/get_content_title.php:42
 msgid "Quote"
 msgstr "Zitat"
 
-#: functions/base/get_content_title.php:45
+#: base/get_content_title.php:45
 msgid "Status"
 msgstr "Status"
 
-#: functions/base/get_content_title.php:48
+#: base/get_content_title.php:48
 msgid "Story"
 msgstr "Geschichte"
 
-#: functions/base/get_content_title.php:51
+#: base/get_content_title.php:51
 msgid "Blog Post"
 msgstr "Blogbeitrag"
 
-#: functions/basic/blog.php:68
+#: basic/blog.php:68
 msgid "More"
 msgstr "Mehr"
 
-#: functions/breadcrumbs/breadcrumbs.php:15
-#: functions/menu/theme_bootstrap_walker_page.php:89
-#: template-parts/index/index-banner.php:35
+#: breadcrumbs/breadcrumbs.php:15 menu/theme_bootstrap_walker_page.php:89
 msgid "Home"
 msgstr "Start"
 
-#: functions/breadcrumbs/breadcrumbs.php:37
+#: breadcrumbs/breadcrumbs.php:37
 msgid "Archive by category"
 msgstr "Archiv nach Kategorie"
 
-#: functions/breadcrumbs/breadcrumbs.php:39
+#: breadcrumbs/breadcrumbs.php:39
 msgid "Search results for"
 msgstr "Suchergebnisse für"
 
-#: functions/breadcrumbs/breadcrumbs.php:74
-#: functions/breadcrumbs/breadcrumbs.php:118
+#: breadcrumbs/breadcrumbs.php:74 breadcrumbs/breadcrumbs.php:118
 msgid "Archive"
 msgstr "Archiv"
 
-#: functions/breadcrumbs/breadcrumbs.php:110
+#: breadcrumbs/breadcrumbs.php:110
 msgid "Posts tagged"
 msgstr "Markierte Beiträge"
 
-#: functions/breadcrumbs/breadcrumbs.php:114
+#: breadcrumbs/breadcrumbs.php:114
 msgid "Articles posted by"
 msgstr "Beiträge von"
 
-#: functions/breadcrumbs/breadcrumbs.php:120
+#: breadcrumbs/breadcrumbs.php:116
+msgid "Error 404"
+msgstr "Fehler 404"
+
+#: breadcrumbs/breadcrumbs.php:120
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: functions/customizer/childs/customizer-blog.php:22
+#: breadcrumbs/breadcrumbs.php:126
+msgid "Page"
+msgstr "Seite"
+
+#: customizer/childs/customizer-blog.php:22
 msgid "Blog settings"
 msgstr "Einstellungen (Blog)"
 
-#: functions/customizer/childs/customizer-blog.php:28
+#: customizer/childs/customizer-blog.php:28
 msgid "Home blog settings"
 msgstr "Blogeinstellungen (Startseite)"
 
-#: functions/customizer/childs/customizer-blog.php:34
+#: customizer/childs/customizer-blog.php:34
 msgid "Archive settings"
 msgstr "Archiveinstellungen"
 
-#: functions/customizer/childs/customizer-blog.php:50
+#: customizer/childs/customizer-blog.php:50
 msgid "Hide blog meta from home page"
 msgstr "Blog-Meta auf Startseite verbergen"
 
-#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:131
+#: customizer/childs/customizer-blog.php:57
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beiträge"
 
-#: functions/customizer/childs/customizer-blog.php:64
-#: functions/customizer/childs/customizer-template.php:184
-#: functions/customizer/childs/customizer-template.php:283
-#: functions/customizer/childs/customizer-template.php:371
-#: functions/customizer/childs/customizer-template.php:610
-#: functions/customizer/childs/customizer-template.php:681
-#: functions/customizer/childs/customizer-template.php:753
-#: functions/customizer/childs/customizer-template.php:797
-#: functions/customizer/childs/customizer-template.php:846
-#: functions/widget/wallstreet-latest-widget.php:153
+#: customizer/childs/customizer-blog.php:64
+#: customizer/childs/customizer-template.php:184
+#: customizer/childs/customizer-template.php:283
+#: customizer/childs/customizer-template.php:371
+#: customizer/childs/customizer-template.php:610
+#: customizer/childs/customizer-template.php:681
+#: customizer/childs/customizer-template.php:753
+#: customizer/childs/customizer-template.php:797
+#: customizer/childs/customizer-template.php:846
+#: widget/wallstreet-latest-widget.php:153
 msgid "Title"
 msgstr "Titel"
 
-#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:132
+#: customizer/childs/customizer-blog.php:70
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
-#: functions/customizer/childs/customizer-blog.php:77
-#: functions/customizer/childs/customizer-template.php:197
-#: functions/customizer/childs/customizer-template.php:296
-#: functions/customizer/childs/customizer-template.php:385
-#: functions/customizer/childs/customizer-template.php:811
+#: customizer/childs/customizer-blog.php:77
+#: customizer/childs/customizer-template.php:197
+#: customizer/childs/customizer-template.php:296
+#: customizer/childs/customizer-template.php:385
+#: customizer/childs/customizer-template.php:811
 msgid "Description"
 msgstr "Beschreibung"
 
-#: functions/customizer/childs/customizer-blog.php:91
+#: customizer/childs/customizer-blog.php:91
 msgid "Blog design style"
 msgstr "Stil (Blogdesign)"
 
-#: functions/customizer/childs/customizer-blog.php:94
+#: customizer/childs/customizer-blog.php:94
 msgid "Grid View"
 msgstr "Gitteransicht"
 
-#: functions/customizer/childs/customizer-blog.php:95
+#: customizer/childs/customizer-blog.php:95
 msgid "Masonry 2 Column"
 msgstr "Masonry 2 Spalten"
 
-#: functions/customizer/childs/customizer-blog.php:96
+#: customizer/childs/customizer-blog.php:96
 msgid "Masonry 3 Column"
 msgstr "Masonry 3 Spalten"
 
-#: functions/customizer/childs/customizer-blog.php:97
+#: customizer/childs/customizer-blog.php:97
 msgid "Masonry 4 Column"
 msgstr "Masonry 4 Spalten"
 
-#: functions/customizer/childs/customizer-blog.php:98
+#: customizer/childs/customizer-blog.php:98
 msgid "List Style"
 msgstr "Listenstil"
 
-#: functions/customizer/childs/customizer-blog.php:99
+#: customizer/childs/customizer-blog.php:99
 msgid "Switcher List Style"
 msgstr "Switcher-Listenstil"
 
-#: functions/customizer/childs/customizer-blog.php:111
+#: customizer/childs/customizer-blog.php:111
 msgid "No of Post"
 msgstr "Anzahl der Post"
 
-#: functions/customizer/childs/customizer-blog.php:135
+#: customizer/childs/customizer-blog.php:135
 msgid "Enable view all posts button"
 msgstr "Button zum Zeigen aller Beitr&auml;ge aktivieren"
 
-#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:83
+#: customizer/childs/customizer-blog.php:142
 msgid "View All Posts"
 msgstr "Alle Beiträge anzeigen"
 
-#: functions/customizer/childs/customizer-blog.php:149
+#: customizer/childs/customizer-blog.php:149
 msgid "Button Text"
 msgstr "Button-Text"
 
-#: functions/customizer/childs/customizer-blog.php:163
+#: customizer/childs/customizer-blog.php:163
 msgid "Button Link"
 msgstr "Button-Link"
 
-#: functions/customizer/childs/customizer-blog.php:178
-#: functions/customizer/childs/customizer-social.php:112
-#: functions/customizer/childs/customizer-social.php:139
-#: functions/customizer/childs/customizer-social.php:166
-#: functions/customizer/childs/customizer-social.php:193
-#: functions/customizer/childs/customizer-social.php:220
-#: functions/customizer/childs/customizer-social.php:247
-#: functions/customizer/childs/customizer-social.php:274
-#: functions/customizer/childs/customizer-social.php:301
-#: functions/customizer/childs/customizer-social.php:328
-#: functions/customizer/childs/customizer-social.php:355
-#: functions/customizer/childs/customizer-social.php:382
-#: functions/customizer/childs/customizer-social.php:409
+#: customizer/childs/customizer-blog.php:178
+#: customizer/childs/customizer-social.php:112
+#: customizer/childs/customizer-social.php:139
+#: customizer/childs/customizer-social.php:166
+#: customizer/childs/customizer-social.php:193
+#: customizer/childs/customizer-social.php:220
+#: customizer/childs/customizer-social.php:247
+#: customizer/childs/customizer-social.php:274
+#: customizer/childs/customizer-social.php:301
+#: customizer/childs/customizer-social.php:328
+#: customizer/childs/customizer-social.php:355
+#: customizer/childs/customizer-social.php:382
+#: customizer/childs/customizer-social.php:409
 msgid "Open link in new tab"
 msgstr "Link in neuem Tab öffnen"
 
-#: functions/customizer/childs/customizer-blog.php:190
+#: customizer/childs/customizer-blog.php:190
 msgid "Max items in year archive"
 msgstr "Maximale Anzahl von Elementen im Jahresarchiv"
 
-#: functions/customizer/childs/customizer-blog.php:200
-#: functions/customizer/childs/customizer-blog.php:220
-#: functions/customizer/childs/customizer-blog.php:240
+#: customizer/childs/customizer-blog.php:200
+#: customizer/childs/customizer-blog.php:220
+#: customizer/childs/customizer-blog.php:240
 msgid "0 for full archive"
 msgstr "0 für vollständiges Archiv"
 
-#: functions/customizer/childs/customizer-blog.php:210
+#: customizer/childs/customizer-blog.php:210
 msgid "Max items in month archive"
 msgstr "Maximale Anzahl von Elementen im Monatsarchiv"
 
-#: functions/customizer/childs/customizer-blog.php:230
+#: customizer/childs/customizer-blog.php:230
 msgid "Max items in day archive"
 msgstr "Maximale Anzahl von Elementen im Tagesarchiv"
 
-#: functions/customizer/childs/customizer-blog.php:250
+#: customizer/childs/customizer-blog.php:250
 msgid ""
 "Max buttons for blog pagination (excl. 2 buttons for next or previous page)"
 msgstr ""
 "Maximale Buttons für Blogseiten (Exklusive 2 Buttons für vorherige und "
 "nächste Seite)"
 
-#: functions/customizer/childs/customizer-copyright.php:21
+#: customizer/childs/customizer-copyright.php:21
 msgid "Copyright and disclaimer settings"
 msgstr "Einstellungen (Copyright- und Verzichtserkärungen)"
 
-#: functions/customizer/childs/customizer-copyright.php:27
+#: customizer/childs/customizer-copyright.php:27
 msgid "Footer copyright settings"
 msgstr "Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/childs/customizer-copyright.php:35
-#: theme_setup_data.php:232
+#: customizer/childs/customizer-copyright.php:35
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
 "impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</"
@@ -480,50 +279,47 @@ msgstr ""
 "widerrufsrechte\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/"
 "versandkosten\">Versandkosten</a>&nbsp;"
 
-#: functions/customizer/childs/customizer-copyright.php:49
+#: customizer/childs/customizer-copyright.php:49
 msgid "Enable Footer Link-text"
 msgstr "Aktiviere Fußzeilenlinktext"
 
-#: functions/customizer/childs/customizer-copyright.php:62
+#: customizer/childs/customizer-copyright.php:62
 msgid "Footer Link-text"
 msgstr "Fußzeilenlinktext"
 
-#: functions/customizer/childs/customizer-copyright.php:75
+#: customizer/childs/customizer-copyright.php:75
 msgid "Enable Footer Copyright"
 msgstr "Aktiviere Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:233
+#: customizer/childs/customizer-copyright.php:81
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
-#. Author of the plugin/theme
-#: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:233
+#: customizer/childs/customizer-copyright.php:81
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel Jörg Schuppelius"
 
-#: functions/customizer/childs/customizer-copyright.php:87
+#: customizer/childs/customizer-copyright.php:87
 msgid "Copyright text"
 msgstr "Copyrighttext"
 
-#: functions/customizer/childs/customizer-global.php:22
+#: customizer/childs/customizer-global.php:22
 msgid "Global options"
 msgstr "Globale Einstellungen"
 
-#: functions/customizer/childs/customizer-global.php:28
+#: customizer/childs/customizer-global.php:28
 msgid "Global theme options"
 msgstr "Designoptionen (Global)"
 
-#: functions/customizer/childs/customizer-global.php:34
+#: customizer/childs/customizer-global.php:34
 msgid "Corner options"
 msgstr "Designoptionen (Ecken)"
 
-#: functions/customizer/childs/customizer-global.php:40
+#: customizer/childs/customizer-global.php:40
 msgid "Datetime section"
 msgstr "Datums- und Zeiteinstellungen"
 
-#: functions/customizer/childs/customizer-global.php:42
+#: customizer/childs/customizer-global.php:42
 msgid ""
 "For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
 "format.php\">php.net (datetime.format)</a>"
@@ -531,307 +327,317 @@ msgstr ""
 "Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
 "en/datetime.format.php\">php.net (datetime.format)</a>"
 
-#: functions/customizer/childs/customizer-global.php:49 theme_setup_data.php:38
+#: customizer/childs/customizer-global.php:49
 msgid "Y"
 msgstr "Y"
 
-#: functions/customizer/childs/customizer-global.php:56
+#: customizer/childs/customizer-global.php:56
 msgid "Year dateformat"
 msgstr "Jahresdatumsformat"
 
-#: functions/customizer/childs/customizer-global.php:63 theme_setup_data.php:39
+#: customizer/childs/customizer-global.php:63
 msgid "F Y"
 msgstr "F Y"
 
-#: functions/customizer/childs/customizer-global.php:70
+#: customizer/childs/customizer-global.php:70
 msgid "Month/Year dateformat"
 msgstr "Monat/Jahr Datumsformat"
 
-#: functions/customizer/childs/customizer-global.php:77 theme_setup_data.php:40
+#: customizer/childs/customizer-global.php:77
 msgid "jS F Y"
 msgstr "d. F Y"
 
-#: functions/customizer/childs/customizer-global.php:84
+#: customizer/childs/customizer-global.php:84
 msgid "Full dateformat"
 msgstr "Komplettes Datum"
 
-#: functions/customizer/childs/customizer-global.php:91 theme_setup_data.php:41
+#: customizer/childs/customizer-global.php:91
 msgid "jS F Y - h:i a"
 msgstr "d. F Y - H:i"
 
-#: functions/customizer/childs/customizer-global.php:98
+#: customizer/childs/customizer-global.php:98
 msgid "Full datetimeformat"
 msgstr "Komplettes Datum inkl. Zeit"
 
-#: functions/customizer/childs/customizer-global.php:105
-#: theme_setup_data.php:42
+#: customizer/childs/customizer-global.php:105
 msgid "Y-m-d\\TH:i:sP"
 msgstr "Y-m-d\\TH:i:sP"
 
-#: functions/customizer/childs/customizer-global.php:112
+#: customizer/childs/customizer-global.php:112
 msgid "Technical full datetimeformat"
 msgstr "Technisches Zeitformat"
 
-#: functions/customizer/childs/customizer-global.php:126
+#: customizer/childs/customizer-global.php:126
 msgid "Enable underline in links"
 msgstr "Unterstreichung in Links aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:140
+#: customizer/childs/customizer-global.php:140
 msgid "Mark blank targets in links"
 msgstr "Target in Links markieren (target=_blank)"
 
-#: functions/customizer/childs/customizer-global.php:154
+#: customizer/childs/customizer-global.php:154
 msgid "Enable Scroll To Top Setting"
 msgstr "Einstellung \"Nach oben scrollen\" aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:168
+#: customizer/childs/customizer-global.php:168
 msgid "Enable Contextmenu"
 msgstr "Kontextmenü aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:182
+#: customizer/childs/customizer-global.php:182
 msgid "Fixed header"
 msgstr "Fixierter Header"
 
-#: functions/customizer/childs/customizer-global.php:196
+#: customizer/childs/customizer-global.php:196
 msgid "Fixed footer"
 msgstr "Feste Fusszeile"
 
-#: functions/customizer/childs/customizer-global.php:210
+#: customizer/childs/customizer-global.php:210
 msgid "Enable Parallax Background"
 msgstr "Parallaxenhintergrund aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:224
+#: customizer/childs/customizer-global.php:224
 msgid "Enable Parallax Header"
 msgstr "Parallaxenheader aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:239
+#: customizer/childs/customizer-global.php:239
 msgid "Enable Big Border"
 msgstr "Aktivieren/Deaktivieren der dicken Rahmen"
 
-#: functions/customizer/childs/customizer-global.php:253
+#: customizer/childs/customizer-global.php:253
 msgid "Enable Fader on Pageload"
 msgstr "Fader beim Laden aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:267
+#: customizer/childs/customizer-global.php:267
 msgid "Enable frame on pages"
 msgstr "Rahmen auf Seiten aktivieren"
 
-#: functions/customizer/childs/customizer-global.php:281
+#: customizer/childs/customizer-global.php:281
 msgid "Add filling elements to pages"
 msgstr "Hinzufügen von Füllelementen zu Seiten"
 
-#: functions/customizer/childs/customizer-global.php:295
+#: customizer/childs/customizer-global.php:295
 msgid "fill existing elements on pages"
 msgstr "Vorhandene Elemente auf Seiten füllen"
 
-#: functions/customizer/childs/customizer-global.php:307
+#: customizer/childs/customizer-global.php:307
 msgid "Custom breadcrumb position"
 msgstr "Benutzerdefinierte Breadcrumb-Position"
 
-#: functions/customizer/childs/customizer-global.php:326
+#: customizer/childs/customizer-global.php:326
 msgid "Custom content position"
 msgstr "Benutzerdefinierte Inhaltsposition"
 
-#: functions/customizer/childs/customizer-global.php:346
+#: customizer/childs/customizer-global.php:346
 msgid "Rellax Speed (Social Contact Header)"
 msgstr "Rellax Speed (Header für Social Media und Kontakte)"
 
-#: functions/customizer/childs/customizer-global.php:365
+#: customizer/childs/customizer-global.php:365
 msgid "Rellax Speed (Header)"
 msgstr "Rellax Speed (Kopfzeile)"
 
-#: functions/customizer/childs/customizer-global.php:384
+#: customizer/childs/customizer-global.php:384
 msgid "Rellax Speed (Homepage Slider)"
 msgstr "Rellax Speed (Homepage Slider)"
 
-#: functions/customizer/childs/customizer-global.php:403
+#: customizer/childs/customizer-global.php:403
 msgid "Rellax Speed (Breadcrumbs)"
 msgstr "Rellax Speed (Breadcrumbs)"
 
-#: functions/customizer/childs/customizer-global.php:421
+#: customizer/childs/customizer-global.php:421
 msgid "Rellax Speed (Site Banner)"
 msgstr "Rellax Speed (Seiten-Banner)"
 
-#: functions/customizer/childs/customizer-global.php:439
+#: customizer/childs/customizer-global.php:439
 msgid "Base border-radius"
 msgstr "Basisradius"
 
-#: functions/customizer/childs/customizer-global.php:458
+#: customizer/childs/customizer-global.php:458
 msgid "Big border-radius"
 msgstr "Großer Radius"
 
-#: functions/customizer/childs/customizer-global.php:477
+#: customizer/childs/customizer-global.php:477
 msgid "Small border-radius"
 msgstr "Kleiner Radius"
 
-#: functions/customizer/childs/customizer-global.php:496
+#: customizer/childs/customizer-global.php:496
 msgid "Very small border-radius"
 msgstr "Sehr kleiner Radius"
 
-#: functions/customizer/childs/customizer-global.php:515
+#: customizer/childs/customizer-global.php:515
 msgid "Button border-radius"
 msgstr "Schaltflächenradius"
 
-#: functions/customizer/childs/customizer-home.php:23
+#: customizer/childs/customizer-home.php:23
 msgid "Header settings"
 msgstr "Einstellungen (Header)"
 
-#: functions/customizer/childs/customizer-home.php:30
+#: customizer/childs/customizer-home.php:30
 msgid "Site Favicon"
 msgstr "Webseiten Favicon"
 
-#: functions/customizer/childs/customizer-home.php:32
+#: customizer/childs/customizer-home.php:32
 msgid "Upload a Favicon"
 msgstr "Ein Favicon hochladen"
 
-#: functions/customizer/childs/customizer-home.php:38
+#: customizer/childs/customizer-home.php:38
 msgid "Social Links"
 msgstr "Soziale Links"
 
-#: functions/customizer/childs/customizer-home.php:45
-#: functions/customizer/childs/customizer-home.php:86
+#: customizer/childs/customizer-home.php:45
+#: customizer/childs/customizer-home.php:86
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
-#: functions/customizer/childs/customizer-home.php:52
+#: customizer/childs/customizer-home.php:52
 msgid "Header contact settings"
 msgstr "Headerkontakteinstellungen"
 
-#: functions/customizer/childs/customizer-home.php:59
+#: customizer/childs/customizer-home.php:59
 msgid "Header Preset settings"
 msgstr "Einstellungen für Headervoreinstellungen"
 
-#: functions/customizer/childs/customizer-home.php:74
+#: customizer/childs/customizer-home.php:74
 msgid "Upload a Favicon (ideal width and height is 16x16 or 32x32)"
 msgstr ""
 "Ein Favicon hochladen (ideale Breite und H&ouml;he ist 16x16 oder 32x32)"
 
-#: functions/customizer/childs/customizer-home.php:99
+#: customizer/childs/customizer-home.php:99
 msgid "Same height for home blogview"
 msgstr "Gleiche Höhe für Home-Blogview"
 
-#: functions/customizer/childs/customizer-home.php:114
+#: customizer/childs/customizer-home.php:114
 msgid "Enable/Disable contact header"
 msgstr "Headerkontakt de/aktivieren"
 
-#: functions/customizer/childs/customizer-home.php:127
+#: customizer/childs/customizer-home.php:127
 msgid "Header contact info"
 msgstr "Kontaktinformationen für die Kopfzeile"
 
-#: functions/customizer/childs/customizer-home.php:140
+#: customizer/childs/customizer-home.php:140
 msgid "Header email info"
 msgstr "Mailinformationen (Header)"
 
-#: functions/customizer/childs/customizer-home.php:153
+#: customizer/childs/customizer-home.php:153
 msgid "Select header preset style"
 msgstr "Voreinstellungsstil auswählen (Header)"
 
-#: functions/customizer/childs/customizer-home.php:156
+#: customizer/childs/customizer-home.php:156
 msgid "Style 1"
 msgstr "Stil 1"
 
-#: functions/customizer/childs/customizer-home.php:157
+#: customizer/childs/customizer-home.php:157
 msgid "Style 2"
 msgstr "Stil 2"
 
-#: functions/customizer/childs/customizer-home.php:158
+#: customizer/childs/customizer-home.php:158
 msgid "Style 3"
 msgstr "Stil 3"
 
-#: functions/customizer/childs/customizer-home.php:159
+#: customizer/childs/customizer-home.php:159
 msgid "Style 4"
 msgstr "Stil 4"
 
-#: functions/customizer/childs/customizer-home.php:160
+#: customizer/childs/customizer-home.php:160
 msgid "Style 5"
 msgstr "Stil 5"
 
-#: functions/customizer/childs/customizer-home.php:161
+#: customizer/childs/customizer-home.php:161
 msgid "Style 6"
 msgstr "Stil 6"
 
-#: functions/customizer/childs/customizer-home.php:174
+#: customizer/childs/customizer-home.php:174
 msgid "Enable/Disable Search Icon"
 msgstr "Suchsymbol aktivieren/deaktivieren"
 
-#: functions/customizer/childs/customizer-home.php:187
+#: customizer/childs/customizer-home.php:187
 msgid "Choose Position"
 msgstr "Position wählen"
 
-#: functions/customizer/childs/customizer-home.php:191
+#: customizer/childs/customizer-home.php:191
 msgid "Toogle"
 msgstr "Toogle"
 
-#: functions/customizer/childs/customizer-home.php:192
+#: customizer/childs/customizer-home.php:192
 msgid "Pop up light"
 msgstr "Helle vordefinierte Farbeinstellungen"
 
-#: functions/customizer/childs/customizer-home.php:193
+#: customizer/childs/customizer-home.php:193
 msgid "Pop up dark"
 msgstr "Dunkle vordefinierte Farbeinstellungen"
 
-#: functions/customizer/childs/customizer-social.php:27
+#: customizer/childs/customizer-social.php:27
 msgid "Social-Media settings"
 msgstr "Einstellungen (Soziale Medien)"
 
-#: functions/customizer/childs/customizer-social.php:34
+#: customizer/childs/customizer-social.php:34
 msgid "Social-Media links"
 msgstr "Links (Soziale Medien)"
 
-#: functions/customizer/childs/customizer-social.php:40
+#: customizer/childs/customizer-social.php:40
 msgid "Comment Options"
 msgstr "Kommentar Optionen"
 
-#: functions/customizer/childs/customizer-social.php:56
+#: customizer/childs/customizer-social.php:56
 msgid "Enable social media links on header section"
 msgstr "Links zu Sozialen Medien im Headerbereich aktivieren"
 
-#: functions/customizer/childs/customizer-social.php:70
+#: customizer/childs/customizer-social.php:70
 msgid "Enable social media links on about us section"
 msgstr "Links zu Sozialen Medien im „Über Uns“-Bereich aktivieren"
 
-#: functions/customizer/childs/customizer-social.php:84
+#: customizer/childs/customizer-social.php:84
 msgid "Enable social media links on footer section"
 msgstr "Links zu Sozialen Medien im Footerbereich aktivieren"
 
-#: functions/customizer/childs/customizer-social.php:179
+#: customizer/childs/customizer-social.php:98
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: customizer/childs/customizer-social.php:125
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: customizer/childs/customizer-social.php:152
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+#: customizer/childs/customizer-social.php:179
 msgid "GitHub URL"
 msgstr "Webadresse (Github)"
 
-#: functions/customizer/childs/customizer-social.php:206
+#: customizer/childs/customizer-social.php:206
 msgid "Pinterest URL"
 msgstr "Webadresse (Pinterest)"
 
-#: functions/customizer/childs/customizer-social.php:233
+#: customizer/childs/customizer-social.php:233
 msgid "Youtube URL"
 msgstr "Webadresse (Youtube)"
 
-#: functions/customizer/childs/customizer-social.php:260
+#: customizer/childs/customizer-social.php:260
 msgid "Skype URL"
 msgstr "Webadresse (Skype)"
 
-#: functions/customizer/childs/customizer-social.php:287
+#: customizer/childs/customizer-social.php:287
 msgid "RSS URL"
 msgstr "Webadresse (RSS-Feed)"
 
-#: functions/customizer/childs/customizer-social.php:314
+#: customizer/childs/customizer-social.php:314
 msgid "WordPress URL"
 msgstr "Webadresse (WordPress)"
 
-#: functions/customizer/childs/customizer-social.php:341
+#: customizer/childs/customizer-social.php:341
 msgid "Dropbox URL"
 msgstr "Webadresse (Dropbox)"
 
-#: functions/customizer/childs/customizer-social.php:368
+#: customizer/childs/customizer-social.php:368
 msgid "Instagram URL"
 msgstr "Webadresse (Instagram)"
 
-#: functions/customizer/childs/customizer-social.php:395
+#: customizer/childs/customizer-social.php:395
 msgid "Vimeo URL"
 msgstr "Webadresse (Vimeo)"
 
-#: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:235
+#: customizer/childs/customizer-social.php:416
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -842,12 +648,11 @@ msgstr ""
 "Seite moderiert. Bitte haben Sie etwas Geduld, wenn Ihr Kommentar nicht "
 "sofort aktiviert wird."
 
-#: functions/customizer/childs/customizer-social.php:423
+#: customizer/childs/customizer-social.php:423
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:236
+#: customizer/childs/customizer-social.php:430
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -856,176 +661,180 @@ msgstr ""
 "Kontaktformular oder senden Sie mir eine E-Mail. Bitte vergessen Sie nicht, "
 "den Artikel zu erwähnen, auf den Sie sich beziehen."
 
-#: functions/customizer/childs/customizer-social.php:437
+#: customizer/childs/customizer-social.php:437
 msgid "Next Text in Comment-Section"
 msgstr "Nächster Text im Kommentar-Bereich"
 
-#: functions/customizer/childs/customizer-template.php:23
+#: customizer/childs/customizer-template.php:23
 msgid "Template settings"
 msgstr "Einstellungen (Vorlagen)"
 
-#: functions/customizer/childs/customizer-template.php:31
+#: customizer/childs/customizer-template.php:31
 msgid "About page setting"
 msgstr "„Über Uns“-Seiteneinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:38
+#: customizer/childs/customizer-template.php:38
 msgid "Team page setting"
 msgstr "Einstellung der Teamseite"
 
-#: functions/customizer/childs/customizer-template.php:45
+#: customizer/childs/customizer-template.php:45
 msgid "Testimonial page setting"
 msgstr "Referenzeinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:52
+#: customizer/childs/customizer-template.php:52
 msgid "Portfolio category page setting"
 msgstr "Portfoliokategorieeinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:59
+#: customizer/childs/customizer-template.php:59
 msgid "Portfolio template and related page setting"
 msgstr "Portfoliovorlage und zugehörige Seiteneinstellung"
 
-#: functions/customizer/childs/customizer-template.php:66
+#: customizer/childs/customizer-template.php:66
 msgid "Blog template data setting"
 msgstr "Vorlageneinstellungen (Blog)"
 
-#: functions/customizer/childs/customizer-template.php:73
+#: customizer/childs/customizer-template.php:73
 msgid "Blog meta settings"
 msgstr "Meta-Einstellungen (Blog)"
 
-#: functions/customizer/childs/customizer-template.php:80
+#: customizer/childs/customizer-template.php:80
 msgid "Contact page address settings"
 msgstr "Kontaktseite Adresseinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:87
+#: customizer/childs/customizer-template.php:87
 msgid "Contact page phone settings"
 msgstr "Kontaktseite Telefonnummerneinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:94
+#: customizer/childs/customizer-template.php:94
 msgid "Contact page email settings"
 msgstr "Kontaktseite Maileinstellungen"
 
-#: functions/customizer/childs/customizer-template.php:101
+#: customizer/childs/customizer-template.php:101
 msgid "Contact page form setting"
 msgstr "Kontaktseite Formulareinstellung"
 
-#: functions/customizer/childs/customizer-template.php:108
+#: customizer/childs/customizer-template.php:108
 msgid "Contact page Google Maps"
 msgstr "Kontaktseite Google Maps"
 
-#: functions/customizer/childs/customizer-template.php:147
+#: customizer/childs/customizer-template.php:147
 msgid "Round Corner Value"
 msgstr "Wert für runde Ecken"
 
-#: functions/customizer/childs/customizer-template.php:171
-#: functions/customizer/childs/customizer-template.php:226
+#: customizer/childs/customizer-template.php:171
+#: customizer/childs/customizer-template.php:226
 msgid "Enable team section"
 msgstr "Teamabschnitt aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:177
+#: customizer/childs/customizer-template.php:177
 msgid "Our great team"
 msgstr "Unser tolles Team"
 
-#: functions/customizer/childs/customizer-template.php:190
-#: functions/customizer/childs/customizer-template.php:289
-#: functions/customizer/childs/customizer-template.php:468
+#: customizer/childs/customizer-template.php:190
+#: customizer/childs/customizer-template.php:289
+#: customizer/childs/customizer-template.php:468
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
-#: functions/customizer/childs/customizer-template.php:210
-#: functions/customizer/childs/customizer-template.php:270
+#: customizer/childs/customizer-template.php:210
+#: customizer/childs/customizer-template.php:270
 msgid "Enable Call-to-Action section"
 msgstr "Call-to-Action-Abschnitt aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:240
+#: customizer/childs/customizer-template.php:240
 msgid "Enable feature section"
 msgstr "Featureabschnitt aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:254
-#: functions/customizer/childs/customizer-template.php:322
+#: customizer/childs/customizer-template.php:254
+#: customizer/childs/customizer-template.php:322
 msgid "Enable client section"
 msgstr "Kundenabschnitt aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:276
+#: customizer/childs/customizer-template.php:276
 msgid "Why choose us"
 msgstr "Warum wählen Sie uns"
 
-#: functions/customizer/childs/customizer-template.php:308
+#: customizer/childs/customizer-template.php:308
 msgid "Enable testimonial section"
 msgstr "Referenzabschnitt aktgivieren"
 
-#: functions/customizer/childs/customizer-template.php:337
+#: customizer/childs/customizer-template.php:337
 msgid "Select column layout"
 msgstr "Spaltenlayout auswählen"
 
-#: functions/customizer/childs/customizer-template.php:352
+#: customizer/childs/customizer-template.php:352
 msgid "Numbers of portfolio in portfolio category page"
 msgstr "Anzahl der Portfolios auf der Seite der Portfoliokategorie"
 
-#: functions/customizer/childs/customizer-template.php:364
+#: customizer/childs/customizer-template.php:364
 msgid "Featured portfolio"
 msgstr "Vorgestelltes Portfolio"
 
-#: functions/customizer/childs/customizer-template.php:378
+#: customizer/childs/customizer-template.php:378
 msgid "Most popular of our works."
 msgstr "Unsere beliebtesten Werke."
 
-#: functions/customizer/childs/customizer-template.php:394
+#: customizer/childs/customizer-template.php:394
 msgid "Our Portfolio"
 msgstr "Unser Portfolio"
 
-#: functions/customizer/childs/customizer-template.php:401
+#: customizer/childs/customizer-template.php:401
 msgid "Title For Portfolio Template"
 msgstr "Titel für Portfolio-Vorlage"
 
-#: functions/customizer/childs/customizer-template.php:408
+#: customizer/childs/customizer-template.php:408
 msgid "Most popular of our works"
 msgstr "Unsere beliebtesten Werke"
 
-#: functions/customizer/childs/customizer-template.php:415
+#: customizer/childs/customizer-template.php:415
 msgid "Description For Portfolio Template"
 msgstr "Beschreibung für Portfoliovorlage"
 
-#: functions/customizer/childs/customizer-template.php:429
+#: customizer/childs/customizer-template.php:429
 msgid "Number of portfolio on portfolio template"
 msgstr "Anzahl des Portfolios auf Portfoliovorlage"
 
-#: functions/customizer/childs/customizer-template.php:447
+#: customizer/childs/customizer-template.php:447
 msgid "Enable Related Project Setting"
 msgstr "Zugehörige Projekteinstellung aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:454
+#: customizer/childs/customizer-template.php:454
 msgid "Related projects"
 msgstr "Verwandte Projekte"
 
-#: functions/customizer/childs/customizer-template.php:461
+#: customizer/childs/customizer-template.php:461
 msgid "Title For Related projects"
 msgstr "Titel Für verwandte Projekte"
 
-#: functions/customizer/childs/customizer-template.php:475
+#: customizer/childs/customizer-template.php:475
 msgid "Description For Related projects"
 msgstr "Beschreibung für verwandte Projekte"
 
-#: functions/customizer/childs/customizer-template.php:489
+#: customizer/childs/customizer-template.php:489
 msgid "From which format do you want to display data on Archive Pages?"
 msgstr "Aus welchem Format möchten Sie Daten auf Archivseiten anzeigen?"
 
-#: functions/customizer/childs/customizer-template.php:493
+#: customizer/childs/customizer-template.php:493
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: functions/customizer/childs/customizer-template.php:494
+#: customizer/childs/customizer-template.php:494
 msgid "Full text"
 msgstr "Vollständiger Text"
 
-#: functions/customizer/childs/customizer-template.php:506
+#: customizer/childs/customizer-template.php:506
 msgid "Excerpt length only for excerpt option"
 msgstr "Auszugslänge nur für die Option \"Auszug\""
 
-#: functions/customizer/childs/customizer-template.php:524
+#: customizer/childs/customizer-template.php:517
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#: customizer/childs/customizer-template.php:524
 msgid "Read more button text"
 msgstr "Weiterlesen-Schaltflächentext"
 
-#: functions/customizer/childs/customizer-template.php:539
+#: customizer/childs/customizer-template.php:539
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from "
 "posts page"
@@ -1033,14 +842,14 @@ msgstr ""
 "Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
 "Beitragsseiten"
 
-#: functions/customizer/childs/customizer-template.php:552
+#: customizer/childs/customizer-template.php:552
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from page"
 msgstr ""
 "Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
 "Seiten"
 
-#: functions/customizer/childs/customizer-template.php:565
+#: customizer/childs/customizer-template.php:565
 msgid ""
 "Hide post meta i.e. author name, date of submission, category, tags from "
 "archive page"
@@ -1048,783 +857,748 @@ msgstr ""
 "Beitrags-Metadaten, wie Autorname, Erstellungsdatum, Kategorie, Schlagworte "
 "auf der Archivseite verbergen"
 
-#: functions/customizer/childs/customizer-template.php:582
+#: customizer/childs/customizer-template.php:582
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:596
-#: functions/customizer/childs/customizer-template.php:667
-#: functions/customizer/childs/customizer-template.php:739
-#: template-parts/home/service/servic-1.php:75
-#: template-specials/service-five-template.php:69
-#: template-specials/service-five-template.php:159
-#: template-specials/service-four-template.php:69
-#: template-specials/service-four-template.php:160
-#: template-specials/service-six-template.php:69
-#: template-specials/service-six-template.php:158
-#: template-specials/service-three-template.php:69
-#: template-specials/service-three-template.php:159
-#: template-specials/service-two-template.php:68
-#: template-specials/service-two-template.php:156
+#: customizer/childs/customizer-template.php:596
+#: customizer/childs/customizer-template.php:667
+#: customizer/childs/customizer-template.php:739
 msgid "Icon"
 msgstr "Symbol"
 
-#: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:106
+#: customizer/childs/customizer-template.php:603
 msgid "Address"
 msgstr "Adresse"
 
-#: functions/customizer/childs/customizer-template.php:624
+#: customizer/childs/customizer-template.php:624
 msgid "Address one"
 msgstr "Adresse Eins"
 
-#: functions/customizer/childs/customizer-template.php:637
+#: customizer/childs/customizer-template.php:637
 msgid "Address two"
 msgstr "Adresse Zwei"
 
-#: functions/customizer/childs/customizer-template.php:653
+#: customizer/childs/customizer-template.php:653
 msgid "Enable contact page phone section"
 msgstr "Kontaktseite-Telefonbereich aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:674
-#: theme_setup_data.php:112
+#: customizer/childs/customizer-template.php:674
 msgid "Phone"
 msgstr "Telefon"
 
-#: functions/customizer/childs/customizer-template.php:695
+#: customizer/childs/customizer-template.php:695
 msgid "Phone number one"
 msgstr "Telefonnummer Eins"
 
-#: functions/customizer/childs/customizer-template.php:709
+#: customizer/childs/customizer-template.php:709
 msgid "Phone number two"
 msgstr "Telefonnummer Zwei"
 
-#: functions/customizer/childs/customizer-template.php:725
+#: customizer/childs/customizer-template.php:725
 msgid "Enable contact page email section"
 msgstr "Kontaktseite-E-Mail-Bereich aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:767
+#: customizer/childs/customizer-template.php:746
+msgid "Email"
+msgstr "E-Mail"
+
+#: customizer/childs/customizer-template.php:767
 msgid "Email one"
 msgstr "E-Mail Eins"
 
-#: functions/customizer/childs/customizer-template.php:781
+#: customizer/childs/customizer-template.php:781
 msgid "Email two"
 msgstr "E-Mail Zwei"
 
-#: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:122
+#: customizer/childs/customizer-template.php:790
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:123
+#: customizer/childs/customizer-template.php:804
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
-#: functions/customizer/childs/customizer-template.php:832
+#: customizer/childs/customizer-template.php:832
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:99
+#: customizer/childs/customizer-template.php:839
 msgid "Location map"
 msgstr "Lageplan"
 
-#: functions/customizer/childs/customizer-template.php:860
+#: customizer/childs/customizer-template.php:860
 msgid "URL"
 msgstr "URL"
 
-#: functions/customizer/childs/customizer-theme_style.php:17
+#: customizer/childs/customizer-theme_style.php:17
 msgid "Theme Style settings"
 msgstr "Einstellungen (Themestil)"
 
-#: functions/customizer/childs/customizer-theme_style.php:67
+#: customizer/childs/customizer-theme_style.php:67
 msgid "Change skin color for light and dark background"
 msgstr "Farbe der Oberfläche ändern für hellen oder dunklen Hintergrund"
 
-#: functions/customizer/childs/customizer-typography.php:38
+#: customizer/childs/customizer-typography.php:41
 msgid "Typography settings"
 msgstr "Einstellungen (Typografie)"
 
-#: functions/customizer/childs/customizer-typography.php:45
+#: customizer/childs/customizer-typography.php:48
 msgid "Local font"
 msgstr "Lokale Schriftart"
 
-#: functions/customizer/childs/customizer-typography.php:48
+#: customizer/childs/customizer-typography.php:51
 msgid "if typography is disabled"
 msgstr "Wenn die Typografie deaktiviert ist"
 
-#: functions/customizer/childs/customizer-typography.php:53
-msgid "Typhography enable / disable"
-msgstr "Typografie de/aktivieren"
+#: customizer/childs/customizer-typography.php:56
+msgid "Typography enable / disable"
+msgstr "Typografie aktivieren / deaktivieren"
 
-#: functions/customizer/childs/customizer-typography.php:60
+#: customizer/childs/customizer-typography.php:63
 msgid "General Paragraph"
 msgstr "Allgemeiner Absatz"
 
-#: functions/customizer/childs/customizer-typography.php:67
+#: customizer/childs/customizer-typography.php:70
 msgid "Menus"
 msgstr "Menüs"
 
-#: functions/customizer/childs/customizer-typography.php:74
+#: customizer/childs/customizer-typography.php:77
 msgid "Post / Page title"
 msgstr "Beitrags- / Seitentitel"
 
-#: functions/customizer/childs/customizer-typography.php:82
+#: customizer/childs/customizer-typography.php:85
 msgid "Service title"
 msgstr "Dienstleistungstitel"
 
-#: functions/customizer/childs/customizer-typography.php:89
+#: customizer/childs/customizer-typography.php:92
 msgid "Portfolio title"
 msgstr "Portfoliotitel"
 
-#: functions/customizer/childs/customizer-typography.php:97
+#: customizer/childs/customizer-typography.php:100
 msgid "Widget heading title"
 msgstr "Widgetüberschrift"
 
-#: functions/customizer/childs/customizer-typography.php:104
+#: customizer/childs/customizer-typography.php:107
 msgid "Call-to-Action title"
 msgstr "Call-to-Action-Titel"
 
-#: functions/customizer/childs/customizer-typography.php:111
+#: customizer/childs/customizer-typography.php:114
 msgid "Call-to-Action description"
 msgstr "Call-to-Action-Beschreibung"
 
-#: functions/customizer/childs/customizer-typography.php:118
+#: customizer/childs/customizer-typography.php:121
 msgid "Call-to-Action button"
 msgstr "Call-to-Action-Schaltfläche"
 
-#: functions/customizer/childs/customizer-typography.php:141
-#: functions/customizer/childs/customizer-typography.php:208
-#: functions/customizer/childs/customizer-typography.php:278
-#: functions/customizer/childs/customizer-typography.php:324
-#: functions/customizer/childs/customizer-typography.php:370
-#: functions/customizer/childs/customizer-typography.php:416
-#: functions/customizer/childs/customizer-typography.php:462
-#: functions/customizer/childs/customizer-typography.php:508
-#: functions/customizer/childs/customizer-typography.php:554
-#: functions/customizer/childs/customizer-typography.php:602
-#: functions/customizer/childs/customizer-typography.php:648
+#: customizer/childs/customizer-typography.php:144
+#: customizer/childs/customizer-typography.php:211
+#: customizer/childs/customizer-typography.php:281
+#: customizer/childs/customizer-typography.php:327
+#: customizer/childs/customizer-typography.php:373
+#: customizer/childs/customizer-typography.php:419
+#: customizer/childs/customizer-typography.php:465
+#: customizer/childs/customizer-typography.php:511
+#: customizer/childs/customizer-typography.php:557
+#: customizer/childs/customizer-typography.php:605
+#: customizer/childs/customizer-typography.php:651
 msgid "Font style"
 msgstr "Schriftstil"
 
-#: functions/customizer/childs/customizer-typography.php:166
-#: functions/customizer/childs/customizer-typography.php:233
+#: customizer/childs/customizer-typography.php:169
+#: customizer/childs/customizer-typography.php:236
 msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
 msgstr ""
 "Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte "
 "Typografie deaktiviert ist)"
 
-#: functions/customizer/childs/customizer-typography.php:180
+#: customizer/childs/customizer-typography.php:183
 msgid "Enable custom typography"
 msgstr "Individuelle Typografie aktivieren"
 
-#: functions/customizer/childs/customizer-typography.php:194
+#: customizer/childs/customizer-typography.php:197
 msgid "Name of GoogleFont"
 msgstr "Name des GoogleFonts"
 
-#: functions/customizer/childs/customizer-typography.php:247
-#: functions/customizer/childs/customizer-typography.php:293
-#: functions/customizer/childs/customizer-typography.php:339
-#: functions/customizer/childs/customizer-typography.php:385
-#: functions/customizer/childs/customizer-typography.php:431
-#: functions/customizer/childs/customizer-typography.php:477
-#: functions/customizer/childs/customizer-typography.php:523
-#: functions/customizer/childs/customizer-typography.php:571
-#: functions/customizer/childs/customizer-typography.php:617
+#: customizer/childs/customizer-typography.php:250
+#: customizer/childs/customizer-typography.php:296
+#: customizer/childs/customizer-typography.php:342
+#: customizer/childs/customizer-typography.php:388
+#: customizer/childs/customizer-typography.php:434
+#: customizer/childs/customizer-typography.php:480
+#: customizer/childs/customizer-typography.php:526
+#: customizer/childs/customizer-typography.php:574
+#: customizer/childs/customizer-typography.php:620
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: functions/customizer/childs/customizer-typography.php:252
-#: functions/customizer/childs/customizer-typography.php:298
-#: functions/customizer/childs/customizer-typography.php:344
-#: functions/customizer/childs/customizer-typography.php:390
-#: functions/customizer/childs/customizer-typography.php:436
-#: functions/customizer/childs/customizer-typography.php:482
-#: functions/customizer/childs/customizer-typography.php:528
-#: functions/customizer/childs/customizer-typography.php:576
-#: functions/customizer/childs/customizer-typography.php:622
+#: customizer/childs/customizer-typography.php:255
+#: customizer/childs/customizer-typography.php:301
+#: customizer/childs/customizer-typography.php:347
+#: customizer/childs/customizer-typography.php:393
+#: customizer/childs/customizer-typography.php:439
+#: customizer/childs/customizer-typography.php:485
+#: customizer/childs/customizer-typography.php:531
+#: customizer/childs/customizer-typography.php:579
+#: customizer/childs/customizer-typography.php:625
 msgid "Pixels"
 msgstr "Pixel"
 
-#: functions/customizer/childs/customizer-typography.php:263
-#: functions/customizer/childs/customizer-typography.php:309
-#: functions/customizer/childs/customizer-typography.php:355
-#: functions/customizer/childs/customizer-typography.php:401
-#: functions/customizer/childs/customizer-typography.php:447
-#: functions/customizer/childs/customizer-typography.php:493
-#: functions/customizer/childs/customizer-typography.php:539
-#: functions/customizer/childs/customizer-typography.php:587
-#: functions/customizer/childs/customizer-typography.php:633
+#: customizer/childs/customizer-typography.php:266
+#: customizer/childs/customizer-typography.php:312
+#: customizer/childs/customizer-typography.php:358
+#: customizer/childs/customizer-typography.php:404
+#: customizer/childs/customizer-typography.php:450
+#: customizer/childs/customizer-typography.php:496
+#: customizer/childs/customizer-typography.php:542
+#: customizer/childs/customizer-typography.php:590
+#: customizer/childs/customizer-typography.php:636
 msgid "Font family"
 msgstr "Schriftart"
 
-#: functions/customizer/customizer-controls.php:16
+#: customizer/customizer-controls.php:16
 msgid "Light & Dark Predefined Colors Setting"
 msgstr "Helle & Dunkle Vordefinierte Farbeinstellungen"
 
-#: functions/customizer/single-blog-options.php:19
+#: customizer/single-blog-options.php:19
 msgid "Logo Width"
 msgstr "Logobreite"
 
-#: functions/shortcodes/shortcodes_iframe.php:37
+#: shortcodes/shortcodes_iframe.php:37
 msgid "Insert Shortcode"
 msgstr "Shortcode eintragen"
 
-#: functions/shortcodes/shortcodes_iframe.php:68
+#: shortcodes/shortcodes_iframe.php:68
 msgid "Shortcode Selector"
 msgstr "Shortcode Auswahl"
 
-#: functions/shortcodes/shortcodes_iframe.php:74
+#: shortcodes/shortcodes_iframe.php:74
 msgid "Shortcodes"
 msgstr "Platzhalter"
 
-#: functions/shortcodes/shortcodes_iframe.php:75
+#: shortcodes/shortcodes_iframe.php:75
 msgid "column"
 msgstr "Spalte"
 
-#: functions/shortcodes/shortcodes_iframe.php:76
+#: shortcodes/shortcodes_iframe.php:76
 msgid "Tabs"
 msgstr "Tabs"
 
-#: functions/shortcodes/shortcodes_iframe.php:77
+#: shortcodes/shortcodes_iframe.php:77
 msgid "Accordion"
 msgstr "Akkordeon"
 
-#: functions/shortcodes/shortcodes_iframe.php:78
+#: shortcodes/shortcodes_iframe.php:78
 msgid "Alert"
 msgstr "Alarm"
 
-#: functions/shortcodes/shortcodes_iframe.php:79
+#: shortcodes/shortcodes_iframe.php:79
 msgid "Drop-Caps"
 msgstr "Initiale"
 
-#: functions/shortcodes/shortcodes_iframe.php:80
+#: shortcodes/shortcodes_iframe.php:80
 msgid "Button"
 msgstr "Button"
 
-#: functions/shortcodes/shortcodes_iframe.php:81
+#: shortcodes/shortcodes_iframe.php:81
 msgid "Heading"
 msgstr "Überschrift"
 
-#: functions/shortcodes/shortcodes_iframe.php:82
+#: shortcodes/shortcodes_iframe.php:82
 msgid "Tool Tip"
 msgstr "Tooltip"
 
-#: functions/shortcodes/shortcodes_iframe.php:83
+#: shortcodes/shortcodes_iframe.php:83
 msgid "List"
 msgstr "Liste"
 
-#: functions/theme/djs_base.php:47 functions/theme/djs_base.php:52
+#: theme/djs_base.php:47 theme/djs_base.php:52
 msgid "Cheatin&#8217; huh?"
 msgstr "Sie schummeln&#8217; oder?"
 
-#: functions/widget/custom-sidebar.php:4 functions/widget/custom-sidebar.php:6
+#: widget/custom-sidebar.php:4 widget/custom-sidebar.php:6
 msgid "Sidebar widget area"
 msgstr "Seitenleiste-Widget-Bereich"
 
-#: functions/widget/custom-sidebar.php:14
-#: functions/widget/custom-sidebar.php:16
+#: widget/custom-sidebar.php:14 widget/custom-sidebar.php:16
 msgid "Footer widget area"
 msgstr "Footer-Widget-Bereich"
 
-#: functions/widget/custom-sidebar.php:24
-#: functions/widget/custom-sidebar.php:26
+#: widget/custom-sidebar.php:24 widget/custom-sidebar.php:26
 msgid "WooCommerce sidebar widget area"
 msgstr "WooCommerce Seitenleiste-Widgetbereich"
 
-#: functions/widget/wallstreet-latest-widget.php:26
+#: widget/wallstreet-latest-widget.php:26
 msgid "WBR : Latest Posts"
 msgstr "WBR : Neueste Beitr&auml;ge"
 
-#: functions/widget/wallstreet-latest-widget.php:27
+#: widget/wallstreet-latest-widget.php:27
 msgid "This widget allows you to display latest, popular and commented posts."
 msgstr ""
 "Dieses Widget erlaubt dir die Anzeige der neuesten, beliebtesten oder "
 "kommentierten Beiträge."
 
-#: functions/widget/wallstreet-latest-widget.php:53
-#: functions/widget/wallstreet-latest-widget.php:130
+#: widget/wallstreet-latest-widget.php:53
+#: widget/wallstreet-latest-widget.php:130
 msgid "By"
 msgstr "Von"
 
-#: functions/widget/wallstreet-latest-widget.php:87
+#: widget/wallstreet-latest-widget.php:87
 msgid "Popular"
 msgstr "Populär"
 
-#: functions/widget/wallstreet-latest-widget.php:88
+#: widget/wallstreet-latest-widget.php:88
 msgid "Recent"
 msgstr "Zuletzt"
 
-#: functions/widget/wallstreet-latest-widget.php:89
+#: widget/wallstreet-latest-widget.php:89
 msgid "Comment"
 msgstr "Kommentar"
 
-#: functions/widget/wallstreet-post-format-widget.php:21
+#: widget/wallstreet-post-format-widget.php:21
 msgid "Post Format Archives"
 msgstr "Archiv (Beitragsformat)"
 
-#: functions/widget/wallstreet-post-format-widget.php:22
+#: widget/wallstreet-post-format-widget.php:22
 msgid "Displays a list of links to post-format archives"
 msgstr "Zeigt eine Liste mit Links zu Archiven (Beitragsformat) an"
 
-#: functions/widget/wallstreet-post-format-widget.php:76
+#: widget/wallstreet-post-format-widget.php:76
 msgid "Browse the site"
 msgstr "Durchsuchen Sie die Website"
 
-#: functions/widget/wallstreet-post-format-widget.php:77
+#: widget/wallstreet-post-format-widget.php:77
 msgid "View Aside posts"
 msgstr "Bemerkungen anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:78
+#: widget/wallstreet-post-format-widget.php:78
 msgid "View Image posts"
 msgstr "Bilder anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:79
+#: widget/wallstreet-post-format-widget.php:79
 msgid "View Link posts"
 msgstr "Links anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:80
+#: widget/wallstreet-post-format-widget.php:80
 msgid "View Quote posts"
 msgstr "Zitate anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:81
+#: widget/wallstreet-post-format-widget.php:81
 msgid "View Status posts"
 msgstr "Status anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:82
+#: widget/wallstreet-post-format-widget.php:82
 msgid "View Gallery posts"
 msgstr "Galerien anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:83
+#: widget/wallstreet-post-format-widget.php:83
 msgid "View Video posts"
 msgstr "Videos anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:84
+#: widget/wallstreet-post-format-widget.php:84
 msgid "View Chat posts"
 msgstr "Chats anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:85
+#: widget/wallstreet-post-format-widget.php:85
 msgid "View Audio posts"
 msgstr "Audiodaten anzeigen"
 
-#: functions/widget/wallstreet-post-format-widget.php:103
+#: widget/wallstreet-post-format-widget.php:103
 msgid "Link text for Aside archive"
 msgstr "Linktext für Archiv (Bemerkungen)"
 
-#: functions/widget/wallstreet-post-format-widget.php:106
+#: widget/wallstreet-post-format-widget.php:106
 msgid "Link text for Image archive"
 msgstr "Linktext für Archiv (Bilder)"
 
-#: functions/widget/wallstreet-post-format-widget.php:109
+#: widget/wallstreet-post-format-widget.php:109
 msgid "Link text for Link archive"
 msgstr "Linktext für Archiv (Links)"
 
-#: functions/widget/wallstreet-post-format-widget.php:112
+#: widget/wallstreet-post-format-widget.php:112
 msgid "Link text for Quote archive"
 msgstr "Linktext für Archiv (Zitate)"
 
-#: functions/widget/wallstreet-post-format-widget.php:115
+#: widget/wallstreet-post-format-widget.php:115
 msgid "Link text for Status archive"
 msgstr "Linktext für Archiv (Status)"
 
-#: functions/widget/wallstreet-post-format-widget.php:118
+#: widget/wallstreet-post-format-widget.php:118
 msgid "Link text for Gallery archive"
 msgstr "Linktext für Archiv (Galerie)"
 
-#: functions/widget/wallstreet-post-format-widget.php:121
+#: widget/wallstreet-post-format-widget.php:121
 msgid "Link text for Video archive"
 msgstr "Linktext für Archiv (Video)"
 
-#: functions/widget/wallstreet-post-format-widget.php:124
+#: widget/wallstreet-post-format-widget.php:124
 msgid "Link text for Chat archive"
 msgstr "Linktext für Archiv (Chat)"
 
-#: functions/widget/wallstreet-post-format-widget.php:127
+#: widget/wallstreet-post-format-widget.php:127
 msgid "Link text for Audio archive"
 msgstr "Linktext für Archiv (Audio)"
 
-#: header.php:124 searchform.php:13 template-parts/global/menu-search.php:15
-#: template-parts/global/menu-search.php:21
-#: template-parts/global/menu-search.php:23
-#: template-parts/global/menu-search.php:24
-#: template-parts/global/separate-search-cart.php:15
-#: template-parts/global/separate-search-cart.php:23
-msgid "Search"
-msgstr "Suchen"
+#~ msgid "Oops! Page not found"
+#~ msgstr "Oops! Seite nicht gefunden"
 
-#: search.php:26 template-parts/index/index-banner.php:120
+#~ msgid "We are sorry, but the page you are looking for does not exist."
+#~ msgstr "Es tut uns leid, aber die Seite, die du suchst, existiert nicht."
+
+#~ msgid "Go back"
+#~ msgstr "Zurück gehen"
+
+#~ msgid "No description available."
+#~ msgstr "Keine Beschreibung verfügbar."
+
+#~ msgid "Properties of the media"
+#~ msgstr "Eigenschaften der Mediendatei"
+
+#~ msgid "Resolution (width/height):"
+#~ msgstr "Aufl&ouml;sung (Breite/Höhe):"
+
+#~ msgid "Camera model:"
+#~ msgstr "Kameramodell:"
+
+#~ msgid "ISO:"
+#~ msgstr "ISO:"
+
+#~ msgid "Exposure time:"
+#~ msgstr "Belichtungszeit:"
+
+#~ msgid "Linked post"
+#~ msgstr "Verlinkter Beitrag"
+
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view any comments."
+#~ msgstr ""
+#~ "Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu k&ouml;"
+#~ "nnen musst du das Passwort angeben."
+
+#~ msgid "Reply"
+#~ msgstr "Antworten"
+
+#~ msgid "Posted on"
+#~ msgstr "Eingestellt am"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Dein Kommentar wartet auf Freischaltung."
+
+#~ msgid "No comments so far"
+#~ msgstr "Bisher keine Kommentare"
+
+#~ msgid "1 comment so far"
+#~ msgstr "Bisher 1 Kommentar"
+
+#, no-php-format
+#~ msgid "% comments so far"
+#~ msgstr "% Kommentare bisher"
+
+#~ msgid "Comment navigation"
+#~ msgstr "Kommentarnavigation"
+
+#~ msgid "&larr; Older Comments"
+#~ msgstr "&larr; Ältere Kommentare"
+
+#~ msgid "Newer Comments &rarr;"
+#~ msgstr "Neuere Kommentare &rarr;"
+
+#~ msgid "Comments Are Closed!!!"
+#~ msgstr "Kommentare sind geschlossen!!!"
+
 #, php-format
-msgid "Search results for: %s"
-msgstr "Suchergebnisse für: %s"
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+#~ msgstr ""
+#~ "Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
 
-#: search.php:34
-msgid "Previous"
-msgstr "Früher"
+#~ msgid "Website"
+#~ msgstr "Webseite"
 
-#: search.php:35 template-single/single-portfolio.php:23
-msgid "Next"
-msgstr "Weiter"
+#~ msgid "Name"
+#~ msgstr "Name"
 
-#: search.php:40
-msgid "Nothing Found"
-msgstr "Nichts gefunden"
+#~ msgid "Leave your message"
+#~ msgstr "Schreibe eine Nachricht"
 
-#: search.php:42
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Leider gibt es keine Ergebnisse für deine Suchkriterien. Bitte versuche es "
-"noch einmal mit anderen Suchbegriffen."
+#~ msgid "Logged in as"
+#~ msgstr "Angemeldet als"
 
-#: searchform.php:12
-msgid "Search Here"
-msgstr "Hier suchen"
+#~ msgid "Log out from this Account"
+#~ msgstr "Von diesem Konto abmelden"
 
-#: template-parts/content/content-meta-footer.php:15
-msgid "Last updated:"
-msgstr "Letztes Update:"
+#~ msgid "Log out"
+#~ msgstr "Abmelden"
 
-#: template-parts/content/content-portfolio.php:108
-msgid "Detail"
-msgstr "Details"
+#~ msgid "Send Message"
+#~ msgstr "Nachricht senden"
 
-#: template-parts/global/header/navbar-button.php:11
-msgid "Menu"
-msgstr "Menü"
+#~ msgid "Please Note:"
+#~ msgstr "Bitte beachten:"
 
-#: template-parts/global/header/page-fader.php:14
-msgid "Loading content..."
-msgstr "Inhalt wird geladen..."
+#~ msgid "Leave a Reply"
+#~ msgstr "Schreiben Sie einen Kommentar"
 
-#: template-parts/global/header/page-fader.php:23
-msgid "JavaScript disabled..."
-msgstr "JavaScript deaktiviert..."
-
-#: template-parts/global/menu-search.php:78
-#: template-parts/global/separate-search-cart.php:52
-#: template-parts/global/separate-search-cart.php:81
 #, php-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d Artikel"
-msgstr[1] "%d Artikel"
+#~ msgid "Leave a Reply to %s"
+#~ msgstr "Schreiben Sie einen Kommentar zu %s"
 
-#: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:50
-#: template-parts/home/blog/blog-layout-3.php:54
-#: template-parts/home/blog/blog-layout-4.php:55
-msgid "No Comments"
-msgstr "Keine Kommentare"
-
-#: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:50
-#: template-parts/home/blog/blog-layout-3.php:54
-#: template-parts/home/blog/blog-layout-4.php:55
-msgid "1 Comment"
-msgstr "1 Kommentar"
-
-#: template-parts/home/blog/blog-layout-1.php:77
-#: template-parts/home/blog/blog-layout-2.php:50
-#: template-parts/home/blog/blog-layout-3.php:54
-#: template-parts/home/blog/blog-layout-4.php:55
-msgid "% Comments"
-msgstr "% Kommentare"
-
-#: template-parts/home/blog/blog-layout-1.php:89
-#: template-parts/home/blog/blog-layout-2.php:65
-#: template-parts/home/blog/blog-layout-3.php:65
-#: template-parts/home/blog/blog-layout-4.php:66
-#: template-parts/home/blog/blog-layout-5.php:79
-#: template-parts/home/blog/blog-layout-6.php:72
-msgid "No posts to show"
-msgstr "Keine Beiträge zum Anzeigen"
-
-#: template-parts/home/service/servic-1.php:97
-#: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:84
-#: template-parts/home/service/servic-4.php:83
-#: template-parts/home/service/servic-5.php:91
-#: template-parts/home/service/servic-6.php:89
-#: template-specials/service-five-template.php:85
-#: template-specials/service-four-template.php:85
-#: template-specials/service-six-template.php:85
-#: template-specials/service-three-template.php:85
-#: template-specials/service-two-template.php:83
-msgid "Product designing"
-msgstr "Produktdesign"
-
-#: template-parts/home/service/servic-1.php:97
-#: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:84
-#: template-parts/home/service/servic-4.php:83
-#: template-parts/home/service/servic-5.php:91
-#: template-parts/home/service/servic-6.php:89
-#: template-specials/service-five-template.php:85
-#: template-specials/service-five-template.php:172
-#: template-specials/service-four-template.php:85
-#: template-specials/service-four-template.php:173
-#: template-specials/service-six-template.php:85
-#: template-specials/service-six-template.php:171
-#: template-specials/service-three-template.php:85
-#: template-specials/service-three-template.php:172
-#: template-specials/service-two-template.php:83
-#: template-specials/service-two-template.php:169
-msgid "WordPress themes"
-msgstr "WordPress Themes"
-
-#: template-parts/home/service/servic-1.php:97
-#: template-parts/home/service/servic-2.php:89
-#: template-parts/home/service/servic-3.php:84
-#: template-parts/home/service/servic-4.php:83
-#: template-parts/home/service/servic-5.php:91
-#: template-parts/home/service/servic-6.php:89
-msgid "Responsive designs"
-msgstr "Responsives Design"
-
-#: template-parts/index/index-banner.php:43
 #, php-format
-msgid "Category Archive: %s"
-msgstr "Kategorie-Archiv: %s"
+#~ msgid ""
+#~ "To use all features of the theme \"DJS-Wallstreet-Pro\" download the "
+#~ "plugin <a href=\"%s\">%s</a>"
+#~ msgstr ""
+#~ "Um alle Funktionen des Themas \"DJS-Wallstreet-Pro\" nutzen zu können, "
+#~ "laden Sie das Plugin <a href=\"%s\">%s</a> herunter"
 
-#: template-parts/index/index-banner.php:47
+#~ msgctxt "header image description"
+#~ msgid "MyPic"
+#~ msgstr "MeinBild"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Primäres Menü"
+
+#~ msgid "Search"
+#~ msgstr "Suchen"
+
 #, php-format
-msgid "Tag Archive: %s"
-msgstr "Schlagwort-Archiv: %s"
+#~ msgid "Search results for: %s"
+#~ msgstr "Suchergebnisse für: %s"
 
-#: template-parts/index/index-banner.php:51
+#~ msgid "Previous"
+#~ msgstr "Früher"
+
+#~ msgid "Next"
+#~ msgstr "Weiter"
+
+#~ msgid "Nothing Found"
+#~ msgstr "Nichts gefunden"
+
+#~ msgid ""
+#~ "Sorry, but nothing matched your search criteria. Please try again with "
+#~ "some different keywords."
+#~ msgstr ""
+#~ "Leider gibt es keine Ergebnisse für deine Suchkriterien. Bitte versuche "
+#~ "es noch einmal mit anderen Suchbegriffen."
+
+#~ msgid "Search Here"
+#~ msgstr "Hier suchen"
+
+#~ msgid "Last updated:"
+#~ msgstr "Letztes Update:"
+
+#~ msgid "Detail"
+#~ msgstr "Details"
+
+#~ msgid "Menu"
+#~ msgstr "Menü"
+
+#~ msgid "Loading content..."
+#~ msgstr "Inhalt wird geladen..."
+
+#~ msgid "JavaScript disabled..."
+#~ msgstr "JavaScript deaktiviert..."
+
 #, php-format
-msgid "Author Archive: %s"
-msgstr "Autor-Archiv: %s"
+#~ msgid "%d item"
+#~ msgid_plural "%d items"
+#~ msgstr[0] "%d Artikel"
+#~ msgstr[1] "%d Artikel"
 
-#: template-parts/index/index-banner.php:57
-msgid "Aside Archives"
-msgstr "Archiv (Bemerkung)"
+#~ msgid "No Comments"
+#~ msgstr "Keine Kommentare"
 
-#: template-parts/index/index-banner.php:61
-msgid "Audio Archives"
-msgstr "Archiv (Audio)"
+#~ msgid "1 Comment"
+#~ msgstr "1 Kommentar"
 
-#: template-parts/index/index-banner.php:65
-msgid "Chat Archives"
-msgstr "Archiv (Chat)"
+#~ msgid "% Comments"
+#~ msgstr "% Kommentare"
 
-#: template-parts/index/index-banner.php:69
-msgid "Gallery Archives"
-msgstr "Archiv (Galerie)"
+#~ msgid "No posts to show"
+#~ msgstr "Keine Beiträge zum Anzeigen"
 
-#: template-parts/index/index-banner.php:73
-msgid "Image Archives"
-msgstr "Archiv (Bild)"
+#~ msgid "Product designing"
+#~ msgstr "Produktdesign"
 
-#: template-parts/index/index-banner.php:77
-msgid "Link Archives"
-msgstr "Archiv (Link)"
+#~ msgid "WordPress themes"
+#~ msgstr "WordPress Themes"
 
-#: template-parts/index/index-banner.php:81
-msgid "Quote Archives"
-msgstr "Archiv (Bemerkungen)"
+#~ msgid "Responsive designs"
+#~ msgstr "Responsives Design"
 
-#: template-parts/index/index-banner.php:85
-msgid "Status Archives"
-msgstr "Archiv (Status)"
+#, php-format
+#~ msgid "Category Archive: %s"
+#~ msgstr "Kategorie-Archiv: %s"
 
-#: template-parts/index/index-banner.php:89
-msgid "Video Archives"
-msgstr "Archiv (Video)"
+#, php-format
+#~ msgid "Tag Archive: %s"
+#~ msgstr "Schlagwort-Archiv: %s"
 
-#: template-parts/index/index-banner.php:94
-msgid "Daily Archive"
-msgstr "Tagesarchiv"
+#, php-format
+#~ msgid "Author Archive: %s"
+#~ msgstr "Autor-Archiv: %s"
 
-#: template-parts/index/index-banner.php:97
-msgid "Monthly Archive"
-msgstr "Monatsarchiv"
+#~ msgid "Aside Archives"
+#~ msgstr "Archiv (Bemerkung)"
 
-#: template-parts/index/index-banner.php:100
-msgid "Yearly Archive"
-msgstr "Jahresarchiv"
+#~ msgid "Audio Archives"
+#~ msgstr "Archiv (Audio)"
 
-#: template-parts/index/index-banner.php:103
-msgid "Blog Archive"
-msgstr "Blog-Archiv"
+#~ msgid "Chat Archives"
+#~ msgstr "Archiv (Chat)"
 
-#: template-parts/index/index-portfolio.php:112
-msgid "Wallstreet style"
-msgstr "Wallstreet-Stil"
+#~ msgid "Gallery Archives"
+#~ msgstr "Archiv (Galerie)"
 
-#: template-parts/index/index-portfolio.php:113
-msgid ""
-"A wonderful serenity has taken possession of my entire soul, like these "
-"sweet mornings."
-msgstr ""
-"Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
-"süßen Frühlingsmorgen."
+#~ msgid "Image Archives"
+#~ msgstr "Archiv (Bild)"
 
-#: template-parts/index/index-slider.php:204
-msgid "Clean & fresh theme"
-msgstr "Aufgeräumtes und modernes Theme"
+#~ msgid "Link Archives"
+#~ msgstr "Archiv (Link)"
 
-#: template-parts/index/index-slider.php:207
-msgid "Welcome to wallstreet"
-msgstr "Willkommen in der WallStreet"
+#~ msgid "Quote Archives"
+#~ msgstr "Archiv (Bemerkungen)"
 
-#: template-parts/index/index-slider.php:210
-msgid ""
-"The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 "
-"transition effects. Works perfect in any modern mobile."
-msgstr ""
-"Ein hochmodernes, flexibles HTML5 Layout mit blitzschnellen CSS3-"
-"Übergangseffekten. Funktioniert perfekt auf jedem modernen Mobilgerät."
+#~ msgid "Status Archives"
+#~ msgstr "Archiv (Status)"
 
-#: template-parts/index/index-slider.php:213
-msgid "Purchase Now"
-msgstr "Jetzt kaufen"
+#~ msgid "Video Archives"
+#~ msgstr "Archiv (Video)"
 
-#: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
-#: template-parts/team/team-3.php:92 template-parts/team/team-4.php:88
-#: template/about-us.php:119
-msgid "FOUNDER"
-msgstr "GRÜNDER"
+#~ msgid "Daily Archive"
+#~ msgstr "Tagesarchiv"
 
-#: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
-#: template-parts/team/team-3.php:92 template-parts/team/team-4.php:88
-#: template/about-us.php:119
-msgid "DEVELOPER"
-msgstr "ENTWICKLER"
+#~ msgid "Monthly Archive"
+#~ msgstr "Monatsarchiv"
 
-#: template-parts/team/team-1.php:93 template-parts/team/team-2.php:86
-#: template-parts/team/team-3.php:92 template-parts/team/team-4.php:88
-#: template/about-us.php:119
-msgid "DESIGNER"
-msgstr "DESIGNER"
+#~ msgid "Yearly Archive"
+#~ msgstr "Jahresarchiv"
 
-#: template-single/single-portfolio.php:19
-#: template-single/single-portfolio.php:142
-msgid "Back"
-msgstr "Zurück"
+#~ msgid "Blog Archive"
+#~ msgstr "Blog-Archiv"
 
-#: template-single/single-portfolio.php:47
-msgid "Clients"
-msgstr "Kunden"
+#~ msgid "Wallstreet style"
+#~ msgstr "Wallstreet-Stil"
 
-#: template-single/single-portfolio.php:49
-msgid "Date"
-msgstr "Datum"
+#~ msgid ""
+#~ "A wonderful serenity has taken possession of my entire soul, like these "
+#~ "sweet mornings."
+#~ msgstr ""
+#~ "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
+#~ "süßen Frühlingsmorgen."
 
-#: template-single/single-portfolio.php:50
-msgid "Categories"
-msgstr "Kategorien"
+#~ msgid "Clean & fresh theme"
+#~ msgstr "Aufgeräumtes und modernes Theme"
 
-#: template-single/single-portfolio.php:148
-msgid "Forward"
-msgstr "Vorwärts"
+#~ msgid "Welcome to wallstreet"
+#~ msgstr "Willkommen in der WallStreet"
 
-#: template-specials/not_loaded-plugin.php:15
-msgid "Plugin Error"
-msgstr "Plugin-Fehler"
+#~ msgid ""
+#~ "The state-of-the-art HTML5 powered flexible layout with lightspeed fast "
+#~ "CSS3 transition effects. Works perfect in any modern mobile."
+#~ msgstr ""
+#~ "Ein hochmodernes, flexibles HTML5 Layout mit blitzschnellen CSS3-"
+#~ "Übergangseffekten. Funktioniert perfekt auf jedem modernen Mobilgerät."
 
-#: template-specials/not_loaded-plugin.php:16
-msgid "Oops! Page can not load"
-msgstr "Oops! Seite nicht gefunden"
+#~ msgid "Purchase Now"
+#~ msgstr "Jetzt kaufen"
 
-#: template-specials/not_loaded-plugin.php:17
-msgid ""
-"We are sorry, but the page you are looking for can not load, because the "
-"recuired plugin \"DJS-Wallstreet-Pro Post-Types\" does not exist or is not "
-"activated."
-msgstr ""
-"Es tut uns leid, aber die von Ihnen gesuchte Seite kann nicht geladen "
-"werden, da das benötigte Plugin \"DJS-Wallstreet-Pro Post-Types\" nicht "
-"existiert bzw. nicht aktiviert ist."
+#~ msgid "FOUNDER"
+#~ msgstr "GRÜNDER"
 
-#: template-specials/service-five-template.php:85
-#: template-specials/service-four-template.php:85
-#: template-specials/service-six-template.php:85
-#: template-specials/service-three-template.php:85
-#: template-specials/service-two-template.php:83
-msgid "Responsive Design"
-msgstr "Responsives Design"
+#~ msgid "DEVELOPER"
+#~ msgstr "ENTWICKLER"
 
-#: template-specials/service-five-template.php:172
-#: template-specials/service-four-template.php:173
-#: template-specials/service-six-template.php:171
-#: template-specials/service-three-template.php:172
-#: template-specials/service-two-template.php:169
-msgid "Responsive"
-msgstr "Responsive"
+#~ msgid "DESIGNER"
+#~ msgstr "DESIGNER"
 
-#: template-specials/service-five-template.php:172
-#: template-specials/service-four-template.php:173
-#: template-specials/service-six-template.php:171
-#: template-specials/service-three-template.php:172
-#: template-specials/service-two-template.php:169
-msgid "Mobile ready"
-msgstr "Für Mobilgeräte geeignet"
+#~ msgid "Back"
+#~ msgstr "Zurück"
 
-#: template-specials/service-five-template.php:172
-#: template-specials/service-four-template.php:173
-#: template-specials/service-six-template.php:171
-#: template-specials/service-three-template.php:172
-#: template-specials/service-two-template.php:169
-msgid "Live support"
-msgstr "Live Support"
+#~ msgid "Clients"
+#~ msgstr "Kunden"
 
-#: template/contact-us.php:80 template/contact-us.php:81
-msgid "First name"
-msgstr "Vorname"
+#~ msgid "Date"
+#~ msgstr "Datum"
 
-#: template/contact-us.php:84 template/contact-us.php:85
-msgid "Last name"
-msgstr "Nachname"
+#~ msgid "Categories"
+#~ msgstr "Kategorien"
 
-#: template/contact-us.php:96 template/contact-us.php:97
-msgid "Message"
-msgstr "Nachricht"
+#~ msgid "Forward"
+#~ msgstr "Vorwärts"
 
-#: template/contact-us.php:100
-msgid "Sorry, your nonce did not verify"
-msgstr "Tut uns leid! Wir können Sie gerade nicht verifizieren"
+#~ msgid "Plugin Error"
+#~ msgstr "Plugin-Fehler"
 
-#: template/contact-us.php:107
-msgid "Thank you"
-msgstr "Danke"
+#~ msgid "Oops! Page can not load"
+#~ msgstr "Oops! Seite nicht gefunden"
 
-#: template/contact-us.php:107
-msgid "Your information has been sent."
-msgstr "Deine Nachricht wurde versendet."
+#~ msgid ""
+#~ "We are sorry, but the page you are looking for can not load, because the "
+#~ "recuired plugin \"DJS-Wallstreet-Pro Post-Types\" does not exist or is "
+#~ "not activated."
+#~ msgstr ""
+#~ "Es tut uns leid, aber die von Ihnen gesuchte Seite kann nicht geladen "
+#~ "werden, da das benötigte Plugin \"DJS-Wallstreet-Pro Post-Types\" nicht "
+#~ "existiert bzw. nicht aktiviert ist."
 
-#: theme_setup_data.php:88
-msgid "Wallstreet is an elegant and modern theme for business websites."
-msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
+#~ msgid "Responsive Design"
+#~ msgstr "Responsives Design"
 
-#: theme_setup_data.php:90
-msgid "See All Features"
-msgstr "Alle Funktionen ansehen"
+#~ msgid "Responsive"
+#~ msgstr "Responsive"
 
-#. Theme Name of the plugin/theme
-msgid "DJS-Wallstreet-Pro"
-msgstr "DJS-Wallstreet-Pro"
+#~ msgid "Mobile ready"
+#~ msgstr "Für Mobilgeräte geeignet"
 
-#. Theme URI of the plugin/theme
-msgid "https://github.com/DSchuppelius/djs-wallstreet-pro"
-msgstr "https://github.com/DSchuppelius/djs-wallstreet-pro"
+#~ msgid "Live support"
+#~ msgstr "Live Support"
 
-#. Description of the plugin/theme
-msgid ""
-"WordPress business theme with setting options for multiple columns, colors "
-"and different formats. This new and standalone theme is based on and "
-"compatible with the Webriti Wallstreet or Wallstreet Pro Theme"
-msgstr ""
-"WordPress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, "
-"Farben und verschiedenen Formaten. Dieses neue und eigenständige Theme "
-"basiert auf dem Webriti Wallstreet bzw. DJS-Wallstreet-Pro Theme und ist mit "
-"diesem kompatibel"
+#~ msgid "First name"
+#~ msgstr "Vorname"
 
-#. Author URI of the plugin/theme
-msgid "https://schuppelius.org"
-msgstr "https://schuppelius.org/"
+#~ msgid "Last name"
+#~ msgstr "Nachname"
+
+#~ msgid "Message"
+#~ msgstr "Nachricht"
+
+#~ msgid "Sorry, your nonce did not verify"
+#~ msgstr "Tut uns leid! Wir können Sie gerade nicht verifizieren"
+
+#~ msgid "Thank you"
+#~ msgstr "Danke"
+
+#~ msgid "Your information has been sent."
+#~ msgstr "Deine Nachricht wurde versendet."
+
+#~ msgid "Wallstreet is an elegant and modern theme for business websites."
+#~ msgstr ""
+#~ "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
+
+#~ msgid "See All Features"
+#~ msgstr "Alle Funktionen ansehen"
+
+#~ msgid "DJS-Wallstreet-Pro"
+#~ msgstr "DJS-Wallstreet-Pro"
+
+#~ msgid "https://github.com/DSchuppelius/djs-wallstreet-pro"
+#~ msgstr "https://github.com/DSchuppelius/djs-wallstreet-pro"
+
+#~ msgid ""
+#~ "WordPress business theme with setting options for multiple columns, "
+#~ "colors and different formats. This new and standalone theme is based on "
+#~ "and compatible with the Webriti Wallstreet or Wallstreet Pro Theme"
+#~ msgstr ""
+#~ "WordPress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, "
+#~ "Farben und verschiedenen Formaten. Dieses neue und eigenständige Theme "
+#~ "basiert auf dem Webriti Wallstreet bzw. DJS-Wallstreet-Pro Theme und ist "
+#~ "mit diesem kompatibel"
+
+#~ msgid "https://schuppelius.org"
+#~ msgstr "https://schuppelius.org/"
 
 #~ msgid "Third-party scripts"
 #~ msgstr "Skripte von Drittanbietern"

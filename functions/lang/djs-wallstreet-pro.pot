@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-02-22 10:38+0100\n"
+"POT-Creation-Date: 2024-11-14 11:14+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -192,7 +192,7 @@ msgid ""
 "<a href=\"%s\">%s</a>"
 msgstr ""
 
-#: functions.php:91 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -200,24 +200,24 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:130
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:135
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:196 functions/customizer/childs/customizer-social.php:125
+#: functions.php:202 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:197 functions/customizer/childs/customizer-social.php:98
+#: functions.php:203 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:198 functions/customizer/childs/customizer-social.php:152
+#: functions.php:204 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -1096,118 +1096,118 @@ msgstr ""
 msgid "Change skin color for light and dark background"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:38
+#: functions/customizer/childs/customizer-typography.php:41
 msgid "Typography settings"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:45
+#: functions/customizer/childs/customizer-typography.php:48
 msgid "Local font"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:48
+#: functions/customizer/childs/customizer-typography.php:51
 msgid "if typography is disabled"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:53
-msgid "Typhography enable / disable"
+#: functions/customizer/childs/customizer-typography.php:56
+msgid "Typography enable / disable"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:60
+#: functions/customizer/childs/customizer-typography.php:63
 msgid "General Paragraph"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:67
+#: functions/customizer/childs/customizer-typography.php:70
 msgid "Menus"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:74
+#: functions/customizer/childs/customizer-typography.php:77
 msgid "Post / Page title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:82
+#: functions/customizer/childs/customizer-typography.php:85
 msgid "Service title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:89
+#: functions/customizer/childs/customizer-typography.php:92
 msgid "Portfolio title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:97
+#: functions/customizer/childs/customizer-typography.php:100
 msgid "Widget heading title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:104
+#: functions/customizer/childs/customizer-typography.php:107
 msgid "Call-to-Action title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:111
+#: functions/customizer/childs/customizer-typography.php:114
 msgid "Call-to-Action description"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:118
+#: functions/customizer/childs/customizer-typography.php:121
 msgid "Call-to-Action button"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:141
-#: functions/customizer/childs/customizer-typography.php:208
-#: functions/customizer/childs/customizer-typography.php:278
-#: functions/customizer/childs/customizer-typography.php:324
-#: functions/customizer/childs/customizer-typography.php:370
-#: functions/customizer/childs/customizer-typography.php:416
-#: functions/customizer/childs/customizer-typography.php:462
-#: functions/customizer/childs/customizer-typography.php:508
-#: functions/customizer/childs/customizer-typography.php:554
-#: functions/customizer/childs/customizer-typography.php:602
-#: functions/customizer/childs/customizer-typography.php:648
+#: functions/customizer/childs/customizer-typography.php:144
+#: functions/customizer/childs/customizer-typography.php:211
+#: functions/customizer/childs/customizer-typography.php:281
+#: functions/customizer/childs/customizer-typography.php:327
+#: functions/customizer/childs/customizer-typography.php:373
+#: functions/customizer/childs/customizer-typography.php:419
+#: functions/customizer/childs/customizer-typography.php:465
+#: functions/customizer/childs/customizer-typography.php:511
+#: functions/customizer/childs/customizer-typography.php:557
+#: functions/customizer/childs/customizer-typography.php:605
+#: functions/customizer/childs/customizer-typography.php:651
 msgid "Font style"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:166
-#: functions/customizer/childs/customizer-typography.php:233
+#: functions/customizer/childs/customizer-typography.php:169
+#: functions/customizer/childs/customizer-typography.php:236
 msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:180
+#: functions/customizer/childs/customizer-typography.php:183
 msgid "Enable custom typography"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:194
+#: functions/customizer/childs/customizer-typography.php:197
 msgid "Name of GoogleFont"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:247
-#: functions/customizer/childs/customizer-typography.php:293
-#: functions/customizer/childs/customizer-typography.php:339
-#: functions/customizer/childs/customizer-typography.php:385
-#: functions/customizer/childs/customizer-typography.php:431
-#: functions/customizer/childs/customizer-typography.php:477
-#: functions/customizer/childs/customizer-typography.php:523
-#: functions/customizer/childs/customizer-typography.php:571
-#: functions/customizer/childs/customizer-typography.php:617
+#: functions/customizer/childs/customizer-typography.php:250
+#: functions/customizer/childs/customizer-typography.php:296
+#: functions/customizer/childs/customizer-typography.php:342
+#: functions/customizer/childs/customizer-typography.php:388
+#: functions/customizer/childs/customizer-typography.php:434
+#: functions/customizer/childs/customizer-typography.php:480
+#: functions/customizer/childs/customizer-typography.php:526
+#: functions/customizer/childs/customizer-typography.php:574
+#: functions/customizer/childs/customizer-typography.php:620
 msgid "Font size"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:252
-#: functions/customizer/childs/customizer-typography.php:298
-#: functions/customizer/childs/customizer-typography.php:344
-#: functions/customizer/childs/customizer-typography.php:390
-#: functions/customizer/childs/customizer-typography.php:436
-#: functions/customizer/childs/customizer-typography.php:482
-#: functions/customizer/childs/customizer-typography.php:528
-#: functions/customizer/childs/customizer-typography.php:576
-#: functions/customizer/childs/customizer-typography.php:622
+#: functions/customizer/childs/customizer-typography.php:255
+#: functions/customizer/childs/customizer-typography.php:301
+#: functions/customizer/childs/customizer-typography.php:347
+#: functions/customizer/childs/customizer-typography.php:393
+#: functions/customizer/childs/customizer-typography.php:439
+#: functions/customizer/childs/customizer-typography.php:485
+#: functions/customizer/childs/customizer-typography.php:531
+#: functions/customizer/childs/customizer-typography.php:579
+#: functions/customizer/childs/customizer-typography.php:625
 msgid "Pixels"
 msgstr ""
 
-#: functions/customizer/childs/customizer-typography.php:263
-#: functions/customizer/childs/customizer-typography.php:309
-#: functions/customizer/childs/customizer-typography.php:355
-#: functions/customizer/childs/customizer-typography.php:401
-#: functions/customizer/childs/customizer-typography.php:447
-#: functions/customizer/childs/customizer-typography.php:493
-#: functions/customizer/childs/customizer-typography.php:539
-#: functions/customizer/childs/customizer-typography.php:587
-#: functions/customizer/childs/customizer-typography.php:633
+#: functions/customizer/childs/customizer-typography.php:266
+#: functions/customizer/childs/customizer-typography.php:312
+#: functions/customizer/childs/customizer-typography.php:358
+#: functions/customizer/childs/customizer-typography.php:404
+#: functions/customizer/childs/customizer-typography.php:450
+#: functions/customizer/childs/customizer-typography.php:496
+#: functions/customizer/childs/customizer-typography.php:542
+#: functions/customizer/childs/customizer-typography.php:590
+#: functions/customizer/childs/customizer-typography.php:636
 msgid "Font family"
 msgstr ""
 
