@@ -9,25 +9,26 @@
  */
 ?>
 
-<div class="site-logo-area <?php echo has_custom_logo() ? "with-Logo" : "no-Logo"; ?> <?php echo display_header_text() ? "with-Text" : "no-Text"; ?>">
+<div
+    class="site-logo-area <?php echo has_custom_logo() ? "with-Logo" : "no-Logo"; ?> <?php echo display_header_text() ? "with-Text" : "no-Text"; ?>">
     <?php if(has_custom_logo()) {
         $custom_logo_id = get_theme_mod("custom_logo");
         $image = wp_get_attachment_image_src($custom_logo_id, "full"); ?>
-        <a class="navbar-brand" href="<?php echo esc_url(home_url("/")); ?>">
-            <img src="<?php echo esc_url($image[0]); ?>" class=" img-responsive custom-logo">
-        </a>
+    <a class="navbar-brand" href="<?php echo esc_url(home_url("/")); ?>">
+        <img src="<?php echo esc_url($image[0]); ?>" class=" img-responsive custom-logo">
+    </a>
     <?php }
     if(display_header_text()) { ?>
-        <div class="site-branding-text logo-link-url">
-            <h1 class="site-title">
-                <a class="navbar-brand" href="<?php echo esc_url(home_url("/")); ?>" rel="home">
-                    <div class="wallstreet_title_head"><?php bloginfo("name"); ?></div>
-                </a>
-            </h1>
-            <?php $wallstreet_description = get_bloginfo("description", "display");
+    <div class="site-branding-text logo-link-url">
+        <h1 class="site-title">
+            <a class="navbar-brand" href="<?php echo esc_url(home_url("/")); ?>" rel="home">
+                <div class="wallstreet_title_head"><?php bloginfo("name"); ?></div>
+            </a>
+        </h1>
+        <?php $wallstreet_description = get_bloginfo("description", "display");
             if ($wallstreet_description || is_customize_preview()) { ?>
-                <p class="site-description"> <?php echo $wallstreet_description; ?></p>
-            <?php } ?>
-        </div>
+        <p class="site-description"> <?php echo $wallstreet_description; ?></p>
+        <?php } ?>
+    </div>
     <?php } ?>
 </div>

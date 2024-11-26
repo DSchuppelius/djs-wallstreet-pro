@@ -34,29 +34,29 @@ class wallstreet_latest_widget extends WP_Widget {
         $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
         if($posts){
-            foreach ($posts as $post) { 
+            foreach ($posts as $post) {
                 setup_postdata($post); ?>
-                <div class="media post-media-sidebar">
-                    <a class="pull-left sidebar-pull-img" href="<?php the_currentURL(); ?>">
-                        <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
-                        <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>								 
-                    </a>
-                    <div class="media-body">
-                        <h3 style="padding-bottom:0px;"><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php echo get_sidebar_excerpt(); ?></p>
-                    </div>
-                    <div class="sidebar-comment-box">
-                        <span>
-                            <?php echo get_the_date($current_setup->get("fulldateformat"), $post->id); ?>
-                            <small>|</small>
-                            <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                <?php esc_html_e("By", "djs-wallstreet-pro"); echo "&nbsp;"; the_author(); ?>
-                            </a>
-                        </span>
-                    </div>									
-                </div>							
-            <?php } 
-            wp_reset_postdata(); 
+<div class="media post-media-sidebar">
+    <a class="pull-left sidebar-pull-img" href="<?php the_currentURL(); ?>">
+        <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
+        <?php echo get_the_post_thumbnail($post->id, "wall_sidebar_img", $atts); ?>
+    </a>
+    <div class="media-body">
+        <h3 style="padding-bottom:0px;"><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h3>
+        <p><?php echo get_sidebar_excerpt(); ?></p>
+    </div>
+    <div class="sidebar-comment-box">
+        <span>
+            <?php echo get_the_date($current_setup->get("fulldateformat"), $post->id); ?>
+            <small>|</small>
+            <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
+                <?php esc_html_e("By", "djs-wallstreet-pro"); echo "&nbsp;"; the_author(); ?>
+            </a>
+        </span>
+    </div>
+</div>
+<?php }
+            wp_reset_postdata();
         }
     }
 
@@ -70,76 +70,81 @@ class wallstreet_latest_widget extends WP_Widget {
      */
     public function widget($args, $instance) {
         global $wpdb;
-        
+
         $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
         $title = apply_filters("widget_title", $instance["title"]);
-        $begin_widget = $args["before_widget"]; 
-        $end_widget= $args["after_widget"]; 
-        
+        $begin_widget = $args["before_widget"];
+        $end_widget= $args["after_widget"];
+
         echo $begin_widget;
 
         if (!empty($title)) {
             echo $args["before_title"] . $title . $args["after_title"];
         } ?>
- 
-        <ul class="sidebar-tab sidebar-widget-tab">
-            <li class="active"><a data-toggle="tab" href="<?php the_currentURL(); ?>#popular"><?php esc_html_e("Popular", "djs-wallstreet-pro"); ?></a></li>
-            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#recent"><?php esc_html_e("Recent", "djs-wallstreet-pro"); ?></a></li>
-            <li><a data-toggle="tab" href="<?php the_currentURL(); ?>#comment"><?php esc_html_e("Comment", "djs-wallstreet-pro"); ?></a></li>
-        </ul>				
-        <div class="tab-content" id="myTabContent">					
-            <div id="popular" class="tab-pane fade active in">
-                <div class="row">	
-                    <?php $this->widget_posts(get_posts([
+
+<ul class="sidebar-tab sidebar-widget-tab">
+    <li class="active"><a data-toggle="tab"
+            href="<?php the_currentURL(); ?>#popular"><?php esc_html_e("Popular", "djs-wallstreet-pro"); ?></a></li>
+    <li><a data-toggle="tab"
+            href="<?php the_currentURL(); ?>#recent"><?php esc_html_e("Recent", "djs-wallstreet-pro"); ?></a></li>
+    <li><a data-toggle="tab"
+            href="<?php the_currentURL(); ?>#comment"><?php esc_html_e("Comment", "djs-wallstreet-pro"); ?></a></li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div id="popular" class="tab-pane fade active in">
+        <div class="row">
+            <?php $this->widget_posts(get_posts([
                         'numberposts'      => 5,
                         'orderby'          => 'comment_count',
                         'order'            => 'DESC',
                         'post_type'        => 'post',
                         'post_status'      => 'publish',
                     ])); ?>
-                </div>
-            </div>
-            <div id="recent" class="tab-pane fade">
-                <div class="row">
-                    <?php $this->widget_posts(get_posts([
+        </div>
+    </div>
+    <div id="recent" class="tab-pane fade">
+        <div class="row">
+            <?php $this->widget_posts(get_posts([
                         "post_type" => "post",
                         "posts_per_page" => 5,
                         "post__not_in" => get_option("sticky_posts"),
                     ])); ?>
-                </div>	
-            </div>
-            <div id="comment" class="tab-pane fade">
-                <div class="row">
-                    <?php $comments = get_comments(["number" => "5"]);
+        </div>
+    </div>
+    <div id="comment" class="tab-pane fade">
+        <div class="row">
+            <?php $comments = get_comments(["number" => "5"]);
                     foreach ($comments as $comment) {
                         $pop1 = $wpdb->get_results("SELECT id, guid FROM {$wpdb->prefix}posts WHERE id='$comment->comment_post_ID' ORDER BY comment_count DESC LIMIT 5");
                         foreach ($pop1 as $post1) { ?>
-                            <div class="media post-media-sidebar">
-                                <a class="pull-left sidebar-pull-img" href="<?php echo esc_url($post1->guid); ?>">
-                                    <?php echo get_avatar($comment, 70); ?>
-                                </a>
-                                <div class="media-body">
-                                    <h3><a href="<?php echo esc_url(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID); ?>"><?php echo get_comment_sidebar($comment->comment_content); ?></a></h3>
-                                </div>
-                                <div class="sidebar-comment-box">
-                                    <span>
-                                        <?php echo get_the_date($current_setup->get("fulldateformat"), $post1->id); ?>
-                                        <small>|</small>
-                                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
-                                            <?php esc_html_e("By", "djs-wallstreet-pro"); the_author(); ?>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        <?php }
+            <div class="media post-media-sidebar">
+                <a class="pull-left sidebar-pull-img" href="<?php echo esc_url($post1->guid); ?>">
+                    <?php echo get_avatar($comment, 70); ?>
+                </a>
+                <div class="media-body">
+                    <h3><a
+                            href="<?php echo esc_url(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID); ?>"><?php echo get_comment_sidebar($comment->comment_content); ?></a>
+                    </h3>
+                </div>
+                <div class="sidebar-comment-box">
+                    <span>
+                        <?php echo get_the_date($current_setup->get("fulldateformat"), $post1->id); ?>
+                        <small>|</small>
+                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
+                            <?php esc_html_e("By", "djs-wallstreet-pro"); the_author(); ?>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <?php }
                     } ?>
 
-                </div>
-            </div>       
         </div>
-            
-        <?php echo $end_widget; 
+    </div>
+</div>
+
+<?php echo $end_widget;
         wp_reset_query();
     }
 
@@ -149,11 +154,13 @@ class wallstreet_latest_widget extends WP_Widget {
         } else {
             $title = "Tabs Content";
         } ?>
-        <p>
-            <label for="<?php echo $this->get_field_id("title"); ?>"><?php esc_html_e("Title", "djs-wallstreet-pro"); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
-        </p>
-    <?php }
+<p>
+    <label for="<?php echo $this->get_field_id("title"); ?>"><?php esc_html_e("Title", "djs-wallstreet-pro"); ?></label>
+    <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
+        name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
+        value="<?php echo esc_attr($title); ?>" />
+</p>
+<?php }
 
     /**
      * Sanitize widget form values as they are saved.

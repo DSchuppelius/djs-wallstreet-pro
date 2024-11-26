@@ -13,7 +13,8 @@ $testimonial_columns = get_testimonial_columns();
 get_template_part("template-parts/testimonial/carousel", "script");
 ?>
 <!-- Testimonial Section -->
-<div class="testimonial-section testimonial2" style="background: url('<?php echo $current_setup_posttypes->get("testimonial_background"); ?>'); background-size:cover;">
+<div class="testimonial-section testimonial2"
+    style="background: url('<?php echo $current_setup_posttypes->get("testimonial_background"); ?>'); background-size:cover;">
     <div class="overlay">
         <div class="container">
             <div class="row" <?php if (is_testimonial_carousel()): ?> id="testimonial-scroll" <?php endif; ?>>
@@ -29,42 +30,47 @@ get_template_part("template-parts/testimonial/carousel", "script");
                         $testimonial->the_post();
                         $testimonial_description_text = sanitize_text_field(get_post_meta(get_the_ID(), "testimonial_description_text", true));
                         if (is_testimonial_grid()) { ?>
-                            <div class="col-md-<?php echo $testimonial_columns; ?>">
-                                <div class="testimonial-area pull-left;?>">	
+                <div class="col-md-<?php echo $testimonial_columns; ?>">
+                    <div class="testimonial-area pull-left;?>">
                         <?php } else { ?>
-                            <div class="col-md-<?php echo $testimonial_columns; ?> testimonial-area pull-left <?php echo $first_post ? 'first' : 'next'; ?>">
-                        <?php }
+                        <div
+                            class="col-md-<?php echo $testimonial_columns; ?> testimonial-area pull-left <?php echo $first_post ? 'first' : 'next'; ?>">
+                            <?php }
                         $defalt_arg = ["class" => "img-circle img-responsive"];
                         if (has_post_thumbnail()) { ?>
                             <div class="image-box"><?php the_post_thumbnail("", $defalt_arg); ?></div>
-                        <?php } ?>
+                            <?php } ?>
                             <h2><i></i><?php the_title(); ?><i></i></h2>
-                            <p><?php if (!empty($testimonial_description_text)) { echo $testimonial_description_text; } ?></p>
+                            <p><?php if (!empty($testimonial_description_text)) { echo $testimonial_description_text; } ?>
+                            </p>
                         </div>
                         <?php if (is_testimonial_grid()) { ?>
-                            </div>
-                        <?php }
+                    </div>
+                    <?php }
                         $first_post = false;
                     }
                 } else {
                     for ($i = 1; $i <= 4; $i++) { ?>
-                        <?php if (is_testimonial_grid()) { ?>
-                            <div class="col-md-<?php echo $testimonial_columns; ?>">
-                                <div class="testimonial-area pull-left <?php echo $i==1 ? 'first' : 'next'; ?>">	
-                        <?php } else { ?>
+                    <?php if (is_testimonial_grid()) { ?>
+                    <div class="col-md-<?php echo $testimonial_columns; ?>">
+                        <div class="testimonial-area pull-left <?php echo $i==1 ? 'first' : 'next'; ?>">
+                            <?php } else { ?>
                             <div class="col-md-<?php echo $testimonial_columns; ?> testimonial-area pull-left">
-                        <?php } ?>
-                                <div class="image-box"><img class="img-circle img-responsive" alt="Wallstreet Image" src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/testi<?php echo $i; ?>.jpg"></div>
-                                    <h2><i></i> <?php echo "David Warner"; ?><i></i></h2>
-                                    <p><?php echo "Juis voluptatem sequi nesciunt. Neque porro quisquam est, qui don numquam eius modi ssim hen urlus mattis dignissim dapibctumst."; ?></p>
+                                <?php } ?>
+                                <div class="image-box"><img class="img-circle img-responsive" alt="Wallstreet Image"
+                                        src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/testi<?php echo $i; ?>.jpg">
                                 </div>
-                        <?php if (is_testimonial_grid()) { ?>
+                                <h2><i></i> <?php echo "David Warner"; ?><i></i></h2>
+                                <p><?php echo "Juis voluptatem sequi nesciunt. Neque porro quisquam est, qui don numquam eius modi ssim hen urlus mattis dignissim dapibctumst."; ?>
+                                </p>
                             </div>
+                            <?php if (is_testimonial_grid()) { ?>
+                        </div>
                         <?php } ?>
-                    <?php }
+                        <?php }
                 } ?>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- /Testimonial Section -->
+        <!-- /Testimonial Section -->

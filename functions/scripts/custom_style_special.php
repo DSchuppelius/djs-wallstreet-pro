@@ -10,24 +10,32 @@
 $current_setup = PostTypes_Plugin_Setup::instance(); ?>
 
 <style type="text/css">
-    :root{
-        --main-slider-radius: <?php echo $current_setup->get("slideroundcorner"); ?>px !important; 
-        --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20; ?>px !important;
-    }
+:root {
+    --main-slider-radius: <?php echo $current_setup->get("slideroundcorner");
+    ?>px !important;
+    --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20;
+    ?>px !important;
+}
 
-    .clients-logo {
-        padding: <?php echo $current_setup->get("client_padding_tb"); ?>px <?php echo $current_setup->get("client_padding_lr"); ?>px;
-    }
+.clients-logo {
+    padding: <?php echo $current_setup->get("client_padding_tb");
+    ?>px <?php echo $current_setup->get("client_padding_lr");
+    ?>px;
+}
 
-    .client-section client img {
-        max-height: <?php echo $current_setup->get("client_pictureheight"); ?>px
-    }
+.client-section client img {
+    max-height: <?php echo $current_setup->get("client_pictureheight");
+    ?>px
+}
 
-    .partners-logo {
-        padding: <?php echo $current_setup->get("partner_padding_tb"); ?>px <?php echo $current_setup->get("partner_padding_lr"); ?>px;
-    }
+.partners-logo {
+    padding: <?php echo $current_setup->get("partner_padding_tb");
+    ?>px <?php echo $current_setup->get("partner_padding_lr");
+    ?>px;
+}
 
-    .partner-section partner img {
-        max-height: <?php echo $current_setup->get("partner_pictureheight"); ?>px
-    }
+.partner-section partner img {
+    max-height: <?php echo $current_setup->get("partner_pictureheight");
+    ?>px
+}
 </style>

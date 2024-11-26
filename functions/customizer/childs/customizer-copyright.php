@@ -50,7 +50,7 @@ class theme_copyright_customizer extends Theme_Customizer {
             "section" => "copyright_section_one",
             "type" => "checkbox",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[footer_link]", [
             "default" => $this->hack_4_theme_check__footer_link(),
             "capability" => "edit_theme_options",
@@ -63,20 +63,20 @@ class theme_copyright_customizer extends Theme_Customizer {
             "section" => "copyright_section_one",
             "type" => "textarea",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[footerbar_enabled]", [
             "default" => true,
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[footerbar_enabled]", [
             "label" => esc_html__("Enable Footer Copyright", "djs-wallstreet-pro"),
             "section" => "copyright_section_one",
             "type" => "checkbox",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[footer_copyright]", [
             "default" => esc_html__("Copyright @ 2022 - DJS-WallStreet-Pro. Designed by", "djs-wallstreet-pro") . " " . '<a href="https://schuppelius.org" rel="nofollow" target="_blank">' . esc_html__("Daniel Joerg Schuppelius", "djs-wallstreet-pro") . "</a>",
             "sanitize_callback" => "sanitize_link_field",

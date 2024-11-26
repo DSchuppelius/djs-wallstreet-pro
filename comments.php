@@ -11,8 +11,10 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 if (post_password_required()) { ?>
-    <p class="nopassword"><?php esc_html_e("This post is password protected. Enter the password to view any comments.", "djs-wallstreet-pro"); ?></p>
-    <?php return;
+<p class="nopassword">
+    <?php esc_html_e("This post is password protected. Enter the password to view any comments.", "djs-wallstreet-pro"); ?>
+</p>
+<?php return;
 }
 
 // code for comment
@@ -20,72 +22,78 @@ if (!function_exists("wallstreet_comment")) {
     function wallstreet_comment($comment, $args, $depth) {
         global $comment_data;
         $is_answer = isset($comment_data["translation_reply_to_coment"]);
-        $leave_reply = $is_answer ? $comment_data["translation_reply_to_coment"] : esc_html__("Reply", "djs-wallstreet-pro"); ?>	
-    
-        <div <?php comment_class("media comment_box"); ?> id="comment-<?php comment_ID(); ?>">
-            <a class="pull-left-comment" href="<?php esc_url(the_author_meta("user_url")); ?>">
-                <?php echo get_avatar($comment, 70); ?>
-            </a>
-            <div class="media-body">
-                <div class="comment-detail">
-                    <h4 class="comment-detail-title"><a href="<?php esc_url(comment_author_url());?>"><?php comment_author(); ?></a>
-                        <span class="comment-date">
-                            <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-                                <?php esc_html_e("Posted on", "djs-wallstreet-pro"); echo "&nbsp;" . get_comment_date("j.M Y") . " (" . get_comment_time("H:i:s") . ")"; ?>
-                            </a>
-                        </span>
-                    </h4>
-                    <?php comment_text(); ?>
-                    <?php edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<div class="edit-link">', "</div>");
+        $leave_reply = $is_answer ? $comment_data["translation_reply_to_coment"] : esc_html__("Reply", "djs-wallstreet-pro"); ?>
+
+<div <?php comment_class("media comment_box"); ?> id="comment-<?php comment_ID(); ?>">
+    <a class="pull-left-comment" href="<?php esc_url(the_author_meta("user_url")); ?>">
+        <?php echo get_avatar($comment, 70); ?>
+    </a>
+    <div class="media-body">
+        <div class="comment-detail">
+            <h4 class="comment-detail-title"><a
+                    href="<?php esc_url(comment_author_url());?>"><?php comment_author(); ?></a>
+                <span class="comment-date">
+                    <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
+                        <?php esc_html_e("Posted on", "djs-wallstreet-pro"); echo "&nbsp;" . get_comment_date("j.M Y") . " (" . get_comment_time("H:i:s") . ")"; ?>
+                    </a>
+                </span>
+            </h4>
+            <?php comment_text(); ?>
+            <?php edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<div class="edit-link">', "</div>");
                     if(comments_open()) { ?>
-                    <div class="<?php echo $is_answer ? 'reply answer' : 'reply'; ?>">
-                        <?php comment_reply_link(array_merge($args, [
+            <div class="<?php echo $is_answer ? 'reply answer' : 'reply'; ?>">
+                <?php comment_reply_link(array_merge($args, [
                             "reply_text" => $leave_reply,
                             "depth" => $depth,
                             "max_depth" => $args["max_depth"],
                             "per_page" => $args["per_page"],
                             ])
                         ); ?>
-                    </div>
-                    
-                    <?php }
-                    if ($comment->comment_approved == "0") { ?>
-                        <em class="comment-awaiting-moderation"><?php esc_html_e("Your comment is awaiting moderation.", "djs-wallstreet-pro"); ?></em>
-                        <br/>
-                    <?php } ?>
-                </div>
             </div>
+
+            <?php }
+                    if ($comment->comment_approved == "0") { ?>
+            <em
+                class="comment-awaiting-moderation"><?php esc_html_e("Your comment is awaiting moderation.", "djs-wallstreet-pro"); ?></em>
+            <br />
+            <?php } ?>
         </div>
-    <?php }
+    </div>
+</div>
+<?php }
 }
 
 if (have_comments()) { ?>
-    <div class="comment-section<?php innerrow_frame_border(" "); ?>">
-        <div class="comment-title">
-            <h3><i class="fa-solid fa-comments"></i><?php comments_number(esc_html__("No comments so far", "djs-wallstreet-pro"), esc_html__("1 comment so far", "djs-wallstreet-pro"), esc_html__("% comments so far", "djs-wallstreet-pro")); ?></h3>
-        </div>
-        <?php wp_list_comments(["callback" => "wallstreet_comment"]); ?>
+<div class="comment-section<?php innerrow_frame_border(" "); ?>">
+    <div class="comment-title">
+        <h3><i
+                class="fa-solid fa-comments"></i><?php comments_number(esc_html__("No comments so far", "djs-wallstreet-pro"), esc_html__("1 comment so far", "djs-wallstreet-pro"), esc_html__("% comments so far", "djs-wallstreet-pro")); ?>
+        </h3>
     </div>
+    <?php wp_list_comments(["callback" => "wallstreet_comment"]); ?>
+</div>
 
-    <?php if (get_comment_pages_count() > 1 && get_option("page_comments")) { ?>
-        <nav id="comment-nav-below">
-            <h1 class="assistive-text"><?php esc_html_e("Comment navigation", "djs-wallstreet-pro"); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link(esc_html__("&larr; Older Comments", "djs-wallstreet-pro")); ?></div>
-            <div class="nav-next"><?php next_comments_link(esc_html__("Newer Comments &rarr;", "djs-wallstreet-pro")); ?></div>
-        </nav>
-    <?php } elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), "comments")) { ?>
-        <div class="comment-section closed">
-            <?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?>
-        </div>     
-    <?php }
+<?php if (get_comment_pages_count() > 1 && get_option("page_comments")) { ?>
+<nav id="comment-nav-below">
+    <h1 class="assistive-text"><?php esc_html_e("Comment navigation", "djs-wallstreet-pro"); ?></h1>
+    <div class="nav-previous">
+        <?php previous_comments_link(esc_html__("&larr; Older Comments", "djs-wallstreet-pro")); ?></div>
+    <div class="nav-next"><?php next_comments_link(esc_html__("Newer Comments &rarr;", "djs-wallstreet-pro")); ?></div>
+</nav>
+<?php } elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), "comments")) { ?>
+<div class="comment-section closed">
+    <?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?>
+</div>
+<?php }
 }
 
 if ("open" == $post->comment_status) {
     if (get_option("comment_registration") && !$user_ID) { ?>
-        <p><?php echo sprintf(esc_html__('You must be <a href="%s">logged in</a> to post a comment.', "djs-wallstreet-pro"), esc_url(wp_login_url(get_permalink()))); ?></p>
-    <?php } else { ?>
-        <div class="comment-form-section<?php innerrow_frame_border(" "); ?>">
-            <?php $fields = [
+<p><?php echo sprintf(esc_html__('You must be <a href="%s">logged in</a> to post a comment.', "djs-wallstreet-pro"), esc_url(wp_login_url(get_permalink()))); ?>
+</p>
+<?php } else { ?>
+<div class="comment-form-section<?php innerrow_frame_border(" "); ?>">
+    <?php $fields = [
                 "url" => '<div class="blog-form-group-full"><input class="blog-form-control" name="url" id="url" value="" type="url" placeholder="' . esc_html__("Website", "djs-wallstreet-pro") . '" /></div>',
                 "author" => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="' . esc_html__("Name", "djs-wallstreet-pro") . '" /></div>',
                 "email" => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value="" type="email" placeholder="' . esc_html__("Email", "djs-wallstreet-pro") . '" /></div>',
@@ -111,6 +119,6 @@ if ("open" == $post->comment_status) {
                 "id_form" => "commentform",
             ];
             comment_form($defaults); ?>
-        </div>	
-    <?php }
+</div>
+<?php }
 } ?>

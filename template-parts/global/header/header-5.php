@@ -8,7 +8,8 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top  navbar4 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>" role="navigation">
+<div class="navbar navbar-wrapper navbar-inverse navbar-static-top  navbar4 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>"
+    role="navigation">
     <div class="container">
         <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="navbar-header">
@@ -18,7 +19,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <div class="col-lg-8 col-md-12 col-sm-12">
             <div class="navbar-collapse collapse">
                 <?php get_template_part("template-parts/global/menu-search"); ?>
-           </div>
+            </div>
         </div>
     </div>
 </div>

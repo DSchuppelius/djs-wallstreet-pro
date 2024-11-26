@@ -11,7 +11,8 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <div class="navbar-header index3 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>">
     <?php get_template_part("template-parts/global/header/navbar", "logo"); ?>
 </div>
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar3 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>" role="navigation">
+<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar3 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>"
+    role="navigation">
     <div class="container">
         <?php get_template_part("template-parts/global/header/navbar", "button"); ?>
         <div class="navbar-collapse collapse">

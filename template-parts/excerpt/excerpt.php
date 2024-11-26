@@ -25,9 +25,8 @@
                 if($excerpt_length<$content_length)
                     the_read_more();
             } else {
-            	the_content();
-            }   
+                the_content();
+            }
         } ?>
     </div>
 </section>
-

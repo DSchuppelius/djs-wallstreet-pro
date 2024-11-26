@@ -32,28 +32,28 @@ class theme_template_customizer extends Theme_Customizer {
                 "panel" => "wallstreet_template",
                 "priority" => 100,
             ]);
-    
+
             //Team Pgae template setting
             $wp_customize->add_section("team_page_template", [
                 "title" => esc_html__("Team page setting", "djs-wallstreet-pro"),
                 "panel" => "wallstreet_template",
                 "priority" => 100,
             ]);
-    
+
             //Testimonial Pgae template setting
             $wp_customize->add_section("testi_page_template", [
                 "title" => esc_html__("Testimonial page setting", "djs-wallstreet-pro"),
                 "panel" => "wallstreet_template",
                 "priority" => 100,
             ]);
-    
+
             //Portfolio taxonomy Setting
             $wp_customize->add_section("portfolio_taxonomy", [
                 "title" => esc_html__("Portfolio category page setting", "djs-wallstreet-pro"),
                 "panel" => "wallstreet_template",
                 "priority" => 100,
             ]);
-    
+
             //Project taxonomy Setting
             $wp_customize->add_section("project_realted", [
                 "title" => esc_html__("Portfolio template and related page setting", "djs-wallstreet-pro"),
@@ -125,11 +125,11 @@ class theme_template_customizer extends Theme_Customizer {
         } else {
             $this->customize_register_banner($wp_customize);
         }
-        
+
         $this->customize_register_blog_template($wp_customize);
         $this->customize_register_blog_meta($wp_customize);
 
-        $this->customize_register_contact_page($wp_customize);    
+        $this->customize_register_contact_page($wp_customize);
         $this->customize_register_contact_phone($wp_customize);
         $this->customize_register_contact_mail($wp_customize);
         $this->customize_register_contact_form($wp_customize);
@@ -142,7 +142,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[slideroundcorner]", [
             "label" => esc_html__("Round Corner Value", "djs-wallstreet-pro"),
             "section" => "header_image",
@@ -165,7 +165,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[about_team_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable team section", "djs-wallstreet-pro"),
@@ -178,20 +178,20 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[about_team_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "section_heading",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[about_team_description]", [
             "capability" => "edit_theme_options",
             "default" => esc_html__("We offer great services to our clients", "djs-wallstreet-pro"),
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[about_team_description]", [
             "type" => "textarea",
             "label" => esc_html__("Description", "djs-wallstreet-pro"),
@@ -204,7 +204,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[about_callout_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable Call-to-Action section", "djs-wallstreet-pro"),
@@ -220,7 +220,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[team_template_team_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable team section", "djs-wallstreet-pro"),
@@ -234,7 +234,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[team_template_feature_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable feature section", "djs-wallstreet-pro"),
@@ -248,7 +248,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[team_template_client_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable client section", "djs-wallstreet-pro"),
@@ -264,7 +264,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[testimonial_template_cta_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable Call-to-Action section", "djs-wallstreet-pro"),
@@ -277,20 +277,20 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[testimonial_cta_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "testi_page_template",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[testimonial_cta_description]", [
             "capability" => "edit_theme_options",
             "default" => esc_html__("We offer great services to our clients", "djs-wallstreet-pro"),
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[testimonial_cta_description]", [
             "type" => "textarea",
             "label" => esc_html__("Description", "djs-wallstreet-pro"),
@@ -302,7 +302,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[testimonial_template_testimonial_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable testimonial section", "djs-wallstreet-pro"),
@@ -316,12 +316,12 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[testimonial_template_client_section_show_hide]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable client section", "djs-wallstreet-pro"),
             "section" => "testi_page_template",
-        ]);  
+        ]);
     }
 
     private function customize_register_portfolio_tax($wp_customize) {
@@ -365,13 +365,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "portfolio_taxonomy",
         ]);
-    
+
         //taxonomy Description
         $wp_customize->add_setting($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
             "capability" => "edit_theme_options",
@@ -379,12 +379,12 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
             "type" => "textarea",
             "label" => esc_html__("Description", "djs-wallstreet-pro"),
             "section" => "portfolio_taxonomy",
-        ]);   
+        ]);
     }
 
     private function customize_register_project_related($wp_customize) {
@@ -395,13 +395,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[two_thre_four_col_port_tem_title]", [
             "type" => "text",
             "label" => esc_html__("Title For Portfolio Template", "djs-wallstreet-pro"),
             "section" => "project_realted",
         ]);
-    
+
         //Project Template Description
         $wp_customize->add_setting($this->theme_options_name . "[two_thre_four_col_port_tem_desc]", [
             "capability" => "edit_theme_options",
@@ -409,7 +409,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[two_thre_four_col_port_tem_desc]", [
             "type" => "textarea",
             "label" => esc_html__("Description For Portfolio Template", "djs-wallstreet-pro"),
@@ -434,7 +434,7 @@ class theme_template_customizer extends Theme_Customizer {
                 "max" => "50",
             ],
         ]);
-    
+
         //Related project Title
         $wp_customize->add_setting($this->theme_options_name . "[related_portfolio_project_hide_show]", [
             "default" => true,
@@ -455,13 +455,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[related_portfolio_title]", [
             "type" => "text",
             "label" => esc_html__("Title For Related projects", "djs-wallstreet-pro"),
             "section" => "project_realted",
         ]);
-    
+
         //Related project Description
         $wp_customize->add_setting($this->theme_options_name . "[related_portfolio_description]", [
             "capability" => "edit_theme_options",
@@ -469,12 +469,12 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[related_portfolio_description]", [
             "type" => "textarea",
             "label" => esc_html__("Description For Related projects", "djs-wallstreet-pro"),
             "section" => "project_realted",
-        ]);  
+        ]);
     }
 
     private function customize_register_blog_template($wp_customize) {
@@ -524,7 +524,7 @@ class theme_template_customizer extends Theme_Customizer {
             "label" => esc_html__("Read more button text", "djs-wallstreet-pro"),
             "section" => "blog_template_content_excerpt_setting",
             "type" => "text",
-        ]);   
+        ]);
     }
 
     private function customize_register_blog_meta($wp_customize) {
@@ -540,7 +540,7 @@ class theme_template_customizer extends Theme_Customizer {
             "section" => "blog_template",
             "type" => "checkbox",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[page_meta_section_settings]", [
             "default" => false,
             "capability" => "edit_theme_options",
@@ -553,7 +553,7 @@ class theme_template_customizer extends Theme_Customizer {
             "section" => "blog_template",
             "type" => "checkbox",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[archive_page_meta_section_settings]", [
             "default" => 0,
             "capability" => "edit_theme_options",
@@ -576,13 +576,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_address_settings]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable contact page address section", "djs-wallstreet-pro"),
             "section" => "contact_section_page",
         ]);
-    
+
         // Conatct icon
         $wp_customize->add_setting($this->theme_options_name . "[contact_address_icon]", [
             "capability" => "edit_theme_options",
@@ -590,13 +590,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_address_icon]", [
             "type" => "text",
             "label" => esc_html__("Icon", "djs-wallstreet-pro"),
             "section" => "contact_section_page",
         ]);
-    
+
         // Conatct address
         $wp_customize->add_setting($this->theme_options_name . "[contact_address_title]", [
             "capability" => "edit_theme_options",
@@ -604,13 +604,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_address_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "contact_section_page",
         ]);
-    
+
         // Contact Aaddress Designation One:
         $wp_customize->add_setting($this->theme_options_name . "[contact_address_designation_one]", [
             "capability" => "edit_theme_options",
@@ -618,25 +618,25 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_address_designation_one]", [
             "type" => "text",
             "label" => esc_html__("Address one", "djs-wallstreet-pro"),
             "section" => "contact_section_page",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[contact_address_designation_two]", [
             "capability" => "edit_theme_options",
             "default" => "Mountain View. USA",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_address_designation_two]", [
             "type" => "text",
             "label" => esc_html__("Address two", "djs-wallstreet-pro"),
             "section" => "contact_section_page",
-        ]);   
+        ]);
     }
 
     private function customize_register_contact_phone($wp_customize) {
@@ -647,13 +647,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_phone_settings]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable contact page phone section", "djs-wallstreet-pro"),
             "section" => "contact_section_phone",
         ]);
-    
+
         // Conatct phone icon
         $wp_customize->add_setting($this->theme_options_name . "[contact_phone_icon]", [
             "capability" => "edit_theme_options",
@@ -661,13 +661,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_phone_icon]", [
             "type" => "text",
             "label" => esc_html__("Icon", "djs-wallstreet-pro"),
             "section" => "contact_section_phone",
         ]);
-    
+
         // Contact Phone Title:
         $wp_customize->add_setting($this->theme_options_name . "[contact_phone_title]", [
             "capability" => "edit_theme_options",
@@ -675,13 +675,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_phone_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "contact_section_phone",
         ]);
-    
+
         // Contact Phone Number One:
         $wp_customize->add_setting($this->theme_options_name . "[contact_phone_number_one]", [
             "capability" => "edit_theme_options",
@@ -689,13 +689,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_phone_number_one]", [
             "type" => "text",
             "label" => esc_html__("Phone number one", "djs-wallstreet-pro"),
             "section" => "contact_section_phone",
         ]);
-    
+
         // Contact Phone Number Two:
         $wp_customize->add_setting($this->theme_options_name . "[contact_phone_number_two]", [
             "capability" => "edit_theme_options",
@@ -703,7 +703,7 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_phone_number_two]", [
             "type" => "text",
             "label" => esc_html__("Phone number two", "djs-wallstreet-pro"),
@@ -719,13 +719,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_email_settings]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable contact page email section", "djs-wallstreet-pro"),
             "section" => "contact_section_mail",
         ]);
-    
+
         // Conatct Email icon
         $wp_customize->add_setting($this->theme_options_name . "[contact_email_icon]", [
             "capability" => "edit_theme_options",
@@ -733,13 +733,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_email_icon]", [
             "type" => "text",
             "label" => esc_html__("Icon", "djs-wallstreet-pro"),
             "section" => "contact_section_mail",
         ]);
-    
+
         // Contact Email Title:
         $wp_customize->add_setting($this->theme_options_name . "[contact_email_title]", [
             "capability" => "edit_theme_options",
@@ -747,13 +747,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_email_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "contact_section_mail",
         ]);
-    
+
         // Contact Email One:
         $wp_customize->add_setting($this->theme_options_name . "[contact_email_number_one]", [
             "capability" => "edit_theme_options",
@@ -761,13 +761,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_email_number_one]", [
             "type" => "text",
             "label" => esc_html__("Email one", "djs-wallstreet-pro"),
             "section" => "contact_section_mail",
         ]);
-    
+
         // Contact Email Number Two:
         $wp_customize->add_setting($this->theme_options_name . "[contact_email_number_two]", [
             "capability" => "edit_theme_options",
@@ -775,12 +775,12 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_email_number_two]", [
             "type" => "text",
             "label" => esc_html__("Email two", "djs-wallstreet-pro"),
             "section" => "contact_section_mail",
-        ]);   
+        ]);
     }
 
     private function customize_register_contact_form($wp_customize) {
@@ -791,13 +791,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_form_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "contact_section_form",
         ]);
-    
+
         // Contact Form Description:
         $wp_customize->add_setting($this->theme_options_name . "[contact_form_description]", [
             "capability" => "edit_theme_options",
@@ -805,12 +805,12 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_form_description]", [
             "type" => "text",
             "label" => esc_html__("Description", "djs-wallstreet-pro"),
             "section" => "contact_section_form",
-        ]);    
+        ]);
     }
 
     //HACK Theme Check - required to add theme in WordPress theme library (found no sanitizer)
@@ -826,13 +826,13 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_google_map_enabled]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable Google map in contact page", "djs-wallstreet-pro"),
             "section" => "contact_section_page_map",
         ]);
-    
+
         //Google map  tilte
         $wp_customize->add_setting($this->theme_options_name . "[contact_google_map_title]", [
             "capability" => "edit_theme_options",
@@ -840,21 +840,21 @@ class theme_template_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_google_map_title]", [
             "type" => "text",
             "label" => esc_html__("Title", "djs-wallstreet-pro"),
             "section" => "contact_section_page_map",
         ]);
-    
-        //Google map URL    
+
+        //Google map URL
         $wp_customize->add_setting($this->theme_options_name . "[contact_google_map_url]", [
             "default" => $this->hack_4_theme_check__contact_google_map_url(),
             "capability" => "edit_theme_options",
             "sanitize_callback" => "sanitize_url",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_google_map_url]", [
             "type" => "textarea",
             "label" => esc_html__("URL", "djs-wallstreet-pro"),

@@ -15,7 +15,8 @@ get_template_part("template-parts/index/index", "banner");
 ?>
 <div class="container single">
     <div class="row <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
+        <div
+            class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php while (have_posts()) {
                 the_post();
                 get_template_part("template-parts/content/content", "single");

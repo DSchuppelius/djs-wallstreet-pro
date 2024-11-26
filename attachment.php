@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * Created on   : Wed Jun 22 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org
@@ -27,7 +27,8 @@ if(!isset($default_arg)) $default_arg="";
         </div>
     </div>
     <div class="row attachment-section content <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo (is_active_sidebar('sidebar_primary')?'8':'12'); ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
+        <div
+            class="col-md-<?php echo (is_active_sidebar('sidebar_primary')?'8':'12'); ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
             <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
             <?php if(has_excerpt()) {
@@ -59,18 +60,15 @@ if(!isset($default_arg)) $default_arg="";
                 setup_postdata($post);
                 $no_thumb = false;
                 get_named_template_parts("template-parts/content/content", ["head", "meta-header"]);?>
-                <h4 class="linked_post"><?php esc_html_e("Linked post", "djs-wallstreet-pro")?></h4>
-                <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
-                <?php echo the_content(esc_html__('Read More', "djs-wallstreet-pro"));
+            <h4 class="linked_post"><?php esc_html_e("Linked post", "djs-wallstreet-pro")?></h4>
+            <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
+            <?php echo the_content(esc_html__('Read More', "djs-wallstreet-pro"));
                 get_named_template_parts("template-parts/content/content", ["meta-footer", "footer", "author"]);
             }
-            get_template_part("template-parts/content/filler"); ?>            
+            get_template_part("template-parts/content/filler"); ?>
         </div>
         <?php get_sidebar(); ?>
         <!--/Blog Area-->
     </div>
 </div>
 <?php get_footer(); ?>
-
-
-

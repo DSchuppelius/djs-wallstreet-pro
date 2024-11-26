@@ -14,4 +14,3 @@
 <section class="excerpt-section aside">
     <div class="excerpt"><?php echo the_content(); ?></div>
 </section>
-

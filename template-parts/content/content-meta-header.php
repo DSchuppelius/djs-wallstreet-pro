@@ -20,16 +20,17 @@ if (is_page_template("template-blog/blog-switcher-view.php") || is_page_template
 }
 ?>
 <?php if (!$no_clear) { ?>
-    <div class="clear"></div>
+<div class="clear"></div>
 <?php } ?>
 <div class="blog-post-title flex_stretch<?php echo !empty($title_classes) ? " " . $title_classes : ''; ?>">
     <?php if (is_meta_enabled("with_date")) { ?>
-        <div class="blog-post-date"><span class="date" title="<?php echo get_the_date($current_setup->get("fulldatetimeformat")); ?>"><?php echo $post_date; ?></span></time>
-            <span class="comment"><i class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
-        </div>
-        <div class="blog-post-title-wrapper<?php echo !empty($wrapper_classes) ? " " . $wrapper_classes : ''; ?>">
-    <?php } else { ?>
+    <div class="blog-post-date"><span class="date"
+            title="<?php echo get_the_date($current_setup->get("fulldatetimeformat")); ?>"><?php echo $post_date; ?></span></time>
+        <span class="comment"><i class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
+    </div>
+    <div class="blog-post-title-wrapper<?php echo !empty($wrapper_classes) ? " " . $wrapper_classes : ''; ?>">
+        <?php } else { ?>
         <div class="blog-post-title-wrapper" style="width:100%;">
-    <?php } ?>
-    <?php if (has_post_format()) { ?> <div class="content-led <?php echo get_post_format(); ?>"></div><?php } ?>
-    <article>
+            <?php } ?>
+            <?php if (has_post_format()) { ?> <div class="content-led <?php echo get_post_format(); ?>"></div><?php } ?>
+            <article>

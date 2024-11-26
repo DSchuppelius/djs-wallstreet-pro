@@ -54,7 +54,7 @@ function get_only_post_blog_excerpt($length) {
     $excerpt = get_the_excerpt();
     $excerpt = strip_all($excerpt);
     $excerpt = substr($excerpt, 0, $length);
-    
+
     return $excerpt;
 }
 

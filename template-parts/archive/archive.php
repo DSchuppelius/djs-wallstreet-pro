@@ -6,7 +6,7 @@
  * Filename     : archive.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
- */ 
+ */
 global $more;
 global $wp_query;
 global $first_post;
@@ -22,7 +22,8 @@ $post_type_data = $wp_query;
 ?>
 <div class="container archive<?php echo empty($archive_type) ? "" : " " . $archive_type; ?>">
     <div class="row <?php row_frame_border(""); ?> flexstretch">
-        <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
+        <div
+            class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
             <?php $paged = get_query_var("paged") ? get_query_var("paged") : 1;
             if(!empty($archive_type))
                 $post_type_data = new WP_Query([
@@ -39,7 +40,7 @@ $post_type_data = $wp_query;
                 $first_post = false;
             }
             the_pagination($paged, $post_type_data);
-            get_template_part("template-parts/content/filler"); 
+            get_template_part("template-parts/content/filler");
             ?>
         </div>
         <?php get_sidebar(); ?>

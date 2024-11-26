@@ -8,7 +8,8 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 for ($tt = 1; $tt <= 4; $tt++) { ?>
-    <?php get_template_part("template-parts/client/client", "header"); ?>
-        <img src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/clients/client<?php echo $tt; ?>.png" class="img-responsive" title="Sonny">
-    <?php get_template_part("template-parts/client/client", "footer"); ?>
+<?php get_template_part("template-parts/client/client", "header"); ?>
+<img src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/clients/client<?php echo $tt; ?>.png" class="img-responsive"
+    title="Sonny">
+<?php get_template_part("template-parts/client/client", "footer"); ?>
 <?php } ?>

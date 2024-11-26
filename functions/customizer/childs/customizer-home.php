@@ -14,7 +14,7 @@ class theme_home_customizer extends Theme_Customizer {
         parent::__construct();
         $this->register_panel = true;
     }
-    
+
     public function customize_register_panel($wp_customize) {
         /* Header Section */
         $wp_customize->add_panel("header_options", [
@@ -75,7 +75,7 @@ class theme_home_customizer extends Theme_Customizer {
                 "section" => "wallstreet_favicon",
             ])
         );
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[webrit_custom_css]", [
             "default" => "",
             "capability" => "edit_theme_options",
@@ -101,47 +101,47 @@ class theme_home_customizer extends Theme_Customizer {
             "type" => "checkbox",
             "priority" => 100,
         ]);
-    
+
         //Text logo
         $wp_customize->add_setting($this->theme_options_name . "[contact_header_settings]", [
             "default" => true,
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_header_settings]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable/Disable contact header", "djs-wallstreet-pro"),
             "section" => "header_contact",
             "priority" => 500,
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[contact_header_contact_settings]", [
             "default" => "+49-123-456-78-901",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_header_contact_settings]", [
             "type" => "text",
             "label" => esc_html__("Header contact info", "djs-wallstreet-pro"),
             "section" => "header_contact",
             "priority" => 500,
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[contact_header_email_settings]", [
             "default" => "info@schuppelius.org",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[contact_header_email_settings]", [
             "type" => "text",
             "label" => esc_html__("Header email info", "djs-wallstreet-pro"),
             "section" => "header_contact",
             "priority" => 500,
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[header_presets_stlyle]", [
             "default" => 1,
             "type" => "option",
@@ -161,28 +161,28 @@ class theme_home_customizer extends Theme_Customizer {
                 6 => esc_html__("Style 6", "djs-wallstreet-pro"),
             ],
         ]);
-    
+
         //Search Enable Search button
         $wp_customize->add_setting($this->theme_options_name . "[enable_search_btn]", [
             "default" => true,
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[enable_search_btn]", [
             "type" => "checkbox",
             "label" => esc_html__("Enable/Disable Search Icon", "djs-wallstreet-pro"),
             "section" => "header_presets",
             "priority" => 500,
         ]);
-    
+
         //SEARCH EFFECT OR STYLES
         $wp_customize->add_setting($this->theme_options_name . "[search_effect_style_setting]", [
             "default" => "toogle",
             "type" => "option",
             "sanitize_callback" => "sanitize_text_field",
         ]);
-    
+
         $wp_customize->add_control($this->theme_options_name . "[search_effect_style_setting]", [
             "label" => esc_html__("Choose Position", "djs-wallstreet-pro"),
             "section" => "header_presets",

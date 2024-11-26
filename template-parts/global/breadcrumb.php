@@ -9,7 +9,8 @@
  */
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 
-<div class="page-breadcrumbs rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_breadcrumbs"); ?>">
+<div class="page-breadcrumbs rellax"
+    data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_breadcrumbs"); ?>">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -19,6 +20,6 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
                     } ?>
                 </ol>
             </div>
-        </div>	
+        </div>
     </div>
 </div>

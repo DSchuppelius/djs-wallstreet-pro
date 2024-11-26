@@ -14,32 +14,32 @@ $testimonial_scroll_duration = $current_setup_posttypes->get("testimonial_scroll
 $testimonial_timeout_duration = $current_setup_posttypes->get("testimonial_timeout_duration");
 
 if (!is_testimonial_grid()): ?>
-    <script>
-        jQuery(function() {
-            jQuery('#testimonial-scroll').carouFredSel( {
-                width: '100%',
-                responsive : true,
-                circular: true,
-                pagination: "#pager2",
-                items: {
-                    height : 'variable',
-                    visible: {
-                        min: 1,
-                        max: 2
-                    }
-                },
-                prev: '#prev3',
-                next: '#next3',
-                directon: 'left',
-                auto: true,
-                scroll: {
-                    items: <?php echo $testimonial_scroll_items; ?>,
-                    duration: <?php echo $testimonial_scroll_duration; ?>,
-                    fx: '<?php echo $testimonial_slide_type; ?>',
-                    timeoutDuration: <?php echo $testimonial_timeout_duration; ?>,
-                    pauseOnHover: true,
-                },
-            }).trigger('resize');
-        });
-    </script>
+<script>
+jQuery(function() {
+    jQuery('#testimonial-scroll').carouFredSel({
+        width: '100%',
+        responsive: true,
+        circular: true,
+        pagination: "#pager2",
+        items: {
+            height: 'variable',
+            visible: {
+                min: 1,
+                max: 2
+            }
+        },
+        prev: '#prev3',
+        next: '#next3',
+        directon: 'left',
+        auto: true,
+        scroll: {
+            items: <?php echo $testimonial_scroll_items; ?>,
+            duration: <?php echo $testimonial_scroll_duration; ?>,
+            fx: '<?php echo $testimonial_slide_type; ?>',
+            timeoutDuration: <?php echo $testimonial_timeout_duration; ?>,
+            pauseOnHover: true,
+        },
+    }).trigger('resize');
+});
+</script>
 <?php endif; ?>

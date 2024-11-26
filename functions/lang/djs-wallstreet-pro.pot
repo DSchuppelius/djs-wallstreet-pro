@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DJS-Wallstreet-Pro\n"
-"POT-Creation-Date: 2024-11-14 11:14+0100\n"
+"POT-Creation-Date: 2024-11-22 12:37+0100\n"
 "PO-Revision-Date: 2018-02-21 13:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -77,7 +77,7 @@ msgstr ""
 #: template-specials/service-four-template.php:95
 #: template-specials/service-six-template.php:95
 #: template-specials/service-three-template.php:95
-#: template-specials/service-two-template.php:92 theme_setup_data.php:139
+#: template-specials/service-two-template.php:92 theme_setup_data.php:143
 msgid "Read More"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 
 #: comments.php:91 functions/customizer/childs/customizer-template.php:746
 #: template/contact-us.php:88 template/contact-us.php:89
-#: theme_setup_data.php:118
+#: theme_setup_data.php:122
 msgid "Email"
 msgstr ""
 
@@ -188,11 +188,18 @@ msgstr ""
 #: functions.php:18
 #, php-format
 msgid ""
+"To use the theme \"DJS-Wallstreet-Pro\" download the plugin <a "
+"href=\"%s\">%s</a>"
+msgstr ""
+
+#: functions.php:21
+#, php-format
+msgid ""
 "To use all features of the theme \"DJS-Wallstreet-Pro\" download the plugin "
 "<a href=\"%s\">%s</a>"
 msgstr ""
 
-#: functions.php:92 functions/breadcrumbs/breadcrumbs.php:126
+#: functions.php:84 functions/breadcrumbs/breadcrumbs.php:126
 #: template-parts/content/content-about.php:31
 #: template-parts/content/content-meta-footer.php:22
 #: template-parts/content/content-single.php:26
@@ -200,24 +207,24 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:138
 msgctxt "header image description"
 msgid "MyPic"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:143
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:202 functions/customizer/childs/customizer-social.php:125
+#: functions.php:210 functions/customizer/childs/customizer-social.php:125
 msgid "Facebook URL"
 msgstr ""
 
-#: functions.php:203 functions/customizer/childs/customizer-social.php:98
+#: functions.php:211 functions/customizer/childs/customizer-social.php:98
 msgid "Twitter URL"
 msgstr ""
 
-#: functions.php:204 functions/customizer/childs/customizer-social.php:152
+#: functions.php:212 functions/customizer/childs/customizer-social.php:152
 msgid "LinkedIn URL"
 msgstr ""
 
@@ -316,7 +323,7 @@ msgstr ""
 msgid "Hide blog meta from home page"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:131
+#: functions/customizer/childs/customizer-blog.php:57 theme_setup_data.php:135
 msgid "Our latest blog post"
 msgstr ""
 
@@ -333,7 +340,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:132
+#: functions/customizer/childs/customizer-blog.php:70 theme_setup_data.php:136
 msgid "We work with new customers and grow their businesses"
 msgstr ""
 
@@ -381,7 +388,7 @@ msgstr ""
 msgid "Enable view all posts button"
 msgstr ""
 
-#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:83
+#: functions/customizer/childs/customizer-blog.php:142 theme_setup_data.php:87
 msgid "View All Posts"
 msgstr ""
 
@@ -441,7 +448,7 @@ msgid "Footer copyright settings"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:35
-#: theme_setup_data.php:232
+#: theme_setup_data.php:236
 msgid ""
 "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
 "impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</"
@@ -463,13 +470,13 @@ msgid "Enable Footer Copyright"
 msgstr ""
 
 #: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:233
+#: theme_setup_data.php:237
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr ""
 
 #. Author of the plugin/theme
 #: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:233
+#: theme_setup_data.php:237
 msgid "Daniel Joerg Schuppelius"
 msgstr ""
 
@@ -499,7 +506,7 @@ msgid ""
 "format.php\">php.net (datetime.format)</a>"
 msgstr ""
 
-#: functions/customizer/childs/customizer-global.php:49 theme_setup_data.php:38
+#: functions/customizer/childs/customizer-global.php:49 theme_setup_data.php:42
 msgid "Y"
 msgstr ""
 
@@ -507,7 +514,7 @@ msgstr ""
 msgid "Year dateformat"
 msgstr ""
 
-#: functions/customizer/childs/customizer-global.php:63 theme_setup_data.php:39
+#: functions/customizer/childs/customizer-global.php:63 theme_setup_data.php:43
 msgid "F Y"
 msgstr ""
 
@@ -515,7 +522,7 @@ msgstr ""
 msgid "Month/Year dateformat"
 msgstr ""
 
-#: functions/customizer/childs/customizer-global.php:77 theme_setup_data.php:40
+#: functions/customizer/childs/customizer-global.php:77 theme_setup_data.php:44
 msgid "jS F Y"
 msgstr ""
 
@@ -523,7 +530,7 @@ msgstr ""
 msgid "Full dateformat"
 msgstr ""
 
-#: functions/customizer/childs/customizer-global.php:91 theme_setup_data.php:41
+#: functions/customizer/childs/customizer-global.php:91 theme_setup_data.php:45
 msgid "jS F Y - h:i a"
 msgstr ""
 
@@ -532,7 +539,7 @@ msgid "Full datetimeformat"
 msgstr ""
 
 #: functions/customizer/childs/customizer-global.php:105
-#: theme_setup_data.php:42
+#: theme_setup_data.php:46
 msgid "Y-m-d\\TH:i:sP"
 msgstr ""
 
@@ -798,7 +805,7 @@ msgid "Vimeo URL"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:235
+#: theme_setup_data.php:239
 msgid ""
 "Your mail address will not be published, but your name will be. First name "
 "or a nickname is sufficient. Furthermore, comments on this site are "
@@ -810,7 +817,7 @@ msgid "First Text in Comment-Section"
 msgstr ""
 
 #: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:236
+#: theme_setup_data.php:240
 msgid ""
 "If you don't want to express yourself publicly, use the contact form or send "
 "me an email. Please don't forget to mention the article you are referring to."
@@ -1024,7 +1031,7 @@ msgid "Icon"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:106
+#: theme_setup_data.php:110
 msgid "Address"
 msgstr ""
 
@@ -1041,7 +1048,7 @@ msgid "Enable contact page phone section"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:674
-#: theme_setup_data.php:112
+#: theme_setup_data.php:116
 msgid "Phone"
 msgstr ""
 
@@ -1066,12 +1073,12 @@ msgid "Email two"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:122
+#: theme_setup_data.php:126
 msgid "Drop us a mail"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:123
+#: theme_setup_data.php:127
 msgid "Feel free to write us a message"
 msgstr ""
 
@@ -1080,7 +1087,7 @@ msgid "Enable Google map in contact page"
 msgstr ""
 
 #: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:99
+#: theme_setup_data.php:103
 msgid "Location map"
 msgstr ""
 
@@ -1265,10 +1272,6 @@ msgstr ""
 
 #: functions/shortcodes/shortcodes_iframe.php:83
 msgid "List"
-msgstr ""
-
-#: functions/theme/djs_base.php:47 functions/theme/djs_base.php:52
-msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: functions/widget/custom-sidebar.php:4 functions/widget/custom-sidebar.php:6
@@ -1736,11 +1739,15 @@ msgstr ""
 msgid "Your information has been sent."
 msgstr ""
 
-#: theme_setup_data.php:88
+#: theme_setup_data.php:14
+msgid "The DJS-Wallstreet-Pro-Core plugin is required for this theme."
+msgstr ""
+
+#: theme_setup_data.php:92
 msgid "Wallstreet is an elegant and modern theme for business websites."
 msgstr ""
 
-#: theme_setup_data.php:90
+#: theme_setup_data.php:94
 msgid "See All Features"
 msgstr ""
 

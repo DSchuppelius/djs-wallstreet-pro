@@ -89,4 +89,3 @@ function twenty_twenty_one_can_show_post_thumbnail() {
     return apply_filters("twenty_twenty_one_can_show_post_thumbnail", !post_password_required() && !is_attachment() && has_post_thumbnail());
 }
 ?>
-

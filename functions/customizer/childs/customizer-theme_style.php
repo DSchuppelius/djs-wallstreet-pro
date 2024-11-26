@@ -28,13 +28,13 @@ class theme_style_customizer extends Theme_Customizer {
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control(
             new WP_Color_Customize_Control($wp_customize, $this->theme_options_name . "[stylesheet]", [
                 "section" => "theme_style",
                 "type" => "radio",
                 "choices" => [
-                    "#ffc400" => "yellow-dark.jpg",                
+                    "#ffc400" => "yellow-dark.jpg",
                     "#ff8a00" => "orange-dark.jpg",
                     "#ee1d24" => "red-dark.jpg",
                     "#88be4c" => "papaya-dark.jpg",
@@ -48,20 +48,20 @@ class theme_style_customizer extends Theme_Customizer {
                     "00c2a9" => "turquoise-light.jpg",
                     "22a1c4" => "blue-light.jpg",
                     "c1c1c1" => "gray-light.jpg",
-    
+
                     "default.css" => "dark.png",
                     "light.css" => "light.png",
                 ],
             ])
         );
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[link_color]", [
             "capability" => "edit_theme_options",
             "default" => "#00c2a9",
             "sanitize_callback" => "sanitize_text_field",
             "type" => "option",
         ]);
-    
+
         $wp_customize->add_control(
             new WP_Customize_Color_Control($wp_customize, $this->theme_options_name . "[link_color]", [
                 "label" => esc_html__("Change skin color for light and dark background", "djs-wallstreet-pro"),

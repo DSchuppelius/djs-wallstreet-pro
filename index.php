@@ -33,7 +33,8 @@ get_template_parts(["template-parts/index/index", "banner"], true);
             }
             the_pagination($paged, $post_type_data);
             ?>
-        </div><!--/Blog Area-->
+        </div>
+        <!--/Blog Area-->
         <?php get_sidebar(); ?>
     </div>
 </div>

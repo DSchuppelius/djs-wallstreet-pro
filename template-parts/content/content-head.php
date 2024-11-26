@@ -25,16 +25,18 @@ if (!$has_thumbnail) {
     $local_theme_blog_section .= " has_no_post_thumbnail";
 }
 ?>
-    <div id="post-<?php the_ID(); ?>" <?php post_class($local_theme_blog_section . get_innerrow_frame_border(" ")); ?>>
-        <?php if ($has_thumbnail && !$no_thumb) { ?>
-            <?php $defalt_arg = [
+<div id="post-<?php the_ID(); ?>" <?php post_class($local_theme_blog_section . get_innerrow_frame_border(" ")); ?>>
+    <?php if ($has_thumbnail && !$no_thumb) { ?>
+    <?php $defalt_arg = [
                 "class" => "img-responsive attachment-post-thumbnail",
             ]; ?>
-            <div class="blog-post-img">
-                <?php if (is_single()) { ?>
-                    <a href="<?php echo esc_url(get_attachment_link(get_post_thumbnail_id())); ?>" <?php blank_target(is_single()); ?>><?php echo the_post_thumbnail("bigpost-thumb", $defalt_arg); ?></a>
-                <?php } else { ?>
-                    <a href="<?php esc_url(the_permalink()); ?>" <?php blank_target(is_single()); ?>><?php the_post_thumbnail("blog-thumb", $defalt_arg); ?></a>                
-                <?php } ?>
-            </div>
+    <div class="blog-post-img">
+        <?php if (is_single()) { ?>
+        <a href="<?php echo esc_url(get_attachment_link(get_post_thumbnail_id())); ?>"
+            <?php blank_target(is_single()); ?>><?php echo the_post_thumbnail("bigpost-thumb", $defalt_arg); ?></a>
+        <?php } else { ?>
+        <a href="<?php esc_url(the_permalink()); ?>"
+            <?php blank_target(is_single()); ?>><?php the_post_thumbnail("blog-thumb", $defalt_arg); ?></a>
         <?php } ?>
+    </div>
+    <?php } ?>

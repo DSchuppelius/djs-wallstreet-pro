@@ -272,7 +272,7 @@ function gridsystemlayout_function($atts, $content = null) {
                     <p>' .
                         $two_column_description .
                     '</p>
-                </div>				
+                </div>
             </div>';
     } elseif ($grid_layout == "three-column") {
         $atts = shortcode_atts([
@@ -316,7 +316,7 @@ function gridsystemlayout_function($atts, $content = null) {
                     <p>' .
                         $three_column_description .
                     '</p>
-                </div>				
+                </div>
             </div>';
     } elseif ($grid_layout == "fourth-column") {
         $atts = shortcode_atts([

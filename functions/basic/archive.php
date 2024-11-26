@@ -7,7 +7,7 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
- 
+
 function archives_view($args) {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     switch ($args['type']) {

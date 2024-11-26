@@ -11,53 +11,55 @@
 <!-- wallstreet Clients Section ---->
 <?php if(defined("DJS_POSTTYPE_PLUGIN")) {
     $current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
-    <clients>
-        <div class="container client-section">	
-            <div class="row">	
-                <?php if (!empty($current_setup_posttypes->get("home_client_title")) || !empty($current_setup_posttypes->get("home_client_description"))): ?>		
-                    <div class="section_heading_title">
-                        <?php if ($current_setup_posttypes->get("home_client_title")) { ?>
-                            <h1><?php echo $current_setup_posttypes->get("home_client_title"); ?></h1>
-                            <div class="pagetitle-separator">
-                                <div class="pagetitle-separator-border">
-                                    <div class="pagetitle-separator-box"></div>
-                                </div>
-                            </div>
-                        <?php } ?>
-                        <?php if ($current_setup_posttypes->get("home_client_description")) { ?>
-                            <p><?php echo $current_setup_posttypes->get("home_client_description"); ?></p>
-                        <?php } ?>
-                    </div>	
-                <?php endif; ?>	
-                <div class="row flexstretch">
-                    <?php $j = 1;
+<clients>
+    <div class="container client-section">
+        <div class="row">
+            <?php if (!empty($current_setup_posttypes->get("home_client_title")) || !empty($current_setup_posttypes->get("home_client_description"))): ?>
+            <div class="section_heading_title">
+                <?php if ($current_setup_posttypes->get("home_client_title")) { ?>
+                <h1><?php echo $current_setup_posttypes->get("home_client_title"); ?></h1>
+                <div class="pagetitle-separator">
+                    <div class="pagetitle-separator-border">
+                        <div class="pagetitle-separator-box"></div>
+                    </div>
+                </div>
+                <?php } ?>
+                <?php if ($current_setup_posttypes->get("home_client_description")) { ?>
+                <p><?php echo $current_setup_posttypes->get("home_client_description"); ?></p>
+                <?php } ?>
+            </div>
+            <?php endif; ?>
+            <div class="row flexstretch">
+                <?php $j = 1;
                     $args = ["post_type" => CLIENT_POST_TYPE, "posts_per_page" => -1];
                     $client = new WP_Query($args);
                     if ($client->have_posts()) {
                         while ($client->have_posts()) {
                             $client->the_post();
                             get_template_part("template-parts/client/client", "header");
-        
+
                             $post_client_url = esc_url(get_post_meta(get_the_ID(), "clientstrip_link", true) ? get_post_meta(get_the_ID(), "clientstrip_link", true) : get_the_currentURL() . "#");
                             $post_client_url_target = get_blank_target(get_post_meta(get_the_ID(), "meta_client_target", true));
-        
+
                             if (has_post_thumbnail()) {
                                 $post_thumbnail_id = get_post_thumbnail_id();
                                 $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
-        
+
                                 if ($post_thumbnail_url) { ?>
-                                    <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
-                                        <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
-                                    </a>
-                                <?php } else { ?>
-                                    <img class="img-responsive" title="<?php echo get_the_title(); ?>" src="<?php echo $post_thumbnail_url; ?>">
-                                <?php }
+                <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
+                    <img class="img-responsive" title="<?php echo get_the_title(); ?>"
+                        src="<?php echo $post_thumbnail_url; ?>">
+                </a>
+                <?php } else { ?>
+                <img class="img-responsive" title="<?php echo get_the_title(); ?>"
+                    src="<?php echo $post_thumbnail_url; ?>">
+                <?php }
                             } else { ?>
-                                <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
-                                    <h2 class="clients-text"><?php echo get_the_title(); ?></h2>
-                                </a>
-                            <?php }
-        
+                <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
+                    <h2 class="clients-text"><?php echo get_the_title(); ?></h2>
+                </a>
+                <?php }
+
                             get_template_part("template-parts/client/client", "footer");
                             if ($j % 4 == 0) {
                                 // echo "<div class='clearfix'></div>";
@@ -67,10 +69,10 @@
                         }
                     } else {
                         get_template_part("template-parts/client/client", "demo");
-                    } ?>			
-                </div>		
-            </div> 		
+                    } ?>
+            </div>
         </div>
-    </clients>
-    <!-- /wallstreet wallstreet Cliens Section Section ---->
+    </div>
+</clients>
+<!-- /wallstreet wallstreet Cliens Section Section ---->
 <?php }?>

@@ -19,11 +19,11 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <div class="col-md-<?php echo is_active_sidebar("woocommerce") ? "8" : "12"; ?> col-xs-12">
             <div id="post-<?php the_ID(); ?>">
                 <?php woocommerce_content(); ?>
-            </div>	
+            </div>
         </div>
         <!--/End of Blog Detail-->
         <?php get_sidebar("woocommerce"); ?>
-    </div>	
+    </div>
 </div>
 <!-- End of Blog & Sidebar Section -->
 <div class="clearfix"></div>

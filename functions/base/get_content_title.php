@@ -15,7 +15,7 @@ function get_content_title($separator = ': ') {
     if (!is_single()) {
         $print_separator = !empty($separator);
         $output = '<span class="title post_format ' . $post_format . '">';
-    
+
         switch ($post_format) {
             case "aside":
                 $output .= esc_html__("Aside", "djs-wallstreet-pro");

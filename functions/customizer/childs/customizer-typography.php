@@ -21,7 +21,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
         for ($i = 9; $i <= 100; $i++) {
             $this->font_size[$i] = $i;
         }
-    
+
         $this->font_family = [
             "400" => "GoogleFont Regular",
             "300" => "GoogleFont Light",
@@ -30,7 +30,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "500" => "GoogleFont Medium",
             "200" => "GoogleFont Thin",
         ];
-    
+
         $this->font_style = ["normal" => "Normal", "italic" => "Italic"];
     }
 
@@ -39,7 +39,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "priority" => 930,
             "capability" => "edit_theme_options",
             "title" => esc_html__("Typography settings", "djs-wallstreet-pro"),
-        ]);        
+        ]);
     }
 
     public function customize_register_section($wp_customize) {
@@ -86,7 +86,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
                 "panel" => "wallstreet_typography_setting",
                 "priority" => 40,
             ]);
-        
+
             //Portfolio title typography section
             $wp_customize->add_section("portfolio_typography", [
                 "title" => esc_html__("Portfolio title", "djs-wallstreet-pro"),
@@ -238,7 +238,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[remove_googlefonts]",
             "type" => "checkbox",
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[general_typography_fontsize]", [
             "default" => 13,
             "capability" => "edit_theme_options",
@@ -283,8 +283,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[general_typography_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
-    
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[menu_title_fontsize]", [
             "default" => 18,
             "capability" => "edit_theme_options",
@@ -329,8 +329,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[menu_title_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
-    
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[post_title_fontsize]", [
             "default" => 26,
             "capability" => "edit_theme_options",
@@ -375,8 +375,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[post_title_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
-    
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[widget_title_fontsize]", [
             "default" => 24,
             "capability" => "edit_theme_options",
@@ -421,8 +421,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[widget_title_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
-    
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[calloutarea_title_fontsize]", [
             "default" => 34,
             "capability" => "edit_theme_options",
@@ -468,7 +468,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "type" => "select",
             "choices" => $this->font_style,
         ]);
-        
+
         $wp_customize->add_setting($this->theme_options_name . "[calloutarea_description_fontsize]", [
             "default" => 15,
             "capability" => "edit_theme_options",
@@ -513,8 +513,8 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[calloutarea_description_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
-    
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[calloutarea_purches_fontsize]", [
             "default" => 16,
             "capability" => "edit_theme_options",
@@ -608,7 +608,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "type" => "select",
             "choices" => $this->font_style,
         ]);
-    
+
         $wp_customize->add_setting($this->theme_options_name . "[portfolio_title_fontsize]", [
             "default" => 20,
             "capability" => "edit_theme_options",
@@ -653,7 +653,7 @@ class plugin_theme_typography_customizer extends Theme_Customizer {
             "setting" => $this->theme_options_name . "[portfolio_title_fontstyle]",
             "type" => "select",
             "choices" => $this->font_style,
-        ]);    
+        ]);
     }
 }
 

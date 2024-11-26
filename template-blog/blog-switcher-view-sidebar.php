@@ -17,44 +17,48 @@ $theme_blog_section = "media";
 get_template_parts(["template-parts/index/index", "banner"], true);
 ?>
 <style type="text/css">
-    .blog-post-title-wrapper-full div .blog-btn {
-        visibility: hidden;
-        border-radius: 3px 3px 3px 3px;
-        cursor: pointer;
-        display: contents;
-        font-family: 'SiteFont';
-        font-weight: 100;
-        font-size: 0;
-        line-height: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
-    }
-    .blog-post-title-wrapper-full div .blog-btn:after {
-        content:'<?php echo $current_setup->get("blog_template_read_more"); ?>'; 
-        visibility: visible;
-        background-color: #00c2a9;
-        border-radius: 3px 3px 3px 3px;
-        cursor: pointer;
-        display: inline-block;
-        font-family: 'SiteFont';
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 20px;
-        margin-top: 12px;
-        margin-bottom: 35px;
-        padding: 9px 18px;
-        text-align: center;
-        vertical-align: middle;
-        white-space: nowrap;
-        text-decoration: none;
-        float: left;
-    }
-    .left .has-post-thumbnail .media-body { display: block; }
+.blog-post-title-wrapper-full div .blog-btn {
+    visibility: hidden;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: contents;
+    font-family: 'SiteFont';
+    font-weight: 100;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.blog-post-title-wrapper-full div .blog-btn:after {
+    content: '<?php echo $current_setup->get("blog_template_read_more"); ?>';
+    visibility: visible;
+    background-color: #00c2a9;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'SiteFont';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 12px;
+    margin-bottom: 35px;
+    padding: 9px 18px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    float: left;
+}
+
+.left .has-post-thumbnail .media-body {
+    display: block;
+}
 </style>
 <div class="blog6 blog-section">
     <div class="container blog-switcher-view sidebar">
-        <div class="row <?php row_frame_border(""); ?> flexstretch">		
+        <div class="row <?php row_frame_border(""); ?> flexstretch">
             <!--Blog Area-->
             <div class="col-md-8">
                 <?php
@@ -67,10 +71,10 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                 while ($post_type_data->have_posts()) {
                     $post_type_data->the_post();
                     $more = 0; ?>
-                    <div class="blog-section-left blog-list-view <?php echo ($switcher % 2 == 0) ? "right" : "left"; ?>">
-                        <?php get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting")); ?>
-                    </div>
-                    <?php $switcher++;
+                <div class="blog-section-left blog-list-view <?php echo ($switcher % 2 == 0) ? "right" : "left"; ?>">
+                    <?php get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting")); ?>
+                </div>
+                <?php $switcher++;
                     $first_post = false;
                 }
                 the_pagination($paged, $post_type_data);
@@ -80,5 +84,5 @@ get_template_parts(["template-parts/index/index", "banner"], true);
             <?php get_sidebar(); ?>
         </div>
     </div>
-</div>			
+</div>
 <?php get_footer(); ?>

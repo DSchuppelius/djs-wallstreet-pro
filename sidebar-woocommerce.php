@@ -11,11 +11,11 @@
 
 <?php if (is_active_sidebar("woocommerce")): ?>
 <!--Sidebar-->
-    <div class="col-md-4 col-xs-12 flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
-        <div class="sidebar-section">
-            <?php dynamic_sidebar("woocommerce"); ?>
-        </div>
-        <div class="sidebar-section columnfiller"></div>
+<div class="col-md-4 col-xs-12 flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
+    <div class="sidebar-section">
+        <?php dynamic_sidebar("woocommerce"); ?>
     </div>
+    <div class="sidebar-section columnfiller"></div>
+</div>
 <!--/End of Sidebar-->
 <?php endif; ?>

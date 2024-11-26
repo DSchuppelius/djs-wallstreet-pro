@@ -23,7 +23,7 @@ if (!$is_toggle_button) {
                             <button type="submit" class="btn search_btn" value="' . esc_html__("Search", "djs-wallstreet-pro") . '">' .
                                 esc_html__("Search", "djs-wallstreet-pro") .
                             '</button>
-                        </form>                   
+                        </form>
                     </div>
                 </li>
             </ul>

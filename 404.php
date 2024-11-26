@@ -9,13 +9,15 @@
  */
 get_template_parts(["template-parts/index/index", "banner"], true); ?>
 <div class="container error">
-    <div class="row">	
+    <div class="row">
         <div class="col-md-12">
             <div class="error_404">
                 <h2><?php esc_html_e("Error 404", "djs-wallstreet-pro"); ?></h2>
                 <h4><?php esc_html_e("Oops! Page not found", "djs-wallstreet-pro"); ?></h4>
-                <p><?php esc_html_e("We are sorry, but the page you are looking for does not exist.", "djs-wallstreet-pro"); ?></p>
-                <p><a class="button btn back" href="<?php echo esc_url(home_url('/')); ?>" id="blogdetail_btn"><?php esc_html_e("Go back", "djs-wallstreet-pro"); ?></a></p>
+                <p><?php esc_html_e("We are sorry, but the page you are looking for does not exist.", "djs-wallstreet-pro"); ?>
+                </p>
+                <p><a class="button btn back" href="<?php echo esc_url(home_url('/')); ?>"
+                        id="blogdetail_btn"><?php esc_html_e("Go back", "djs-wallstreet-pro"); ?></a></p>
             </div>
         </div>
     </div>

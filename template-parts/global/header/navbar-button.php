@@ -8,4 +8,5 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 ?>
-<button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><?php esc_html_e("Menu", "djs-wallstreet-pro"); ?></button>
+<button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse"
+    data-target="#bs-example-navbar-collapse-1"><?php esc_html_e("Menu", "djs-wallstreet-pro"); ?></button>

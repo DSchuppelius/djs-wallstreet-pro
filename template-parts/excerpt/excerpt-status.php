@@ -15,5 +15,6 @@
     <?php $content = get_the_content();
     $content_length = strlen($content);
     $page_length = intdiv($content_length, 255) + ((int) 1);?>
-    <div class="lcd crt"><?php echo $content; ?><small><?php echo $content_length; ?> / 255 <?php if ($content_length > 255) { echo "(" . $page_length . ")"; } ?></small></div>
+    <div class="lcd crt"><?php echo $content; ?><small><?php echo $content_length; ?> / 255
+            <?php if ($content_length > 255) { echo "(" . $page_length . ")"; } ?></small></div>
 </section>

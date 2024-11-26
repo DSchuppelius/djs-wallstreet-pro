@@ -26,7 +26,6 @@ require_once "theme_setup_data.php";
 require_once THEME_FUNCTIONS_PATH . "/base/get_template_parts.php";
 require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_functions.php";
-require_once THEME_FUNCTIONS_PATH . "/theme/theme_sanitizer.php";
 require_once THEME_FUNCTIONS_PATH . "/theme/theme_colors.php";
 require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
 require_once THEME_FUNCTIONS_PATH . "/font/font.php";

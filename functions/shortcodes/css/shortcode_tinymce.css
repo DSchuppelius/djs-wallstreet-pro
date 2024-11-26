@@ -11,14 +11,11 @@
     zoom: 1;
 }
 
-IE6
-*:first-child + html .clearfix {
+IE6 *:first-child+html .clearfix {
     zoom: 1;
 }
 
-IE7
-
-#wpex-shortcodes-popup {
+IE7 #wpex-shortcodes-popup {
     text-shadow: 1px 1px 1px #fff;
     font-size: 14px;
 }
@@ -82,15 +79,15 @@ IE7
     font-size: 14px;
 }
 
-    #shortcode-editor input:focus,
-    #shortcode-editor textarea:focus {
-        background: #fff;
-        border: 1px solid #bdbdbd !important;
-        color: #444;
-        -webkit-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
-        -moz-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
-        box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
-    }
+#shortcode-editor input:focus,
+#shortcode-editor textarea:focus {
+    background: #fff;
+    border: 1px solid #bdbdbd !important;
+    color: #444;
+    -webkit-box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
 
 #shortcode-editor select {
     width: 112px;

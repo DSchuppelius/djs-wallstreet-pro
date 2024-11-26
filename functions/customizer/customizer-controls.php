@@ -11,38 +11,44 @@ if (class_exists("WP_Customize_Control")) {
     if (!class_exists("WP_Color_Customize_Control")) {
         class WP_Color_Customize_Control extends WP_Customize_Control {
             public $type = "new_menu";
-        
+
             function render_content() {
                 echo "<h3>" . esc_html__("Light & Dark Predefined Colors Setting", "djs-wallstreet-pro") . "</h3>";
                 $name = "_customize-color-radio-" . $this->id;
                 $dark = true; ?>
-                <div class="dark_mode">
-                    <?php foreach ($this->choices as $key => $value) { ?>
-                        <?php if($dark && $key[0] != "#") {
+<div class="dark_mode">
+    <?php foreach ($this->choices as $key => $value) { ?>
+    <?php if($dark && $key[0] != "#") {
                             $dark = false; ?>
-                            </div><div class="light_mode">
-                        <?php } elseif ($key == "default.css") { ?>
-                            </div><div class="custom_mode">
-                        <?php } ?>
-                        <label class="color_schema">
-                            <input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr($name); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>" <?php if ($this->value() == $key) { echo 'checked="checked"'; } ?> />
-                            <img <?php if ($this->value() == $key) { echo 'class="active"'; } ?> src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/bg-pattern/<?php echo $value; ?>" alt="<?php echo esc_attr($value); ?>" />
-                        </label>
-                    <?php } ?>
-                </div>
-                <script>
-                    jQuery(document).ready(function($) {
-                        $("#customize-control-wallstreet_pro_options-stylesheet label img").click(function() {
-                            $("#customize-control-wallstreet_pro_options-stylesheet label img").removeClass("active");
-                            $(this).addClass("active");
-                        });
-                    });
-                </script>
-            <?php
+</div>
+<div class="light_mode">
+    <?php } elseif ($key == "default.css") { ?>
+</div>
+<div class="custom_mode">
+    <?php } ?>
+    <label class="color_schema">
+        <input type="radio" value="<?php echo $key; ?>" name="<?php echo esc_attr($name); ?>"
+            data-customize-setting-link="<?php echo esc_attr($this->id); ?>"
+            <?php if ($this->value() == $key) { echo 'checked="checked"'; } ?> />
+        <img <?php if ($this->value() == $key) { echo 'class="active"'; } ?>
+            src="<?php echo THEME_ASSETS_PATH_URI; ?>/images/bg-pattern/<?php echo $value; ?>"
+            alt="<?php echo esc_attr($value); ?>" />
+    </label>
+    <?php } ?>
+</div>
+<script>
+jQuery(document).ready(function($) {
+    $("#customize-control-wallstreet_pro_options-stylesheet label img").click(function() {
+        $("#customize-control-wallstreet_pro_options-stylesheet label img").removeClass("active");
+        $(this).addClass("active");
+    });
+});
+</script>
+<?php
             }
         }
     }
-    
+
     if (!class_exists("Wallstreet_Range_Slider_Control")) {
         class Wallstreet_Range_Slider_Control extends WP_Customize_Control {
             protected function get_wallstreet_resource_url() {
@@ -50,7 +56,7 @@ if (class_exists("WP_Customize_Control")) {
                     // We're in a plugin directory and need to determine the url accordingly.
                     return plugin_dir_url(__DIR__);
                 }
-    
+
                 return trailingslashit(get_template_directory_uri());
             }
         }
@@ -74,14 +80,19 @@ if (class_exists("WP_Customize_Control")) {
              */
             public function render_content() {
                 ?>
-                <div class="slider-custom-control">
-                    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span><input type="number" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" value="<?php echo esc_attr($this->value()); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
-                    <div class="slider" slider-min-value="<?php echo esc_attr($this->input_attrs["min"]); ?>" slider-max-value="<?php echo esc_attr($this->input_attrs["max"]); ?>" slider-step-value="<?php echo esc_attr($this->input_attrs["step"]); ?>"></div><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr($this->value()); ?>"></span>
-                </div>
-            <?php
+<div class="slider-custom-control">
+    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span><input type="number"
+        id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>"
+        value="<?php echo esc_attr($this->value()); ?>" class="customize-control-slider-value"
+        <?php $this->link(); ?> />
+    <div class="slider" slider-min-value="<?php echo esc_attr($this->input_attrs["min"]); ?>"
+        slider-max-value="<?php echo esc_attr($this->input_attrs["max"]); ?>"
+        slider-step-value="<?php echo esc_attr($this->input_attrs["step"]); ?>"></div><span
+        class="slider-reset dashicons dashicons-image-rotate"
+        slider-reset-value="<?php echo esc_attr($this->value()); ?>"></span>
+</div>
+<?php
             }
         }
     }
 }
-
-

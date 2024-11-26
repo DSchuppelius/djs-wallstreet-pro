@@ -13,12 +13,12 @@ get_named_template_parts("template-parts/content/content", ["head", "meta-header
 if (has_post_format("status")) {
     get_template_part("template-parts/excerpt/excerpt", "status");
 } else { ?>
-    <header>
-        <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h2>
-    </header>
-    <section class="content-section single">
-        <div class="content"><?php the_content(); ?></div>
-    </section>
+<header>
+    <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h2>
+</header>
+<section class="content-section single">
+    <div class="content"><?php the_content(); ?></div>
+</section>
 <?php }
 get_named_template_parts("template-parts/content/content", ["meta-footer", "footer"]);
 

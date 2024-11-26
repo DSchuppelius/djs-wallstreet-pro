@@ -24,8 +24,14 @@ $loaded_banner = true; ?>
     }
     ?>
     <div <?php echo $banner_options; ?>>
-        <img class="img-responsive header-img" src="<?php echo $header_img; ?>" style="visibility: hidden;"/>
-        <noscript><style>.img-responsive.header-img { visibility: visible !important; }</style></noscript>
+        <img class="img-responsive header-img" src="<?php echo $header_img; ?>" style="visibility: hidden;" />
+        <noscript>
+            <style>
+            .img-responsive.header-img {
+                visibility: visible !important;
+            }
+            </style>
+        </noscript>
     </div>
     <div class="container page-title-col">
         <div class="row">
@@ -120,12 +126,12 @@ $loaded_banner = true; ?>
                     printf("<h1>" . esc_html__("Search results for: %s", "djs-wallstreet-pro") . "</h1>", '<span>"' . get_search_query() . '"</span>');
                 } else {
                     the_title("<h1>", "</h1>");
-                } ?>	
-            </div>	
+                } ?>
+            </div>
         </div>
     </div>
     <?php get_template_part("template-parts/global/breadcrumb"); ?>
 </div>
 <?php if(show_rellax_div()) { ?>
-    <div class="site rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_banner"); ?>">
-<?php } ?>
+<div class="site rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_banner"); ?>">
+    <?php } ?>

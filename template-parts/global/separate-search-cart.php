@@ -21,7 +21,7 @@ $menu_search_form =
                         <input type="search" class="search-field" placeholder="Search …" value="" name="s">
                     </label>
                     <button type="submit" class="btn search_btn search-submit" value="' . esc_html__("Search", "djs-wallstreet-pro") . '">' . esc_html__("Search", "djs-wallstreet-pro") . '</button>
-                </form>                   
+                </form>
             </div>
         </li>
     </ul>';

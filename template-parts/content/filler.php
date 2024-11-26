@@ -10,5 +10,5 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 if ($current_setup->get("addflexelements")) { ?>
-    <div class="columnfiller<?php innerrow_frame_border(" "); ?>"></div>
+<div class="columnfiller<?php innerrow_frame_border(" "); ?>"></div>
 <?php } ?>

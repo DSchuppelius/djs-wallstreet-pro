@@ -10,26 +10,24 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <div class="navbar-header index2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>">
     <div class="container">
-        <?php
-  get_template_part("template-parts/global/header/navbar", "logo");
-  get_template_part("template-parts/global/separate-search-cart");
-  ?>
+        <?php get_template_part("template-parts/global/header/navbar", "logo"); get_template_part("template-parts/global/separate-search-cart"); ?>
     </div>
 </div>
-<!--/Header Details Section-->	
-    
+<!--/Header Details Section-->
+
 <!--Logo & Menu Section-->
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>" role="navigation">
+<div class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>"
+    role="navigation">
     <div class="container">
         <?php get_template_part("template-parts/global/header/navbar", "button"); ?>
         <div class="navbar-collapse collapse">
             <?php wp_nav_menu([
-       "theme_location" => "primary",
-       "container" => "nav-collapse collapse navbar-inverse-collapse",
-       "menu_class" => "nav navbar-nav navbar-left",
-       "fallback_cb" => "theme_fallback_page_menu",
-       "walker" => new Theme_Bootstrap_Walker_Nav_Menu(),
-   ]); ?>
+                "theme_location" => "primary",
+                "container" => "nav-collapse collapse navbar-inverse-collapse",
+                "menu_class" => "nav navbar-nav navbar-left",
+                "fallback_cb" => "theme_fallback_page_menu",
+                "walker" => new Theme_Bootstrap_Walker_Nav_Menu(),
+            ]); ?>
         </div>
     </div>
 </div>

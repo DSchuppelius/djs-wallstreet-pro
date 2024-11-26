@@ -123,14 +123,14 @@ function theme_jquery_scripts() {
             wp_enqueue_style("lightbox-css",            THEME_ASSETS_PATH_URI . "/css/lightbox/lightbox.css");
             wp_enqueue_script("lightbox-js",            THEME_ASSETS_PATH_URI . "/js/lightbox/lightbox.js",                             ["jquery"]);
         }
-     
+
         if (is_page_template("template-special/single-portfolio.php") || PORTFOLIO_POST_TYPE == get_post_type()) {
             wp_enqueue_style("lightbox",                THEME_ASSETS_PATH_URI . "/css/lightbox/lightbox.css");
             wp_enqueue_script("lightbox1",              THEME_ASSETS_PATH_URI . "/js/lightbox/lightbox.js",                             ["jquery"]);
             wp_enqueue_script("carouFredSel",           THEME_ASSETS_PATH_URI . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js", ["jquery"]);
             wp_enqueue_script("carouFredSel1",          THEME_ASSETS_PATH_URI . "/js/caroufredsel/caroufredsel-element.js",             ["jquery"]);
         }
-     
+
         if (is_front_page() || is_page_template("template/homepage.php") || is_testimonial_carousel()) {
             wp_enqueue_style("lightbox",                THEME_ASSETS_PATH_URI . "/css/lightbox/lightbox.css");
             wp_enqueue_style("flexslider",              THEME_ASSETS_PATH_URI . "/css/flexslider/flexslider.css");

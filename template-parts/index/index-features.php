@@ -27,56 +27,74 @@ if (defined("DJS_POSTTYPE_PLUGIN")) {
     $theme_third_feature_icon = $current_setup_posttypes->get("theme_third_feature_icon");
 
     if ($theme_feature_enabled == true) { ?>
-        <div class="features-section" style="background: url('<?php echo $current_setup_posttypes->get("theme_feature_background"); ?>'); background-size:cover; background-position:center center; <?php echo $current_setup_posttypes->get("theme_feature_background_fixed") ? 'background-attachment:fixed;' : '' ;?>">
-            <div class="overlay">
-            	<div class="container">
-            		<div class="row">
-            		<?php if (!empty($theme_feature_image)) { ?>
-            			<div class="col-md-6 col-sm-6">
-            				<?php if ($current_setup_posttypes->get("feature_image_link")) { ?>
-            				<a href="<?php echo $current_setup_posttypes->get("feature_image_link"); ?>" <?php blank_target($current_setup_posttypes->get("image_link_target") == true); ?>><img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>"></a>
-            				<?php } else { ?>
-            				<img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>">
-            				<?php } ?>
-            			</div>
-            			<?php } ?>
-            			<div class="col-md-6 col-sm-6">
-            				<?php if (!empty($theme_feature_title)) { ?><div class="features-title"><?php echo $theme_feature_title; ?></div><?php } ?>
-            				<?php if (!empty($theme_first_feature_icon) || !empty($theme_first_title) || !empty($theme_first_description)): ?>
-            				<div class="media features-area">
-            					<?php if (!empty($theme_first_feature_icon)): ?>
-            					<div class="feature-icon"><i class="fa <?php if (!empty($theme_first_feature_icon)) { echo $theme_first_feature_icon; } ?>"></i></div>
-            					<?php endif; ?>		
-            					<?php if (!empty($theme_first_title) || !empty($theme_first_description)): ?>			
-            					<div class="media-body">
-            						<?php if (!empty($theme_first_title)) { ?><h3><?php echo $theme_first_title; ?></h3><?php } ?>
-            						<?php if (!empty($theme_first_description)) { ?><p><?php echo $theme_first_description; ?></p><?php } ?>
-            					</div>
-            				<?php endif; ?>
-            				</div>
-            			<?php endif; ?>
-            			<?php if (!empty($theme_second_feature_icon) || !empty($theme_second_title) || !empty($theme_second_description)): ?>
-            				<div class="media features-area">
-            					<?php if (!empty($theme_second_feature_icon)): ?><div class="feature-icon"><i class="fa <?php if (!empty($theme_second_feature_icon)) { echo $theme_second_feature_icon; } ?>"></i></div><?php endif; ?>
-            					<div class="media-body">
-            						<?php if (!empty($theme_second_title)) { ?><h3><?php echo $theme_second_title; ?></h3><?php } ?>
-            						<?php if (!empty($theme_second_description)) { ?><p><?php echo $theme_second_description; ?></p><?php } ?>
-            					</div>
-            				</div>
-            				<?php endif; ?>    
-            				<?php if (!empty($theme_third_feature_icon) || !empty($theme_third_title) || !empty($theme_third_description)): ?>
-            				<div class="media features-area">
-            					<?php if (!empty($theme_third_feature_icon)): ?><div class="feature-icon"><i class="fa <?php if (!empty($theme_third_feature_icon)) { echo $theme_third_feature_icon; } ?>"></i></div><?php endif; ?>
-            					<div class="media-body">
-            						<?php if (!empty($theme_third_title)) { ?><h3><?php echo $theme_third_title; ?></h3><?php } ?>
-            						<?php if (!empty($theme_third_description)) { ?><p><?php echo $theme_third_description; ?></p><?php } ?>
-            					</div>
-            				</div>
-            				<?php endif; ?>    
-            			</div>
-            		</div>
-            	</div>    	
+<div class="features-section"
+    style="background: url('<?php echo $current_setup_posttypes->get("theme_feature_background"); ?>'); background-size:cover; background-position:center center; <?php echo $current_setup_posttypes->get("theme_feature_background_fixed") ? 'background-attachment:fixed;' : '' ;?>">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <?php if (!empty($theme_feature_image)) { ?>
+                <div class="col-md-6 col-sm-6">
+                    <?php if ($current_setup_posttypes->get("feature_image_link")) { ?>
+                    <a href="<?php echo $current_setup_posttypes->get("feature_image_link"); ?>"
+                        <?php blank_target($current_setup_posttypes->get("image_link_target") == true); ?>><img
+                            class="img-responsive features-img" alt="Wallstreet Image"
+                            style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>"></a>
+                    <?php } else { ?>
+                    <img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;"
+                        src="<?php echo $theme_feature_image; ?>">
+                    <?php } ?>
+                </div>
+                <?php } ?>
+                <div class="col-md-6 col-sm-6">
+                    <?php if (!empty($theme_feature_title)) { ?><div class="features-title">
+                        <?php echo $theme_feature_title; ?></div><?php } ?>
+                    <?php if (!empty($theme_first_feature_icon) || !empty($theme_first_title) || !empty($theme_first_description)): ?>
+                    <div class="media features-area">
+                        <?php if (!empty($theme_first_feature_icon)): ?>
+                        <div class="feature-icon"><i
+                                class="fa <?php if (!empty($theme_first_feature_icon)) { echo $theme_first_feature_icon; } ?>"></i>
+                        </div>
+                        <?php endif; ?>
+                        <?php if (!empty($theme_first_title) || !empty($theme_first_description)): ?>
+                        <div class="media-body">
+                            <?php if (!empty($theme_first_title)) { ?><h3><?php echo $theme_first_title; ?></h3>
+                            <?php } ?>
+                            <?php if (!empty($theme_first_description)) { ?><p><?php echo $theme_first_description; ?>
+                            </p><?php } ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($theme_second_feature_icon) || !empty($theme_second_title) || !empty($theme_second_description)): ?>
+                    <div class="media features-area">
+                        <?php if (!empty($theme_second_feature_icon)): ?><div class="feature-icon"><i
+                                class="fa <?php if (!empty($theme_second_feature_icon)) { echo $theme_second_feature_icon; } ?>"></i>
+                        </div><?php endif; ?>
+                        <div class="media-body">
+                            <?php if (!empty($theme_second_title)) { ?><h3><?php echo $theme_second_title; ?></h3>
+                            <?php } ?>
+                            <?php if (!empty($theme_second_description)) { ?><p><?php echo $theme_second_description; ?>
+                            </p><?php } ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($theme_third_feature_icon) || !empty($theme_third_title) || !empty($theme_third_description)): ?>
+                    <div class="media features-area">
+                        <?php if (!empty($theme_third_feature_icon)): ?><div class="feature-icon"><i
+                                class="fa <?php if (!empty($theme_third_feature_icon)) { echo $theme_third_feature_icon; } ?>"></i>
+                        </div><?php endif; ?>
+                        <div class="media-body">
+                            <?php if (!empty($theme_third_title)) { ?><h3><?php echo $theme_third_title; ?></h3>
+                            <?php } ?>
+                            <?php if (!empty($theme_third_description)) { ?><p><?php echo $theme_third_description; ?>
+                            </p><?php } ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    <?php }
+    </div>
+</div>
+<?php }
 } ?>
