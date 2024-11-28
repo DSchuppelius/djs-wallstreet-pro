@@ -406,6 +406,8 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-form-control-textarea {
     display: inline-block;
     width: 100%;
+    max-width: 100%;
+    min-width: 100%;
     vertical-align: middle;
     padding: 6px 12px;
     line-height: 20px;
