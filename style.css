@@ -730,6 +730,7 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full h6 {
     overflow-wrap: anywhere;
     hyphens: auto;
+    text-align: justify;
     margin: 0 0 20px
 }
 
@@ -780,7 +781,8 @@ Requires Plugins: djs-wallstreet-pro-core
 
 .blog-post-title-wrapper p,
 .blog-post-title-wrapper-full p {
-    word-wrap: break-word
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .blog-post-title-wrapper figure video,
