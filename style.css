@@ -728,12 +728,9 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full h5,
 .blog-post-title-wrapper h6,
 .blog-post-title-wrapper-full h6 {
+    overflow-wrap: anywhere;
+    hyphens: auto;
     margin: 0 0 20px
-}
-
-.blog-post-title-wrapper h2 a,
-.blog-post-title-wrapper-full h2 a {
-    word-wrap: break-word
 }
 
 .blog-post-title-wrapper h2,
