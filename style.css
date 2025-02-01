@@ -761,9 +761,20 @@ Requires Plugins: djs-wallstreet-pro-core
     padding-bottom: 0
 }
 
+.blog-post-title-wrapper section h2,
+.blog-post-title-wrapper-full section h2,
+.blog-post-title-wrapper-full section h2 a {
+    line-height: 40px;
+}
+
 .blog-post-title-wrapper h3,
 .blog-post-title-wrapper-full h3 {
     line-height: 42px
+}
+
+.blog-post-title-wrapper section h3,
+.blog-post-title-wrapper-full section h3 {
+    line-height: 36px
 }
 
 .blog-post-title-wrapper h4,
@@ -771,9 +782,19 @@ Requires Plugins: djs-wallstreet-pro-core
     line-height: 36px
 }
 
+.blog-post-title-wrapper section h4,
+.blog-post-title-wrapper-full section h4 {
+    line-height: 32px
+}
+
 .blog-post-title-wrapper h5,
 .blog-post-title-wrapper-full h5 {
     line-height: 30px
+}
+
+.blog-post-title-wrapper section h5,
+.blog-post-title-wrapper-full section h5 {
+    line-height: 28px
 }
 
 .blog-post-title-wrapper h6,

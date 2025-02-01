@@ -63,19 +63,19 @@ body {
     -webkit-font-smoothing: antialiased
 }
 
-    body .fa-regular {
-        font-family: "FontAwesome";
-    }
+body .fa-regular {
+    font-family: "FontAwesome";
+}
 
-    body .material-symbols-outlined,
-    body .material-icons-outlined,
-    body .material-icons {
-        font-family: "Material Icons";
-    }
+body .material-symbols-outlined,
+body .material-icons-outlined,
+body .material-icons {
+    font-family: "Material Icons";
+}
 
-    body.fixed_Header .navbar.navbar-fixed-top .wallstreet_title_head {
-        font-size: 25px;
-    }
+body.fixed_Header .navbar.navbar-fixed-top .wallstreet_title_head {
+    font-size: 25px;
+}
 
 a[target=_blank]:after {
     font-family: "FontAwesome";
@@ -85,7 +85,7 @@ a[target=_blank]:after {
 article figure figcaption,
 article figure[class*="wp-block-"] figcaption,
 article div[class*="wp-block-"] figure figcaption {
-    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
     font-size: 0.8em
 }
 
@@ -98,7 +98,8 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 0.9em
 }
 
-#script_fullscreen input[type="search"], #searchbar_fullscreen input[type="search"] {
+#script_fullscreen input[type="search"],
+#searchbar_fullscreen input[type="search"] {
     font-size: 3em;
     font-weight: 400
 }
@@ -121,7 +122,7 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
-.about-social-icons li > a > i {
+.about-social-icons li>a>i {
     font-size: 25px
 }
 
@@ -159,13 +160,13 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-weight: 100
 }
 
-.blockquote2 > small {
+.blockquote2>small {
     font-size: 0.9em;
     font-weight: 400;
     font-style: italic
 }
 
-.blockquote2 > span {
+.blockquote2>span {
     font-weight: 300;
     font-size: 1em
 }
@@ -181,12 +182,12 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
-.blog-blockquote blockquote > small {
+.blog-blockquote blockquote>small {
     font-weight: 400;
     font-size: 0.9em
 }
 
-.blog-blockquote blockquote > span {
+.blog-blockquote blockquote>span {
     font-weight: 400;
     font-style: italic;
     font-size: 1em
@@ -206,185 +207,266 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
-.blog-list-view .blog-post-title-wrapper h2, .blog-list-view .blog-post-title-wrapper-full h2 {
+.blog-list-view .blog-post-title-wrapper h2,
+.blog-list-view .blog-post-title-wrapper-full h2 {
     font-family: 'SiteFontSemi';
     font-size: 30px;
     font-weight: 500
 }
 
-.blog-pagination a, .page-links a, .blog-pagination span, .page-numbers {
+.blog-pagination a,
+.page-links a,
+.blog-pagination span,
+.page-numbers {
     font-weight: 400;
     font-size: 1em
 }
 
-    .blog-pagination a .fa, .page-links a .fa {
-        font-size: 1em
-    }
+.blog-pagination a .fa,
+.page-links a .fa {
+    font-size: 1em
+}
 
 .blog-post-date {
     font-weight: 600
 }
 
-    .blog-post-date span.comment {
-        font-family: 'SiteFontBold';
-        font-weight: 600;
-        font-size: 0.9em
-    }
+.blog-post-date span.comment {
+    font-family: 'SiteFontBold';
+    font-weight: 600;
+    font-size: 0.9em
+}
 
-        .blog-post-date span.comment > i {
-            font-size: 1em
-        }
+.blog-post-date span.comment>i {
+    font-size: 1em
+}
 
-    .blog-post-date span.date {
-        font-weight: 400;
-        font-size: 36px
-    }
+.blog-post-date span.date {
+    font-weight: 400;
+    font-size: 36px
+}
 
-        .blog-post-date span.date > small {
-            font-size: 0.5em
-        }
+.blog-post-date span.date>small {
+    font-size: 0.5em
+}
 
 .blog-post-detail {
     font-weight: 500
 }
 
-    .blog-post-detail a {
-        font-size: 0.8em
-    }
+.blog-post-detail a {
+    font-size: 0.8em
+}
 
-        .blog-post-detail a > i {
-            font-size: 0.9em
-        }
+.blog-post-detail a>i {
+    font-size: 0.9em
+}
 
 .blog-post-meta {
     font-weight: 500
 }
 
-    .blog-post-meta a > i {
-        font-size: 0.9em
-    }
+.blog-post-meta a>i {
+    font-size: 0.9em
+}
 
-.blog-post-title .blog-post-title-wrapper blockquote > p > span, .blog-post-title .blog-post-title-wrapper-full blockquote > p > span {
+.blog-post-title .blog-post-title-wrapper blockquote>p>span,
+.blog-post-title .blog-post-title-wrapper-full blockquote>p>span {
     font-weight: 300;
     font-size: 1em
 }
 
-.blog-post-title .blog-post-title-wrapper ul > li > span, .blog-post-title .blog-post-title-wrapper-full ul > li > span {
+.blog-post-title .blog-post-title-wrapper ul>li>span,
+.blog-post-title .blog-post-title-wrapper-full ul>li>span {
     font-size: 1em !important
 }
 
-.blog-post-title > .blog-post-title-wrapper > h1 {
+.blog-post-title>.blog-post-title-wrapper>h1 {
     font-size: 46px
 }
 
-.blog-post-title > .blog-post-title-wrapper > h2 {
+.blog-post-title>.blog-post-title-wrapper>h2 {
     font-size: 2.5em
 }
 
-.blog-post-title > .blog-post-title-wrapper > h3 {
+.blog-post-title>.blog-post-title-wrapper>h3 {
     font-size: 2em
 }
 
-.blog-post-title > .blog-post-title-wrapper > h4 {
+.blog-post-title>.blog-post-title-wrapper>h4 {
     font-size: 1.8em
 }
 
-.blog-post-title > .blog-post-title-wrapper > h5 {
+.blog-post-title>.blog-post-title-wrapper>h5 {
     font-size: 1.5em
 }
 
-.blog-post-title > .blog-post-title-wrapper > h6 {
+.blog-post-title>.blog-post-title-wrapper>h6 {
     font-size: 1em
 }
 
-.blog-post-title-wrapper > dl > dt, .blog-post-title-wrapper-full > dl > dt, .blog-post-title-wrapper > dl > dd, .blog-post-title-wrapper-full > dl > dd {
+.blog-post-title-wrapper>dl>dt,
+.blog-post-title-wrapper-full>dl>dt,
+.blog-post-title-wrapper>dl>dd,
+.blog-post-title-wrapper-full>dl>dd {
     font-size: 1em
 }
 
-.blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ul > li, .blog-post-title-wrapper-full > ol > li > ul > li, .blog-post-title-wrapper > ol > li > ul > li > ol > li, .blog-post-title-wrapper-full > ol > li > ul > li > ol > li {
+.blog-post-title-wrapper>ol>li,
+.blog-post-title-wrapper-full>ol>li,
+.blog-post-title-wrapper>ol>li>ul>li,
+.blog-post-title-wrapper-full>ol>li>ul>li,
+.blog-post-title-wrapper>ol>li>ul>li>ol>li,
+.blog-post-title-wrapper-full>ol>li>ul>li>ol>li {
     margin: 0 0 7px;
     font-weight: 400;
     font-size: 1em;
     line-height: 1.4em
 }
 
-    .blog-post-title-wrapper > ol, .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li, .blog-post-title-wrapper > ol > li > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li > ol > li {
-        font-weight: 400;
-        font-size: 1em
-    }
-
-.blog-post-title-wrapper > ul, .blog-post-title-wrapper > ul > li, .blog-post-title-wrapper-full > ul, .blog-post-title-wrapper-full > ul > li, .blog-post-title-wrapper > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li, .blog-post-title-wrapper > ul > li > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li > ul > li {
+.blog-post-title-wrapper>ol,
+.blog-post-title-wrapper>ol>li,
+.blog-post-title-wrapper-full>ol,
+.blog-post-title-wrapper-full>ol>li,
+.blog-post-title-wrapper>ol>li>ol>li,
+.blog-post-title-wrapper-full>ol>li>ol>li,
+.blog-post-title-wrapper>ol>li>ol>li>ol>li,
+.blog-post-title-wrapper-full>ol>li>ol>li>ol>li {
     font-weight: 400;
     font-size: 1em
 }
 
-.blog-post-title-wrapper address, .blog-post-title-wrapper-full address {
+.blog-post-title-wrapper>ul,
+.blog-post-title-wrapper>ul>li,
+.blog-post-title-wrapper-full>ul,
+.blog-post-title-wrapper-full>ul>li,
+.blog-post-title-wrapper>ul>li>ul>li,
+.blog-post-title-wrapper-full>ul>li>ul>li,
+.blog-post-title-wrapper>ul>li>ul>li>ul>li,
+.blog-post-title-wrapper-full>ul>li>ul>li>ul>li {
+    font-weight: 400;
+    font-size: 1em
+}
+
+.blog-post-title-wrapper address,
+.blog-post-title-wrapper-full address {
     font-style: italic
 }
 
-.blog-post-title-wrapper blockquote > p > small, .blog-post-title-wrapper-full blockquote > p > small {
+.blog-post-title-wrapper blockquote>p>small,
+.blog-post-title-wrapper-full blockquote>p>small {
     font-weight: 400;
     font-size: 1em
 }
 
-.blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1 {
+.blog-post-title-wrapper h1,
+.blog-post-title-wrapper-full h1 {
     font-size: 46px
 }
 
-.blog-post-title-wrapper h1, .blog-post-title-wrapper-full h1, .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3, .blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4, .blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5, .blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
+.blog-post-title-wrapper h1,
+.blog-post-title-wrapper-full h1,
+.blog-post-title-wrapper h2,
+.blog-post-title-wrapper-full h2,
+.blog-post-title-wrapper h3,
+.blog-post-title-wrapper-full h3,
+.blog-post-title-wrapper h4,
+.blog-post-title-wrapper-full h4,
+.blog-post-title-wrapper h5,
+.blog-post-title-wrapper-full h5,
+.blog-post-title-wrapper h6,
+.blog-post-title-wrapper-full h6 {
     font-weight: 300
 }
 
-.blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2 {
+.blog-post-title-wrapper h2,
+.blog-post-title-wrapper-full h2 {
     font-size: 2.5em
 }
 
-    .blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
-        font-weight: 300;
-        font-size: 2.5em
-    }
+.blog-post-title-wrapper h2,
+.blog-post-title-wrapper-full h2,
+.blog-post-title-wrapper-full h2 a {
+    font-weight: 300;
+    font-size: 2.5em
+}
 
-.blog-post-title-wrapper h2, .title h3 {
+.blog-post-title-wrapper h2,
+.title h3 {
     font-family: 'SiteFontSemi';
     font-weight: 300
 }
 
-    .blog-post-title-wrapper h2 span.title {
-        font-weight: 200
-    }
+.blog-post-title-wrapper h2 span.title {
+    font-weight: 200
+}
 
-        .blog-post-title-wrapper h2 span.title.post_format {
-            font-family: 'SiteFontSemi';
-            text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
-            font-weight: 300
-        }
+.blog-post-title-wrapper h2 span.title.post_format {
+    font-family: 'SiteFontSemi';
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+    font-weight: 300
+}
 
-            .blog-post-title-wrapper h2 span.title.post_format.none ~ .title {
-                font-family: 'SiteFontSemi';
-                font-weight: 300
-            }
+.blog-post-title-wrapper h2 span.title.post_format.none~.title {
+    font-family: 'SiteFontSemi';
+    font-weight: 300
+}
 
-.blog-post-title-wrapper h3, .blog-post-title-wrapper-full h3 {
+.blog-post-title-wrapper section h2,
+.blog-post-title-wrapper-full section h2,
+.blog-post-title-wrapper-full section h2 a {
+    font-weight: 300;
     font-size: 2em
 }
 
-.blog-post-title-wrapper h4, .blog-post-title-wrapper-full h4 {
+.blog-post-title-wrapper h3,
+.blog-post-title-wrapper-full h3 {
+    font-size: 2em
+}
+
+.blog-post-title-wrapper section h3,
+.blog-post-title-wrapper-full section h3,
+.blog-post-title-wrapper-full section h3 a {
+    font-weight: 500;
     font-size: 1.8em
 }
 
-    .blog-post-title-wrapper h4.linked_post, .blog-post-title-wrapper-full h4.linked_post {
-        font-size: 1.4em;
-    }
+.blog-post-title-wrapper h4,
+.blog-post-title-wrapper-full h4 {
+    font-size: 1.8em
+}
 
-.blog-post-title-wrapper h5, .blog-post-title-wrapper-full h5 {
+.blog-post-title-wrapper section h4,
+.blog-post-title-wrapper-full section h4,
+.blog-post-title-wrapper-full section h4 a {
+    font-weight: 500;
+    font-size: 1.6em
+}
+
+.blog-post-title-wrapper h4.linked_post,
+.blog-post-title-wrapper-full h4.linked_post {
+    font-size: 1.4em;
+}
+
+.blog-post-title-wrapper h5,
+.blog-post-title-wrapper-full h5 {
     font-size: 1.5em
 }
 
-.blog-post-title-wrapper h6, .blog-post-title-wrapper-full h6 {
+.blog-post-title-wrapper section h5,
+.blog-post-title-wrapper-full section h5,
+.blog-post-title-wrapper-full section h5 a {
+    font-weight: 500;
+    font-size: 1.4em
+}
+
+.blog-post-title-wrapper h6,
+.blog-post-title-wrapper-full h6 {
     font-size: 1em
 }
 
-.blog-post-title-wrapper p, .blog-post-title-wrapper-full p {
+.blog-post-title-wrapper p,
+.blog-post-title-wrapper-full p {
     font-weight: 400;
     font-size: 1em
 }
@@ -394,7 +476,7 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
-.breadcrumbs > li {
+.breadcrumbs>li {
     font-weight: 400;
     font-size: 0.9em
 }
@@ -403,20 +485,20 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 0.9em
 }
 
-    .callout-section a {
-        font-weight: 400;
-        font-size: 18px
-    }
+.callout-section a {
+    font-weight: 400;
+    font-size: 18px
+}
 
-    .callout-section h3 {
-        font-weight: 400;
-        font-size: 24px
-    }
+.callout-section h3 {
+    font-weight: 400;
+    font-size: 24px
+}
 
-    .callout-section p {
-        font-weight: 400;
-        font-size: 1em
-    }
+.callout-section p {
+    font-weight: 400;
+    font-size: 1em
+}
 
 .close {
     font-size: 1.4em !important
@@ -432,21 +514,30 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 0.8em
 }
 
-.comment-detail > dl > dt, .comment-detail > dl > dd {
+.comment-detail>dl>dt,
+.comment-detail>dl>dd {
     font-size: 1em
 }
 
-.comment-detail > ol > li, .comment-detail > ol > li > ul > li, .comment-detail > ol > li > ul > li > ol > li {
+.comment-detail>ol>li,
+.comment-detail>ol>li>ul>li,
+.comment-detail>ol>li>ul>li>ol>li {
     font-weight: 400;
     font-size: 1em
 }
 
-    .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li {
-        font-weight: 400;
-        font-size: 1em
-    }
+.comment-detail>ol,
+.comment-detail>ol>li,
+.comment-detail>ol>li>ol>li,
+.comment-detail>ol>li>ol>li>ol>li {
+    font-weight: 400;
+    font-size: 1em
+}
 
-.comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li {
+.comment-detail>ul,
+.comment-detail>ul>li,
+.comment-detail>ul>li>ul>li,
+.comment-detail>ul>li>ul>li>ul>li {
     font-weight: 400;
     font-size: 1em
 }
@@ -470,15 +561,20 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 24px
 }
 
-    .comment-title h3 > i {
-        font-size: 26px
-    }
+.comment-title h3>i {
+    font-size: 26px
+}
 
 .comment_box h1 {
     font-size: 46px
 }
 
-.comment_box h1, .comment_box h2, .comment_box h3, .comment_box h4, .comment_box h5, .comment_box h6 {
+.comment_box h1,
+.comment_box h2,
+.comment_box h3,
+.comment_box h4,
+.comment_box h5,
+.comment_box h6 {
     font-weight: 400
 }
 
@@ -562,21 +658,25 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 45px
 }
 
-.dropcape-square, .dropcape-simple, .dropcape-circle {
+.dropcape-square,
+.dropcape-simple,
+.dropcape-circle {
     font-weight: 400;
     font-size: 0.9em
 }
 
-.dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
+.dropdown>a .glyphicon,
+.dropdown-menu>a .glyphicon {
     font-size: 0.8em
 }
 
-.dropdown-menu > li > a {
+.dropdown-menu>li>a {
     font-weight: 400;
     font-size: 1em
 }
 
-.entry-content dt, .comment-content dt {
+.entry-content dt,
+.comment-content dt {
     font-weight: 700
 }
 
@@ -586,15 +686,15 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-weight: normal
 }
 
-    .error_404 h2 {
-        font-size: 5em;
-        font-weight: 600
-    }
+.error_404 h2 {
+    font-size: 5em;
+    font-weight: 600
+}
 
-    .error_404 h4 {
-        font-size: 1.6em;
-        font-weight: 600
-    }
+.error_404 h4 {
+    font-size: 1.6em;
+    font-weight: 600
+}
 
 .feature-icon i {
     font-size: 1.8em
@@ -631,7 +731,7 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 0.8em
 }
 
-.footer-contact-social li > a > i {
+.footer-contact-social li>a>i {
     font-size: 30px
 }
 
@@ -640,11 +740,18 @@ article figure.wp-block-gallery.has-nested-images figure.wp-block-image figcapti
     font-size: 1em
 }
 
-.footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h1, .footer-widget-section h2, .footer-widget-section h3, .footer-widget-section h4, .footer-widget-section h5, .footer-widget-section h6 {
+.footer-widget-section .wp-block-search .wp-block-search__label,
+.footer-widget-section h1,
+.footer-widget-section h2,
+.footer-widget-section h3,
+.footer-widget-section h4,
+.footer-widget-section h5,
+.footer-widget-section h6 {
     font-weight: 400
 }
 
-.footer-widget-section .wp-block-search .wp-block-search__label, .footer-widget-section h2 {
+.footer-widget-section .wp-block-search .wp-block-search__label,
+.footer-widget-section h2 {
     font-weight: 400;
     font-size: 24px
 }
@@ -666,18 +773,19 @@ footer.site p {
     font-size: 0.9em
 }
 
-.footer_widget_column > .tagcloud a {
+.footer_widget_column>.tagcloud a {
     font-weight: 400;
     font-size: 0.9em !important
 }
 
-.footer_widget_column > ul > li {
+.footer_widget_column>ul>li {
     font-weight: 400;
     font-size: 0.9em;
     font-weight: normal
 }
 
-.footer_widget_column ul#recentcomments > li.recentcomments > a:before, .footer_widget_column ul.sidebar-tab.sidebar-widget-tab > li > a:before {
+.footer_widget_column ul#recentcomments>li.recentcomments>a:before,
+.footer_widget_column ul.sidebar-tab.sidebar-widget-tab>li>a:before {
     font-family: 'FontAwesome'
 }
 
@@ -705,7 +813,7 @@ footer.site p {
     font-size: 1em
 }
 
-.head-contact-social li > a > i {
+.head-contact-social li>a>i {
     font-size: 18px
 }
 
@@ -731,17 +839,17 @@ footer.site p {
     font-size: 0.8em
 }
 
-    .home-blog-post-detail > .comment {
-        font-weight: 400;
-    }
+.home-blog-post-detail>.comment {
+    font-weight: 400;
+}
 
-        .home-blog-post-detail > .comment > a > i {
-            font-size: 0.9em
-        }
+.home-blog-post-detail>.comment>a>i {
+    font-size: 0.9em
+}
 
-    .home-blog-post-detail > .date {
-        font-weight: 400;
-    }
+.home-blog-post-detail>.date {
+    font-weight: 400;
+}
 
 .home-portfolio-showcase .home-portfolio-showcase-detail h4 {
     font-weight: 500;
@@ -782,7 +890,8 @@ footer.site p {
     font-size: 0.9em
 }
 
-.masonry-item .blog-post-title-wrapper h2, .masonry-item .blog-post-title-wrapper-full h2 {
+.masonry-item .blog-post-title-wrapper h2,
+.masonry-item .blog-post-title-wrapper-full h2 {
     font-size: 1.5em
 }
 
@@ -841,7 +950,7 @@ footer.site p {
     font-size: 1.5em
 }
 
-.panel-default > .short-panel-heading h4 {
+.panel-default>.short-panel-heading h4 {
     font-size: 0.9em !important;
     font-weight: 500
 }
@@ -851,9 +960,9 @@ footer.site p {
     font-weight: 500
 }
 
-    .panel-title a span {
-        font-size: 1.4em
-    }
+.panel-title a span {
+    font-size: 1.4em
+}
 
 .portfolio-btn a {
     font-weight: 400;
@@ -875,16 +984,16 @@ footer.site p {
     font-size: 1em
 }
 
-    .portfolio-detail-info p small {
-        font-weight: 500;
-        font-size: 1em
-    }
+.portfolio-detail-info p small {
+    font-weight: 500;
+    font-size: 1em
+}
 
 .portfolio-detail-pagi li a span {
     font-size: 1.5em
 }
 
-.portfolio-icon a > i {
+.portfolio-icon a>i {
     font-size: 1em
 }
 
@@ -899,10 +1008,10 @@ footer.site p {
     font-weight: normal
 }
 
-    .post-content li > i {
-        font-size: 6px;
-        font-weight: 400
-    }
+.post-content li>i {
+    font-size: 6px;
+    font-weight: 400
+}
 
 .post-date span.date {
     font-weight: 400;
@@ -935,7 +1044,7 @@ footer.site p {
     font-size: 2.5em
 }
 
-.prelated-project-btn li > a > i {
+.prelated-project-btn li>a>i {
     font-size: 1.5em
 }
 
@@ -955,10 +1064,10 @@ footer.site p {
     font-size: 0.9em
 }
 
-    .edit-link a,
-    .reply a {
-        font-weight: 400
-    }
+.edit-link a,
+.reply a {
+    font-weight: 400
+}
 
 .screen-reader-text:focus {
     font-size: 0.9em;
@@ -1080,14 +1189,14 @@ footer.site p {
     font-size: 0.8em
 }
 
-    .sidebar-comment-box span > a > i {
-        font-size: 5px
-    }
+.sidebar-comment-box span>a>i {
+    font-size: 5px
+}
 
-    .sidebar-comment-box span > small {
-        font-weight: 300;
-        font-size: 1em
-    }
+.sidebar-comment-box span>small {
+    font-weight: 300;
+    font-size: 1em
+}
 
 .sidebar-tweet-area i {
     font-size: 30px
@@ -1103,48 +1212,61 @@ footer.site p {
     font-size: 0.8em
 }
 
-.sidebar-widget .wp-block-search .wp-block-search__label, .sidebar-widget h1, .sidebar-widget h2, .sidebar-widget h3, .sidebar-widget h4, .sidebar-widget h5, .sidebar-widget h6 {
+.sidebar-widget .wp-block-search .wp-block-search__label,
+.sidebar-widget h1,
+.sidebar-widget h2,
+.sidebar-widget h3,
+.sidebar-widget h4,
+.sidebar-widget h5,
+.sidebar-widget h6 {
     font-family: 'SiteFontSemi'
 }
 
-.sidebar-widget > .tagcloud a {
+.sidebar-widget>.tagcloud a {
     font-weight: 400;
     font-size: 0.8em !important
 }
 
-.sidebar-widget > div.textwidget, .footer_widget_column > div.textwidget {
+.sidebar-widget>div.textwidget,
+.footer_widget_column>div.textwidget {
     font-weight: 400;
     font-size: 0.9em
 }
 
-.sidebar-widget > ul > li {
+.sidebar-widget>ul>li {
     font-weight: 400;
     font-size: 0.9em
 }
 
-    .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
-        font-family: 'FontAwesome'
-    }
+.sidebar-widget>ul>li>a:before,
+.footer_widget_column>ul>li>a:before {
+    font-family: 'FontAwesome'
+}
 
-    .sidebar-widget > ul > li > a:before, .footer_widget_column > ul > li > a:before {
-        font-size: 6px;
-        font-weight: 400
-    }
+.sidebar-widget>ul>li>a:before,
+.footer_widget_column>ul>li>a:before {
+    font-size: 6px;
+    font-weight: 400
+}
 
-.sidebar-widget div#calendar_wrap table > caption, .footer_widget_column div#calendar_wrap table > caption {
+.sidebar-widget div#calendar_wrap table>caption,
+.footer_widget_column div#calendar_wrap table>caption {
     font-size: 18px;
     font-family: 'SiteFontBold'
 }
 
-.sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
+.sidebar-widget div#calendar_wrap table>tbody>tr>td,
+.footer_widget_column div#calendar_wrap table>tbody>tr>td {
     font-size: 0.9em
 }
 
-.sidebar-widget div#calendar_wrap table > tfoot > tr > td, .footer_widget_column div#calendar_wrap table > tfoot > tr > td {
+.sidebar-widget div#calendar_wrap table>tfoot>tr>td,
+.footer_widget_column div#calendar_wrap table>tfoot>tr>td {
     font-size: 1.4em
 }
 
-.sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
+.sidebar-widget div#calendar_wrap table>thead>tr>th,
+.footer_widget_column div#calendar_wrap table>thead>tr>th {
     font-size: 18px
 }
 
@@ -1154,17 +1276,19 @@ footer.site p {
     font-weight: 400
 }
 
-    .sidebar-widget ul li a:before, .footer_widget_column ul li a:before {
-        font-size: 0.6em;
-        font-weight: 400;
-        font-family: 'FontAwesome'
-    }
-
-.sidebar-widget ul#recentcomments > li.recentcomments > a:before, .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li > a:before {
+.sidebar-widget ul li a:before,
+.footer_widget_column ul li a:before {
+    font-size: 0.6em;
+    font-weight: 400;
     font-family: 'FontAwesome'
 }
 
-.sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li {
+.sidebar-widget ul#recentcomments>li.recentcomments>a:before,
+.sidebar-widget ul.sidebar-tab.sidebar-widget-tab>li>a:before {
+    font-family: 'FontAwesome'
+}
+
+.sidebar-widget ul.sidebar-tab.sidebar-widget-tab>li {
     font-weight: 400;
     font-size: 0.9em;
     font-weight: normal
@@ -1221,10 +1345,10 @@ footer.site p {
     font-size: 18px
 }
 
-    .team-area h5 > span {
-        font-weight: 400;
-        font-size: 0.8em
-    }
+.team-area h5>span {
+    font-weight: 400;
+    font-size: 0.8em
+}
 
 .team-area p {
     font-weight: 400;
@@ -1235,11 +1359,11 @@ footer.site p {
     font-size: 1em
 }
 
-.team-section1 .team-img .overlay .custom-social-icons li > a {
+.team-section1 .team-img .overlay .custom-social-icons li>a {
     font-size: 18px
 }
 
-.team-social-icons li > a > i {
+.team-social-icons li>a>i {
     font-size: 0.9em
 }
 
@@ -1309,13 +1433,13 @@ footer.site p {
     font-size: 0.9em
 }
 
-.typo-section blockquote > small {
+.typo-section blockquote>small {
     font-size: 0.9em;
     font-weight: 400;
     font-style: italic
 }
 
-.typo-section blockquote > span {
+.typo-section blockquote>span {
     font-weight: 300;
     font-size: 1em
 }
@@ -1324,7 +1448,12 @@ footer.site p {
     font-size: 46px
 }
 
-.typo-section h1, .typo-section h2, .typo-section h3, .typo-section h4, .typo-section h5, .typo-section h6 {
+.typo-section h1,
+.typo-section h2,
+.typo-section h3,
+.typo-section h4,
+.typo-section h5,
+.typo-section h6 {
     font-weight: 300
 }
 
@@ -1385,7 +1514,8 @@ footer.site p {
     font-weight: 500
 }
 
-.wp-block-calendar tbody td, .wp-block-calendar th {
+.wp-block-calendar tbody td,
+.wp-block-calendar th {
     font-size: 1em
 }
 
@@ -1399,7 +1529,8 @@ footer.site p {
     font-size: 0.9em
 }
 
-.wp-block-search .wp-block-search__label, .sidebar-widget h2 {
+.wp-block-search .wp-block-search__label,
+.sidebar-widget h2 {
     font-weight: 300;
     font-size: 24px
 }
@@ -1417,7 +1548,9 @@ footer.site p {
     font-weight: 600
 }
 
-.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {
     font-style: italic;
     font-size: 0.8em
 }
@@ -1427,7 +1560,12 @@ footer.site p {
     font-size: 1em
 }
 
-.wpcf7-text, .wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz {
+.wpcf7-text,
+.wpcf7-file,
+.wpcf7-number,
+.wpcf7-date,
+.wpcf7-select,
+.wpcf7-quiz {
     font-weight: 400;
     font-size: 1em
 }
@@ -1451,13 +1589,13 @@ article footer {
     font-size: 0.8em
 }
 
-    article footer .material-icons {
-        font-size: 1em
-    }
+article footer .material-icons {
+    font-size: 1em
+}
 
-    article footer time .material-icons {
-        font-size: 0.9em
-    }
+article footer time .material-icons {
+    font-size: 0.9em
+}
 
 .sidebar-widget article footer {
     font-size: 1em
@@ -1472,22 +1610,36 @@ div.wpcf7-validation-errors {
     font-size: 0.9em
 }
 
-a.comment-edit-link, a.comment-reply-link, input[type="submit"], button, .btn, a.button, .wp-block-search__button {
+a.comment-edit-link,
+a.comment-reply-link,
+input[type="submit"],
+button,
+.btn,
+a.button,
+.wp-block-search__button {
     font-family: 'SiteFontSemi'
 }
 
-    a.comment-edit-link:before, a.comment-reply-link:before, input[type="submit"]:before, button:before, .btn:before, a.button:before {
-        font-family: 'Material Icons';
-        font-size: 1.25em;
-        font-weight: 100
-    }
+a.comment-edit-link:before,
+a.comment-reply-link:before,
+input[type="submit"]:before,
+button:before,
+.btn:before,
+a.button:before {
+    font-family: 'Material Icons';
+    font-size: 1.25em;
+    font-weight: 100
+}
 
 input#pwbox-1168 {
     font-weight: 400;
     font-size: 0.9em
 }
 
-input[type="submit"]:not(.not, .swiper-pagination-bullet), button:not(.not, .swiper-pagination-bullet), .btn:not(.not, .swiper-pagination-bullet), a.button:not(.not, .swiper-pagination-bullet) {
+input[type="submit"]:not(.not, .swiper-pagination-bullet),
+button:not(.not, .swiper-pagination-bullet),
+.btn:not(.not, .swiper-pagination-bullet),
+a.button:not(.not, .swiper-pagination-bullet) {
     font-size: 0.9em
 }
 
