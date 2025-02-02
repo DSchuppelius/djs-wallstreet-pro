@@ -734,21 +734,6 @@ Requires Plugins: djs-wallstreet-pro-core
     margin: 0 0 20px
 }
 
-.blog-post-title-wrapper header h1,
-.blog-post-title-wrapper-full header h1,
-.blog-post-title-wrapper header h2,
-.blog-post-title-wrapper-full header h2,
-.blog-post-title-wrapper header h3,
-.blog-post-title-wrapper-full header h3,
-.blog-post-title-wrapper header h4,
-.blog-post-title-wrapper-full header h4,
-.blog-post-title-wrapper header h5,
-.blog-post-title-wrapper-full header h5,
-.blog-post-title-wrapper header h6,
-.blog-post-title-wrapper-full header h6 {
-    text-align: justify
-}
-
 .blog-post-title-wrapper h2,
 .blog-post-title-wrapper-full h2 {
     line-height: 48px
