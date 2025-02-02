@@ -729,8 +729,6 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full h5,
 .blog-post-title-wrapper h6,
 .blog-post-title-wrapper-full h6 {
-    overflow-wrap: anywhere;
-    hyphens: auto;
     margin: 0 0 20px
 }
 
@@ -798,12 +796,6 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full p {
     line-height: 25px;
     margin: 0 0 15px
-}
-
-.blog-post-title-wrapper p,
-.blog-post-title-wrapper-full p {
-    overflow-wrap: anywhere;
-    hyphens: auto;
 }
 
 .blog-post-title-wrapper figure video,
@@ -5589,6 +5581,11 @@ a.readmore {
     word-wrap: break-word
 }
 
+article {
+    overflow-wrap: anywhere;
+    hyphens: auto
+}
+
 article footer time {
     float: right;
     margin-top: 10px
@@ -5717,8 +5714,6 @@ article ul {
 }
 
 article section {
-    overflow-wrap: anywhere;
-    hyphens: auto;
     display: grid;
     width: 100%
 }
