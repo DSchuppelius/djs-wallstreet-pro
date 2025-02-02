@@ -5586,6 +5586,10 @@ article {
     hyphens: auto
 }
 
+article footer {
+    overflow-wrap: break-word;
+}
+
 article footer time {
     float: right;
     margin-top: 10px
