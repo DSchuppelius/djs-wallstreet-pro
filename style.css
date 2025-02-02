@@ -625,6 +625,7 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full>ol>li>ul>li,
 .blog-post-title-wrapper>ol>li>ul>li>ol>li,
 .blog-post-title-wrapper-full>ol>li>ul>li>ol>li {
+
     margin: 0 0 7px;
     line-height: 20px
 }
@@ -5731,6 +5732,8 @@ article ul {
 }
 
 article section {
+    overflow-wrap: anywhere;
+    hyphens: auto;
     display: grid;
     width: 100%
 }
