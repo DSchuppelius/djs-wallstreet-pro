@@ -523,6 +523,10 @@ Requires Plugins: djs-wallstreet-pro-core
     border-top: 1px dotted #cacaca
 }
 
+.blog-post-meta>div:last-child {
+    white-space: nowrap;
+}
+
 .blog-post-meta a {
     padding: 5px 20px 5px 13px
 }
@@ -843,6 +847,7 @@ Requires Plugins: djs-wallstreet-pro-core
 
 .blog-tags {
     display: inline-block;
+    text-align: justify;
     margin: 5px
 }
 
