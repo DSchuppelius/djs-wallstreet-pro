@@ -1612,6 +1612,30 @@ img.header-image,
     text-align: center
 }
 
+.font-size-controls {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.font-size-controls button {
+    box-shadow: inset 0 2.65em 0 -1.5em rgba(255, 255, 255, 0.15);
+    background-color: var(--theme-color);
+    font-size: 12px;
+    font-weight: 900;
+    opacity: 1;
+    min-width: 30px;
+    min-height: 30px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
 .footer-blog-post {
     margin-bottom: 5px;
     margin-top: 0 !important;

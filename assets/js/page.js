@@ -66,3 +66,31 @@ document.addEventListener("DOMContentLoaded", function () {
         post.style.cssText += `animation: gradientShift ${randomDelay}s ease-in-out infinite;`;
     });
 });
+
+const defaultFontSize = 16; // Standardgröße in Pixel
+
+function adjustFontSize(change) {
+    const content = document.documentElement; // Root-Element (<html>)
+    let currentSize = parseFloat(window.getComputedStyle(content).fontSize);
+    let newSize = currentSize + change;
+
+    // Grenze setzen (min 10px, max 24px)
+    if (newSize >= 14 && newSize <= 18) {
+        content.style.fontSize = newSize + "px";
+        localStorage.setItem("fontSize", newSize); // Speichern der Größe
+    }
+}
+
+// Schriftgröße auf Standardwert zurücksetzen
+function resetFontSize() {
+    document.documentElement.style.fontSize = defaultFontSize + "px";
+    localStorage.setItem("fontSize", defaultFontSize);
+}
+
+// Schriftgröße beim Laden wiederherstellen
+document.addEventListener("DOMContentLoaded", () => {
+    let savedSize = localStorage.getItem("fontSize");
+    if (savedSize) {
+        document.documentElement.style.fontSize = savedSize + "px";
+    }
+});
