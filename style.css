@@ -1612,6 +1612,10 @@ img.header-image,
     text-align: center
 }
 
+.body-static-top .font-size-controls {
+    top: 25px;
+}
+
 .font-size-controls {
     position: fixed;
     top: 5px;
