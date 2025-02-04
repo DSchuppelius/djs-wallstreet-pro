@@ -1,5 +1,7 @@
-.col-md-4.service-effect:nth-child(3n+1), .row.service2 .col-md-4:nth-child(3n+1),
-.row.service3 .col-md-4:nth-child(3n+1), .row.service4 .col-md-4:nth-child(3n+1),
+.col-md-4.service-effect:nth-child(3n+1),
+.row.service2 .col-md-4:nth-child(3n+1),
+.row.service3 .col-md-4:nth-child(3n+1),
+.row.service4 .col-md-4:nth-child(3n+1),
 .row.service5 .col-md-4:nth-child(3n+1) {
     clear: left;
 }
@@ -21,9 +23,9 @@
         float: right;
     }
 
-        body .navbar-nav > li {
-            float: left;
-        }
+    body .navbar-nav>li {
+        float: left;
+    }
 
     .navbar.navbar-wrapper .container {
         display: flex;
@@ -32,25 +34,25 @@
         flex-direction: row
     }
 
-        .navbar.navbar-wrapper .container > .navbar-header {
-            display: flex;
-            flex: 1 1 300px
-        }
+    .navbar.navbar-wrapper .container>.navbar-header {
+        display: flex;
+        flex: 1 1 300px
+    }
 
-            .navbar.navbar-wrapper .container > .navbar-header a {
-                display: flex;
-                align-items: center
-            }
+    .navbar.navbar-wrapper .container>.navbar-header a {
+        display: flex;
+        align-items: center
+    }
 
     .navbar2 .nav {
         padding: 7px 0;
     }
 
-        .navbar2 .nav.navbar-left {
-            padding: 0 0;
-        }
+    .navbar2 .nav.navbar-left {
+        padding: 0 0;
+    }
 
-    .navbar.navbar2 .navbar-nav > li > a {
+    .navbar.navbar2 .navbar-nav>li>a {
         border-radius: 0px;
         padding: 15px 20px;
     }
@@ -70,7 +72,8 @@
         width: 10%;
     }
 
-    .navbar2 .navbar-left, .navbar3 .navbar-left {
+    .navbar2 .navbar-left,
+    .navbar3 .navbar-left {
         width: 90%;
     }
 

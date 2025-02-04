@@ -340,6 +340,10 @@ body.fixed_Header .navbar.navbar-fixed-top {
     backdrop-filter: blur(5px)
 }
 
+.font-size-controls {
+    backdrop-filter: blur(5px)
+}
+
 
 /* Style and Class FX */
 .content-led {

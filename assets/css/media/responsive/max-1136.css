@@ -1,9 +1,15 @@
 @media (max-width: 1100px) {
-    .nav li.menu-item a:hover, .nav li.menu-item.active a {
+    .font-size-controls {
+        display: none;
+    }
+
+    .nav li.menu-item a:hover,
+    .nav li.menu-item.active a {
         box-shadow: none;
     }
 
-    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    .navbar-fixed-bottom .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse {
         max-height: none;
     }
 
@@ -13,7 +19,7 @@
         right: 0px;
     }
 
-    .navbar-right > li > .dropdown-menu {
+    .navbar-right>li>.dropdown-menu {
         margin: 0px
     }
 
@@ -22,16 +28,17 @@
         left: 0
     }
 
-    .navbar.navbar-wrapper .container > .navbar-header {
+    .navbar.navbar-wrapper .container>.navbar-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-        .navbar.navbar-wrapper .container > .navbar-header a, .navbar.navbar-wrapper .container > .navbar-header button {
-            display: flex;
-            align-items: center
-        }
+    .navbar.navbar-wrapper .container>.navbar-header a,
+    .navbar.navbar-wrapper .container>.navbar-header button {
+        display: flex;
+        align-items: center
+    }
 
     .navbar-nav {
         background-color: var(--theme-background-color);
@@ -40,8 +47,8 @@
         box-shadow: 0 7px 10px -10px #000;
     }
 
-    .navbar .navbar-nav > li > a,
-    .navbar .navbar-nav > li > a:hover {
+    .navbar .navbar-nav>li>a,
+    .navbar .navbar-nav>li>a:hover {
         border-radius: 0px
     }
 
@@ -112,7 +119,7 @@
     }
 
     .navbar3.navbar-inverse {
-        background-color: rgb(0, 0, 0,0.6) !important;
+        background-color: rgb(0, 0, 0, 0.6) !important;
         position: absolute !important;
     }
 
@@ -156,7 +163,7 @@
     }
 
     .navbar3.navbar-inverse {
-        background-color: rgb(0, 0, 0,0.6) !important;
+        background-color: rgb(0, 0, 0, 0.6) !important;
         position: absolute;
     }
 
@@ -255,7 +262,8 @@
         float: left;
     }
 
-    .navbar4 .site-branding-text, .navbar4 .site-branding-text .navbar-brand {
+    .navbar4 .site-branding-text,
+    .navbar4 .site-branding-text .navbar-brand {
         text-align: center;
     }
 }
@@ -281,7 +289,7 @@
         float: none;
     }
 
-    body .navbar-nav > li {
+    body .navbar-nav>li {
         float: none;
     }
 
@@ -293,7 +301,7 @@
         float: none !important;
     }
 
-    body .navbar .navbar-nav > li > a {
+    body .navbar .navbar-nav>li>a {
         padding: 15px 20px;
         font-size: 14px;
         transition: all 0.4s ease 0s;

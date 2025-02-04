@@ -1,5 +1,23 @@
+.body-static-top .font-size-controls {
+    top: 5px;
+}
+
+.font-size-controls button {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 1300px) {
-    .homepage_mycarousel rs-module, .parallax-mirror, .parallax-window, div.flexslider, .flexslider .flex-viewport, .homepage_mycarousel img, .page-mycarousel img, .homepage_mycarousel, .page-mycarousel {
+
+    .homepage_mycarousel rs-module,
+    .parallax-mirror,
+    .parallax-window,
+    div.flexslider,
+    .flexslider .flex-viewport,
+    .homepage_mycarousel img,
+    .page-mycarousel img,
+    .homepage_mycarousel,
+    .page-mycarousel {
         border-radius: 0;
     }
 
@@ -25,16 +43,18 @@
 }
 
 @media (max-width: 1200px) {
-    .dropdown > a .glyphicon, .dropdown-menu > a .glyphicon {
+
+    .dropdown>a .glyphicon,
+    .dropdown-menu>a .glyphicon {
         margin: -10px 0 0 10px;
         top: 2px;
     }
 
-    .navbar .navbar-nav > li > a {
+    .navbar .navbar-nav>li>a {
         padding: 40px 10px;
     }
 
-    .navbar.navbar-wrapper .container > .navbar-header a {
+    .navbar.navbar-wrapper .container>.navbar-header a {
         object-fit: cover;
         width: 100%;
     }
@@ -48,21 +68,22 @@
         font-size: 12px;
     }
 
-        .navbar-header .site-logo-area.with-Logo .site-title,
-        .navbar-header .site-logo-area.with-Logo .site-title .wallstreet_title_head {
-            font-size: 26px;
-        }
+    .navbar-header .site-logo-area.with-Logo .site-title,
+    .navbar-header .site-logo-area.with-Logo .site-title .wallstreet_title_head {
+        font-size: 26px;
+    }
 
-    .body-fixed-top .navbar .navbar-nav > li > a {
+    .body-fixed-top .navbar .navbar-nav>li>a {
         padding: 20px 10px;
     }
 
-    body .body-fixed-top .page-mycarousel, body.custom-positions.body-fixed-top .page-mycarousel {
+    body .body-fixed-top .page-mycarousel,
+    body.custom-positions.body-fixed-top .page-mycarousel {
         top: 100px;
         margin-bottom: 180px !important;
     }
 
-    ul.dropdown-menu > li > a {
+    ul.dropdown-menu>li>a {
         border: none;
     }
 
@@ -94,38 +115,38 @@
         margin: 0 0 10px;
     }
 
-        .slide-text-bg1 h2 {
-            display: block;
-            font-size: 45px;
-            line-height: 55px;
-            margin: 0px;
-        }
+    .slide-text-bg1 h2 {
+        display: block;
+        font-size: 45px;
+        line-height: 55px;
+        margin: 0px;
+    }
 
     .slide-text-bg2 {
         margin: 0 0 13px;
     }
 
-        .slide-text-bg2 h1 {
-            display: inline-block;
-            font-size: 52px;
-            line-height: 50px;
-            margin: 0px;
-        }
+    .slide-text-bg2 h1 {
+        display: inline-block;
+        font-size: 52px;
+        line-height: 50px;
+        margin: 0px;
+    }
 
-        .slide-text-bg2 span {
-            line-height: 50px;
-        }
+    .slide-text-bg2 span {
+        line-height: 50px;
+    }
 
     .slide-text-bg3 {
         margin: 0 0 13px;
     }
 
-        .slide-text-bg3 p {
-            display: inline-block;
-            font-size: 18px;
-            line-height: 25px;
-            margin: 0;
-        }
+    .slide-text-bg3 p {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 25px;
+        margin: 0;
+    }
 
     .flex_btn {
         font-size: 16px;
@@ -134,18 +155,21 @@
         padding: 8px 18px;
     }
 
-    .sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
+    .sidebar-widget div#calendar_wrap table>thead>tr>th,
+    .footer_widget_column div#calendar_wrap table>thead>tr>th {
         padding: 10px;
         font-size: 12px;
     }
 
-    .sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
+    .sidebar-widget div#calendar_wrap table>tbody>tr>td,
+    .footer_widget_column div#calendar_wrap table>tbody>tr>td {
         padding: 8px;
         font-size: 12px;
     }
 }
 
 @media (max-width: 1199px) {
+
     body.custom-background,
     #page_fader {
         background-image: none !important;
