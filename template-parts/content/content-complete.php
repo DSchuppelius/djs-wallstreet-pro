@@ -10,7 +10,7 @@
 get_named_template_parts("template-parts/content/content", ["head", "meta-header"]); ?>
 
 <header>
-    <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h2>
+    <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h1>
 </header>
 <section class="content-section complete">
     <div class="content"><?php the_content(); ?></div>

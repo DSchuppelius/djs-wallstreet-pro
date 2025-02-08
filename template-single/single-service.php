@@ -42,7 +42,7 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
                         <?php } else { ?>
                         <div class="blog-post-title-wrapper" style="width:100%;">
                             <?php } ?>
-                            <h2><a><?php the_title(); ?></a></h2>
+                            <h1><a><?php the_title(); ?></a></h1>
                             <?php echo "<p>" . get_post_meta(get_the_ID(), "service_description_text", true) . "</p>"; ?>
                             <?php wp_link_pages([
                                         "before" => '<div class="page-links">' . esc_html__("Page", "djs-wallstreet-pro"),

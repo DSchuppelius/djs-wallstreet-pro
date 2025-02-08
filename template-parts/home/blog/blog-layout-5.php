@@ -62,7 +62,7 @@ $post_per_page = $current_setup->get("home_blog_counts"); ?>
                             </div>
                             <?php } ?>
                             <div class="blog-post-title-wrapper">
-                                <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h2>
+                                <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h1>
                                 <p><?php echo get_the_excerpt(); ?></p>
                                 <?php the_read_more("home-blog-btn"); ?>
                                 <div class="blog-post-detail">

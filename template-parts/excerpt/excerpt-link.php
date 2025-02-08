@@ -9,7 +9,7 @@
  */
 ?>
 <header>
-    <h2><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h2>
+    <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h1>
 </header>
 <section class="excerpt-section link">
     <div class="excerpt">

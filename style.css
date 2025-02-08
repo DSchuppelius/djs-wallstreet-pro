@@ -717,11 +717,6 @@ Requires Plugins: djs-wallstreet-pro-core
 }
 
 .blog-post-title-wrapper h1,
-.blog-post-title-wrapper-full h1 {
-    line-height: 54px
-}
-
-.blog-post-title-wrapper h1,
 .blog-post-title-wrapper-full h1,
 .blog-post-title-wrapper h2,
 .blog-post-title-wrapper-full h2,
@@ -736,48 +731,65 @@ Requires Plugins: djs-wallstreet-pro-core
     margin: 0 0 20px
 }
 
-.blog-post-title-wrapper h2,
-.blog-post-title-wrapper-full h2 {
-    line-height: 48px
+.blog-post-title-wrapper section h1,
+.blog-post-title-wrapper-full section h1,
+.blog-post-title-wrapper section h2,
+.blog-post-title-wrapper-full section h2,
+.blog-post-title-wrapper section h3,
+.blog-post-title-wrapper-full section h3,
+.blog-post-title-wrapper section h4,
+.blog-post-title-wrapper-full section h4,
+.blog-post-title-wrapper section h5,
+.blog-post-title-wrapper-full section h5,
+.blog-post-title-wrapper section h6,
+.blog-post-title-wrapper-full section h6 {
+    margin: 20px 0px 10px
+}
+
+.blog-post-title-wrapper h1,
+.blog-post-title-wrapper-full h1 {
+    line-height: 50px
+}
+
+.blog-post-title-wrapper section h1,
+.blog-post-title-wrapper-full section h1 {
+    line-height: 36px;
 }
 
 .blog-post-title-wrapper h2,
-.blog-post-title-wrapper-full h2,
-.blog-post-title-wrapper-full h2 a {
-    line-height: 50px;
-    margin-bottom: 16px;
-    padding-bottom: 0
+.blog-post-title-wrapper-full h2 {
+    line-height: 48px;
+    margin-bottom: 16px
 }
 
 .blog-post-title-wrapper section h2,
-.blog-post-title-wrapper-full section h2,
-.blog-post-title-wrapper-full section h2 a {
-    line-height: 40px;
+.blog-post-title-wrapper-full section h2 {
+    line-height: 34px;
 }
 
 .blog-post-title-wrapper h3,
 .blog-post-title-wrapper-full h3 {
-    line-height: 42px
+    line-height: 46px
 }
 
 .blog-post-title-wrapper section h3,
 .blog-post-title-wrapper-full section h3 {
-    line-height: 36px
+    line-height: 32px
 }
 
 .blog-post-title-wrapper h4,
 .blog-post-title-wrapper-full h4 {
-    line-height: 36px
+    line-height: 44px
 }
 
 .blog-post-title-wrapper section h4,
 .blog-post-title-wrapper-full section h4 {
-    line-height: 32px
+    line-height: 30px
 }
 
 .blog-post-title-wrapper h5,
 .blog-post-title-wrapper-full h5 {
-    line-height: 30px
+    line-height: 42px
 }
 
 .blog-post-title-wrapper section h5,
@@ -787,7 +799,12 @@ Requires Plugins: djs-wallstreet-pro-core
 
 .blog-post-title-wrapper h6,
 .blog-post-title-wrapper-full h6 {
-    line-height: 24px
+    line-height: 40px
+}
+
+.blog-post-title-wrapper section h6,
+.blog-post-title-wrapper-full section h6 {
+    line-height: 26px
 }
 
 .blog-post-title-wrapper img,

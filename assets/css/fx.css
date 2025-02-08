@@ -565,8 +565,8 @@ body.fixed_Header .navbar.navbar-fixed-top {
     transition: all .3s ease 0s
 }
 
-.blog-post-title-wrapper h2 a,
-.blog-post-title-wrapper-full h2 a {
+.blog-post-title-wrapper h1 a,
+.blog-post-title-wrapper-full h1 a {
     transition: all .3s ease 0s
 }
 
