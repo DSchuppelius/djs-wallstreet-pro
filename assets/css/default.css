@@ -1674,7 +1674,7 @@ footer.site p {
     color: #fff
 }
 
-.sidebar-widget:has(h2)::before {
+.sidebar-widget:has(h1)::before {
     background: rgba(0, 0, 0, 0.15);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
@@ -1801,7 +1801,7 @@ footer.site p {
     color: #fff
 }
 
-.sidebar-widget-title h2 {
+.sidebar-widget-title h1 {
     color: #fff
 }
 

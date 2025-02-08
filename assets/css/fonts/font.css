@@ -1304,9 +1304,14 @@ footer.site p {
     font-size: 0.8em
 }
 
-.sidebar-widget-title h2 {
+.sidebar-widget-title h1 {
     font-weight: 400;
     font-size: 1.5em
+}
+
+.sidebar-widget-title h2 {
+    font-weight: 400;
+    font-size: 1.3em
 }
 
 .site-branding-text .site-title .navbar-brand {
@@ -1530,9 +1535,9 @@ footer.site p {
 }
 
 .wp-block-search .wp-block-search__label,
-.sidebar-widget h2 {
+.sidebar-widget h1 {
     font-weight: 300;
-    font-size: 24px
+    font-size: 1.5em
 }
 
 .wp-block-social-links .wp-social-link a {

@@ -6,8 +6,8 @@ function theme_widgets_init() {
         "description" => esc_html__("Sidebar widget area", "djs-wallstreet-pro"),
         "before_widget" => '<div class="sidebar-widget" >',
         "after_widget" => "</div>",
-        "before_title" => '<div class="sidebar-widget-title"><h2>',
-        "after_title" => "</h2></div>",
+        "before_title" => '<div class="sidebar-widget-title"><h1>',
+        "after_title" => "</h1></div>",
     ]);
 
     register_sidebar([
@@ -16,8 +16,8 @@ function theme_widgets_init() {
         "description" => esc_html__("Footer widget area", "djs-wallstreet-pro"),
         "before_widget" => '<div class="col-md-3 col-sm-6 footer_widget_column">',
         "after_widget" => "</div>",
-        "before_title" => '<h2 class="footer_widget_title">',
-        "after_title" => "</h2>",
+        "before_title" => '<h1 class="footer_widget_title">',
+        "after_title" => "</h1>",
     ]);
 
     register_sidebar([
@@ -26,8 +26,8 @@ function theme_widgets_init() {
         "description" => esc_html__("WooCommerce sidebar widget area", "djs-wallstreet-pro"),
         "before_widget" => '<div class="sidebar-widget" >',
         "after_widget" => "</div>",
-        "before_title" => '<h3 class="widget-title">',
-        "after_title" => "</h3>",
+        "before_title" => '<h1 class="widget-title">',
+        "after_title" => "</h1>",
     ]);
 }
 add_action("widgets_init", "theme_widgets_init");

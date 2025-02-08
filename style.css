@@ -743,7 +743,7 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full section h5,
 .blog-post-title-wrapper section h6,
 .blog-post-title-wrapper-full section h6 {
-    margin: 20px 0px 10px
+    margin: 25px 0px 15px
 }
 
 .blog-post-title-wrapper h1,
@@ -4328,7 +4328,7 @@ div.collapsing ul.nav {
     z-index: 3
 }
 
-.sidebar-widget:has(h2)::before {
+.sidebar-widget:has(h1)::before {
     position: absolute;
     left: 0;
     line-height: 46px;
@@ -4597,11 +4597,8 @@ ul.wc-block-product-categories-list--depth-1 {
     margin-bottom: 25px
 }
 
-.sidebar-widget-title h2 {
-    line-height: 30px;
-    margin: 0;
-    padding-bottom: 0;
-    word-wrap: break-word
+.sidebar-widget-title h1 {
+    margin: 0
 }
 
 .sidebar-widget:last-child {
