@@ -38,11 +38,11 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "input_base" => 0.25,
 
             // Logo and favicon header
-            "yearformat" => esc_html__("Y", "djs-wallstreet-pro"),
-            "monthyearformat" => esc_html__("F Y", "djs-wallstreet-pro"),
-            "fulldateformat" => esc_html__("jS F Y", "djs-wallstreet-pro"),
-            "fulldatetimeformat" => esc_html__("jS F Y - h:i a", "djs-wallstreet-pro"),
-            "technicalfulldatetimeformat" => esc_html__("Y-m-d\TH:i:sP", "djs-wallstreet-pro"),
+            "yearformat" => "Y",
+            "monthyearformat" => "F Y",
+            "fulldateformat" => "jS F Y",
+            "fulldatetimeformat" => "jS F Y - h:i a",
+            "technicalfulldatetimeformat" => "Y-m-d\TH:i:sP",
             "upload_image_favicon" => "",
             "stylesheet" => "default.css",
             "google_analytics" => "",
@@ -83,14 +83,14 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "max_page_buttons" => 11,
             // Blog
             "view_all_posts_btn_enabled" => true,
-            "view_all_posts_text" => esc_html__("View All Posts", "djs-wallstreet-pro"),
+            "view_all_posts_text" => "View All Posts",
             "all_posts_link" => "#",
             "view_all_link_target" => false,
 
             "call_out_area_enabled" => true,
-            "call_out_title" => esc_html__("Wallstreet is an elegant and modern theme for business websites.", "djs-wallstreet-pro"),
+            "call_out_title" => "Wallstreet is an elegant and modern theme for business websites.",
             "call_out_text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros elit, pretium et adipiscing vel, consectetur adipiscing elit.",
-            "call_out_button_text" => esc_html__("See All Features", "djs-wallstreet-pro"),
+            "call_out_button_text" => "See All Features",
             "call_out_button_link" => "#",
             "call_out_button_link_target" => "on",
 
@@ -99,31 +99,31 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             // Contact page settings
             "contact_header_settings" => "on",
             "contact_google_map_enabled" => "on",
-            "contact_google_map_title" => esc_html__("Location map", "djs-wallstreet-pro"),
+            "contact_google_map_title" => "Location map",
             "contact_google_map_url" => "https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538",
 
             "contact_header_contact_settings" => "+49-123-456-78-901",
             "contact_header_email_settings" => "info@schuppelius.org",
             "contact_address_settings" => "on",
             "contact_address_icon" => "fa-map-marker",
-            "contact_address_title" => esc_html__("Address", "djs-wallstreet-pro"),
+            "contact_address_title" => "Address",
             "contact_address_designation_one" => "Hoffman Parkway, P.O. Box 353",
             "contact_address_designation_two" => "Mountain View. USA",
 
             "contact_phone_settings" => "on",
             "contact_phone_icon" => "fa-phone",
-            "contact_phone_title" => esc_html__("Phone", "djs-wallstreet-pro"),
+            "contact_phone_title" => "Phone",
             "contact_phone_number_one" => "1-800-123-789",
             "contact_phone_number_two" => "1-800-123-789",
 
             "contact_email_settings" => "on",
             "contact_email_icon" => "fa-inbox",
-            "contact_email_title" => esc_html__("Email", "djs-wallstreet-pro"),
+            "contact_email_title" => "Email",
             "contact_email_number_one" => "info@schuppelius.org",
             "contact_email_number_two" => "schuppelius.org",
 
-            "contact_form_title" => esc_html__("Drop us a mail", "djs-wallstreet-pro"),
-            "contact_form_description" => esc_html__("Feel free to write us a message", "djs-wallstreet-pro"),
+            "contact_form_title" => "Drop us a mail",
+            "contact_form_description" => "Feel free to write us a message",
 
             // Header Preset
             "header_presets_stlyle" => 1,
@@ -131,15 +131,15 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "search_effect_style_setting" => "toogle",
 
             // Head Titles
-            "home_blog_heading" => esc_html__("Our latest blog post", "djs-wallstreet-pro"),
-            "home_blog_description" => esc_html__("We work with new customers and grow their businesses", "djs-wallstreet-pro"),
+            "home_blog_heading" => "Our latest blog post",
+            "home_blog_description" => "We work with new customers and grow their businesses",
             "home_blog_counts" => 3,
             "home_blog_design" => 1,
 
             // Blog Meta
             "blog_template_content_excerpt_get_setting" => "excerpt",
             "blog_template_content_excerpt_length" => 275,
-            "blog_template_read_more" => esc_html__("Read More", "djs-wallstreet-pro"),
+            "blog_template_read_more" => "Read More",
             "home_meta_section_settings" => false,
             "blog_meta_section_settings" => false,
             "page_meta_section_settings" => false,
@@ -232,6 +232,45 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             // Footer customization
             "footerbar_enabled" => true,
             "footer_link_enabled" => true,
+            "footer_link" => '&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;',
+            "footer_copyright" => 'Copyright @ 2022 - DJS-WallStreet-Pro. Designed by <a href="https://schuppelius.org" rel="nofollow" target="_blank">Daniel Joerg Schuppelius</a>',
+
+            "before_comment" => "Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.",
+            "after_comment" => "If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to.",
+        ];
+    }
+
+    protected function get_translated_setup() {
+        return [
+            "yearformat" => esc_html__("Y", "djs-wallstreet-pro"),
+            "monthyearformat" => esc_html__("F Y", "djs-wallstreet-pro"),
+            "fulldateformat" => esc_html__("jS F Y", "djs-wallstreet-pro"),
+            "fulldatetimeformat" => esc_html__("jS F Y - h:i a", "djs-wallstreet-pro"),
+            "technicalfulldatetimeformat" => esc_html__("Y-m-d\TH:i:sP", "djs-wallstreet-pro"),
+
+            // Blog
+            "view_all_posts_text" => esc_html__("View All Posts", "djs-wallstreet-pro"),
+            "call_out_title" => esc_html__("Wallstreet is an elegant and modern theme for business websites.", "djs-wallstreet-pro"),
+            "call_out_button_text" => esc_html__("See All Features", "djs-wallstreet-pro"),
+
+            // Contact page settings
+            "contact_google_map_title" => esc_html__("Location map", "djs-wallstreet-pro"),
+
+            "contact_address_title" => esc_html__("Address", "djs-wallstreet-pro"),
+
+            "contact_phone_title" => esc_html__("Phone", "djs-wallstreet-pro"),
+
+            "contact_email_title" => esc_html__("Email", "djs-wallstreet-pro"),
+
+            "contact_form_title" => esc_html__("Drop us a mail", "djs-wallstreet-pro"),
+            "contact_form_description" => esc_html__("Feel free to write us a message", "djs-wallstreet-pro"),
+
+            // Head Titles
+            "home_blog_heading" => esc_html__("Our latest blog post", "djs-wallstreet-pro"),
+            "home_blog_description" => esc_html__("We work with new customers and grow their businesses", "djs-wallstreet-pro"),
+
+            "blog_template_read_more" => esc_html__("Read More", "djs-wallstreet-pro"),
+
             "footer_link" => __('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "djs-wallstreet-pro"),
             "footer_copyright" => esc_html__("Copyright @ 2022 - DJS-WallStreet-Pro. Designed by", "djs-wallstreet-pro") . " " . '<a href="https://schuppelius.org" rel="nofollow" target="_blank">' . esc_html__("Daniel Joerg Schuppelius", "djs-wallstreet-pro") . "</a>",
 
