@@ -15,19 +15,18 @@ if (defined('DJS_CORE_PLUGIN_CLASSES_PATH') && file_exists(DJS_CORE_PLUGIN_CLASS
 }
 
 class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
+    private static $instance = null;
+
     // @return plugin|null
     public static function instance() {
-        // Store the instance locally to avoid private static replication
-        static $instance = null;
-
         // Only run these methods if they haven't been ran previously
-        if (null === $instance) {
-            $instance = new DJS_Wallstreet_Pro_Theme_Setup();
-            $instance->load_current_setup();
+        if (null === static::$instance) {
+            static::$instance = new DJS_Wallstreet_Pro_Theme_Setup();
+            static::$instance->load_current_setup();
         }
 
         // Always return the instance
-        return $instance;
+        return static::$instance;
     }
 
     protected function get_initial_setup() {

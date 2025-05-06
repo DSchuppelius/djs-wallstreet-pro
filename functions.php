@@ -96,8 +96,8 @@ if(!function_exists("language_theme_setup")) {
             global $l10n, $wp_textdomain_registry;
             $locale = get_locale();
 
-            if (isset($wp_textdomain_registry)) {
-                $wp_textdomain_registry->set($domain, $locale, THEME_FUNCTIONS_PATH . '/lang');
+            if ( isset($wp_textdomain_registry) && method_exists($wp_textdomain_registry, 'set') ) {
+                $wp_textdomain_registry->set($domain, $locale, TEMPLATE_DIR . '/languages');
             }
 
             if (isset($l10n[$domain])) {
@@ -105,7 +105,7 @@ if(!function_exists("language_theme_setup")) {
             }
         }
 
-        load_theme_textdomain($domain, THEME_FUNCTIONS_PATH . '/lang');
+        load_theme_textdomain($domain, TEMPLATE_DIR . '/languages');
     }
 }
 
