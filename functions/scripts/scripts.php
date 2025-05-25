@@ -8,12 +8,11 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 
-function theme_admin_enqueue_fonts() {
+function theme_admin_enqueue_iconfonts() {
     wp_enqueue_style("font-awesome",                THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/all.min.css");
     wp_enqueue_style("icon_font-faces",             THEME_ASSETS_PATH_URI . "/css/fonts/icon_font-faces.css");
-    wp_enqueue_style("wallstreet-fonts",            THEME_ASSETS_PATH_URI . "/css/fonts/font.css");
 }
-add_action("admin_enqueue_scripts", "theme_admin_enqueue_fonts");
+add_action("admin_enqueue_scripts", "theme_admin_enqueue_iconfonts");
 
 function theme_bootstrap_scripts() {
     wp_enqueue_style("bootstrap",                   THEME_ASSETS_PATH_URI . "/bootstrap/css/bootstrap.min.css");
