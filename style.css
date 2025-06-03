@@ -3448,7 +3448,8 @@ div.collapsing ul.nav {
 .post-media-sidebar,
 .sidebar-widget ul li,
 .post-content li,
-.blog-post-detail {
+.blog-post-detail,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item {
     border-bottom: 1px dotted #7b7f8c
 }
 
@@ -4483,7 +4484,8 @@ div.collapsing ul.nav {
     text-decoration: underline
 }
 
-.sidebar-widget ul li {
+.sidebar-widget ul li,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item {
     display: block;
     line-height: 20px;
     padding-bottom: 10px;
@@ -4492,7 +4494,8 @@ div.collapsing ul.nav {
 }
 
 .sidebar-widget ul li a:before,
-.footer_widget_column ul li a:before {
+.footer_widget_column ul li a:before,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item a:before {
     position: relative;
     bottom: 1px;
     line-height: 10px;

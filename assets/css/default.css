@@ -1747,12 +1747,14 @@ footer.site p {
     color: #fff
 }
 
-.sidebar-widget li a {
+.sidebar-widget li a,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item a {
     color: #fff
 }
 
 .sidebar-widget li a::before,
-.footer-widget-section li a::before {
+.footer-widget-section li a::before,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item a::before {
     color: #fff
 }
 

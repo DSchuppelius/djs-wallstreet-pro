@@ -1277,7 +1277,8 @@ footer.site p {
 }
 
 .sidebar-widget ul li a:before,
-.footer_widget_column ul li a:before {
+.footer_widget_column ul li a:before,
+.sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item a:before {
     font-size: 0.6em;
     font-weight: 400;
     font-family: 'FontAwesome'
