@@ -4493,6 +4493,10 @@ div.collapsing ul.nav {
     vertical-align: top
 }
 
+.sidebar-widget .wp-block-jetpack-top-posts.is-list-layout .jetpack-top-posts-item {
+    margin-bottom: 0px;
+}
+
 .sidebar-widget ul li a:before,
 .footer_widget_column ul li a:before,
 .sidebar-widget .jetpack-top-posts-wrapper .jetpack-top-posts-item a:before {
