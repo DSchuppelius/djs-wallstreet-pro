@@ -3059,6 +3059,12 @@ div.collapsing ul.nav {
     margin: 0
 }
 
+.page_fader.logo .navbar-brand .custom-logo {
+    max-height: 100px;
+    max-width: 100%;
+    width: auto;
+}
+
 .page_scrollup {
     border-radius: var(--input-base) var(--input-base) 0px 0px;
     bottom: 0;
