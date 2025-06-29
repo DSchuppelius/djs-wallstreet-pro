@@ -22,10 +22,13 @@ function wallstreet_single_blog_customizer( $wp_customize ) {
         $wp_customize->add_setting(
             $id,
             [
-                'default'           => $default,
-                'transport'         => 'postMessage',
+                'default'   => $default,
+                'transport' => 'postMessage',
                 'sanitize_callback' => function ( $v ) use ( $min, $max ) {
-                    return sanitize_number_range( $v, $min, $max );
+                    $v = intval( $v );
+                    if ( $v < $min ) { $v = $min; }
+                    if ( $v > $max ) { $v = $max; }
+                    return $v;
                 },
             ]
         );
