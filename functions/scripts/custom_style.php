@@ -144,6 +144,9 @@ body .callout-section a {
 .custom-logo {
     width: <?php echo esc_html(get_theme_mod("wallstreet_logo_length", "400"));
     ?>px;
+    top: <?php echo esc_html(get_theme_mod("wallstreet_logo_position", "0"));
+    ?>px;
+    left: 0px;
     height: auto;
 }
 
@@ -193,33 +196,45 @@ a.button {
 <?php } ?>
 <style type="text/css">
 :root {
-    <?php if ( !defined("DJS_POSTTYPE_PLUGIN")) {
-        ?>--main-slider-radius: <?php echo $current_setup->get("slideroundcorner");
-        ?>px !important;
-        --sub-slider-radius: <?php echo $current_setup->get("slideroundcorner") - 20;
-        ?>px !important;
-        <?php
-    }
+    <?php $logo_width=absint(get_theme_mod('wallstreet_logo_length', 156));
+    $logo_top=intval(get_theme_mod('wallstreet_logo_position', 0)); // darf negativ sein
+    $fixed_logo_width=absint(get_theme_mod('wallstreet_fixed_logo_length', 94));
+    $fixed_logo_top=intval(get_theme_mod('wallstreet_fixed_logo_position', 0)); // darf negativ sein
 
-    ?>--theme-background-color: <?php echo $background_color;
+    if ( ! defined('DJS_POSTTYPE_PLUGIN')):
+        ?> --main-slider-radius: <?php echo esc_attr($current_setup->get('slideroundcorner'));
+    ?>px !important;
+    --sub-slider-radius: <?php echo esc_attr($current_setup->get('slideroundcorner') - 20);
+    ?>px !important;
+    <?php endif;
+    ?>--theme-background-color: <?php echo esc_attr($background_color);
     ?> !important;
-    --theme-color: <?php echo $link_color;
+    --theme-color: <?php echo esc_attr($link_color);
     ?> !important;
 
-    --input-base: <?php echo $current_setup->get("input_base");
+    --input-base: <?php echo esc_attr($current_setup->get('input_base'));
     ?>em !important;
-    --input-biggerbase: <?php echo $current_setup->get("input_base")+0.2;
+    --input-biggerbase: <?php echo esc_attr($current_setup->get('input_base') + 0.2);
     ?>em !important;
-    --input-smallerbase: <?php echo $current_setup->get("input_base") - 0.1;
+    --input-smallerbase: <?php echo esc_attr($current_setup->get('input_base') - 0.1);
     ?>em !important;
 
-    --border-base: <?php echo $current_setup->get("border_base");
+    --border-base: <?php echo esc_attr($current_setup->get('border_base'));
     ?>px !important;
-    --border-bigbase: <?php echo $current_setup->get("border_bigbase");
+    --border-bigbase: <?php echo esc_attr($current_setup->get('border_bigbase'));
     ?>px !important;
-    --border-smallbase: <?php echo $current_setup->get("border_smallbase");
+    --border-smallbase: <?php echo esc_attr($current_setup->get('border_smallbase'));
     ?>px !important;
-    --border-verysmallbase: <?php echo $current_setup->get("border_verysmallbase");
+    --border-verysmallbase: <?php echo esc_attr($current_setup->get('border_verysmallbase'));
+    ?>px !important;
+
+    --logo-width: <?php echo $logo_width;
+    ?>px !important;
+    --logo-top: <?php echo $logo_top;
+    ?>px !important;
+    --fixed-logo-width: <?php echo $fixed_logo_width;
+    ?>px !important;
+    --fixed-logo-top: <?php echo $fixed_logo_top;
     ?>px !important;
 }
 
@@ -243,12 +258,6 @@ a.button {
 div.page-mycarousel:not(.home .page-mycarousel) {
     margin-bottom: <?php echo 80 - $sub_slider_correctize;
     ?>px;
-}
-
-.custom-logo {
-    width: <?php esc_html_e(get_theme_mod("wallstreet_logo_length", "156"));
-    ?>px;
-    height: auto;
 }
 
 .custom-positions .page-breadcrumbs {

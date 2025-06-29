@@ -61,7 +61,12 @@
 
     .navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
         position: initial;
+        max-height: 100px;
         width: auto
+    }
+
+    .custom-logo {
+        max-width: 430px;
     }
 
     .navbar-header .site-logo-area.with-Logo {

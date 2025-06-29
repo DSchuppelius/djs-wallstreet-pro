@@ -168,6 +168,7 @@ if (!function_exists("theme_setup")) {
         add_theme_support("custom-logo", [
             "width"                 => 300,
             "height"                => 50,
+            "top"                   => 0,
             "flex-width"            => true,
             "flex-height"           => true,
             "header-text"           => ["site-title", "site-description"],

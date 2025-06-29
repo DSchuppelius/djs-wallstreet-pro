@@ -1438,6 +1438,21 @@ Requires Plugins: djs-wallstreet-pro-core
     margin: 0px 0px 20px 0px;
 }
 
+.custom-logo {
+    width: var(--logo-width);
+    top: var(--logo-top);
+    height: auto;
+    max-width: 500px;
+    /* Hard-Limit beibehalten */
+}
+
+.navbar-fixed-top .custom-logo {
+    width: var(--fixed-logo-width);
+    top: var(--fixed-logo-top);
+    height: auto;
+    max-width: 500px;
+}
+
 .desi-seperate {
     width: 150px;
     height: 2px;
