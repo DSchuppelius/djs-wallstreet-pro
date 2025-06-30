@@ -1,11 +1,65 @@
 /*Variables Section---------------------------------------------------------------------------*/
 :root {
+    --font-family-base: 'SiteFont';
+
+    --general-font-size: 16px;
+    --general-font-weight: 400;
+    --general-font-style: normal;
+
+    --menu-font-size: 16px;
+    --menu-font-weight: 400;
+    --menu-font-style: normal;
+
+    --post-font-size: 28px;
+    --post-font-weight: 700;
+    --post-font-style: normal;
+
+    --service-font-size: 24px;
+    --service-font-weight: 600;
+    --service-font-style: normal;
+
+    --portfolio-font-size: 20px;
+    --portfolio-font-weight: 600;
+    --portfolio-font-style: normal;
+
+    --widget-font-size: 18px;
+    --widget-font-weight: 600;
+    --widget-font-style: normal;
+
+    --callout-title-size: 32px;
+    --callout-title-weight: 700;
+    --callout-title-style: normal;
+
+    --callout-desc-size: 16px;
+    --callout-desc-weight: 400;
+    --callout-desc-style: normal;
+
+    --callout-link-size: 18px;
+    --callout-link-weight: 600;
+    --callout-link-style: normal;
+
+    --logo-width: 156px;
+    --logo-top: 0px;
+    --fixed-logo-width: 94px;
+    --fixed-logo-top: 0px;
+
+    --main-slider-radius: 0px;
+    --sub-slider-radius: 0px;
+
+    --input-base: 1em;
+    --input-biggerbase: 1.2em;
+    --input-smallerbase: .9em;
+
+    --carousel-margin-bottom: 80px;
+    --carousel-margin-bottom-alt: 60px;
+    --breadcrumb-bottom: 0px;
+    --title-padding-bottom: 40px;
+
     --border-base: 0px;
     --border-bigbase: 0px;
     --border-smallbase: 0px;
     --border-verysmallbase: 0px;
-    --main-slider-radius: 0px;
-    --sub-slider-radius: 0px;
+
     --theme-color: #fff;
     --theme-background-color: #000;
 }

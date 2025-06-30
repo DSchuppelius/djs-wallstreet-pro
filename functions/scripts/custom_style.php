@@ -7,281 +7,158 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-global $link_color;
-global $background_color;
+if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
+	/**
+	 * Baut den :root‑Block + optionalen #page_fader‑Selektor
+	 */
+	function djs_wallstreet_root_css(): string {
 
-$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+		$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-$header_correctize = $current_setup->get("fixedheader_enabled") ? 80 : 0;
-$sub_slider_correctize = $current_setup->get("slideroundcorner") > 0 ? $current_setup->get("slideroundcorner") - 20 : 0;
+		/* --------------------------------------------------
+		 * 1. Variablen sammeln
+		 * ------------------------------------------------*/
+        $link = esc_attr( get_theme_link_color() );
+		$vars = [
+			/* Farben */
+            '--theme-background-color'      => esc_attr( get_theme_bg_color() ),
+            '--theme-color'                 => esc_attr( get_theme_link_color() ),
 
-if ($current_setup->get("enable_custom_typography") == true) { ?>
-<style type="text/css">
-body {
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
+            '--link-color'                  => $link,                                      // Volle Farbe
+            '--link-contrast'               => is_dark_color( $link ) ? '#ffffff' : '#000000',
+
+            // «additional» = zusätzliche Deckkraft / Aufhellen
+            '--link-color_additional-100'   => get_rgba_color( $link, 1.00, '#101010' ),  // 100 %
+            '--link-color_additional-70'    => get_rgba_color( $link, 0.70, '#101010' ),  // 70 %
+            '--link-color_additional-65'    => get_rgba_color( $link, 0.65, '#101010' ),  // 65 %
+            '--link-color_additional-60'    => get_rgba_color( $link, 0.60, '#101010' ),  // 60 %
+            '--link-color_additional-15'    => get_rgba_color( $link, 0.15, '#101010' ),  // 70 %
+
+            // «reduced» = abgedunkelte Variante (je nach Bedarf Farbe #303030 anpassen)
+            '--link-color_reduced-100'    => get_rgba_color( $link, 1.00, '#303030' ),  // 100 %
+            '--link-color_reduced-85'     => get_rgba_color( $link, 0.85, '#303030' ),  // 85 %
+            '--link-color_reduced-70'     => get_rgba_color( $link, 0.70, '#303030' ),  // 70 %
+            '--link-color_reduced-60'     => get_rgba_color( $link, 0.60, '#303030' ),  // 60 %
+            '--link-color_reduced-50'     => get_rgba_color( $link, 0.50, '#303030' ),  // 50 %
+            '--link-color_reduced-25'     => get_rgba_color( $link, 0.25, '#303030' ),  // 25 %
+            '--link-color_reduced-15'     => get_rgba_color( $link, 0.15, '#303030' ),  // 15 %
+
+			/* Input & Border */
+			'--input-base'             => $current_setup->get( 'input_base' ) . 'em',
+			'--input-biggerbase'       => ( $current_setup->get( 'input_base' ) + 0.2 ) . 'em',
+			'--input-smallerbase'      => ( $current_setup->get( 'input_base' ) - 0.1 ) . 'em',
+			'--border-base'            => absint( $current_setup->get( 'border_base' ) )           . 'px',
+			'--border-bigbase'         => absint( $current_setup->get( 'border_bigbase' ) )        . 'px',
+			'--border-smallbase'       => absint( $current_setup->get( 'border_smallbase' ) )      . 'px',
+			'--border-verysmallbase'   => absint( $current_setup->get( 'border_verysmallbase' ) )  . 'px',
+
+			/* Logo */
+			'--logo-width'             => absint( get_theme_mod( 'wallstreet_logo_length', 156 ) ) . 'px',
+			'--logo-top'               => intval( get_theme_mod( 'wallstreet_logo_position', 0 ) ) . 'px',
+			'--fixed-logo-width'       => absint( get_theme_mod( 'wallstreet_fixed_logo_length', 94 ) ) . 'px',
+			'--fixed-logo-top'         => intval( get_theme_mod( 'wallstreet_fixed_logo_position', 0 ) ) . 'px',
+		];
+
+		/* Slider‑Radien, falls Post‑Type‑Plugin fehlt */
+		if ( ! defined( 'DJS_POSTTYPE_PLUGIN' ) ) {
+			$round = absint( $current_setup->get( 'slideroundcorner' ) );
+			$vars['--main-slider-radius'] = $round . 'px';
+			$vars['--sub-slider-radius']  = max( 0, $round - 20 ) . 'px';
+		}
+
+		/* Typografie */
+		if ($current_setup->get("enable_custom_typography") == true) {
+			$font                          = esc_attr( $current_setup->get( 'google_font' ) );
+			$vars['--font-family-base']     = "'{$font}','SiteFont'";
+
+			$groups = [
+				'general'   => 'general_typography',
+				'menu'      => 'menu_title',
+				'post'      => 'post_title',
+				'service'   => 'service_title',
+				'portfolio' => 'portfolio_title',
+				'widget'    => 'widget_title',
+				'callout-title' => 'calloutarea_title',
+				'callout-desc'  => 'calloutarea_description',
+				'callout-link'  => 'calloutarea_purches',
+			];
+
+			foreach ( $groups as $key => $opt ) {
+				$vars["--{$key}-font-size"]   = absint( $current_setup->get( "{$opt}_fontsize" ) )  . 'px';
+				$vars["--{$key}-font-weight"] = esc_attr( $current_setup->get( "{$opt}_fontfamily" ) );
+				$vars["--{$key}-font-style"]  = esc_attr( $current_setup->get( "{$opt}_fontstyle" ) );
+			}
+		}
+
+		/* Layout‑Abstände */
+		$header_corr = $current_setup->get( 'fixedheader_enabled' ) ? 80 : 0;
+		$sub_corr    = absint( $current_setup->get( 'slideroundcorner' ) );
+		$sub_corr    = $sub_corr > 0 ? $sub_corr - 20 : 0;
+
+		$vars += [
+			'--carousel-margin-bottom'     => ( 80 - $sub_corr ) . 'px',
+			'--carousel-margin-bottom-alt' => ( 80 - $current_setup->get( 'contentposition' ) - $sub_corr ) . 'px',
+			'--breadcrumb-bottom'          => $current_setup->get( 'breadcrumbposition' ) . 'px',
+			'--title-padding-bottom'       => ( $sub_corr + $current_setup->get( 'breadcrumbposition' ) - $header_corr ) . 'px',
+		];
+
+		/* --------------------------------------------------
+		 * 2. :root‑Block zusammenbauen
+		 * ------------------------------------------------*/
+		$css = ':root{';
+		foreach ( $vars as $name => $value ) {
+			$css .= $name . ':' . $value. ';';
+		}
+		$css .= '}';
+
+		/* --------------------------------------------------
+		 * 3. Page‑Fader (wenn Bild vorhanden)
+		 * ------------------------------------------------*/
+		if ( $url = set_url_scheme( get_background_image() ) ) {
+			$size   = esc_html( get_theme_mod( 'background_size',       get_theme_support( 'custom-background', 'default-size' ) ) );
+			$repeat = esc_html( get_theme_mod( 'background_repeat',     get_theme_support( 'custom-background', 'default-repeat' ) ) );
+			$pos_x  = esc_html( get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) ) );
+			$pos_y  = esc_html( get_theme_mod( 'background_position_y', get_theme_support( 'custom-background', 'default-position-y' ) ) );
+			$attach = esc_html( get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) ) );
+
+			$css .= '#page_fader{'
+			     . "background-image:url('{$url}');"
+			     . "background-size:{$size};"
+                 . "background-color:{$vars['--theme-background-color']};"
+			     . "background-repeat:{$repeat};"
+			     . "background-position:{$pos_x} {$pos_y};"
+			     . "background-attachment:{$attach};"
+			     . '}';
+		}
+
+		return $css;
+	}
 }
 
-/****** custom typography *********/
-body .home-blog-description p,
-body .portfolio-detail-description p,
-body .blog-post-title-wrapper-full p,
-body .blog-post-title-wrapper p {
-    font-size: <?php echo $current_setup->get("general_typography_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("general_typography_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("general_typography_fontstyle");
-    ?>;
-    line-height: <?php echo $current_setup->get("general_typography_fontsize") + 5 . "px";
-    ?>;
-}
+/**
+ * Hook: hängt den :root‑Block an das Stylesheet & lädt Google Fonts
+ */
+add_action( 'wp_enqueue_scripts', function () {
 
-/*** Menu title */
-.navbar .navbar-nav>li>a {
-    font-size: <?php echo $current_setup->get("menu_title_fontsize") . "px";
-    ?> !important;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-style: <?php echo $current_setup->get("menu_title_fontstyle");
-    ?> !important;
-    font-weight: <?php echo $current_setup->get("menu_title_fontfamily");
-    ?> !important;
-}
+	$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-/*** post and Page title */
-body .blog-post-title-wrapper h2,
-body .blog-post-title-wrapper h2 a,
-body .blog-post-title-wrapper-full h2,
-body .blog-post-title-wrapper-full h2 {
-    font-size: <?php echo $current_setup->get("post_title_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("post_title_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("post_title_fontstyle");
-    ?>;
-}
+	// Google Font
+	if ( $current_setup->get( 'enable_custom_typography' ) ) {
+		wp_enqueue_style( 'djs-google-font', wallstreet_fonts_url( $current_setup->get( 'google_font' ) ), [], null );
+	}
 
-/*** service title */
-body .service-area h2 {
-    font-size: <?php echo $current_setup->get("service_title_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("service_title_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("service_title_fontstyle");
-    ?>;
-}
+	// Standard‑CSS sicherstellen
+	wp_enqueue_style( 'djs-wallstreet-pro-standard', THEME_ASSETS_PATH_URI . '/css/standard.css', [], '1.0.0' );
+    wp_enqueue_style( 'djs-wallstreet-pro-dynamic', THEME_ASSETS_PATH_URI . '/css/dynamic.css', [], '1.0.0' );
 
-/******** portfolio title ********/
-body .main-portfolio-showcase .main-portfolio-showcase-detail h4 {
-    font-size: <?php echo $current_setup->get("portfolio_title_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("portfolio_title_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("portfolio_title_fontstyle");
-    ?>;
-}
+	// Inline‑Styles anhängen
+	wp_add_inline_style( 'djs-wallstreet-pro-standard', djs_wallstreet_root_css() );
 
-/******* footer widget title*********/
-body .footer_widget_title,
-body .footer-widget-section .wp-block-search .wp-block-search__label,
-body .footer-widget-section h1,
-body .footer-widget-section h2,
-body .footer-widget-section h3,
-body .footer-widget-section h4,
-body .footer-widget-section h5,
-body .footer-widget-section h6,
-body .sidebar-widget-title h2,
-body .sidebar-widget .wp-block-search .wp-block-search__label,
-body .sidebar-widget h1,
-body .sidebar-widget h2,
-.sidebar-widget h3,
-body .sidebar-widget h4,
-body .sidebar-widget h5,
-body .sidebar-widget h6,
-.wc-block-product-search__label {
-    font-size: <?php echo $current_setup->get("widget_title_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("widget_title_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("widget_title_fontstyle");
-    ?>;
-}
-
-body .callout-section h3 {
-    font-size: <?php echo $current_setup->get("calloutarea_title_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("calloutarea_title_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("calloutarea_title_fontstyle");
-    ?>;
-}
-
-body .callout-section p {
-    font-size: <?php echo $current_setup->get("calloutarea_description_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("calloutarea_description_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("calloutarea_description_fontstyle");
-    ?>;
-}
-
-body .callout-section a {
-    font-size: <?php echo $current_setup->get("calloutarea_purches_fontsize") . "px";
-    ?>;
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: <?php echo $current_setup->get("calloutarea_purches_fontfamily");
-    ?>;
-    font-style: <?php echo $current_setup->get("calloutarea_purches_fontstyle");
-    ?>;
-}
-
-.custom-logo {
-    width: <?php echo esc_html(get_theme_mod("wallstreet_logo_length", "400"));
-    ?>px;
-    top: <?php echo esc_html(get_theme_mod("wallstreet_logo_position", "0"));
-    ?>px;
-    left: 0px;
-    height: auto;
-}
-
-.blog-author h6,
-.blog-list-view .blog-post-title-wrapper h2,
-.blog-list-view .blog-post-title-wrapper-full h2,
-.blog-post-title-wrapper h2,
-.title h3,
-.blog-post-title-wrapper h2 span.title.post_format,
-.blog-post-title-wrapper h2 span.title.post_format.none~.title,
-.features-title,
-.home-blog-area .home-blog-info h2,
-.page-blog-area .home-blog-info h2,
-.sidebar-widget .wp-block-search .wp-block-search__label,
-.sidebar-widget h1,
-.sidebar-widget h2,
-.sidebar-widget h3,
-.sidebar-widget h4,
-.sidebar-widget h5,
-.sidebar-widget h6,
-.slide-text-bg1 h2,
-a.comment-edit-link,
-a.comment-reply-link,
-input[type="submit"],
-button,
-.btn,
-a.button {
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: 300
-}
-
-.page-title-col h1,
-.slide-text-bg2 h1 {
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: 500
-}
-
-.section_heading_title h1,
-.sidebar-widget div#calendar_wrap table>caption,
-.footer_widget_column div#calendar_wrap table>caption,
-.about-section h3,
-.blog-post-date span.comment {
-    font-family: '<?php echo $current_setup->get("google_font"); ?>' !important;
-    font-weight: 700
-}
-</style>
-<?php } ?>
-<style type="text/css">
-:root {
-    <?php $logo_width=absint(get_theme_mod('wallstreet_logo_length', 156));
-    $logo_top=intval(get_theme_mod('wallstreet_logo_position', 0)); // darf negativ sein
-    $fixed_logo_width=absint(get_theme_mod('wallstreet_fixed_logo_length', 94));
-    $fixed_logo_top=intval(get_theme_mod('wallstreet_fixed_logo_position', 0)); // darf negativ sein
-
-    if ( ! defined('DJS_POSTTYPE_PLUGIN')):
-        ?> --main-slider-radius: <?php echo esc_attr($current_setup->get('slideroundcorner'));
-    ?>px !important;
-    --sub-slider-radius: <?php echo esc_attr($current_setup->get('slideroundcorner') - 20);
-    ?>px !important;
-    <?php endif;
-    ?>--theme-background-color: <?php echo esc_attr($background_color);
-    ?> !important;
-    --theme-color: <?php echo esc_attr($link_color);
-    ?> !important;
-
-    --input-base: <?php echo esc_attr($current_setup->get('input_base'));
-    ?>em !important;
-    --input-biggerbase: <?php echo esc_attr($current_setup->get('input_base') + 0.2);
-    ?>em !important;
-    --input-smallerbase: <?php echo esc_attr($current_setup->get('input_base') - 0.1);
-    ?>em !important;
-
-    --border-base: <?php echo esc_attr($current_setup->get('border_base'));
-    ?>px !important;
-    --border-bigbase: <?php echo esc_attr($current_setup->get('border_bigbase'));
-    ?>px !important;
-    --border-smallbase: <?php echo esc_attr($current_setup->get('border_smallbase'));
-    ?>px !important;
-    --border-verysmallbase: <?php echo esc_attr($current_setup->get('border_verysmallbase'));
-    ?>px !important;
-
-    --logo-width: <?php echo $logo_width;
-    ?>px !important;
-    --logo-top: <?php echo $logo_top;
-    ?>px !important;
-    --fixed-logo-width: <?php echo $fixed_logo_width;
-    ?>px !important;
-    --fixed-logo-top: <?php echo $fixed_logo_top;
-    ?>px !important;
-}
-
-#page_fader {
-    <?php if($background=set_url_scheme(get_background_image())) {
-        ?>background-image: url('<?php echo esc_url($background); ?>');
-        background-size: <?php esc_html_e(get_theme_mod('background_size', get_theme_support('custom-background', 'default-size')));
-        ?>;
-        background-repeat: <?php esc_html_e(get_theme_mod('background_repeat', get_theme_support('custom-background', 'default-repeat')));
-        ?>;
-        background-position: <?php printf("%s %s", esc_html(get_theme_mod('background_position_x', get_theme_support('custom-background', 'default-position-x'))), esc_html(get_theme_mod('background_position_y', get_theme_support('custom-background', 'default-position-y'))));
-        ?>;
-        background-attachment: <?php esc_html_e(get_theme_mod('background_attachment', get_theme_support('custom-background', 'default-attachment')));
-        ?>;
-        <?php
-    }
-
-    ?>
-}
-
-div.page-mycarousel:not(.home .page-mycarousel) {
-    margin-bottom: <?php echo 80 - $sub_slider_correctize;
-    ?>px;
-}
-
-.custom-positions .page-breadcrumbs {
-    bottom: <?php echo $current_setup->get("breadcrumbposition");
-    ?>px;
-}
-
-.custom-positions .container.page-title-col {
-    padding-bottom: <?php echo $sub_slider_correctize + $current_setup->get("breadcrumbposition") - $header_correctize;
-    ?>px;
-}
-
-.custom-positions .page-mycarousel:not(.home .page-mycarousel) {
-    margin-bottom: <?php echo 80 - $current_setup->get("contentposition") - $sub_slider_correctize;
-    ?>px;
-}
-</style>
-
-<?php if ($current_setup->get("contact_header_settings") != "on") { ?>
-<style type="text/css">
-@media only screen and (min-width: 200px) and (max-width: 480px) {
-    .header-top-area {
-        display: none;
-    }
-}
-</style>
-<?php } ?>
+	// Header‑Top mobil ausblenden
+	if ( 'on' !== $current_setup->get( 'contact_header_settings' ) ) {
+		add_filter( 'body_class', static function ( $classes ) {
+			$classes[] = 'hide-header-top';
+			return $classes;
+		} );
+	}
+}, 20 );

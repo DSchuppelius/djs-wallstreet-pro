@@ -1,18 +1,201 @@
-<?php
-/*
- * Created on   : Wed Jun 22 2022
- * Author       : Daniel Jörg Schuppelius
- * Author Uri   : https://schuppelius.org
- * Filename     : custom_dark.php
- * License      : GNU General Public License v3 or later
- * License Uri  : http://www.gnu.org/licenses/gpl.html
- */
-function custom_dark() {
-    global $link_color;
+/* ---------- Basis-Schriftart ------------------------------------------- */
+body {
+    font-family: var(--font-family-base);
+}
 
-    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
+/* ---------- General copy ------------------------------------------------ */
+body .home-blog-description p,
+body .portfolio-detail-description p,
+body .blog-post-title-wrapper-full p,
+body .blog-post-title-wrapper p {
+    font-size: var(--general-font-size);
+    font-weight: var(--general-font-weight);
+    font-style: var(--general-font-style);
+    font-family: var(--font-family-base);
+    line-height: calc(var(--general-font-size) + 5px);
+}
 
-<style type="text/css">
+/* ---------- Menü-Einträge ---------------------------------------------- */
+.navbar .navbar-nav>li>a {
+    font-size: var(--menu-font-size) !important;
+    font-family: var(--font-family-base) !important;
+    font-weight: var(--menu-font-weight) !important;
+    font-style: var(--menu-font-style) !important;
+}
+
+/* ---------- Post-/Page-Titel ------------------------------------------- */
+body .blog-post-title-wrapper h2,
+body .blog-post-title-wrapper h2 a,
+body .blog-post-title-wrapper-full h2 {
+    font-size: var(--post-font-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--post-font-weight);
+    font-style: var(--post-font-style);
+}
+
+/* ---------- Service-Titel ---------------------------------------------- */
+body .service-area h2 {
+    font-size: var(--service-font-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--service-font-weight);
+    font-style: var(--service-font-style);
+}
+
+/* ---------- Portfolio-Titel -------------------------------------------- */
+body .main-portfolio-showcase .main-portfolio-showcase-detail h4 {
+    font-size: var(--portfolio-font-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--portfolio-font-weight);
+    font-style: var(--portfolio-font-style);
+}
+
+/* ---------- Widget-Titel (Footer & Sidebar) ---------------------------- */
+body .footer_widget_title,
+body .footer-widget-section .wp-block-search .wp-block-search__label,
+body .footer-widget-section h1,
+body .footer-widget-section h2,
+body .footer-widget-section h3,
+body .footer-widget-section h4,
+body .footer-widget-section h5,
+body .footer-widget-section h6,
+body .sidebar-widget-title h2,
+body .sidebar-widget .wp-block-search .wp-block-search__label,
+body .sidebar-widget h1,
+body .sidebar-widget h2,
+.sidebar-widget h3,
+body .sidebar-widget h4,
+body .sidebar-widget h5,
+body .sidebar-widget h6,
+.wc-block-product-search__label {
+    font-size: var(--widget-font-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--widget-font-weight);
+    font-style: var(--widget-font-style);
+}
+
+/* ---------- Callout-Bereich ------------------------------------------- */
+body .callout-section h3 {
+    font-size: var(--callout-title-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--callout-title-weight);
+    font-style: var(--callout-title-style);
+}
+
+body .callout-section p {
+    font-size: var(--callout-desc-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--callout-desc-weight);
+    font-style: var(--callout-desc-style);
+}
+
+body .callout-section a {
+    font-size: var(--callout-link-size);
+    font-family: var(--font-family-base);
+    font-weight: var(--callout-link-weight);
+    font-style: var(--callout-link-style);
+}
+
+/* ---------- Rahmen-Hilfsklassen ------------------------------------- */
+.border {
+    border-style: solid;
+    border-width: var(--border-base);
+}
+
+.border-big {
+    border-style: solid;
+    border-width: var(--border-bigbase);
+}
+
+.border-small {
+    border-style: solid;
+    border-width: var(--border-smallbase);
+}
+
+.border-verysmall {
+    border-style: solid;
+    border-width: var(--border-verysmallbase);
+}
+
+/* ---------- Logo – Static vs. Fixed Header ----------------------------- */
+.navbar-static-top .custom-logo {
+    width: var(--logo-width);
+    top: var(--logo-top);
+    max-width: 500px;
+    left: var(--logo-left, auto);
+    height: auto;
+}
+
+.navbar-fixed-top .custom-logo {
+    width: var(--fixed-logo-width);
+    top: var(--fixed-logo-top);
+    max-width: 500px;
+    left: var(--logo-left, auto);
+    height: auto;
+}
+
+/* ---------- Zusätzliche Font-Gewichte für div. Elemente ---------------- */
+.blog-author h6,
+.blog-list-view .blog-post-title-wrapper h2,
+.blog-list-view .blog-post-title-wrapper-full h2,
+.blog-post-title-wrapper h2,
+.title h3,
+.blog-post-title-wrapper h2 span.title.post_format,
+.blog-post-title-wrapper h2 span.title.post_format.none~.title,
+.features-title,
+.home-blog-area .home-blog-info h2,
+.page-blog-area .home-blog-info h2,
+.sidebar-widget .wp-block-search .wp-block-search__label,
+.sidebar-widget h1,
+.sidebar-widget h2,
+.sidebar-widget h3,
+.sidebar-widget h4,
+.sidebar-widget h5,
+.sidebar-widget h6,
+.slide-text-bg1 h2,
+a.comment-edit-link,
+a.comment-reply-link,
+input[type=\"submit\"],
+button,
+.btn,
+a.button {
+    font-family: var(--font-family-base);
+    font-weight: 300;
+}
+
+.page-title-col h1,
+.slide-text-bg2 h1 {
+    font-family: var(--font-family-base);
+    font-weight: 500;
+}
+
+.section_heading_title h1,
+.sidebar-widget div#calendar_wrap table>caption,
+.footer_widget_column div#calendar_wrap table>caption,
+.about-section h3,
+.blog-post-date span.comment {
+    font-family: var(--font-family-base);
+    font-weight: 700;
+}
+
+/* ---------- Layout-Abstände ------------------------------------------- */
+div.page-mycarousel:not(.home .page-mycarousel) {
+    margin-bottom: var(--carousel-margin-bottom);
+}
+
+.custom-positions .page-breadcrumbs {
+    bottom: var(--breadcrumb-bottom);
+}
+
+.custom-positions .container.page-title-col {
+    padding-bottom: var(--title-padding-bottom);
+}
+
+.custom-positions .page-mycarousel:not(.home .page-mycarousel) {
+    margin-bottom: var(--carousel-margin-bottom-alt);
+}
+
+/* ---------- Farbwerte ------------------------------------------------ */
+
 button.wp-block-button__link,
 .portfolio-detail-section a.btn,
 .portfolio-detail-section a.button,
@@ -77,46 +260,39 @@ a.btn,
 button.btn,
 a.comment-edit-link,
 a.comment-reply-link {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .pagetitle-separator-border {
-    background: <?php echo $link_color;
-    ?> !important;
+    background: var(--link-color) !important;
 }
 
 .pagetitle-separator-box {
-    background: <?php echo $link_color;
-    ?>none repeat scroll 0 0 !important;
+    background: var(--link-color)none repeat scroll 0 0 !important;
 }
 
 .home-portfolio-showcase .home-portfolio-showcase-detail p:before,
 .main-portfolio-showcase .main-portfolio-showcase-detail p:before {
-    background: linear-gradient(transparent 55%, <?php the_additional_rgba($link_color, $alpha=0.6); ?> 70%);
+    background: linear-gradient(transparent 55%, var(--link-color_additional-60) 70%);
 }
 
 .comment-img {
-    border: 0.25em solid <?php the_additional_rgba($link_color, $alpha=0.15);
-    ?>
+    border: 0.25em solid var(--link-color_additional-15)
 }
 
 .wallstreet.fixed-widget {
-    border: 1px solid <?php the_additional_rgba($link_color, $alpha=0.15);
-    ?>
+    border: 1px solid var(--link-color_additional-15)
 }
 
 .wallstreet.fixed-widget button {
-    background-color: <?php the_additional_rgba($link_color, $alpha=0.15);
-    ?>;
+    background-color: var(--link-color_additional-15);
 }
 
 .search .blog-pagination a,
 .blog-pagination a,
 .btn.tab,
 .btn-default.active {
-    background-color: <?php the_additional_rgba($link_color, $alpha=0.65);
-    ?>;
+    background-color: var(--link-color_additional-65);
 }
 
 /* Text Colors */
@@ -247,38 +423,34 @@ article a:hover,
 .nav-search a,
 .breadcrumbs>li a:hover,
 .about-us .social a:hover {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .wallstreet.fixed-widget,
 .testimonial-section .overlay,
 .dropdown-menu,
 .nav>li.menu-item>a:after {
-    background: <?php the_reduced_rgba($link_color, $alpha=0.7);
-    ?> !important;
+    background: var(--link-color_reduced-70) !important;
 }
 
 .service-area:hover,
 .btn-default:hover {
-    background: <?php the_additional_rgba($link_color, $alpha=0.7);
-    ?> !important;
+    background: var(--link-color_additional-70) !important;
 }
 
 .main-portfolio-showcase-overlay,
 .home-portfolio-showcase-overlay {
-    background: <?php the_additional_rgba($link_color, $alpha=0.7);
-    ?> !important;
+    background: var(--link-color_additional-70) !important;
 }
 
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:hover,
 .dropdown-menu>.active>a:focus {
-    color: <?php the_additional_rgba($link_color, $alpha=1, "#303030") ?>;
+    color: var(--link-color_reduced-100);
 }
 
 .dropdown-menu>li>a:hover {
-    color: <?php the_additional_rgba($link_color, $alpha=1, "#303030") ?>;
+    color: var(--link-color_reduced-100);
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -291,15 +463,13 @@ article a:hover,
     .navbar .navbar-nav>.open>a:focus,
     .navbar .navbar-nav>li>a:hover,
     .navbar .navbar-nav>li>a:focus {
-        color: <?php echo $link_color;
-        ?>;
+        color: var(--link-color);
     }
 
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
     .menu-primary-container li a:hover,
     th {
-        color: <?php echo $link_color;
-        ?>;
+        color: var(--link-color);
     }
 }
 
@@ -313,13 +483,11 @@ article a:hover,
     .navbar .navbar-nav>.open>a:focus,
     .navbar .navbar-nav>li>a:hover,
     .navbar .navbar-nav>li>a:focus {
-        color: <?php echo $link_color;
-        ?>;
+        color: var(--link-color);
     }
 
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
-        color: <?php echo $link_color;
-        ?>;
+        color: var(--link-color);
     }
 }
 
@@ -341,48 +509,39 @@ article a:hover,
 .portfolio-detail-pagi li a:hover,
 .portfolio-detail-info .project-btn:hover,
 .prelated-project-btn li a:hover {
-    border: 1px solid <?php echo $link_color;
-    ?>;
+    border: 1px solid var(--link-color);
 }
 
 .blog-pagination a:hover,
 .blog-pagination a.active {
-    border: 0.2em solid <?php echo $link_color;
-    ?>;
+    border: 0.2em solid var(--link-color);
 }
 
 .team-effect:hover .team-box img {
-    border: 3px solid <?php echo $link_color;
-    ?>;
+    border: 3px solid var(--link-color);
 }
 
 .callout-section {
-    border-top: 1px solid <?php echo $link_color;
-    ?>;
-    border-bottom: 5px solid <?php echo $link_color;
-    ?>;
+    border-top: 1px solid var(--link-color);
+    border-bottom: 5px solid var(--link-color);
 }
 
 .search_widget_input:focus {
-    border-color: <?php echo $link_color;
-    ?>;
+    border-color: var(--link-color);
 }
 
 .blog-blockquote blockquote,
 .blog-post-title-wrapper>blockquote,
 .blog-post-title-wrapper-full>blockquote {
-    border-left: 3px solid <?php echo $link_color;
-    ?>;
+    border-left: 3px solid var(--link-color);
 }
 
 .typo-section blockquote {
-    border-left: 5px solid <?php echo $link_color;
-    ?>;
+    border-left: 5px solid var(--link-color);
 }
 
 .dropdown-menu>li>a {
-    border-bottom: 1px solid <?php the_reduced_rgba($link_color, $alpha=0.7);
-    ?>;
+    border-bottom: 1px solid var(--link-color_reduced-70);
 }
 
 .dropdown-menu>.active>a,
@@ -392,100 +551,82 @@ article a:hover,
 }
 
 .other-service-area i {
-    border: 2px solid <?php echo $link_color;
-    ?>;
+    border: 2px solid var(--link-color);
 }
 
 .navbar.navbar-fixed-top {
-    border-bottom: 5px solid <?php echo $link_color;
-    ?>;
+    border-bottom: 5px solid var(--link-color);
 }
 
 /* Woocommerce */
 .woocommerce #respond input#submit.alt,
 .woocommerce button.button.alt {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce nav.woocommerce-pagination ul li a:focus,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li span.current {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    background: <?php echo $link_color;
-    ?>;
-    border-bottom-color: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
+    border-bottom-color: var(--link-color);
 }
 
 .woocommerce-message,
 .woocommerce-info {
-    border-top-color: <?php echo $link_color;
-    ?>;
+    border-top-color: var(--link-color);
 }
 
 .woocommerce-message:before,
 .woocommerce-info:before {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .woocommerce a.button.alt {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce a.button.alt:hover {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce input.button.alt {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce button.button.alt.disabled,
 .woocommerce button.button.alt.disabled:hover,
 .woocommerce input.button:disabled:hover,
 .woocommerce input.button:disabled[disabled]:hover {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce-MyAccount-navigation ul li>a:hover {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .woocommerce-product-search input[type="submit"] {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .cart_list a {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .order a,
 .wc-forward {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .ui-slider-horizontal .ui-slider-range {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .woocommerce-message a {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .woocommerce #respond input#submit,
@@ -494,44 +635,34 @@ article a:hover,
 .woocommerce input.button,
 .woocommerce #respond input#submit.alt,
 .woocommerce button.button.alt {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .cart-header>a.cart-total {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .search-form input[type="submit"] {
-    background-color: <?php echo $link_color;
-    ?>;
-    border: 1px solid <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
+    border: 1px solid var(--link-color);
 }
 
 .navbar4 .navbar-header {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .service1 .service-effect:hover .service-box i.fa {
-    box-shadow: <?php echo $link_color;
-    ?>0px 0px 0px 1px;
-    color: <?php echo $link_color;
-    ?>;
+    box-shadow: var(--link-color)0px 0px 0px 1px;
+    color: var(--link-color);
 }
 
 .service1 .service-box i.fa {
-    background: <?php echo $link_color;
-    ?>;
-    box-shadow: <?php echo $link_color;
-    ?>0px 0px 0px 1px;
+    background: var(--link-color);
+    box-shadow: var(--link-color)0px 0px 0px 1px;
 }
 
 .service1 .service-box img {
-    box-shadow: <?php echo $link_color;
-    ?>0px 0px 0px 1px;
+    box-shadow: var(--link-color)0px 0px 0px 1px;
 }
 
 .service1 .service-btn a,
@@ -543,68 +674,55 @@ article a:hover,
 }
 
 .service1 h2>a:hover {
-    color: <?php echo $link_color;
-    ?> !important;
+    color: var(--link-color) !important;
 }
 
 .service1 .service-effect .service-btn:hover a {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .service2 .service-effect::before {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .service2 .service-box i.fa {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service3 .service-box i.fa {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .service3 .service-effect:hover {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .service3 .service-effect:hover .service-box i.fa {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service4 .service-box i.fa {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service4 h2>a:hover {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service4 .service-effect .service-btn:hover a {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .page_scrollup {
-    background-color: <?php the_reduced_rgba($link_color, $alpha=0.7);
-    ?> !important;
+    background-color: var(--link-color_reduced-70) !important;
 }
 
 .team1 .team-img .overlay {
-    background-color: <?php the_reduced_rgba($link_color, $alpha=0.85);
-    ?>;
+    background-color: var(--link-color_reduced-85);
 }
 
 .team-section1 .position {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .team-section1 h3,
@@ -619,13 +737,11 @@ article a:hover,
 }
 
 .team-section1 .custom-social-icons li>a:hover {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .team4 .team-block .custom-social-icons li>a:hover {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .blog-post-title-wrapper p,
@@ -637,49 +753,47 @@ article a:hover,
 .nav .open>a:hover,
 .nav .open>a:focus {
     background-color: transparent;
-    border-color: <?php the_reduced_rgba($link_color, $alpha=0.5);
-    ?>;
+    border-color: var(--link-color_reduced-50);
+}
+
+.navbar .navbar-nav>.active>a,
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>.active>a:focus {
+    color: var(--link-contrast);
 }
 
 .navbar.navbar2 .navbar-nav>.active>a,
 .navbar.navbar2 .navbar-nav>.active>a:hover,
 .navbar.navbar2 .navbar-nav>.active>a:focus {
     background-color: transparent;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .navbar.navbar2 .navbar-nav>li.active>a:after,
 .navbar2 ul li>a:hover:after {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .navbar.navbar2 .navbar-nav>li>a:hover,
 .navbar.navbar2 .navbar-nav>li>a:focus {
     background-color: transparent;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .header-style-5.navbar-inverse .navbar-toggle,
 .header-style-5.navbar-inverse .navbar-toggle:hover {
-    background: none repeat scroll 0 0 <?php the_reduced_rgba($link_color, $alpha=0.85);
-    ?>;
+    background: none repeat scroll 0 0 var(--link-color_reduced-85);
     border-color: transparent;
 }
 
 .page-template-blog-fullwidth .blog-post-title-wrapper-full div .blog-btn:after {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .portfolio-tabs-section .portfolio-tabs .nav-link.active,
 .portfolio-tabs-section .portfolio-tabs .nav-link:hover {
-    border: 1px solid <?php echo $link_color;
-    ?>;
-    background-color: <?php echo $link_color;
-    ?>;
+    border: 1px solid var(--link-color);
+    background-color: var(--link-color);
     color: #ffffff;
 }
 
@@ -687,39 +801,33 @@ article a:hover,
 .navbar.navbar5 .navbar-nav>.active>a:hover,
 .navbar.navbar5 .navbar-nav>.active>a:focus {
     background-color: transparent;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .navbar.navbar5 .navbar-nav>.open>a,
 .navbar.navbar5 .navbar-nav>.open>a:hover,
 .navbar.navbar5 .navbar-nav>.open>a:focus {
     background-color: transparent;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .navbar.navbar5 .navbar-nav>li>a:hover,
 .navbar.navbar5 .navbar-nav>li>a:focus {
     background-color: transparent;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service5 .service-box i.fa {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .service5 .service-effect:hover {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .service5 .service-effect:hover .service-box i.fa {
     background-color: #ffffff;
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .service5 .service-effect {
@@ -727,8 +835,7 @@ article a:hover,
 }
 
 .service5 .service-box img {
-    box-shadow: <?php echo $link_color;
-    ?>0px 0px 0px 1px;
+    box-shadow: var(--link-color)0px 0px 0px 1px;
 }
 
 /*Widget css*/
@@ -736,50 +843,46 @@ article a:hover,
 .sidebar-widget li a:focus,
 .footer-widget-section li a:hover,
 .footer-widget-section li a:focus {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .wp-block-search .wp-block-search__button {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
 
 .wp-block-calendar table caption,
 .wp-block-calendar a {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .wp-block-tag-cloud a:hover,
 .wp-block-tag-cloud a:focus {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
     border: none;
 }
 
 .ui-slider-horizontal .ui-slider-range {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .wc-block-product-search .wc-block-product-search__button {
-    background: <?php echo $link_color;
-    ?>;
+    background: var(--link-color);
 }
 
 .sidebar-widget p a,
 .footer-widget-section .footer_widget_column p a,
 .sidebar-widget .wp-block-latest-comments__comment-author,
 .footer-widget-section .wp-block-latest-comments__comment-author {
-    color: <?php echo $link_color;
-    ?>;
+    color: var(--link-color);
 }
 
 .wpcf7-submit {
-    background-color: <?php echo $link_color;
-    ?>;
+    background-color: var(--link-color);
 }
-</style>
-<?php
-} ?>
+
+/* ---------- Header-Top auf Mobile ausblenden --------------------------- */
+@media (max-width:480px) {
+    body.hide-header-top .header-top-area {
+        display: none;
+    }
+}

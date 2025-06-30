@@ -7,225 +7,243 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-define("TEMPLATE_DIR_URI", get_template_directory_uri());
-define("TEMPLATE_DIR", get_template_directory());
-define("THEME_ASSETS_PATH", TEMPLATE_DIR . "/assets");
-define("THEME_ASSETS_PATH_URI", TEMPLATE_DIR_URI . "/assets");
-define("THEME_FUNCTIONS_PATH", TEMPLATE_DIR . "/functions");
-define("THEME_OPTIONS_PATH", TEMPLATE_DIR_URI . "/functions/theme_options");
+/* -------------------------------------------------------------------------
+ * 1.  Basis‑Konstanten (werden nur gesetzt, falls noch nicht definiert)
+ * ----------------------------------------------------------------------*/
+defined( 'TEMPLATE_DIR' )      || define( 'TEMPLATE_DIR',      untrailingslashit( get_template_directory() ) );
+defined( 'TEMPLATE_DIR_URI' )  || define( 'TEMPLATE_DIR_URI',  untrailingslashit( get_template_directory_uri() ) );
 
-if (!defined('DJS_CORE_PLUGIN_DIR')) {
-    add_action('admin_notices', function() { echo "<div class='notice'><p>" . sprintf(__('To use the theme "DJS-Wallstreet-Pro" download the plugin <a href="%s">%s</a>', "djs-wallstreet-pro"), "https://github.com/DSchuppelius/djs-wallstreet-pro-core/releases/latest/", "DJS-Wallstreet-Pro Core") . "</p></div>"; });
-    switch_theme(WP_DEFAULT_THEME);
-} elseif (!defined('DJS_POSTTYPE_PLUGIN_DIR')) {
-    add_action('admin_notices', function() { echo "<div class='notice'><p>" . sprintf(__('To use all features of the theme "DJS-Wallstreet-Pro" download the plugin <a href="%s">%s</a>', "djs-wallstreet-pro"), "https://github.com/DSchuppelius/djs-wallstreet-pro-post-types/releases/latest/", "DJS-Wallstreet-Pro Post-Types") . "</p></div>"; });
+defined( 'THEME_ASSETS_PATH' )     || define( 'THEME_ASSETS_PATH',     TEMPLATE_DIR     . '/assets' );
+defined( 'THEME_ASSETS_PATH_URI' ) || define( 'THEME_ASSETS_PATH_URI', TEMPLATE_DIR_URI . '/assets' );
+
+defined( 'THEME_FUNCTIONS_PATH' )  || define( 'THEME_FUNCTIONS_PATH',  TEMPLATE_DIR     . '/functions' );
+defined( 'THEME_OPTIONS_PATH' )    || define( 'THEME_OPTIONS_PATH',    TEMPLATE_DIR_URI . '/functions/theme_options' );
+
+/* -------------------------------------------------------------------------
+ * 2.  Pflicht‑Plugins prüfen (simple Notice, kein Theme‑Switch)
+ * ----------------------------------------------------------------------*/
+if ( ! defined( 'DJS_CORE_PLUGIN_DIR' ) ) {
+	add_action( 'admin_notices', static function () {
+		printf(
+			'<div class="notice notice-error"><p>%s</p></div>',
+			esc_html__( 'Das Theme "DJS‑Wallstreet‑Pro" benötigt das Plugin "DJS‑Wallstreet‑Pro Core".', 'djs-wallstreet-pro' ) .
+			' <a href="https://github.com/DSchuppelius/djs-wallstreet-pro-core/releases/latest/" target="_blank" rel="noopener">Download</a>'
+		);
+	} );
 }
 
-require_once "theme_setup_data.php";
-
-require_once THEME_FUNCTIONS_PATH . "/base/get_template_parts.php";
-require_once THEME_FUNCTIONS_PATH . "/base/get_content_title.php";
-require_once THEME_FUNCTIONS_PATH . "/theme/theme_functions.php";
-require_once THEME_FUNCTIONS_PATH . "/theme/theme_colors.php";
-require_once THEME_FUNCTIONS_PATH . "/scripts/scripts.php";
-require_once THEME_FUNCTIONS_PATH . "/font/font.php";
-require_once THEME_FUNCTIONS_PATH . "/content/content.php";
-require_once THEME_FUNCTIONS_PATH . "/excerpt/excerpt.php";
-require_once THEME_FUNCTIONS_PATH . "/breadcrumbs/breadcrumbs.php";
-require_once THEME_FUNCTIONS_PATH . "/testimonials/testimonials.php";
-require_once THEME_FUNCTIONS_PATH . "/pagination/theme_pagination.php";
-require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_page.php";
-require_once THEME_FUNCTIONS_PATH . "/menu/theme_bootstrap_walker_nav_menu.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/blog.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/footnote.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/archive.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/lazyload.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/generator.php";
-require_once THEME_FUNCTIONS_PATH . "/basic/htmlclasses.php";
-// Sidebar Widgets
-require_once THEME_FUNCTIONS_PATH . "/widget/custom-sidebar.php";
-require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-latest-widget.php";
-require_once THEME_FUNCTIONS_PATH . "/widget/wallstreet-post-format-widget.php";
-// Shortcodes
-require_once THEME_FUNCTIONS_PATH . "/shortcodes/shortcodes.php";
-// Customizer
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/customizer-controls.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-blog.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-home.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-global.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-social.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-template.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-copyright.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-typography.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/childs/customizer-theme_style.php";
-require_once THEME_FUNCTIONS_PATH . "/customizer/single-blog-options.php";
-require_once THEME_ASSETS_PATH . "/css/custom_dark.php";
-require_once THEME_ASSETS_PATH . "/css/custom_light.php";
-// Title
-function theme_head($title, $sep) {
-    global $paged, $page;
-    if (is_feed()) {
-        return $title;
-    }
-
-    // Add the site name.
-    $title .= get_bloginfo("name");
-
-    // Add the site description for the home/front page.
-    $site_description = get_bloginfo("description");
-    if ($site_description && (is_home() || is_front_page())) {
-        $title = "$title $sep $site_description";
-    }
-
-    // Add a page number if necessary.
-    if ($paged >= 2 || $page >= 2) {
-        $title = "$title $sep " . sprintf(esc_html__("Page", "djs-wallstreet-pro"), max($paged, $page));
-    }
-
-    return $title;
-}
-add_filter("wp_title", "theme_head", 10, 2);
-
-if(!function_exists("language_theme_setup")) {
-    function language_theme_setup() {
-        $domain = 'djs-wallstreet-pro';
-
-        // Workaround nur für WordPress 6.7
-        if (version_compare(get_bloginfo('version'), '6.7', '>=') && version_compare(get_bloginfo('version'), '6.7.1', '<')) {
-            global $l10n, $wp_textdomain_registry;
-            $locale = get_locale();
-
-            if ( isset($wp_textdomain_registry) && method_exists($wp_textdomain_registry, 'set') ) {
-                $wp_textdomain_registry->set($domain, $locale, TEMPLATE_DIR . '/languages');
-            }
-
-            if (isset($l10n[$domain])) {
-                unset($l10n[$domain]);
-            }
-        }
-
-        load_theme_textdomain($domain, TEMPLATE_DIR . '/languages');
-    }
+if ( ! defined( 'DJS_POSTTYPE_PLUGIN_DIR' ) ) {
+	add_action( 'admin_notices', static function () {
+		printf(
+			'<div class="notice notice-warning"><p>%s</p></div>',
+			esc_html__( 'Für alle Funktionen benötigst du zusätzlich das Plugin "DJS‑Wallstreet‑Pro Post‑Types".', 'djs-wallstreet-pro' ) .
+			' <a href="https://github.com/DSchuppelius/djs-wallstreet-pro-post-types/releases/latest/" target="_blank" rel="noopener">Download</a>'
+		);
+	} );
 }
 
-if (!function_exists("theme_setup")) {
-    function theme_setup() {
-        global $content_width;
-        if (!isset($content_width)) {
-            $content_width = 600;
-        } //in px
+require_once TEMPLATE_DIR . '/theme_setup_data.php';
 
-        language_theme_setup();
+/* -------------------------------------------------------------------------
+ * 3.  Autoload für Theme‑Klassen (PSR‑4‑ähnlich)
+ * ----------------------------------------------------------------------*/
+spl_autoload_register( static function ( $class ) {
+	$prefix = 'DJS\\';
+	if ( strpos( $class, $prefix ) !== 0 ) {
+		return;
+	}
+	$path = THEME_FUNCTIONS_PATH . '/' . strtolower( str_replace( [ $prefix, '\\' ], [ '', '/' ], $class ) ) . '.php';
+	if ( is_readable( $path ) ) {
+		require_once $path;
+	}
+} );
 
-        add_image_size("index-thumb", 493, 300, true);
-        add_image_size("blog-thumb", 1000, 400, true);
-        add_image_size("about-thumb", 1525, 450, true);
-        add_image_size("banner-thumb", 2144, 650, true);
-        add_image_size("bigbanner-thumb", 2144, 800, true);
-        add_image_size("port-thumb", 550, 550, true);
-        add_image_size("bigport-thumb", 1000, 1000, true);
-
-        add_image_size("post-thumb", 733, 0);
-        add_image_size("bigpost-thumb", 1000, 0);
-        add_image_size("fullpost-thumb", 1525, 0);
-
-        register_default_headers([
-            "mypic" => [
-                "url" => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
-                "thumbnail_url" => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
-                "description" => _x("MyPic", "header image description", "djs-wallstreet-pro"),
-            ],
-        ]);
-
-        // This theme uses wp_nav_menu() in one location.
-        register_nav_menu("primary", esc_html__("Primary Menu", "djs-wallstreet-pro")); //Navigation
-
-        // theme support
-        add_theme_support("automatic-feed-links");
-        add_theme_support("responsive-embeds");
-        add_theme_support("post-thumbnails");
-        add_theme_support("wp-block-styles");
-        add_theme_support('editor-style');
-        add_theme_support("title-tag");
-
-        set_post_thumbnail_size(1000, 400, true);
-
-        add_theme_support('html5', ['comment-list', 'search-form', 'comment-form']);
-        add_theme_support("post-formats", ["link", "aside", "gallery", "image", "quote", "status", "video", "audio", "chat"]);
-
-        // custom header
-        add_theme_support("custom-header", [
-            "default-image"         => THEME_ASSETS_PATH_URI . "/images/page-header-bg.jpg",
-            "width"                 => "2560",
-            "height"                => "640",
-            "flex-height"           => false,
-            "flex-width"            => false,
-            "header-text"           => true,
-            "default-text-color"    => "#143745",
-        ]);
-
-        add_theme_support("custom-logo", [
-            "width"                 => 300,
-            "height"                => 50,
-            "top"                   => 0,
-            "flex-width"            => true,
-            "flex-height"           => true,
-            "header-text"           => ["site-title", "site-description"],
-        ]);
-
-        add_theme_support("custom-background", [
-            "default-color"         => "000000",
-            'default-repeat'        => 'no-repeat',
-            'default-position-x'    => 'center',
-            'default-position-y'    => 'center',
-            'default-size'          => 'auto',
-            'default-attachment'    => 'fixed',
-            "default-image"         => THEME_ASSETS_PATH_URI . "/images/page-bg.jpg",
-        ]);
-
-        // Woocommerce support
-        add_theme_support("woocommerce");
-
-        // Added woocommerce galllery support
-        add_theme_support("wc-product-gallery-zoom");
-        add_theme_support("wc-product-gallery-lightbox");
-        add_theme_support("wc-product-gallery-slider");
-    }
+/* -------------------------------------------------------------------------
+ * 4.  Helfer zum einfachen Einbinden alter Funktions‑Dateien
+ * ----------------------------------------------------------------------*/
+foreach ( [
+	'base/get_template_parts',
+	'base/get_content_title',
+	'theme/theme_functions',
+	'theme/theme_colors',
+	'scripts/scripts',
+    'scripts/custom_style',
+	'font/font',
+	'content/content',
+	'excerpt/excerpt',
+	'breadcrumbs/breadcrumbs',
+	'testimonials/testimonials',
+	'pagination/theme_pagination',
+	'menu/theme_bootstrap_walker_page',
+	'menu/theme_bootstrap_walker_nav_menu',
+	'basic/blog',
+	'basic/footnote',
+	'basic/archive',
+	'basic/lazyload',
+	'basic/generator',
+	'basic/htmlclasses',
+	'widget/custom-sidebar',
+	'widget/wallstreet-latest-widget',
+	'widget/wallstreet-post-format-widget',
+	'shortcodes/shortcodes',
+	'customizer/customizer',
+	'customizer/customizer-controls',
+	'customizer/childs/customizer-blog',
+	'customizer/childs/customizer-home',
+	'customizer/childs/customizer-global',
+	'customizer/childs/customizer-social',
+	'customizer/childs/customizer-template',
+	'customizer/childs/customizer-copyright',
+	'customizer/childs/customizer-typography',
+	'customizer/childs/customizer-theme_style',
+	'customizer/single-blog-options',
+] as $file ) {
+	$path = THEME_FUNCTIONS_PATH . '/' . ltrim( $file, '/' ) . '.php';
+	if ( is_readable( $path ) ) {
+		require_once $path;
+	}
 }
-add_action("after_setup_theme", "theme_setup");
 
-function kb_mimes($my_mime){
-    $my_mime['FCStd'] = 'application/zip';
-    $my_mime['svg']   = 'image/svg+xml';
-    $my_mime['zip']   = 'application/zip';
-    $my_mime['m4a']   = 'audio/mp4';
-    $my_mime['mp4']   = 'application/mp4';
-    $my_mime['mp3']   = 'audio/mp3';
-    return $my_mime;
-}
-add_filter('upload_mimes', 'kb_mimes');
+/* -------------------------------------------------------------------------
+ * 5.  Theme‑Setup (Nach WP‑Best Practice)
+ * ----------------------------------------------------------------------*/
+add_action( 'after_setup_theme', 'djs_wallstreet_setup' );
 
-function add_to_author_profile($contactmethods) {
-    $contactmethods["facebook_profile"] = esc_html__("Facebook URL", "djs-wallstreet-pro");
-    $contactmethods["twitter_profile"] = esc_html__("Twitter URL", "djs-wallstreet-pro");
-    $contactmethods["linkedin_profile"] = esc_html__("LinkedIn URL", "djs-wallstreet-pro");
-    return $contactmethods;
-}
-add_filter("user_contactmethods", "add_to_author_profile", 10, 1);
+function djs_wallstreet_setup() {
+	// Übersetzungen
+	load_theme_textdomain( 'djs-wallstreet-pro', TEMPLATE_DIR . '/languages' );
 
-function add_gravatar_class($class) {
-    $class = str_replace("class='avatar", "class='img-responsive comment-img img-circle", $class);
-    return $class;
-}
-add_filter("get_avatar", "add_gravatar_class");
+	// Content‑Width (Legacy)
+	$GLOBALS['content_width'] = $GLOBALS['content_width'] ?? 600;
 
-function next_posts_link_attributes() {
-  return 'class="btn next"';
-}
-add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
+	// Editor‑Styles & Block‑Styles
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'wp-block-styles' );
+	add_editor_style( THEME_ASSETS_PATH_URI . '/css/editor.css' );
 
-function prev_posts_link_attributes() {
-  return 'class="btn prev"';
+	// Grundlegende Supports
+	add_theme_supports( [
+		'automatic-feed-links',
+		'html5' => [ 'comment-list', 'comment-form', 'search-form' ],
+		'post-thumbnails',
+		'responsive-embeds',
+		'title-tag',
+	] );
+
+	add_theme_support( 'post-formats', [ 'aside','gallery','image','quote','video','audio' ] );
+
+	// Bildgrößen
+	$djs_sizes = [
+		'index-thumb'   => [493, 300, true],
+		'blog-thumb'    => [1000, 400, true],
+		'about-thumb'   => [1525, 450, true],
+		'banner-thumb'  => [2144, 650, true],
+		'bigbanner-thumb'=>[2144, 800, true],
+		'port-thumb'    => [550, 550, true],
+		'bigport-thumb' => [1000,1000, true],
+		'post-thumb'    => [733, 0, false],
+		'bigpost-thumb' => [1000,0,false],
+		'fullpost-thumb'=> [1525,0,false],
+	];
+	foreach ( $djs_sizes as $name => $args ) {
+		add_image_size( $name, ...$args );
+	}
+	set_post_thumbnail_size( 1000, 400, true );
+
+	// Menüs
+	register_nav_menu( 'primary', __( 'Primary Menu', 'djs-wallstreet-pro' ) );
+
+	// Head‑Grafiken
+	register_default_headers( [
+		'mypic' => [
+			'url'           => THEME_ASSETS_PATH_URI . '/images/page-header-bg.jpg',
+			'thumbnail_url' => THEME_ASSETS_PATH_URI . '/images/page-header-bg.jpg',
+			'description'   => _x( 'MyPic', 'header image description', 'djs-wallstreet-pro' ),
+		],
+	] );
+
+	// Custom Header / Logo / Background
+	add_theme_support( 'custom-header', [
+		'default-image'      => THEME_ASSETS_PATH_URI . '/images/page-header-bg.jpg',
+		'width'              => 2560,
+		'height'             => 640,
+		'default-text-color' => '#143745',
+	] );
+
+	add_theme_support( 'custom-logo', [
+		'width'       => 300,
+		'height'      => 50,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => [ 'site-title', 'site-description' ],
+	] );
+
+	add_theme_support( 'custom-background', [
+		'default-color'      => '000000',
+		'default-image'      => THEME_ASSETS_PATH_URI . '/images/page-bg.jpg',
+		'default-repeat'     => 'no-repeat',
+		'default-position-x' => 'center',
+		'default-position-y' => 'center',
+		'default-attachment' => 'fixed',
+	] );
+
+	// WooCommerce
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
-add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
+
+/* -------------------------------------------------------------------------
+ * 6.  MIME‑Types (SVG nur mit Safe‑SVG o. Ä.)
+ * ----------------------------------------------------------------------*/
+add_filter( 'upload_mimes', static function ( $types ) {
+	return $types + [
+		'fcstd' => 'application/zip',
+		'svg'   => 'image/svg+xml',
+		'zip'   => 'application/zip',
+		'm4a'   => 'audio/mp4',
+		'mp4'   => 'video/mp4',
+		'mp3'   => 'audio/mpeg',
+	];
+} );
+
+/* -------------------------------------------------------------------------
+ * 7.  Benutzer‑Profile – Social Links
+ * ----------------------------------------------------------------------*/
+add_filter( 'user_contactmethods', static function ( $methods ) {
+	return $methods + [
+		'facebook_profile' => __( 'Facebook URL', 'djs-wallstreet-pro' ),
+		'twitter_profile'  => __( 'Twitter URL', 'djs-wallstreet-pro' ),
+		'linkedin_profile' => __( 'LinkedIn URL', 'djs-wallstreet-pro' ),
+	];
+}, 10, 1 );
+
+/* -------------------------------------------------------------------------
+ * 8.  Avatar‑Klasse erweitern
+ * ----------------------------------------------------------------------*/
+add_filter( 'get_avatar', static function ( $html ) {
+	return str_replace( "class='avatar", "class='avatar img-responsive comment-img img-circle", $html );
+} );
+
+/* -------------------------------------------------------------------------
+ * 9.  Pagination‑Buttons
+ * ----------------------------------------------------------------------*/
+add_filter( 'next_posts_link_attributes',     fn() => 'class="btn next"' );
+add_filter( 'previous_posts_link_attributes', fn() => 'class="btn prev"' );
+
+/* -------------------------------------------------------------------------
+ * 10.  Fallback <title> für sehr alte WP‑Versionen (<4.1)
+ * ----------------------------------------------------------------------*/
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	add_filter( 'wp_title', static function ( $title, $sep ) {
+		if ( is_feed() ) {
+			return $title;
+		}
+		$title .= get_bloginfo( 'name' );
+		if ( ( $tagline = get_bloginfo( 'description' ) ) && ( is_home() || is_front_page() ) ) {
+			$title .= " $sep $tagline";
+		}
+		return $title;
+	}, 10, 2 );
+}
