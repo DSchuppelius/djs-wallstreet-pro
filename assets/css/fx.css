@@ -794,6 +794,11 @@ footer.site div.footer-copyright {
     transition: none;
 }
 
+a.btn,
+button.btn {
+    backdrop-filter: blur(5px);
+}
+
 .dropdown-menu,
 .dropdown-menu li {
     backdrop-filter: blur(5px) !important;
