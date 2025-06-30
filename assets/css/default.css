@@ -1205,6 +1205,7 @@ footer.site p {
 .portfolio-btn a.btn,
 .portfolio-btn button.btn {
     background-color: #32343c;
+    background: #32343c;
     color: #FFF
 }
 

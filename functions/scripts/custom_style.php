@@ -25,7 +25,7 @@ if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
             '--theme-color'                     => esc_attr(get_theme_link_color()),
 
             '--link-color'                      => $link,                                      // Volle Farbe
-            '--link-contrast'                   => is_dark_color($link) ? '#ffffff' : '#000000',
+            '--link-color-contrast'             => is_dark_color($link, 0.9) ? '#ffffff' : '#000000',
 
             // «additional» = zusätzliche Deckkraft / Aufhellen
             '--link-color_additional-100'       => get_rgba_color($link, 1.00, '#101010'),  // 100 %

@@ -263,6 +263,11 @@ a.comment-reply-link {
     background-color: var(--link-color);
 }
 
+a.btn,
+button.btn {
+    background: linear-gradient(0.25turn, var(--link-color_additional-60), var(--link-color) 55%, var(--link-color_additional-70));
+}
+
 .pagetitle-separator-border {
     background: var(--link-color) !important;
 }
@@ -759,7 +764,7 @@ article a:hover,
 .navbar .navbar-nav>.active>a,
 .navbar .navbar-nav>.active>a:hover,
 .navbar .navbar-nav>.active>a:focus {
-    color: var(--link-contrast);
+    color: var(--link-color-contrast);
 }
 
 .navbar.navbar2 .navbar-nav>.active>a,
