@@ -9,9 +9,8 @@
  */
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <header
-    class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar1 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>"
-    role="navigation">
-    <nav class="container">
+    class="navbar navbar-wrapper navbar-inverse navbar-static-top navbar1 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>">
+    <nav class="container" role="navigation" aria-label="<?php esc_attr_e("Main Navigation", "djs-wallstreet-pro"); ?>">
         <div class="navbar-header">
             <?php get_named_template_parts("template-parts/global/header/navbar", ["logo", "button"]); ?>
         </div>

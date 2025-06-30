@@ -15,7 +15,7 @@
         $custom_logo_id = get_theme_mod("custom_logo");
         $image = wp_get_attachment_image_src($custom_logo_id, "full"); ?>
     <a class="navbar-brand" href="<?php echo esc_url(home_url("/")); ?>">
-        <img src="<?php echo esc_url($image[0]); ?>" class=" img-responsive custom-logo">
+        <img src="<?php echo esc_url($image[0]); ?>" alt="Company Logo" class=" img-responsive custom-logo">
     </a>
     <?php }
     if(display_header_text()) { ?>
