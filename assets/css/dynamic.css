@@ -263,8 +263,8 @@ a.comment-reply-link {
     background-color: var(--link-color);
 }
 
-a.btn,
-button.btn {
+a.btn:not(.not),
+button.btn:not(.not) {
     background: linear-gradient(0.25turn, var(--link-color_additional-60), var(--link-color) 55%, var(--link-color_additional-70));
 }
 

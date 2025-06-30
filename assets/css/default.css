@@ -1204,8 +1204,8 @@ footer.site p {
 .portfolio-btn a,
 .portfolio-btn a.btn,
 .portfolio-btn button.btn {
-    background-color: #32343c;
-    background: #32343c;
+    background-color: #32343c !important;
+    background: #32343c !important;
     color: #FFF
 }
 
@@ -1460,7 +1460,8 @@ footer.site p {
 
 .service-area:hover .service-btn a,
 .service-area:hover button.btn {
-    background-color: #32343c
+    background-color: #32343c !important;
+    background: #32343c !important
 }
 
 .service-box img {
