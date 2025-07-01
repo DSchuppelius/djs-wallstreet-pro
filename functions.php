@@ -26,7 +26,7 @@ if ( ! defined( 'DJS_CORE_PLUGIN_DIR' ) ) {
 	add_action( 'admin_notices', static function () {
 		printf(
 			'<div class="notice notice-error"><p>%s</p></div>',
-			esc_html__( 'Das Theme "DJS‑Wallstreet‑Pro" benötigt das Plugin "DJS‑Wallstreet‑Pro Core".', 'djs-wallstreet-pro' ) .
+			esc_html__('To use the theme "DJS-Wallstreet-Pro" download the plugin DJS-Wallstreet-Pro Core', "djs-wallstreet-pro") .
 			' <a href="https://github.com/DSchuppelius/djs-wallstreet-pro-core/releases/latest/" target="_blank" rel="noopener">Download</a>'
 		);
 	} );
@@ -36,7 +36,7 @@ if ( ! defined( 'DJS_POSTTYPE_PLUGIN_DIR' ) ) {
 	add_action( 'admin_notices', static function () {
 		printf(
 			'<div class="notice notice-warning"><p>%s</p></div>',
-			esc_html__( 'Für alle Funktionen benötigst du zusätzlich das Plugin "DJS‑Wallstreet‑Pro Post‑Types".', 'djs-wallstreet-pro' ) .
+			esc_html__('To use all features of the theme "DJS-Wallstreet-Pro" download the plugin DJS-Wallstreet-Pro Post-Types', "djs-wallstreet-pro") .
 			' <a href="https://github.com/DSchuppelius/djs-wallstreet-pro-post-types/releases/latest/" target="_blank" rel="noopener">Download</a>'
 		);
 	} );
