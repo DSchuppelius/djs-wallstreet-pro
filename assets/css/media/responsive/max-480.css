@@ -290,7 +290,7 @@ article section figure:has(.cookies) {
     position: initial;
     max-height: 100px;
     max-width: 350px;
-    width: 100%
+    width: auto
 }
 
 .navbar.navbar-wrapper .container>.navbar-header {
