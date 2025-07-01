@@ -65,10 +65,15 @@ add_action("wp_enqueue_scripts", "theme_font_scripts");
 function theme_scripts() {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-    wp_enqueue_style("djs-wallstreet-pro-style",    get_stylesheet_uri());
+    wp_enqueue_style("djs-wallstreet-pro-style",    get_stylesheet_uri(),                                                           [], '1.0.0');
 
-    wp_enqueue_style("djs-wallstreet-pro-default",  THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_setup));
-    wp_enqueue_style("djs-wallstreet-pro-standard", THEME_ASSETS_PATH_URI . "/css/standard.css");
+    wp_enqueue_style("djs-wallstreet-pro-default",  THEME_ASSETS_PATH_URI . "/css/" . get_custom_stylesheet($current_setup),        [], '1.0.0');
+    wp_enqueue_style("djs-wallstreet-pro-standard", THEME_ASSETS_PATH_URI . "/css/standard.css",                                    [], '1.0.0');
+    wp_enqueue_style('djs-wallstreet-pro-dynamic',  THEME_ASSETS_PATH_URI . '/css/dynamic.css',                                     [], '1.0.0');
+
+    if ( function_exists("djs_wallstreet_root_css") ) {
+        wp_add_inline_style("djs-wallstreet-pro-standard", djs_wallstreet_root_css());
+    }
 
     wp_enqueue_style("djs-wallstreet-pro-jetpack",  THEME_ASSETS_PATH_URI . "/css/jetpack.css");
     wp_enqueue_style("djs-wallstreet-pro-button",   THEME_ASSETS_PATH_URI . "/css/button.css");
@@ -91,7 +96,7 @@ function theme_scripts() {
 
     wp_enqueue_style("media-print",                 THEME_ASSETS_PATH_URI . "/css/media/print.css",                                 [], '1.0.0', 'only print');
 
-    // require_once "custom_style.php";
+        // require_once "custom_style.php";
 
     if (defined("DJS_POSTTYPE_PLUGIN")) {
         require_once "custom_style_special.php";
@@ -196,23 +201,6 @@ if (!function_exists("wallstreet_customizer_preview_scripts")) {
     }
 }
 add_action("customize_preview_init", "wallstreet_customizer_preview_scripts");
-
-add_action( 'wp_enqueue_scripts', function () {
-
-    wp_enqueue_style(
-        'djs-wallstreet-pro-standard',
-        THEME_ASSETS_PATH_URI . '/css/standard.css',
-        [],
-        filemtime( THEME_ASSETS_PATH . '/css/standard.css' )
-    );
-
-    if ( function_exists( 'djs_wallstreet_root_css' ) ) {
-        wp_add_inline_style(
-            'djs-wallstreet-pro-standard',   //  ←  exakt derselbe Handle!
-            djs_wallstreet_root_css()
-        );
-    }
-}, 20 );   // Priorität 20 → garantiert nach dem Enqueue
 
 if($current_setup->get("remove_googlefonts") == true && $current_setup->get("enable_custom_typography") == false){
     add_filter('style_loader_src', function($href){

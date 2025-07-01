@@ -141,18 +141,6 @@ if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
 add_action( 'wp_enqueue_scripts', function () {
 	$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-	// Google Font
-	if ($current_setup->get("enable_custom_typography") == true) {
-		wp_enqueue_style('djs-google-font', wallstreet_fonts_url( $current_setup->get( 'google_font' ) ), [], null);
-	}
-
-	// Standard‑CSS sicherstellen
-	wp_enqueue_style('djs-wallstreet-pro-standard', THEME_ASSETS_PATH_URI . '/css/standard.css', [], '1.0.0');
-    wp_enqueue_style('djs-wallstreet-pro-dynamic', THEME_ASSETS_PATH_URI . '/css/dynamic.css', [], '1.0.0');
-
-	// Inline‑Styles anhängen
-	wp_add_inline_style('djs-wallstreet-pro-standard', djs_wallstreet_root_css());
-
 	// Header‑Top mobil ausblenden
 	if ('on' !== $current_setup->get('contact_header_settings' )) {
 		add_filter('body_class', static function($classes) {

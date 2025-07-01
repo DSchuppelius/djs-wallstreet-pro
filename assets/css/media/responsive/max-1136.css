@@ -40,6 +40,10 @@
         align-items: center
     }
 
+    .navbar.navbar-wrapper .container>.navbar-header .font-size-controls {
+        display: none;
+    }
+
     .navbar-nav {
         background-color: var(--theme-background-color);
         margin: 0;

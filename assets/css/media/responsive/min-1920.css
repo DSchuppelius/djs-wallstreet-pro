@@ -7,6 +7,11 @@
     min-width: 560px;
 }
 
+.navbar-fixed-top .custom-logo,
+.navbar-static-top .custom-logo {
+    max-width: 600px;
+}
+
 .blog-left-sidebar article section figure.wp-block-embed iframe,
 .blog-right-sidebar article section figure.wp-block-embed iframe,
 .blog-detail-section article section figure.wp-block-embed iframe,

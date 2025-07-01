@@ -1,13 +1,4 @@
-/* ---------- Basis-Schriftart ------------------------------------------- */
-body {
-    font-family: var(--font-family-base);
-}
-
-/* ---------- General copy ------------------------------------------------ */
-body .home-blog-description p,
-body .portfolio-detail-description p,
-body .blog-post-title-wrapper-full p,
-body .blog-post-title-wrapper p {
+html {
     font-size: var(--general-font-size);
     font-weight: var(--general-font-weight);
     font-style: var(--general-font-style);

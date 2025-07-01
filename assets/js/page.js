@@ -74,8 +74,8 @@ function adjustFontSize(change) {
     let currentSize = parseFloat(window.getComputedStyle(content).fontSize);
     let newSize = currentSize + change;
 
-    // Grenze setzen (min 10px, max 24px)
-    if (newSize >= 14 && newSize <= 18) {
+    // Grenze setzen (min 10px, max 19px)
+    if (newSize >= 14 && newSize <= 19) {
         content.style.fontSize = newSize + "px";
         localStorage.setItem("fontSize", newSize); // Speichern der Größe
     }

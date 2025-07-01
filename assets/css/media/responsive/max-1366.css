@@ -1,12 +1,3 @@
-.body-static-top .font-size-controls {
-    top: 5px;
-}
-
-.font-size-controls button {
-    display: flex;
-    align-items: center;
-}
-
 @media (max-width: 1300px) {
 
     .homepage_mycarousel rs-module,
@@ -43,6 +34,43 @@
 }
 
 @media (max-width: 1200px) {
+    .body-static-top .font-size-controls {
+        display: flex;
+        top: 5px;
+        flex-direction: column;
+        /* Buttons stapeln */
+        gap: 0;
+    }
+
+    /* Abstand erst bei Hover/Fokus */
+    .font-size-controls:hover,
+    .font-size-controls:focus-within {
+        gap: .25rem;
+    }
+
+    /* ---------- Buttons verstecken ---------- */
+    .font-size-controls .text_decrease,
+    .font-size-controls .text_increase {
+        /* statt Breite jetzt Höhe auf 0 setzen */
+        width: 30px;
+        /* volle Breite beibehalten */
+        height: 0;
+        /* ← nimmt keinen vertikalen Platz ein */
+        overflow: hidden;
+        transition: height .2s ease,
+            opacity .2s ease,
+            transform .2s ease;
+    }
+
+    /* Beim Ausklappen volle Höhe herstellen */
+    .font-size-controls:hover .text_decrease,
+    .font-size-controls:hover .text_increase,
+    .font-size-controls:focus-within .text_decrease,
+    .font-size-controls:focus-within .text_increase {
+        height: 30px;
+        /* identisch zur Button-Höhe */
+
+    }
 
     .dropdown>a .glyphicon,
     .dropdown-menu>a .glyphicon {
@@ -62,11 +90,8 @@
     .navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
         position: initial;
         max-height: 100px;
+        max-width: 395px;
         width: auto
-    }
-
-    .custom-logo {
-        max-width: 430px;
     }
 
     .navbar-header .site-logo-area.with-Logo {

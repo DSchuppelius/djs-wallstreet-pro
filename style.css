@@ -1644,6 +1644,7 @@ img.header-image,
     text-align: center
 }
 
+/* ---------------- Container ---------------- */
 .body-static-top .font-size-controls {
     top: 23px;
 }
@@ -1652,25 +1653,118 @@ img.header-image,
     position: fixed;
     top: 3px;
     right: 5px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.30);
     padding: 8px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.20);
+    display: inline-flex;
+    align-items: center;
+
+    /* ↧  Standard: keine Lücke → Container möglichst klein */
+    gap: 0;
+    transition: gap .2s ease;
+    /* Lücke animieren */
     z-index: 1000;
 }
 
+/* Beim Ausklappen etwas Abstand zwischen den Buttons */
+.font-size-controls:hover,
+.font-size-controls:focus-within {
+    gap: .25rem;
+}
+
+/* ---------------- Buttons ---------------- */
 .font-size-controls button {
-    box-shadow: inset 0 2.65em 0 -1.5em rgba(255, 255, 255, 0.15);
-    background-color: var(--theme-color);
-    font-size: 12px;
-    font-weight: 900;
-    opacity: 1;
-    min-width: 30px;
-    min-height: 30px;
+    box-shadow: inset 0 2.65em 0 -1.9em rgba(255, 255, 255, .15);
+    background: var(--theme-color);
     color: #fff;
-    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+
+    /* gleiche Größe für alle drei Buttons */
+    width: 30px;
+    height: 30px;
+
     border: none;
-    margin: 2px;
+    border-radius: 5px;
+    margin: 0;
+    /* ~wichtig~: kein Außenabstand */
+    padding: 0;
+}
+
+/* -------- Sichtbarkeit + Platz steuern -------- */
+
+/* - und + standardmäßig völlig zusammenschieben … */
+.font-size-controls .text_decrease,
+.font-size-controls .text_increase {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.8);
+
+    /* “verschwinden” lassen */
+    width: 0;
+    overflow: hidden;
+    /* falls Symbol größer wäre */
+    transition: opacity .2s ease,
+        transform .2s ease,
+        width .2s ease;
+    /* Breite animieren */
+}
+
+/* … und beim Hover/Fokus voll ausklappen */
+.font-size-controls:hover .text_decrease,
+.font-size-controls:hover .text_increase,
+.font-size-controls:focus-within .text_decrease,
+.font-size-controls:focus-within .text_increase {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+
+    /* ursprüngliche Breite wiederherstellen */
+    width: 30px;
+    /* identisch zu Button-Breite oben */
+}
+
+.font-size-controls .reset {
+    position: relative;
+}
+
+/* 2) Icons initial an exakt dieselbe Stelle setzen */
+.font-size-controls .reset span {
+    position: absolute;
+    /* übereinander stapeln */
+    inset: 0;
+    /* auf komplette Button-Fläche legen */
+    display: flex;
+    /* zentrierte Ausrichtung */
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s ease;
+}
+
+/* 3) Standard-Icon (settings_accessibility) sichtbar lassen … */
+.font-size-controls .reset span:nth-child(1) {
+    /* erstes <span> */
+    opacity: 1;
+}
+
+/* … Hover-Icon (refresh) verstecken */
+.font-size-controls .reset span:nth-child(2) {
+    /* zweites <span> */
+    opacity: 0;
+}
+
+/* 4) Beim Hover/Fokus Sichtbarkeiten umdrehen */
+.font-size-controls:hover .reset span:nth-child(1),
+.font-size-controls:focus-within .reset span:nth-child(1) {
+    opacity: 0;
+    /* Standard-Icon ausblenden */
+}
+
+.font-size-controls:hover .reset span:nth-child(2),
+.font-size-controls:focus-within .reset span:nth-child(2) {
+    opacity: 1;
+    /* Refresh-Icon einblenden */
 }
 
 .footer-blog-post {
