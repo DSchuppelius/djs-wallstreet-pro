@@ -651,3 +651,9 @@
         left: 20px;
     }
 }
+
+@media (max-width: 548px) {
+    .navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
+        max-width: 300px;
+    }
+}

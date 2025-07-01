@@ -14,19 +14,20 @@ article section figure:has(.cookies) {
     top: 15%
 }
 
-    #script_fullscreen .btn {
-        max-width: 145px;
-        min-width: 100px;
-    }
+#script_fullscreen .btn {
+    max-width: 145px;
+    min-width: 100px;
+}
 
-#script_fullscreen, #searchbar_fullscreen {
+#script_fullscreen,
+#searchbar_fullscreen {
     min-width: 270px;
 }
 
-    #searchbar_fullscreen .btn {
-        min-width: 140px;
-        margin-left: -70px;
-    }
+#searchbar_fullscreen .btn {
+    min-width: 140px;
+    margin-left: -70px;
+}
 
 .footer-copyright p {
     word-break: break-word;
@@ -50,8 +51,8 @@ article section figure:has(.cookies) {
     padding: 0
 }
 
-.navbar1.navbar > .container .navbar-brand,
-.navbar4.navbar > .container .navbar-brand {
+.navbar1.navbar>.container .navbar-brand,
+.navbar4.navbar>.container .navbar-brand {
     margin: 0 auto;
     padding: 11px 0px;
     position: initial
@@ -61,17 +62,17 @@ article section figure:has(.cookies) {
     display: block;
 }
 
-    .navbar-header .site-logo-area.with-Text > .site-branding-text .site-description {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap
-    }
+.navbar-header .site-logo-area.with-Text>.site-branding-text .site-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
 
-    .navbar-header .site-logo-area > .navbar-brand,
-    .navbar-header .site-logo-area .site-branding-text .navbar-brand,
-    .navbar-header .site-logo-area.with-Logo.with-Text .navbar-brand {
-        margin: 0 auto
-    }
+.navbar-header .site-logo-area>.navbar-brand,
+.navbar-header .site-logo-area .site-branding-text .navbar-brand,
+.navbar-header .site-logo-area.with-Logo.with-Text .navbar-brand {
+    margin: 0 auto
+}
 
 .head-contact-social {
     display: none;
@@ -81,10 +82,10 @@ article section figure:has(.cookies) {
     display: contents;
 }
 
-    .blog-author .media-body h6 {
-        line-height: 30px;
-        margin: 0 0 20px;
-    }
+.blog-author .media-body h6 {
+    line-height: 30px;
+    margin: 0 0 20px;
+}
 
 .comment-date a {
     position: inherit;
@@ -106,10 +107,10 @@ article section figure:has(.cookies) {
     line-height: 12px;
 }
 
-    .breadcrumbs > li {
-        font-size: 9px;
-        line-height: 12px;
-    }
+.breadcrumbs>li {
+    font-size: 9px;
+    line-height: 12px;
+}
 
 .blog-masonry-2-column .innerrow,
 .blog-masonry-3-column .innerrow,
@@ -122,21 +123,25 @@ article section figure:has(.cookies) {
 }
 
 /*Header Top Area----------------*/
-.head-contact-social, .head-contact-info {
+.head-contact-social,
+.head-contact-info {
     float: none;
     text-align: center;
 }
 
-    .head-contact-info li {
-        margin-right: 10px;
-        margin-left: 10px
-    }
+.head-contact-info li {
+    margin-right: 10px;
+    margin-left: 10px
+}
+
 /*Flexslider--------------------------*/
 .page-mycarousel {
     margin-bottom: 80px;
 }
 
-.blog-post-title-wrapper h2, .blog-post-title-wrapper-full h2, .blog-post-title-wrapper-full h2 a {
+.blog-post-title-wrapper h2,
+.blog-post-title-wrapper-full h2,
+.blog-post-title-wrapper-full h2 a {
     font-size: 25px;
     line-height: 30px;
 }
@@ -150,42 +155,42 @@ article section figure:has(.cookies) {
     margin: 0 0 4px;
 }
 
-    .slide-text-bg1 h2 {
-        display: block;
-        font-size: 12px;
-        line-height: 20px;
-        margin: 0;
-    }
+.slide-text-bg1 h2 {
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+}
 
 .slide-text-bg2 {
     margin: 0 0 0px;
     padding: 0;
 }
 
-    .slide-text-bg2 h1 {
-        display: inline-block;
-        border-bottom: 1px solid #FFFFFF;
-        border-top: 1px solid #FFFFFF;
-        font-size: 14px;
-        line-height: 16px;
-        margin: 0;
-        padding: 0;
-    }
+.slide-text-bg2 h1 {
+    display: inline-block;
+    border-bottom: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    padding: 0;
+}
 
-    .slide-text-bg2 span {
-        line-height: 20px;
-    }
+.slide-text-bg2 span {
+    line-height: 20px;
+}
 
 .slide-text-bg3 {
     margin: 0 0 0;
     padding: 0;
 }
 
-    .slide-text-bg3 p {
-        font-size: 10px;
-        line-height: 13px;
-        margin: 0;
-    }
+.slide-text-bg3 p {
+    font-size: 10px;
+    line-height: 13px;
+    margin: 0;
+}
 
 .flex_btn {
     border: 1px solid #FFFFFF;
@@ -201,10 +206,10 @@ article section figure:has(.cookies) {
     width: 30px !important;
 }
 
-    .flex-direction-nav a:before {
-        font-size: 18px !important;
-        line-height: 1.6 !important;
-    }
+.flex-direction-nav a:before {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+}
 
 .flex-direction-nav .flex-prev {
     left: 10px;
@@ -221,6 +226,7 @@ article section figure:has(.cookies) {
 .flexslider:hover .flex-next {
     right: 10px;
 }
+
 /*Menu Dropdown--------------*/
 .navbar-brand {
     margin-right: 0px;
@@ -241,40 +247,53 @@ article section figure:has(.cookies) {
     transition: all 0.4s ease 0s;
 }
 
-.navbar .navbar-nav > li > a {
+.navbar .navbar-nav>li>a {
     padding: 15px 20px;
 }
 
-    .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus,
-    .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus,
-    .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
-        background-color: transparent !important;
-    }
+.navbar .navbar-nav>.active>a,
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>.active>a:focus,
+.navbar .navbar-nav>.open>a,
+.navbar .navbar-nav>.open>a:hover,
+.navbar .navbar-nav>.open>a:focus,
+.navbar .navbar-nav>li>a:hover,
+.navbar .navbar-nav>li>a:focus {
+    background-color: transparent !important;
+}
 
-.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+.navbar-nav .open .dropdown-menu>li>a,
+.navbar-nav .open .dropdown-menu .dropdown-header {
     padding: 15px 20px 15px 20px;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
     color: #ffffff;
 }
 
-    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
-        color: #00c2a9;
-    }
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #00c2a9;
+}
 
-.navbar > .container .navbar-brand {
+.navbar>.container .navbar-brand {
     padding: 22.5px 15px 22.5px 15px;
     float: none;
     display: block;
 }
 
-    .navbar > .container .navbar-brand > img {
-        display: block;
-        margin: 0 auto;
-    }
+.navbar>.container .navbar-brand>img {
+    display: block;
+    margin: 0 auto;
+}
 
-.navbar.navbar-wrapper .container > .navbar-header {
+.navbar-header .site-logo-area.with-Logo.no-Text .navbar-brand img {
+    position: initial;
+    max-height: 100px;
+    max-width: 350px;
+    width: 100%
+}
+
+.navbar.navbar-wrapper .container>.navbar-header {
     display: block;
 }
 
@@ -307,17 +326,18 @@ article section figure:has(.cookies) {
     margin-bottom: 60px;
 }
 
-    .about-section h3 {
-        padding: 0px;
-    }
+.about-section h3 {
+    padding: 0px;
+}
 
-    .about-section p {
-        padding: 0px;
-    }
+.about-section p {
+    padding: 0px;
+}
 
 .about-social-icons {
     padding-left: 0px;
 }
+
 /*Blog Page---------------------------*/
 .blog-section-left {
     margin-right: 0px;
@@ -346,6 +366,7 @@ article section figure:has(.cookies) {
 .home-blog-area {
     margin-bottom: 50px;
 }
+
 /*Comment*/
 .comment-section {
     margin-right: 0px;
@@ -362,6 +383,7 @@ article section figure:has(.cookies) {
 .pull-left-comment {
     float: none;
 }
+
 /*Portfolio Section------------*/
 .main-portfolio-showcase .main-portfolio-showcase-detail h4 {
     padding: 0 0 8px;
@@ -379,9 +401,9 @@ article section figure:has(.cookies) {
     min-width: 315px;
 }
 
-    .page_fader.logo .site-logo-area {
-        padding-bottom: 0px;
-    }
+.page_fader.logo .site-logo-area {
+    padding-bottom: 0px;
+}
 
 .page_fader h2.animate {
     font-size: 20px;
@@ -394,17 +416,19 @@ article section figure:has(.cookies) {
     margin-right: 1px;
 }
 
-    .portfolio-icon a > i {
-        color: #FFFFFF;
-        font-size: 12px;
-        line-height: 16px;
-    }
+.portfolio-icon a>i {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 16px;
+}
+
 /*Portfolio Detail-----------*/
 .portfolio-detail-pagi,
 .portfolio-detail-description,
 .portfolio-detail-info {
     margin-right: 0px;
 }
+
 /*Contact Page----------------*/
 .form-inline .cont-form-group {
     width: 99.4%;
@@ -415,18 +439,21 @@ article section figure:has(.cookies) {
 }
 
 /* Added by Harish For Calendar Widget */
-.sidebar-widget div#calendar_wrap table > thead > tr > th, .footer_widget_column div#calendar_wrap table > thead > tr > th {
+.sidebar-widget div#calendar_wrap table>thead>tr>th,
+.footer_widget_column div#calendar_wrap table>thead>tr>th {
     padding: 7px;
     font-size: 12px;
 }
 
-.sidebar-widget div#calendar_wrap table > tbody > tr > td, .footer_widget_column div#calendar_wrap table > tbody > tr > td {
+.sidebar-widget div#calendar_wrap table>tbody>tr>td,
+.footer_widget_column div#calendar_wrap table>tbody>tr>td {
     padding: 7px;
     font-size: 10px;
 }
 
 /*Widget Css*/
-.sidebar-widget div#calendar_wrap table > caption, .footer_widget_column div#calendar_wrap table > caption {
+.sidebar-widget div#calendar_wrap table>caption,
+.footer_widget_column div#calendar_wrap table>caption {
     font-size: 18px;
 }
 
@@ -436,23 +463,23 @@ article section figure:has(.cookies) {
     width: 100%;
 }
 
-.sidebar-widget div#calendar_wrap table > tfoot > tr > td,
-.footer_widget_column div#calendar_wrap table > tfoot > tr > td {
+.sidebar-widget div#calendar_wrap table>tfoot>tr>td,
+.footer_widget_column div#calendar_wrap table>tfoot>tr>td {
     font-size: 14px;
 }
 
 /* Hide table headers (but not display: none;, for accessibility) */
-.blog-post-title-wrapper > thead tr {
+.blog-post-title-wrapper>thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
 }
 
-.blog-post-title-wrapper > tr {
+.blog-post-title-wrapper>tr {
     border: 1px solid #ccc;
 }
 
-.blog-post-title-wrapper > td {
+.blog-post-title-wrapper>td {
     /* Behave like a “row” */
     border: none;
     border-bottom: 1px solid #eee;
@@ -460,47 +487,50 @@ article section figure:has(.cookies) {
     padding-left: 50%;
 }
 
-    .blog-post-title-wrapper > td:before {
-        /* Now like a table header */
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-    }
+.blog-post-title-wrapper>td:before {
+    /* Now like a table header */
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+}
 
 .wallstreet_title_head {
     margin: 0 auto;
     text-align: center;
 }
 
-.home-blog-post-detail > .date {
+.home-blog-post-detail>.date {
     margin-right: 25px;
 }
 
-.home-blog-post-detail > .comment {
+.home-blog-post-detail>.comment {
     float: left;
 }
+
 /*Footer social icons*/
 .footer-contact-social {
     text-align: center;
 }
 
-    .footer-contact-social li {
-        margin-bottom: 10px;
-    }
+.footer-contact-social li {
+    margin-bottom: 10px;
+}
 
-        .footer-contact-social li > a > i {
-            font-size: 24px;
-            line-height: 30px;
-        }
+.footer-contact-social li>a>i {
+    font-size: 24px;
+    line-height: 30px;
+}
+
 /*Search Btn*/
 .search_btn {
     font-size: 14px;
     line-height: 20px;
     padding: 10px 25px;
 }
+
 /*Features css*/
 .features-title {
     margin-top: 40px;
@@ -514,6 +544,7 @@ article section figure:has(.cookies) {
 .service-area .btn {
     min-width: 200px;
 }
+
 /*Testimonial*/
 .testimonial-area p {
     font-size: 15px;
@@ -523,9 +554,10 @@ article section figure:has(.cookies) {
     font-size: 12px;
 }
 
-    .testimonial-area h2 > i {
-        width: 20px;
-    }
+.testimonial-area h2>i {
+    width: 20px;
+}
+
 /* for small size screen all the nested comments comes at the same hierarchical level*/
 .comment-section ul.children {
     padding-left: 0px;
@@ -570,8 +602,8 @@ article section figure:has(.cookies) {
         line-height: 11px;
     }
 
-        .breadcrumbs > li {
-            font-size: 7px;
-            line-height: 10px;
-        }
+    .breadcrumbs>li {
+        font-size: 7px;
+        line-height: 10px;
+    }
 }
