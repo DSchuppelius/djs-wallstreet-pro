@@ -1397,6 +1397,30 @@ Requires Plugins: djs-wallstreet-pro-core
     max-height: 400px
 }
 
+.container.single .format-aside article header,
+.container.single .format-audio article header,
+.container.single .format-gallery article header,
+.container.single .format-video article header,
+.container.single .format-image article header,
+.container.single .format-quote article header,
+.container.single .format-link article header,
+.container.single .format-status article header,
+.container.single .format-chat article header {
+    display: none;
+}
+
+.container.single .format-aside article section,
+.container.single .format-audio article section,
+.container.single .format-gallery article section,
+.container.single .format-video article section,
+.container.single .format-image article section,
+.container.single .format-quote article section,
+.container.single .format-link article section,
+.container.single .format-status article section,
+.container.single .format-chat article section {
+    margin-top: 15px;
+}
+
 .container.single.portfolio .port-detail-img {
     overflow: hidden;
     margin: 0 0 10px 12px;
