@@ -130,7 +130,17 @@ function djs_wallstreet_setup() {
 		'title-tag',
 	] );
 
-	add_theme_support( 'post-formats', [ 'aside','gallery','image','quote','video','audio' ] );
+	add_theme_support('post-formats', [
+        'aside',   // Kurzmitteilung
+        'image',   // Bild
+        'gallery', // Galerie
+        'quote',   // Zitat
+        'status',  // Status
+        'video',   // Video
+        'audio',   // Audio
+        'link',    // Link
+        'chat'     // Chat
+    ]);
 
 	// Bildgrößen
 	$djs_sizes = [
