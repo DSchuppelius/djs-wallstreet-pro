@@ -1,67 +1,42 @@
-// -------- capability check
+// Performance-Check
 const mqReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-function hasEnoughPerformance() {
+function canRun() {
     if (mqReduced.matches) return false;
-
-    const cores = navigator.hardwareConcurrency ?? 4;
-    // Wenn deviceMemory fehlt, NICHT blockieren
+    const cores = navigator.hardwareConcurrency ?? 4; // fallback blockiert nicht
     const ram = typeof navigator.deviceMemory === "number" ? navigator.deviceMemory : 8;
-
-    if (cores < 8) return false;
-    if (ram < 8) return false;
-
-    // sehr kurzer Microbench, großzügige Schwelle
+    if (cores < 8 || ram < 8) return false;
     const t0 = performance.now();
-    for (let i = 0; i < 80000; i++) Math.sqrt(i);
-    return performance.now() - t0 <= 60;
+    for (let i = 0; i < 60000; i++) Math.sqrt(i);
+    return performance.now() - t0 <= 50;
+}
+let effectsEnabled = canRun();
+mqReduced.addEventListener?.("change", () => (effectsEnabled = canRun()));
+
+// Parallax (wie gewünscht)
+function snap(bgParallax, scrollSize) {
+    if (!effectsEnabled || !bgParallax) return;
+    const scrollPosition = window.scrollY;
+    const limit = bgParallax.offsetTop + bgParallax.offsetHeight;
+    if (scrollPosition > bgParallax.offsetTop && scrollPosition <= limit) {
+        bgParallax.style.backgroundPositionY = scrollPosition / scrollSize + "px";
+    } else {
+        bgParallax.style.backgroundPositionY = "0";
+    }
+    setTimeout(snap, 20, bgParallax, scrollSize);
 }
 
-let effectsEnabled = hasEnoughPerformance();
-mqReduced.addEventListener?.("change", () => (effectsEnabled = hasEnoughPerformance()));
+let timeoutId = null;
+window.addEventListener(
+    "scroll",
+    function () {
+        if (!effectsEnabled) return;
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(snap, 200, document.getElementsByClassName("custom-background")[0], 68);
+    },
+    { passive: true },
+);
 
-// -------- parallax snap (rAF-basiert)
-(function initParallax() {
-    const el = document.getElementsByClassName("custom-background")[0];
-    if (!el) return;
-
-    const scrollSize = 68;
-    let ticking = false;
-
-    function update() {
-        ticking = false;
-        if (!effectsEnabled) {
-            el.style.backgroundPositionY = "0";
-            return;
-        }
-        const y = window.scrollY;
-        const top = el.offsetTop;
-        const limit = top + el.offsetHeight;
-        el.style.backgroundPositionY = y > top && y <= limit ? y / scrollSize + "px" : "0";
-    }
-
-    function onScroll() {
-        if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(update);
-        }
-    }
-
-    // Initial setzen und Listener registrieren
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    // Resize-Handling, falls Höhe/Position sich ändern
-    let resizeTimer;
-    window.addEventListener(
-        "resize",
-        () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                effectsEnabled = hasEnoughPerformance();
-                update();
-            }, 150);
-        },
-        { passive: true },
-    );
-})();
+// Optional: einmalig initial setzen
+if (effectsEnabled) {
+    snap(document.getElementsByClassName("custom-background")[0], 68);
+}
