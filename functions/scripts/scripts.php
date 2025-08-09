@@ -210,4 +210,61 @@ if($current_setup->get("remove_googlefonts") == true && $current_setup->get("ena
         return false;
     });
 }
+
+add_action('wp_head', function () {
+    $styles = wp_styles();
+    if (!$styles) return;
+
+    $handles = [];
+    foreach (['icon_font-faces','site_font-faces'] as $h) {
+        if (isset($styles->registered[$h])) $handles[] = $h;
+    }
+    if (!$handles) return;
+
+    $out = [];
+    foreach ($handles as $handle) {
+        $src = $styles->registered[$handle]->src ?? '';
+        if (!$src) continue;
+
+        // URL → Pfad auflösen
+        $path = '';
+        if (str_starts_with($src, get_stylesheet_directory_uri())) {
+            $path = get_stylesheet_directory().substr($src, strlen(get_stylesheet_directory_uri()));
+        } elseif (str_starts_with($src, content_url())) {
+            $path = WP_CONTENT_DIR.substr($src, strlen(content_url()));
+        }
+        if (!$path || !is_readable($path)) continue;
+
+        $css  = file_get_contents($path);
+        if ($css === false) continue;
+
+        // @font-face-Blöcke mit Familie + erster woff2-URL
+        if (preg_match_all('/@font-face\s*{[^}]*?font-family\s*:\s*([\'"]?)([^;\'"]+)\1\s*;[^}]*?src\s*:\s*([^;]+);/is', $css, $m, PREG_SET_ORDER)) {
+            $base = trailingslashit(dirname($src));
+            foreach ($m as $blk) {
+                $family = trim($blk[2]);
+                $srcdecl= $blk[3];
+
+                if (!preg_match('/url\((["\']?)([^)]+\.woff2[^)]*)\1\)/i', $srcdecl, $u)) continue;
+                $url = $u[2];
+                // relativ → absolut
+                if (str_starts_with($url, '//')) { $url = 'https:'.$url; }
+                elseif (!preg_match('#^https?://#i', $url)) { $url = $base.ltrim($url,'./'); }
+
+                $key = strtolower($family);
+                // pro Familie nur einen Eintrag
+                if (!isset($out[$key])) $out[$key] = esc_url($url);
+            }
+        }
+    }
+
+    // harte Obergrenze, sonst bremst es
+    $limit = 4;
+    $i = 0;
+    foreach ($out as $href) {
+        echo '<link rel="preload" as="font" type="font/woff2" href="'.$href.'" crossorigin>'."\n";
+        if (++$i >= $limit) break;
+    }
+}, 5);
+
 ?>
