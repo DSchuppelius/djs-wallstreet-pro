@@ -1,32 +1,32 @@
-article section > div > .wp-block-jetpack-tiled-gallery {
+article section>div>.wp-block-jetpack-tiled-gallery {
     display: block;
     width: 100%
 }
 
-    article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery {
-        display: contents
-    }
+article section>div>.wp-block-jetpack-tiled-gallery>.tiled-gallery__gallery {
+    display: contents
+}
 
-        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery figure img {
-            height: 100%
-        }
+article section>div>.wp-block-jetpack-tiled-gallery>.tiled-gallery__gallery figure img {
+    height: 100%
+}
 
-        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery .tiled-gallery__col + .tiled-gallery__col {
-            margin-left: 8px
-        }
+article section>div>.wp-block-jetpack-tiled-gallery>.tiled-gallery__gallery .tiled-gallery__col+.tiled-gallery__col {
+    margin-left: 8px
+}
 
-        article section > div > .wp-block-jetpack-tiled-gallery > .tiled-gallery__gallery .tiled-gallery__item + .tiled-gallery__item {
-            margin-top: 8px
-        }
+article section>div>.wp-block-jetpack-tiled-gallery>.tiled-gallery__gallery .tiled-gallery__item+.tiled-gallery__item {
+    margin-top: 8px
+}
 
 article section .wp-block-jetpack-slideshow {
     display: grid;
     max-width: 100%
 }
 
-    article section .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
-        width: 100%
-    }
+article section .wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
+    width: 100%
+}
 
 article section .jp-relatedposts .jp-relatedposts-items {
     display: flex;
@@ -34,50 +34,53 @@ article section .jp-relatedposts .jp-relatedposts-items {
     align-items: stretch
 }
 
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
-        min-height: 230px;
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%
-    }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%
+}
 
-        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:not(:last-child) {
-            padding-right: 20px !important
-        }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:not(:last-child) {
+    padding-right: 20px !important
+}
 
-        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
-            padding-right: 0px !important
-        }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:last-child {
+    padding-right: 0px !important
+}
 
-        article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-excerpt {
-            display: none
-        }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-excerpt {
+    display: none
+}
 
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs > * {
-        display: flex;
-        flex-direction: column
-    }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs>* {
+    display: flex;
+    flex-direction: column
+}
 
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
-        flex: 1;
-        display: inherit !important;
-        position: inherit !important
-    }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
+    flex: 1;
+    display: inherit !important;
+    position: inherit !important
+}
 
-    article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
-        background: url('../images/img/nopreview.png') no-repeat center center;
-        background-size: cover;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 0.2em;
-        content: ''
-    }
+article section .jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post-nothumbs a::before {
+    background: url('../images/img/nopreview.png') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.2em;
+    content: ''
+}
 
-article section .wp-block-jetpack-tiled-gallery.is-style-columns .tiled-gallery__item, article section .wp-block-jetpack-tiled-gallery.is-style-rectangular .tiled-gallery__item {
+article section .wp-block-jetpack-tiled-gallery.is-style-columns .tiled-gallery__item,
+article section .wp-block-jetpack-tiled-gallery.is-style-rectangular .tiled-gallery__item {
     width: auto !important
 }
 
-div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
+div.sharedaddy,
+#content div.sharedaddy,
+#main div.sharedaddy {
     margin-top: 20px
 }
 
@@ -92,7 +95,7 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
 
 .gcard a,
 .gcard .grav-inner {
-    font-family: 'SiteFont',Helvetica,Arial,Tahoma,sans-serif !important
+    font-family: 'SiteFont', Helvetica, Arial, Tahoma, sans-serif !important
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form {
@@ -106,29 +109,29 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     box-shadow: 0 1px 1px rgb(0 0 0 / 8%) inset
 }
 
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form:has(input:focus-visible) {
-        outline: -webkit-focus-ring-color auto 1px;
-        outline: 1px auto Highlight;
-        outline: 1px auto -webkit-focus-ring-color
-    }
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form:has(input:focus-visible) {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline: 1px auto Highlight;
+    outline: 1px auto -webkit-focus-ring-color
+}
 
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form .wp-block-jetpack-subscriptions__form-elements {
-        width: 100%
-    }
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline .wp-block-jetpack-subscriptions__container form .wp-block-jetpack-subscriptions__form-elements {
+    width: 100%
+}
 
 .wp-block-jetpack-subscriptions #subscribe-email {
     width: 100%;
     margin: 0
 }
 
-    .wp-block-jetpack-subscriptions #subscribe-email input {
-        width: 100%;
-        height: 46px
-    }
+.wp-block-jetpack-subscriptions #subscribe-email input {
+    width: 100%;
+    height: 46px
+}
 
-        .wp-block-jetpack-subscriptions #subscribe-email input:focus-visible {
-            outline: none
-        }
+.wp-block-jetpack-subscriptions #subscribe-email input:focus-visible {
+    outline: none
+}
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email input {
     border: none;
@@ -151,28 +154,33 @@ div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
     border-bottom-right-radius: 2px !important
 }
 
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email br,
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit br {
-        display: none;
-    }
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-email br,
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit br {
+    display: none;
+}
 
-    .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button {
-        padding: 1em 1em 0.75em 3.5em !important;
-        margin-left: 2px !important;
-        min-width: 150px;
-        border-radius: 0 !important;
-        border-top-right-radius: 0.1em !important;
-        border-bottom-right-radius: 0.1em !important;
-        align-items: stretch;
-        font-size: 0.9em !important
-    }
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button {
+    padding: 1em 1em 0.75em 3.5em !important;
+    margin-left: 2px !important;
+    min-width: 150px;
+    border-radius: 0 !important;
+    border-top-right-radius: 0.1em !important;
+    border-bottom-right-radius: 0.1em !important;
+    align-items: stretch;
+    font-size: 0.9em !important
+}
 
-        .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button:before {
-            line-height: 2.5em
-        }
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline #subscribe-submit button:before {
+    line-height: 2.5em
+}
 
 #jp-relatedposts .jp-relatedposts-items-visual {
     margin-right: 0px !important;
+}
+
+div.sharedaddy h3.sd-title {
+    display: block;
+    width: 100%;
 }
 
 @media only screen and (max-width: 480px) {
