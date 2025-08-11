@@ -629,7 +629,6 @@ Requires Plugins: djs-wallstreet-pro-core
 .blog-post-title-wrapper-full>ol>li>ul>li,
 .blog-post-title-wrapper>ol>li>ul>li>ol>li,
 .blog-post-title-wrapper-full>ol>li>ul>li>ol>li {
-
     margin: 0 0 7px;
     line-height: 20px
 }
@@ -1405,7 +1404,6 @@ Requires Plugins: djs-wallstreet-pro-core
     margin-top: 15px;
 }
 
-
 .container.single.portfolio .port-detail-img {
     overflow: hidden;
     margin: 0 0 10px 12px;
@@ -1452,7 +1450,6 @@ Requires Plugins: djs-wallstreet-pro-core
     top: var(--logo-top);
     height: auto;
     max-width: 500px;
-    /* Hard-Limit beibehalten */
 }
 
 .navbar-fixed-top .custom-logo {
@@ -1653,7 +1650,6 @@ img.header-image,
     text-align: center
 }
 
-/* ---------------- Container ---------------- */
 .body-static-top .font-size-controls {
     top: 23px;
 }
@@ -1668,59 +1664,42 @@ img.header-image,
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.20);
     display: inline-flex;
     align-items: center;
-
-    /* ↧  Standard: keine Lücke → Container möglichst klein */
     gap: 0;
     transition: gap .2s ease;
-    /* Lücke animieren */
     z-index: 1000;
 }
 
-/* Beim Ausklappen etwas Abstand zwischen den Buttons */
 .font-size-controls:hover,
 .font-size-controls:focus-within {
     gap: .25rem;
 }
 
-/* ---------------- Buttons ---------------- */
 .font-size-controls button {
     box-shadow: inset 0 2.65em 0 -1.9em rgba(255, 255, 255, .15);
     background: var(--theme-color);
     color: #fff;
     font-size: 20px;
     font-weight: 400;
-
-    /* gleiche Größe für alle drei Buttons */
     width: 30px;
     height: 30px;
-
     border: none;
     border-radius: 5px;
     margin: 0;
-    /* ~wichtig~: kein Außenabstand */
     padding: 0;
 }
 
-/* -------- Sichtbarkeit + Platz steuern -------- */
-
-/* - und + standardmäßig völlig zusammenschieben … */
 .font-size-controls .text_decrease,
 .font-size-controls .text_increase {
     opacity: 0;
     pointer-events: none;
     transform: scale(.8);
-
-    /* “verschwinden” lassen */
     width: 0;
     overflow: hidden;
-    /* falls Symbol größer wäre */
     transition: opacity .2s ease,
         transform .2s ease,
         width .2s ease;
-    /* Breite animieren */
 }
 
-/* … und beim Hover/Fokus voll ausklappen */
 .font-size-controls:hover .text_decrease,
 .font-size-controls:hover .text_increase,
 .font-size-controls:focus-within .text_decrease,
@@ -1728,52 +1707,38 @@ img.header-image,
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
-
-    /* ursprüngliche Breite wiederherstellen */
     width: 30px;
-    /* identisch zu Button-Breite oben */
 }
 
 .font-size-controls .reset {
     position: relative;
 }
 
-/* 2) Icons initial an exakt dieselbe Stelle setzen */
 .font-size-controls .reset span {
     position: absolute;
-    /* übereinander stapeln */
     inset: 0;
-    /* auf komplette Button-Fläche legen */
     display: flex;
-    /* zentrierte Ausrichtung */
     align-items: center;
     justify-content: center;
     transition: opacity .2s ease;
 }
 
-/* 3) Standard-Icon (settings_accessibility) sichtbar lassen … */
 .font-size-controls .reset span:nth-child(1) {
-    /* erstes <span> */
     opacity: 1;
 }
 
-/* … Hover-Icon (refresh) verstecken */
 .font-size-controls .reset span:nth-child(2) {
-    /* zweites <span> */
     opacity: 0;
 }
 
-/* 4) Beim Hover/Fokus Sichtbarkeiten umdrehen */
 .font-size-controls:hover .reset span:nth-child(1),
 .font-size-controls:focus-within .reset span:nth-child(1) {
     opacity: 0;
-    /* Standard-Icon ausblenden */
 }
 
 .font-size-controls:hover .reset span:nth-child(2),
 .font-size-controls:focus-within .reset span:nth-child(2) {
     opacity: 1;
-    /* Refresh-Icon einblenden */
 }
 
 .footer-blog-post {
@@ -2275,7 +2240,6 @@ footer.site p {
     width: 50%;
 }
 
-
 .home-blog6.home-blog-section {
     padding: 70px 0 0
 }
@@ -2773,7 +2737,6 @@ div.collapsing ul.nav {
     float: right
 }
 
-
 .navbar-header.index2 .head-contact-social li {
     border-left: none;
     border-radius: 50%
@@ -2783,17 +2746,14 @@ div.collapsing ul.nav {
     border-right: none
 }
 
-
 .navbar-header.index2 .site-branding-text .navbar-brand {
     padding: 11px 0;
     margin-right: 0
 }
 
-
 .navbar-header.index2 .site-description {
     margin: 4px 0 10px
 }
-
 
 .navbar-header.index2 .site-title {
     margin: 0
@@ -2822,7 +2782,6 @@ div.collapsing ul.nav {
     float: none;
     padding: 17px 15px 17px 0
 }
-
 
 .navbar-header.index3 .navbar-brand {
     display: inline-block;
@@ -2910,7 +2869,6 @@ div.collapsing ul.nav {
 .navbar.navbar-fixed-top.navbar5.header-style-6 .navbar-header .site-logo-area {
     justify-content: center;
 }
-
 
 .navbar.navbar4 .header-module {
     padding: 12px 0 12px 16px
@@ -3652,7 +3610,6 @@ div.collapsing ul.nav {
     display: inline-block
 }
 
-
 .row.flexstretch,
 .row.masonry,
 .row.team-section,
@@ -3794,7 +3751,6 @@ div.collapsing ul.nav {
     background: none
 }
 
-
 .row.with_background {
     padding: 20px 20px 0
 }
@@ -3819,7 +3775,6 @@ div.collapsing ul.nav {
 .row.with_background.contact-detail-section .col-md-4:first-child {
     padding: 0;
 }
-
 
 .row.with_background .col-md-8 {
     padding: 0 10px 0 0;
@@ -3891,7 +3846,6 @@ div.collapsing ul.nav {
 .row.with_background.bigborder .masonry-item .page-blog-area {
     margin-bottom: 5px;
 }
-
 
 .row.justify-content-center {
     text-align: center
@@ -4631,7 +4585,6 @@ div.collapsing ul.nav {
     content: "\f152";
     vertical-align: middle
 }
-
 
 .sidebar-widget ul li:first-child {
     padding-top: 0
