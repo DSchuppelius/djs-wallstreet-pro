@@ -30,7 +30,7 @@ article div[class*="wp-block-"] figure figcaption {
     color: #f5f5f5
 }
 
-div.sharedaddy h3.sd-title::before {
+article div.sharedaddy h3.sd-title::before {
     border-top: 1px dotted #7b7f8c;
 }
 
