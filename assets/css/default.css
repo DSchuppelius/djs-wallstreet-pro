@@ -55,7 +55,8 @@ pre code {
     border: 15px rgba(55, 57, 65, 0.6) solid
 }
 
-#script_fullscreen .title_row {
+#script_fullscreen .title_row,
+#script_fullscreen .footer_row {
     background-color: rgba(0, 0, 0, 0.2);
 }
 

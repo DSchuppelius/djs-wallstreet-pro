@@ -375,6 +375,10 @@ a.btn.tab {
     border-radius: var(--input-base);
 }
 
+#script_fullscreen .btn.all-ok {
+    margin: 7px;
+}
+
 #searchbar_fullscreen .btn {
     position: absolute;
     top: 50%;
