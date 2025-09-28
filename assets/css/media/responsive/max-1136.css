@@ -44,6 +44,10 @@
         display: none;
     }
 
+    #cookie-settings {
+        display: none;
+    }
+
     .navbar-nav {
         background-color: var(--theme-background-color);
         margin: 0;

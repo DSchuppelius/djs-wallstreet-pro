@@ -139,9 +139,12 @@ button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn
     content: "visibility_off";
 }
 
-#script_fullscreen .btn.all-ok:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-.cookies .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+#script_fullscreen .btn.all-ok:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "cookie";
+}
+
+#script_fullscreen .btn.all-no:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "cookie_off";
 }
 
 a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
@@ -375,8 +378,9 @@ a.btn.tab {
     border-radius: var(--input-base);
 }
 
-#script_fullscreen .btn.all-ok {
-    margin: 7px;
+#script_fullscreen .btn.all-ok,
+#script_fullscreen .btn.all-no {
+    margin: 7px 0px;
 }
 
 #searchbar_fullscreen .btn {
