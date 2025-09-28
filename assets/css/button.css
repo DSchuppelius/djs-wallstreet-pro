@@ -139,6 +139,11 @@ button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn
     content: "visibility_off";
 }
 
+#script_fullscreen .btn.all-ok:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+.cookies .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    content: "cookie";
+}
+
 a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
     content: "reply";
 }
@@ -151,7 +156,17 @@ a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before
     border-radius: 0px;
 }
 
-input, button, .btn, .show-all-btn a, .service-btn a, .portfolio-btn a, .blog-post-date span, .blog-pagination a, .blog-pagination span, textarea, .wp-block-search__inside-wrapper {
+input,
+button,
+.btn,
+.show-all-btn a,
+.service-btn a,
+.portfolio-btn a,
+.blog-post-date span,
+.blog-pagination a,
+.blog-pagination span,
+textarea,
+.wp-block-search__inside-wrapper {
     border-radius: var(--input-base);
 }
 
@@ -208,146 +223,146 @@ a.comment-reply-link {
     text-shadow: 0 1px 1px #18191b
 }
 
-    button.btn.search_btn:focus {
-        outline: none;
-        outline-offset: 0
-    }
+button.btn.search_btn:focus {
+    outline: none;
+    outline-offset: 0
+}
 
-    button.close,
-    a.button.close {
-        box-shadow: inset 0 2.65em 0 -1.85em rgba(255, 255, 255, 0.15)
-    }
+button.close,
+a.button.close {
+    box-shadow: inset 0 2.65em 0 -1.85em rgba(255, 255, 255, 0.15)
+}
 
-    button.wp-block-button__link,
-    button.wp-block-search__button,
-    .search-form button.btn.search_btn {
-        word-break: keep-all;
-        border: 1px solid transparent;
-        box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
-    }
+button.wp-block-button__link,
+button.wp-block-search__button,
+.search-form button.btn.search_btn {
+    word-break: keep-all;
+    border: 1px solid transparent;
+    box-shadow: inset 0 2.55em 0 -1em rgba(255, 255, 255, 0.15)
+}
 
-        button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-            min-width: 150px
-        }
+button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 150px
+}
 
-            button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
-                line-height: 2.5em
-            }
+button.wp-block-search__button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    line-height: 2.5em
+}
 
-    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover {
-        text-shadow: 0 0 1px #18191b
-    }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover {
+    text-shadow: 0 0 1px #18191b
+}
 
-    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
-        left: 0;
-        line-height: 2em;
-        position: absolute;
-        text-align: left;
-        text-indent: .55em;
-        top: 0;
-        width: 2.125em;
-        z-index: -1
-    }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):before {
+    left: 0;
+    line-height: 2em;
+    position: absolute;
+    text-align: left;
+    text-indent: .55em;
+    top: 0;
+    width: 2.125em;
+    z-index: -1
+}
 
-    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before {
-        width: 100%
-    }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):hover:before {
+    width: 100%
+}
 
-    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
-    button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
-    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
-    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled {
-        text-shadow: unset
-    }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled {
+    text-shadow: unset
+}
 
-        .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
-        button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
-        a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
-        input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
-        a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
-        a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before {
-            text-shadow: unset
-        }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:before {
+    text-shadow: unset
+}
 
-        .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
-        button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
-        a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
-        input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
-        a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
-        a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before {
-            width: 2.125em
-        }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before,
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]):disabled:hover:before {
+    width: 2.125em
+}
 
-    .btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    button:not(.not, .swiper-pagination-bullet, [class*="btn-"], .swiper-pagination-bullet),
-    a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 250px;
-        display: inline-block;
-        text-align: center;
-        line-height: 1em;
-        overflow: hidden;
-        padding: 0.75em 1em 0.65em 3.5em;
-        position: relative;
-        user-select: none;
-        z-index: 3
-    }
+.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+button:not(.not, .swiper-pagination-bullet, [class*="btn-"], .swiper-pagination-bullet),
+a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 250px;
+    display: inline-block;
+    text-align: center;
+    line-height: 1em;
+    overflow: hidden;
+    padding: 0.75em 1em 0.65em 3.5em;
+    position: relative;
+    user-select: none;
+    z-index: 3
+}
 
-    .btn.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].big:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 300px;
-    }
+.btn.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.button.big:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+input[type="submit"].big:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 300px;
+}
 
-    .btn.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 215px;
-    }
+.btn.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.button.dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+input[type="submit"].dialog:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 215px;
+}
 
-    .btn.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].small:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 180px;
-    }
+.btn.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.button.small:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+input[type="submit"].small:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 180px;
+}
 
-    .btn.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    input[type="submit"].smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 120px;
-    }
+.btn.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.button.smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+input[type="submit"].smaller:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 120px;
+}
 
-    a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
-    a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-        min-width: 210px
-    }
+a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]),
+a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
+    min-width: 210px
+}
 
-    button.btn.navbar-toggle {
-        min-width: 100px
-    }
+button.btn.navbar-toggle {
+    min-width: 100px
+}
 
 a.btn.tab {
     min-width: 160px;
@@ -370,7 +385,8 @@ a.btn.tab {
     border-radius: var(--input-base);
 }
 
-#script_fullscreen .close, #searchbar_fullscreen .close {
+#script_fullscreen .close,
+#searchbar_fullscreen .close {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -384,13 +400,13 @@ a.btn.tab {
     margin: 0 0 10px
 }
 
-    .blogdetail-btn a {
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 12px 24px;
-        text-align: center
-    }
+.blogdetail-btn a {
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 12px 24px;
+    text-align: center
+}
 
 .cookies button.btn {
     min-width: 360px;
@@ -400,7 +416,7 @@ a.btn.tab {
 
 .cookies button:hover {
     background-color: #eb675e;
-    text-shadow: 0px 3px 3px rgba(255,255,255,0.3);
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.3);
 }
 
 .cookies button:active {
@@ -413,13 +429,13 @@ a.btn.tab {
     margin: 0 0 10px
 }
 
-    .cont-btn a {
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 12px 24px;
-        text-align: center
-    }
+.cont-btn a {
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 12px 24px;
+    text-align: center
+}
 
 .flex_btn {
     display: inline-block;
@@ -435,14 +451,14 @@ a.btn.tab {
     margin: 0
 }
 
-    .home-blog-btn a {
-        border-radius: var(--input-base);
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 10px 18px;
-        text-align: center
-    }
+.home-blog-btn a {
+    border-radius: var(--input-base);
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 10px 18px;
+    text-align: center
+}
 
 .home-portfolio-showcase .home-portfolio-showcase-detail .portfolio-btn {
     position: absolute;
@@ -456,10 +472,10 @@ a.btn.tab {
     justify-content: space-between;
 }
 
-    .portfolio-detail-pagi .button.btn {
-        min-width: 173px;
-        padding: 0.825em 1.5em 0.525em 2.75em;
-    }
+.portfolio-detail-pagi .button.btn {
+    min-width: 173px;
+    padding: 0.825em 1.5em 0.525em 2.75em;
+}
 
 .portfolio-btn {
     display: block;
@@ -467,13 +483,13 @@ a.btn.tab {
     text-align: center
 }
 
-    .portfolio-btn a {
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 7px 15px;
-        text-align: center
-    }
+.portfolio-btn a {
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 7px 15px;
+    text-align: center
+}
 
 .portfolio-detail-info .project-btn {
     display: inline-block;
@@ -493,18 +509,18 @@ a.btn.tab {
     text-align: center
 }
 
-    .prelated-project-btn li {
-        display: inline-block;
-        margin-left: 5px
-    }
+.prelated-project-btn li {
+    display: inline-block;
+    margin-left: 5px
+}
 
-        .prelated-project-btn li:first-child {
-            margin-left: 0
-        }
+.prelated-project-btn li:first-child {
+    margin-left: 0
+}
 
-        .prelated-project-btn li a.btn {
-            display: block !important;
-        }
+.prelated-project-btn li a.btn {
+    display: block !important;
+}
 
 .show-all-btn {
     border-radius: var(--input-base);
@@ -513,18 +529,18 @@ a.btn.tab {
     margin: 0 0 50px
 }
 
-    .show-all-btn a {
-        display: inline-block;
-        line-height: 22px;
-        margin: 0;
-        padding: 13px 30px;
-        text-align: right;
-        vertical-align: middle
-    }
+.show-all-btn a {
+    display: inline-block;
+    line-height: 22px;
+    margin: 0;
+    padding: 13px 30px;
+    text-align: right;
+    vertical-align: middle
+}
 
-    .show-all-btn.switcher-style {
-        margin: 50px 0
-    }
+.show-all-btn.switcher-style {
+    margin: 50px 0
+}
 
 .qua_contact_btn {
     display: block;
@@ -548,9 +564,9 @@ a.btn.tab {
     margin: 2px
 }
 
-    .search-form button.btn.search_btn:before {
-        line-height: 2.6em !important
-    }
+.search-form button.btn.search_btn:before {
+    line-height: 2.6em !important
+}
 
 .search-form button[type="submit"] {
     cursor: pointer;
@@ -565,13 +581,13 @@ a.btn.tab {
     margin: 0 0 20px
 }
 
-    .service-btn a {
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 9px 18px;
-        text-align: center
-    }
+.service-btn a {
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 9px 18px;
+    text-align: center
+}
 
 .service1 .service-area:hover .service-btn a,
 .service4 .service-area:hover .service-btn a,
@@ -639,14 +655,14 @@ a.btn.tab {
     overflow: hidden
 }
 
-    .tweet-btn a {
-        border-radius: var(--input-base);
-        display: inline-block;
-        line-height: 20px;
-        margin-bottom: 0;
-        padding: 12px 22px;
-        text-align: center
-    }
+.tweet-btn a {
+    border-radius: var(--input-base);
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 12px 22px;
+    text-align: center
+}
 
 /*Blog Parts*/
 .search .blog-pagination a,
@@ -654,48 +670,49 @@ a.btn.tab {
     border-radius: var(--input-base)
 }
 
-.blog-pagination, .navigation.pagination .nav-links {
+.blog-pagination,
+.navigation.pagination .nav-links {
     margin: 0 0 20px;
     overflow: hidden;
     padding: 15px 0;
     text-align: center
 }
 
-    .blog-pagination a {
-        border: 0.2em solid rgb(55,57,65)
-    }
+.blog-pagination a {
+    border: 0.2em solid rgb(55, 57, 65)
+}
 
-        .blog-pagination a:not(.btn.next, .btn.prev),
-        .page-links a,
-        .blog-pagination span,
-        .page-numbers {
-            height: 40px;
-            width: 60px;
-            cursor: pointer;
-            display: inline-block;
-            line-height: 20px;
-            margin: 9px 8px;
-            padding: 9px 0;
-            vertical-align: baseline;
-            white-space: nowrap
-        }
+.blog-pagination a:not(.btn.next, .btn.prev),
+.page-links a,
+.blog-pagination span,
+.page-numbers {
+    height: 40px;
+    width: 60px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin: 9px 8px;
+    padding: 9px 0;
+    vertical-align: baseline;
+    white-space: nowrap
+}
 
-    .blog-pagination a,
-    .blog-pagination span {
-        border-radius: var(--input-biggerbase);
-        box-shadow: inset 0px 36px 0px -19px rgba(255, 255, 255, 0.15)
-    }
+.blog-pagination a,
+.blog-pagination span {
+    border-radius: var(--input-biggerbase);
+    box-shadow: inset 0px 36px 0px -19px rgba(255, 255, 255, 0.15)
+}
 
-        .blog-pagination a:hover,
-        .blog-pagination span:hover,
-        .blog-pagination a.active,
-        .blog-pagination span.active {
-            border-radius: var(--input-base)
-        }
+.blog-pagination a:hover,
+.blog-pagination span:hover,
+.blog-pagination a.active,
+.blog-pagination span.active {
+    border-radius: var(--input-base)
+}
 
-        .blog-pagination a .fa {
-            line-height: 0
-        }
+.blog-pagination a .fa {
+    line-height: 0
+}
 
 .blog-post-date {
     border-radius: var(--input-base);
@@ -709,60 +726,60 @@ a.btn.tab {
     width: 60px
 }
 
-    .blog-post-date:hover > span.date {
-        box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 30px 50px -18px inset;
-        text-shadow: none
-    }
+.blog-post-date:hover>span.date {
+    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 30px 50px -18px inset;
+    text-shadow: none
+}
 
-    .blog-post-date span {
-        border-radius: var(--input-smallerbase);
-    }
+.blog-post-date span {
+    border-radius: var(--input-smallerbase);
+}
 
-        .blog-post-date span.date {
-            display: block;
-            margin-top: 5px;
-            line-height: 35px;
-            margin-bottom: 0;
-            padding: 5px 0 3px;
-            text-align: center;
-            box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
-            text-shadow: 0px 2px 2px rgb(0 0 0 / 40%)
-        }
+.blog-post-date span.date {
+    display: block;
+    margin-top: 5px;
+    line-height: 35px;
+    margin-bottom: 0;
+    padding: 5px 0 3px;
+    text-align: center;
+    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 40%)
+}
 
-            .blog-post-date span.date > small {
-                display: block;
-                line-height: 20px;
-                margin-bottom: 4px;
-                padding: 0;
-                text-align: center
-            }
+.blog-post-date span.date>small {
+    display: block;
+    line-height: 20px;
+    margin-bottom: 4px;
+    padding: 0;
+    text-align: center
+}
 
-        .blog-post-date span.comment {
-            margin-top: -5px;
-            display: block;
-            line-height: 20px;
-            text-align: center;
-            padding: 9px 0
-        }
+.blog-post-date span.comment {
+    margin-top: -5px;
+    display: block;
+    line-height: 20px;
+    text-align: center;
+    padding: 9px 0
+}
 
-            .blog-post-date span.comment > i {
-                line-height: 20px;
-                margin-right: 5px
-            }
+.blog-post-date span.comment>i {
+    line-height: 20px;
+    margin-right: 5px
+}
 
 .blog-list-view .blog-post-date {
     min-width: 180px;
     margin: 30px 0 0 30px;
 }
 
-    .blog-list-view .blog-post-date span.date {
-        margin-top: 0px;
-        margin-left: 5px;
-    }
+.blog-list-view .blog-post-date span.date {
+    margin-top: 0px;
+    margin-left: 5px;
+}
 
-    .blog-list-view .blog-post-date span.comment {
-        margin-top: 0px;
-    }
+.blog-list-view .blog-post-date span.comment {
+    margin-top: 0px;
+}
 
 .blog-list-view.left .has-post-thumbnail .blog-post-date {
     margin: 30px 0 0 0

@@ -251,6 +251,9 @@ add_action('wp_head', function () {
                 if (str_starts_with($url, '//')) { $url = 'https:'.$url; }
                 elseif (!preg_match('#^https?://#i', $url)) { $url = $base.ltrim($url,'./'); }
 
+                // Schema entfernen → protokoll-relative URL
+                $url = preg_replace('#^https?:#i', '', $url);
+
                 $key = strtolower($family);
                 // pro Familie nur einen Eintrag
                 if (!isset($out[$key])) $out[$key] = esc_url($url);
