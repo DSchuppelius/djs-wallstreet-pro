@@ -340,7 +340,8 @@ body.fixed_Header .navbar.navbar-fixed-top {
     backdrop-filter: blur(5px)
 }
 
-.font-size-controls {
+.font-size-controls,
+.cookie-control {
     backdrop-filter: blur(5px)
 }
 
