@@ -1663,7 +1663,8 @@ img.header-image,
     position: absolute;
 }
 
-.font-size-controls {
+.font-size-controls,
+.cookie-control {
     position: fixed;
     top: 3px;
     right: 5px;
@@ -1679,16 +1680,8 @@ img.header-image,
 }
 
 .cookie-control {
-    top: 3px;
+    right: auto;
     left: 5px;
-    background: rgba(0, 0, 0, 0.30);
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.20);
-    display: inline-flex;
-    align-items: center;
-    gap: 0;
-    transition: gap .2s ease;
     z-index: 1040;
 }
 

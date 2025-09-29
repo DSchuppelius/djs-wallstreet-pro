@@ -7,10 +7,12 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const PASSIVE = { passive: true };
 
 function hasEnoughPerformance() {
+    console.log("Evaluating performance...");
     if (prefersReducedMotion.matches) return false;
 
-    const cores = navigator.hardwareConcurrency || 2;
-    const ram = navigator.deviceMemory || 2; // GB
+    const cores = navigator.hardwareConcurrency ?? 2;
+    const ram = navigator.deviceMemory ?? 2; // GB
+
     if (cores < 4 || ram < 4) return false;
 
     // Mini-Benchmark (kurz halten)
@@ -47,7 +49,7 @@ function setClassesOnPage($) {
     const isFixedFooter = document.getElementsByClassName("fixed_Footer").length > 0;
 
     // Cache DOM
-    const bod = $("#djs-body");
+    const bod = $("body");
     const nav = $(".navbar-wrapper");
     const men = $(".navbar-collapse");
     const btn = $(".navbar-toggle");
@@ -65,7 +67,6 @@ function setClassesOnPage($) {
             else footerEl.addClass("fixed");
         },
         header(isScrolled) {
-            if (!state.effectsEnabled) return; // Header-Fix nur bei guter Performance
             if (isScrolled && !mqNarrow.matches) {
                 bod.removeClass("body-static-top").addClass("body-fixed-top");
                 nav.removeClass("navbar-static-top").addClass("navbar-fixed-top");
