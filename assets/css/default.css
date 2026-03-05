@@ -2313,21 +2313,3 @@ ul.sidebar-tab.sidebar-widget-tab>li>a:hover,
 ul.sidebar-tab.sidebar-widget-tab>li.active>a {
     color: #fff !important
 }
-
-/* Custom Tidal Icon (not available in Font Awesome Free) */
-.fa-custom.fa-tidal {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    font-size: inherit;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996l4.004 4.004L8.008 8l4.004 4 4.004-4-4.004-4.004zm4.004 0l-4.004 4.004L16.016 12l4.004-4.004-4.004-4.004zm-8.008 8.008l-4.004 4.004L8.008 20l4.004-4.004-4.004-3.996z'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996l4.004 4.004L8.008 8l4.004 4 4.004-4-4.004-4.004zm4.004 0l-4.004 4.004L16.016 12l4.004-4.004-4.004-4.004zm-8.008 8.008l-4.004 4.004L8.008 20l4.004-4.004-4.004-3.996z'/%3E%3C/svg%3E");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    background-color: currentColor;
-    vertical-align: -0.125em;
-}
