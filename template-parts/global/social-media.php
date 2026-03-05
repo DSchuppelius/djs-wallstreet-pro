@@ -81,7 +81,7 @@ if (!empty($ul_class)) {
     <?php }
     if ($current_setup->get("social_media_tidal_link") != "") { ?>
         <li><a href="<?php echo esc_url($current_setup->get("social_media_tidal_link")); ?>"
-                <?php blank_target($current_setup->get("tidal_link_new_tab")); ?>><i class="fa-custom fa-tidal"></i></a>
+                <?php blank_target($current_setup->get("tidal_link_new_tab")); ?>><i class="fa-brands fa-tidal"></i></a>
         </li>
     <?php } ?>
 </ul>
