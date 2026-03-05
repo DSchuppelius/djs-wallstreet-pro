@@ -411,6 +411,60 @@ class theme_social_customizer extends Theme_Customizer {
             "type" => "checkbox",
         ]);
 
+        //Spotify Profile Link:
+        $wp_customize->add_setting($this->theme_options_name . "[social_media_spotify_link]", [
+            "default" => "",
+            "sanitize_callback" => "sanitize_url",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[social_media_spotify_link]", [
+            "label" => esc_html__("Spotify URL", "djs-wallstreet-pro"),
+            "section" => "social_icon",
+            "type" => "text",
+        ]);
+
+        //Spotify link new tab/window
+        $wp_customize->add_setting($this->theme_options_name . "[spotify_link_new_tab]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[spotify_link_new_tab]", [
+            "label" => esc_html__("Open link in new tab", "djs-wallstreet-pro"),
+            "section" => "social_icon",
+            "type" => "checkbox",
+        ]);
+
+        //Tidal Profile Link:
+        $wp_customize->add_setting($this->theme_options_name . "[social_media_tidal_link]", [
+            "default" => "",
+            "sanitize_callback" => "sanitize_url",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[social_media_tidal_link]", [
+            "label" => esc_html__("Tidal URL", "djs-wallstreet-pro"),
+            "section" => "social_icon",
+            "type" => "text",
+        ]);
+
+        //Tidal link new tab/window
+        $wp_customize->add_setting($this->theme_options_name . "[tidal_link_new_tab]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[tidal_link_new_tab]", [
+            "label" => esc_html__("Open link in new tab", "djs-wallstreet-pro"),
+            "section" => "social_icon",
+            "type" => "checkbox",
+        ]);
+
         //Prev Comment
         $wp_customize->add_setting($this->theme_options_name . "[before_comment]", [
             "default" => esc_html__("Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.", "djs-wallstreet-pro"),
@@ -443,7 +497,7 @@ class theme_social_customizer extends Theme_Customizer {
 
 global $customizer_social;
 
-if(!isset($customizer_social)) {
+if (!isset($customizer_social)) {
     $customizer_social = new theme_social_customizer();
     $customizer_social->register();
-} ?>
+}
