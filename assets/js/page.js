@@ -7,7 +7,6 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const PASSIVE = { passive: true };
 
 function hasEnoughPerformance() {
-    console.log("Evaluating performance...");
     if (prefersReducedMotion.matches) return false;
 
     const cores = navigator.hardwareConcurrency ?? 2;
@@ -81,7 +80,9 @@ function setClassesOnPage($) {
             if (!state.effectsEnabled) return;
             document.querySelectorAll(".col-md-8 .post:not(:first-child)").forEach((post) => {
                 const randomDelay = Math.floor(Math.random() * 6 + 2);
-                post.style.cssText += `animation: gradientShift ${randomDelay}s ease-in-out infinite;`;
+                // Endlich (2 Durchläufe) statt "infinite": Effekt bleibt sichtbar,
+                // aber der Browser zeichnet danach nicht mehr dauerhaft neu.
+                post.style.cssText += `animation: gradientShift ${randomDelay}s ease-in-out 2;`;
             });
         },
         markEmptyEmbeds() {

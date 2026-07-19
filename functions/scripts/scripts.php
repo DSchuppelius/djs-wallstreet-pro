@@ -75,24 +75,14 @@ function theme_scripts() {
         wp_add_inline_style("djs-wallstreet-pro-standard", djs_wallstreet_root_css());
     }
 
-    wp_enqueue_style("djs-wallstreet-pro-jetpack",  THEME_ASSETS_PATH_URI . "/css/jetpack.css");
-    wp_enqueue_style("djs-wallstreet-pro-button",   THEME_ASSETS_PATH_URI . "/css/button.css");
-    wp_enqueue_style("djs-wallstreet-pro-fx",       THEME_ASSETS_PATH_URI . "/css/fx.css");
+    // jetpack + button + fx + menu + tooltips zu einem Bundle zusammengefasst,
+    // um 4 render-blockierende HTTP-Requests im <head> zu sparen.
+    wp_enqueue_style("djs-wallstreet-pro-bundle",   THEME_ASSETS_PATH_URI . "/css/theme-bundle.css",                                [], '1.0.0');
 
-    wp_enqueue_style("djs-wallstreet-pro-menu",     THEME_ASSETS_PATH_URI . "/css/menu/menu.css");
-    wp_enqueue_style("djs-wallstreet-pro-tool-tip", THEME_ASSETS_PATH_URI . "/css/menu/tooltips.css");
-
-    wp_enqueue_style("media-responsive-min-1920",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1920.css",                   [], '1.0.0', 'only screen and (min-width: 1920px)');
-    wp_enqueue_style("media-responsive-min-1136",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1136.css",                   [], '1.0.0', 'only screen and (min-width: 1136px)');
-    wp_enqueue_style("media-responsive-min-1024",   THEME_ASSETS_PATH_URI . "/css/media/responsive/min-1024.css",                   [], '1.0.0', 'only screen and (min-width: 1024px)');
-    wp_enqueue_style("media-responsive-min-960",    THEME_ASSETS_PATH_URI . "/css/media/responsive/min-960.css",                    [], '1.0.0', 'only screen and (min-width: 960px)');
-    wp_enqueue_style("media-responsive-min-480",    THEME_ASSETS_PATH_URI . "/css/media/responsive/min-480.css",                    [], '1.0.0', 'only screen and (min-width: 480px)');
-
-    wp_enqueue_style("media-responsive-max-1366",   THEME_ASSETS_PATH_URI . "/css/media/responsive/max-1366.css",                   [], '1.0.0', 'only screen and (max-width: 1366px)');
-    wp_enqueue_style("media-responsive-max-1136",   THEME_ASSETS_PATH_URI . "/css/media/responsive/max-1136.css",                   [], '1.0.0', 'only screen and (max-width: 1136px)');
-    wp_enqueue_style("media-responsive-max-1024",   THEME_ASSETS_PATH_URI . "/css/media/responsive/max-1024.css",                   [], '1.0.0', 'only screen and (max-width: 1024px)');
-    wp_enqueue_style("media-responsive-max-960",    THEME_ASSETS_PATH_URI . "/css/media/responsive/max-960.css",                    [], '1.0.0', 'only screen and (max-width: 960px)');
-    wp_enqueue_style("media-responsive-max-480",    THEME_ASSETS_PATH_URI . "/css/media/responsive/max-480.css",                    [], '1.0.0', 'only screen and (max-width: 480px)');
+    // Zusammengefasst aus 10 Einzeldateien (media/responsive/*) in eine Datei,
+    // um 9 render-blockierende HTTP-Requests im <head> zu sparen.
+    // Die Media-Queries stecken jetzt als @media-Bloecke in der Datei selbst.
+    wp_enqueue_style("media-responsive",            THEME_ASSETS_PATH_URI . "/css/media/responsive.css",                            [], '1.0.0');
 
     wp_enqueue_style("media-print",                 THEME_ASSETS_PATH_URI . "/css/media/print.css",                                 [], '1.0.0', 'only print');
 
@@ -113,8 +103,8 @@ function theme_jquery_scripts() {
         wp_enqueue_script("page_fader",             THEME_ASSETS_PATH_URI . "/js/page_fader/page_fader.js",                         ["jquery"], '1.0.0', ['strategy' => 'defer', 'in_footer' => true]);
     }
 
-    wp_enqueue_script("parallax",                   THEME_ASSETS_PATH_URI . "/js/parallax/parallax.min.js");
-    wp_enqueue_script("rellax",                     THEME_ASSETS_PATH_URI . "/js/parallax/rellax.min.js");
+    wp_enqueue_script("parallax",                   THEME_ASSETS_PATH_URI . "/js/parallax/parallax.min.js",                         [], null, ['strategy' => 'defer', 'in_footer' => true]);
+    wp_enqueue_script("rellax",                     THEME_ASSETS_PATH_URI . "/js/parallax/rellax.min.js",                           [], null, ['strategy' => 'defer', 'in_footer' => true]);
     wp_enqueue_script("page",                       THEME_ASSETS_PATH_URI . "/js/page.js",                                          ["jquery"], null, ['strategy' => 'defer', 'in_footer' => true]);
 
     if ($current_setup->get("home_blog_same_height")) {

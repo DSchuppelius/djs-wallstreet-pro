@@ -277,7 +277,15 @@
 .col-md-8 .post:not(:first-child) {
     background-size: 150% 100%;
     /* Vergrößert, um die Bewegung sichtbar zu machen */
-    animation: gradientShift 2s ease-in-out infinite;
+    /* Endlich statt "infinite": spielt kurz als Intro und stoppt dann,
+       damit der Browser nicht dauerhaft neu zeichnet. */
+    animation: gradientShift 2s ease-in-out 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .col-md-8 .post:not(:first-child) {
+        animation: none;
+    }
 }
 
 .page_fader.logo {
