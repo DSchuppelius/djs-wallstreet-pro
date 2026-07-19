@@ -62,7 +62,13 @@ if (show_rellax_div()){ ?></div><?php } ?>
 <?php } ?>
 </div>
 <script>
-var rellax = new Rellax('.rellax');
+// rellax.min.js wird deferred geladen und ist erst nach dem Parsen verfuegbar.
+// Deferred Scripts laufen vor DOMContentLoaded -> hier ist Rellax garantiert definiert.
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof Rellax !== "undefined") {
+        window.rellax = new Rellax(".rellax");
+    }
+});
 </script>
 <?php wp_footer(); ?>
 </body>

@@ -201,6 +201,16 @@ div.flexslider,
     border-bottom-left-radius: 50% var(--sub-slider-radius);
 }
 
+/* Slider-Texte: schwarze Kontur, damit die weisse Schrift sich auch von
+   hellen Hintergrundbildern abhebt. Kontur in em -> skaliert mit der
+   Schriftgroesse (100/50/25px). paint-order: stroke fill haelt die
+   Fuellung scharf (Kontur liegt dahinter), der Schatten gibt Extra-Abstand. */
+.homepage_mycarousel sr7-txt {
+    -webkit-text-stroke: 0.02em #000 !important;
+    paint-order: stroke fill;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+}
+
 /*Homepage Service Section--------------------------------------------------------------------*/
 .col-md-4.col-sm-6.service-effect.first_column div.service-area {
     border-top-left-radius: var(--border-bigbase);
