@@ -23,7 +23,14 @@ add_action("wp_enqueue_scripts", "theme_bootstrap_scripts");
 function theme_font_scripts() {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
+    // Font Awesome render-blockierend laden: Icons (auch die Menue-Pfeile) brauchen die
+    // @font-face-Definitionen sofort beim ersten Rendern, sonst erscheinen Kaestchen.
+    // (Deferred laden wurde verworfen -> sparte keine Bytes, verursachte aber Tofu-Boxen.)
     wp_enqueue_style("font-awesome",                THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/all.min.css");
+    // v4-Shims: mappen alte Font-Awesome-4-Namen (z.B. fa-paper-plane-o, fa-thumbs-o-up,
+    // fa-dot-circle-o) auf die aktuellen Icons. all.min.css enthaelt diese -o-Aliase NICHT,
+    // und das Theme (sowie Freitext-Icon-Felder) nutzt v4-Namen -> Datei muss mitgeladen werden.
+    wp_enqueue_style("font-awesome-v4-shims",       THEME_ASSETS_PATH_URI . "/css/fonts/font-awesome/css/v4-shims.min.css", ["font-awesome"]);
     wp_enqueue_style("icon_font-faces",             THEME_ASSETS_PATH_URI . "/css/fonts/icon_font-faces.css");
     wp_enqueue_style("wallstreet-fonts",            THEME_ASSETS_PATH_URI . "/css/fonts/font.css");
     if ($current_setup->get("enable_custom_typography") == true) {
