@@ -166,6 +166,8 @@ function djs_wallstreet_setup() {
         'post-thumb'    => [733, 0, false],
         'bigpost-thumb' => [1000, 0, false],
         'fullpost-thumb' => [1525, 0, false],
+        'widget-thumb' => [140, 140, true],
+        'service-thumb' => [740, 0, false],
     ];
     foreach ($djs_sizes as $name => $args) {
         add_image_size($name, ...$args);

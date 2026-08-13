@@ -73,9 +73,9 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
                                 <div class="service-box">
                                     <?php if ($meta_service_link) { ?>
                                         <a href="<?php echo $meta_service_link; ?>"
-                                            <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php the_post_thumbnail("theme_service_img", $defalt_arg); ?></a>
+                                            <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)); ?>><?php the_post_thumbnail("service-thumb", $defalt_arg); ?></a>
                                     <?php } else { ?>
-                                        <?php the_post_thumbnail("theme_service_img", $defalt_arg); ?>
+                                        <?php the_post_thumbnail("service-thumb", $defalt_arg); ?>
                                     <?php } ?>
                                 </div>
                             <?php } else { ?>

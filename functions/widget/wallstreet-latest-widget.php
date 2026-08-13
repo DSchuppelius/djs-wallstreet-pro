@@ -39,7 +39,7 @@ class wallstreet_latest_widget extends WP_Widget {
                 <div class="media post-media-sidebar">
                     <a class="pull-left sidebar-pull-img" href="<?php echo esc_url(get_permalink()); ?>">
                         <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
-                        <?php echo get_the_post_thumbnail($post->ID, "wall_sidebar_img", $atts); ?>
+                        <?php echo get_the_post_thumbnail($post->ID, "widget-thumb", $atts); ?>
                     </a>
                     <div class="media-body">
                         <h3 style="padding-bottom:0px;"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h3>

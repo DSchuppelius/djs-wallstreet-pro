@@ -89,20 +89,60 @@ if (isset($_GET["div"])) {
             $curpage = $paged ? $paged : 1;
             $norecord = 0;
             $is_active = true;
+
+            $alle_portfolio = new WP_Query([
+                "post_type" => PORTFOLIO_POST_TYPE,
+                "post_status" => "publish",
+                "posts_per_page" => -1,
+                "orderby" => "menu_order",
+                "no_found_rows" => true,
+                "ignore_sticky_posts" => true,
+            ]);
+
+            $term_nach_id = [];
+            foreach ((array) $tax_terms as $t) {
+                $term_nach_id[$t->term_id] = $t;
+            }
+
+            $portfolio_nach_slug = [];
+            if (!empty($alle_portfolio->posts)) {
+                $slugs_je_post = [];
+                $zuordnung = wp_get_object_terms(
+                    wp_list_pluck($alle_portfolio->posts, "ID"),
+                    PORTFOLIO_TAXONOMY,
+                    ["fields" => "all_with_object_id"]
+                );
+                if (!is_wp_error($zuordnung)) {
+                    foreach ($zuordnung as $beziehung) {
+                        // Der direkt zugewiesene Begriff ...
+                        $slugs_je_post[$beziehung->object_id][$beziehung->slug] = true;
+                        $eltern_id = (int) $beziehung->parent;
+                        $gesehen = [];
+                        while ($eltern_id && isset($term_nach_id[$eltern_id]) && !isset($gesehen[$eltern_id])) {
+                            $gesehen[$eltern_id] = true;
+                            $slugs_je_post[$beziehung->object_id][$term_nach_id[$eltern_id]->slug] = true;
+                            $eltern_id = (int) $term_nach_id[$eltern_id]->parent;
+                        }
+                    }
+                }
+                foreach ($alle_portfolio->posts as $portfolio_beitrag) {
+                    foreach (array_keys($slugs_je_post[$portfolio_beitrag->ID] ?? []) as $slug) {
+                        $portfolio_nach_slug[$slug][] = $portfolio_beitrag;
+                    }
+                }
+            }
+
             if ($tax_terms) {
                 foreach ($tax_terms as $tax_term) {
                     $decoded_slug = rawurldecode($tax_term->slug);
-                    $args = [
-                        "post_type" => PORTFOLIO_POST_TYPE,
-                        "post_status" => "publish",
-                        PORTFOLIO_TAXONOMY => $tax_term->slug,
-                        "posts_per_page" => $posts_per_page,
-                        "paged" => $curpage,
-                        "orderby" => "menu_order",
-                    ];
-                    $portfolio_query = null;
-                    $portfolio_query = new WP_Query($args);
-                    if ($portfolio_query->have_posts()) { ?>
+
+                    $term_beitraege = $portfolio_nach_slug[$tax_term->slug] ?? [];
+                    $seiten_gesamt = $posts_per_page > 0 ? (int) ceil(count($term_beitraege) / $posts_per_page) : 1;
+                    $seiten_beitraege = $posts_per_page > 0
+                        ? array_slice($term_beitraege, ($curpage - 1) * $posts_per_page, $posts_per_page)
+                        : $term_beitraege;
+
+                    if ($seiten_beitraege) { ?>
                         <div id="<?php echo esc_attr($decoded_slug); ?>"
                             class="tab-pane fade in <?php if ($tab == "") {
                                                         if ($is_active == true) {
@@ -114,8 +154,10 @@ if (isset($_GET["div"])) {
                                                     } ?>"
                             role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($decoded_slug); ?>">
                             <div class="row">
-                                <?php while ($portfolio_query->have_posts()) {
-                                    $portfolio_query->the_post();
+                                <?php foreach ($seiten_beitraege as $portfolio_beitrag) {
+                                    $GLOBALS["post"] = $portfolio_beitrag;
+                                    setup_postdata($GLOBALS["post"]);
+
                                     if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
                                         $meta_project_link = esc_url(get_post_meta(get_the_ID(), "meta_project_link", true));
                                     } else {
@@ -188,11 +230,9 @@ if (isset($_GET["div"])) {
                                     <?php $norecord = 1; ?>
                                 <?php } ?>
                             </div>
-                            <?php // the_pagination() nimmt zwei Argumente - die beiden
-                                    // hinteren wurden stillschweigend verworfen. ?>
-                            <?php the_pagination($curpage, $portfolio_query); ?>
+                            <?php the_pagination($curpage, (object) ["max_num_pages" => $seiten_gesamt]); ?>
                         </div>
-                    <?php wp_reset_query();
+                    <?php wp_reset_postdata();
                     } else { ?>
                         <div id="<?php echo $decoded_slug; ?>"
                             class="tab-pane fade in <?php if ($tab == "") {
