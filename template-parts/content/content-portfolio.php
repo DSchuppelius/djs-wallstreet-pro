@@ -86,7 +86,12 @@ if (isset($_GET["div"])) {
         <div id="content" class="tab-content" role="tablist">
             <?php
             global $paged;
-            $curpage = $paged ? $paged : 1;
+
+            $portfolio_seiten_parameter = "portfolio_seite";
+            $curpage = isset($_GET[$portfolio_seiten_parameter])
+                ? max(1, (int) $_GET[$portfolio_seiten_parameter])
+                : ($paged ? $paged : 1);
+
             $norecord = 0;
             $is_active = true;
 
@@ -230,7 +235,7 @@ if (isset($_GET["div"])) {
                                     <?php $norecord = 1; ?>
                                 <?php } ?>
                             </div>
-                            <?php the_pagination($curpage, (object) ["max_num_pages" => $seiten_gesamt]); ?>
+                            <?php the_pagination($curpage, (object) ["max_num_pages" => $seiten_gesamt], $portfolio_seiten_parameter); ?>
                         </div>
                     <?php wp_reset_postdata();
                     } else { ?>
