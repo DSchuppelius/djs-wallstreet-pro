@@ -37,33 +37,33 @@ function theme_font_scripts() {
         wp_enqueue_style("spicy-fonts",             wallstreet_fonts_url($current_setup->get("google_font")), [], null);
     } else {
         switch ($current_setup->get("local_font_style")) {
-	        case 'roboto':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_roboto.css");
-		        break;
+            case 'roboto':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_roboto.css");
+                break;
             case 'montserrat':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_montserrat.css");
-		        break;
-		    case 'dancing-script':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_dancing-script.css");
-		        break;
-		    case 'rubik':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_rubik.css");
-		        break;
-		    case 'sulphurpoint':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_sulphurpoint.css");
-		        break;
-		    case 'overlock':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_overlock.css");
-		        break;
-		    case 'opensans':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_opensans.css");
-		        break;
-        	case 'anonymous-pro':
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_anonymous-pro.css");
-		        break;
-	        default:
-		        wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
-		        break;
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_montserrat.css");
+                break;
+            case 'dancing-script':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_dancing-script.css");
+                break;
+            case 'rubik':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_rubik.css");
+                break;
+            case 'sulphurpoint':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_sulphurpoint.css");
+                break;
+            case 'overlock':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_overlock.css");
+                break;
+            case 'opensans':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_opensans.css");
+                break;
+            case 'anonymous-pro':
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces_anonymous-pro.css");
+                break;
+            default:
+                wp_enqueue_style("site_font-faces", THEME_ASSETS_PATH_URI . "/css/fonts/site_font-faces.css");
+                break;
         }
     }
 }
@@ -78,7 +78,7 @@ function theme_scripts() {
     wp_enqueue_style("djs-wallstreet-pro-standard", THEME_ASSETS_PATH_URI . "/css/standard.css",                                    [], '1.0.0');
     wp_enqueue_style('djs-wallstreet-pro-dynamic',  THEME_ASSETS_PATH_URI . '/css/dynamic.css',                                     [], '1.0.0');
 
-    if ( function_exists("djs_wallstreet_root_css") ) {
+    if (function_exists("djs_wallstreet_root_css")) {
         wp_add_inline_style("djs-wallstreet-pro-standard", djs_wallstreet_root_css());
     }
 
@@ -93,12 +93,11 @@ function theme_scripts() {
 
     wp_enqueue_style("media-print",                 THEME_ASSETS_PATH_URI . "/css/media/print.css",                                 [], '1.0.0', 'only print');
 
-        // require_once "custom_style.php";
+    // require_once "custom_style.php";
 
     if (defined("DJS_POSTTYPE_PLUGIN")) {
         require_once "custom_style_special.php";
     }
-
 }
 add_action("wp_enqueue_scripts", "theme_scripts");
 
@@ -151,9 +150,16 @@ function theme_jquery_scripts() {
 }
 add_action("wp_enqueue_scripts", "theme_jquery_scripts");
 
-if (is_singular()) {
-    wp_enqueue_script("comment-reply");
+// Muss in einem Hook stehen: Conditional Tags wie is_singular() funktionieren erst,
+// wenn die Hauptquery gelaufen ist. Zur Ladezeit der functions.php lieferten sie
+// immer false (plus _doing_it_wrong-Notice) -> comment-reply wurde nie geladen und
+// verschachteltes Antworten war ohne Funktion.
+function theme_comment_reply_script() {
+    if (is_singular() && comments_open() && get_option("thread_comments")) {
+        wp_enqueue_script("comment-reply");
+    }
 }
+add_action("wp_enqueue_scripts", "theme_comment_reply_script");
 
 function theme_custom_enqueue_css() {
     global $pagenow;
@@ -162,22 +168,33 @@ function theme_custom_enqueue_css() {
         wp_enqueue_style("meta-box-css",            THEME_ASSETS_PATH_URI . "/css/admin/meta-box.css");
     }
     wp_enqueue_style("color-schema",                THEME_ASSETS_PATH_URI . "/customizer/color-schema.css");
-
 }
 add_action("admin_print_styles", "theme_custom_enqueue_css", 10);
 
 function wallstreet_shortcode_detect() {
     global $wp_query;
-    $posts = $wp_query->posts;
-    $pattern = get_shortcode_regex();
-    foreach ($posts as $post) {
-        if (isset($post->post_content)) {
-            if (preg_match_all("/" . $pattern . "/s", $post->post_content, $matches) && array_key_exists(2, $matches) && (in_array("button", $matches[2]) || in_array("row", $matches[2]) || in_array("accordian", $matches[2]) || in_array("tabgroup", $matches[2]) || in_array("tabs", $matches[2]) || in_array("alert", $matches[2]) || in_array("dropcap", $matches[2]) || in_array("gridsystemlayout", $matches[2]) || in_array("tooltip", $matches[2]) || in_array("heading", $matches[2]))) {
-                wp_enqueue_script("bootstrap",      THEME_ASSETS_PATH_URI . "/bootstrap/js/bootstrap.min.js",                       [], null, ['strategy' => 'defer', 'in_footer' => false]);
-                wp_enqueue_script("accordion-tab",  THEME_ASSETS_PATH_URI . "/js/accordion-tab.js",                                 [], null, ['strategy' => 'defer', 'in_footer' => false]);
-                wp_enqueue_script("collapse",       THEME_ASSETS_PATH_URI . "/js/collapse.js",                                      [], null, ['strategy' => 'defer', 'in_footer' => false]);
-                break;
-            }
+
+    if (empty($wp_query->posts)) {
+        return;
+    }
+
+    // Die Regex direkt auf die relevanten Shortcodes begrenzen. Vorher lief sie ueber
+    // saemtliche registrierten Shortcodes und die Treffer wurden anschliessend per
+    // zehnfachem in_array() nachgefiltert - jetzt matcht sie nur noch, was zaehlt,
+    // und preg_match() kann beim ersten Treffer abbrechen.
+    $pattern = get_shortcode_regex(["button", "row", "accordian", "tabgroup", "tabs", "alert", "dropcap", "gridsystemlayout", "tooltip", "heading"]);
+
+    foreach ($wp_query->posts as $post) {
+        // Billiger Vorfilter: ohne eckige Klammer kann kein Shortcode enthalten sein.
+        if (empty($post->post_content) || strpos($post->post_content, "[") === false) {
+            continue;
+        }
+
+        if (preg_match("/" . $pattern . "/s", $post->post_content)) {
+            wp_enqueue_script("bootstrap",      THEME_ASSETS_PATH_URI . "/bootstrap/js/bootstrap.min.js",                       [], null, ['strategy' => 'defer', 'in_footer' => false]);
+            wp_enqueue_script("accordion-tab",  THEME_ASSETS_PATH_URI . "/js/accordion-tab.js",                                 [], null, ['strategy' => 'defer', 'in_footer' => false]);
+            wp_enqueue_script("collapse",       THEME_ASSETS_PATH_URI . "/js/collapse.js",                                      [], null, ['strategy' => 'defer', 'in_footer' => false]);
+            break;
         }
     }
 }
@@ -199,72 +216,103 @@ if (!function_exists("wallstreet_customizer_preview_scripts")) {
 }
 add_action("customize_preview_init", "wallstreet_customizer_preview_scripts");
 
-if($current_setup->get("remove_googlefonts") == true && $current_setup->get("enable_custom_typography") == false){
-    add_filter('style_loader_src', function($href){
-        if(strpos($href, "//fonts.googleapis.com/") === false) {
+// Stand vorher im globalen Scope und griff auf ein dort nicht existierendes
+// $current_setup zu. Das war nur deshalb kein Fatal Error, weil das Extensions-Plugin
+// zufaellig eine gleichnamige Variable ins globale Scope legt - mit dem Setup-Objekt
+// des Plugins statt dem des Themes. Die Bedingung war damit nie erfuellt (das Plugin
+// kennt "remove_googlefonts" nicht), die Einstellung also wirkungslos.
+function theme_remove_googlefonts() {
+    $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+
+    if (!$current_setup->get("remove_googlefonts") || $current_setup->get("enable_custom_typography")) {
+        return;
+    }
+
+    add_filter("style_loader_src", function ($href) {
+        if (strpos($href, "//fonts.googleapis.com/") === false) {
             return $href;
         }
         return false;
     });
 }
+add_action("wp_enqueue_scripts", "theme_remove_googlefonts");
 
 add_action('wp_head', function () {
     $styles = wp_styles();
     if (!$styles) return;
 
     $handles = [];
-    foreach (['icon_font-faces','site_font-faces'] as $h) {
+    foreach (['icon_font-faces', 'site_font-faces'] as $h) {
         if (isset($styles->registered[$h])) $handles[] = $h;
     }
     if (!$handles) return;
 
-    $out = [];
+    // Die Font-Quellen selbst zu ermitteln ist billig (kein Datei-Zugriff) und dient
+    // zugleich als Cache-Schluessel: wechselt die Schriftart im Customizer, aendert
+    // sich der Schluessel und der Cache greift sofort neu.
+    $srcs = [];
     foreach ($handles as $handle) {
-        $src = $styles->registered[$handle]->src ?? '';
-        if (!$src) continue;
+        $srcs[$handle] = $styles->registered[$handle]->src ?? '';
+    }
 
-        // URL → Pfad auflösen
-        $path = '';
-        if (str_starts_with($src, get_stylesheet_directory_uri())) {
-            $path = get_stylesheet_directory().substr($src, strlen(get_stylesheet_directory_uri()));
-        } elseif (str_starts_with($src, content_url())) {
-            $path = WP_CONTENT_DIR.substr($src, strlen(content_url()));
-        }
-        if (!$path || !is_readable($path)) continue;
+    $cache_key = 'djs_ws_font_preload_' . md5(implode('|', $srcs));
+    $out = get_transient($cache_key);
 
-        $css  = file_get_contents($path);
-        if ($css === false) continue;
+    // Das Parsen darunter liest die CSS-Dateien von der Platte und jagt zwei Regexes
+    // darueber. Das Ergebnis aendert sich praktisch nie, lief vorher aber bei jedem
+    // einzelnen Seitenaufruf -> jetzt einmal pro Tag bzw. pro Font-Wechsel.
+    if ($out === false) {
+        $out = [];
+        foreach ($handles as $handle) {
+            $src = $srcs[$handle];
+            if (!$src) continue;
 
-        // @font-face-Blöcke mit Familie + erster woff2-URL
-        if (preg_match_all('/@font-face\s*{[^}]*?font-family\s*:\s*([\'"]?)([^;\'"]+)\1\s*;[^}]*?src\s*:\s*([^;]+);/is', $css, $m, PREG_SET_ORDER)) {
-            $base = trailingslashit(dirname($src));
-            foreach ($m as $blk) {
-                $family = trim($blk[2]);
-                $srcdecl= $blk[3];
+            // URL → Pfad auflösen
+            $path = '';
+            if (str_starts_with($src, get_stylesheet_directory_uri())) {
+                $path = get_stylesheet_directory() . substr($src, strlen(get_stylesheet_directory_uri()));
+            } elseif (str_starts_with($src, content_url())) {
+                $path = WP_CONTENT_DIR . substr($src, strlen(content_url()));
+            }
+            if (!$path || !is_readable($path)) continue;
 
-                if (!preg_match('/url\((["\']?)([^)]+\.woff2[^)]*)\1\)/i', $srcdecl, $u)) continue;
-                $url = $u[2];
-                // relativ → absolut
-                if (str_starts_with($url, '//')) { $url = 'https:'.$url; }
-                elseif (!preg_match('#^https?://#i', $url)) { $url = $base.ltrim($url,'./'); }
+            $css  = file_get_contents($path);
+            if ($css === false) continue;
 
-                // Schema entfernen → protokoll-relative URL
-                $url = preg_replace('#^https?:#i', '', $url);
+            // @font-face-Blöcke mit Familie + erster woff2-URL
+            if (preg_match_all('/@font-face\s*{[^}]*?font-family\s*:\s*([\'"]?)([^;\'"]+)\1\s*;[^}]*?src\s*:\s*([^;]+);/is', $css, $m, PREG_SET_ORDER)) {
+                $base = trailingslashit(dirname($src));
+                foreach ($m as $blk) {
+                    $family = trim($blk[2]);
+                    $srcdecl = $blk[3];
 
-                $key = strtolower($family);
-                // pro Familie nur einen Eintrag
-                if (!isset($out[$key])) $out[$key] = esc_url($url);
+                    if (!preg_match('/url\((["\']?)([^)]+\.woff2[^)]*)\1\)/i', $srcdecl, $u)) continue;
+                    $url = $u[2];
+                    // relativ → absolut
+                    if (str_starts_with($url, '//')) {
+                        $url = 'https:' . $url;
+                    } elseif (!preg_match('#^https?://#i', $url)) {
+                        $url = $base . ltrim($url, './');
+                    }
+
+                    // Schema entfernen → protokoll-relative URL
+                    $url = preg_replace('#^https?:#i', '', $url);
+
+                    $key = strtolower($family);
+                    // pro Familie nur einen Eintrag
+                    if (!isset($out[$key])) $out[$key] = esc_url($url);
+                }
             }
         }
+
+        set_transient($cache_key, $out, DAY_IN_SECONDS);
     }
 
     // harte Obergrenze, sonst bremst es
     $limit = 4;
     $i = 0;
     foreach ($out as $href) {
-        echo '<link rel="preload" as="font" type="font/woff2" href="'.$href.'" crossorigin>'."\n";
+        echo '<link rel="preload" as="font" type="font/woff2" href="' . $href . '" crossorigin>' . "\n";
         if (++$i >= $limit) break;
     }
 }, 5);
-
-?>
