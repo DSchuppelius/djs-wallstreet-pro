@@ -46,13 +46,13 @@ if (show_rellax_div()){ ?></div><?php } ?>
 </footer>
 <?php
                 if ($current_setup->get("webrit_custom_css") != "") { ?>
-<style type="text/css">
+<style>
 <?php echo $current_setup->get("webrit_custom_css");
 ?>
 </style>
 <?php }
                 if ($current_setup->get("google_analytics") != "") { ?>
-<script type="text/javascript">
+<script>
 <?php echo $current_setup->get("google_analytics"); ?>
 </script>
 <?php } ?>

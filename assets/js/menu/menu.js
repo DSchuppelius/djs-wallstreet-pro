@@ -123,26 +123,6 @@ jQuery(document).ready(function () {
 
 jQuery(document).ready(function ($) {
 
-    /*-- Page Scroll To Top Section ---------------*/
-    jQuery(document).ready(function () {
-
-        jQuery(window).scroll(function () {
-            if (jQuery(this).scrollTop() > 100) {
-                jQuery('.page_scrollup').fadeIn();
-            } else {
-                jQuery('.page_scrollup').fadeOut();
-            }
-        });
-
-        jQuery('.page_scrollup').click(function () {
-            jQuery("html, body").animate({
-                scrollTop: 0
-            }, 600);
-            return false;
-        });
-
-    });
-
     jQuery('li.dropdown').find('.caret').each(function () {
         jQuery(this).on('click', function () {
             if (jQuery(window).width() <= 1100) {
@@ -178,6 +158,10 @@ jQuery(document).ready(function () {
         }
     });
 
+    /*-- Page Scroll To Top Section ---------------*/
+    /* Diese beiden Handler standen weiter oben ein zweites Mal, Zeile fuer Zeile
+       identisch. Der scroll-Handler lief dadurch doppelt bei jedem Scroll-Event
+       und ein Klick auf "nach oben" hat die Animation zweimal angestossen. */
     jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 100) {
             jQuery('.page_scrollup').fadeIn();

@@ -82,7 +82,6 @@ foreach (
         'menu/theme_bootstrap_walker_nav_menu',
         'basic/blog',
         'basic/archive',
-        'basic/lazyload',
         'basic/generator',
         'basic/htmlclasses',
         'widget/custom-sidebar',
