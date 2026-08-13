@@ -9,11 +9,15 @@
  */
 function wallstreet_single_blog_customizer( $wp_customize ) {
 
+    // Die Labels werden hier direkt uebersetzt. Vorher stand weiter unten
+    // esc_html__( $label, ... ) mit einer Variablen als Text-Argument - der
+    // String-Extraktor findet solche Stellen nicht, die Labels landeten also nie
+    // in der .pot-Datei und blieben in jeder Sprache englisch.
     $controls = [
-        'wallstreet_logo_length'         => [ 'Logo Width',         156, 0, 500,  50 ],
-        'wallstreet_logo_position'       => [ 'Logo Position',       0, -100, 100, 51 ],
-        'wallstreet_fixed_logo_length'   => [ 'Fixed Logo Width',   94, 0, 500,  60 ],
-        'wallstreet_fixed_logo_position' => [ 'Fixed Logo Position', 0, -100, 100, 61 ],
+        'wallstreet_logo_length'         => [ esc_html__( 'Logo Width', 'djs-wallstreet-pro' ),         156, 0, 500,  50 ],
+        'wallstreet_logo_position'       => [ esc_html__( 'Logo Position', 'djs-wallstreet-pro' ),       0, -100, 100, 51 ],
+        'wallstreet_fixed_logo_length'   => [ esc_html__( 'Fixed Logo Width', 'djs-wallstreet-pro' ),   94, 0, 500,  60 ],
+        'wallstreet_fixed_logo_position' => [ esc_html__( 'Fixed Logo Position', 'djs-wallstreet-pro' ), 0, -100, 100, 61 ],
     ];
 
     foreach ( $controls as $id => $c ) {
@@ -38,7 +42,7 @@ function wallstreet_single_blog_customizer( $wp_customize ) {
                 $wp_customize,
                 $id,
                 [
-                    'label'       => esc_html__( $label, 'djs-wallstreet-pro' ),
+                    'label'       => $label,
                     'section'     => 'title_tagline',
                     'priority'    => $priority,
                     'input_attrs' => [

@@ -127,12 +127,12 @@ function theme_jquery_scripts() {
     }
 
     if (defined("DJS_POSTTYPE_PLUGIN")) {
-        if (is_page_template("template-special/portfolio-2-column.php") || is_page_template("template-special/portfolio-3-column.php") || is_page_template("template-special/portfolio-4-column.php")) {
+        if (is_page_template("template-specials/portfolio-2-column.php") || is_page_template("template-specials/portfolio-3-column.php") || is_page_template("template-specials/portfolio-4-column.php")) {
             wp_enqueue_style("lightbox-css",        THEME_ASSETS_PATH_URI . "/css/lightbox/lightbox.css");
             wp_enqueue_script("lightbox-js",        THEME_ASSETS_PATH_URI . "/js/lightbox/lightbox.js",                             ["jquery"], null, ['strategy' => 'defer', 'in_footer' => true]);
         }
 
-        if (is_page_template("template-special/single-portfolio.php") || PORTFOLIO_POST_TYPE == get_post_type()) {
+        if (PORTFOLIO_POST_TYPE == get_post_type()) {
             wp_enqueue_style("lightbox",            THEME_ASSETS_PATH_URI . "/css/lightbox/lightbox.css");
             wp_enqueue_script("lightbox1",          THEME_ASSETS_PATH_URI . "/js/lightbox/lightbox.js",                             ["jquery"], null, ['strategy' => 'defer', 'in_footer' => true]);
             wp_enqueue_script("carouFredSel",       THEME_ASSETS_PATH_URI . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js", ["jquery"], null, ['strategy' => 'defer', 'in_footer' => true]);
@@ -193,7 +193,9 @@ function wallstreet_shortcode_detect() {
         if (preg_match("/" . $pattern . "/s", $post->post_content)) {
             wp_enqueue_script("bootstrap",      THEME_ASSETS_PATH_URI . "/bootstrap/js/bootstrap.min.js",                       [], null, ['strategy' => 'defer', 'in_footer' => false]);
             wp_enqueue_script("accordion-tab",  THEME_ASSETS_PATH_URI . "/js/accordion-tab.js",                                 [], null, ['strategy' => 'defer', 'in_footer' => false]);
-            wp_enqueue_script("collapse",       THEME_ASSETS_PATH_URI . "/js/collapse.js",                                      [], null, ['strategy' => 'defer', 'in_footer' => false]);
+            // assets/js/collapse.js gibt es im Theme nicht - die Einreihung erzeugte nur
+            // einen 404 pro Seite mit passendem Shortcode. Das Collapse-Verhalten liefert
+            // ohnehin bootstrap.min.js eine Zeile darueber.
             break;
         }
     }

@@ -45,6 +45,15 @@ function is_meta_enabled($zone = "all") {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $pages = ["page.php", "template/page-full-width.php"];
     $pages_dateless = ["template/page-full-width-dateless.php", "template/page-full-width-no-meta.php", "template/about-us.php"];
+    // OFFENER PUNKT (Verhalten bewusst unveraendert):
+    // is_page_template("search.php") kann nie true werden - search.php ist ein Template
+    // der Hierarchie, kein Seiten-Template mit "Template Name"-Header. Die Zone "archive"
+    // liefert dadurch nie true. Gemeint war vermutlich is_search() bzw. is_archive(); das
+    // zu aendern wuerde aber die Meta-Anzeige auf Such- und Archivseiten umstellen, und
+    // welcher Zustand beabsichtigt war, geht aus dem Code nicht hervor.
+    // Nebenbefund: array_push() erzeugt hier ein verschachteltes Array ([[..],[..],[..]]),
+    // contains_page_templates() reicht die inneren Arrays anschliessend an
+    // is_page_template() weiter, das einen String erwartet.
     $archives = ["search.php"];
     $combined = [];
     array_push($combined, $pages, $archives, $pages_dateless);

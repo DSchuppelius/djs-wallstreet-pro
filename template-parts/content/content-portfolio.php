@@ -184,7 +184,9 @@ if (isset($_GET["div"])) {
                                     <?php $norecord = 1; ?>
                                 <?php } ?>
                             </div>
-                            <?php the_pagination($curpage, $portfolio_query, $portfolio_query->found_posts, $posts_per_page); ?>
+                            <?php // the_pagination() nimmt zwei Argumente - die beiden
+                                    // hinteren wurden stillschweigend verworfen. ?>
+                            <?php the_pagination($curpage, $portfolio_query); ?>
                         </div>
                     <?php wp_reset_query();
                     } else { ?>

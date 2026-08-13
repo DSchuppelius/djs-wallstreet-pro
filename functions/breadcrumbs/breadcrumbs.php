@@ -93,7 +93,8 @@ function qt_custom_breadcrumbs() {
             $parent_id = $post->post_parent;
             $breadcrumbs = [];
             while ($parent_id) {
-                $page = get_page($parent_id);
+                // get_page() ist seit WP 5.5 deprecated, get_post() ist der Ersatz.
+                $page = get_post($parent_id);
                 $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . "</a>" . $delimiter;
                 $parent_id = $page->post_parent;
             }

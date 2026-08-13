@@ -25,8 +25,8 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         if (empty($page_description)) {
             $page_description = wp_strip_all_tags(tag_description());
         }
-        if (empty($page_description)) {
-            $page_description = get_the_archive_title() != "Archive" ? wp_strip_all_tags(get_the_archive_title()) : "";
+        if (empty($page_description) && is_archive()) {
+            $page_description = wp_strip_all_tags(get_the_archive_title());
         }
 
         $single_description = wp_strip_all_tags(get_the_excerpt(), true);
@@ -141,10 +141,6 @@ if (is_denied_specialtemplate()) {
             </div>
         <?php endif; ?>
         <?php if ($current_setup->get("search_effect_style_setting") == "toogle") { ?>
-            <?php // Die innere Bedingung stand innerhalb des Zweigs == "toogle" und pruefte
-                    // auf == "popup_light" - beides gleichzeitig ist unmoeglich, die Klasse
-                    // bg-light wurde also nie gesetzt. Ersatzlos entfernt statt sie scharf zu
-                    // schalten: welcher Zustand gemeint war, geht aus dem Code nicht hervor. ?>
             <div id="searchbar_fullscreen">
                 <button type="button" class="not close material-icons-outlined">close</button>
                 <form method="get" id="searchform" autocomplete="off" class="search-form"

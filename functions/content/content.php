@@ -10,7 +10,8 @@
 
 // Read more tag to formatting in blog page
 function form_more_button($more = "") {
-    global $post; $result = "";
+    global $post;
+    $result = "";
 
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $form_url = esc_url(get_permalink() . "#more-" . $post->ID);
@@ -35,7 +36,7 @@ function the_read_more($class = 'blog-btn-col') {
 function get_the_show_all($link, $text, $target = false, $button_class = "more blog") {
     $result = "";
 
-    if(!empty($text) && !empty($link)) {
+    if (!empty($text) && !empty($link)) {
         if (get_option('permalink_structure') == "") {
             $result =
                 '<div class ="row">
@@ -70,9 +71,8 @@ add_filter("the_content_more_link", "new_content_more");
 
 function content_width() {
     global $content_width;
-    if (is_page_template("template/blog-fullwidth.php")) {
+    if (is_page_template("template-blog/blog-fullwidth.php")) {
         $content_width = 950;
     }
 }
 add_action("template_redirect", "content_width");
-?>

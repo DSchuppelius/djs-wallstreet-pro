@@ -21,17 +21,16 @@ get_template_parts(["template-parts/index/index", "banner"], true);
     <div class="row">
         <div class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?>">
             <?php
+            global $wp_query;
             $paged = get_query_var("paged") ? get_query_var("paged") : 1;
-            $args = ["post_type" => "post", "paged" => $paged];
-            $post_type_data = new WP_Query($args);
-            while ($post_type_data->have_posts()) {
-                $post_type_data->the_post();
+            while (have_posts()) {
+                the_post();
                 $more = 0;
                 get_named_template_parts("template-parts/content/content", ["head", "title"]);
                 the_content(esc_html__("Read More", "djs-wallstreet-pro"));
                 get_named_template_parts("template-parts/content/content", ["meta", "footer"]);
             }
-            the_pagination($paged, $post_type_data);
+            the_pagination($paged, $wp_query);
             ?>
         </div>
         <!--/Blog Area-->
