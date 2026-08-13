@@ -10,7 +10,8 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 <div class="navbar-header index2 header-style-<?php echo $current_setup->get("header_presets_stlyle"); ?>">
     <div class="container">
-        <?php get_template_part("template-parts/global/header/navbar", "logo"); get_template_part("template-parts/global/separate-search-cart"); ?>
+        <?php get_template_part("template-parts/global/header/navbar", "logo");
+        get_template_part("template-parts/global/separate-search-cart"); ?>
     </div>
 </div>
 <!--/Header Details Section-->
@@ -23,11 +24,6 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <div class="navbar-collapse collapse">
             <?php wp_nav_menu([
                 "theme_location" => "primary",
-                // Bewusst ohne Huelle: WordPress gibt nur bei "div"/"nav" eine aus, der
-                // frueher hier stehende Klassen-String fiel also ersatzlos weg
-                // (wp-includes/nav-menu-template.php, $show_container). Die Huelle
-                // <div class="navbar-collapse collapse"> steht bereits eine Zeile darueber -
-                // eine zweite mit der Bootstrap-Klasse "collapse" darin blendet das Menue aus.
                 "container" => false,
                 "menu_class" => "nav navbar-nav navbar-left",
                 "fallback_cb" => "theme_fallback_page_menu",
