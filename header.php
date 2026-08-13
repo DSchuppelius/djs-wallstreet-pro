@@ -29,11 +29,13 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
             $page_description = wp_strip_all_tags(get_the_archive_title());
         }
 
-        $single_description = wp_strip_all_tags(get_the_excerpt(), true);
-        if (empty($single_description)) {
-            $single_description = get_the_title();
+        if (is_single()) {
+            $single_description = wp_strip_all_tags(get_the_excerpt(), true);
+            if (empty($single_description)) {
+                $single_description = get_the_title();
+            }
+            $single_description = mb_substr($single_description, 0, 150) . "...";
         }
-        $single_description = mb_substr($single_description, 0, 150) . "...";
 
         $tags = get_the_tags();
         if (!empty($tags))

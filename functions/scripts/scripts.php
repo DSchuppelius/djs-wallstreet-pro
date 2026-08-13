@@ -109,7 +109,10 @@ function theme_jquery_scripts() {
         wp_enqueue_script("page_fader",             THEME_ASSETS_PATH_URI . "/js/page_fader/page_fader.js",                         ["jquery"], '1.0.0', ['strategy' => 'defer', 'in_footer' => true]);
     }
 
-    wp_enqueue_script("parallax",                   THEME_ASSETS_PATH_URI . "/js/parallax/parallax.min.js",                         [], null, ['strategy' => 'defer', 'in_footer' => true]);
+    if ($current_setup->get("parallaxheader_enabled") || $current_setup->get("parallaxbackground_enabled")) {
+        wp_enqueue_script("parallax",               THEME_ASSETS_PATH_URI . "/js/parallax/parallax.min.js",                         [], null, ['strategy' => 'defer', 'in_footer' => true]);
+    }
+
     wp_enqueue_script("rellax",                     THEME_ASSETS_PATH_URI . "/js/parallax/rellax.min.js",                           [], null, ['strategy' => 'defer', 'in_footer' => true]);
     wp_enqueue_script("page",                       THEME_ASSETS_PATH_URI . "/js/page.js",                                          ["jquery"], null, ['strategy' => 'defer', 'in_footer' => true]);
 

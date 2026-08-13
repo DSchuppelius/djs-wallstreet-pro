@@ -12,9 +12,19 @@ global $loaded_banner;
 $loaded_banner = true; ?>
 
 <div class="page-mycarousel">
-    <?php $header_img = wp_get_attachment_image_url(attachment_url_to_postid(get_header_image()), "banner-thumb");
+    <?php
+    $header_url = get_header_image();
+    $header_img = "";
+    if (!empty($header_url)) {
+        $banner_cache_key = "djs_ws_banner_" . md5($header_url);
+        $header_img = get_transient($banner_cache_key);
+        if ($header_img === false) {
+            $header_img = (string) wp_get_attachment_image_url(attachment_url_to_postid($header_url), "banner-thumb");
+            set_transient($banner_cache_key, $header_img, DAY_IN_SECONDS);
+        }
+    }
     if (empty($header_img)) {
-        $header_img = get_header_image();
+        $header_img = $header_url;
     }
     $banner_options = 'class="parallax-window" ';
     if ($current_setup->get("parallaxheader_enabled")) {
@@ -27,9 +37,9 @@ $loaded_banner = true; ?>
         <img class="img-responsive header-img" src="<?php echo $header_img; ?>" style="visibility: hidden;" />
         <noscript>
             <style>
-            .img-responsive.header-img {
-                visibility: visible !important;
-            }
+                .img-responsive.header-img {
+                    visibility: visible !important;
+                }
             </style>
         </noscript>
     </div>
@@ -56,7 +66,7 @@ $loaded_banner = true; ?>
                     echo "<h1>";
                     printf(esc_html__("Author Archive: %s", "djs-wallstreet-pro"), '<a href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . "</a>");
                     echo "</h1>";
-                } elseif (is_loaded_template("archive.php") ) {
+                } elseif (is_loaded_template("archive.php")) {
                     $archiv_post_format = get_query_var('post_format');
                     if ($archiv_post_format == 'post-format-aside') {
                         echo "<h1>";
@@ -132,6 +142,6 @@ $loaded_banner = true; ?>
     </div>
     <?php get_template_part("template-parts/global/breadcrumb"); ?>
 </div>
-<?php if(show_rellax_div()) { ?>
-<div class="site rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_banner"); ?>">
+<?php if (show_rellax_div()) { ?>
+    <div class="site rellax" data-rellax-speed="<?php echo $current_setup->get("data_rellax_speed_banner"); ?>">
     <?php } ?>

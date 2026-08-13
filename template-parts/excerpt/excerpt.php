@@ -9,20 +9,20 @@
  */
 ?>
 <header>
-    <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h1>
+    <h1><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_content_title(); ?></a></h1>
 </header>
 <section class="excerpt-section">
     <div class="excerpt">
         <?php $content = get_the_content();
-        if(strpos($content, form_more_button()) !== false) {
+        if (strpos($content, form_more_button()) !== false) {
             echo $content;
         } else {
             $excerpt = get_the_excerpt();
             $excerpt_length = strlen($excerpt);
             $content_length = strlen($content);
-            if(strlen($excerpt) > 0){
-                the_excerpt();
-                if($excerpt_length<$content_length)
+            if ($excerpt_length > 0) {
+                echo apply_filters("the_excerpt", $excerpt);
+                if ($excerpt_length < $content_length)
                     the_read_more();
             } else {
                 the_content();

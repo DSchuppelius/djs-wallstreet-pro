@@ -14,7 +14,28 @@ class Theme_Pagination {
         $this->current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     }
 
-    function page($curpage, $post_type_data) {
+    /**
+     * Erzeugt die Seitenlinks.
+     *
+     * $seiten_parameter: normalerweise null - dann entstehen die Links wie bisher per
+     * get_pagenum_link(), also im Archivformat /pfad/page/2/. Auf einer statischen Seite
+     * mit Seitentemplate gibt es diese Route aber nicht zwingend, und WordPress raeumt
+     * die Standardparameter "paged"/"page" per redirect_canonical() weg. Fuer solche
+     * Faelle laesst sich ein eigener Query-Parameter uebergeben (z.B. "portfolio_seite"),
+     * den WordPress unangetastet laesst. Bereits vorhandene Parameter der aktuellen URL -
+     * etwa der aktive Portfolio-Tab - bleiben dabei erhalten.
+     */
+    private function seiten_link($nr, $seiten_parameter) {
+        if ($seiten_parameter === null) {
+            return get_pagenum_link($nr);
+        }
+
+        $basis = remove_query_arg([$seiten_parameter, "paged", "page"]);
+
+        return $nr <= 1 ? $basis : add_query_arg($seiten_parameter, $nr, $basis);
+    }
+
+    function page($curpage, $post_type_data, $seiten_parameter = null) {
         $maxpagebuttons = $this->current_setup->get("max_page_buttons");
         $firstbutton = $curpage - $maxpagebuttons / 2;
         $lastbutton = $curpage + $maxpagebuttons / 2;
