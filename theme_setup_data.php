@@ -30,7 +30,8 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
     }
 
     protected function get_initial_setup() {
-        return [
+        // Die Link-/Tab-Defaults der einzelnen Netzwerke kommen aus functions/theme/social_networks.php
+        return array_merge([
             "border_base" => 20,
             "border_bigbase" => 40,
             "border_smallbase" => 10,
@@ -149,30 +150,6 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "about_social_media_enabled" => true,
             "header_social_media_enabled" => true,
             "footer_social_media_enabled" => true,
-            "social_media_twitter_link" => "#",
-            "twitter_link_new_tab" => false,
-            "social_media_facebook_link" => "#",
-            "facebook_link_new_tab" => false,
-            "social_media_linkedin_link" => "#",
-            "linkedin_link_new_tab" => false,
-            "social_media_github_link" => "#",
-            "github_link_new_tab" => false,
-            "social_media_pinterest_link" => "#",
-            "pintrest_link_new_tab" => false,
-            "social_media_youtube_link" => "#",
-            "youtube_link_new_tab" => false,
-            "social_media_skype_link" => "#",
-            "skype_link_new_tab" => false,
-            "social_media_rssfeed_link" => "#",
-            "rss_link_new_tab" => false,
-            "social_media_wordpress_link" => "#",
-            "wp_link_new_tab" => false,
-            "social_media_dropbox_link" => "#",
-            "db_link_new_tab" => false,
-            "social_media_instagram_link" => "#",
-            "insta_link_new_tab" => false,
-            "social_media_vimeo_link" => "#",
-            "vimeo_link_new_tab" => false,
 
             // Typography
             "local_font_style" => "roboto",
@@ -237,7 +214,7 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
 
             "before_comment" => "Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.",
             "after_comment" => "If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to.",
-        ];
+        ], djs_wallstreet_social_defaults());
     }
 
     protected function get_translated_setup() {

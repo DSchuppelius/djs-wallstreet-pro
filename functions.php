@@ -42,6 +42,9 @@ if ( ! defined( 'DJS_POSTTYPE_PLUGIN_DIR' ) ) {
 	} );
 }
 
+// Muss vor dem Setup geladen sein - liefert die Standardwerte der Social-Media-Optionen
+require_once THEME_FUNCTIONS_PATH . '/theme/social_networks.php';
+
 require_once TEMPLATE_DIR . '/theme_setup_data.php';
 
 /* -------------------------------------------------------------------------
