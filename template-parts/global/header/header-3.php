@@ -23,10 +23,12 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <div class="navbar-collapse collapse">
             <?php wp_nav_menu([
                 "theme_location" => "primary",
-                // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
-                // dafuer ist "container_class" da.
-                "container" => "div",
-                "container_class" => "nav-collapse collapse navbar-inverse-collapse",
+                // Bewusst ohne Huelle: WordPress gibt nur bei "div"/"nav" eine aus, der
+                // frueher hier stehende Klassen-String fiel also ersatzlos weg
+                // (wp-includes/nav-menu-template.php, $show_container). Die Huelle
+                // <div class="navbar-collapse collapse"> steht bereits eine Zeile darueber -
+                // eine zweite mit der Bootstrap-Klasse "collapse" darin blendet das Menue aus.
+                "container" => false,
                 "menu_class" => "nav navbar-nav navbar-left",
                 "fallback_cb" => "theme_fallback_page_menu",
                 "walker" => new Theme_Bootstrap_Walker_Nav_Menu(),

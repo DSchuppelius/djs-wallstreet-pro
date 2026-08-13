@@ -21,8 +21,8 @@ if (!$is_toggle_button) {
                                 <input type="search" class="search-field" placeholder="' . esc_html__("Search", "djs-wallstreet-pro") . ' …" value="" name="s" required>
                             </label>
                             <button type="submit" class="btn search_btn" value="' . esc_html__("Search", "djs-wallstreet-pro") . '">' .
-                                esc_html__("Search", "djs-wallstreet-pro") .
-                            '</button>
+        esc_html__("Search", "djs-wallstreet-pro") .
+        '</button>
                         </form>
                     </div>
                 </li>
@@ -75,8 +75,8 @@ if (class_exists("WooCommerce")) {
     $shop_button .=
         '<a class="cart-total" href="' . $link . '" >
             <span class="cart-total">' .
-                sprintf(_n("%d item", "%d items", $woocommerce->cart->cart_contents_count, "djs-wallstreet-pro"), $woocommerce->cart->cart_contents_count) .
-            '</span>
+        sprintf(_n("%d item", "%d items", $woocommerce->cart->cart_contents_count, "djs-wallstreet-pro"), $woocommerce->cart->cart_contents_count) .
+        '</span>
         </a>';
 
     if ($current_setup->get("header_presets_stlyle") == 4 || $current_setup->get("header_presets_stlyle") == 6) {
@@ -110,10 +110,7 @@ if ($current_setup->get("header_presets_stlyle") == 4 || $current_setup->get("he
 if ($current_setup->get("header_presets_stlyle") == 6) {
     wp_nav_menu([
         "theme_location" => "primary",
-        // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
-        // dafuer ist "container_class" da.
-        "container" => "div",
-        "container_class" => "nav-collapse collapse navbar-inverse-collapse",
+        "container" => false,
         "menu_class" => "nav navbar-nav navbar-left",
         "items_wrap" => $shop_button,
         "fallback_cb" => "theme_fallback_page_menu",
@@ -122,14 +119,10 @@ if ($current_setup->get("header_presets_stlyle") == 6) {
 } else {
     wp_nav_menu([
         "theme_location" => "primary",
-        // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
-        // dafuer ist "container_class" da.
-        "container" => "div",
-        "container_class" => "nav-collapse collapse navbar-inverse-collapse",
+        "container" => false,
         "menu_class" => "nav navbar-nav navbar-right",
         "items_wrap" => $shop_button,
         "fallback_cb" => "theme_fallback_page_menu",
         "walker" => new Theme_Bootstrap_Walker_Nav_Menu(),
     ]);
 }
-?>
