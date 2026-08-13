@@ -11,7 +11,9 @@
 if (defined('DJS_CORE_PLUGIN_CLASSES_PATH') && file_exists(DJS_CORE_PLUGIN_CLASSES_PATH . 'djs_setup.php')) {
     require_once DJS_CORE_PLUGIN_CLASSES_PATH . 'djs_setup.php';
 } else {
-    add_action('admin_notices', function () { echo '<div class="notice notice-error"><p>' . esc_html__('The DJS-Wallstreet-Pro-Core plugin is required for this theme.', "djs-wallstreet-pro") . '</p></div>'; });
+    add_action('admin_notices', function () {
+        echo '<div class="notice notice-error"><p>' . esc_html__('The DJS-Wallstreet-Pro-Core plugin is required for this theme.', "djs-wallstreet-pro") . '</p></div>';
+    });
 }
 
 class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
@@ -30,8 +32,14 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
     }
 
     protected function get_initial_setup() {
+        static $initial_setup = null;
+
+        if ($initial_setup !== null) {
+            return $initial_setup;
+        }
+
         // Die Link-/Tab-Defaults der einzelnen Netzwerke kommen aus functions/theme/social_networks.php
-        return array_merge([
+        $initial_setup = array_merge([
             "border_base" => 20,
             "border_bigbase" => 40,
             "border_smallbase" => 10,
@@ -215,6 +223,8 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "before_comment" => "Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately.",
             "after_comment" => "If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to.",
         ], djs_wallstreet_social_defaults());
+
+        return $initial_setup;
     }
 
     protected function get_translated_setup() {
@@ -257,4 +267,3 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
         ];
     }
 }
-?>

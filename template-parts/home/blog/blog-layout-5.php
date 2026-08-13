@@ -42,7 +42,7 @@ $post_per_page = $current_setup->get("home_blog_counts"); ?>
                 if ($home_blog_query->have_posts()) {
                     while ($home_blog_query->have_posts()):
                         $home_blog_query->the_post();
-                        $recent_expet = get_the_excerpt(); ?>
+                ?>
                         <div class="blog-section-left blog-list-view">
                             <div class="media">
                                 <?php $defalt_arg = ["class" => "img-responsive"];

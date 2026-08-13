@@ -26,11 +26,15 @@ if ($structure == "") {
 
 // Wird nur mit Term-Slugs verglichen, nie ausgegeben - trotzdem gehoert Request-Input
 // durch wp_unslash() und einen Sanitizer, bevor er weiterverwendet wird.
+// WICHTIG: hier NICHT sanitize_title() verwenden. Das entfernt Akzente ("möbel" wird
+// zu "mobel") und der Vergleich mit rawurldecode($tax_term->slug) schlaegt dann fehl -
+// der Tab gilt nie als aktiv und die Auswahl geht beim Blaettern verloren.
+// sanitize_text_field() erhaelt den Wert und entfernt trotzdem Tags und Umbrueche.
 if (isset($_GET["tab"])) {
-    $tab = sanitize_title(wp_unslash($_GET["tab"]));
+    $tab = sanitize_text_field(wp_unslash($_GET["tab"]));
 }
 if (isset($_GET["div"])) {
-    $tab = sanitize_title(wp_unslash($_GET["div"]));
+    $tab = sanitize_text_field(wp_unslash($_GET["div"]));
 }
 ?>
 

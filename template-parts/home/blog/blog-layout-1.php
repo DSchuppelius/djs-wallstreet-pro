@@ -59,7 +59,6 @@ $post_per_page = $current_setup->get("home_blog_counts");
             while ($blog_posts->have_posts()):
 
                 $blog_posts->the_post();
-                $recent_expet = get_the_excerpt();
                 $blog_row_pos = get_first_middle_last_row($j, $blog_posts->post_count, $col_count, " ");
                 $blog_item_pos = get_first_middle_last($j, $blog_posts->post_count); ?>
         <div class="col-md-4 col-sm-4 flexstretch <?php echo $blog_item_pos . $blog_row_pos; ?>">

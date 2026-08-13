@@ -64,30 +64,34 @@ spl_autoload_register(static function ($class) {
 /* -------------------------------------------------------------------------
  * 4.  Helfer zum einfachen Einbinden alter Funktions‑Dateien
  * ----------------------------------------------------------------------*/
-foreach (
-    [
-        'base/get_template_parts',
-        'base/get_content_title',
-        'theme/theme_functions',
-        'theme/theme_colors',
-        'scripts/scripts',
-        'scripts/custom_style',
-        'font/font',
-        'content/content',
-        'excerpt/excerpt',
-        'breadcrumbs/breadcrumbs',
-        'testimonials/testimonials',
-        'pagination/theme_pagination',
-        'menu/theme_bootstrap_walker_page',
-        'menu/theme_bootstrap_walker_nav_menu',
-        'basic/blog',
-        'basic/archive',
-        'basic/generator',
-        'basic/htmlclasses',
-        'widget/custom-sidebar',
-        'widget/wallstreet-latest-widget',
-        'widget/wallstreet-post-format-widget',
-        'shortcodes/shortcodes',
+$djs_dateien = [
+    'base/get_template_parts',
+    'base/get_content_title',
+    'theme/theme_functions',
+    'theme/theme_colors',
+    'scripts/scripts',
+    'scripts/custom_style',
+    'font/font',
+    'content/content',
+    'excerpt/excerpt',
+    'breadcrumbs/breadcrumbs',
+    'testimonials/testimonials',
+    'pagination/theme_pagination',
+    'menu/theme_bootstrap_walker_page',
+    'menu/theme_bootstrap_walker_nav_menu',
+    'basic/blog',
+    'basic/archive',
+    'basic/generator',
+    'basic/htmlclasses',
+    'widget/custom-sidebar',
+    'widget/wallstreet-latest-widget',
+    'widget/wallstreet-post-format-widget',
+    'shortcodes/shortcodes',
+];
+
+if (is_admin() || is_customize_preview()) {
+    array_push(
+        $djs_dateien,
         'customizer/customizer',
         'customizer/customizer-controls',
         'customizer/childs/customizer-blog',
@@ -98,14 +102,17 @@ foreach (
         'customizer/childs/customizer-copyright',
         'customizer/childs/customizer-typography',
         'customizer/childs/customizer-theme_style',
-        'customizer/single-blog-options',
-    ] as $file
-) {
+        'customizer/single-blog-options'
+    );
+}
+
+foreach ($djs_dateien as $file) {
     $path = THEME_FUNCTIONS_PATH . '/' . ltrim($file, '/') . '.php';
     if (is_readable($path)) {
         require_once $path;
     }
 }
+unset($djs_dateien, $file, $path);
 
 /* -------------------------------------------------------------------------
  * 5.  Theme‑Setup (Nach WP‑Best Practice)
