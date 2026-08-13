@@ -49,8 +49,9 @@ function qt_custom_breadcrumbs() {
         } elseif (is_single() && !is_attachment()) {
             if (get_post_type() != "post") {
                 $post_type = get_post_type_object(get_post_type());
-                $slug = $post_type->rewrite;
-                echo '<a href="' . esc_url($homeLink . "/" . $slug["slug"]) . '/">' . $post_type->labels->singular_name . "</a>";
+                $rewrite = $post_type->rewrite;
+                $slug = is_array($rewrite) && !empty($rewrite["slug"]) ? $rewrite["slug"] : $post_type->name;
+                echo '<a href="' . esc_url($homeLink . "/" . $slug) . '/">' . esc_html($post_type->labels->singular_name) . "</a>";
                 if ($showCurrent == 1) {
                     echo $delimiter . $before . get_the_title() . $after;
                 }
@@ -130,4 +131,4 @@ function qt_custom_breadcrumbs() {
         }
         echo "</li>";
     }
-} ?>
+}

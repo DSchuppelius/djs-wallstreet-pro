@@ -23,7 +23,10 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
         <div class="navbar-collapse collapse">
             <?php wp_nav_menu([
                 "theme_location" => "primary",
-                "container" => "nav-collapse collapse navbar-inverse-collapse",
+                // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
+                // dafuer ist "container_class" da.
+                "container" => "div",
+                "container_class" => "nav-collapse collapse navbar-inverse-collapse",
                 "menu_class" => "nav navbar-nav navbar-left",
                 "fallback_cb" => "theme_fallback_page_menu",
                 "walker" => new Theme_Bootstrap_Walker_Nav_Menu(),

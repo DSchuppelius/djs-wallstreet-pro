@@ -19,7 +19,7 @@ class Post_Format_Archives_Widget extends WP_Widget {
         parent::__construct(
             'post_format_archives_widget',
             esc_html__('Post Format Archives', "djs-wallstreet-pro"),
-            ['description'=>__('Displays a list of links to post-format archives', "djs-wallstreet-pro")]
+            ['description' => __('Displays a list of links to post-format archives', "djs-wallstreet-pro")]
         );
     }
 
@@ -38,7 +38,9 @@ class Post_Format_Archives_Widget extends WP_Widget {
         $audio =    empty($instance['audio'])   ? ' ' : apply_filters('widget_audio',   $instance['audio']);
 
         echo $before_widget;
-        if (!empty($title)) { echo $before_title . $title . $after_title; };
+        if (!empty($title)) {
+            echo $before_title . $title . $after_title;
+        };
 
         // @ http://codex.wordpress.org/Function_Reference/get_post_format_link
         echo '<ul id="custom-post-format-widget">';
@@ -58,16 +60,11 @@ class Post_Format_Archives_Widget extends WP_Widget {
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['title'] =    strip_tags($new_instance['title']);
-        $instance['aside'] =    strip_tags($new_instance['aside']);
-        $instance['image'] =    strip_tags($new_instance['image']);
-        $instance['link'] =     strip_tags($new_instance['link']);
-        $instance['quote'] =    strip_tags($new_instance['quote']);
-        $instance['status'] =   strip_tags($new_instance['status']);
-        $instance['gallery'] =  strip_tags($new_instance['gallery']);
-        $instance['video'] =    strip_tags($new_instance['video']);
-        $instance['chat'] =     strip_tags($new_instance['chat']);
-        $instance['audio'] =    strip_tags($new_instance['audio']);
+        $felder = ['title', 'aside', 'image', 'link', 'quote', 'status', 'gallery', 'video', 'chat', 'audio'];
+        foreach ($felder as $feld) {
+            $instance[$feld] = strip_tags($new_instance[$feld] ?? '');
+        }
+
         return $instance;
     }
 
@@ -97,55 +94,55 @@ class Post_Format_Archives_Widget extends WP_Widget {
         $audio =    strip_tags($instance['audio']);
 ?>
 
-<p><label for="<?php echo $this->get_field_id('title'); ?>">Title text</label>
-    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-        name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('aside'); ?>"><?php esc_html_e('Link text for Aside archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('aside'); ?>"
-        name="<?php echo $this->get_field_name('aside'); ?>" type="text" value="<?php echo esc_attr($aside); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('image'); ?>"><?php esc_html_e('Link text for Image archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('image'); ?>"
-        name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo esc_attr($image); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('link'); ?>"><?php esc_html_e('Link text for Link archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('link'); ?>"
-        name="<?php echo $this->get_field_name('link'); ?>" type="text" value="<?php echo esc_attr($link); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('quote'); ?>"><?php esc_html_e('Link text for Quote archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('quote'); ?>"
-        name="<?php echo $this->get_field_name('quote'); ?>" type="text" value="<?php echo esc_attr($quote); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('status'); ?>"><?php esc_html_e('Link text for Status archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('status'); ?>"
-        name="<?php echo $this->get_field_name('status'); ?>" type="text" value="<?php echo esc_attr($status); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('gallery'); ?>"><?php esc_html_e('Link text for Gallery archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('gallery'); ?>"
-        name="<?php echo $this->get_field_name('gallery'); ?>" type="text" value="<?php echo esc_attr($gallery); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('video'); ?>"><?php esc_html_e('Link text for Video archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('video'); ?>"
-        name="<?php echo $this->get_field_name('video'); ?>" type="text" value="<?php echo esc_attr($video); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('chat'); ?>"><?php esc_html_e('Link text for Chat archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('chat'); ?>"
-        name="<?php echo $this->get_field_name('chat'); ?>" type="text" value="<?php echo esc_attr($chat); ?>" />
-</p>
-<p><label
-        for="<?php echo $this->get_field_id('audio'); ?>"><?php esc_html_e('Link text for Audio archive', "djs-wallstreet-pro"); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('audio'); ?>"
-        name="<?php echo $this->get_field_name('audio'); ?>" type="text" value="<?php echo esc_attr($audio); ?>" />
-</p>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>">Title text</label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('aside'); ?>"><?php esc_html_e('Link text for Aside archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('aside'); ?>"
+                name="<?php echo $this->get_field_name('aside'); ?>" type="text" value="<?php echo esc_attr($aside); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('image'); ?>"><?php esc_html_e('Link text for Image archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('image'); ?>"
+                name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo esc_attr($image); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('link'); ?>"><?php esc_html_e('Link text for Link archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('link'); ?>"
+                name="<?php echo $this->get_field_name('link'); ?>" type="text" value="<?php echo esc_attr($link); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('quote'); ?>"><?php esc_html_e('Link text for Quote archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('quote'); ?>"
+                name="<?php echo $this->get_field_name('quote'); ?>" type="text" value="<?php echo esc_attr($quote); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('status'); ?>"><?php esc_html_e('Link text for Status archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('status'); ?>"
+                name="<?php echo $this->get_field_name('status'); ?>" type="text" value="<?php echo esc_attr($status); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('gallery'); ?>"><?php esc_html_e('Link text for Gallery archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('gallery'); ?>"
+                name="<?php echo $this->get_field_name('gallery'); ?>" type="text" value="<?php echo esc_attr($gallery); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('video'); ?>"><?php esc_html_e('Link text for Video archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('video'); ?>"
+                name="<?php echo $this->get_field_name('video'); ?>" type="text" value="<?php echo esc_attr($video); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('chat'); ?>"><?php esc_html_e('Link text for Chat archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('chat'); ?>"
+                name="<?php echo $this->get_field_name('chat'); ?>" type="text" value="<?php echo esc_attr($chat); ?>" />
+        </p>
+        <p><label
+                for="<?php echo $this->get_field_id('audio'); ?>"><?php esc_html_e('Link text for Audio archive', "djs-wallstreet-pro"); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('audio'); ?>"
+                name="<?php echo $this->get_field_name('audio'); ?>" type="text" value="<?php echo esc_attr($audio); ?>" />
+        </p>
 <?php }
 }
 ?>

@@ -39,15 +39,15 @@ if (isset($_GET["div"])) {
         <div class="row">
             <div class="section_heading_title">
                 <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_title")) { ?>
-                <h1><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_title"); ?></h1>
-                <div class="pagetitle-separator">
-                    <div class="pagetitle-separator-border">
-                        <div class="pagetitle-separator-box"></div>
+                    <h1><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_title"); ?></h1>
+                    <div class="pagetitle-separator">
+                        <div class="pagetitle-separator-border">
+                            <div class="pagetitle-separator-box"></div>
+                        </div>
                     </div>
-                </div>
                 <?php } ?>
                 <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_desc")) { ?>
-                <p><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_desc"); ?></p>
+                    <p><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_desc"); ?></p>
                 <?php } ?>
             </div>
         </div>
@@ -57,13 +57,20 @@ if (isset($_GET["div"])) {
                     <ul id="tabs" class="portfolio-tabs" role="tablist">
                         <?php foreach ($tax_terms as $tax_term) {
                             $decoded_slug = rawurldecode($tax_term->slug); ?>
-                        <li rel="tab" class="nav-item">
-                            <span class="tab">
-                                <a id="tab-<?php echo esc_attr($decoded_slug); ?>"
-                                    href="<?php echo esc_url($current_setup->get("page_fader_enabled") ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>"
-                                    class="btn tab nav-link <?php if ($tab == "") { if ($j == 1) { echo "active"; $j = 2; } } elseif ($tab == $decoded_slug) { echo "active"; } ?>"><?php echo esc_html($tax_term->name); ?></a>
-                            </span>
-                        </li>
+                            <li rel="tab" class="nav-item">
+                                <span class="tab">
+                                    <a id="tab-<?php echo esc_attr($decoded_slug); ?>"
+                                        href="<?php echo esc_url($current_setup->get("page_fader_enabled") ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>"
+                                        class="btn tab nav-link <?php if ($tab == "") {
+                                                                    if ($j == 1) {
+                                                                        echo "active";
+                                                                        $j = 2;
+                                                                    }
+                                                                } elseif ($tab == $decoded_slug) {
+                                                                    echo "active";
+                                                                } ?>"><?php echo esc_html($tax_term->name); ?></a>
+                                </span>
+                            </li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -92,11 +99,18 @@ if (isset($_GET["div"])) {
                     $portfolio_query = null;
                     $portfolio_query = new WP_Query($args);
                     if ($portfolio_query->have_posts()) { ?>
-            <div id="<?php echo esc_attr($decoded_slug); ?>"
-                class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == $decoded_slug) { echo "active"; } ?>"
-                role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($decoded_slug); ?>">
-                <div class="row">
-                    <?php while ($portfolio_query->have_posts()) {
+                        <div id="<?php echo esc_attr($decoded_slug); ?>"
+                            class="tab-pane fade in <?php if ($tab == "") {
+                                                        if ($is_active == true) {
+                                                            echo "active";
+                                                        }
+                                                        $is_active = false;
+                                                    } elseif ($tab == $decoded_slug) {
+                                                        echo "active";
+                                                    } ?>"
+                            role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($decoded_slug); ?>">
+                            <div class="row">
+                                <?php while ($portfolio_query->have_posts()) {
                                     $portfolio_query->the_post();
                                     if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
                                         $meta_project_link = esc_url(get_post_meta(get_the_ID(), "meta_project_link", true));
@@ -127,55 +141,63 @@ if (isset($_GET["div"])) {
                                         $class = "col-md-3 col-sm-6";
                                         $class1 = "four-colum-layout";
                                     } ?>
-                    <div class="<?php echo $class; ?> col-xs-12 main-portfolio-area">
-                        <div class="main-portfolio-showcase">
-                            <div class="<?php echo $class1; ?> main-portfolio-showcase-media">
-                                <?php
-                                                the_post_thumbnail("port-thumb", [ "class" => "img-responsive" . get_big_border(" ")]);
+                                    <div class="<?php echo $class; ?> col-xs-12 main-portfolio-area">
+                                        <div class="main-portfolio-showcase">
+                                            <div class="<?php echo $class1; ?> main-portfolio-showcase-media">
+                                                <?php
+                                                the_post_thumbnail("port-thumb", ["class" => "img-responsive" . get_big_border(" ")]);
+                                                $post_thumbnail_url = "";
                                                 if (has_post_thumbnail()) {
                                                     $post_thumbnail_id = get_post_thumbnail_id();
                                                     $post_thumbnail_url = esc_url(get_attachment_link($post_thumbnail_id));
                                                 } ?>
-                                <div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
-                                    <div class="main-portfolio-showcase-overlay-inner">
-                                        <div class="main-portfolio-showcase-detail">
-                                            <h4><?php the_title(); ?></h4>
-                                            <?php if (is_page_template("template-specials/portfolio-4-column.php")) { ?>
-                                            <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
-                                            <?php } else { ?>
-                                            <p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
-                                            <?php } ?>
-                                            <div
-                                                class="portfolio-icon <?php echo $show_project_picture_link? "":"without_image"; ?>">
-                                                <?php if ($show_project_picture_link) { ?>
-                                                <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
-                                                    class="hover_thumb" title="<?php the_title(); ?>"
-                                                    data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>"><i
-                                                        class="fa fa-image"></i></a>
-                                                <?php } ?>
-                                                <?php if ($meta_project_link) { ?>
-                                                <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
-                                                    href="<?php echo esc_url($meta_project_link); ?>"
-                                                    alt="<?php echo esc_attr($portfolio_project_summary); ?>"><i
-                                                        class="fa fa-link"></i></a>
-                                                <?php } ?>
+                                                <div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
+                                                    <div class="main-portfolio-showcase-overlay-inner">
+                                                        <div class="main-portfolio-showcase-detail">
+                                                            <h4><?php the_title(); ?></h4>
+                                                            <?php if (is_page_template("template-specials/portfolio-4-column.php")) { ?>
+                                                                <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
+                                                            <?php } else { ?>
+                                                                <p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
+                                                            <?php } ?>
+                                                            <div
+                                                                class="portfolio-icon <?php echo $show_project_picture_link ? "" : "without_image"; ?>">
+                                                                <?php if ($show_project_picture_link) { ?>
+                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
+                                                                        class="hover_thumb" title="<?php the_title(); ?>"
+                                                                        data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>"><i
+                                                                            class="fa fa-image"></i></a>
+                                                                <?php } ?>
+                                                                <?php if ($meta_project_link) { ?>
+                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
+                                                                        href="<?php echo esc_url($meta_project_link); ?>"
+                                                                        alt="<?php echo esc_attr($portfolio_project_summary); ?>"><i
+                                                                            class="fa fa-link"></i></a>
+                                                                <?php } ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <?php $norecord = 1; ?>
+                                <?php } ?>
                             </div>
+                            <?php the_pagination($curpage, $portfolio_query, $portfolio_query->found_posts, $posts_per_page); ?>
                         </div>
-                    </div>
-                    <?php $norecord = 1; ?>
-                    <?php } ?>
-                </div>
-                <?php the_pagination($curpage, $portfolio_query, $portfolio_query->found_posts, $posts_per_page); ?>
-            </div>
-            <?php wp_reset_query();
+                    <?php wp_reset_query();
                     } else { ?>
-            <div id="<?php echo $decoded_slug; ?>"
-                class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == $decoded_slug) { echo "active"; } ?>">
-            </div>
+                        <div id="<?php echo $decoded_slug; ?>"
+                            class="tab-pane fade in <?php if ($tab == "") {
+                                                        if ($is_active == true) {
+                                                            echo "active";
+                                                        }
+                                                        $is_active = false;
+                                                    } elseif ($tab == $decoded_slug) {
+                                                        echo "active";
+                                                    } ?>">
+                        </div>
             <?php }
                 }
             } ?>
@@ -183,43 +205,43 @@ if (isset($_GET["div"])) {
     </div>
 </section>
 <?php if (!$current_setup->get("page_fader_enabled")) { ?>
-<script type="text/javascript">
-jQuery('.lightbox').hide();
-jQuery('#lightbox').hide();
+    <script type="text/javascript">
+        jQuery('.lightbox').hide();
+        jQuery('#lightbox').hide();
 
-jQuery(".tab .nav-link ").click(function(e) {
-    var h = decodeURI(jQuery(this).attr('href').replace(/#/, ""));
-    var tjk = "<?php the_title(); ?>";
-    var str1 = tjk.replace(/\s+/g, '-').toLowerCase();
-    var pageurl = "<?php echo $permalink; ?>" + h;
+        jQuery(".tab .nav-link ").click(function(e) {
+            var h = decodeURI(jQuery(this).attr('href').replace(/#/, ""));
+            var tjk = "<?php the_title(); ?>";
+            var str1 = tjk.replace(/\s+/g, '-').toLowerCase();
+            var pageurl = "<?php echo $permalink; ?>" + h;
 
-    jQuery("#lightbox").remove();
-    jQuery.ajax({
-        url: pageurl,
-        beforeSend: function() {
-            jQuery(".tab-content").hide();
-            jQuery("#loading_container").show();
-        },
-        success: function(data) {
-            jQuery(".tab-content").show();
-            jQuery('.lightbox').remove();
-            jQuery('#lightbox').remove();
-            jQuery('.page-mycarousel').hide();
-            jQuery('.container').hide();
-            jQuery('footer.site').hide();
-            jQuery('#wall_wrapper').html(data);
-        },
-        complete: function(data) {
-            jQuery("#loading_container").hide();
-        }
-    });
+            jQuery("#lightbox").remove();
+            jQuery.ajax({
+                url: pageurl,
+                beforeSend: function() {
+                    jQuery(".tab-content").hide();
+                    jQuery("#loading_container").show();
+                },
+                success: function(data) {
+                    jQuery(".tab-content").show();
+                    jQuery('.lightbox').remove();
+                    jQuery('#lightbox').remove();
+                    jQuery('.page-mycarousel').hide();
+                    jQuery('.container').hide();
+                    jQuery('footer.site').hide();
+                    jQuery('#wall_wrapper').html(data);
+                },
+                complete: function(data) {
+                    jQuery("#loading_container").hide();
+                }
+            });
 
-    if (pageurl != window.location) {
-        window.history.pushState({
-            path: pageurl
-        }, '', pageurl);
-    }
-    return false;
-});
-</script>
+            if (pageurl != window.location) {
+                window.history.pushState({
+                    path: pageurl
+                }, '', pageurl);
+            }
+            return false;
+        });
+    </script>
 <?php } ?>

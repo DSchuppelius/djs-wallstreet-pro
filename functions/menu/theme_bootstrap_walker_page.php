@@ -15,14 +15,7 @@ class Theme_Bootstrap_Walker_Page extends Walker_Page {
 
     function start_el(&$output, $page, $depth = 0, $args = [], $current_page = 0) {
         $indent = $depth ? str_repeat("    ", $depth) : "";
-
-        if ($depth === 0) {
-            $child_class = "nav-link";
-        } elseif ($depth > 0) {
-            $child_class = "dropdown-item";
-        } else {
-            $child_class = "";
-        }
+        $child_class = $depth === 0 ? "nav-link" : "dropdown-item";
 
         extract($args, EXTR_SKIP);
         $css_class = ["menu-item page_item", "page-item-" . $page->ID];

@@ -8,6 +8,12 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
 global $template;
+
+if (!defined("DJS_POSTTYPE_PLUGIN")) {
+    get_template_part("template-specials/not_loaded", "plugin");
+    return;
+}
+
 $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 $templates = ["template-parts/index/index", "banner"];
 
@@ -26,4 +32,3 @@ if ($current_setup_posttypes->get("team_template_client_section_show_hide") == t
 }
 
 get_footer();
-?>

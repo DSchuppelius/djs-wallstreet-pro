@@ -141,9 +141,11 @@ if (is_denied_specialtemplate()) {
             </div>
         <?php endif; ?>
         <?php if ($current_setup->get("search_effect_style_setting") == "toogle") { ?>
-            <div id="searchbar_fullscreen"
-                <?php if ($current_setup->get("search_effect_style_setting") == "popup_light") { ?> class="bg-light"
-                <?php } ?>>
+            <?php // Die innere Bedingung stand innerhalb des Zweigs == "toogle" und pruefte
+                    // auf == "popup_light" - beides gleichzeitig ist unmoeglich, die Klasse
+                    // bg-light wurde also nie gesetzt. Ersatzlos entfernt statt sie scharf zu
+                    // schalten: welcher Zustand gemeint war, geht aus dem Code nicht hervor. ?>
+            <div id="searchbar_fullscreen">
                 <button type="button" class="not close material-icons-outlined">close</button>
                 <form method="get" id="searchform" autocomplete="off" class="search-form"
                     action="<?php echo esc_url(home_url("/")); ?>"><label><input type="search" class="search-field"

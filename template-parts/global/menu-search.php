@@ -33,7 +33,7 @@ if (!$is_toggle_button) {
         '<div class="nav-search nav-light-search wrap">
             <div class="search-box-outer">
                 <div id="top_searchmenu" class="dropdown">
-                    <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" title="Search" class="nav-link search-iconaria-haspopup" true"="" aria-expanded="false">
+                    <a id="searchbar_fullscreen_menu" href="' . esc_url(get_the_currentURL()) . '#searchbar_fullscreen" title="' . esc_attr__("Search", "djs-wallstreet-pro") . '" class="nav-link search-icon" aria-haspopup="true" aria-expanded="false">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
@@ -110,7 +110,10 @@ if ($current_setup->get("header_presets_stlyle") == 4 || $current_setup->get("he
 if ($current_setup->get("header_presets_stlyle") == 6) {
     wp_nav_menu([
         "theme_location" => "primary",
-        "container" => "nav-collapse collapse navbar-inverse-collapse",
+        // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
+        // dafuer ist "container_class" da.
+        "container" => "div",
+        "container_class" => "nav-collapse collapse navbar-inverse-collapse",
         "menu_class" => "nav navbar-nav navbar-left",
         "items_wrap" => $shop_button,
         "fallback_cb" => "theme_fallback_page_menu",
@@ -119,7 +122,10 @@ if ($current_setup->get("header_presets_stlyle") == 6) {
 } else {
     wp_nav_menu([
         "theme_location" => "primary",
-        "container" => "nav-collapse collapse navbar-inverse-collapse",
+        // "container" erwartet einen Tag-Namen (div/nav), keine CSS-Klassen -
+        // dafuer ist "container_class" da.
+        "container" => "div",
+        "container_class" => "nav-collapse collapse navbar-inverse-collapse",
         "menu_class" => "nav navbar-nav navbar-right",
         "items_wrap" => $shop_button,
         "fallback_cb" => "theme_fallback_page_menu",

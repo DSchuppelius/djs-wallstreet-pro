@@ -23,7 +23,7 @@ add_filter("script_loader_src", "remove_version_from_style_js");
 add_filter("revslider_meta_generator", "wp_version_remove_version");
 
 add_action("init", function () {
-    if (function_exists("visual_composer") || class_exists("Vc_Manager")) {
+    if (function_exists("visual_composer")) {
         remove_action("wp_head", [visual_composer(), "addMetaData"]);
     }
 });
@@ -36,5 +36,3 @@ function jptweak_remove_share() {
     }
 }
 add_action("loop_start", "jptweak_remove_share");
-
-?>

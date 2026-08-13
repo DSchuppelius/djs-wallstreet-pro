@@ -10,24 +10,15 @@
 function get_values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = "") {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-    if (!empty($current_setup->get($option))) {
-        if ($current_setup->get($option)) {
-            return $prefix . $positive . $suffix;
-        } elseif (!empty($negative)) {
-            return $prefix . $negative . $suffix;
-        } else {
-            return "";
-        }
-    }
-
-    return null;
+    $wert = $current_setup->get($option);
+    return !empty($wert) ? $prefix . $positive . $suffix : null;
 }
 
-function values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = ""){
+function values_on_current_option($option, $positive, $negative = "", $prefix = "", $suffix = "") {
     echo get_values_on_current_option($option, $positive, $negative, $prefix, $suffix);
 }
 
-function get_blank_target($option, $prefix = null){
+function get_blank_target($option, $prefix = null) {
     $result = 'target="';
     if ($option) {
         $result .= '_blank"';
@@ -37,7 +28,7 @@ function get_blank_target($option, $prefix = null){
     return !empty($prefix) ? $prefix . " " . $result : $result;
 }
 
-function blank_target($option, $prefix = null){
+function blank_target($option, $prefix = null) {
     echo get_blank_target($option, $prefix);
 }
 
@@ -115,7 +106,7 @@ function contains_page_templates($templates) {
     return false;
 }
 
-function is_loaded_template($my_template){
+function is_loaded_template($my_template) {
     global $template;
     return basename($template) === $my_template;
 }
@@ -127,9 +118,8 @@ function is_denied_specialtemplate() {
 function show_rellax_div() {
     global $loaded_banner;
 
-    if(!is_404() && $loaded_banner && !is_denied_specialtemplate())
+    if (!is_404() && $loaded_banner && !is_denied_specialtemplate())
         return true;
 
     return false;
 }
-?>

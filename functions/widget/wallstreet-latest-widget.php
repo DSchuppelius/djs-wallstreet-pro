@@ -37,7 +37,7 @@ class wallstreet_latest_widget extends WP_Widget {
             foreach ($posts as $post) {
                 setup_postdata($post); ?>
                 <div class="media post-media-sidebar">
-                    <a class="pull-left sidebar-pull-img" href="<?php the_currentURL(); ?>">
+                    <a class="pull-left sidebar-pull-img" href="<?php echo esc_url(get_permalink()); ?>">
                         <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
                         <?php echo get_the_post_thumbnail($post->ID, "wall_sidebar_img", $atts); ?>
                     </a>

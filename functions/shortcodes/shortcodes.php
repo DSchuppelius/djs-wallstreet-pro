@@ -220,7 +220,9 @@ function dropcp_shortcode($atts, $content = null) {
 add_shortcode("dropcap", "dropcp_shortcode");
 
 function gridsystemlayout_function($atts, $content = null) {
-    $grid_layout = $atts["grid_layout"];
+    $grid_atts = shortcode_atts(["grid_layout" => ""], (array) $atts, "gridsystemlayout");
+    $grid_layout = $grid_atts["grid_layout"];
+    $result = "";
 
     if ($grid_layout == "one-column") {
         $atts = shortcode_atts([
@@ -407,77 +409,40 @@ function list_function($atts, $content = null) {
         "fields" => "1",
         "list_style" => "unordered",
         "list_item" => "list title",
-    ], $atts);
+    ], $atts, "list");
+
+    $icons = [
+        "chevron circle right" => "fa-chevron-circle-right",
+        "thumbs up"            => "fa-thumbs-o-up",
+        "check circle"         => "fa-check-circle",
+        "caret right"          => "fa-caret-right",
+        "chevron right"        => "fa-chevron-right",
+        "angle double right"   => "fa-angle-double-right",
+        "dot circle"           => "fa-dot-circle-o",
+        "arrow"                => "fa-arrow-right",
+    ];
 
     $list_style = $atts["list_style"];
-    $list_item = $atts["list_item"];
-    $list_item = explode(", ", $list_item);
-    $fields = $atts["fields"];
-    $result = "";
-    if ($list_style == "chevron circle right") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-chevron-circle-right"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
+    $eintraege = array_map("trim", explode(",", (string) $atts["list_item"]));
+    $anzahl = max(0, (int) $atts["fields"]);
+    if ($anzahl > 0) {
+        $eintraege = array_slice($eintraege, 0, $anzahl);
     }
-    if ($list_style == "thumbs up") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-thumbs-o-up"></i><span>' . $list_item[$i] . "</span>";
+
+    if (!isset($icons[$list_style])) {
+        // "unordered" und alles Unbekannte als schlichte Liste ausgeben.
+        $result = '<div class="typo-para-icons"><div class="para-box"><ul>';
+        foreach ($eintraege as $eintrag) {
+            $result .= "<li>" . esc_html($eintrag) . "</li>";
         }
-        $result .= "</div></div>";
-        return $result;
+        return $result . "</ul></div></div>";
     }
-    if ($list_style == "check circle") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-check-circle"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
+
+    $result = '<div class="typo-para-icons"><div class="para-box">';
+    foreach ($eintraege as $eintrag) {
+        $result .= '<i class="fa ' . esc_attr($icons[$list_style]) . '"></i><span>' . esc_html($eintrag) . "</span>";
     }
-    if ($list_style == "caret right") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-caret-right"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
-    }
-    if ($list_style == "chevron right") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-chevron-right"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
-    }
-    if ($list_style == "angle double right") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-angle-double-right"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
-    }
-    if ($list_style == "dot circle") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-dot-circle-o"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
-    }
-    if ($list_style == "arrow") {
-        $result .= '<div class="typo-para-icons"><div class="para-box">';
-        for ($i = 1; $i <= $fields; $i++) {
-            $result .= '<i class="fa fa-arrow-right"></i><span>' . $list_item[$i] . "</span>";
-        }
-        $result .= "</div></div>";
-        return $result;
-    }
+    return $result . "</div></div>";
 }
 add_shortcode("list", "list_function");
 

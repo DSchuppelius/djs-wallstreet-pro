@@ -58,7 +58,7 @@ if (class_exists("WooCommerce")) {
             $shop_button .= '<div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">
                     <div class="dropdown">
-                        <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
+                        <a id="searchbar_fullscreen_menu" href="' . esc_url(get_the_currentURL()) . '#searchbar_fullscreen" class="nav-link search-icon" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
                     </div>
                 </div></div>';
         }
@@ -91,7 +91,7 @@ if (class_exists("WooCommerce")) {
             <div class="nav-search nav-light-search wrap">
                 <div class="search-box-outer">
                     <div class="dropdown">
-                        <a id="searchbar_fullscreen_menu" href="' . get_the_currentURL() . '#searchbar_fullscreen" class="nav-link search-iconaria-haspopup=" true"="" aria-expanded="false"><i class="fa fa-search"></i></a>
+                        <a id="searchbar_fullscreen_menu" href="' . esc_url(get_the_currentURL()) . '#searchbar_fullscreen" class="nav-link search-icon" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
             </div></div>';
