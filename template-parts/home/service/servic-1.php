@@ -54,12 +54,12 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
                 <?php if ($service_icon_target && $service_icon_image) { ?>
                 <div class="other-service-area1">
                     <?php if ($meta_service_link) { ?>
-                    <a href="<?php echo $meta_service_link; ?>"
+                    <a href="<?php echo esc_url($meta_service_link); ?>"
                         <?php blank_target(get_post_meta(get_the_ID(), "meta_service_target", true)) ?>>
-                        <i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i>
+                        <i class="fa <?php if ($service_icon_image) { echo esc_attr($service_icon_image); } ?>"></i>
                     </a>
                     <?php } else { ?>
-                    <i class="fa <?php if ($service_icon_image) { echo $service_icon_image; } ?>"></i>
+                    <i class="fa <?php if ($service_icon_image) { echo esc_attr($service_icon_image); } ?>"></i>
                     <?php } ?>
                 </div>
                 <?php } else {

@@ -210,15 +210,43 @@ function djs_wallstreet_setup() {
 /* -------------------------------------------------------------------------
  * 6.  MIME‑Types (SVG nur mit Safe‑SVG o. Ä.)
  * ----------------------------------------------------------------------*/
+/**
+ * Ist ein SVG-Sanitizer aktiv? Ohne einen solchen darf image/svg+xml NICHT freigegeben
+ * werden: eine hochgeladene SVG-Datei wird aus /uploads unter der eigenen Origin
+ * ausgeliefert und fuehrt enthaltenes <script> beim direkten Aufruf aus.
+ * Erkannt werden Safe SVG (safe-svg) und das gleichnamige enshrined-Plugin.
+ */
+function djs_wallstreet_svg_sanitizer_aktiv() {
+    return class_exists('SafeSvg\\safe_svg')
+        || class_exists('safe_svg')
+        || function_exists('safe_svg_filter_svg_upload');
+}
+
 add_filter('upload_mimes', static function ($types) {
-    return $types + [
+    $types += [
         'fcstd' => 'application/zip',
-        'svg'   => 'image/svg+xml',
         'zip'   => 'application/zip',
         'm4a'   => 'audio/mp4',
         'mp4'   => 'video/mp4',
         'mp3'   => 'audio/mpeg',
     ];
+
+    if (djs_wallstreet_svg_sanitizer_aktiv()) {
+        $types['svg'] = 'image/svg+xml';
+    }
+
+    return $types;
+});
+
+// Hinweis im Backend, solange SVG mangels Sanitizer gesperrt ist.
+add_action('admin_notices', static function () {
+    if (djs_wallstreet_svg_sanitizer_aktiv() || !current_user_can('install_plugins')) {
+        return;
+    }
+    printf(
+        '<div class="notice notice-warning"><p>%s</p></div>',
+        esc_html__('SVG-Uploads sind deaktiviert, weil kein SVG-Sanitizer aktiv ist. Installiere das Plugin "Safe SVG", um SVG-Dateien wieder zuzulassen.', 'djs-wallstreet-pro')
+    );
 });
 
 /* -------------------------------------------------------------------------

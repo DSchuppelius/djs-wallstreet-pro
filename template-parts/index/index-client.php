@@ -46,9 +46,9 @@
                                 $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
 
                                 if ($post_thumbnail_url) { ?>
-                <a href="<?php echo $post_client_url; ?>" <?php echo $post_client_url_target; ?>>
-                    <img class="img-responsive" title="<?php echo get_the_title(); ?>"
-                        src="<?php echo $post_thumbnail_url; ?>">
+                <a href="<?php echo esc_url($post_client_url); ?>" <?php echo $post_client_url_target; ?>>
+                    <img class="img-responsive" title="<?php echo esc_attr(get_the_title()); ?>"
+                        src="<?php echo esc_url($post_thumbnail_url); ?>">
                 </a>
                 <?php } else { ?>
                 <img class="img-responsive" title="<?php echo get_the_title(); ?>"

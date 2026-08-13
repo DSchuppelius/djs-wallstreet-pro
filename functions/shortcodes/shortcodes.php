@@ -34,7 +34,7 @@ function button_shortcode($atts, $content = null) {
     $url = $atts["url"];
     $target = $atts["target"];
     $style = $style ? " " . $style : "";
-    $result = "<a" . $target . ' class="' . $style . " " . $size . '  " href="' . $url . '" ' . get_blank_target($target == "blank") . '">' . do_shortcode($content) . "</a>";
+    $result = '<a class="' . esc_attr(trim($style . " " . $size)) . '" href="' . esc_url($url) . '" ' . get_blank_target($target == "blank") . ">" . do_shortcode($content) . "</a>";
     return $result;
 }
 add_shortcode("button", "button_shortcode");
@@ -70,7 +70,7 @@ function accordion_shortcode($atts, $content = null) {
                     <div class="short-panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
-                                $title[$i] . '<span class="fa fa-minus"></span>
+                $title[$i] . '<span class="fa fa-minus"></span>
                             </a>
                         </h4>
                     </div>
@@ -79,8 +79,8 @@ function accordion_shortcode($atts, $content = null) {
                             <div class="media">
                                 <div class="media-body">
                                     <p class="image-para-content">' .
-                                        $text[$i] .
-                                    '</p>
+                $text[$i] .
+                '</p>
                                 </div>
                             </div>
                         </div>
@@ -92,15 +92,15 @@ function accordion_shortcode($atts, $content = null) {
                     <div class="short-panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
-                                $title[$i] . '<span class="fa fa-plus"></span>
+                $title[$i] . '<span class="fa fa-plus"></span>
                             </a>
                         </h4>
                     </div>
                     <div class="panel-collapse collapse" id="' . $accordian_group . $i . '">
                         <div class="panel-body">
                             <p>' .
-                                $text[$i] .
-                            '</p>
+                $text[$i] .
+                '</p>
                         </div>
                     </div>
                 </div>';
@@ -188,13 +188,13 @@ function alert_shortcode($atts, $content = null) {
 
     $result =
         '<div class="' .
-        $alert_style .
+        esc_attr($alert_style) .
         '">
             <button data-dismiss="alert" class="not close material-icons-outlined" type="button">close</button>
             <strong>' .
-        $alert_heading .
+        esc_html($alert_heading) .
         "</strong>&nbsp;&nbsp;" .
-        $alert_text .
+        esc_html($alert_text) .
         do_shortcode($content) .
         "</div>";
     return $result;
@@ -234,11 +234,11 @@ function gridsystemlayout_function($atts, $content = null) {
             '<div class="row">
                 <div class="col-md-12">
                     <div class="hc_head_title"><span>' .
-                        $one_column_title .
-                    '</span></div>
+            $one_column_title .
+            '</span></div>
                     <p>' .
-                        $one_column_description .
-                    '</p>
+            $one_column_description .
+            '</p>
                 </div>
             </div>';
     } elseif ($grid_layout == "two-column") {
@@ -259,19 +259,19 @@ function gridsystemlayout_function($atts, $content = null) {
             '<div class="row">
                 <div class="col-md-6">
                     <div class="hc_head_title"><span>' .
-                        $one_column_title .
-                    '</span></div>
+            $one_column_title .
+            '</span></div>
                     <p>' .
-                        $one_column_description .
-                    '</p>
+            $one_column_description .
+            '</p>
                 </div>
                 <div class="col-md-6">
                     <div class="hc_head_title"><span>' .
-                        $two_column_title .
-                    '</span></div>
+            $two_column_title .
+            '</span></div>
                     <p>' .
-                        $two_column_description .
-                    '</p>
+            $two_column_description .
+            '</p>
                 </div>
             </div>';
     } elseif ($grid_layout == "three-column") {
@@ -295,27 +295,27 @@ function gridsystemlayout_function($atts, $content = null) {
             '<div class="row">
                 <div class="col-md-4">
                     <div class="hc_head_title"><span>' .
-                        $one_column_title .
-                    '</span></div>
+            $one_column_title .
+            '</span></div>
                     <p>' .
-                        $one_column_description .
-                    '</p>
+            $one_column_description .
+            '</p>
                 </div>
                 <div class="col-md-4">
                     <div class="hc_head_title"><span>' .
-                        $two_column_title .
-                    '</span></div>
+            $two_column_title .
+            '</span></div>
                     <p>' .
-                        $two_column_description .
-                    '</p>
+            $two_column_description .
+            '</p>
                 </div>
                 <div class="col-md-4">
                     <div class="hc_head_title"><span>' .
-                        $three_column_title .
-                    '</span></div>
+            $three_column_title .
+            '</span></div>
                     <p>' .
-                        $three_column_description .
-                    '</p>
+            $three_column_description .
+            '</p>
                 </div>
             </div>';
     } elseif ($grid_layout == "fourth-column") {
@@ -344,35 +344,35 @@ function gridsystemlayout_function($atts, $content = null) {
             '<div class="row">
                 <div class="col-md-3">
                     <div class="hc_head_title"><span>' .
-                        $one_column_title .
-                    '</span></div>
+            $one_column_title .
+            '</span></div>
                     <p>' .
-                        $one_column_description .
-                    '</p>
+            $one_column_description .
+            '</p>
                 </div>
                 <div class="col-md-3">
                     <div class="hc_head_title"><span>' .
-                        $two_column_title .
-                    '</span></div>
+            $two_column_title .
+            '</span></div>
                     <p>' .
-                        $two_column_description .
-                    '</p>
+            $two_column_description .
+            '</p>
                 </div>
                 <div class="col-md-3">
                     <div class="hc_head_title"><span>' .
-                        $three_column_title .
-                    '</span></div>
+            $three_column_title .
+            '</span></div>
                     <p>' .
-                        $three_column_description .
-                    '</p>
+            $three_column_description .
+            '</p>
                 </div>
                 <div class="col-md-3">
                     <div class="hc_head_title"><span>' .
-                        $fourth_column_title .
-                    '</span></div>
+            $fourth_column_title .
+            '</span></div>
                     <p>' .
-                        $fourth_column_description .
-                    '</p>
+            $fourth_column_description .
+            '</p>
                 </div>
             </div>';
     }
@@ -387,8 +387,15 @@ function heading_function($atts, $content = null) {
         "title" => "Heading",
     ], $atts);
 
-    $heading_style = $atts["heading_style"];
-    $title = $atts["title"];
+    // Der Tag-Name kam vorher ungefiltert aus dem Attribut. [heading heading_style="script"]
+    // erzeugte damit woertlich ein <script>-Element - gespeichertes XSS durch jeden, der
+    // Beitraege schreiben darf. Nur Ueberschriften-Tags zulassen, Titel escapen.
+    $erlaubte_tags = ["h1", "h2", "h3", "h4", "h5", "h6"];
+    $heading_style = strtolower(trim((string) $atts["heading_style"]));
+    if (!in_array($heading_style, $erlaubte_tags, true)) {
+        $heading_style = "h1";
+    }
+    $title = esc_html($atts["title"]);
     $result = '<div class="typo-section"><' . $heading_style . ">" . $title . "</" . $heading_style . "></div>";
     return $result;
 }
@@ -489,14 +496,16 @@ function tooltip_function($atts, $content = null) {
     $tooltip_url = $atts["tooltip_url"];
     $tip_word = $atts["tip_word"];
 
+    // Die Attribute stehen in einfachen Anfuehrungszeichen - esc_attr() maskiert die
+    // ebenfalls (ENT_QUOTES), ein Ausbruch aus data-tip/href ist damit ausgeschlossen.
     $myString = $tooltip_text;
-    $tooltip_text = str_replace($tooltip_word, "<a data-tip='" . $tip_word . "' href='" . $tooltip_url . "'>" . $tooltip_word . "</a>", $myString);
+    $tooltip_text = str_replace($tooltip_word, "<a data-tip='" . esc_attr($tip_word) . "' href='" . esc_url($tooltip_url) . "'>" . esc_html($tooltip_word) . "</a>", $myString);
 
     $result =
         '<div class="short-tooltip">
             <p class="short-tooltip">' .
-                $tooltip_text .
-            "</p>
+        $tooltip_text .
+        "</p>
         </div>";
     return $result;
 }

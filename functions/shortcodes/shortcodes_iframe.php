@@ -30,6 +30,17 @@ if (!isset($table_prefix)) {
     FindWPConfig(dirname(dirname(__FILE__)));
     include_once $confroot . "/wp-load.php";
 }
+
+// Diese Datei ist direkt ueber ihre URL aufrufbar und bootet dabei WordPress komplett.
+// Ohne Rechtepruefung konnte das jeder ausloesen. Der Dialog dient dem Einfuegen von
+// Shortcodes im Editor - dafuer reicht edit_posts.
+if (!function_exists("current_user_can") || !current_user_can("edit_posts")) {
+    if (function_exists("wp_die")) {
+        wp_die(esc_html__("You are not allowed to access this page.", "djs-wallstreet-pro"), "", ["response" => 403]);
+    }
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

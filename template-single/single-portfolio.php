@@ -31,7 +31,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
                 <p><a class="button btn loadmore project-btn"
                         <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true)); ?>
-                        href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo esc_html(get_post_meta(get_the_ID(), "meta_button_link", true)); } ?>"
+                        href="<?php if (get_post_meta(get_the_ID(), "meta_button_link", true)) { echo esc_url(get_post_meta(get_the_ID(), "meta_button_link", true)); } ?>"
                         title="<?php esc_attr_e("Website", "djs-wallstreet-pro"); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), "portfolio_project_button_text", true)); ?></a>
                 </p>
                 <?php } ?>
@@ -62,7 +62,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
 
                 <?php if (get_post_meta(get_the_ID(), "portfolio_project_visit_site", true)) { ?>
                 <p><?php esc_html_e("Website", "djs-wallstreet-pro"); ?>: <small><a
-                            href="<?php echo $website_portfolio ?>"><?php echo $website_portfolio ?></a></small></p>
+                            href="<?php echo esc_url($website_portfolio); ?>"><?php echo esc_html($website_portfolio); ?></a></small></p>
                 <?php } ?>
             </div>
             <div class="portfolio-detail-filler"></div>

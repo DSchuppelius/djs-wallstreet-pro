@@ -83,16 +83,16 @@ if(defined("DJS_POSTTYPE_PLUGIN")) { ?>
                                                     if (get_post_meta(get_the_ID(), "portfolio_project_button_text", true)) { ?>
                                     <div class="portfolio-btn">
                                         <?php if (str_contains($meta_project_link, get_site_url())) { ?>
-                                        <form action="<?php echo $meta_project_link; ?>"
+                                        <form action="<?php echo esc_url($meta_project_link); ?>"
                                             <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true), 'method="get"'); ?>>
                                             <button class="btn small more portfolio"
-                                                type="submit"><?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?></button>
+                                                type="submit"><?php echo esc_html(get_post_meta(get_the_ID(), "portfolio_project_button_text", true)); ?></button>
                                         </form>
                                         <?php } else { ?>
                                         <a class="button btn small more portfolio"
                                             <?php blank_target(get_post_meta(get_the_ID(), "meta_button_target", true)); ?>
-                                            href="<?php echo $meta_project_link; ?>">
-                                            <?php echo get_post_meta(get_the_ID(), "portfolio_project_button_text", true); ?>
+                                            href="<?php echo esc_url($meta_project_link); ?>">
+                                            <?php echo esc_html(get_post_meta(get_the_ID(), "portfolio_project_button_text", true)); ?>
                                         </a>
                                         <?php } ?>
                                     </div>

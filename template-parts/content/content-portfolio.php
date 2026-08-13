@@ -24,11 +24,13 @@ if ($structure == "") {
     $permalink .= "?tab=";
 }
 
+// Wird nur mit Term-Slugs verglichen, nie ausgegeben - trotzdem gehoert Request-Input
+// durch wp_unslash() und einen Sanitizer, bevor er weiterverwendet wird.
 if (isset($_GET["tab"])) {
-    $tab = $_GET["tab"];
+    $tab = sanitize_title(wp_unslash($_GET["tab"]));
 }
 if (isset($_GET["div"])) {
-    $tab = $_GET["div"];
+    $tab = sanitize_title(wp_unslash($_GET["div"]));
 }
 ?>
 
@@ -90,9 +92,9 @@ if (isset($_GET["div"])) {
                     $portfolio_query = null;
                     $portfolio_query = new WP_Query($args);
                     if ($portfolio_query->have_posts()) { ?>
-            <div id="<?php echo $decoded_slug; ?>"
+            <div id="<?php echo esc_attr($decoded_slug); ?>"
                 class="tab-pane fade in <?php if ($tab == "") { if ($is_active == true) { echo "active"; } $is_active = false; } elseif ($tab == $decoded_slug) { echo "active"; } ?>"
-                role="tabpanel" aria-labelledby="tab-<?php echo $decoded_slug; ?>">
+                role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($decoded_slug); ?>">
                 <div class="row">
                     <?php while ($portfolio_query->have_posts()) {
                                     $portfolio_query->the_post();
@@ -153,8 +155,8 @@ if (isset($_GET["div"])) {
                                                 <?php } ?>
                                                 <?php if ($meta_project_link) { ?>
                                                 <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
-                                                    href="<?php echo $meta_project_link; ?>"
-                                                    alt="<?php echo $portfolio_project_summary; ?>"><i
+                                                    href="<?php echo esc_url($meta_project_link); ?>"
+                                                    alt="<?php echo esc_attr($portfolio_project_summary); ?>"><i
                                                         class="fa fa-link"></i></a>
                                                 <?php } ?>
                                             </div>

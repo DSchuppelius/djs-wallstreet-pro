@@ -12,8 +12,8 @@ $is_toggle_button = $current_setup->get("search_effect_style_setting") == "toogl
 if (!$is_toggle_button) {
     $menu_search_form =
         '<div class="search-box-outer dropdown">
-            <a id="searchbar_menu" href="' . get_the_currentURL() . '#" title="' . esc_html__("Search", "djs-wallstreet-pro") . '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <ul class="dropdown-menu pull-right search-panel ' . $current_setup->get("search_effect_style_setting") . '" role="menu" aria-hidden="true" aria-expanded="false">
+            <a id="searchbar_menu" href="' . esc_url(get_the_currentURL()) . '#" title="' . esc_attr__("Search", "djs-wallstreet-pro") . '" class="search-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <ul class="dropdown-menu pull-right search-panel ' . esc_attr($current_setup->get("search_effect_style_setting")) . '" role="menu" aria-hidden="true" aria-expanded="false">
                 <li class="dropdown-item panel-outer">
                     <div class="form-container">
                         <form role="search" method="get" autocomplete="off" class="search-form" action="' . esc_url(home_url("/")) . '">

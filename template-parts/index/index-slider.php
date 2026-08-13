@@ -315,10 +315,10 @@ function render_slide($class, $style=""){
         <div <?php if ($current_setup_posttypes->get("home_slider_desktop_button_enabled") != true) { ?>
             style="display: none;" <?php } ?>
             class="flex_btn_div <?php if ($current_setup_posttypes->get("home_slider_mobile_button_enabled") == true) { echo "mobile-button-active"; } else { echo "mobile-button-deactive"; } ?>">
-            <form action="<?php echo get_post_meta(get_the_ID(), "slider_button_link", true); ?>"
+            <form action="<?php echo esc_url(get_post_meta(get_the_ID(), "slider_button_link", true)); ?>"
                 <?php blank_target(get_post_meta(get_the_ID(), "slider_button_target", true), 'method="get"'); ?>>
                 <button class="btn more flex_btn" type="submit">
-                    <?php echo get_post_meta(get_the_ID(), "slider_button_text", true); ?>
+                    <?php echo esc_html(get_post_meta(get_the_ID(), "slider_button_text", true)); ?>
                 </button>
             </form>
         </div>
