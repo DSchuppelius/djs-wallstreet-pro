@@ -11,21 +11,21 @@ $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $post_per_page = $current_setup->get("home_blog_counts"); ?>
 <div class="container home-blog6 home-blog-section wow fadeInDown" data-wow-delay="1s">
     <?php if (!empty($current_setup->get("home_blog_heading")) || !empty($current_setup->get("home_blog_description"))): ?>
-    <div class="row">
-        <div class="section_heading_title">
-            <?php if ($current_setup->get("home_blog_heading")) { ?>
-            <h1><?php echo $current_setup->get("home_blog_heading"); ?></h1>
-            <?php } ?>
-            <?php if ($current_setup->get("home_blog_description")) { ?>
-            <div class="pagetitle-separator">
-                <div class="pagetitle-separator-border">
-                    <div class="pagetitle-separator-box"></div>
-                </div>
+        <div class="row">
+            <div class="section_heading_title">
+                <?php if ($current_setup->get("home_blog_heading")) { ?>
+                    <h1><?php echo $current_setup->get("home_blog_heading"); ?></h1>
+                <?php } ?>
+                <?php if ($current_setup->get("home_blog_description")) { ?>
+                    <div class="pagetitle-separator">
+                        <div class="pagetitle-separator-border">
+                            <div class="pagetitle-separator-box"></div>
+                        </div>
+                    </div>
+                    <p><?php echo $current_setup->get("home_blog_description"); ?></p>
+                <?php } ?>
             </div>
-            <p><?php echo $current_setup->get("home_blog_description"); ?></p>
-            <?php } ?>
         </div>
-    </div>
     <?php endif; ?>
     <div class="blog6 blog-section">
         <div class="container">
@@ -38,40 +38,46 @@ $post_per_page = $current_setup->get("home_blog_counts"); ?>
                         "posts_per_page" => $post_per_page,
                         "post__not_in" => get_option("sticky_posts"),
                     ];
-                    query_posts($args);
-                    if (query_posts($args)) {
-                        while (have_posts()):
-                            the_post();
+
+                    $home_blog_query = new WP_Query($args);
+                    if ($home_blog_query->have_posts()) {
+                        while ($home_blog_query->have_posts()):
+                            $home_blog_query->the_post();
                             $recent_expet = get_the_excerpt(); ?>
-                    <div class="blog-section-left blog-list-view <?php if ($switcher % 2 == 0) { echo "right"; } ?>">
-                        <div class="media">
-                            <?php $defalt_arg = ["class" => "img-responsive"];
+                            <div class="blog-section-left blog-list-view <?php if ($switcher % 2 == 0) {
+                                                                                echo "right";
+                                                                            } ?>">
+                                <div class="media">
+                                    <?php $defalt_arg = ["class" => "img-responsive"];
                                     if (has_post_thumbnail()): ?>
-                            <div class="blog-post-img">
-                                <a
-                                    href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail("", $defalt_arg); ?></a>
-                            </div>
-                            <?php endif; ?>
-                            <div
-                                class="blog-post-title media-body <?php if (!has_post_thumbnail()) { echo "remove-img"; } ?>">
-                                <?php if ($current_setup->get("home_meta_section_settings") == false) { ?>
-                                <div class="blog-post-date">
-                                    <span
-                                        class="date"><?php echo get_the_date($current_setup->get("fulldateformat")); ?></span>
-                                    <span class="comment"><i
-                                            class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
+                                        <div class="blog-post-img">
+                                            <a
+                                                href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail("", $defalt_arg); ?></a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div
+                                        class="blog-post-title media-body <?php if (!has_post_thumbnail()) {
+                                                                                echo "remove-img";
+                                                                            } ?>">
+                                        <?php if ($current_setup->get("home_meta_section_settings") == false) { ?>
+                                            <div class="blog-post-date">
+                                                <span
+                                                    class="date"><?php echo get_the_date($current_setup->get("fulldateformat")); ?></span>
+                                                <span class="comment"><i
+                                                        class="fa fa-comment"></i><?php comments_number("0", "1", "%"); ?></span>
+                                            </div>
+                                        <?php } ?>
+                                        <div class="blog-post-title-wrapper">
+                                            <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h1>
+                                            <p><?php echo get_the_excerpt(); ?></p>
+                                            <?php the_read_more("home-blog-btn"); ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <?php } ?>
-                                <div class="blog-post-title-wrapper">
-                                    <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_title(); ?></a></h1>
-                                    <p><?php echo get_the_excerpt(); ?></p>
-                                    <?php the_read_more("home-blog-btn"); ?>
-                                </div>
                             </div>
-                        </div>
-                    </div>
                     <?php $switcher++;
                         endwhile;
+                        wp_reset_postdata();
                     } else {
                         echo "<div class='post_message'>" . esc_html__("No posts to show", "djs-wallstreet-pro") . "</div>";
                     }

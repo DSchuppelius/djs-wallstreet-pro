@@ -17,75 +17,80 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
     <div class="row map <?php row_frame_border(""); ?> flexstretch">
         <div class="col-md-12  <?php innerrow_frame_border(""); ?> ">
             <?php if ($current_setup->get("contact_google_map_enabled") == "on") { ?>
-            <?php if (!empty($current_setup->get("contact_google_map_title"))) { ?>
-            <div class="google-map-title">
-                <h1><?php echo $current_setup->get("contact_google_map_title"); ?></h1>
-            </div>
-            <?php } ?>
-            <div class="qua_google_map">
-                <iframe width="100%" scrolling="no" height="500" frameborder="0" src="<?php echo esc_url($mapsrc); ?>"
-                    marginwidth="0" marginheight="0"></iframe>
-            </div>
+                <?php if (!empty($current_setup->get("contact_google_map_title"))) { ?>
+                    <div class="google-map-title">
+                        <h1><?php echo $current_setup->get("contact_google_map_title"); ?></h1>
+                    </div>
+                <?php } ?>
+                <div class="qua_google_map">
+                    <iframe width="100%" scrolling="no" height="500" frameborder="0" src="<?php echo esc_url($mapsrc); ?>"
+                        marginwidth="0" marginheight="0"></iframe>
+                </div>
             <?php } ?>
         </div>
     </div>
     <div
         class="row <?php row_frame_border(""); ?> flexstretch contact-detail-section <?php if ($current_setup->get("contact_google_map_enabled") != "on") { ?>map-disabled <?php } ?>">
         <?php if ($current_setup->get("contact_address_settings") == "on") { ?>
-        <div class="col-md-4 col-sm-4">
-            <div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
-                <?php if (!empty($current_setup->get("contact_address_icon"))): ?><span><i
-                        class="fa <?php if ($current_setup->get("contact_address_icon")) { echo $current_setup->get("contact_address_icon"); } ?>"></i></span><?php endif; ?>
-                <?php if (!empty($current_setup->get("contact_address_title"))) { ?><h5>
-                    <?php echo $current_setup->get("contact_address_title"); ?></h5><?php } ?>
-                <?php if (!empty($current_setup->get("contact_address_designation_one"))) { ?><address>
-                    <?php echo $current_setup->get("contact_address_designation_one"); ?> </address><?php } ?>
-                <?php if (!empty($current_setup->get("contact_address_designation_two"))) { ?><address>
-                    <?php echo $current_setup->get("contact_address_designation_two"); ?> </address><?php } ?>
+            <div class="col-md-4 col-sm-4">
+                <div class="contact-detail-area <?php row_frame_border("");
+                                                innerrow_frame_border(" "); ?>">
+                    <?php if (!empty($current_setup->get("contact_address_icon"))): ?><span><i
+                                class="fa <?php if ($current_setup->get("contact_address_icon")) {
+                                                echo $current_setup->get("contact_address_icon");
+                                            } ?>"></i></span><?php endif; ?>
+                    <?php if (!empty($current_setup->get("contact_address_title"))) { ?><h5>
+                            <?php echo $current_setup->get("contact_address_title"); ?></h5><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_address_designation_one"))) { ?><address>
+                            <?php echo $current_setup->get("contact_address_designation_one"); ?> </address><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_address_designation_two"))) { ?><address>
+                            <?php echo $current_setup->get("contact_address_designation_two"); ?> </address><?php } ?>
+                </div>
             </div>
-        </div>
         <?php } ?>
         <?php if ($current_setup->get("contact_phone_settings") == "on") { ?>
-        <div class="col-md-4 col-sm-4">
-            <div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
-                <?php if (!empty($current_setup->get("contact_phone_icon"))) { ?><span><i
-                        class="fa <?php echo $current_setup->get("contact_phone_icon"); ?>"></i></span><?php } ?>
-                <?php if (!empty($current_setup->get("contact_phone_title"))) { ?><h5>
-                    <?php echo $current_setup->get("contact_phone_title"); ?></h5><?php } ?>
-                <?php if (!empty($current_setup->get("contact_phone_number_one"))) { ?><address>
-                    <?php echo $current_setup->get("contact_phone_number_one"); ?></address><?php } ?>
-                <?php if (!empty($current_setup->get("contact_phone_number_two"))) { ?><address>
-                    <?php echo $current_setup->get("contact_phone_number_two"); ?></address><?php } ?>
+            <div class="col-md-4 col-sm-4">
+                <div class="contact-detail-area <?php row_frame_border("");
+                                                innerrow_frame_border(" "); ?>">
+                    <?php if (!empty($current_setup->get("contact_phone_icon"))) { ?><span><i
+                                class="fa <?php echo $current_setup->get("contact_phone_icon"); ?>"></i></span><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_phone_title"))) { ?><h5>
+                            <?php echo $current_setup->get("contact_phone_title"); ?></h5><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_phone_number_one"))) { ?><address>
+                            <?php echo $current_setup->get("contact_phone_number_one"); ?></address><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_phone_number_two"))) { ?><address>
+                            <?php echo $current_setup->get("contact_phone_number_two"); ?></address><?php } ?>
+                </div>
             </div>
-        </div>
         <?php } ?>
         <?php if ($current_setup->get("contact_email_settings") == "on") { ?>
-        <div class="col-md-4 col-sm-4">
-            <div class="contact-detail-area <?php row_frame_border(""); innerrow_frame_border(" "); ?>">
-                <?php if (!empty($current_setup->get("contact_email_icon"))) { ?><span><i
-                        class="fa <?php echo $current_setup->get("contact_email_icon"); ?>"></i></span><?php } ?>
-                <?php if (!empty($current_setup->get("contact_email_title"))) { ?><h5>
-                    <?php echo $current_setup->get("contact_email_title"); ?></h5><?php } ?>
-                <?php if (!empty($current_setup->get("contact_email_number_one"))) { ?><address>
-                    <?php echo $current_setup->get("contact_email_number_one"); ?></address><?php } ?>
-                <?php if (!empty($current_setup->get("contact_email_number_two"))) { ?><address>
-                    <?php echo $current_setup->get("contact_email_number_two"); ?></address><?php } ?>
+            <div class="col-md-4 col-sm-4">
+                <div class="contact-detail-area <?php row_frame_border("");
+                                                innerrow_frame_border(" "); ?>">
+                    <?php if (!empty($current_setup->get("contact_email_icon"))) { ?><span><i
+                                class="fa <?php echo $current_setup->get("contact_email_icon"); ?>"></i></span><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_email_title"))) { ?><h5>
+                            <?php echo $current_setup->get("contact_email_title"); ?></h5><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_email_number_one"))) { ?><address>
+                            <?php echo $current_setup->get("contact_email_number_one"); ?></address><?php } ?>
+                    <?php if (!empty($current_setup->get("contact_email_number_two"))) { ?><address>
+                            <?php echo $current_setup->get("contact_email_number_two"); ?></address><?php } ?>
+                </div>
             </div>
-        </div>
         <?php } ?>
     </div>
 
     <div class="row <?php row_frame_border(""); ?> flexstretch contact-form-section" id="myformdata">
         <div class="col-md-12">
             <?php if (!empty($current_setup->get("contact_form_title")) || !empty($current_setup->get("contact_form_description"))): ?>
-            <div class="cont-heading-title">
-                <?php if (!empty($current_setup->get("contact_form_title"))) { ?>
-                <h1><?php echo $current_setup->get("contact_form_title"); ?></h1>
-                <?php } ?>
-                <?php if (!empty($current_setup->get("contact_form_description"))) { ?>
-                <p><?php echo $current_setup->get("contact_form_description"); ?></p>
-                <?php } ?>
-            </div>
+                <div class="cont-heading-title">
+                    <?php if (!empty($current_setup->get("contact_form_title"))) { ?>
+                        <h1><?php echo $current_setup->get("contact_form_title"); ?></h1>
+                    <?php } ?>
+                    <?php if (!empty($current_setup->get("contact_form_description"))) { ?>
+                        <p><?php echo $current_setup->get("contact_form_description"); ?></p>
+                    <?php } ?>
+                </div>
             <?php endif; ?>
             <div class="contact-form <?php innerrow_frame_border(""); ?>">
                 <form role="form" class="form-inline" method="post" action="#">
@@ -143,34 +148,41 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
     </div>
 
     <?php if (isset($_POST["contact_submit"])) {
-        $flag = 1;
-        if (empty($_POST["first_name"])) {
-            $flag = 0;
-            echo "<script>jQuery('#contact_user_firstname_error').show();</script>";
-        } elseif (empty($_POST["last_name"])) {
-            $flag = 0;
-            echo "<script>jQuery('#contact_user_lastname_error').show();</script>";
-        } elseif ($_POST["email"] == "") {
-            $flag = 0;
-            echo "<script>jQuery('#contact_user_email_error').show();</script>";
-        } elseif (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $_POST["email"])) {
-            $flag = 0;
-            echo "<script>jQuery('#contact_user_email_error').show();</script>";
-        } elseif ($_POST["massage"] == "") {
-            $flag = 0;
-            echo "<script>jQuery('#contact_user_massage_error').show();</script>";
-        } elseif (empty($_POST) || !wp_verify_nonce($_POST["wallstreet_name_nonce_field"], "wallstreet_name_nonce_check")) {
+        if (!isset($_POST["wallstreet_name_nonce_field"]) || !wp_verify_nonce($_POST["wallstreet_name_nonce_field"], "wallstreet_name_nonce_check")) {
             echo "<script>jQuery('#contact_nonce_error').show();</script>";
-            exit();
         } else {
-            if ($flag == 1) {
-                $to = get_option("admin_email");
-                $subject = trim($_POST["first_name"]) . trim($_POST["last_name"]) . get_option("blogname");
-                $massage = stripslashes(trim($_POST["massage"])) . "Message sent from:: " . trim($_POST["email"]);
-                $headers = "From: " . trim($_POST["first_name"]) . trim($_POST["last_name"]) . " <" . trim($_POST["email"]) . ">\r\nReply-To:" . trim($_POST["email"]);
-                $website = stripslashes(trim($_POST["website"]));
-                $maildata = wp_mail($to, $subject, $massage, $headers, $website);
-                if ($maildata) {
+            $first_name = sanitize_text_field(wp_unslash($_POST["first_name"] ?? ""));
+            $last_name  = sanitize_text_field(wp_unslash($_POST["last_name"] ?? ""));
+            $email      = sanitize_email(wp_unslash($_POST["email"] ?? ""));
+            $website    = esc_url_raw(wp_unslash($_POST["website"] ?? ""));
+            $massage    = sanitize_textarea_field(wp_unslash($_POST["massage"] ?? ""));
+
+            if ($first_name === "") {
+                echo "<script>jQuery('#contact_user_firstname_error').show();</script>";
+            } elseif ($last_name === "") {
+                echo "<script>jQuery('#contact_user_lastname_error').show();</script>";
+            } elseif ($email === "" || !is_email($email)) {
+                echo "<script>jQuery('#contact_user_email_error').show();</script>";
+            } elseif ($massage === "") {
+                echo "<script>jQuery('#contact_user_massage_error').show();</script>";
+            } else {
+                $to      = get_option("admin_email");
+                $subject = sprintf("%s %s - %s", $first_name, $last_name, get_option("blogname"));
+
+                $body = $massage . "\r\n\r\n"
+                    . "Message sent from: " . $first_name . " " . $last_name . " <" . $email . ">";
+                if ($website !== "") {
+                    $body .= "\r\nWebsite: " . $website;
+                }
+
+                $site_domain = wp_parse_url(home_url(), PHP_URL_HOST);
+                $site_domain = preg_replace('/^www\./i', "", (string) $site_domain);
+                $headers = [
+                    "From: " . get_option("blogname") . " <wordpress@" . $site_domain . ">",
+                    "Reply-To: " . $first_name . " " . $last_name . " <" . $email . ">",
+                ];
+
+                if (wp_mail($to, $subject, $body, $headers)) {
                     echo "<script>jQuery('#myformdata').hide();</script>";
                     echo "<script>jQuery('#mailsentbox').show();</script>";
                 }

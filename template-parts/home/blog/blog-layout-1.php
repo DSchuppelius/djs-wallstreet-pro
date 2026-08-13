@@ -88,6 +88,7 @@ $post_per_page = $current_setup->get("home_blog_counts");
         </div>
         <?php $j++; ?>
         <?php endwhile;
+            wp_reset_postdata();
         } else {
             echo "<div class='post_message'>" . esc_html__("No posts to show", "djs-wallstreet-pro") . "</div>";
         } ?>

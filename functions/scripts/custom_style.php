@@ -122,7 +122,7 @@ if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
 			$attach = esc_html(get_theme_mod('background_attachment', get_theme_support('custom-background', 'default-attachment')));
 
 			$css .= '#page_fader{'
-			     . "background-image:url('{$url}');"
+			     . "background-image:url('" . esc_url($url) . "');"
 			     . "background-size:{$size};"
                  . "background-color:{$vars['--theme-background-color']};"
 			     . "background-repeat:{$repeat};"
@@ -136,7 +136,9 @@ if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
 }
 
 /**
- * Hook: hängt den :root‑Block an das Stylesheet & lädt Google Fonts
+ * Hook: blendet den Header‑Top‑Bereich per Body‑Klasse aus, wenn die Kontaktzeile
+ * im Customizer deaktiviert ist. (Der :root‑Block oben wird nicht hier, sondern in
+ * scripts.php per wp_add_inline_style() eingehängt.)
  */
 add_action( 'wp_enqueue_scripts', function () {
 	$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
