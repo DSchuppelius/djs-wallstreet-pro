@@ -88,6 +88,7 @@ $djs_dateien = [
     'widget/wallstreet-latest-widget',
     'widget/wallstreet-post-format-widget',
     'shortcodes/shortcodes',
+    'shortcodes/shortcodes_vc_compat',
 ];
 
 if (is_admin() || is_customize_preview()) {
