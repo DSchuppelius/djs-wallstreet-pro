@@ -154,6 +154,7 @@ get_template_part("template-parts/index/index", "banner"); ?>
                             </div>
                         </div>
                 <?php endwhile;
+                wp_reset_postdata();
                 } ?>
             </div>
 

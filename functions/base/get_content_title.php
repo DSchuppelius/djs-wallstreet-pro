@@ -44,9 +44,9 @@ function get_content_title($separator = ': ') {
             case "status":
                 $output .= esc_html__("Status", "djs-wallstreet-pro");
                 break;
-            case "story":
-                $output .= esc_html__("Story", "djs-wallstreet-pro");
-                break;
+            // case "story" entfernt: "story" ist kein WordPress-Post-Format und wird vom
+            // Theme in add_theme_support('post-formats', ...) auch nicht registriert -
+            // der Zweig war unerreichbar.
             case "standard":
                 $output .= esc_html__("Blog Post", "djs-wallstreet-pro");
                 break;

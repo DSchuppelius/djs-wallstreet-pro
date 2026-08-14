@@ -9,16 +9,9 @@
  */
 if (defined("WP_ADMIN") && WP_ADMIN) require_once "shortcode_popup.php";
 
-function parse_shortcode_content($content) {
-    $content = trim(do_shortcode(shortcode_unautop($content)));
-
-    if (substr($content, 0, 4) == "")  $content = substr($content, 4);
-    if (substr($content, -3, 3) == "") $content = substr($content, 0, -3);
-
-    $content = str_replace(["<p></p>"], "", $content);
-    $content = str_replace(["<p>  </p>"], "", $content);
-    return $content;
-}
+// parse_shortcode_content() entfernt: nirgends aufgerufen (Theme und alle drei Plugins
+// geprueft) und in sich wirkungslos - die beiden substr()-Vergleiche pruefen gegen einen
+// Leerstring und konnten daher nie zutreffen.
 
 function button_shortcode($atts, $content = null) {
     $atts = shortcode_atts([

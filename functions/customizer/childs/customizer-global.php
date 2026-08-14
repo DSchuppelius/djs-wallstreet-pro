@@ -45,6 +45,34 @@ class theme_global_customizer extends Theme_Customizer {
 
 
     public function customize_register_settings_and_controls($wp_customize) {
+        $wp_customize->add_setting($this->theme_options_name . "[webrit_custom_css]", [
+            "default" => "",
+            "capability" => "unfiltered_html",
+            "sanitize_callback" => "wp_strip_all_tags",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[webrit_custom_css]", [
+            "label" => esc_html__("Additional CSS", "djs-wallstreet-pro"),
+            "description" => esc_html__("Is written directly into a style tag in the footer - without the surrounding style tag.", "djs-wallstreet-pro"),
+            "section" => "themeoptions_section_settings",
+            "type" => "textarea",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[google_analytics]", [
+            "default" => "",
+            "capability" => "unfiltered_html",
+            "sanitize_callback" => "wp_strip_all_tags",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[google_analytics]", [
+            "label" => esc_html__("Analytics code", "djs-wallstreet-pro"),
+            "description" => esc_html__("JavaScript for the footer - without the surrounding script tag.", "djs-wallstreet-pro"),
+            "section" => "themeoptions_section_settings",
+            "type" => "textarea",
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[yearformat]", [
             "default" => esc_html__("Y", "djs-wallstreet-pro"),
             "capability" => "edit_theme_options",
@@ -528,7 +556,7 @@ class theme_global_customizer extends Theme_Customizer {
 
 global $customizer_global;
 
-if(!isset($customizer_global)) {
+if (!isset($customizer_global)) {
     $customizer_global = new theme_global_customizer();
     $customizer_global->register();
-} ?>
+}

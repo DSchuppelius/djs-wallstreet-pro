@@ -96,6 +96,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
                     </div>
                 </div>
             <?php }
+            wp_reset_postdata();
         } else {
             $service_title = ["", esc_html__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive Design", "djs-wallstreet-pro")];
             for ($i = 1; $i <= 3; $i++) { ?>
@@ -193,6 +194,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
                     }
                     $j++;
                 }
+                wp_reset_postdata();
             } else {
                 $count_posts = wp_count_posts("service")->publish;
                 $service_title = [__("Responsive", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Mobile ready", "djs-wallstreet-pro"), esc_html__("Live support", "djs-wallstreet-pro")];

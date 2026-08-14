@@ -17,7 +17,8 @@ defined('THEME_ASSETS_PATH')     || define('THEME_ASSETS_PATH',     TEMPLATE_DIR
 defined('THEME_ASSETS_PATH_URI') || define('THEME_ASSETS_PATH_URI', TEMPLATE_DIR_URI . '/assets');
 
 defined('THEME_FUNCTIONS_PATH')  || define('THEME_FUNCTIONS_PATH',  TEMPLATE_DIR     . '/functions');
-defined('THEME_OPTIONS_PATH')    || define('THEME_OPTIONS_PATH',    TEMPLATE_DIR_URI . '/functions/theme_options');
+// THEME_OPTIONS_PATH entfernt: nirgends verwendet, und das Verzeichnis
+// functions/theme_options existiert im Theme gar nicht.
 
 /* -------------------------------------------------------------------------
  * 2.  Pflicht‑Plugins prüfen (simple Notice, kein Theme‑Switch)

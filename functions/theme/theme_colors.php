@@ -36,8 +36,9 @@ function get_theme_bg_color(): string {
     return '#' . ltrim( $backgroundHex, '#' );
 }
 
-function the_theme_link_color(): void { echo esc_attr( get_theme_link_color() ); }
-function the_theme_bg_color(): void   { echo esc_attr( get_theme_bg_color() ); }
+// the_theme_link_color() und the_theme_bg_color() entfernt: beide wurden weder im Theme
+// noch in einem der drei DJS-Plugins aufgerufen. Die get_-Varianten bleiben - sie sind
+// in custom_style.php in Gebrauch.
 
 /* -------------------------------------------------------------------------
  *  Stylesheet‑Ermittlung je nach Option

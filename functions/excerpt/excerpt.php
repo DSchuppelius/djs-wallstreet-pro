@@ -26,18 +26,6 @@ function get_comment_sidebar($excerpt) {
     return get_max_content($excerpt, 105) . "...";
 }
 
-function get_home_blog_excerpt($length, $read) {
-    $excerpt = get_the_excerpt();
-    $excerpt = strip_all($excerpt);
-    $original_len = mb_strlen($excerpt);
-    $excerpt = mb_substr($excerpt, 0, $length);
-
-    if ($original_len > $length) {
-        $excerpt = $excerpt . get_the_read_more();
-    }
-    return $excerpt;
-}
-
 function get_post_blog_excerpt($length, $read) {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $excerpt = get_the_excerpt();
@@ -53,13 +41,7 @@ function get_post_blog_excerpt($length, $read) {
     return $excerpt;
 }
 
-function get_only_post_blog_excerpt($length) {
-    $excerpt = get_the_excerpt();
-    $excerpt = strip_all($excerpt);
-    $excerpt = mb_substr($excerpt, 0, $length);
-
-    return $excerpt;
-}
+// get_only_post_blog_excerpt() entfernt: ebenfalls nirgends aufgerufen.
 
 function portfolio_excerpt($limit, $post_id) {
     global $post;
@@ -78,4 +60,3 @@ function portfolio_excerpt($limit, $post_id) {
     $excerpt = preg_replace("`\[[^\]]*\]`", "", $excerpt);
     return $excerpt;
 }
-?>

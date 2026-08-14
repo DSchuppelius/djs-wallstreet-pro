@@ -10,7 +10,7 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 $post_per_page = $current_setup->get("home_blog_counts");
 ?>
-<div class="container home-blog-section wow fadeInDown" data-wow-delay="1s">
+<div class="container home-blog-section">
     <?php if (!empty($current_setup->get("home_blog_heading")) || !empty($current_setup->get("home_blog_description"))): ?>
         <div class="row">
             <div class="section_heading_title">

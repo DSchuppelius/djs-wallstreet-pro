@@ -67,6 +67,7 @@
                             }
                             $j++;
                         }
+                        wp_reset_postdata();
                     } else {
                         get_template_part("template-parts/client/client", "demo");
                     } ?>

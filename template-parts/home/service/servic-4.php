@@ -9,7 +9,7 @@
  */
 $current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
 <div class="service-section">
-    <div class="container wow fadeInDown" data-wow-delay="1s">
+    <div class="container">
         <?php if (!empty($current_setup_posttypes->get("service_title")) || !empty($current_setup_posttypes->get("service_description"))): ?>
             <div class="row">
                 <div class="section_heading_title">
@@ -90,6 +90,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
                     }
                     $j++;
                 endwhile;
+                wp_reset_postdata();
             } else {
                 $service_defaulttext = [__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive designs", "djs-wallstreet-pro")];
                 for ($i = 1; $i <= 3; $i++) { ?>

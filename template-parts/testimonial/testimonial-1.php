@@ -41,6 +41,7 @@ get_template_part("template-parts/testimonial/carousel", "script");
                 </div>
                 <?php $first_post = false;
                     }
+                    wp_reset_postdata();
                 } else {
                     for ($i = 1; $i <= 4; $i++) { ?>
                 <div

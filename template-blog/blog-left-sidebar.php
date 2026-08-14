@@ -68,6 +68,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                 get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting"));
                 $first_post = false;
             }
+            wp_reset_postdata();
             the_pagination($paged, $post_type_data);
             get_template_part("template-parts/content/filler");
             ?>

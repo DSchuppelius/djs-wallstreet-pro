@@ -122,6 +122,7 @@ the_post();
                     }
                     $i++;
                 endwhile;
+                wp_reset_postdata();
             } else {
                 $team_title = ["Danial Creg", "Alexia Doe", "John Doe", "Beatrix Doe"];
                 $team_designation = [__("FOUNDER", "djs-wallstreet-pro"), esc_html__("DEVELOPER", "djs-wallstreet-pro"), esc_html__("DESIGNER", "djs-wallstreet-pro"), esc_html__("DEVELOPER", "djs-wallstreet-pro")];

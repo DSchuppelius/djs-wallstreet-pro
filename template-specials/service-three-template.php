@@ -50,7 +50,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
                 $meta_service_target = sanitize_text_field(get_post_meta(get_the_ID(), "meta_service_target", true));
                 $service_description_text = sanitize_text_field(get_post_meta(get_the_ID(), "service_description_text", true));
                 $service_readmore_text = sanitize_text_field(get_post_meta(get_the_ID(), "service_readmore_text", true)); ?>
-                <div class="col-md-4 col-sm-6 sssss">
+                <div class="col-md-4 col-sm-6">
                     <div class="service-effect">
                         <?php if (get_post_meta(get_the_ID(), "meta_service_link", true)) {
                             $meta_service_link = esc_url($meta_service_link);
@@ -98,6 +98,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
                     </div>
                 </div>
             <?php }
+            wp_reset_postdata();
         } else {
             $service_title = ["", esc_html__("Product designing", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Responsive Design", "djs-wallstreet-pro")];
             for ($i = 1; $i <= 3; $i++) { ?>
@@ -196,6 +197,7 @@ $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
                     }
                     $j++;
                 }
+                wp_reset_postdata();
             } else {
                 $count_posts = wp_count_posts("service")->publish;
                 $service_title = [__("Responsive", "djs-wallstreet-pro"), esc_html__("WordPress themes", "djs-wallstreet-pro"), esc_html__("Mobile ready", "djs-wallstreet-pro"), esc_html__("Live support", "djs-wallstreet-pro")];

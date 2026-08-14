@@ -325,19 +325,19 @@ class theme_template_customizer extends Theme_Customizer {
     }
 
     private function customize_register_portfolio_tax($wp_customize) {
-        $wp_customize->add_setting($this->theme_options_name . "[taxonomy_portfolio_list]", [
-            "capability" => "edit_theme_options",
-            "sanitize_callback" => "sanitize_text_field",
-            "default" => 2,
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[taxonomy_portfolio_list]", [
-            "type" => "select",
-            "label" => esc_html__("Select column layout", "djs-wallstreet-pro"),
-            "section" => "portfolio_taxonomy",
-            "choices" => [2 => 2, 3 => 3, 4 => 4],
-        ]);
+        /*
+         * Entfernt: taxonomy_portfolio_list (Spaltenlayout), wallstreet_taxonomy_title
+         * und wallstreet_taxonomy_desc.
+         *
+         * Die drei gehoerten zu einem Archiv der Portfolio-Kategorien, das es nicht gibt:
+         * weder das Theme noch das Post-Types-Plugin bringt ein
+         * taxonomy-portfolio_categories.php mit, und die Kategorie-URLs leiten auf die
+         * Startseite um. Kein Template hat die Werte je gelesen - die Felder versprachen
+         * also eine Wirkung, die nicht eintreten konnte.
+         *
+         * portfolio_numbers_for_templates_category bleibt: dieser Wert wird im
+         * Post-Types-Plugin tatsaechlich ausgelesen.
+         */
 
         // Number of Portfolio Template
         $wp_customize->add_setting($this->theme_options_name . "[portfolio_numbers_for_templates_category]", [
@@ -358,33 +358,6 @@ class theme_template_customizer extends Theme_Customizer {
             ],
         ]);
 
-        //taxonomy Title
-        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_taxonomy_title]", [
-            "capability" => "edit_theme_options",
-            "default" => esc_html__("Featured portfolio", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_text_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_title]", [
-            "type" => "text",
-            "label" => esc_html__("Title", "djs-wallstreet-pro"),
-            "section" => "portfolio_taxonomy",
-        ]);
-
-        //taxonomy Description
-        $wp_customize->add_setting($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
-            "capability" => "edit_theme_options",
-            "default" => esc_html__("Most popular of our works.", "djs-wallstreet-pro"),
-            "sanitize_callback" => "sanitize_text_field",
-            "type" => "option",
-        ]);
-
-        $wp_customize->add_control($this->theme_options_name . "[wallstreet_taxonomy_desc]", [
-            "type" => "textarea",
-            "label" => esc_html__("Description", "djs-wallstreet-pro"),
-            "section" => "portfolio_taxonomy",
-        ]);
     }
 
     private function customize_register_project_related($wp_customize) {

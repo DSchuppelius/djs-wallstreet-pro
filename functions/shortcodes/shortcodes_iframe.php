@@ -100,6 +100,10 @@ if (!function_exists("current_user_can") || !current_user_can("edit_posts")) {
                             <option value="heading"><?php esc_html_e("Heading", "djs-wallstreet-pro"); ?></option>
                             <option value="tooltip"><?php esc_html_e("Tool Tip", "djs-wallstreet-pro"); ?></option>
                             <option value="list"><?php esc_html_e("List", "djs-wallstreet-pro"); ?></option>
+                            <?php // Eintrag ergaenzt: types/gridsystemlayout.php existiert und wird per
+                                    // jQuery nachgeladen, war ueber das Auswahlmenue aber nicht erreichbar.
+                                    // Der Shortcode [gridsystemlayout] selbst ist regulaer registriert. ?>
+                            <option value="gridsystemlayout"><?php esc_html_e("Grid system layout", "djs-wallstreet-pro"); ?></option>
                         </select>
                     </div>
                 </form>

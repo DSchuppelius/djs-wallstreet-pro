@@ -106,6 +106,7 @@ if(defined("DJS_POSTTYPE_PLUGIN")) { ?>
             </div>
             <?php $j++;
                     endwhile;
+                    wp_reset_postdata();
                 } else {
                     for ($i = 1; $i <= $current_setup_posttypes->get("portfolio_list"); $i++) { ?>
             <div

@@ -77,6 +77,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
                 <?php $switcher++;
                     $first_post = false;
                 }
+                wp_reset_postdata();
                 the_pagination($paged, $post_type_data);
                 get_template_part("template-parts/content/filler");
                 ?>

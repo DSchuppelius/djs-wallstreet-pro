@@ -13,17 +13,33 @@
 </header>
 <section class="excerpt-section">
     <div class="excerpt">
-        <?php $content = get_the_content();
+        <?php
+        // Die Customizer-Option "Excerpt length only for excerpt option"
+        // (blog_template_content_excerpt_length) war bislang zwar einstellbar, wurde aber
+        // nirgends gelesen. Sie greift jetzt hier - an der einzigen Stelle, an der die
+        // Blog-Templates ihren Excerpt ausgeben. Der Wert zaehlt Zeichen, nicht Woerter;
+        // 0 oder leer bedeutet "nicht kuerzen", dann gilt weiter WordPress' eigene Laenge.
+        $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+        $excerpt_laenge = (int) $current_setup->get("blog_template_content_excerpt_length");
+
+        $content = get_the_content();
         if (strpos($content, form_more_button()) !== false) {
             echo $content;
         } else {
             $excerpt = get_the_excerpt();
-            $excerpt_length = strlen($excerpt);
-            $content_length = strlen($content);
-            if ($excerpt_length > 0) {
-                echo apply_filters("the_excerpt", $excerpt);
-                if ($excerpt_length < $content_length)
+            $klartext = strip_all($excerpt);
+
+            if ($klartext !== "") {
+                if ($excerpt_laenge > 0 && mb_strlen($klartext) > $excerpt_laenge) {
+                    echo apply_filters("the_excerpt", mb_substr($klartext, 0, $excerpt_laenge));
                     the_read_more();
+                } else {
+                    echo apply_filters("the_excerpt", $excerpt);
+                    // mb_strlen auf beiden Seiten, damit der Vergleich nicht an Umlauten haengt.
+                    if (mb_strlen($klartext) < mb_strlen(strip_all($content))) {
+                        the_read_more();
+                    }
+                }
             } else {
                 the_content();
             }
