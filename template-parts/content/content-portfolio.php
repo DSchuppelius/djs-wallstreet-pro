@@ -6,293 +6,108 @@
  * Filename     : content-portfolio.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Portfolio-Seiten (2/3/4 Spalten) mit Kategorie-Tabs und Pagination je Tab.
+ * Tabs sind Links (?tab=slug) und funktionieren ohne JavaScript; theme.js schaltet sie ohne
+ * Neuladen um. Seitenzahl ueber ?portfolio_seite= (WordPress raeumt paged auf Seiten weg).
  */
-$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-$current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 
-$term_args = ["hide_empty" => true, "orderby" => "id"];
-$posts_per_page = $current_setup_posttypes->get("portfolio_numbers_on_templates");
-$tax_terms = get_terms(PORTFOLIO_TAXONOMY, $term_args);
-$j = 1;
-$tab = "";
+$pt = PostTypes_Plugin_Setup::instance();
+djs_use_script("lightbox");
 
-$structure = get_option("permalink_structure");
-$permalink = get_permalink();
-if ($structure == "") {
-    $permalink .= "&tab=";
-} else {
-    $permalink .= "?tab=";
+$columns = match (true) {
+    is_page_template("template-specials/portfolio-2-column.php") => 2,
+    is_page_template("template-specials/portfolio-3-column.php") => 3,
+    default                                                       => 4,
+};
+$per_page    = (int) $pt->get("portfolio_numbers_on_templates");
+$page_param  = "portfolio_seite";
+$curpage     = max(1, (int) ($_GET[$page_param] ?? 1));
+$tab         = sanitize_title(wp_unslash($_GET["tab"] ?? ($_GET["div"] ?? "")));
+$terms       = get_terms(["taxonomy" => PORTFOLIO_TAXONOMY, "hide_empty" => true, "orderby" => "id"]);
+$terms       = is_wp_error($terms) ? [] : $terms;
+
+// Alle Projekte einmal laden und den Kategorien (inkl. Elternkategorien) zuordnen
+$all = new WP_Query([
+    "post_type"           => PORTFOLIO_POST_TYPE,
+    "post_status"         => "publish",
+    "posts_per_page"      => -1,
+    "orderby"             => "menu_order",
+    "no_found_rows"       => true,
+    "ignore_sticky_posts" => true,
+]);
+$term_by_id = [];
+foreach ($terms as $t) {
+    $term_by_id[$t->term_id] = $t;
+}
+$by_slug = [];
+if ($all->posts) {
+    $slugs_per_post = [];
+    $relations = wp_get_object_terms(wp_list_pluck($all->posts, "ID"), PORTFOLIO_TAXONOMY, ["fields" => "all_with_object_id"]);
+    if (!is_wp_error($relations)) {
+        foreach ($relations as $rel) {
+            $slugs_per_post[$rel->object_id][$rel->slug] = true;
+            $parent = (int) $rel->parent;
+            $seen   = [];
+            while ($parent && isset($term_by_id[$parent]) && !isset($seen[$parent])) {
+                $seen[$parent] = true;
+                $slugs_per_post[$rel->object_id][$term_by_id[$parent]->slug] = true;
+                $parent = (int) $term_by_id[$parent]->parent;
+            }
+        }
+    }
+    foreach ($all->posts as $p) {
+        foreach (array_keys($slugs_per_post[$p->ID] ?? []) as $slug) {
+            $by_slug[$slug][] = $p;
+        }
+    }
 }
 
-// Wird nur mit Term-Slugs verglichen, nie ausgegeben - trotzdem gehoert Request-Input
-// durch wp_unslash() und einen Sanitizer, bevor er weiterverwendet wird.
-// WICHTIG: hier NICHT sanitize_title() verwenden. Das entfernt Akzente ("möbel" wird
-// zu "mobel") und der Vergleich mit rawurldecode($tax_term->slug) schlaegt dann fehl -
-// der Tab gilt nie als aktiv und die Auswahl geht beim Blaettern verloren.
-// sanitize_text_field() erhaelt den Wert und entfernt trotzdem Tags und Umbrueche.
-if (isset($_GET["tab"])) {
-    $tab = sanitize_text_field(wp_unslash($_GET["tab"]));
-}
-if (isset($_GET["div"])) {
-    $tab = sanitize_text_field(wp_unslash($_GET["div"]));
-}
-?>
+$terms = array_values(array_filter($terms, static fn($t) => !empty($by_slug[$t->slug])));
+$slugs = array_map(static fn($t) => rawurldecode($t->slug), $terms);
+if ($tab === "" || !in_array($tab, $slugs, true)) {
+    $tab = $slugs[0] ?? "";
+} ?>
 
-<section class="portfolio portfoliocat">
-    <div class="container<?php big_border(" "); ?>">
-        <div class="row">
-            <div class="section_heading_title">
-                <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_title")) { ?>
-                    <h1><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_title"); ?></h1>
-                    <div class="pagetitle-separator">
-                        <div class="pagetitle-separator-border">
-                            <div class="pagetitle-separator-box"></div>
-                        </div>
-                    </div>
-                <?php } ?>
-                <?php if ($current_setup_posttypes->get("two_thre_four_col_port_tem_desc")) { ?>
-                    <p><?php echo $current_setup_posttypes->get("two_thre_four_col_port_tem_desc"); ?></p>
+<div class="page-shell site-wrap site-wrap--wide portfolio portfoliocat">
+    <?php djs_section_heading($pt->get("two_thre_four_col_port_tem_title"), $pt->get("two_thre_four_col_port_tem_desc")); ?>
+
+    <?php if (count($terms) > 1) { ?>
+        <nav class="portfolio-tabs" aria-label="<?php esc_attr_e("Categories", "djs-wallstreet-pro"); ?>">
+            <div class="tabs tabs-box" role="tablist" data-tabs>
+                <?php foreach ($terms as $t) {
+                    $slug = rawurldecode($t->slug); ?>
+                    <a role="tab" class="tab<?php echo $slug === $tab ? " tab-active" : ""; ?>" id="tab-<?php echo esc_attr($slug); ?>"
+                        aria-selected="<?php echo $slug === $tab ? "true" : "false"; ?>" aria-controls="pane-<?php echo esc_attr($slug); ?>"
+                        href="<?php echo esc_url(add_query_arg("tab", $slug, remove_query_arg([$page_param, "div"]))); ?>"><?php echo esc_html($t->name); ?></a>
                 <?php } ?>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="portfolio-tabs-section">
-                    <ul id="tabs" class="portfolio-tabs" role="tablist">
-                        <?php foreach ($tax_terms as $tax_term) {
-                            $decoded_slug = rawurldecode($tax_term->slug); ?>
-                            <li rel="tab" class="nav-item">
-                                <span class="tab">
-                                    <a id="tab-<?php echo esc_attr($decoded_slug); ?>"
-                                        href="<?php echo esc_url($current_setup->get("page_fader_enabled") ? $permalink . $decoded_slug : get_the_currentURL() . "#" . $decoded_slug); ?>"
-                                        class="btn tab nav-link <?php if ($tab == "") {
-                                                                    if ($j == 1) {
-                                                                        echo "active";
-                                                                        $j = 2;
-                                                                    }
-                                                                } elseif ($tab == $decoded_slug) {
-                                                                    echo "active";
-                                                                } ?>"><?php echo esc_html($tax_term->name); ?></a>
-                                </span>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
+        </nav>
+    <?php } ?>
+
+    <?php foreach ($terms as $t) {
+        $slug  = rawurldecode($t->slug);
+        $posts = $by_slug[$t->slug];
+        $pages = $per_page > 0 ? (int) ceil(count($posts) / $per_page) : 1;
+        $page  = min($curpage, max(1, $pages));
+        $shown = $per_page > 0 ? array_slice($posts, ($page - 1) * $per_page, $per_page) : $posts; ?>
+        <section id="pane-<?php echo esc_attr($slug); ?>" class="portfolio-pane" role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($slug); ?>"<?php echo $slug === $tab ? "" : " hidden"; ?>>
+            <div class="card-grid card-grid--<?php echo $columns; ?> portfolio-grid">
+                <?php foreach ($shown as $i => $p) {
+                    get_template_part("template-parts/portfolio/card", null, [
+                        "item"  => djs_portfolio_item($p->ID, "port-thumb", $columns === 4 ? 15 : 30),
+                        "index" => $i,
+                    ]);
+                } ?>
             </div>
-        </div>
-        <div id="loading_container" align="center" class="loading-image" style="display:none;">
-            <img id="loading-image" src="<?php echo THEME_ASSETS_PATH_URI . "/images/loading_2.gif"; ?>" />
-        </div>
-        <div id="content" class="tab-content" role="tablist">
-            <?php
-            global $paged;
-
-            $portfolio_seiten_parameter = "portfolio_seite";
-            $curpage = isset($_GET[$portfolio_seiten_parameter])
-                ? max(1, (int) $_GET[$portfolio_seiten_parameter])
-                : ($paged ? $paged : 1);
-
-            $norecord = 0;
-            $is_active = true;
-
-            $alle_portfolio = new WP_Query([
-                "post_type" => PORTFOLIO_POST_TYPE,
-                "post_status" => "publish",
-                "posts_per_page" => -1,
-                "orderby" => "menu_order",
-                "no_found_rows" => true,
-                "ignore_sticky_posts" => true,
-            ]);
-
-            $term_nach_id = [];
-            foreach ((array) $tax_terms as $t) {
-                $term_nach_id[$t->term_id] = $t;
-            }
-
-            $portfolio_nach_slug = [];
-            if (!empty($alle_portfolio->posts)) {
-                $slugs_je_post = [];
-                $zuordnung = wp_get_object_terms(
-                    wp_list_pluck($alle_portfolio->posts, "ID"),
-                    PORTFOLIO_TAXONOMY,
-                    ["fields" => "all_with_object_id"]
-                );
-                if (!is_wp_error($zuordnung)) {
-                    foreach ($zuordnung as $beziehung) {
-                        // Der direkt zugewiesene Begriff ...
-                        $slugs_je_post[$beziehung->object_id][$beziehung->slug] = true;
-                        $eltern_id = (int) $beziehung->parent;
-                        $gesehen = [];
-                        while ($eltern_id && isset($term_nach_id[$eltern_id]) && !isset($gesehen[$eltern_id])) {
-                            $gesehen[$eltern_id] = true;
-                            $slugs_je_post[$beziehung->object_id][$term_nach_id[$eltern_id]->slug] = true;
-                            $eltern_id = (int) $term_nach_id[$eltern_id]->parent;
-                        }
-                    }
-                }
-                foreach ($alle_portfolio->posts as $portfolio_beitrag) {
-                    foreach (array_keys($slugs_je_post[$portfolio_beitrag->ID] ?? []) as $slug) {
-                        $portfolio_nach_slug[$slug][] = $portfolio_beitrag;
-                    }
-                }
-            }
-
-            if ($tax_terms) {
-                foreach ($tax_terms as $tax_term) {
-                    $decoded_slug = rawurldecode($tax_term->slug);
-
-                    $term_beitraege = $portfolio_nach_slug[$tax_term->slug] ?? [];
-                    $seiten_gesamt = $posts_per_page > 0 ? (int) ceil(count($term_beitraege) / $posts_per_page) : 1;
-                    $seiten_beitraege = $posts_per_page > 0
-                        ? array_slice($term_beitraege, ($curpage - 1) * $posts_per_page, $posts_per_page)
-                        : $term_beitraege;
-
-                    if ($seiten_beitraege) { ?>
-                        <div id="<?php echo esc_attr($decoded_slug); ?>"
-                            class="tab-pane fade in <?php if ($tab == "") {
-                                                        if ($is_active == true) {
-                                                            echo "active";
-                                                        }
-                                                        $is_active = false;
-                                                    } elseif ($tab == $decoded_slug) {
-                                                        echo "active";
-                                                    } ?>"
-                            role="tabpanel" aria-labelledby="tab-<?php echo esc_attr($decoded_slug); ?>">
-                            <div class="row">
-                                <?php foreach ($seiten_beitraege as $portfolio_beitrag) {
-                                    $GLOBALS["post"] = $portfolio_beitrag;
-                                    setup_postdata($GLOBALS["post"]);
-
-                                    if (get_post_meta(get_the_ID(), "meta_project_link", true)) {
-                                        $meta_project_link = esc_url(get_post_meta(get_the_ID(), "meta_project_link", true));
-                                    } else {
-                                        $meta_project_link = esc_url(get_post_permalink());
-                                    }
-                                    $portfolio_target = sanitize_text_field(get_post_meta(get_the_ID(), "portfolio_target", true));
-                                    $project_link_chkbx = sanitize_text_field(get_post_meta(get_the_ID(), "project_link_chkbx", true));
-                                    $show_project_picture_link = sanitize_text_field(get_post_meta(get_the_ID(), "show_project_picture_link", true));
-                                    if (get_post_meta(get_the_ID(), "project_more_btn_link", true)) {
-                                        $project_more_btn_link = esc_url(get_post_meta(get_the_ID(), "project_more_btn_link", true));
-                                    } else {
-                                        $project_more_btn_link = esc_url(get_permalink());
-                                    }
-                                    $portfolio_project_summary = esc_html__("Detail", "djs-wallstreet-pro");
-                                    if (get_post_meta(get_the_ID(), "portfolio_project_summary", true)) {
-                                        $portfolio_project_summary = get_post_meta(get_the_ID(), "portfolio_project_summary", true);
-                                    }
-
-                                    $class = "";
-                                    if (is_page_template("template-specials/portfolio-2-column.php")) {
-                                        $class = "col-md-6 col-sm-6";
-                                        $class1 = "two-colum-portfolio";
-                                    } elseif (is_page_template("template-specials/portfolio-3-column.php")) {
-                                        $class = "col-md-4 col-sm-4";
-                                        $class1 = "three-column-layout";
-                                    } elseif (is_page_template("template-specials/portfolio-4-column.php")) {
-                                        $class = "col-md-3 col-sm-6";
-                                        $class1 = "four-colum-layout";
-                                    } ?>
-                                    <div class="<?php echo $class; ?> col-xs-12 main-portfolio-area">
-                                        <div class="main-portfolio-showcase">
-                                            <div class="<?php echo $class1; ?> main-portfolio-showcase-media">
-                                                <?php
-                                                the_post_thumbnail("port-thumb", ["class" => "img-responsive" . get_big_border(" ")]);
-                                                $post_thumbnail_url = "";
-                                                if (has_post_thumbnail()) {
-                                                    $post_thumbnail_id = get_post_thumbnail_id();
-                                                    $post_thumbnail_url = esc_url(get_attachment_link($post_thumbnail_id));
-                                                } ?>
-                                                <div class="main-portfolio-showcase-overlay<?php big_border(" "); ?>">
-                                                    <div class="main-portfolio-showcase-overlay-inner">
-                                                        <div class="main-portfolio-showcase-detail">
-                                                            <h4><?php the_title(); ?></h4>
-                                                            <?php if (is_page_template("template-specials/portfolio-4-column.php")) { ?>
-                                                                <p><?php echo portfolio_excerpt(15, get_the_ID()); ?></p>
-                                                            <?php } else { ?>
-                                                                <p><?php echo portfolio_excerpt(30, get_the_ID()); ?></p>
-                                                            <?php } ?>
-                                                            <div
-                                                                class="portfolio-icon <?php echo $show_project_picture_link ? "" : "without_image"; ?>">
-                                                                <?php if ($show_project_picture_link) { ?>
-                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
-                                                                        class="hover_thumb" title="<?php the_title(); ?>"
-                                                                        data-lightbox="image" href="<?php echo $post_thumbnail_url; ?>"><i
-                                                                            class="fa fa-image"></i></a>
-                                                                <?php } ?>
-                                                                <?php if ($meta_project_link) { ?>
-                                                                    <a <?php blank_target(get_post_meta(get_the_ID(), "meta_project_target", true)); ?>
-                                                                        href="<?php echo esc_url($meta_project_link); ?>"
-                                                                        alt="<?php echo esc_attr($portfolio_project_summary); ?>"><i
-                                                                            class="fa fa-link"></i></a>
-                                                                <?php } ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php $norecord = 1; ?>
-                                <?php } ?>
-                            </div>
-                            <?php the_pagination($curpage, (object) ["max_num_pages" => $seiten_gesamt], $portfolio_seiten_parameter); ?>
-                        </div>
-                    <?php wp_reset_postdata();
-                    } else { ?>
-                        <div id="<?php echo $decoded_slug; ?>"
-                            class="tab-pane fade in <?php if ($tab == "") {
-                                                        if ($is_active == true) {
-                                                            echo "active";
-                                                        }
-                                                        $is_active = false;
-                                                    } elseif ($tab == $decoded_slug) {
-                                                        echo "active";
-                                                    } ?>">
-                        </div>
-            <?php }
-                }
+            <?php if ($pages > 1) {
+                $fake = (object) ["max_num_pages" => $pages];
+                the_pagination($page, $fake, $page_param, add_query_arg("tab", $slug, remove_query_arg("div")));
             } ?>
-        </div>
-    </div>
-</section>
-<?php if (!$current_setup->get("page_fader_enabled")) { ?>
-    <script type="text/javascript">
-        jQuery('.lightbox').hide();
-        jQuery('#lightbox').hide();
+        </section>
+    <?php } ?>
 
-        jQuery(".tab .nav-link ").click(function(e) {
-            var h = decodeURI(jQuery(this).attr('href').replace(/#/, ""));
-            var tjk = "<?php the_title(); ?>";
-            var str1 = tjk.replace(/\s+/g, '-').toLowerCase();
-            var pageurl = "<?php echo $permalink; ?>" + h;
-
-            jQuery("#lightbox").remove();
-            jQuery.ajax({
-                url: pageurl,
-                beforeSend: function() {
-                    jQuery(".tab-content").hide();
-                    jQuery("#loading_container").show();
-                },
-                success: function(data) {
-                    jQuery(".tab-content").show();
-                    jQuery('.lightbox').remove();
-                    jQuery('#lightbox').remove();
-                    jQuery('.page-mycarousel').hide();
-                    jQuery('.container').hide();
-                    jQuery('footer.site').hide();
-                    jQuery('#wall_wrapper').html(data);
-                },
-                complete: function(data) {
-                    jQuery("#loading_container").hide();
-                }
-            });
-
-            if (pageurl != window.location) {
-                window.history.pushState({
-                    path: pageurl
-                }, '', pageurl);
-            }
-            return false;
-        });
-    </script>
-<?php } ?>
+    <?php if (!$terms) {
+        get_template_part("template-parts/content/content", "none");
+    } ?>
+</div>

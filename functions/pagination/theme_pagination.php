@@ -23,15 +23,18 @@ class Theme_Pagination {
      * "paged"/"page" per redirect_canonical() weg - dafuer laesst sich ein eigener
      * Query-Parameter uebergeben (z. B. "portfolio_seite"); vorhandene Parameter bleiben.
      */
+    private ?string $base_url = null;
+
     private function seiten_link($nr, $seiten_parameter) {
         if ($seiten_parameter === null) {
             return get_pagenum_link($nr);
         }
-        $basis = remove_query_arg([$seiten_parameter, "paged", "page"]);
+        $basis = remove_query_arg([$seiten_parameter, "paged", "page"], $this->base_url ?? false);
         return $nr <= 1 ? $basis : add_query_arg($seiten_parameter, $nr, $basis);
     }
 
-    function page($curpage, $post_type_data, $seiten_parameter = null) {
+    function page($curpage, $post_type_data, $seiten_parameter = null, $base_url = null) {
+        $this->base_url = $base_url;
         $max = (int) $post_type_data->max_num_pages;
         if ($max <= 1) {
             return;
@@ -82,7 +85,7 @@ class Theme_Pagination {
     }
 }
 
-function the_pagination($page, $query, $seiten_parameter = null) {
+function the_pagination($page, $query, $seiten_parameter = null, $base_url = null) {
     $theme_pagination = new Theme_Pagination();
-    $theme_pagination->page($page, $query, $seiten_parameter);
+    $theme_pagination->page($page, $query, $seiten_parameter, $base_url);
 }

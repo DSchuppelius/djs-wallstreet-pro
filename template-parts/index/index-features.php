@@ -6,95 +6,58 @@
  * Filename     : index-features.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Feature-Sektion: Bild + bis zu drei Merkmale (Customizer des Post-Types-Plugins).
  */
-if (defined("DJS_POSTTYPE_PLUGIN")) {
-    $current_setup_posttypes = PostTypes_Plugin_Setup::instance();
 
-    $theme_feature_image = $current_setup_posttypes->get("theme_feature_image");
-    $theme_feature_title = $current_setup_posttypes->get("theme_feature_title");
-    $theme_feature_enabled = $current_setup_posttypes->get("theme_feature_enabled");
+$pt = djs_pt();
+if (!$pt || !$pt->get("theme_feature_enabled")) {
+    return;
+}
+$image    = (string) $pt->get("theme_feature_image");
+$link     = (string) $pt->get("feature_image_link");
+$new_tab  = (bool) $pt->get("image_link_target");
+$bg       = (string) $pt->get("theme_feature_background");
+$features = [];
+foreach (["first", "second", "third"] as $n) {
+    $f = [
+        "icon"  => (string) $pt->get("theme_{$n}_feature_icon"),
+        "title" => (string) $pt->get("theme_{$n}_title"),
+        "text"  => (string) $pt->get("theme_{$n}_description"),
+    ];
+    if ($f["icon"] !== "" || $f["title"] !== "" || $f["text"] !== "") {
+        $features[] = $f;
+    }
+} ?>
 
-    $theme_first_title = $current_setup_posttypes->get("theme_first_title");
-    $theme_first_description = $current_setup_posttypes->get("theme_first_description");
-    $theme_first_feature_icon = $current_setup_posttypes->get("theme_first_feature_icon");
-
-    $theme_second_title = $current_setup_posttypes->get("theme_second_title");
-    $theme_second_description = $current_setup_posttypes->get("theme_second_description");
-    $theme_second_feature_icon = $current_setup_posttypes->get("theme_second_feature_icon");
-
-    $theme_third_title = $current_setup_posttypes->get("theme_third_title");
-    $theme_third_description = $current_setup_posttypes->get("theme_third_description");
-    $theme_third_feature_icon = $current_setup_posttypes->get("theme_third_feature_icon");
-
-    if ($theme_feature_enabled == true) { ?>
-<div class="features-section"
-    style="background: url('<?php echo $current_setup_posttypes->get("theme_feature_background"); ?>'); background-size:cover; background-position:center center; <?php echo $current_setup_posttypes->get("theme_feature_background_fixed") ? 'background-attachment:fixed;' : '' ;?>">
-    <div class="overlay">
-        <div class="container">
-            <div class="row">
-                <?php if (!empty($theme_feature_image)) { ?>
-                <div class="col-md-6 col-sm-6">
-                    <?php if ($current_setup_posttypes->get("feature_image_link")) { ?>
-                    <a href="<?php echo $current_setup_posttypes->get("feature_image_link"); ?>"
-                        <?php blank_target($current_setup_posttypes->get("image_link_target") == true); ?>><img
-                            class="img-responsive features-img" alt="Wallstreet Image"
-                            style="height:331px; width:525px;" src="<?php echo $theme_feature_image; ?>"></a>
-                    <?php } else { ?>
-                    <img class="img-responsive features-img" alt="Wallstreet Image" style="height:331px; width:525px;"
-                        src="<?php echo $theme_feature_image; ?>">
-                    <?php } ?>
+<section class="section section--bleed features-section<?php echo $pt->get("theme_feature_background_fixed") ? " section--fixed-bg" : ""; ?>"<?php echo $bg ? ' style="--section-bg: url(\'' . esc_url($bg) . '\')"' : ""; ?>>
+    <div class="section--bleed__overlay">
+        <div class="site-wrap features<?php echo $image ? " features--with-image" : ""; ?>">
+            <?php if ($image) { ?>
+                <div class="features__media reveal">
+                    <?php if ($link) { ?><a href="<?php echo esc_url($link); ?>" <?php blank_target($new_tab); ?><?php echo $new_tab ? ' rel="noopener"' : ""; ?>><?php } ?>
+                    <img class="features__img features-img" src="<?php echo esc_url($image); ?>" alt="" loading="lazy">
+                    <?php if ($link) { ?></a><?php } ?>
                 </div>
+            <?php } ?>
+            <div class="features__body">
+                <?php if ($pt->get("theme_feature_title")) { ?>
+                    <h2 class="features__title features-title"><?php echo wp_kses_post($pt->get("theme_feature_title")); ?></h2>
                 <?php } ?>
-                <div class="col-md-6 col-sm-6">
-                    <?php if (!empty($theme_feature_title)) { ?><div class="features-title">
-                        <?php echo $theme_feature_title; ?></div><?php } ?>
-                    <?php if (!empty($theme_first_feature_icon) || !empty($theme_first_title) || !empty($theme_first_description)): ?>
-                    <div class="media features-area">
-                        <?php if (!empty($theme_first_feature_icon)): ?>
-                        <div class="feature-icon"><i
-                                class="fa <?php if (!empty($theme_first_feature_icon)) { echo $theme_first_feature_icon; } ?>"></i>
-                        </div>
-                        <?php endif; ?>
-                        <?php if (!empty($theme_first_title) || !empty($theme_first_description)): ?>
-                        <div class="media-body">
-                            <?php if (!empty($theme_first_title)) { ?><h3><?php echo $theme_first_title; ?></h3>
+                <ul class="features__list">
+                    <?php foreach ($features as $f) { ?>
+                        <li class="feature-item reveal">
+                            <?php if ($f["icon"] !== "") { ?>
+                                <span class="feature-item__icon" aria-hidden="true"><i class="fa <?php echo esc_attr($f["icon"]); ?>"></i></span>
                             <?php } ?>
-                            <?php if (!empty($theme_first_description)) { ?><p><?php echo $theme_first_description; ?>
-                            </p><?php } ?>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                    <?php endif; ?>
-                    <?php if (!empty($theme_second_feature_icon) || !empty($theme_second_title) || !empty($theme_second_description)): ?>
-                    <div class="media features-area">
-                        <?php if (!empty($theme_second_feature_icon)): ?><div class="feature-icon"><i
-                                class="fa <?php if (!empty($theme_second_feature_icon)) { echo $theme_second_feature_icon; } ?>"></i>
-                        </div><?php endif; ?>
-                        <div class="media-body">
-                            <?php if (!empty($theme_second_title)) { ?><h3><?php echo $theme_second_title; ?></h3>
-                            <?php } ?>
-                            <?php if (!empty($theme_second_description)) { ?><p><?php echo $theme_second_description; ?>
-                            </p><?php } ?>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if (!empty($theme_third_feature_icon) || !empty($theme_third_title) || !empty($theme_third_description)): ?>
-                    <div class="media features-area">
-                        <?php if (!empty($theme_third_feature_icon)): ?><div class="feature-icon"><i
-                                class="fa <?php if (!empty($theme_third_feature_icon)) { echo $theme_third_feature_icon; } ?>"></i>
-                        </div><?php endif; ?>
-                        <div class="media-body">
-                            <?php if (!empty($theme_third_title)) { ?><h3><?php echo $theme_third_title; ?></h3>
-                            <?php } ?>
-                            <?php if (!empty($theme_third_description)) { ?><p><?php echo $theme_third_description; ?>
-                            </p><?php } ?>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                </div>
+                            <div>
+                                <?php if ($f["title"] !== "") { ?><h3 class="feature-item__title"><?php echo wp_kses_post($f["title"]); ?></h3><?php } ?>
+                                <?php if ($f["text"] !== "") { ?><p class="feature-item__text"><?php echo wp_kses_post($f["text"]); ?></p><?php } ?>
+                            </div>
+                        </li>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
     </div>
-</div>
-<?php }
-} ?>
+</section>

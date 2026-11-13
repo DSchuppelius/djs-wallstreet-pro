@@ -12,7 +12,8 @@
  *  7. Nach-oben-Button
  *  8. Ladeblende (Customizer "Fader")
  *  9. Parallax (Hintergrund, Header-Bild, Rellax-Ebenen)
- * 10. Kleinigkeiten (leere Embeds markieren)
+ * 10. Tabs
+ * 11. Kleinigkeiten (leere Embeds markieren)
  */
 (() => {
     "use strict";
@@ -425,7 +426,51 @@
     }
 
     /* ------------------------------------------------------------------
-     * 10. Kleinigkeiten
+     * 10. Tabs ([data-tabs] mit role="tab"-Links, z. B. Portfolio-Kategorien)
+     *     Ohne JS sind es normale Links (?tab=slug); mit JS wird ohne Neuladen umgeschaltet.
+     * ---------------------------------------------------------------- */
+    function initTabs() {
+        doc.querySelectorAll("[data-tabs]").forEach((list) => {
+            const tabs = Array.from(list.querySelectorAll('[role="tab"]'));
+            const activate = (tab, focus) => {
+                tabs.forEach((t) => {
+                    const on = t === tab;
+                    t.classList.toggle("tab-active", on);
+                    t.setAttribute("aria-selected", String(on));
+                    t.tabIndex = on ? 0 : -1;
+                    const pane = doc.getElementById(t.getAttribute("aria-controls"));
+                    if (pane) pane.hidden = !on;
+                });
+                if (focus) tab.focus();
+                if (tab.href) window.history.replaceState(null, "", tab.href);
+            };
+
+            tabs.forEach((tab) => {
+                tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+                tab.addEventListener("click", (event) => {
+                    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+                    event.preventDefault();
+                    activate(tab, false);
+                });
+            });
+
+            list.addEventListener("keydown", (event) => {
+                const current = tabs.indexOf(doc.activeElement);
+                if (current < 0) return;
+                const moves = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+                if (event.key in moves) {
+                    event.preventDefault();
+                    activate(tabs[(current + moves[event.key] + tabs.length) % tabs.length], true);
+                } else if (event.key === "Home" || event.key === "End") {
+                    event.preventDefault();
+                    activate(tabs[event.key === "Home" ? 0 : tabs.length - 1], true);
+                }
+            });
+        });
+    }
+
+    /* ------------------------------------------------------------------
+     * 11. Kleinigkeiten
      * ---------------------------------------------------------------- */
     function markEmptyEmbeds() {
         doc.querySelectorAll(".wp-block-embed__wrapper").forEach((wrapper) => {
@@ -443,6 +488,7 @@
         initScrollTop();
         initPageFader();
         initParallax();
+        initTabs();
         markEmptyEmbeds();
     };
 

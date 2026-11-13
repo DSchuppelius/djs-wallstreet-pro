@@ -83,45 +83,21 @@ function theme_scripts() {
 
     wp_enqueue_script("rellax", djs_asset_uri("js/parallax/rellax.min.js"), [], "1.12.1", ["strategy" => "defer", "in_footer" => true]);
     wp_enqueue_script("djs-wallstreet-pro", djs_asset_uri("js/theme.js"), ["rellax"], djs_asset_version("js/theme.js"), ["strategy" => "defer", "in_footer" => true]);
+    wp_add_inline_script("djs-wallstreet-pro", "window.djsL10n=" . wp_json_encode([
+        /* translators: 1: slide number, 2: number of slides */
+        "slide" => __('Slide %1$s of %2$s', "djs-wallstreet-pro"),
+        "play"  => __("Start automatic rotation", "djs-wallstreet-pro"),
+        "pause" => __("Pause automatic rotation", "djs-wallstreet-pro"),
+        "close" => __("Close", "djs-wallstreet-pro"),
+        "prev"  => __("Previous", "djs-wallstreet-pro"),
+        "next"  => __("Next", "djs-wallstreet-pro"),
+    ]) . ";", "before");
 
     if (defined("DJS_POSTTYPE_PLUGIN")) {
         require_once "custom_style_special.php";
     }
 }
 add_action("wp_enqueue_scripts", "theme_scripts");
-
-/* -------------------------------------------------------------------------
- *  Post-Type-Bausteine (Slider, Portfolio, Testimonials)
- *  Uebergangsweise noch mit den alten jQuery-Bibliotheken - wird in Phase 3 ersetzt.
- * ---------------------------------------------------------------------- */
-function theme_jquery_scripts() {
-    if (!defined("DJS_POSTTYPE_PLUGIN")) {
-        return;
-    }
-
-    $defer = ["strategy" => "defer", "in_footer" => true];
-
-    if (is_page_template("template-specials/portfolio-2-column.php") || is_page_template("template-specials/portfolio-3-column.php") || is_page_template("template-specials/portfolio-4-column.php")) {
-        wp_enqueue_style("lightbox", djs_asset_uri("css/lightbox/lightbox.css"));
-        wp_enqueue_script("lightbox", djs_asset_uri("js/lightbox/lightbox.js"), ["jquery"], null, $defer);
-    }
-
-    if (PORTFOLIO_POST_TYPE == get_post_type()) {
-        wp_enqueue_style("lightbox", djs_asset_uri("css/lightbox/lightbox.css"));
-        wp_enqueue_script("lightbox", djs_asset_uri("js/lightbox/lightbox.js"), ["jquery"], null, $defer);
-        wp_enqueue_script("carouFredSel", djs_asset_uri("js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"), ["jquery"], null, $defer);
-        wp_enqueue_script("carouFredSel1", djs_asset_uri("js/caroufredsel/caroufredsel-element.js"), ["jquery"], null, $defer);
-    }
-
-    if (is_front_page() || is_page_template("template/homepage.php") || is_testimonial_carousel()) {
-        wp_enqueue_style("lightbox", djs_asset_uri("css/lightbox/lightbox.css"));
-        wp_enqueue_style("flexslider", djs_asset_uri("css/flexslider/flexslider.css"));
-        wp_enqueue_script("lightbox", djs_asset_uri("js/lightbox/lightbox.js"), ["jquery"], null, $defer);
-        wp_enqueue_script("flexslider", djs_asset_uri("js/flexslider/jquery.flexslider.js"), ["jquery"], null, $defer);
-        wp_enqueue_script("carouFredSel", djs_asset_uri("js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"), ["jquery"], null, $defer);
-    }
-}
-add_action("wp_enqueue_scripts", "theme_jquery_scripts");
 
 /* -------------------------------------------------------------------------
  *  WooCommerce

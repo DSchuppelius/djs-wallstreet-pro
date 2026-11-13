@@ -45,10 +45,11 @@ body.fixed_Footer .grecaptcha-badge {
     color: var(--color-primary-content);
 }
 
+/* Plugin rechnet mit 200px Gesamtbreite: 175px Inhalt + 25px Lasche */
 .wallstreet.fixed-widget > button {
     display: grid;
     place-items: center;
-    width: 2.25rem;
+    width: 25px;
     padding: 0;
     line-height: normal;
     background-color: rgb(0 0 0 / 0.18);
@@ -72,4 +73,25 @@ body.fixed_Footer .grecaptcha-badge {
 .wallstreet.fixed-widget.right > div,
 .wallstreet.fixed-widget.left > div {
     align-items: center;
+}
+
+/* ---------------------------------------------------------------- */
+/*  Slider Revolution: Theme-Grundregeln nicht in die Ebenen tragen  */
+/* ---------------------------------------------------------------- */
+rs-module-wrap img,
+rs-module img {
+    max-width: none;
+    border-radius: 0;
+}
+
+rs-module-wrap :is(h1, h2, h3, h4, h5, h6, p),
+rs-module :is(h1, h2, h3, h4, h5, h6, p) {
+    margin: 0;
+    letter-spacing: inherit;
+    text-wrap: initial;
+    text-shadow: none;
+}
+
+rs-module-wrap a:not([class*="btn"]) {
+    text-decoration: none;
 }

@@ -20,7 +20,8 @@ $templates = ["template-parts/index/index", "banner"];
 get_template_parts($templates, true);
 
 if ($current_setup_posttypes->get("team_template_team_section_show_hide") == true) {
-    get_template_part("template-parts/team/team", ltrim(filter_var(basename($template), FILTER_SANITIZE_NUMBER_INT), "-"));
+    $variant = (int) ltrim(filter_var(basename($template), FILTER_SANITIZE_NUMBER_INT), "-");
+    get_template_part("template-parts/team/team", $variant, ["variant" => $variant]);
 }
 
 if ($current_setup_posttypes->get("team_template_feature_section_show_hide") == true) {

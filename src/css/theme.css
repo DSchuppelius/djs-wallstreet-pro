@@ -58,7 +58,7 @@
 
 /*
  * daisyUI nur mit den Bausteinen, die das Theme wirklich nutzt. Komponenten wie
- * avatar, loading, status, chat, table oder footer bleiben bewusst draussen: ihre
+ * avatar, loading, status, chat, table, footer oder carousel bleiben bewusst draussen: ihre
  * Klassennamen kommen in WordPress-Core- und Plugin-Markup vor und wuerden dort
  * ungewollt greifen (z. B. <img class="avatar"> in Kommentaren).
  */
@@ -66,8 +66,8 @@
     themes: false;
     logs: false;
     include: properties, rootcolor, rootscrollgutter, rootscrolllock, scrollbar, svg,
-        alert, badge, breadcrumbs, button, card, carousel, checkbox, collapse, divider,
-        drawer, dropdown, fieldset, hero, indicator, input, join, kbd, label, menu,
+        alert, badge, breadcrumbs, button, card, checkbox, collapse, divider,
+        dropdown, fieldset, indicator, input, join, kbd, label, menu,
         modal, navbar, radio, select, swap, tab, textarea, toggle, tooltip, radius;
 }
 
