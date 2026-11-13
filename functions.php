@@ -70,6 +70,7 @@ $djs_dateien = [
     'base/get_content_title',
     'theme/theme_functions',
     'theme/theme_colors',
+    'theme/frame',
     'scripts/scripts',
     'scripts/custom_style',
     'font/font',
@@ -78,8 +79,7 @@ $djs_dateien = [
     'breadcrumbs/breadcrumbs',
     'testimonials/testimonials',
     'pagination/theme_pagination',
-    'menu/theme_bootstrap_walker_page',
-    'menu/theme_bootstrap_walker_nav_menu',
+    'menu/nav_walker',
     'basic/blog',
     'basic/archive',
     'basic/generator',
@@ -277,7 +277,7 @@ add_filter('user_contactmethods', static function ($methods) {
  * 8.  Avatar‑Klasse erweitern
  * ----------------------------------------------------------------------*/
 add_filter('get_avatar', static function ($html) {
-    return str_replace("class='avatar", "class='avatar img-responsive comment-img img-circle", $html);
+    return str_replace("class='avatar", "class='avatar comment-img", $html);
 });
 
 /* -------------------------------------------------------------------------

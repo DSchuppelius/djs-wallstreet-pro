@@ -1,25 +1,21 @@
 <?php
 /*
- * Created on   : Wed Sep 28 2022
+ * Created on   : Wed Jun 22 2022
  * Author       : Daniel Jörg Schuppelius
  * Author Uri   : https://schuppelius.org
- * Filename     : page_fader.php
+ * Filename     : page-fader.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Ladeblende (Customizer "Fader beim Seitenwechsel"). Ohne JavaScript bleibt sie
+ * unsichtbar (Klasse .js wird erst per Skript gesetzt), statt die Seite zu verdecken.
  */
- ?>
-<div id="page_fader">
-    <div class="page_fader logo <?php row_frame_border(""); ?>">
+?>
+<script>document.documentElement.classList.add("js", "has-page-fader");</script>
+<div id="page_fader" class="page-fader" aria-hidden="true">
+    <div class="page-fader__card <?php row_frame_border(""); ?>">
         <?php get_template_part("template-parts/global/header/navbar", "logo"); ?>
-        <h2 class="animate"><?php esc_html_e("Loading content...", "djs-wallstreet-pro"); ?></h2>
+        <p class="page-fader__text"><?php esc_html_e("Loading content...", "djs-wallstreet-pro"); ?></p>
+        <span class="page-fader__bar"></span>
     </div>
 </div>
-<script>
-const style = document.createElement('style');
-style.innerHTML = '#page_fader { display:flex; }';
-document.head.appendChild(style);
-</script>
-<noscript>
-    <div class="warning java"><span title="<?php esc_attr_e("JavaScript disabled...", "djs-wallstreet-pro"); ?>"
-            class="material-symbols-outlined">report</span></div>
-</noscript>

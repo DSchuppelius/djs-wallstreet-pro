@@ -1,0 +1,21 @@
+/*
+ * Theme-Bausteine: Seitenlayout (Inhalt + Sidebar), Beitragskarten, Meta-Zeilen,
+ * Sidebar-Widgets, Kommentare, Pagination, Autor-Box.
+ * (wird in Phase 2 ausgebaut)
+ */
+@layer utilities {
+    /* Inhaltsflaechen ueber dem Seitenhintergrund (Customizer "Rahmen auf Seiten") */
+    .has-frame .with_background,
+    .surface-card {
+        background-color: color-mix(in oklab, var(--color-base-100) var(--surface-alpha), transparent);
+        -webkit-backdrop-filter: blur(var(--surface-blur));
+        backdrop-filter: blur(var(--surface-blur));
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 8%, transparent);
+        border-radius: var(--radius-box);
+    }
+
+    /* Customizer "Grosser Rahmen": groesserer Radius */
+    .has-bigborder .bigborder {
+        border-radius: var(--radius-big);
+    }
+}

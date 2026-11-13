@@ -1,0 +1,48 @@
+/*
+ * Customizer -> Design-Tokens
+ *
+ * djs_wallstreet_root_css() (functions/scripts/custom_style.php) schreibt die
+ * Customizer-Werte als Custom Properties auf :root. Hier werden sie auf die
+ * Variablen von daisyUI/Tailwind abgebildet. Bewusst ausserhalb jeder @layer:
+ * so gewinnen sie gegen die Theme-Definitionen von daisyUI (die in @layer base
+ * liegen), ohne !important oder Spezifitaets-Tricks.
+ */
+:root,
+[data-theme] {
+    --color-primary: var(--link-color, #2793ff);
+    --color-primary-content: var(--link-color-contrast, #ffffff);
+
+    /* Customizer "Theme corner": Basis-, kleiner und sehr kleiner Radius, Button-Radius */
+    --radius-box: var(--border-base, 1rem);
+    --radius-field: var(--input-base, 0.5rem);
+    --radius-selector: var(--border-verysmallbase, 0.5rem);
+    --radius-big: var(--border-bigbase, 2rem);
+    --radius-small: var(--border-smallbase, 0.625rem);
+
+    /* Flaechen ueber dem Hintergrundbild */
+    --surface-alpha: 90%;
+    --surface-blur: 12px;
+
+    /* Kopfbereich */
+    --header-height: 4.5rem;
+    --header-bg: color-mix(in oklab, var(--color-base-100) 82%, transparent);
+    --topbar-bg: color-mix(in oklab, var(--color-base-300) 85%, transparent);
+
+    /* Logo (Customizer "Logo-Breite/-Position") */
+    --logo-w: var(--logo-width, 12rem);
+    --logo-w-fixed: var(--fixed-logo-width, 9rem);
+    --logo-y: var(--logo-top, 0px);
+    --logo-y-fixed: var(--fixed-logo-top, 0px);
+}
+
+/* Inhaltsflaechen im hellen Schema etwas deckender, damit Text auf Fotos lesbar bleibt. */
+[data-theme="wallstreet-light"],
+:root:not([data-theme]) {
+    --surface-alpha: 94%;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --surface-alpha: 90%;
+    }
+}

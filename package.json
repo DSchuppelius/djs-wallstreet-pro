@@ -1,0 +1,17 @@
+{
+  "name": "djs-wallstreet-pro",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Build tooling for the DJS-Wallstreet-Pro WordPress theme (Tailwind CSS + daisyUI)",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/css/theme.css -o ./assets/dist/theme.css --minify",
+    "watch": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/css/theme.css -o ./assets/dist/theme.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "daisyui": "5.7.48",
+    "tailwindcss": "4.3.3"
+  }
+}

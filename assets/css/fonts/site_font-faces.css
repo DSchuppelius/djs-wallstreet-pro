@@ -1,24 +1,56 @@
+/*
+ * Seitenschrift (el-messiri) - erzeugt aus den TTF-Dateien, WOFF2 zuerst.
+ * "SiteFont" ist eine Familie mit echten Staerken; font-weight waehlt die Datei.
+ */
+
 @font-face {
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Regular.ttf');
+    src: url('el-messiri/ElMessiri-Regular.woff2') format('woff2'), url('el-messiri/ElMessiri-Regular.ttf') format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 500;
+    src: url('el-messiri/ElMessiri-Medium.woff2') format('woff2'), url('el-messiri/ElMessiri-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 600;
+    src: url('el-messiri/ElMessiri-SemiBold.woff2') format('woff2'), url('el-messiri/ElMessiri-SemiBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 700;
+    src: url('el-messiri/ElMessiri-Bold.woff2') format('woff2'), url('el-messiri/ElMessiri-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Alte Familiennamen (vor 3.0) - fuer gespeicherte Inhalte und Plugins */
 
 @font-face {
     font-family: "SiteFontLight";
     font-style: normal;
-    font-weight: 200;
-    src: url('el-messiri/ElMessiri-Regular.ttf');
+    font-weight: 400;
+    src: url('el-messiri/ElMessiri-Regular.woff2') format('woff2'), url('el-messiri/ElMessiri-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "SiteFontBold";
+    font-family: "SiteFontMedium";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Bold.ttf');
+    src: url('el-messiri/ElMessiri-Medium.woff2') format('woff2'), url('el-messiri/ElMessiri-Medium.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -26,19 +58,14 @@
     font-family: "SiteFontSemi";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-SemiBold.ttf');
+    src: url('el-messiri/ElMessiri-SemiBold.woff2') format('woff2'), url('el-messiri/ElMessiri-SemiBold.ttf') format('truetype');
     font-display: swap;
 }
-
 
 @font-face {
-    font-family: "SiteFontMedium";
+    font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('el-messiri/ElMessiri-Medium.ttf');
+    src: url('el-messiri/ElMessiri-Bold.woff2') format('woff2'), url('el-messiri/ElMessiri-Bold.ttf') format('truetype');
     font-display: swap;
-}
-
-.btn:not(.not, .swiper-pagination-bullet, [class*="btn-"]), button:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.button:not(.not, .swiper-pagination-bullet, [class*="btn-"]), input[type="submit"]:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.comment-edit-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]), a.comment-reply-link:not(.not, .swiper-pagination-bullet, [class*="btn-"]) {
-    padding: 0.85em 1em 0.55em 3.5em !important;
 }

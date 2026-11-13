@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('icon-material-design/MaterialIcons-Regular.woff2') format('woff2'), url('icon-material-design/MaterialIcons-Regular.woff') format('woff'), url('icon-material-design/MaterialIcons-Regular.ttf'), url('icon-material-design/MaterialIconsRound-Regular.otf'), url('icon-material-design/MaterialIconsSharp-Regular.otf'), url('icon-material-design/MaterialIconsOutlined-Regular.otf'), url('icon-material-design/MaterialIconsTwoTone-Regular.otf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('font-awesome/webfonts/fa-regular-400.woff2') format('woff2'), url('font-awesome/webfonts/fa-regular-400.ttf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
@@ -19,5 +19,5 @@
     font-style: normal;
     font-weight: 400;
     src: url('bootstrap/bootstrap-icons.woff2') format('woff2'), url('bootstrap/bootstrap-icons.woff') format('woff');
-    font-display: swap;
+    font-display: block;
 }

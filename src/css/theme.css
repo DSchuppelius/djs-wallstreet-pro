@@ -1,0 +1,199 @@
+/*
+ * DJS-Wallstreet-Pro - Stylesheet-Einstieg (Tailwind CSS 4 + daisyUI 5)
+ *
+ * Build:  npm run build   (schreibt assets/dist/theme.css)
+ * Watch:  npm run watch
+ *
+ * Aufbau
+ * Kaskade: daisyUI legt seine Komponenten in verschachtelte Layer innerhalb von
+ * "utilities". Damit Theme-Regeln daisyUI-Vorgaben gezielt anpassen koennen, liegen
+ * layout/content/components/sections ebenfalls in "utilities" (nach daisyUI).
+ * compat.css liegt in "components" (niedrigste Prioritaet), plugins.css ungelayert.
+ *
+ *   tokens.css      Customizer-Werte -> daisyUI-/Tailwind-Variablen
+ *   base.css        Elemente (Typografie, Links, Formulare, Fokus)
+ *   layout.css      Seitenrahmen (Topbar, Header, Navigation, Banner, Footer)
+ *   content.css     Beitragsinhalt und Gutenberg-Bloecke
+ *   components.css  Theme-Bausteine (Karten, Abschnitte, Sidebar, Kommentare ...)
+ *   sections.css    Startseiten-Sektionen und Post-Types (Slider, Portfolio, Team ...)
+ *   plugins.css     Fremd-Markup (DJS-Extensions, CF7, Jetpack, WooCommerce ...)
+ *   compat.css      Alt-Klassen aus gespeichertem Content (Bootstrap 3)
+ *   print.css       Druckansicht
+ */
+
+@import "tailwindcss" source(none);
+
+/* Nur Theme-Dateien scannen - nie node_modules, Fonts oder Uploads. */
+@source "../../*.php";
+@source "../../functions";
+@source "../../template";
+@source "../../template-blog";
+@source "../../template-parts";
+@source "../../template-single";
+@source "../../template-specials";
+@source "../js";
+
+/*
+ * Utilities, die nur ueber Customizer-Werte oder JS entstehen und deshalb in keiner
+ * Quelldatei woertlich stehen.
+ */
+@source inline("{sm:,md:,lg:,xl:,}grid-cols-{1,2,3,4,5,6}");
+@source inline("{sm:,md:,lg:,xl:,}col-span-{1,2,3,4,5,6,7,8,9,10,11,12}");
+
+/*
+ * Tailwind-Utilities, deren Namen mit Alt-Klassen kollidieren: .container und .collapse
+ * (visibility: collapse) kommen in gespeichertem Content mit Bootstrap-Bedeutung vor.
+ * Die Bootstrap-Variante liefert compat.css.
+ */
+@source not inline("container");
+@source not inline("collapse");
+
+/*
+ * Einwort-Utilities, die nur zufaellig in Quellen stehen (PHP-Variablen, HTML-Tags,
+ * Kommentare) und gleichnamige Klassen in Core-/Plugin-Markup treffen wuerden -
+ * z. B. post_class() "sticky" fuer angepinnte Beitraege oder "menu" an Widget-Menues.
+ * Im Theme stattdessen die Varianten nutzen (sm:block, max-md:hidden ...).
+ */
+@source not inline("{sticky,fixed,static,block,inline,table,label,menu,border,filter,grow,visible,transition,list-item}");
+
+/*
+ * daisyUI nur mit den Bausteinen, die das Theme wirklich nutzt. Komponenten wie
+ * avatar, loading, status, chat, table oder footer bleiben bewusst draussen: ihre
+ * Klassennamen kommen in WordPress-Core- und Plugin-Markup vor und wuerden dort
+ * ungewollt greifen (z. B. <img class="avatar"> in Kommentaren).
+ */
+@plugin "daisyui" {
+    themes: false;
+    logs: false;
+    include: properties, rootcolor, rootscrollgutter, rootscrolllock, scrollbar, svg,
+        alert, badge, breadcrumbs, button, card, carousel, checkbox, collapse, divider,
+        drawer, dropdown, fieldset, hero, indicator, input, join, kbd, label, menu,
+        modal, navbar, radio, select, swap, tab, textarea, toggle, tooltip, radius;
+}
+
+/* Helles Schema - Standard, wenn kein data-theme gesetzt ist (Modus "Automatisch"). */
+@plugin "daisyui/theme" {
+    name: "wallstreet-light";
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
+    --color-base-100: #ffffff;
+    --color-base-200: #f3f4f7;
+    --color-base-300: #e4e7ec;
+    --color-base-content: #1d2330;
+    --color-primary: #2793ff;
+    --color-primary-content: #ffffff;
+    --color-secondary: #475069;
+    --color-secondary-content: #ffffff;
+    --color-accent: #00a38e;
+    --color-accent-content: #ffffff;
+    --color-neutral: #2a2c33;
+    --color-neutral-content: #eef0f4;
+    --color-info: #0284c7;
+    --color-info-content: #ffffff;
+    --color-success: #15803d;
+    --color-success-content: #ffffff;
+    --color-warning: #c2780a;
+    --color-warning-content: #ffffff;
+    --color-error: #d42a2a;
+    --color-error-content: #ffffff;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+/* Dunkles Schema - Grundlage des bisherigen Standard-Looks (default.css). */
+@plugin "daisyui/theme" {
+    name: "wallstreet-dark";
+    default: false;
+    prefersdark: true;
+    color-scheme: dark;
+    --color-base-100: #24262d;
+    --color-base-200: #1c1d22;
+    --color-base-300: #141519;
+    --color-base-content: #e6e7ea;
+    --color-primary: #2793ff;
+    --color-primary-content: #ffffff;
+    --color-secondary: #3b3f4b;
+    --color-secondary-content: #e6e7ea;
+    --color-accent: #00c2a9;
+    --color-accent-content: #04221e;
+    --color-neutral: #2a2c33;
+    --color-neutral-content: #d7d9de;
+    --color-info: #38bdf8;
+    --color-info-content: #04202e;
+    --color-success: #34c46b;
+    --color-success-content: #04220f;
+    --color-warning: #f5a524;
+    --color-warning-content: #2a1a02;
+    --color-error: #f0524f;
+    --color-error-content: #2b0606;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+@theme {
+    --font-sans: var(--font-family-base, "SiteFont"), ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "AnonymousPro", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    /* Ab hier zeigt die Hauptnavigation das volle Menue (vorher 1100px fest im JS). */
+    --breakpoint-nav: 70rem;
+
+    --container-site: 80rem;
+    --container-prose: 48rem;
+
+    --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --animate-fade-up: fade-up 0.6s var(--ease-snappy) both;
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translateY(1.25rem);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* Seitenbreite mit fluessigem Rand - ersetzt Bootstraps .container in Theme-Templates. */
+@utility site-wrap {
+    width: 100%;
+    max-width: var(--container-site);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+/* Halbtransparente Flaeche ueber dem Seitenhintergrund (Glas-Look). */
+@utility surface {
+    background-color: color-mix(in oklab, var(--color-base-100) var(--surface-alpha, 92%), transparent);
+    backdrop-filter: blur(var(--surface-blur, 10px));
+    border: var(--border) solid color-mix(in oklab, var(--color-base-content) 8%, transparent);
+    border-radius: var(--radius-box);
+}
+
+@utility text-balance {
+    text-wrap: balance;
+}
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./content.css";
+@import "./components.css";
+@import "./sections.css";
+@import "./plugins.css";
+@import "./compat.css";
+@import "./print.css";

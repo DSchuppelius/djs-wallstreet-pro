@@ -1,0 +1,77 @@
+/* Druckansicht: nur Inhalt, schwarz auf weiss, Link-Ziele ausgeschrieben */
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 11pt;
+    }
+
+    .site-topbar,
+    .site-header,
+    .site-footer,
+    .page_scrollup,
+    .page-fader,
+    .page-breadcrumbs,
+    .sidebar-section,
+    #comments,
+    .comment-respond,
+    .site-search,
+    .skip-link,
+    .wp-block-embed,
+    iframe {
+        display: none !important;
+    }
+
+    .page-banner {
+        min-height: 0;
+        background: none !important;
+        color: #000;
+    }
+
+    .page-banner::after,
+    .page-banner__media {
+        display: none;
+    }
+
+    .page-banner__title {
+        color: #000;
+        text-shadow: none;
+        font-size: 22pt;
+    }
+
+    .surface-card,
+    .with_background,
+    .post-card {
+        background: none !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .entry-content a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        word-break: break-all;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
