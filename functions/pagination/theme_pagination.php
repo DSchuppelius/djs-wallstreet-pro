@@ -6,7 +6,10 @@
  * Filename     : theme_pagination.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Seitennavigation fuer Beitragslisten (Customizer: maximale Anzahl Seitenknoepfe).
  */
+
 class Theme_Pagination {
     private $current_setup;
 
@@ -15,48 +18,66 @@ class Theme_Pagination {
     }
 
     /**
-     * Erzeugt die Seitenlinks.
-     *
-     * $seiten_parameter: normalerweise null - dann entstehen die Links wie bisher per
-     * get_pagenum_link(), also im Archivformat /pfad/page/2/. Auf einer statischen Seite
-     * mit Seitentemplate gibt es diese Route aber nicht zwingend, und WordPress raeumt
-     * die Standardparameter "paged"/"page" per redirect_canonical() weg. Fuer solche
-     * Faelle laesst sich ein eigener Query-Parameter uebergeben (z.B. "portfolio_seite"),
-     * den WordPress unangetastet laesst. Bereits vorhandene Parameter der aktuellen URL -
-     * etwa der aktive Portfolio-Tab - bleiben dabei erhalten.
+     * Link zu Seite $nr. Ohne $seiten_parameter wie gewohnt per get_pagenum_link()
+     * (/pfad/page/2/). Auf statischen Seiten mit Seitentemplate raeumt WordPress
+     * "paged"/"page" per redirect_canonical() weg - dafuer laesst sich ein eigener
+     * Query-Parameter uebergeben (z. B. "portfolio_seite"); vorhandene Parameter bleiben.
      */
     private function seiten_link($nr, $seiten_parameter) {
         if ($seiten_parameter === null) {
             return get_pagenum_link($nr);
         }
-
         $basis = remove_query_arg([$seiten_parameter, "paged", "page"]);
-
         return $nr <= 1 ? $basis : add_query_arg($seiten_parameter, $nr, $basis);
     }
 
     function page($curpage, $post_type_data, $seiten_parameter = null) {
-        $maxpagebuttons = $this->current_setup->get("max_page_buttons");
-        $firstbutton = $curpage - $maxpagebuttons / 2;
-        $lastbutton = $curpage + $maxpagebuttons / 2;
-        $lastbutton = $firstbutton < 1 ? $lastbutton + $firstbutton * -1 : $lastbutton;
-        $firstbutton = $lastbutton >= $post_type_data->max_num_pages ? $firstbutton - ($lastbutton - $post_type_data->max_num_pages) : $firstbutton;
-?>
-        <div class="blog-pagination <?php echo get_with_filler() . get_innerrow_frame_border(" "); ?>">
-            <?php
-            if ($curpage != 1) {
-                echo '<a class="page-btn" href="' . esc_url($this->seiten_link($curpage - 1 > 0 ? $curpage - 1 : 1, $seiten_parameter)) . '"><i class="fa fa-angle-double-left"></i></a>';
-            } else {
-                $lastbutton += 1;
-            }
-            for ($i = 1; $i <= $post_type_data->max_num_pages; $i++) {
-                if ($i >= $firstbutton && $i <= $lastbutton)
-                    echo '<a class="page-btn' . ($i == $curpage ? " active" : "") . '" href="' . esc_url($this->seiten_link($i, $seiten_parameter)) . '">' . $i . "</a>";
-            }
-            if ($i - 1 != $curpage) {
-                echo '<a class="page-btn" href="' . esc_url($this->seiten_link($curpage + 1 <= $post_type_data->max_num_pages ? $curpage + 1 : $post_type_data->max_num_pages, $seiten_parameter)) . '"><i class="fa fa-angle-double-right"></i></a>';
-            } ?>
-        </div>
+        $max = (int) $post_type_data->max_num_pages;
+        if ($max <= 1) {
+            return;
+        }
+
+        $curpage = max(1, min((int) $curpage, $max));
+        $buttons = max(3, (int) $this->current_setup->get("max_page_buttons"));
+        $first   = (int) max(1, $curpage - floor($buttons / 2));
+        $last    = (int) min($max, $first + $buttons - 1);
+        $first   = (int) max(1, $last - $buttons + 1); ?>
+
+        <nav class="pagination blog-pagination" aria-label="<?php esc_attr_e("Pages", "djs-wallstreet-pro"); ?>">
+            <div class="join">
+                <?php if ($curpage > 1) { ?>
+                    <a class="join-item btn btn-sm page-btn" rel="prev" href="<?php echo esc_url($this->seiten_link($curpage - 1, $seiten_parameter)); ?>">
+                        <span class="material-icons" aria-hidden="true">chevron_left</span>
+                        <span class="screen-reader-text"><?php esc_html_e("Previous page", "djs-wallstreet-pro"); ?></span>
+                    </a>
+                <?php } ?>
+
+                <?php if ($first > 1) { ?>
+                    <a class="join-item btn btn-sm page-btn" href="<?php echo esc_url($this->seiten_link(1, $seiten_parameter)); ?>">1</a>
+                    <?php if ($first > 2) { ?><span class="join-item btn btn-sm btn-disabled" aria-hidden="true">…</span><?php } ?>
+                <?php } ?>
+
+                <?php for ($i = $first; $i <= $last; $i++) {
+                    if ($i === $curpage) { ?>
+                        <span class="join-item btn btn-sm btn-primary page-btn active" aria-current="page"><?php echo $i; ?></span>
+                    <?php } else { ?>
+                        <a class="join-item btn btn-sm page-btn" href="<?php echo esc_url($this->seiten_link($i, $seiten_parameter)); ?>"><?php echo $i; ?></a>
+                    <?php }
+                } ?>
+
+                <?php if ($last < $max) { ?>
+                    <?php if ($last < $max - 1) { ?><span class="join-item btn btn-sm btn-disabled" aria-hidden="true">…</span><?php } ?>
+                    <a class="join-item btn btn-sm page-btn" href="<?php echo esc_url($this->seiten_link($max, $seiten_parameter)); ?>"><?php echo $max; ?></a>
+                <?php } ?>
+
+                <?php if ($curpage < $max) { ?>
+                    <a class="join-item btn btn-sm page-btn" rel="next" href="<?php echo esc_url($this->seiten_link($curpage + 1, $seiten_parameter)); ?>">
+                        <span class="material-icons" aria-hidden="true">chevron_right</span>
+                        <span class="screen-reader-text"><?php esc_html_e("Next page", "djs-wallstreet-pro"); ?></span>
+                    </a>
+                <?php } ?>
+            </div>
+        </nav>
 <?php
     }
 }
@@ -64,4 +85,4 @@ class Theme_Pagination {
 function the_pagination($page, $query, $seiten_parameter = null) {
     $theme_pagination = new Theme_Pagination();
     $theme_pagination->page($page, $query, $seiten_parameter);
-} ?>
+}

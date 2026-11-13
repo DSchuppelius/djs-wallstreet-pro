@@ -6,25 +6,18 @@
  * Filename     : single.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Einzelbeitrag (Header/Footer laedt single.php).
  */
-global $theme_blog_section;
 
-$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-$theme_blog_section = "blog-detail-section";
 get_template_part("template-parts/index/index", "banner");
-?>
-<div class="container single">
-    <div class="row <?php row_frame_border(""); ?> flexstretch">
-        <div
-            class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
-            <?php while (have_posts()) {
-                the_post();
-                get_template_part("template-parts/content/content", "single");
-            }
-            comments_template("", true);
-            get_template_part("template-parts/content/filler");
-            ?>
-        </div>
-        <?php get_sidebar(); ?>
-    </div>
-</div>
+
+djs_layout_start(["class" => "single-post"]);
+
+while (have_posts()) {
+    the_post();
+    get_template_part("template-parts/content/content", "single");
+    comments_template("", true);
+}
+
+djs_layout_end();

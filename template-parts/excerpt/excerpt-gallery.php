@@ -6,18 +6,16 @@
  * Filename     : excerpt-gallery.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Auszug fuer das Format "Galerie": erste Galerie.
+ * Titel und Meta gibt die Beitragskarte aus (template-parts/content/content.php).
  */
-?>
-<header>
-    <h1><a href="<?php esc_url(the_permalink()); ?>"><?php the_content_title(); ?></a></h1>
-</header>
-<section class="excerpt-section gallery">
-    <div class="excerpt">
-        <?php $content = get_the_content();
-        if (has_block("core/gallery", $content)) {
-            twenty_twenty_one_print_first_instance_of_block("core/gallery", $content);
-        } else {
-            the_content();
-        } ?>
-    </div>
-</section>
+
+$content = get_the_content();
+if (has_block("core/gallery", $content)) {
+    twenty_twenty_one_print_first_instance_of_block("core/gallery", $content);
+} elseif (has_block("jetpack/tiled-gallery", $content)) {
+    twenty_twenty_one_print_first_instance_of_block("jetpack/tiled-gallery", $content);
+} else {
+    the_content();
+}

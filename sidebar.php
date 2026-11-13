@@ -7,15 +7,11 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
-if (is_active_sidebar("sidebar_primary")) { ?>
-<!--Sidebar Area-->
-<div class="col-md-4 flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
-    <div class="sidebar-section <?php with_filler(); innerrow_frame_border(" "); ?>">
-        <?php dynamic_sidebar("sidebar_primary"); ?>
-    </div>
+if (!is_active_sidebar("sidebar_primary")) {
+    return;
+} ?>
+<aside class="layout__sidebar sidebar-section" aria-label="<?php esc_attr_e("Sidebar", "djs-wallstreet-pro"); ?>">
+    <?php dynamic_sidebar("sidebar_primary"); ?>
     <?php get_template_part("template-parts/content/filler"); ?>
-</div>
-<!--Sidebar Area-->
-<?php } ?>
+</aside>

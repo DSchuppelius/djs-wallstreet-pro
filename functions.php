@@ -71,6 +71,8 @@ $djs_dateien = [
     'theme/theme_functions',
     'theme/theme_colors',
     'theme/frame',
+    'theme/layout',
+    'theme/posttypes',
     'scripts/scripts',
     'scripts/custom_style',
     'font/font',
@@ -272,13 +274,6 @@ add_filter('user_contactmethods', static function ($methods) {
         'linkedin_profile' => __('LinkedIn URL', 'djs-wallstreet-pro'),
     ];
 }, 10, 1);
-
-/* -------------------------------------------------------------------------
- * 8.  Avatar‑Klasse erweitern
- * ----------------------------------------------------------------------*/
-add_filter('get_avatar', static function ($html) {
-    return str_replace("class='avatar", "class='avatar comment-img", $html);
-});
 
 /* -------------------------------------------------------------------------
  * 9.  Pagination‑Buttons

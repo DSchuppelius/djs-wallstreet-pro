@@ -7,4 +7,5 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-get_template_part("template-blog/blog", "masonry"); ?>
+
+djs_blog_page(["view" => "masonry", "sidebar" => "none", "columns" => 3]);

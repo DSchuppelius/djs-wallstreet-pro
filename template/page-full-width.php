@@ -7,23 +7,16 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-global $theme_blog_section;
 
-$theme_blog_section = "blog-detail-section";
-?>
-<!-- Page Title Section -->
-<?php get_template_parts(["template-parts/index/index", "banner"], true); ?>
-<!-- /Page Title Section -->
-<!-- Blog & Sidebar Section -->
-<div class="container page-full-width">
-    <div class="row <?php row_frame_border(""); ?>">
-        <!--Blog Area-->
-        <div class="col-md-12">
-            <?php the_post(); ?>
-            <?php get_template_part("template-parts/content/content"); ?>
-            <?php comments_template("", true); ?>
-        </div>
-        <!--/Blog Area-->
-    </div>
-</div>
-<?php get_footer(); ?>
+get_template_parts(["template-parts/index/index", "banner"], true);
+
+djs_layout_start(["sidebar" => "none", "class" => "page-full-width"]);
+
+while (have_posts()) {
+    the_post();
+    get_template_part("template-parts/content/content", "complete");
+    comments_template("", true);
+}
+
+djs_layout_end();
+get_footer();
