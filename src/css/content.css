@@ -387,3 +387,166 @@
         color: var(--color-primary-content);
     }
 }
+
+/* Shortcodes des Themes (functions/shortcodes) */
+@layer utilities {
+    .sc-accordion {
+        display: grid;
+        gap: 0.5rem;
+        margin-block: 1.5em;
+    }
+
+    .sc-accordion__group {
+        margin: 0 0 0.25rem;
+    }
+
+    .sc-accordion__item {
+        overflow: hidden;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 4%, transparent);
+    }
+
+    .sc-accordion__title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.875rem 1.125rem;
+        font-weight: 600;
+        list-style: none;
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .sc-accordion__title::-webkit-details-marker {
+        display: none;
+    }
+
+    .sc-accordion__title:hover {
+        background: color-mix(in oklab, var(--color-primary) 14%, transparent);
+    }
+
+    .sc-accordion__item[open] > .sc-accordion__title {
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    .sc-accordion__icon,
+    .sc-accordion__fa {
+        margin-inline-start: auto;
+    }
+
+    .sc-accordion__icon {
+        transition: rotate 0.25s var(--ease-snappy);
+    }
+
+    .sc-accordion__item[open] .sc-accordion__icon {
+        rotate: 180deg;
+    }
+
+    /* Font Awesome setzt display ueber --fa-display (ungelayert) - daher die Variable */
+    .sc-accordion__fa--open,
+    .sc-accordion__item[open] .sc-accordion__fa--closed {
+        --fa-display: none;
+    }
+
+    .sc-accordion__item[open] .sc-accordion__fa--open {
+        --fa-display: inline-block;
+    }
+
+    .sc-accordion__body {
+        padding: 1rem 1.125rem;
+    }
+
+    .sc-accordion__body > :first-child {
+        margin-top: 0;
+    }
+
+    .sc-accordion__body > :last-child {
+        margin-bottom: 0;
+    }
+
+    .vc_column_text + .vc_column_text {
+        margin-top: 0.75rem;
+    }
+
+    .sc-tabs {
+        margin-block: 1.5em;
+    }
+
+    .sc-tabs__list {
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .sc-alert {
+        margin-block: 1.25em;
+    }
+
+    .sc-alert > div {
+        flex: 1;
+    }
+
+    .sc-dropcap .first {
+        float: left;
+        margin: 0.05em 0.12em 0 0;
+        font-size: 3.6em;
+        font-weight: 700;
+        line-height: 0.85;
+        color: var(--color-primary);
+    }
+
+    .sc-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-block: 1.5em;
+    }
+
+    @media (width >= 48rem) {
+        .sc-grid--2,
+        .sc-grid--4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .sc-grid--3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (width >= 62rem) {
+        .sc-grid--4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    .sc-grid__title {
+        margin: 0 0 0.5rem;
+        font-size: 1.125rem;
+    }
+
+    .sc-grid__item > p {
+        margin: 0;
+    }
+
+    .typo-para-icons .para-box {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: baseline;
+        gap: 0.5rem 0.75rem;
+        margin-block: 1em;
+    }
+
+    .typo-para-icons .para-box > ul {
+        grid-column: 1 / -1;
+    }
+
+    .typo-para-icons .para-box > i {
+        color: var(--color-primary);
+    }
+
+    .sc-tooltip .tooltip > a {
+        text-decoration: underline dotted;
+    }
+}

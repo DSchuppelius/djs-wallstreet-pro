@@ -131,34 +131,6 @@ function theme_comment_reply_script() {
 add_action("wp_enqueue_scripts", "theme_comment_reply_script");
 
 /* -------------------------------------------------------------------------
- *  Shortcodes (Accordion, Tabs, Tooltip ...)
- *  Uebergangsweise noch Bootstrap-JS - wird in Phase 4 ersetzt.
- * ---------------------------------------------------------------------- */
-function wallstreet_shortcode_detect() {
-    global $wp_query;
-
-    if (empty($wp_query->posts)) {
-        return;
-    }
-
-    // Regex nur auf die relevanten Shortcodes - preg_match() bricht beim ersten Treffer ab.
-    $pattern = get_shortcode_regex(["button", "row", "accordian", "tabgroup", "tabs", "alert", "dropcap", "gridsystemlayout", "tooltip", "heading"]);
-
-    foreach ($wp_query->posts as $post) {
-        if (empty($post->post_content) || strpos($post->post_content, "[") === false) {
-            continue;
-        }
-
-        if (preg_match("/" . $pattern . "/s", $post->post_content)) {
-            wp_enqueue_script("bootstrap", djs_asset_uri("bootstrap/js/bootstrap.min.js"), ["jquery"], null, ["strategy" => "defer", "in_footer" => false]);
-            wp_enqueue_script("accordion-tab", djs_asset_uri("js/accordion-tab.js"), ["jquery"], null, ["strategy" => "defer", "in_footer" => false]);
-            break;
-        }
-    }
-}
-add_action("wp", "wallstreet_shortcode_detect");
-
-/* -------------------------------------------------------------------------
  *  Customizer-Vorschau
  * ---------------------------------------------------------------------- */
 if (!function_exists("wallstreet_customizer_preview_scripts")) {

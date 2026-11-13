@@ -472,6 +472,35 @@
     /* ------------------------------------------------------------------
      * 11. Kleinigkeiten
      * ---------------------------------------------------------------- */
+    /** Schliessen-Button in Hinweisen ([alert]-Shortcode) */
+    function initDismiss() {
+        doc.addEventListener("click", (event) => {
+            const button = event.target.closest('[data-dismiss="alert"]');
+            if (!button) return;
+            button.closest(".alert")?.remove();
+        });
+    }
+
+    /** Anker auf eine Akkordeon-Sektion (<details id>) oeffnet sie */
+    function openTargetDetails() {
+        const open = () => {
+            if (!window.location.hash) return;
+            let target;
+            try {
+                target = doc.querySelector(decodeURIComponent(window.location.hash));
+            } catch (e) {
+                return;
+            }
+            const details = target?.closest("details");
+            if (details) {
+                details.open = true;
+                details.scrollIntoView({ block: "start" });
+            }
+        };
+        open();
+        window.addEventListener("hashchange", open);
+    }
+
     function markEmptyEmbeds() {
         doc.querySelectorAll(".wp-block-embed__wrapper").forEach((wrapper) => {
             if (wrapper.children.length === 0) wrapper.classList.add("no-element");
@@ -489,6 +518,8 @@
         initPageFader();
         initParallax();
         initTabs();
+        initDismiss();
+        openTargetDetails();
         markEmptyEmbeds();
     };
 

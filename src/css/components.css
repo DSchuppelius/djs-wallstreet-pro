@@ -1236,3 +1236,65 @@
         padding-top: clamp(1.5rem, 3vw, 2.25rem);
     }
 }
+
+/* Widget "Latest Posts" (Tabs) */
+@layer utilities {
+    .widget-tabs {
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .mini-posts {
+        display: grid;
+        gap: 0.875rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar-widget .mini-posts > li {
+        padding: 0;
+        border: 0;
+    }
+
+    .mini-post {
+        display: flex;
+        gap: 0.875rem;
+        align-items: center;
+    }
+
+    .mini-post__media {
+        flex: none;
+        width: 3.5rem;
+        height: 3.5rem;
+        overflow: hidden;
+        border-radius: var(--radius-small);
+        background: var(--color-base-300);
+    }
+
+    .mini-post__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mini-post__body {
+        display: grid;
+        gap: 0.125rem;
+        min-width: 0;
+    }
+
+    .mini-post__title {
+        display: -webkit-box;
+        overflow: hidden;
+        font-weight: 600;
+        line-height: 1.35;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .mini-post__meta {
+        font-size: 0.75rem;
+        color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
+    }
+}

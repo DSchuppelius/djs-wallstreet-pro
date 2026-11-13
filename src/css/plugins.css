@@ -95,3 +95,309 @@ rs-module :is(h1, h2, h3, h4, h5, h6, p) {
 rs-module-wrap a:not([class*="btn"]) {
     text-decoration: none;
 }
+
+/* ---------------------------------------------------------------- */
+/*  DJS-Wallstreet-Pro Extensions: Einwilligung fuer externe Inhalte */
+/* ---------------------------------------------------------------- */
+#script_fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    width: min(54rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    padding: 0;
+    overflow: auto;
+    translate: -50% -50%;
+    border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+    border-radius: min(var(--radius-box), 1.25rem);
+    background: var(--color-base-100);
+    color: var(--color-base-content);
+    box-shadow: 0 40px 100px -30px rgb(0 0 0 / 0.85);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s;
+}
+
+#script_fullscreen.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+#script_fullscreen .title_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 1.125rem 1.5rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+    background: color-mix(in oklab, var(--color-primary) 10%, var(--color-base-100));
+}
+
+#script_fullscreen h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+#script_fullscreen .close {
+    position: static;
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
+    color: var(--color-base-content);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+#script_fullscreen .close:hover {
+    background: var(--color-error);
+    color: var(--color-error-content);
+}
+
+#script_fullscreen p {
+    margin: 0;
+    padding: 1.25rem 1.5rem 0;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    text-align: start;
+    color: color-mix(in oklab, var(--color-base-content) 85%, transparent);
+}
+
+#script_fullscreen form.script {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+@media (width >= 48rem) {
+    #script_fullscreen form.script {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #script_fullscreen .footer_row {
+        grid-column: 1 / -1;
+    }
+}
+
+#script_fullscreen form .footer_row {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 1rem 0 0;
+    background: transparent;
+    border-top: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+}
+
+#script_fullscreen .btn,
+.cookies .btn {
+    position: static;
+    top: auto;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 2.75rem;
+    margin: 0;
+    padding-block: 0.625rem;
+    white-space: normal;
+    text-align: start;
+    line-height: 1.35;
+}
+
+#script_fullscreen .btn::before,
+.cookies .btn::before {
+    font-family: "Material Icons";
+    font-size: 1.25rem;
+    font-weight: normal;
+    line-height: 1;
+    font-feature-settings: "liga";
+}
+
+#script_fullscreen .btn.ok,
+.cookies .btn {
+    --btn-color: var(--color-primary);
+    --btn-fg: var(--color-primary-content);
+}
+
+#script_fullscreen .btn.ok::before,
+.cookies .btn::before {
+    content: "visibility";
+}
+
+#script_fullscreen .btn.no {
+    --btn-color: var(--color-neutral);
+    --btn-fg: var(--color-neutral-content);
+}
+
+#script_fullscreen .btn.no::before {
+    content: "visibility_off";
+}
+
+#script_fullscreen .btn.all-ok {
+    --btn-color: var(--color-success);
+    --btn-fg: var(--color-success-content);
+}
+
+#script_fullscreen .btn.all-ok::before {
+    content: "cookie";
+}
+
+#script_fullscreen .btn.all-no {
+    --btn-color: color-mix(in oklab, var(--color-error) 22%, var(--color-base-100));
+    --btn-fg: var(--color-base-content);
+}
+
+#script_fullscreen .btn.all-no::before {
+    content: "do_not_disturb_on";
+}
+
+/* Platzhalter fuer blockierte Einbettungen im Beitrag */
+div.inner.cookies {
+    display: block;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 1px dashed color-mix(in oklab, var(--color-base-content) 22%, transparent);
+    border-radius: var(--radius-small);
+    background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+    box-shadow: none;
+}
+
+form.cookies {
+    margin: 1rem 0 0;
+}
+
+/* Schwebender Cookie-Knopf: unten links statt ueber dem Logo */
+.cookie-control #cookie-settings,
+#cookie-settings {
+    position: fixed;
+    top: auto;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 44;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--color-base-100) 90%, transparent);
+    color: var(--color-base-content);
+    box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.6);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+@media (width >= 70rem) {
+    body.fixed_Footer #cookie-settings {
+        bottom: 4.5rem;
+    }
+}
+
+/* GDPR-Framework (Cookie-Banner): Schrift des Themes */
+.cc-window,
+.cc-window .cc-btn {
+    font-family: var(--font-sans) !important;
+}
+
+.cc-window .cc-btn {
+    border-radius: var(--radius-field);
+}
+
+/* ---------------------------------------------------------------- */
+/*  Jetpack                                                          */
+/* ---------------------------------------------------------------- */
+.sharedaddy .sd-title {
+    font-size: 0.875rem !important;
+    color: color-mix(in oklab, var(--color-base-content) 70%, transparent) !important;
+}
+
+.sharedaddy .sd-content ul li a.sd-button,
+.sharedaddy .sd-social-icon .sd-content ul li a.sd-button {
+    border-radius: 999px !important;
+    background: color-mix(in oklab, var(--color-base-content) 8%, transparent) !important;
+    color: var(--color-base-content) !important;
+    box-shadow: none !important;
+}
+
+.sharedaddy .sd-content ul li a.sd-button:hover {
+    background: var(--color-primary) !important;
+    color: var(--color-primary-content) !important;
+}
+
+/* ---------------------------------------------------------------- */
+/*  AngularJS-Rechner (Formulare im Beitrag)                         */
+/* ---------------------------------------------------------------- */
+[ng-app] form,
+form[ng-controller] {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-small);
+    background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+}
+
+.ng-invalid.ng-touched {
+    border-color: var(--color-error) !important;
+}
+
+/* ---------------------------------------------------------------- */
+/*  WooCommerce: Farben und Formen aus dem Theme                      */
+/*  (Struktur liefert assets/css/woocommerce/woocommerce.css)          */
+/* ---------------------------------------------------------------- */
+.woocommerce :is(a.button, button.button, input.button, #respond input#submit),
+.woocommerce-page :is(a.button, button.button, input.button) {
+    border-radius: var(--radius-field);
+    background: var(--color-primary);
+    color: var(--color-primary-content);
+    font-weight: 600;
+}
+
+.woocommerce :is(a.button, button.button, input.button):hover {
+    background: color-mix(in oklab, var(--color-primary) 85%, #000);
+    color: var(--color-primary-content);
+}
+
+.woocommerce :is(a.button.alt, button.button.alt, input.button.alt) {
+    background: var(--color-accent);
+    color: var(--color-accent-content);
+}
+
+.woocommerce span.onsale {
+    background: var(--color-error);
+    color: var(--color-error-content);
+}
+
+.woocommerce :is(ul.products li.product .price, div.product p.price, div.product span.price) {
+    color: var(--color-primary);
+}
+
+.woocommerce :is(.woocommerce-message, .woocommerce-info) {
+    border-top-color: var(--color-primary);
+    background: color-mix(in oklab, var(--color-base-100) 92%, transparent);
+    color: var(--color-base-content);
+}
+
+.woocommerce .woocommerce-error {
+    border-top-color: var(--color-error);
+}
+
+.woocommerce-store-notice,
+p.demo_store {
+    background: var(--color-primary);
+    color: var(--color-primary-content);
+}
+
+.woocommerce :is(table.shop_table, .cart_totals, .woocommerce-checkout-review-order) {
+    border-radius: var(--radius-small);
+}
