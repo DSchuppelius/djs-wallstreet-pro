@@ -10,10 +10,13 @@
     /* ---------------------------------------------------------------- */
     /*  Grundgeruest                                                    */
     /* ---------------------------------------------------------------- */
+    /* overflow-x: clip (nicht hidden): schneidet seitlich ueberstehende, unsichtbare
+       Untermenues ab, ohne einen Scroll-Container zu bilden - position: sticky bleibt intakt. */
     #wall_wrapper.site {
         display: flex;
         flex-direction: column;
         min-height: 100dvh;
+        overflow-x: clip;
     }
 
     .site-content {

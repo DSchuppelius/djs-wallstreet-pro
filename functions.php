@@ -133,9 +133,8 @@ function djs_wallstreet_setup() {
     // Editor‑Styles & Block‑Styles
     add_theme_support('editor-styles');
     add_theme_support('wp-block-styles');
-    if (file_exists(THEME_ASSETS_PATH . '/css/editor.css')) {
-        add_editor_style('assets/css/editor.css');
-    }
+    // Seitenschrift + Editor-Styles, damit Beitraege im Editor wie im Frontend aussehen
+    add_editor_style(['assets/' . djs_site_font_file(), 'assets/css/editor.css']);
 
     // Grundlegende Supports
     add_theme_supports([

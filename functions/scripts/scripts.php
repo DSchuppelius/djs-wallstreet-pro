@@ -21,6 +21,15 @@ function djs_asset_uri(string $relative_path): string {
     return THEME_ASSETS_PATH_URI . '/' . ltrim($relative_path, '/');
 }
 
+/**
+ * Font-Face-Datei der im Customizer gewaehlten lokalen Seitenschrift (relativ zu assets/).
+ */
+function djs_site_font_file(): string {
+    $local_fonts = ["roboto", "montserrat", "dancing-script", "rubik", "sulphurpoint", "overlock", "opensans", "anonymous-pro"];
+    $font        = DJS_Wallstreet_Pro_Theme_Setup::instance()->get("local_font_style");
+    return in_array($font, $local_fonts, true) ? "css/fonts/site_font-faces_{$font}.css" : "css/fonts/site_font-faces.css";
+}
+
 /* -------------------------------------------------------------------------
  *  Backend
  * ---------------------------------------------------------------------- */
@@ -58,11 +67,7 @@ function theme_font_scripts() {
         return;
     }
 
-    $local_fonts = ["roboto", "montserrat", "dancing-script", "rubik", "sulphurpoint", "overlock", "opensans", "anonymous-pro"];
-    $font        = $current_setup->get("local_font_style");
-    $file        = in_array($font, $local_fonts, true) ? "css/fonts/site_font-faces_{$font}.css" : "css/fonts/site_font-faces.css";
-
-    wp_enqueue_style("site_font-faces", djs_asset_uri($file));
+    wp_enqueue_style("site_font-faces", djs_asset_uri(djs_site_font_file()));
 }
 add_action("wp_enqueue_scripts", "theme_font_scripts");
 
@@ -135,7 +140,7 @@ add_action("wp_enqueue_scripts", "theme_comment_reply_script");
  * ---------------------------------------------------------------------- */
 if (!function_exists("wallstreet_customizer_preview_scripts")) {
     function wallstreet_customizer_preview_scripts() {
-        wp_enqueue_script("ws-customizer-preview", djs_asset_uri("customizer/slider/js/customizer-preview.js"), ["customize-preview", "jquery"], null, ["strategy" => "defer", "in_footer" => false]);
+        wp_enqueue_script("ws-customizer-preview", djs_asset_uri("customizer/slider/js/customizer-preview.js"), ["customize-preview"], null, ["strategy" => "defer", "in_footer" => false]);
     }
 }
 add_action("customize_preview_init", "wallstreet_customizer_preview_scripts");

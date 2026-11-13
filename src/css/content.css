@@ -63,6 +63,7 @@
     }
 
     .entry-content a:not(.wp-block-button__link, .btn) {
+        overflow-wrap: anywhere;
         text-decoration-line: underline;
         text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
     }

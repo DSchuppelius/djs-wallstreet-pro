@@ -768,6 +768,15 @@
         gap: clamp(1.25rem, 2.5vw, 2rem);
     }
 
+    .comments-area > *,
+    .layout__main > * {
+        min-width: 0;
+    }
+
+    .comment-content {
+        overflow-wrap: anywhere;
+    }
+
     .comment-title,
     .comments-title,
     .comment-reply-title {

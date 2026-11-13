@@ -17,13 +17,12 @@
 # Daniel Jörg Schuppelius <info@schuppelius.org>, 2020
 msgid ""
 msgstr ""
-"Project-Id-Version: DJS-Wallstreet-Pro 2.1.4\n"
+"Project-Id-Version: DJS-Wallstreet-Pro 3.0.0\n"
 "Report-Msgid-Bugs-To: https://wp-translations.pro/\n"
 "POT-Creation-Date: 2025-07-01 14:38+0200\n"
-"PO-Revision-Date: 2025-07-01 14:45+0200\n"
+"PO-Revision-Date: 2026-11-13 17:05+0100\n"
 "Last-Translator: Daniel Jörg Schuppelius <info@daniel-schuppelius.de>\n"
-"Language-Team: German (Germany) (https://www.transifex.com/wp-translations/"
-"teams/64435/de_DE/)\n"
+"Language-Team: German (Germany) (https://www.transifex.com/wp-translations/teams/64435/de_DE/)\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -31,12 +30,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15 functions/breadcrumbs/breadcrumbs.php:116
 msgid "Error 404"
@@ -82,28 +79,13 @@ msgstr "Belichtungszeit:"
 msgid "Linked post"
 msgstr "Verlinkter Beitrag"
 
-#: attachment.php:65 functions/customizer/childs/customizer-template.php:517
-#: index.php:31 template-parts/home/service/servic-1.php:124
-#: template-parts/home/service/servic-2.php:108
-#: template-parts/home/service/servic-3.php:104
-#: template-parts/home/service/servic-4.php:103
-#: template-parts/home/service/servic-5.php:109
-#: template-parts/home/service/servic-6.php:110
-#: template-parts/index/index-portfolio.php:125
-#: template-specials/service-five-template.php:103
-#: template-specials/service-four-template.php:103
-#: template-specials/service-six-template.php:103
-#: template-specials/service-three-template.php:103
-#: template-specials/service-two-template.php:100 theme_setup_data.php:272
+#: attachment.php:65 functions/customizer/childs/customizer-template.php:517 index.php:31 template-parts/home/service/servic-1.php:124 template-parts/home/service/servic-2.php:108 template-parts/home/service/servic-3.php:104 template-parts/home/service/servic-4.php:103 template-parts/home/service/servic-5.php:109 template-parts/home/service/servic-6.php:110 template-parts/index/index-portfolio.php:125 template-specials/service-five-template.php:103 template-specials/service-four-template.php:103 template-specials/service-six-template.php:103 template-specials/service-three-template.php:103 template-specials/service-two-template.php:100 theme_setup_data.php:272
 msgid "Read More"
 msgstr "Weiterlesen"
 
 #: comments.php:15
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-"Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu k&ouml;nnen "
-"musst du das Passwort angeben."
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu k&ouml;nnen musst du das Passwort angeben."
 
 #: comments.php:25
 msgid "Reply"
@@ -153,12 +135,9 @@ msgstr "Kommentare sind geschlossen!!!"
 #: comments.php:92
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-"Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
+msgstr "Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
 
-#: comments.php:97 template-single/single-portfolio.php:35
-#: template-single/single-portfolio.php:64 template/contact-us.php:117
-#: template/contact-us.php:120
+#: comments.php:97 template-single/single-portfolio.php:35 template-single/single-portfolio.php:64 template/contact-us.php:117 template/contact-us.php:120
 msgid "Website"
 msgstr "Webseite"
 
@@ -166,9 +145,7 @@ msgstr "Webseite"
 msgid "Name"
 msgstr "Name"
 
-#: comments.php:99 functions/customizer/childs/customizer-template.php:746
-#: template/contact-us.php:111 template/contact-us.php:113
-#: theme_setup_data.php:263
+#: comments.php:99 functions/customizer/childs/customizer-template.php:746 template/contact-us.php:111 template/contact-us.php:113 theme_setup_data.php:263
 msgid "Email"
 msgstr "E-Mail"
 
@@ -206,20 +183,12 @@ msgid "Leave a Reply to %s"
 msgstr "Schreiben Sie einen Kommentar zu %s"
 
 #: functions.php:29
-msgid ""
-"To use the theme \"DJS-Wallstreet-Pro\" download the plugin DJS-Wallstreet-"
-"Pro Core"
-msgstr ""
-"Um das Theme \"DJS-Wallstreet-Pro\" zu verwenden, lade das Plugin DJS-"
-"Wallstreet-Pro Core herunter"
+msgid "To use the theme \"DJS-Wallstreet-Pro\" download the plugin DJS-Wallstreet-Pro Core"
+msgstr "Um das Theme \"DJS-Wallstreet-Pro\" zu verwenden, lade das Plugin DJS-Wallstreet-Pro Core herunter"
 
 #: functions.php:39
-msgid ""
-"To use all features of the theme \"DJS-Wallstreet-Pro\" download the plugin "
-"DJS-Wallstreet-Pro Post-Types"
-msgstr ""
-"Um alle Funktionen des Themas \"DJS-Wallstreet-Pro\" nutzen zu können, laden "
-"Sie das Plugin DJS-Wallstreet-Pro Post-Types herunter"
+msgid "To use all features of the theme \"DJS-Wallstreet-Pro\" download the plugin DJS-Wallstreet-Pro Post-Types"
+msgstr "Um alle Funktionen des Themas \"DJS-Wallstreet-Pro\" nutzen zu können, laden Sie das Plugin DJS-Wallstreet-Pro Post-Types herunter"
 
 #: functions.php:154
 msgid "Primary Menu"
@@ -290,9 +259,7 @@ msgstr "Blogbeitrag"
 msgid "More"
 msgstr "Mehr"
 
-#: functions/breadcrumbs/breadcrumbs.php:15
-#: functions/menu/theme_bootstrap_walker_page.php:89
-#: template-parts/index/index-banner.php:41
+#: functions/breadcrumbs/breadcrumbs.php:15 functions/menu/theme_bootstrap_walker_page.php:89 template-parts/index/index-banner.php:41
 msgid "Home"
 msgstr "Start"
 
@@ -304,8 +271,7 @@ msgstr "Archiv nach Kategorie"
 msgid "Search results for"
 msgstr "Suchergebnisse für"
 
-#: functions/breadcrumbs/breadcrumbs.php:74
-#: functions/breadcrumbs/breadcrumbs.php:118
+#: functions/breadcrumbs/breadcrumbs.php:74 functions/breadcrumbs/breadcrumbs.php:118
 msgid "Archive"
 msgstr "Archiv"
 
@@ -321,11 +287,7 @@ msgstr "Beiträge von"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: functions/breadcrumbs/breadcrumbs.php:126
-#: template-parts/content/content-about.php:31
-#: template-parts/content/content-meta-footer.php:22
-#: template-parts/content/content-single.php:26
-#: template-single/single-service.php:48
+#: functions/breadcrumbs/breadcrumbs.php:126 template-parts/content/content-about.php:31 template-parts/content/content-meta-footer.php:22 template-parts/content/content-single.php:26 template-single/single-service.php:48
 msgid "Page"
 msgstr "Seite"
 
@@ -349,16 +311,7 @@ msgstr "Blog-Meta auf Startseite verbergen"
 msgid "Our latest blog post"
 msgstr "Unsere neuesten Blog-Beiträge"
 
-#: functions/customizer/childs/customizer-blog.php:64
-#: functions/customizer/childs/customizer-template.php:184
-#: functions/customizer/childs/customizer-template.php:283
-#: functions/customizer/childs/customizer-template.php:371
-#: functions/customizer/childs/customizer-template.php:610
-#: functions/customizer/childs/customizer-template.php:681
-#: functions/customizer/childs/customizer-template.php:753
-#: functions/customizer/childs/customizer-template.php:797
-#: functions/customizer/childs/customizer-template.php:846
-#: functions/widget/wallstreet-latest-widget.php:158
+#: functions/customizer/childs/customizer-blog.php:64 functions/customizer/childs/customizer-template.php:184 functions/customizer/childs/customizer-template.php:283 functions/customizer/childs/customizer-template.php:371 functions/customizer/childs/customizer-template.php:610 functions/customizer/childs/customizer-template.php:681 functions/customizer/childs/customizer-template.php:753 functions/customizer/childs/customizer-template.php:797 functions/customizer/childs/customizer-template.php:846 functions/widget/wallstreet-latest-widget.php:158
 msgid "Title"
 msgstr "Titel"
 
@@ -366,11 +319,7 @@ msgstr "Titel"
 msgid "We work with new customers and grow their businesses"
 msgstr "Wir arbeiten mit neuen Kunden und lassen ihre Unternehmen wachsen"
 
-#: functions/customizer/childs/customizer-blog.php:77
-#: functions/customizer/childs/customizer-template.php:197
-#: functions/customizer/childs/customizer-template.php:296
-#: functions/customizer/childs/customizer-template.php:385
-#: functions/customizer/childs/customizer-template.php:811
+#: functions/customizer/childs/customizer-blog.php:77 functions/customizer/childs/customizer-template.php:197 functions/customizer/childs/customizer-template.php:296 functions/customizer/childs/customizer-template.php:385 functions/customizer/childs/customizer-template.php:811
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -422,19 +371,7 @@ msgstr "Button-Text"
 msgid "Button Link"
 msgstr "Button-Link"
 
-#: functions/customizer/childs/customizer-blog.php:178
-#: functions/customizer/childs/customizer-social.php:112
-#: functions/customizer/childs/customizer-social.php:139
-#: functions/customizer/childs/customizer-social.php:166
-#: functions/customizer/childs/customizer-social.php:193
-#: functions/customizer/childs/customizer-social.php:220
-#: functions/customizer/childs/customizer-social.php:247
-#: functions/customizer/childs/customizer-social.php:274
-#: functions/customizer/childs/customizer-social.php:301
-#: functions/customizer/childs/customizer-social.php:328
-#: functions/customizer/childs/customizer-social.php:355
-#: functions/customizer/childs/customizer-social.php:382
-#: functions/customizer/childs/customizer-social.php:409
+#: functions/customizer/childs/customizer-blog.php:178 functions/customizer/childs/customizer-social.php:112 functions/customizer/childs/customizer-social.php:139 functions/customizer/childs/customizer-social.php:166 functions/customizer/childs/customizer-social.php:193 functions/customizer/childs/customizer-social.php:220 functions/customizer/childs/customizer-social.php:247 functions/customizer/childs/customizer-social.php:274 functions/customizer/childs/customizer-social.php:301 functions/customizer/childs/customizer-social.php:328 functions/customizer/childs/customizer-social.php:355 functions/customizer/childs/customizer-social.php:382 functions/customizer/childs/customizer-social.php:409
 msgid "Open link in new tab"
 msgstr "Link in neuem Tab öffnen"
 
@@ -442,9 +379,7 @@ msgstr "Link in neuem Tab öffnen"
 msgid "Max items in year archive"
 msgstr "Maximale Anzahl von Elementen im Jahresarchiv"
 
-#: functions/customizer/childs/customizer-blog.php:200
-#: functions/customizer/childs/customizer-blog.php:220
-#: functions/customizer/childs/customizer-blog.php:240
+#: functions/customizer/childs/customizer-blog.php:200 functions/customizer/childs/customizer-blog.php:220 functions/customizer/childs/customizer-blog.php:240
 msgid "0 for full archive"
 msgstr "0 für vollständiges Archiv"
 
@@ -457,11 +392,8 @@ msgid "Max items in day archive"
 msgstr "Maximale Anzahl von Elementen im Tagesarchiv"
 
 #: functions/customizer/childs/customizer-blog.php:250
-msgid ""
-"Max buttons for blog pagination (excl. 2 buttons for next or previous page)"
-msgstr ""
-"Maximale Buttons für Blogseiten (Exklusive 2 Buttons für vorherige und "
-"nächste Seite)"
+msgid "Max buttons for blog pagination (excl. 2 buttons for next or previous page)"
+msgstr "Maximale Buttons für Blogseiten (Exklusive 2 Buttons für vorherige und nächste Seite)"
 
 #: functions/customizer/childs/customizer-copyright.php:21
 msgid "Copyright and disclaimer settings"
@@ -471,21 +403,9 @@ msgstr "Einstellungen (Copyright- und Verzichtserkärungen)"
 msgid "Footer copyright settings"
 msgstr "Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/childs/customizer-copyright.php:35
-#: theme_setup_data.php:274
-msgid ""
-"&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/"
-"impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</"
-"a>&nbsp;|&nbsp;<a href=\"/terms\">General Terms and Conditions</a>&nbsp;|"
-"&nbsp;<a href=\"/rights\">Rights of withdrawal</a>&nbsp;|&nbsp;<a href=\"/"
-"shipping-costs\">Shipping costs</a>&nbsp;"
-msgstr ""
-"&nbsp;<a href=\"/kontakt\">Kontakt</a>&nbsp;|&nbsp;<a href=\"/"
-"impressum\">Impressum</a>&nbsp;|&nbsp;<a href=\"/"
-"datenschutzerklaerung\">Datenschutzerklärung</a>&nbsp;|&nbsp;<a href=\"/"
-"agb\">Allgemeine Geschäftsbedingungen</a>&nbsp;|&nbsp;<a href=\"/"
-"widerrufsrechte\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/"
-"versandkosten\">Versandkosten</a>&nbsp;"
+#: functions/customizer/childs/customizer-copyright.php:35 theme_setup_data.php:274
+msgid "&nbsp;<a href=\"/contact\">Contact</a>&nbsp;|&nbsp;<a href=\"/impress\">Impress</a>&nbsp;|&nbsp;<a href=\"/privacy\">Privacy policy</a>&nbsp;|&nbsp;<a href=\"/terms\">General Terms and Conditions</a>&nbsp;|&nbsp;<a href=\"/rights\">Rights of withdrawal</a>&nbsp;|&nbsp;<a href=\"/shipping-costs\">Shipping costs</a>&nbsp;"
+msgstr "&nbsp;<a href=\"/kontakt\">Kontakt</a>&nbsp;|&nbsp;<a href=\"/impressum\">Impressum</a>&nbsp;|&nbsp;<a href=\"/datenschutzerklaerung\">Datenschutzerklärung</a>&nbsp;|&nbsp;<a href=\"/agb\">Allgemeine Geschäftsbedingungen</a>&nbsp;|&nbsp;<a href=\"/widerrufsrechte\">Widerrufsrechte</a>&nbsp;|&nbsp;<a href=\"/versandkosten\">Versandkosten</a>&nbsp;"
 
 #: functions/customizer/childs/customizer-copyright.php:49
 msgid "Enable Footer Link-text"
@@ -499,13 +419,11 @@ msgstr "Fußzeilenlinktext"
 msgid "Enable Footer Copyright"
 msgstr "Aktiviere Fußzeilencopyrighteinstellungen"
 
-#: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:275
+#: functions/customizer/childs/customizer-copyright.php:81 theme_setup_data.php:275
 msgid "Copyright @ 2022 - DJS-WallStreet-Pro. Designed by"
 msgstr "Copyright @ 2022 - DJS-WallStreet-Pro. Entworfen von"
 
-#: functions/customizer/childs/customizer-copyright.php:81
-#: theme_setup_data.php:275
+#: functions/customizer/childs/customizer-copyright.php:81 theme_setup_data.php:275
 msgid "Daniel Joerg Schuppelius"
 msgstr "Daniel Jörg Schuppelius"
 
@@ -530,15 +448,10 @@ msgid "Datetime section"
 msgstr "Datums- und Zeiteinstellungen"
 
 #: functions/customizer/childs/customizer-global.php:42
-msgid ""
-"For more information, visit <a href=\"https://www.php.net/manual/en/datetime."
-"format.php\">php.net (datetime.format)</a>"
-msgstr ""
-"Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/"
-"en/datetime.format.php\">php.net (datetime.format)</a>"
+msgid "For more information, visit <a href=\"https://www.php.net/manual/en/datetime.format.php\">php.net (datetime.format)</a>"
+msgstr "Weitere Informationen finden Sie unter <a href=\"https://www.php.net/manual/en/datetime.format.php\">php.net (datetime.format)</a>"
 
-#: functions/customizer/childs/customizer-global.php:49
-#: theme_setup_data.php:245
+#: functions/customizer/childs/customizer-global.php:49 theme_setup_data.php:245
 msgid "Y"
 msgstr "Y"
 
@@ -546,8 +459,7 @@ msgstr "Y"
 msgid "Year dateformat"
 msgstr "Jahresdatumsformat"
 
-#: functions/customizer/childs/customizer-global.php:63
-#: theme_setup_data.php:246
+#: functions/customizer/childs/customizer-global.php:63 theme_setup_data.php:246
 msgid "F Y"
 msgstr "F Y"
 
@@ -555,8 +467,7 @@ msgstr "F Y"
 msgid "Month/Year dateformat"
 msgstr "Monat/Jahr Datumsformat"
 
-#: functions/customizer/childs/customizer-global.php:77
-#: theme_setup_data.php:247
+#: functions/customizer/childs/customizer-global.php:77 theme_setup_data.php:247
 msgid "jS F Y"
 msgstr "d. F Y"
 
@@ -564,8 +475,7 @@ msgstr "d. F Y"
 msgid "Full dateformat"
 msgstr "Komplettes Datum"
 
-#: functions/customizer/childs/customizer-global.php:91
-#: theme_setup_data.php:248
+#: functions/customizer/childs/customizer-global.php:91 theme_setup_data.php:248
 msgid "jS F Y - h:i a"
 msgstr "d. F Y - H:i"
 
@@ -573,8 +483,7 @@ msgstr "d. F Y - H:i"
 msgid "Full datetimeformat"
 msgstr "Komplettes Datum inkl. Zeit"
 
-#: functions/customizer/childs/customizer-global.php:105
-#: theme_setup_data.php:249
+#: functions/customizer/childs/customizer-global.php:105 theme_setup_data.php:249
 msgid "Y-m-d\\TH:i:sP"
 msgstr "Y-m-d\\TH:i:sP"
 
@@ -698,8 +607,7 @@ msgstr "Ein Favicon hochladen"
 msgid "Social Links"
 msgstr "Soziale Links"
 
-#: functions/customizer/childs/customizer-home.php:45
-#: functions/customizer/childs/customizer-home.php:86
+#: functions/customizer/childs/customizer-home.php:45 functions/customizer/childs/customizer-home.php:86
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
@@ -713,8 +621,7 @@ msgstr "Einstellungen für Headervoreinstellungen"
 
 #: functions/customizer/childs/customizer-home.php:74
 msgid "Upload a Favicon (ideal width and height is 16x16 or 32x32)"
-msgstr ""
-"Ein Favicon hochladen (ideale Breite und H&ouml;he ist 16x16 oder 32x32)"
+msgstr "Ein Favicon hochladen (ideale Breite und H&ouml;he ist 16x16 oder 32x32)"
 
 #: functions/customizer/childs/customizer-home.php:99
 msgid "Same height for home blogview"
@@ -840,31 +747,17 @@ msgstr "Webadresse (Instagram)"
 msgid "Vimeo URL"
 msgstr "Webadresse (Vimeo)"
 
-#: functions/customizer/childs/customizer-social.php:416
-#: theme_setup_data.php:277
-msgid ""
-"Your mail address will not be published, but your name will be. First name "
-"or a nickname is sufficient. Furthermore, comments on this site are "
-"moderated. Please be patient if your comment is not activated immediately."
-msgstr ""
-"Ihre E-Mail-Adresse wird nicht veröffentlicht, jedoch Ihr Name. Vorname oder "
-"ein Nickname ist ausreichend. Des Weiteren werden Kommentare auf dieser "
-"Seite moderiert. Bitte haben Sie etwas Geduld, wenn Ihr Kommentar nicht "
-"sofort aktiviert wird."
+#: functions/customizer/childs/customizer-social.php:416 theme_setup_data.php:277
+msgid "Your mail address will not be published, but your name will be. First name or a nickname is sufficient. Furthermore, comments on this site are moderated. Please be patient if your comment is not activated immediately."
+msgstr "Ihre E-Mail-Adresse wird nicht veröffentlicht, jedoch Ihr Name. Vorname oder ein Nickname ist ausreichend. Des Weiteren werden Kommentare auf dieser Seite moderiert. Bitte haben Sie etwas Geduld, wenn Ihr Kommentar nicht sofort aktiviert wird."
 
 #: functions/customizer/childs/customizer-social.php:423
 msgid "First Text in Comment-Section"
 msgstr "Erster Text im Kommentar-Bereich"
 
-#: functions/customizer/childs/customizer-social.php:430
-#: theme_setup_data.php:278
-msgid ""
-"If you don't want to express yourself publicly, use the contact form or send "
-"me an email. Please don't forget to mention the article you are referring to."
-msgstr ""
-"Wenn Sie sich nicht öffentlich äußern möchten, nutzen Sie das "
-"Kontaktformular oder senden Sie mir eine E-Mail. Bitte vergessen Sie nicht, "
-"den Artikel zu erwähnen, auf den Sie sich beziehen."
+#: functions/customizer/childs/customizer-social.php:430 theme_setup_data.php:278
+msgid "If you don't want to express yourself publicly, use the contact form or send me an email. Please don't forget to mention the article you are referring to."
+msgstr "Wenn Sie sich nicht öffentlich äußern möchten, nutzen Sie das Kontaktformular oder senden Sie mir eine E-Mail. Bitte vergessen Sie nicht, den Artikel zu erwähnen, auf den Sie sich beziehen."
 
 #: functions/customizer/childs/customizer-social.php:437
 msgid "Next Text in Comment-Section"
@@ -926,8 +819,7 @@ msgstr "Kontaktseite Google Maps"
 msgid "Round Corner Value"
 msgstr "Wert für runde Ecken"
 
-#: functions/customizer/childs/customizer-template.php:171
-#: functions/customizer/childs/customizer-template.php:226
+#: functions/customizer/childs/customizer-template.php:171 functions/customizer/childs/customizer-template.php:226
 msgid "Enable team section"
 msgstr "Teamabschnitt aktivieren"
 
@@ -935,14 +827,11 @@ msgstr "Teamabschnitt aktivieren"
 msgid "Our great team"
 msgstr "Unser tolles Team"
 
-#: functions/customizer/childs/customizer-template.php:190
-#: functions/customizer/childs/customizer-template.php:289
-#: functions/customizer/childs/customizer-template.php:468
+#: functions/customizer/childs/customizer-template.php:190 functions/customizer/childs/customizer-template.php:289 functions/customizer/childs/customizer-template.php:468
 msgid "We offer great services to our clients"
 msgstr "Wir bieten großartige Dienstleistungen für unsere Kunden"
 
-#: functions/customizer/childs/customizer-template.php:210
-#: functions/customizer/childs/customizer-template.php:270
+#: functions/customizer/childs/customizer-template.php:210 functions/customizer/childs/customizer-template.php:270
 msgid "Enable Call-to-Action section"
 msgstr "Call-to-Action-Abschnitt aktivieren"
 
@@ -950,8 +839,7 @@ msgstr "Call-to-Action-Abschnitt aktivieren"
 msgid "Enable feature section"
 msgstr "Featureabschnitt aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:254
-#: functions/customizer/childs/customizer-template.php:322
+#: functions/customizer/childs/customizer-template.php:254 functions/customizer/childs/customizer-template.php:322
 msgid "Enable client section"
 msgstr "Kundenabschnitt aktivieren"
 
@@ -1036,51 +924,26 @@ msgid "Read more button text"
 msgstr "Weiterlesen-Schaltflächentext"
 
 #: functions/customizer/childs/customizer-template.php:539
-msgid ""
-"Hide post meta i.e. author name, date of submission, category, tags from "
-"posts page"
-msgstr ""
-"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
-"Beitragsseiten"
+msgid "Hide post meta i.e. author name, date of submission, category, tags from posts page"
+msgstr "Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von Beitragsseiten"
 
 #: functions/customizer/childs/customizer-template.php:552
-msgid ""
-"Hide post meta i.e. author name, date of submission, category, tags from page"
-msgstr ""
-"Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von "
-"Seiten"
+msgid "Hide post meta i.e. author name, date of submission, category, tags from page"
+msgstr "Beitrags-Meta verbergen, z.B. Autorname, Datum, Kategorie, Schlagwörter von Seiten"
 
 #: functions/customizer/childs/customizer-template.php:565
-msgid ""
-"Hide post meta i.e. author name, date of submission, category, tags from "
-"archive page"
-msgstr ""
-"Beitrags-Metadaten, wie Autorname, Erstellungsdatum, Kategorie, Schlagworte "
-"auf der Archivseite verbergen"
+msgid "Hide post meta i.e. author name, date of submission, category, tags from archive page"
+msgstr "Beitrags-Metadaten, wie Autorname, Erstellungsdatum, Kategorie, Schlagworte auf der Archivseite verbergen"
 
 #: functions/customizer/childs/customizer-template.php:582
 msgid "Enable contact page address section"
 msgstr "Kontaktseite-Adressbereich aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:596
-#: functions/customizer/childs/customizer-template.php:667
-#: functions/customizer/childs/customizer-template.php:739
-#: template-parts/home/service/servic-1.php:78
-#: template-specials/service-five-template.php:72
-#: template-specials/service-five-template.php:168
-#: template-specials/service-four-template.php:72
-#: template-specials/service-four-template.php:169
-#: template-specials/service-six-template.php:72
-#: template-specials/service-six-template.php:167
-#: template-specials/service-three-template.php:72
-#: template-specials/service-three-template.php:168
-#: template-specials/service-two-template.php:71
-#: template-specials/service-two-template.php:165
+#: functions/customizer/childs/customizer-template.php:596 functions/customizer/childs/customizer-template.php:667 functions/customizer/childs/customizer-template.php:739 template-parts/home/service/servic-1.php:78 template-specials/service-five-template.php:72 template-specials/service-five-template.php:168 template-specials/service-four-template.php:72 template-specials/service-four-template.php:169 template-specials/service-six-template.php:72 template-specials/service-six-template.php:167 template-specials/service-three-template.php:72 template-specials/service-three-template.php:168 template-specials/service-two-template.php:71 template-specials/service-two-template.php:165
 msgid "Icon"
 msgstr "Symbol"
 
-#: functions/customizer/childs/customizer-template.php:603
-#: theme_setup_data.php:259
+#: functions/customizer/childs/customizer-template.php:603 theme_setup_data.php:259
 msgid "Address"
 msgstr "Adresse"
 
@@ -1096,8 +959,7 @@ msgstr "Adresse Zwei"
 msgid "Enable contact page phone section"
 msgstr "Kontaktseite-Telefonbereich aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:674
-#: theme_setup_data.php:261
+#: functions/customizer/childs/customizer-template.php:674 theme_setup_data.php:261
 msgid "Phone"
 msgstr "Telefon"
 
@@ -1121,13 +983,11 @@ msgstr "E-Mail Eins"
 msgid "Email two"
 msgstr "E-Mail Zwei"
 
-#: functions/customizer/childs/customizer-template.php:790
-#: theme_setup_data.php:265
+#: functions/customizer/childs/customizer-template.php:790 theme_setup_data.php:265
 msgid "Drop us a mail"
 msgstr "Schreibe uns eine E-Mail"
 
-#: functions/customizer/childs/customizer-template.php:804
-#: theme_setup_data.php:266
+#: functions/customizer/childs/customizer-template.php:804 theme_setup_data.php:266
 msgid "Feel free to write us a message"
 msgstr "Gerne kannst du uns benachrichtigen"
 
@@ -1135,8 +995,7 @@ msgstr "Gerne kannst du uns benachrichtigen"
 msgid "Enable Google map in contact page"
 msgstr "Google Maps auf Kontaktseite aktivieren"
 
-#: functions/customizer/childs/customizer-template.php:839
-#: theme_setup_data.php:257
+#: functions/customizer/childs/customizer-template.php:839 theme_setup_data.php:257
 msgid "Location map"
 msgstr "Lageplan"
 
@@ -1204,26 +1063,13 @@ msgstr "Call-to-Action-Beschreibung"
 msgid "Call-to-Action button"
 msgstr "Call-to-Action-Schaltfläche"
 
-#: functions/customizer/childs/customizer-typography.php:144
-#: functions/customizer/childs/customizer-typography.php:211
-#: functions/customizer/childs/customizer-typography.php:281
-#: functions/customizer/childs/customizer-typography.php:327
-#: functions/customizer/childs/customizer-typography.php:373
-#: functions/customizer/childs/customizer-typography.php:419
-#: functions/customizer/childs/customizer-typography.php:465
-#: functions/customizer/childs/customizer-typography.php:511
-#: functions/customizer/childs/customizer-typography.php:557
-#: functions/customizer/childs/customizer-typography.php:605
-#: functions/customizer/childs/customizer-typography.php:651
+#: functions/customizer/childs/customizer-typography.php:144 functions/customizer/childs/customizer-typography.php:211 functions/customizer/childs/customizer-typography.php:281 functions/customizer/childs/customizer-typography.php:327 functions/customizer/childs/customizer-typography.php:373 functions/customizer/childs/customizer-typography.php:419 functions/customizer/childs/customizer-typography.php:465 functions/customizer/childs/customizer-typography.php:511 functions/customizer/childs/customizer-typography.php:557 functions/customizer/childs/customizer-typography.php:605 functions/customizer/childs/customizer-typography.php:651
 msgid "Font style"
 msgstr "Schriftstil"
 
-#: functions/customizer/childs/customizer-typography.php:169
-#: functions/customizer/childs/customizer-typography.php:236
+#: functions/customizer/childs/customizer-typography.php:169 functions/customizer/childs/customizer-typography.php:236
 msgid "Remove GoogleFonts (Works only, if custom typography is disabled)"
-msgstr ""
-"Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte "
-"Typografie deaktiviert ist)"
+msgstr "Entfernen von GoogleFonts (funktioniert nur, wenn benutzerdefinierte Typografie deaktiviert ist)"
 
 #: functions/customizer/childs/customizer-typography.php:183
 msgid "Enable custom typography"
@@ -1233,39 +1079,15 @@ msgstr "Individuelle Typografie aktivieren"
 msgid "Name of GoogleFont"
 msgstr "Name des GoogleFonts"
 
-#: functions/customizer/childs/customizer-typography.php:250
-#: functions/customizer/childs/customizer-typography.php:296
-#: functions/customizer/childs/customizer-typography.php:342
-#: functions/customizer/childs/customizer-typography.php:388
-#: functions/customizer/childs/customizer-typography.php:434
-#: functions/customizer/childs/customizer-typography.php:480
-#: functions/customizer/childs/customizer-typography.php:526
-#: functions/customizer/childs/customizer-typography.php:574
-#: functions/customizer/childs/customizer-typography.php:620
+#: functions/customizer/childs/customizer-typography.php:250 functions/customizer/childs/customizer-typography.php:296 functions/customizer/childs/customizer-typography.php:342 functions/customizer/childs/customizer-typography.php:388 functions/customizer/childs/customizer-typography.php:434 functions/customizer/childs/customizer-typography.php:480 functions/customizer/childs/customizer-typography.php:526 functions/customizer/childs/customizer-typography.php:574 functions/customizer/childs/customizer-typography.php:620
 msgid "Font size"
 msgstr "Schriftgröße"
 
-#: functions/customizer/childs/customizer-typography.php:255
-#: functions/customizer/childs/customizer-typography.php:301
-#: functions/customizer/childs/customizer-typography.php:347
-#: functions/customizer/childs/customizer-typography.php:393
-#: functions/customizer/childs/customizer-typography.php:439
-#: functions/customizer/childs/customizer-typography.php:485
-#: functions/customizer/childs/customizer-typography.php:531
-#: functions/customizer/childs/customizer-typography.php:579
-#: functions/customizer/childs/customizer-typography.php:625
+#: functions/customizer/childs/customizer-typography.php:255 functions/customizer/childs/customizer-typography.php:301 functions/customizer/childs/customizer-typography.php:347 functions/customizer/childs/customizer-typography.php:393 functions/customizer/childs/customizer-typography.php:439 functions/customizer/childs/customizer-typography.php:485 functions/customizer/childs/customizer-typography.php:531 functions/customizer/childs/customizer-typography.php:579 functions/customizer/childs/customizer-typography.php:625
 msgid "Pixels"
 msgstr "Pixel"
 
-#: functions/customizer/childs/customizer-typography.php:266
-#: functions/customizer/childs/customizer-typography.php:312
-#: functions/customizer/childs/customizer-typography.php:358
-#: functions/customizer/childs/customizer-typography.php:404
-#: functions/customizer/childs/customizer-typography.php:450
-#: functions/customizer/childs/customizer-typography.php:496
-#: functions/customizer/childs/customizer-typography.php:542
-#: functions/customizer/childs/customizer-typography.php:590
-#: functions/customizer/childs/customizer-typography.php:636
+#: functions/customizer/childs/customizer-typography.php:266 functions/customizer/childs/customizer-typography.php:312 functions/customizer/childs/customizer-typography.php:358 functions/customizer/childs/customizer-typography.php:404 functions/customizer/childs/customizer-typography.php:450 functions/customizer/childs/customizer-typography.php:496 functions/customizer/childs/customizer-typography.php:542 functions/customizer/childs/customizer-typography.php:590 functions/customizer/childs/customizer-typography.php:636
 msgid "Font family"
 msgstr "Schriftart"
 
@@ -1325,13 +1147,11 @@ msgstr "Liste"
 msgid "Sidebar widget area"
 msgstr "Seitenleiste-Widget-Bereich"
 
-#: functions/widget/custom-sidebar.php:14
-#: functions/widget/custom-sidebar.php:16
+#: functions/widget/custom-sidebar.php:14 functions/widget/custom-sidebar.php:16
 msgid "Footer widget area"
 msgstr "Footer-Widget-Bereich"
 
-#: functions/widget/custom-sidebar.php:24
-#: functions/widget/custom-sidebar.php:26
+#: functions/widget/custom-sidebar.php:24 functions/widget/custom-sidebar.php:26
 msgid "WooCommerce sidebar widget area"
 msgstr "WooCommerce Seitenleiste-Widgetbereich"
 
@@ -1341,12 +1161,9 @@ msgstr "WBR : Neueste Beitr&auml;ge"
 
 #: functions/widget/wallstreet-latest-widget.php:27
 msgid "This widget allows you to display latest, popular and commented posts."
-msgstr ""
-"Dieses Widget erlaubt dir die Anzeige der neuesten, beliebtesten oder "
-"kommentierten Beiträge."
+msgstr "Dieses Widget erlaubt dir die Anzeige der neuesten, beliebtesten oder kommentierten Beiträge."
 
-#: functions/widget/wallstreet-latest-widget.php:53
-#: functions/widget/wallstreet-latest-widget.php:135
+#: functions/widget/wallstreet-latest-widget.php:53 functions/widget/wallstreet-latest-widget.php:135
 msgid "By"
 msgstr "Von"
 
@@ -1446,13 +1263,7 @@ msgstr "Linktext für Archiv (Chat)"
 msgid "Link text for Audio archive"
 msgstr "Linktext für Archiv (Audio)"
 
-#: header.php:137 header.php:139 searchform.php:15
-#: template-parts/global/menu-search.php:15
-#: template-parts/global/menu-search.php:21
-#: template-parts/global/menu-search.php:23
-#: template-parts/global/menu-search.php:24
-#: template-parts/global/separate-search-cart.php:15
-#: template-parts/global/separate-search-cart.php:23
+#: header.php:137 header.php:139 searchform.php:15 template-parts/global/menu-search.php:15 template-parts/global/menu-search.php:21 template-parts/global/menu-search.php:23 template-parts/global/menu-search.php:24 template-parts/global/separate-search-cart.php:15 template-parts/global/separate-search-cart.php:23
 msgid "Search"
 msgstr "Suchen"
 
@@ -1465,8 +1276,7 @@ msgstr "Suchergebnisse für: %s"
 msgid "Previous"
 msgstr "Früher"
 
-#: search.php:36 template-single/single-portfolio.php:26
-#: template-single/single-portfolio.php:27
+#: search.php:36 template-single/single-portfolio.php:26 template-single/single-portfolio.php:27
 msgid "Next"
 msgstr "Weiter"
 
@@ -1475,12 +1285,8 @@ msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
 #: search.php:45
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Leider gibt es keine Ergebnisse für deine Suchkriterien. Bitte versuche es "
-"noch einmal mit anderen Suchbegriffen."
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Leider gibt es keine Ergebnisse für deine Suchkriterien. Bitte versuche es noch einmal mit anderen Suchbegriffen."
 
 #: searchform.php:13
 msgid "Search Here"
@@ -1494,8 +1300,7 @@ msgstr "Letztes Update:"
 msgid "Detail"
 msgstr "Details"
 
-#: template-parts/global/header/header-1.php:13
-#: template-parts/global/header/header-2.php:13
+#: template-parts/global/header/header-1.php:13 template-parts/global/header/header-2.php:13
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
@@ -1511,84 +1316,38 @@ msgstr "Inhalt wird geladen..."
 msgid "JavaScript disabled..."
 msgstr "JavaScript deaktiviert..."
 
-#: template-parts/global/menu-search.php:78
-#: template-parts/global/separate-search-cart.php:52
-#: template-parts/global/separate-search-cart.php:81
+#: template-parts/global/menu-search.php:78 template-parts/global/separate-search-cart.php:52 template-parts/global/separate-search-cart.php:81
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d Artikel"
 msgstr[1] "%d Artikel"
 
-#: template-parts/home/blog/blog-layout-1.php:78
-#: template-parts/home/blog/blog-layout-2.php:53
-#: template-parts/home/blog/blog-layout-3.php:55
-#: template-parts/home/blog/blog-layout-4.php:56
+#: template-parts/home/blog/blog-layout-1.php:78 template-parts/home/blog/blog-layout-2.php:53 template-parts/home/blog/blog-layout-3.php:55 template-parts/home/blog/blog-layout-4.php:56
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: template-parts/home/blog/blog-layout-1.php:78
-#: template-parts/home/blog/blog-layout-2.php:53
-#: template-parts/home/blog/blog-layout-3.php:55
-#: template-parts/home/blog/blog-layout-4.php:56
+#: template-parts/home/blog/blog-layout-1.php:78 template-parts/home/blog/blog-layout-2.php:53 template-parts/home/blog/blog-layout-3.php:55 template-parts/home/blog/blog-layout-4.php:56
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: template-parts/home/blog/blog-layout-1.php:78
-#: template-parts/home/blog/blog-layout-2.php:53
-#: template-parts/home/blog/blog-layout-3.php:55
-#: template-parts/home/blog/blog-layout-4.php:56
+#: template-parts/home/blog/blog-layout-1.php:78 template-parts/home/blog/blog-layout-2.php:53 template-parts/home/blog/blog-layout-3.php:55 template-parts/home/blog/blog-layout-4.php:56
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: template-parts/home/blog/blog-layout-1.php:92
-#: template-parts/home/blog/blog-layout-2.php:70
-#: template-parts/home/blog/blog-layout-3.php:68
-#: template-parts/home/blog/blog-layout-4.php:69
-#: template-parts/home/blog/blog-layout-5.php:83
-#: template-parts/home/blog/blog-layout-6.php:76
+#: template-parts/home/blog/blog-layout-1.php:92 template-parts/home/blog/blog-layout-2.php:70 template-parts/home/blog/blog-layout-3.php:68 template-parts/home/blog/blog-layout-4.php:69 template-parts/home/blog/blog-layout-5.php:83 template-parts/home/blog/blog-layout-6.php:76
 msgid "No posts to show"
 msgstr "Keine Beiträge zum Anzeigen"
 
-#: template-parts/home/service/servic-1.php:105
-#: template-parts/home/service/servic-2.php:96
-#: template-parts/home/service/servic-3.php:91
-#: template-parts/home/service/servic-4.php:90
-#: template-parts/home/service/servic-5.php:96
-#: template-parts/home/service/servic-6.php:96
-#: template-specials/service-five-template.php:90
-#: template-specials/service-four-template.php:90
-#: template-specials/service-six-template.php:90
-#: template-specials/service-three-template.php:90
-#: template-specials/service-two-template.php:88
+#: template-parts/home/service/servic-1.php:105 template-parts/home/service/servic-2.php:96 template-parts/home/service/servic-3.php:91 template-parts/home/service/servic-4.php:90 template-parts/home/service/servic-5.php:96 template-parts/home/service/servic-6.php:96 template-specials/service-five-template.php:90 template-specials/service-four-template.php:90 template-specials/service-six-template.php:90 template-specials/service-three-template.php:90 template-specials/service-two-template.php:88
 msgid "Product designing"
 msgstr "Produktdesign"
 
-#: template-parts/home/service/servic-1.php:105
-#: template-parts/home/service/servic-2.php:96
-#: template-parts/home/service/servic-3.php:91
-#: template-parts/home/service/servic-4.php:90
-#: template-parts/home/service/servic-5.php:96
-#: template-parts/home/service/servic-6.php:96
-#: template-specials/service-five-template.php:90
-#: template-specials/service-five-template.php:181
-#: template-specials/service-four-template.php:90
-#: template-specials/service-four-template.php:182
-#: template-specials/service-six-template.php:90
-#: template-specials/service-six-template.php:180
-#: template-specials/service-three-template.php:90
-#: template-specials/service-three-template.php:181
-#: template-specials/service-two-template.php:88
-#: template-specials/service-two-template.php:178
+#: template-parts/home/service/servic-1.php:105 template-parts/home/service/servic-2.php:96 template-parts/home/service/servic-3.php:91 template-parts/home/service/servic-4.php:90 template-parts/home/service/servic-5.php:96 template-parts/home/service/servic-6.php:96 template-specials/service-five-template.php:90 template-specials/service-five-template.php:181 template-specials/service-four-template.php:90 template-specials/service-four-template.php:182 template-specials/service-six-template.php:90 template-specials/service-six-template.php:180 template-specials/service-three-template.php:90 template-specials/service-three-template.php:181 template-specials/service-two-template.php:88 template-specials/service-two-template.php:178
 msgid "WordPress themes"
 msgstr "WordPress Themes"
 
-#: template-parts/home/service/servic-1.php:105
-#: template-parts/home/service/servic-2.php:96
-#: template-parts/home/service/servic-3.php:91
-#: template-parts/home/service/servic-4.php:90
-#: template-parts/home/service/servic-5.php:96
-#: template-parts/home/service/servic-6.php:96
+#: template-parts/home/service/servic-1.php:105 template-parts/home/service/servic-2.php:96 template-parts/home/service/servic-3.php:91 template-parts/home/service/servic-4.php:90 template-parts/home/service/servic-5.php:96 template-parts/home/service/servic-6.php:96
 msgid "Responsive designs"
 msgstr "Responsives Design"
 
@@ -1664,12 +1423,8 @@ msgid "Wallstreet style"
 msgstr "Wallstreet-Stil"
 
 #: template-parts/index/index-portfolio.php:121
-msgid ""
-"A wonderful serenity has taken possession of my entire soul, like these "
-"sweet mornings."
-msgstr ""
-"Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den "
-"süßen Frühlingsmorgen."
+msgid "A wonderful serenity has taken possession of my entire soul, like these sweet mornings."
+msgstr "Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen Frühlingsmorgen."
 
 #: template-parts/index/index-slider.php:246
 msgid "Clean & fresh theme"
@@ -1680,38 +1435,26 @@ msgid "Welcome to wallstreet"
 msgstr "Willkommen in der WallStreet"
 
 #: template-parts/index/index-slider.php:258
-msgid ""
-"The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 "
-"transition effects. Works perfect in any modern mobile."
-msgstr ""
-"Ein hochmodernes, flexibles HTML5 Layout mit blitzschnellen CSS3-"
-"Übergangseffekten. Funktioniert perfekt auf jedem modernen Mobilgerät."
+msgid "The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile."
+msgstr "Ein hochmodernes, flexibles HTML5 Layout mit blitzschnellen CSS3-Übergangseffekten. Funktioniert perfekt auf jedem modernen Mobilgerät."
 
 #: template-parts/index/index-slider.php:265
 msgid "Purchase Now"
 msgstr "Jetzt kaufen"
 
-#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97
-#: template-parts/team/team-3.php:103 template-parts/team/team-4.php:99
-#: template/about-us.php:127
+#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97 template-parts/team/team-3.php:103 template-parts/team/team-4.php:99 template/about-us.php:127
 msgid "FOUNDER"
 msgstr "GRÜNDER"
 
-#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97
-#: template-parts/team/team-3.php:103 template-parts/team/team-4.php:99
-#: template/about-us.php:127
+#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97 template-parts/team/team-3.php:103 template-parts/team/team-4.php:99 template/about-us.php:127
 msgid "DEVELOPER"
 msgstr "ENTWICKLER"
 
-#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97
-#: template-parts/team/team-3.php:103 template-parts/team/team-4.php:99
-#: template/about-us.php:127
+#: template-parts/team/team-1.php:104 template-parts/team/team-2.php:97 template-parts/team/team-3.php:103 template-parts/team/team-4.php:99 template/about-us.php:127
 msgid "DESIGNER"
 msgstr "DESIGNER"
 
-#: template-single/single-portfolio.php:20
-#: template-single/single-portfolio.php:21
-#: template-single/single-portfolio.php:160
+#: template-single/single-portfolio.php:20 template-single/single-portfolio.php:21 template-single/single-portfolio.php:160
 msgid "Back"
 msgstr "Zurück"
 
@@ -1740,44 +1483,22 @@ msgid "Oops! Page can not load"
 msgstr "Oops! Seite nicht gefunden"
 
 #: template-specials/not_loaded-plugin.php:17
-msgid ""
-"We are sorry, but the page you are looking for can not load, because the "
-"recuired plugin \"DJS-Wallstreet-Pro Post-Types\" does not exist or is not "
-"activated."
-msgstr ""
-"Es tut uns leid, aber die von Ihnen gesuchte Seite kann nicht geladen "
-"werden, da das benötigte Plugin \"DJS-Wallstreet-Pro Post-Types\" nicht "
-"existiert bzw. nicht aktiviert ist."
+msgid "We are sorry, but the page you are looking for can not load, because the recuired plugin \"DJS-Wallstreet-Pro Post-Types\" does not exist or is not activated."
+msgstr "Es tut uns leid, aber die von Ihnen gesuchte Seite kann nicht geladen werden, da das benötigte Plugin \"DJS-Wallstreet-Pro Post-Types\" nicht existiert bzw. nicht aktiviert ist."
 
-#: template-specials/service-five-template.php:90
-#: template-specials/service-four-template.php:90
-#: template-specials/service-six-template.php:90
-#: template-specials/service-three-template.php:90
-#: template-specials/service-two-template.php:88
+#: template-specials/service-five-template.php:90 template-specials/service-four-template.php:90 template-specials/service-six-template.php:90 template-specials/service-three-template.php:90 template-specials/service-two-template.php:88
 msgid "Responsive Design"
 msgstr "Responsives Design"
 
-#: template-specials/service-five-template.php:181
-#: template-specials/service-four-template.php:182
-#: template-specials/service-six-template.php:180
-#: template-specials/service-three-template.php:181
-#: template-specials/service-two-template.php:178
+#: template-specials/service-five-template.php:181 template-specials/service-four-template.php:182 template-specials/service-six-template.php:180 template-specials/service-three-template.php:181 template-specials/service-two-template.php:178
 msgid "Responsive"
 msgstr "Responsive"
 
-#: template-specials/service-five-template.php:181
-#: template-specials/service-four-template.php:182
-#: template-specials/service-six-template.php:180
-#: template-specials/service-three-template.php:181
-#: template-specials/service-two-template.php:178
+#: template-specials/service-five-template.php:181 template-specials/service-four-template.php:182 template-specials/service-six-template.php:180 template-specials/service-three-template.php:181 template-specials/service-two-template.php:178
 msgid "Mobile ready"
 msgstr "Für Mobilgeräte geeignet"
 
-#: template-specials/service-five-template.php:181
-#: template-specials/service-four-template.php:182
-#: template-specials/service-six-template.php:180
-#: template-specials/service-three-template.php:181
-#: template-specials/service-two-template.php:178
+#: template-specials/service-five-template.php:181 template-specials/service-four-template.php:182 template-specials/service-six-template.php:180 template-specials/service-three-template.php:181 template-specials/service-two-template.php:178
 msgid "Live support"
 msgstr "Live Support"
 
@@ -1817,6 +1538,270 @@ msgstr "Wallstreet ist ein elegantes und modernes Theme für Business-Websites."
 msgid "See All Features"
 msgstr "Alle Funktionen ansehen"
 
+#: functions/content/content.php
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: template-parts/content/content-meta-header.php
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s Kommentar"
+msgstr[1] "%s Kommentare"
+
+#: search.php
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "%s Treffer"
+msgstr[1] "%s Treffer"
+
+#: functions/customizer/childs/customizer-social.php
+msgid "%s URL"
+msgstr "%s-URL"
+
+#: template-parts/content/content-author.php
+msgid "About the author"
+msgstr "Über den Autor"
+
+#: functions/customizer/childs/customizer-global.php
+msgid "Additional CSS"
+msgstr "Zusätzliches CSS"
+
+#: functions/customizer/childs/customizer-global.php
+msgid "Analytics code"
+msgstr "Analytics-Code"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "As selected above (dark or light)"
+msgstr "Wie oben gewählt (dunkel oder hell)"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "Automatic (system setting)"
+msgstr "Automatisch (Systemeinstellung)"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "Automatic follows the light/dark setting of the visitor's operating system."
+msgstr "Automatisch folgt der Hell/Dunkel-Einstellung des Betriebssystems der Besucher."
+
+#: footer.php
+msgid "Back to top"
+msgstr "Nach oben"
+
+#: template-parts/global/breadcrumb.php
+msgid "Breadcrumb"
+msgstr "Brotkrümelpfad"
+
+#: functions/scripts/scripts.php functions/shortcodes/shortcodes.php template-parts/global/header/search-overlay.php
+msgid "Close"
+msgstr "Schließen"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "Color mode"
+msgstr "Farbmodus"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Color scheme"
+msgstr "Farbschema"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Dark"
+msgstr "Dunkel"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Decrease font size"
+msgstr "Schrift verkleinern"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Display settings"
+msgstr "Darstellung"
+
+#: template-specials/not_loaded-plugin.php
+msgid "Download"
+msgstr "Herunterladen"
+
+#: template-parts/portfolio/card.php
+msgid "Enlarge image"
+msgstr "Bild vergrößern"
+
+#: template-parts/content/content-meta-header.php
+msgid "Featured"
+msgstr "Hervorgehoben"
+
+#: functions/customizer/single-blog-options.php
+msgid "Fixed Logo Position"
+msgstr "Logo-Position (fester Header)"
+
+#: functions/customizer/single-blog-options.php
+msgid "Fixed Logo Width"
+msgstr "Logo-Breite (fester Header)"
+
+#: functions/shortcodes/shortcodes_iframe.php
+msgid "Grid system layout"
+msgstr "Rasterlayout"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Increase font size"
+msgstr "Schrift vergrößern"
+
+#: functions/customizer/childs/customizer-global.php
+msgid "Is written directly into a style tag in the footer - without the surrounding style tag."
+msgstr "Wird direkt in ein style-Tag im Footer geschrieben – ohne das umgebende style-Tag."
+
+#: functions/customizer/childs/customizer-global.php
+msgid "JavaScript for the footer - without the surrounding script tag."
+msgstr "JavaScript für den Footer – ohne das umgebende script-Tag."
+
+#: footer.php
+msgid "Legal"
+msgstr "Rechtliches"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "Let visitors switch between light and dark"
+msgstr "Besucher dürfen zwischen hell und dunkel wechseln"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Light"
+msgstr "Hell"
+
+#: functions/customizer/single-blog-options.php
+msgid "Logo Position"
+msgstr "Logo-Position"
+
+#: comments.php
+msgid "Newer Comments →"
+msgstr "Neuere Kommentare →"
+
+#: functions/pagination/theme_pagination.php
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: template-parts/content/content-single.php
+msgid "Next post"
+msgstr "Nächster Beitrag"
+
+#: functions/pagination/theme_pagination.php
+msgid "Pages"
+msgstr "Seiten"
+
+#: functions/scripts/scripts.php template-parts/global/carousel-controls.php
+msgid "Pause automatic rotation"
+msgstr "Automatischen Wechsel anhalten"
+
+#: template/contact-us.php
+msgid "Please enter a message."
+msgstr "Bitte gib eine Nachricht ein."
+
+#: template/contact-us.php
+msgid "Please enter a valid email address."
+msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
+
+#: template/contact-us.php
+msgid "Please enter your first name."
+msgstr "Bitte gib deinen Vornamen ein."
+
+#: template/contact-us.php
+msgid "Please enter your last name."
+msgstr "Bitte gib deinen Nachnamen ein."
+
+#: template-specials/not_loaded-plugin.php
+msgid "Plugin missing"
+msgstr "Plugin fehlt"
+
+#: functions/pagination/theme_pagination.php
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+#: template-parts/content/content-single.php
+msgid "Previous post"
+msgstr "Vorheriger Beitrag"
+
+#: template-single/single-portfolio.php
+msgid "Projects"
+msgstr "Projekte"
+
+#: template-parts/global/header/navbar-button.php
+msgid "Reset font size"
+msgstr "Schriftgröße zurücksetzen"
+
+#: searchform.php template-parts/global/header/search-overlay.php
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: sidebar-woocommerce.php
+msgid "Shop sidebar"
+msgstr "Shop-Seitenleiste"
+
+#: functions/customizer/childs/customizer-theme_style.php
+msgid "Show font size controls in the header"
+msgstr "Schriftgrößen-Schalter im Header anzeigen"
+
+#: footer.php
+msgid "Show site information"
+msgstr "Seiteninformationen anzeigen"
+
+#: sidebar.php
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: header.php
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: functions/scripts/scripts.php
+msgid "Slide %1$s of %2$s"
+msgstr "Folie %1$s von %2$s"
+
+#: template-parts/index/index-slider.php
+msgid "Slider"
+msgstr "Slider"
+
+#: functions/scripts/scripts.php
+msgid "Start automatic rotation"
+msgstr "Automatischen Wechsel starten"
+
+#: functions/menu/nav_walker.php
+msgid "Submenu: %s"
+msgstr "Untermenü: %s"
+
+#: functions.php
+msgid "SVG-Uploads sind deaktiviert, weil kein SVG-Sanitizer aktiv ist. Installiere das Plugin \"Safe SVG\", um SVG-Dateien wieder zuzulassen."
+msgstr "SVG-Uploads sind deaktiviert, weil kein SVG-Sanitizer aktiv ist. Installiere das Plugin \"Safe SVG\", um SVG-Dateien wieder zuzulassen."
+
+#: template-parts/global/header/navbar-button.php
+msgid "System"
+msgstr "System"
+
+#: template-parts/content/content-meta-footer.php
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: template/about-us.php
+msgid "Team"
+msgstr "Team"
+
+#: template/contact-us.php
+msgid "The message could not be sent. Please try again later."
+msgstr "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut."
+
+#: template-parts/content/content-none.php
+msgid "There are no posts here yet."
+msgstr "Hier gibt es noch keine Beiträge."
+
+#: template-specials/not_loaded-plugin.php
+msgid "This page template needs the plugin DJS-Wallstreet-Pro Post-Types."
+msgstr "Diese Seitenvorlage benötigt das Plugin DJS-Wallstreet-Pro Post-Types."
+
+#: template-parts/content/content-author.php
+msgid "Written by"
+msgstr "Geschrieben von"
+
+#: functions/shortcodes/shortcodes_iframe.php
+msgid "You are not allowed to access this page."
+msgstr "Du darfst diese Seite nicht aufrufen."
+
+#: comments.php
+msgid "← Older Comments"
+msgstr "← Ältere Kommentare"
+
 #~ msgid "Logo Width"
 #~ msgstr "Logobreite"
 
@@ -1826,15 +1811,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "https://github.com/DSchuppelius/djs-wallstreet-pro"
 #~ msgstr "https://github.com/DSchuppelius/djs-wallstreet-pro"
 
-#~ msgid ""
-#~ "WordPress business theme with setting options for multiple columns, "
-#~ "colors and different formats. This new and standalone theme is based on "
-#~ "and compatible with the Webriti Wallstreet or Wallstreet Pro Theme"
-#~ msgstr ""
-#~ "WordPress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, "
-#~ "Farben und verschiedenen Formaten. Dieses neue und eigenständige Theme "
-#~ "basiert auf dem Webriti Wallstreet bzw. DJS-Wallstreet-Pro Theme und ist "
-#~ "mit diesem kompatibel"
+#~ msgid "WordPress business theme with setting options for multiple columns, colors and different formats. This new and standalone theme is based on and compatible with the Webriti Wallstreet or Wallstreet Pro Theme"
+#~ msgstr "WordPress Businesstheme mit Einstellmöglichkeiten für mehrere Spalten, Farben und verschiedenen Formaten. Dieses neue und eigenständige Theme basiert auf dem Webriti Wallstreet bzw. DJS-Wallstreet-Pro Theme und ist mit diesem kompatibel"
 
 #~ msgid "https://schuppelius.org"
 #~ msgstr "https://schuppelius.org/"
@@ -1858,8 +1836,7 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Externe Skripte laden"
 
 #~ msgid "No, I do not like to activate the external scripts on this page..."
-#~ msgstr ""
-#~ "Nein, ich möchte die externen Skripte auf dieser Seite nicht aktivieren..."
+#~ msgstr "Nein, ich möchte die externen Skripte auf dieser Seite nicht aktivieren..."
 
 #~ msgid "No external Skripts"
 #~ msgstr "Keine externen Skripte"
@@ -1879,23 +1856,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "messages"
 #~ msgstr "Nachrichten"
 
-#~ msgid ""
-#~ "This site uses third-party program code that may allow conclusions to be "
-#~ "drawn about your user behavior. Some of these program codes are loaded "
-#~ "from external servers. We use this code to determine what content is of "
-#~ "interest to you or to make the behavior and appearance of this website "
-#~ "more pleasant for you. Would you like to support us and unlock these "
-#~ "external scripts and styles? You can find more information about the use "
-#~ "of data on these websites on the following pages:"
-#~ msgstr ""
-#~ "Diese Seite verwendet Programmcode von Drittanbietern, der evtl. "
-#~ "Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen "
-#~ "Programmcodes werden von externen Servern geladen. Wir verwenden diesen "
-#~ "Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder "
-#~ "das Verhalten und Aussehen dieser Webseite für Sie angenehmer zu "
-#~ "gestalten. Möchten Sie uns dabei unterstützen und diese externen Skripte "
-#~ "und Styles freischalten? Auf den folgenden Seiten können Sie weitere "
-#~ "Informationen zur Datennutzung auf dieser Webseite einsehen:"
+#~ msgid "This site uses third-party program code that may allow conclusions to be drawn about your user behavior. Some of these program codes are loaded from external servers. We use this code to determine what content is of interest to you or to make the behavior and appearance of this website more pleasant for you. Would you like to support us and unlock these external scripts and styles? You can find more information about the use of data on these websites on the following pages:"
+#~ msgstr "Diese Seite verwendet Programmcode von Drittanbietern, der evtl. Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen Programmcodes werden von externen Servern geladen. Wir verwenden diesen Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder das Verhalten und Aussehen dieser Webseite für Sie angenehmer zu gestalten. Möchten Sie uns dabei unterstützen und diese externen Skripte und Styles freischalten? Auf den folgenden Seiten können Sie weitere Informationen zur Datennutzung auf dieser Webseite einsehen:"
 
 #~ msgid "Imprint"
 #~ msgstr "Impressum"
@@ -1904,8 +1866,7 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Datenschutzerklärung"
 
 #~ msgid "Do you have any further questions on this topic? Write me via the"
-#~ msgstr ""
-#~ "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
+#~ msgstr "Haben Sie weitere Fragen zu diesem Thema? Schreiben Sie mir über das"
 
 #~ msgid "contact"
 #~ msgstr "Kontakt"
@@ -1925,19 +1886,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Cookie settings"
 #~ msgstr "Cookieeinstellungen"
 
-#~ msgid ""
-#~ "This hidden content may leave traces of third-party vendors on your "
-#~ "computer when activated. Perhaps your user behavior could be analyzed via "
-#~ "these traces. Please confirm the execution of the content by clicking on "
-#~ "the button. On the following pages you can view further information on "
-#~ "the use of data on this website:"
-#~ msgstr ""
-#~ "Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von "
-#~ "Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte "
-#~ "Ihr Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte "
-#~ "best&auml;tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des "
-#~ "Buttons. Auf den folgenden Seiten k&ouml;nnen Sie weitere Informationen "
-#~ "zur Datennutzung auf dieser Website einsehen:"
+#~ msgid "This hidden content may leave traces of third-party vendors on your computer when activated. Perhaps your user behavior could be analyzed via these traces. Please confirm the execution of the content by clicking on the button. On the following pages you can view further information on the use of data on this website:"
+#~ msgstr "Diese versteckten Inhalte k&ouml;nnen bei Aktivierung Spuren von Drittanbietern auf Ihrem Computer hinterlassen. Vielleicht k&ouml;nnte Ihr Nutzerverhalten &uuml;ber diese Spuren analysiert werden. Bitte best&auml;tigen Sie die Ausf&uuml;hrung der Inhalte durch Anklicken des Buttons. Auf den folgenden Seiten k&ouml;nnen Sie weitere Informationen zur Datennutzung auf dieser Website einsehen:"
 
 #~ msgid "Cookietext before button"
 #~ msgstr "Mitteilung vor Cookie-Schaltfläche"
@@ -1948,61 +1898,21 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Buttontext"
 #~ msgstr "Schaltflächentext"
 
-#~ msgid ""
-#~ "Furthermore, you are aware that by activating the content, cookies can be "
-#~ "set by third parties. In addition, you are aware that your data "
-#~ "processing system interacts with the third-party service. This means that "
-#~ "information from your system is transmitted to the third-party provider. "
-#~ "If you follow the link below, cookies will probably also be set and data "
-#~ "exchanged on the target website."
-#~ msgstr ""
-#~ "Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte "
-#~ "Cookies von Dritten gesetzt werden können. Darüber hinaus ist Ihnen "
-#~ "bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst "
-#~ "interagiert. Das bedeutet, dass Informationen aus Ihrem System an den "
-#~ "Drittanbieter übermittelt werden. Wenn Sie dem untenstehenden Link "
-#~ "folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der "
-#~ "Zielwebsite ausgetauscht."
+#~ msgid "Furthermore, you are aware that by activating the content, cookies can be set by third parties. In addition, you are aware that your data processing system interacts with the third-party service. This means that information from your system is transmitted to the third-party provider. If you follow the link below, cookies will probably also be set and data exchanged on the target website."
+#~ msgstr "Des Weiteren ist Ihnen bekannt, dass durch die Aktivierung der Inhalte Cookies von Dritten gesetzt werden können. Darüber hinaus ist Ihnen bekannt, dass Ihr Datenverarbeitungssystem mit dem Drittanbieterdienst interagiert. Das bedeutet, dass Informationen aus Ihrem System an den Drittanbieter übermittelt werden. Wenn Sie dem untenstehenden Link folgen, werden wahrscheinlich auch Cookies gesetzt und Daten auf der Zielwebsite ausgetauscht."
 
 #~ msgid "Cookietext after button"
 #~ msgstr "Mitteilung nach Cookieschaltfläche"
 
 #, fuzzy
-#~| msgid ""
-#~| "This site uses third-party program code that may allow conclusions to be "
-#~| "drawn about your user behavior. Some of these program codes are loaded "
-#~| "from external servers. We use this code to determine what content is of "
-#~| "interest to you or to make the behavior and appearance of this website "
-#~| "more pleasant for you. Would you like to support us and unlock these "
-#~| "external scripts and styles? You can find more information about the use "
-#~| "of data on these websites on the following pages:"
-#~ msgid ""
-#~ "This site uses third-party program code that may allow conclusions to be "
-#~ "drawn about your user behavior. Some of these program codes are loaded "
-#~ "from external servers. We use this code to determine what content is of "
-#~ "interest to you or to make the behavior and appearance of this website "
-#~ "more pleasant for you.<br>Would you like to support us and unlock these "
-#~ "external scripts and styles? You can find more information about the use "
-#~ "of data on these websites on the following pages:"
-#~ msgstr ""
-#~ "Diese Seite verwendet Programmcode von Drittanbietern, der evtl. "
-#~ "Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen "
-#~ "Programmcodes werden von externen Servern geladen. Wir verwenden diesen "
-#~ "Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder "
-#~ "das Verhalten und Aussehen dieser Webseite für Sie angenehmer zu "
-#~ "gestalten. Möchten Sie uns dabei unterstützen und diese externen Skripte "
-#~ "und Styles freischalten? Auf den folgenden Seiten können Sie weitere "
-#~ "Informationen zur Datennutzung auf dieser Webseite einsehen:"
+#~ msgid "This site uses third-party program code that may allow conclusions to be drawn about your user behavior. Some of these program codes are loaded from external servers. We use this code to determine what content is of interest to you or to make the behavior and appearance of this website more pleasant for you.<br>Would you like to support us and unlock these external scripts and styles? You can find more information about the use of data on these websites on the following pages:"
+#~ msgstr "Diese Seite verwendet Programmcode von Drittanbietern, der evtl. Rückschlüsse auf Ihr Nutzerverhalten zulassen könnte. Einige von diesen Programmcodes werden von externen Servern geladen. Wir verwenden diesen Code, um festzustellen, welche Inhalte für Sie von Interesse sind oder das Verhalten und Aussehen dieser Webseite für Sie angenehmer zu gestalten. Möchten Sie uns dabei unterstützen und diese externen Skripte und Styles freischalten? Auf den folgenden Seiten können Sie weitere Informationen zur Datennutzung auf dieser Webseite einsehen:"
 
 #~ msgid "Our Clients"
 #~ msgstr "Unsere Kunden"
 
-#~ msgid ""
-#~ "Have a look at our clients we are growing their business and they are "
-#~ "going up in the market by beating their competitors."
-#~ msgstr ""
-#~ "Schau dir unseren Kundenstamm an. Wir erweitern ihr Unternehmen und sie "
-#~ "bewegen sich im Markt aufwärts und lassen ihre Konkurrenten hinter sich."
+#~ msgid "Have a look at our clients we are growing their business and they are going up in the market by beating their competitors."
+#~ msgstr "Schau dir unseren Kundenstamm an. Wir erweitern ihr Unternehmen und sie bewegen sich im Markt aufwärts und lassen ihre Konkurrenten hinter sich."
 
 #~ msgid "Client settings"
 #~ msgstr "Einstellungen (Kunden)"
@@ -2014,9 +1924,7 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Hintergrundbild"
 
 #~ msgid "Check to enable theme featured section on homepage"
-#~ msgstr ""
-#~ "Auswählen, um einen Bereich für Themefunktionen auf der Startseite zu "
-#~ "aktivieren"
+#~ msgstr "Auswählen, um einen Bereich für Themefunktionen auf der Startseite zu aktivieren"
 
 #~ msgid "Image Link"
 #~ msgstr "Bildlink"
@@ -2042,13 +1950,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Our Partners"
 #~ msgstr "Unsere Partner"
 
-#~ msgid ""
-#~ "Have a look at our partners we are growing their business and they are "
-#~ "going up in the market by beating their competitors."
-#~ msgstr ""
-#~ "Werfen Sie einen Blick auf unsere Partner, mit deren Hilfe bauen wir ihr "
-#~ "Geschäft aus und sie steigen auf dem Markt auf, indem sie ihre "
-#~ "Konkurrenten schlagen."
+#~ msgid "Have a look at our partners we are growing their business and they are going up in the market by beating their competitors."
+#~ msgstr "Werfen Sie einen Blick auf unsere Partner, mit deren Hilfe bauen wir ihr Geschäft aus und sie steigen auf dem Markt auf, indem sie ihre Konkurrenten schlagen."
 
 #~ msgid "Partner settings"
 #~ msgstr "Einstellungen (Partner)"
@@ -2143,15 +2046,11 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Enable service animation effect"
 #~ msgstr "Effekt \"Dienstanimation aktivieren\""
 
-#~ msgid ""
-#~ "This setting will work with only service design 1 and service design 6"
-#~ msgstr ""
-#~ "Diese Einstellung funktioniert nur mit Service Design 1 und Service "
-#~ "Design 6"
+#~ msgid "This setting will work with only service design 1 and service design 6"
+#~ msgstr "Diese Einstellung funktioniert nur mit Service Design 1 und Service Design 6"
 
 #~ msgid "Enable other services section in service template"
-#~ msgstr ""
-#~ "Bereich für weitere Dienstleistungen im Dienstleistungstemplate aktivieren"
+#~ msgstr "Bereich für weitere Dienstleistungen im Dienstleistungstemplate aktivieren"
 
 #~ msgid "Other services"
 #~ msgstr "Andere Dienstleistungen"
@@ -2279,20 +2178,11 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Note :"
 #~ msgstr "Hinweis:"
 
-#~ msgid ""
-#~ "By default, all the sections are enabled on the homepage. If you do not "
-#~ "want to display any section just drag that section to the disabled box."
-#~ msgstr ""
-#~ "Standardmäßig werden alle Bereiche auf der Startseite aktiviert. Falls du "
-#~ "einen Bereich nicht anzeigen willst, ziehe ihn mit der Maus in die "
-#~ "Deaktivieren-Box."
+#~ msgid "By default, all the sections are enabled on the homepage. If you do not want to display any section just drag that section to the disabled box."
+#~ msgstr "Standardmäßig werden alle Bereiche auf der Startseite aktiviert. Falls du einen Bereich nicht anzeigen willst, ziehe ihn mit der Maus in die Deaktivieren-Box."
 
-#~ msgid ""
-#~ "After changing the slug, please do not forget to save the permalinks. "
-#~ "Without saving, the old permalinks will not update."
-#~ msgstr ""
-#~ "Nach dem Ändern der Titelform bitte nicht vergessen, die Permalinks zu "
-#~ "speichern. Ohne zu Speichern werden diese nicht aktualisiert."
+#~ msgid "After changing the slug, please do not forget to save the permalinks. Without saving, the old permalinks will not update."
+#~ msgstr "Nach dem Ändern der Titelform bitte nicht vergessen, die Permalinks zu speichern. Ohne zu Speichern werden diese nicht aktualisiert."
 
 #~ msgid "Click here permalinks setting"
 #~ msgstr "Hier klicken für Permalink-Einstellungen"
@@ -2372,19 +2262,11 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Social Media Settings"
 #~ msgstr "Einstellungen (Soziale Medien)"
 
-#~ msgid ""
-#~ "Upload client image using feature image. Best fit scenario is using 130 X "
-#~ "130 px image."
-#~ msgstr ""
-#~ "Lade ein Bild des Kunden als Beitragsbild hoch. Empfohlen wird ein 130 x "
-#~ "130 px Bild."
+#~ msgid "Upload client image using feature image. Best fit scenario is using 130 X 130 px image."
+#~ msgstr "Lade ein Bild des Kunden als Beitragsbild hoch. Empfohlen wird ein 130 x 130 px Bild."
 
-#~ msgid ""
-#~ "Upload partner image using feature image. Best fit scenario is using 130 "
-#~ "X 130 px image."
-#~ msgstr ""
-#~ "Lade ein Bild des Partners als Beitragsbild hoch. Empfohlen wird ein 130 "
-#~ "x 130 px Bild."
+#~ msgid "Upload partner image using feature image. Best fit scenario is using 130 X 130 px image."
+#~ msgstr "Lade ein Bild des Partners als Beitragsbild hoch. Empfohlen wird ein 130 x 130 px Bild."
 
 #~ msgid "Add New"
 #~ msgstr "Hinzufügen"
@@ -2470,12 +2352,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "Portfolio Categories"
 #~ msgstr "Portfolio-Kategorien"
 
-#~ msgid ""
-#~ "Take a look at our partners. With their help, we expand your company and "
-#~ "leave your competitors behind."
-#~ msgstr ""
-#~ "Werfen Sie einen Blick auf unsere Partner. Mit ihrer Hilfe erweitern wir "
-#~ "Ihr Unternehmen und Sie lassen Ihre Mitbewerber hinter sich."
+#~ msgid "Take a look at our partners. With their help, we expand your company and leave your competitors behind."
+#~ msgstr "Werfen Sie einen Blick auf unsere Partner. Mit ihrer Hilfe erweitern wir Ihr Unternehmen und Sie lassen Ihre Mitbewerber hinter sich."
 
 #~ msgid "Meet our"
 #~ msgstr "Das ist unser"
@@ -2484,7 +2362,6 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Tolles Team"
 
 #, fuzzy
-#~| msgid "Callout button"
 #~ msgid "Enable button"
 #~ msgstr "Callout-Button"
 
@@ -2495,7 +2372,6 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Soziale Links Einstellungen"
 
 #, fuzzy
-#~| msgid "Enable Callout area section"
 #~ msgid "Enable cta section"
 #~ msgstr "Callout-Bereich aktivieren"
 
@@ -2528,12 +2404,10 @@ msgstr "Alle Funktionen ansehen"
 #~ msgstr "Blog Seitenleiste rechts"
 
 #, fuzzy
-#~| msgid "Portfolio Categories"
 #~ msgid "Portfolio Category Title"
 #~ msgstr "Portfolio-Kategorien"
 
 #, fuzzy
-#~| msgid "Service callout settings"
 #~ msgid "Scroll to top settings"
 #~ msgstr "Dienstleistung-Callout-Einstellungen"
 
@@ -2552,12 +2426,8 @@ msgstr "Alle Funktionen ansehen"
 #~ msgid "GooglePlus URL"
 #~ msgstr "GooglePlus URL"
 
-#~ msgid ""
-#~ "Oops! No Portfolio Found! Please add a Portfolio Using the Portfolios / "
-#~ "Projects section."
-#~ msgstr ""
-#~ "Oops! Kein Portfolio gefunden! Bitte füge ein Portfolio hinzu, indem du "
-#~ "den Portfolios/Projekte-Bereich benutzt."
+#~ msgid "Oops! No Portfolio Found! Please add a Portfolio Using the Portfolios / Projects section."
+#~ msgstr "Oops! Kein Portfolio gefunden! Bitte füge ein Portfolio hinzu, indem du den Portfolios/Projekte-Bereich benutzt."
 
 #~ msgid "About Us"
 #~ msgstr "Über Uns"

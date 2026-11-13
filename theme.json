@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.3/theme.json",
+    "version": 3,
+    "settings": {
+        "appearanceTools": true,
+        "useRootPaddingAwareAlignments": false,
+        "layout": {
+            "contentSize": "48rem",
+            "wideSize": "80rem"
+        },
+        "color": {
+            "defaultPalette": true,
+            "palette": [
+                { "slug": "theme-primary", "color": "#2793ff", "name": "Theme: Primary" },
+                { "slug": "theme-accent", "color": "#00c2a9", "name": "Theme: Accent" },
+                { "slug": "theme-dark", "color": "#1c1d22", "name": "Theme: Dark" },
+                { "slug": "theme-surface-dark", "color": "#24262d", "name": "Theme: Surface dark" },
+                { "slug": "theme-light", "color": "#f3f4f7", "name": "Theme: Light" },
+                { "slug": "theme-text-light", "color": "#e6e7ea", "name": "Theme: Text on dark" }
+            ]
+        },
+        "typography": {
+            "fluid": true,
+            "fontFamilies": [
+                { "slug": "site", "name": "Site font", "fontFamily": "SiteFont, ui-sans-serif, system-ui, sans-serif" },
+                { "slug": "mono", "name": "Monospace", "fontFamily": "AnonymousPro, ui-monospace, Menlo, Consolas, monospace" }
+            ]
+        },
+        "spacing": {
+            "units": ["px", "em", "rem", "%", "vw", "vh"]
+        }
+    }
+}
