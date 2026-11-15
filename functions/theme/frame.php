@@ -53,20 +53,20 @@ function djs_html_theme_attr(): void {
  */
 function djs_head_prefs_script(): void {
     $color_toggle = djs_color_mode_toggle_enabled(); ?>
-    <script>
-        (function (d) {
-            d.classList.add("js");
-            try {
-                var f = parseFloat(localStorage.getItem("fontSize"));
-                if (f >= 10 && f <= 30) d.style.fontSize = f + "px";
-                <?php if ($color_toggle) { ?>
-                var m = localStorage.getItem("djs-color-mode");
-                if (m === "light" || m === "dark") d.setAttribute("data-theme", "wallstreet-" + m);
-                else if (m === "auto") d.removeAttribute("data-theme");
-                <?php } ?>
-            } catch (e) {}
-        })(document.documentElement);
-    </script>
+<script>
+(function(d) {
+    d.classList.add("js");
+    try {
+        var f = parseFloat(localStorage.getItem("fontSize"));
+        if (f >= 10 && f <= 30) d.style.fontSize = f + "px";
+        <?php if ($color_toggle) { ?>
+        var m = localStorage.getItem("djs-color-mode");
+        if (m === "light" || m === "dark") d.setAttribute("data-theme", "wallstreet-" + m);
+        else if (m === "auto") d.removeAttribute("data-theme");
+        <?php } ?>
+    } catch (e) {}
+})(document.documentElement);
+</script>
 <?php }
 add_action('wp_head', 'djs_head_prefs_script', 1);
 
@@ -82,17 +82,20 @@ add_action('wp_head', 'djs_head_prefs_script', 1);
  *          stacked = Logo-Zeile oben, Menueleiste darunter
  *  brand   Ausrichtung des Logos in der oberen Zeile (stacked)
  *  menu    Ausrichtung des Menues
- *  style   Hervorhebung der Menuepunkte (pill = Flaeche, underline = Linie)
+ *  style   Hervorhebung der Menuepunkte (tab = Reiter in Themefarbe, text = nur Schrift)
  *  float   Header als schwebende, abgerundete Leiste
  */
 function djs_header_preset(?int $preset = null): array {
     $presets = [
-        1 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'pill', 'float' => false],
-        2 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'underline', 'float' => false],
-        3 => ['layout' => 'stacked', 'brand' => 'start', 'menu' => 'start', 'style' => 'underline', 'float' => false],
-        4 => ['layout' => 'stacked', 'brand' => 'center', 'menu' => 'start', 'style' => 'pill', 'float' => false],
-        5 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'pill', 'float' => true],
-        6 => ['layout' => 'stacked', 'brand' => 'center', 'menu' => 'center', 'style' => 'underline', 'float' => false],
+        // Werte wie die bisherigen header-1 ... header-6:
+        // style "tab"  = aktiver Punkt als Reiter in Themefarbe ueber die volle Leistenhoehe,
+        //       "text" = nur Schrift in Themefarbe; "slant" = schraeges Logofeld in Themefarbe
+        1 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'tab', 'float' => false, 'slant' => false],
+        2 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'tab', 'float' => false, 'slant' => false],
+        3 => ['layout' => 'stacked', 'brand' => 'start', 'menu' => 'start', 'style' => 'text', 'float' => false, 'slant' => false],
+        4 => ['layout' => 'stacked', 'brand' => 'center', 'menu' => 'start', 'style' => 'tab', 'float' => false, 'slant' => false],
+        5 => ['layout' => 'inline', 'brand' => 'start', 'menu' => 'end', 'style' => 'tab', 'float' => false, 'slant' => true],
+        6 => ['layout' => 'stacked', 'brand' => 'center', 'menu' => 'center', 'style' => 'tab', 'float' => false, 'slant' => false],
     ];
 
     if ($preset === null) {
@@ -180,6 +183,9 @@ add_filter('body_class', static function (array $classes): array {
     }
     if ($current_setup->get('a_underlined')) {
         $classes[] = 'a_underlined';
+    }
+    if ($current_setup->get('scrollbar_always_enabled')) {
+        $classes[] = 'scrollbar-always';
     }
     if ($current_setup->get('a_mark_targets')) {
         $classes[] = 'a_mark_targets';

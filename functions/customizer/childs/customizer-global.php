@@ -185,6 +185,20 @@ class theme_global_customizer extends Theme_Customizer {
             "priority" => 100,
         ]);
 
+        $wp_customize->add_setting($this->theme_options_name . "[scrollbar_always_enabled]", [
+            "default" => true,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_text_field",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[scrollbar_always_enabled]", [
+            "label" => esc_html__("Always show the scrollbar (the layout does not jump between short and long pages)", "djs-wallstreet-pro"),
+            "section" => "themeoptions_section_settings",
+            "type" => "checkbox",
+            "priority" => 100,
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[contextmenu_enabled]", [
             "default" => true,
             "capability" => "edit_theme_options",
@@ -338,7 +352,7 @@ class theme_global_customizer extends Theme_Customizer {
             "input_attrs" => [
                 "min" => "-300",
                 "step" => "1",
-                "max" => "90",
+                "max" => "250",
             ],
             "priority" => 600,
             "sanitize_callback" => "sanitize_text_field",
@@ -357,7 +371,7 @@ class theme_global_customizer extends Theme_Customizer {
             "input_attrs" => [
                 "min" => "-380",
                 "step" => "1",
-                "max" => "210",
+                "max" => "380",
             ],
             "priority" => 600,
             "sanitize_callback" => "sanitize_text_field",

@@ -1,0 +1,3069 @@
+/*
+ * Glas-Design - die Grundidee des Themes
+ *
+ * Seit den ersten Versionen praegen diese Elemente DJS-Wallstreet-Pro; v3 behaelt sie bei
+ * und setzt sie mit Tailwind/daisyUI sauberer um:
+ *
+ *   - Topbar in Themefarbe, Header als Glasleiste ueber Banner und Slider
+ *   - Menue-Reiter in Themefarbe ueber die volle Leistenhoehe (Header-Stile 1/3/4/6)
+ *   - Banner und Slider mit elliptisch gerundeter Unterkante (Customizer "Round Corner Value")
+ *   - Brotkruemel als Glasbalken quer ueber das Banner
+ *   - Inhalt in einem Glasrahmen mit dunkler Kante (Customizer "Rahmen auf Seiten" /
+ *     "Grosser Rahmen"), darin Inhaltsflaechen und eine durchgehende Sidebar
+ *   - Datums-Plakette und Format-LED an Beitraegen
+ *   - Trennlinie mit Raute unter Abschnittsueberschriften
+ *   - Glanz-Buttons mit Icon-Segment
+ *   - Kacheln mit dunkler Kante und asymmetrischer Rundung auf der Startseite
+ *   - Glas-Footer mit dunkler Oberkante
+ *
+ * Farben und Staerken kommen aus tokens.css (--glass-*), getrennt fuer helles/dunkles Schema.
+ */
+@layer utilities {
+    /* ---------------------------------------------------------------- */
+    /*  Scrollleiste wie bisher: dunkle Spur, Daumen in Themefarbe       */
+    /* ---------------------------------------------------------------- */
+    /* Customizer "Scrollleiste immer anzeigen": auch kurze Seiten haben sie - nichts springt.
+       Offene Dialoge sperren das Scrollen weiterhin (daisyUI). */
+    :root:has(> body.scrollbar-always):not(:has(.modal[open], .modal-open, .modal:target, .modal-toggle:checked)) {
+        overflow-y: scroll;
+    }
+
+    :root {
+        scrollbar-color: var(--color-primary) var(--scrollbar-track, #404040);
+    }
+
+    /* Chromium/Safari: die eigene Form (schmaler, abgerundeter Daumen mit Innenschatten) */
+    @supports selector(::-webkit-scrollbar) {
+        :root {
+            scrollbar-color: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.75em;
+            height: 0.75em;
+            background-color: var(--scrollbar-track, #404040);
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 0;
+            background-color: var(--scrollbar-track, #404040);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 0.25em;
+            background-color: var(--color-primary);
+            box-shadow: inset 0 0 10px rgb(0 0 0 / 0.5);
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Topbar                                                          */
+    /* ---------------------------------------------------------------- */
+    .site-topbar {
+        background: linear-gradient(180deg, color-mix(in oklab, var(--color-primary) 90%, #fff), var(--color-primary));
+        color: var(--color-primary-content);
+        /* keine Unterkante: der aktive Menuereiter schliesst nahtlos an die Topbar an (wie bisher) */
+    }
+
+    .site-topbar__inner {
+        min-height: 3rem;
+        padding-block: 0;
+    }
+
+    .site-topbar__contact a,
+    .site-topbar__contact i,
+    .site-topbar__contact a:hover {
+        color: inherit;
+    }
+
+    .site-topbar .social-links {
+        gap: 0;
+    }
+
+    .site-topbar .social-links__link {
+        width: 2.875rem;
+        height: 3rem;
+        border-radius: 0;
+        border-inline-start: 1px solid rgb(255 255 255 / 0.5);
+        color: inherit;
+        transition: background-color 0.2s ease;
+    }
+
+    .site-topbar .social-links > li:last-child .social-links__link {
+        border-inline-end: 1px solid rgb(255 255 255 / 0.5);
+    }
+
+    /* Wie bisher: beim Ueberfahren weisses Feld mit Symbol in Themefarbe */
+    .site-topbar .social-links__link:hover,
+    .site-topbar .social-links__link:focus-visible {
+        background-color: #fff;
+        color: var(--color-primary);
+        transform: none;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Header: Glasleiste                                              */
+    /* ---------------------------------------------------------------- */
+    .site-header {
+        background: var(--glass-header);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+    }
+
+    /* Verkleinert: deckender, Linie in Themefarbe (als Schatten - aendert die Hoehe nicht) */
+    .site-header.is-scrolled {
+        background: var(--glass-header-scrolled);
+        box-shadow:
+            inset 0 -4px 0 var(--color-primary),
+            0 14px 30px -16px rgb(0 0 0 / 0.75);
+    }
+
+    /* Banner und Slider liegen unter dem Header (Hoehe misst header.php/theme.js) */
+    .page-banner,
+    .hero-slider,
+    .hero-revslider {
+        margin-top: calc(-1 * var(--header-h, 0px));
+    }
+
+    /* Aufklappmenues und Panels: dunkles bzw. helles Glas */
+    .site-menu .sub-menu,
+    .site-popover__panel {
+        background: var(--glass-popover);
+        border-color: var(--glass-shine);
+    }
+
+    /* Aufgeklapptes Handy-Menue: deckend (ein Blur wirkt innerhalb des Glas-Headers nicht) */
+    @media (width < 70rem) {
+        .site-header--inline .site-nav,
+        .site-header--stacked.nav-open .site-header__menubar {
+            background: linear-gradient(var(--glass-popover), var(--glass-popover)) var(--color-base-200);
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Menue-Reiter (Header-Stile 1, 3, 4, 6)                          */
+    /* ---------------------------------------------------------------- */
+    /* Flach in Themefarbe und buendig mit der Leistenkante: beim verkleinerten Header geht
+       der Reiter nahtlos in die Linie ueber. */
+    @media (width >= 70rem) {
+        .site-header--tab.site-header--inline .site-header__inner {
+            align-items: stretch;
+            gap: 0;
+            min-height: 6.25rem;
+            padding-block: 0;
+        }
+
+        /* Beim Verkleinern nie hoeher als die Ausgangsleiste (das Logo schrumpft erst mit der
+           Animation - ohne Grenze wuerde die Leiste kurz auf Logohoehe wachsen) */
+        .site-header--tab.site-header--inline.is-scrolled .site-header__inner {
+            min-height: 0;
+            max-height: 6.25rem;
+        }
+
+        /* Leiste 100px wie bisher; ein hoeheres Logo darf ueberstehen */
+        .site-header--tab.site-header--inline:not(.is-scrolled) .site-header__inner {
+            height: 6.25rem;
+        }
+
+        .site-header--tab.site-header--inline :is(.site-header__brand, .site-header__tools) {
+            align-self: center;
+        }
+
+        /* Das Logo gibt nach, das Menue bricht nie um */
+        .site-header--tab.site-header--inline .site-header__brand {
+            flex: 0 1 auto;
+            margin-inline-end: 1rem;
+        }
+
+        /* Gilt fuer alle einzeiligen Header: Menue in einer Zeile, das Logo gibt nach */
+        .site-header--inline .site-nav {
+            flex: none;
+        }
+
+        .site-header--inline .site-menu {
+            flex-wrap: nowrap;
+        }
+
+        .site-header--inline .site-menu__link {
+            white-space: nowrap;
+        }
+
+        .site-header--tab .site-nav {
+            display: flex;
+            flex: none;
+            align-items: stretch;
+        }
+
+        .site-header--tab .site-menu {
+            flex-wrap: nowrap;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .site-header--tab.site-header--stacked .site-menu {
+            min-height: 3.25rem;
+            padding-block: 0;
+        }
+
+        .site-header--tab .site-menu > li {
+            display: flex;
+            align-items: center;
+            border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+            transition: background-color 0.2s ease;
+        }
+
+        /* Menuetext wie bisher: dunkles Schema reinweiss, helles Schema #32343c */
+        .site-header--tab .site-menu > li > .site-menu__link,
+        .site-header--tab .site-menu > li > .site-menu__row > .site-menu__link {
+            color: var(--menu-link);
+            padding-inline: clamp(0.75rem, 1.2vw, 1.1875rem);
+            border-radius: 0;
+            background: none;
+            white-space: nowrap;
+        }
+
+        .site-header--tab .site-menu > li:is(.active, :hover, .is-open, :has(> .site-menu__link:focus-visible, > .site-menu__row :focus-visible)) {
+            background-color: var(--color-primary);
+        }
+
+        /* Wie bisher: der Reiter wirft einen Schatten, oben waechst eine dunklere Linie aus der Mitte */
+        .site-header--tab .site-menu > li {
+            position: relative;
+        }
+
+        .site-header--tab .site-menu > li:is(.active, :hover, .is-open) {
+            box-shadow: 0 10px 13px -7px #000;
+        }
+
+        .site-header--tab .site-menu > li::after {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 1px;
+            background: var(--link-color_reduced-70, color-mix(in srgb, var(--color-primary) 70%, #000));
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out 0.2s;
+            pointer-events: none;
+        }
+
+        .site-header--tab .site-menu > li:hover::after {
+            transform: scaleX(1);
+        }
+
+        .site-header--tab .site-menu > li:is(.active, :hover, .is-open, :has(> .site-menu__link:focus-visible, > .site-menu__row :focus-visible)) > :is(.site-menu__link, .site-menu__row),
+        .site-header--tab .site-menu > li:is(.active, :hover, .is-open, :has(> .site-menu__link:focus-visible, > .site-menu__row :focus-visible)) > .site-menu__row > * {
+            color: var(--color-primary-content);
+        }
+
+        .site-header--tab.is-scrolled .site-menu > li {
+            border-radius: 0;
+        }
+
+        .site-header--tab .site-menu > li > .sub-menu {
+            top: 100%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .site-header--tab.site-header--inline .site-header__tools {
+            margin-inline-start: 0.5rem;
+        }
+    }
+
+    /* Menue-Knopf (schmal): blauer Knopf "Menue" wie bisher */
+    @media (width < 70rem) {
+        .site-header__toggle.btn {
+            gap: 0.4rem;
+            min-height: 2.25rem;
+            height: 2.25rem;
+            padding-inline: 0.7rem 0.85rem;
+            border: 1px solid rgb(0 0 0 / 0.18);
+            border-radius: var(--radius-field);
+            background-image:
+                linear-gradient(180deg, rgb(255 255 255 / 0.15) 50%, rgb(255 255 255 / 0) 50%),
+                linear-gradient(90deg, color-mix(in oklab, var(--color-primary) 72%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--color-primary) 80%, transparent));
+            background-size: auto;
+            color: var(--color-primary-content);
+            font-weight: 400;
+            text-shadow: 0 1px 1px rgb(24 25 27 / 0.9);
+        }
+
+        .site-header__toggle .site-header__toggle-label {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            clip: auto;
+        }
+
+        .site-header__toggle .site-header__burger {
+            width: 1rem;
+            height: 0.75rem;
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Header-Stile 3, 4, 6 (gestapelt) und 5 (schraeges Logofeld)      */
+    /* ---------------------------------------------------------------- */
+    @media (width >= 70rem) {
+        /* Menueleiste unter dem Logo: dunkler als die Logozeile */
+        .site-header--stacked .site-header__menubar {
+            border-top: 0;
+            background: rgb(0 0 0 / 0.6);
+        }
+
+        .header-style-3 .site-header__menubar {
+            background: #000;
+        }
+
+        /* Stil 4: Menueleiste mit Reitern in voller Hoehe wie die einzeiligen Header */
+        .header-style-4:not(.is-scrolled) .site-menu {
+            min-height: 6.25rem;
+        }
+
+        /* Stil 5: Logofeld in Themefarbe mit schraeger Kante, daneben ein dunkler Streifen */
+        .site-header--slant .site-header__brand {
+            position: relative;
+            z-index: 0;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            padding-inline-end: 1.5rem;
+        }
+
+        .site-header--slant .site-header__brand::before,
+        .site-header--slant .site-header__brand::after {
+            content: "";
+            position: absolute;
+            inset-block: 0;
+            z-index: -1;
+            transform: skewX(-25deg);
+            transform-origin: bottom;
+        }
+
+        .site-header--slant .site-header__brand::before {
+            left: -100vw;
+            right: -1rem;
+            background: var(--color-primary);
+        }
+
+        .site-header--slant .site-header__brand::after {
+            right: -2.25rem;
+            width: 0.625rem;
+            background: #21202e;
+        }
+
+        .site-header--slant .site-header__inner {
+            min-height: 6.25rem;
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Seitenbanner: elliptische Unterkante, Glasbalken                */
+    /* ---------------------------------------------------------------- */
+    .page-banner {
+        /* Hoehe wie bisher aus dem Header-Bild: volle Seitenbreite (--page-w aus theme.js, ohne
+           Scrollbalken) im Seitenverhaeltnis des Bildes (--banner-ratio aus index-banner.php),
+           hoechstens 630px, darunter die 20px dunkle Kante. Ab 1200px liegt der Header auf dem Bild. */
+        --banner-img-h: min(630px, var(--page-w, 100vw) * var(--banner-ratio, 0.38125));
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        min-height: calc(var(--banner-img-h) + 20px);
+        padding-top: var(--header-h, 0px);
+        /* Brotkruemel sitzen ueber der Rundung; Customizer "Breadcrumb-Position" hebt sie weiter an.
+           Die 20px dunkle Unterkante (wie beim Slider) zaehlt dabei mit - wie bisher. */
+        padding-bottom: max(0px, calc(var(--main-slider-radius, 0px) + var(--breadcrumb-offset, 0px) - 20px));
+        border-bottom: 20px solid var(--section-edge);
+        border-radius: 0 0 50% 50% / 0 0 var(--main-slider-radius, 0px) var(--main-slider-radius, 0px);
+        box-shadow:
+            0 7px 10px -10px #000,
+            0 26px 40px -30px rgb(0 0 0 / 0.8);
+    }
+
+    /* Schmaler (bisher stand der Header ueber dem Bild statt darauf): das Bild beginnt unter dem
+       Header und bleibt vollstaendig sichtbar */
+    @media (width < 75rem) {
+        .page-banner {
+            min-height: calc(var(--header-h, 0px) + var(--banner-img-h) + 20px);
+        }
+
+        .page-banner__media {
+            top: var(--header-h, 0px);
+        }
+    }
+
+    /* Bis 1300px wie bisher ohne Rundung und ohne die Customizer-Positionen: Brotkruemel am
+       unteren Bildrand, Inhalt 80px (Handy 15px) unter dem Banner */
+    @media (width <= 81.25rem) {
+        .page-banner {
+            --main-slider-radius: 0px;
+        }
+
+        .custom-positions:not(.home) {
+            --breadcrumb-offset: 0px;
+            --content-offset: -80px;
+        }
+    }
+
+    @media (width < 48rem) {
+        .custom-positions:not(.home) {
+            --content-offset: -15px;
+        }
+    }
+
+    /* Topbar, Header, Bannertext und Brotkruemel fluchten mit der Aussenkante des Inhaltsrahmens */
+    .site-topbar__inner,
+    .site-header__inner,
+    .site-header__menubar > .site-wrap,
+    .page-banner .site-wrap {
+        width: calc(100% - 2 * clamp(0.5rem, 2.5vw, 2rem));
+        padding-inline: 0;
+    }
+
+    /* Wie bisher (Bootstrap-Container): Topbar und Brotkruemel 15px eingerueckt, das Logo ebenso,
+       das Menue reicht bis an die Kante; nur der Bannertitel steht an der Rahmenkante */
+    .site-topbar__inner,
+    .page-breadcrumbs .site-wrap {
+        padding-inline: 0.9375rem;
+    }
+
+    .site-header__inner {
+        padding-inline-start: 0.9375rem;
+    }
+
+    .page-breadcrumbs .breadcrumbs > ol {
+        padding-inline-start: 0;
+    }
+
+    .page-banner::after {
+        background: linear-gradient(180deg, rgb(0 0 0 / 0.28) 0%, rgb(0 0 0 / 0) 38%, rgb(0 0 0 / 0) 70%, rgb(0 0 0 / 0.3) 100%);
+    }
+
+    /* Titel senkrecht mittig zwischen Header und Brotkruemel-Balken */
+    .page-banner__content {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+        padding-block: 1.25rem;
+    }
+
+    .page-banner__title {
+        margin: 0;
+        font-size: clamp(2rem, 1.4rem + 2.2vw, 3rem);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-shadow:
+            var(--text-outline-dark),
+            0 2px 24px rgb(0 0 0 / 0.35);
+    }
+
+    .page-breadcrumbs {
+        position: relative;
+        z-index: 1;
+        background: var(--crumb-bg);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border-block: 1px solid rgb(255 255 255 / 0.07);
+        color: var(--color-primary);
+        font-size: 0.9rem;
+    }
+
+    .page-breadcrumbs .breadcrumbs {
+        padding-block: 1.25rem;
+        text-shadow: var(--crumb-shadow);
+    }
+
+    .page-breadcrumbs .breadcrumbs > ol > li + *::before {
+        content: "\00BB";
+        width: auto;
+        height: auto;
+        margin-inline: 0.5rem;
+        border: 0;
+        rotate: none;
+        opacity: 1;
+        color: var(--crumb-accent);
+        font-weight: 700;
+    }
+
+    .page-breadcrumbs a {
+        color: var(--crumb-link);
+    }
+
+    .page-breadcrumbs a:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .page-breadcrumbs .material-icons-outlined {
+        color: var(--crumb-accent);
+    }
+
+    .page-breadcrumbs [aria-current] {
+        color: var(--color-primary);
+        font-weight: 400;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Startseiten-Slider (eigener und Slider Revolution)              */
+    /* ---------------------------------------------------------------- */
+    .hero-slider,
+    .hero-revslider {
+        overflow: hidden;
+        background: var(--glass-band);
+        border-bottom: 20px solid var(--section-edge);
+        border-radius: 0 0 50% 50% / 0 0 var(--main-slider-radius, 0px) var(--main-slider-radius, 0px);
+        box-shadow: 0 10px 13px -7px #000;
+    }
+
+    /* Hoehe wie der Revolution Slider der Live-Seite: ab Desktop-Breite fest 750px inkl. Header
+       (unabhaengig von der Bildschirmbreite), darunter gleitend kleiner (~700px bei 768px);
+       schmal mindestens Header + Platz fuer die Beschriftung */
+    .hero-slide {
+        min-height: max(calc(var(--header-h, 0px) + 16rem), min(46.875rem, calc(2.5rem + 85vw)));
+    }
+
+    /* Bild ohne dunklen Schleier, nur oben etwas Kontrast fuer den Glas-Header */
+    .hero-slide::after {
+        background: linear-gradient(180deg, rgb(0 0 0 / 0.3) 0%, rgb(0 0 0 / 0) 35%);
+    }
+
+    /* Beschriftung senkrecht mittig im sichtbaren Bild (zwischen Header und Rundung):
+       Stichwort gross und leicht, Titel zwischen zwei Linien, Text */
+    .hero-slide__caption {
+        container-type: inline-size;
+        align-items: center;
+        padding-block: calc(var(--header-h, 0px) + 1.5rem) calc(1.5rem + var(--sub-slider-radius, 0px) * 0.5);
+        text-align: center;
+        text-shadow: var(--text-outline-dark);
+    }
+
+    .hero-slide__caption .site-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-slide__caption .site-wrap > * {
+        max-width: 100%;
+    }
+
+    /* Der Titel laeuft nie unter die seitlichen Pfeile: hoechstens bis zu deren Innenkante breit
+       (100cqw = volle Bildbreite, die Pfeile stehen am Bildrand); umbrochene Titel ausgewogen */
+    .hero-slide__caption .site-wrap > .hero-slide__title {
+        max-width: min(100%, calc(100cqw - 2 * (var(--hero-arrow-x) + var(--hero-arrow-size) + 0.5rem)));
+        text-wrap: balance;
+    }
+
+    /* Luftig gesetzt: eigene Zeilenhoehen, die Linien mit Abstand zum Titel */
+    .hero-slide__eyebrow {
+        margin: 0 0 1.5rem;
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        color: #fff;
+        font-size: clamp(2rem, 1.2rem + 3vw, 3.75rem);
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: 1.25;
+    }
+
+    .hero-slide__title {
+        display: inline-block;
+        padding-block: 0.14em 0.1em;
+        border-block: 2px solid #fff;
+        /* hoechstens 72px: auch lange Titel bleiben im 1140px-Rahmen einzeilig, alle Slides gleich hoch */
+        font-size: clamp(2.25rem, 1.2rem + 4.2vw, 4.5rem);
+        font-weight: 500;
+        line-height: 1.15;
+        text-shadow: var(--text-outline-dark);
+    }
+
+    .hero-slide__text {
+        margin-top: 1.75rem;
+        color: #fff;
+        font-size: clamp(1.0625rem, 0.9rem + 0.7vw, 1.5rem);
+        line-height: 1.5;
+    }
+
+    /* Bedienung: runde Pfeile seitlich (wie bisher), Pause-Knopf klein unten rechts;
+       auf sehr schmalen Bildschirmen kleiner und naeher am Rand, damit der Titel Platz behaelt */
+    .carousel--hero {
+        --hero-arrow-x: clamp(0.75rem, 3.5vw, 3.125rem);
+        --hero-arrow-size: 3.125rem;
+    }
+
+    @media (width < 30rem) {
+        .carousel--hero {
+            --hero-arrow-x: 0.375rem;
+            --hero-arrow-size: 2.5rem;
+        }
+    }
+
+    .carousel--hero .carousel__controls {
+        position: absolute;
+        inset: var(--header-h, 0px) 0 calc(var(--sub-slider-radius, 0px) * 0.5) 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .carousel--hero .carousel__controls > * {
+        pointer-events: auto;
+    }
+
+    .carousel--hero .carousel__dots {
+        display: none;
+    }
+
+    .carousel--hero :is(.carousel__prev, .carousel__next) {
+        --btn-color: rgb(0 0 0 / 0.8);
+        --btn-fg: #fff;
+        position: absolute;
+        top: 50%;
+        width: var(--hero-arrow-size);
+        height: var(--hero-arrow-size);
+        border: 0;
+        opacity: 0.5;
+        translate: 0 -50%;
+        backdrop-filter: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .carousel--hero .carousel__prev {
+        left: var(--hero-arrow-x);
+    }
+
+    .carousel--hero .carousel__next {
+        right: var(--hero-arrow-x);
+    }
+
+    .carousel--hero :is(.carousel__prev, .carousel__next) .material-icons {
+        font-size: 2rem;
+    }
+
+    .carousel--hero:is(:hover, :focus-within) :is(.carousel__prev, .carousel__next) {
+        opacity: 0.85;
+    }
+
+    .carousel--hero :is(.carousel__prev, .carousel__next):is(:hover, :focus-visible) {
+        opacity: 1;
+    }
+
+    .carousel--hero .carousel__pause {
+        --btn-color: rgb(0 0 0 / 0.5);
+        --btn-fg: #fff;
+        position: absolute;
+        right: clamp(0.75rem, 3.5vw, 3.125rem);
+        bottom: 0.75rem;
+        border: 0;
+        opacity: 0.6;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Glasrahmen um Inhalt + Sidebar                                  */
+    /* ---------------------------------------------------------------- */
+    .has-frame .page-shell {
+        position: relative;
+        z-index: 2;
+        width: calc(100% - 2 * clamp(0.5rem, 2.5vw, 2rem));
+        margin-top: calc(0px - var(--content-offset, 0px));
+        margin-bottom: 0;
+        /* wie bisher: 10px Innenabstand und 10px zwischen Inhalt und Seitenleiste */
+        padding: 0.625rem;
+        gap: 0.625rem;
+        background-color: var(--glass-frame);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border-radius: var(--radius-box);
+        box-shadow:
+            var(--glass-drop),
+            inset 0 1px 0 var(--glass-shine);
+    }
+
+    .has-frame.has-bigborder .page-shell {
+        border: var(--bigborder) solid var(--glass-edge);
+    }
+
+    /* Ueber uns: der Textrahmen folgt dem Bildrahmen mit 20px Abstand (statt ueber das Bild zu rutschen) */
+    .has-frame :is(.about-hero, .media-hero) + .page-shell {
+        margin-top: 1.25rem;
+    }
+
+    /* Bild zoomt beim Ueberfahren (wie bisher) */
+    .about-hero__img {
+        transition: transform 300ms ease-out;
+    }
+
+    .about-hero:hover .about-hero__img {
+        transform: scale(1.2);
+    }
+
+    .has-frame .page-shell :is(.layout__main, .layout__sidebar) {
+        gap: 0.625rem;
+    }
+
+    /* Zwischen den Beitraegen derselbe 10px-Abstand wie ueberall im Rahmen (wie bisher) */
+    .has-frame .page-shell .post-list {
+        gap: 0.625rem;
+    }
+
+    .has-frame .page-shell .post-list--masonry > .post-card {
+        margin-bottom: 0.625rem;
+    }
+
+    /* Kacheln ausserhalb des Rahmens (Startseite, Kontakt ...) */
+    .has-frame :is(.surface-card, .with_background) {
+        background-color: var(--glass-tile);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border: 1px solid var(--glass-shine);
+        border-radius: var(--radius-box);
+        box-shadow:
+            var(--tile-drop),
+            inset 0 1px 0 var(--glass-shine);
+    }
+
+    .has-frame.has-bigborder :is(.surface-card, .with_background) {
+        border: var(--bigborder) solid var(--glass-edge);
+        border-radius: var(--radius-big);
+    }
+
+    /* Inhaltsflaechen im Rahmen: deckender, kleine Rundung, kein eigener Blur */
+    .has-frame .page-shell :is(.surface-card, .with_background) {
+        background-color: var(--glass-panel);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        border-radius: var(--radius-panel);
+        box-shadow: inset 0 1px 0 var(--glass-shine);
+    }
+
+    /* Beitragsliste neben der Seitenleiste wie bisher: ab dem zweiten Beitrag liegt oben ein
+       Schatten - die Flaeche beginnt fast durchsichtig und ist nach 120px deckend. Der Verlauf
+       ist breiter als die Kachel, damit er wandern kann (siehe unten). */
+    .has-frame .page-shell.layout:not(.layout--sidebar-none) .post-list > .post-card.type-post:not(:first-child) {
+        background-color: transparent;
+        background-image: linear-gradient(184deg, var(--post-shade-from) 0%, var(--post-shade-to) 120px);
+        background-size: 150% 100%;
+        background-position: 50% 0;
+    }
+
+    /* Der Schatten wandert wie bisher zweimal hin und her, je Kachel unterschiedlich lang:
+       theme.js setzt die Dauer zufaellig auf 2-7s, sobald die Kachel ins Bild kommt (nur bei
+       ausreichender Leistung und ohne "Bewegung reduzieren") */
+    .post-card.has-shade-shift {
+        animation: shade-shift var(--shade-duration, 2s) ease-in-out 2;
+    }
+
+    /* zusammen mit dem Einblenden beim Scrollen (.reveal), das sonst ueberschrieben wuerde */
+    @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+            .post-card.reveal.has-shade-shift {
+                animation:
+                    fade-up linear both,
+                    shade-shift var(--shade-duration, 2s) ease-in-out 2;
+                animation-timeline: view(), auto;
+                animation-range: entry 0% entry 30%, normal;
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .post-card.has-shade-shift {
+            animation: none;
+        }
+    }
+
+    @keyframes shade-shift {
+        0%,
+        100% {
+            background-position-x: 50%;
+        }
+
+        50% {
+            background-position-x: 0%;
+        }
+    }
+
+    .has-frame .page-shell .author-box {
+        background-color: var(--glass-panel-alt);
+    }
+
+    .has-frame .page-shell :is(.comments-area, .comment-respond) {
+        background-color: var(--glass-panel-deep);
+    }
+
+    .has-frame .page-shell .layout__main > .columnfiller {
+        background-color: var(--glass-panel-deep);
+        border-radius: var(--radius-panel);
+    }
+
+    .has-frame .page-shell .pagination {
+        margin: 0;
+        padding: 1.25rem;
+        background-color: var(--glass-panel-deep);
+        border-radius: var(--radius-panel);
+    }
+
+    /* Sidebar wie bisher: die Widgets in einer Flaeche, darunter (Customizer "Fuellelemente
+       hinzufuegen") mit 10px Abstand eine eigene Fuellflaeche bis zum Spaltenende */
+    .has-frame .page-shell .layout__sidebar > .sidebar-section {
+        padding: clamp(1.25rem, 2.5vw, 1.875rem) clamp(1rem, 2vw, 1.25rem) 1.9375rem;
+        background-image: linear-gradient(348deg, color-mix(in srgb, var(--glass-panel) 62%, transparent) 0%, var(--glass-panel-deep) 120px);
+        border-radius: var(--radius-panel);
+        box-shadow: inset 0 1px 0 var(--glass-shine);
+    }
+
+    .has-frame .page-shell .layout__sidebar > .columnfiller {
+        background-color: transparent;
+        background-image: linear-gradient(195deg, color-mix(in srgb, var(--glass-panel-deep) 25%, transparent) 0%, var(--glass-panel-deep) 120px);
+    }
+
+    .has-frame .page-shell .sidebar-widget {
+        padding: 0 0 2.25rem;
+        background: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 0;
+        border-radius: 0;
+    }
+
+    /* Widget-Titel wie bisher: dunkles Band ueber die volle Seitenleistenbreite (46px), Text weiss */
+    /* Wie bisher 70px vom Widget-Ende bis zum naechsten Titelband (62px + 8px Versatz des Bandes) -
+       als Aussenabstand: Abstaende des letzten Inhalts fallen damit wie bisher hinein */
+    .has-frame .page-shell .sidebar-widget {
+        position: relative;
+        margin-bottom: 3.875rem;
+        padding-bottom: 0;
+    }
+
+    .has-frame .page-shell .sidebar-widget:last-child {
+        margin-bottom: 2.875rem;
+    }
+
+    .has-frame .page-shell .sidebar-widget:has(> :is(.sidebar-widget-title, .widget-title, h2, h3))::before {
+        content: "";
+        position: absolute;
+        top: -0.5rem;
+        left: calc(-1 * clamp(1rem, 2vw, 1.25rem));
+        right: calc(-1 * clamp(1rem, 2vw, 1.25rem));
+        z-index: 0;
+        height: 2.875rem;
+        background: linear-gradient(90deg, rgb(0 0 0 / 0.1) 0%, rgb(0 0 0 / 0.2) 50%, rgb(0 0 0 / 0.1) 100%);
+        pointer-events: none;
+    }
+
+    .has-frame .page-shell .sidebar-widget :is(.widget-title, .wp-block-search__label, :is(h2, h3).wp-block-heading) {
+        position: relative;
+        margin: 0 0 1.5625rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: #fff;
+        font-size: var(--widget-font-size, 1.125rem);
+        font-weight: var(--widget-font-weight, 600);
+        line-height: 1.875rem;
+    }
+
+    [data-theme="wallstreet-light"] .has-frame .page-shell .sidebar-widget :is(.widget-title, .wp-block-search__label, :is(h2, h3).wp-block-heading) {
+        color: #2a2c33;
+    }
+
+    .has-frame .page-shell .sidebar-widget + .sidebar-widget {
+        padding-top: 0.5rem;
+    }
+
+    /* Folge-Widgets beginnen 8px tiefer: das Band rueckt mit, der Titel bleibt senkrecht mittig */
+    .has-frame .page-shell .sidebar-widget + .sidebar-widget::before {
+        top: 0;
+    }
+
+    /* Seitenleiste wie bisher: Text weiss (helles Schema: Textfarbe), Absaetze mit der bisherigen
+       Zeilenhoehe */
+    .layout__sidebar .sidebar-section {
+        color: var(--sidebar-text);
+    }
+
+    .sidebar-widget p {
+        margin: 0 0 0.625rem;
+        line-height: 1.4286;
+    }
+
+    /* leere Absaetze aus dem Editor nehmen wie bisher keinen Platz ein */
+    .sidebar-widget p:empty {
+        display: none;
+    }
+
+    /* Listen in der Seitenleiste: dichter, Links in voller Textfarbe (wie bisher) */
+    .sidebar-widget :is(li, .jetpack-top-posts-item) {
+        padding-block: 0.625rem;
+        line-height: 1.25;
+    }
+
+    /* Top-Beitraege (Jetpack) wie bisher auch oben mit 10px Abstand */
+    .sidebar-widget li:first-child {
+        padding-top: 0;
+    }
+
+    .sidebar-widget a {
+        color: var(--sidebar-text);
+    }
+
+    /* Links im Fliesstext (Text-Widgets) wie bisher in Themefarbe und unterstrichen; ohne die
+       Option "Links unterstreichen" verschwindet die Linie beim Darueberfahren */
+    :is(.sidebar-widget, .footer_widget_column) p:not(.wp-block-tag-cloud) a:not(.tag-cloud-link) {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    body:not(.a_underlined) :is(.sidebar-widget, .footer_widget_column) p:not(.wp-block-tag-cloud) a:not(.tag-cloud-link):hover {
+        text-decoration-line: none;
+    }
+
+    /* Kategorien: Unterebenen wie bisher 40px eingerueckt, ohne eigene Trennlinien */
+    .sidebar-widget ul.children {
+        margin: 0;
+        padding-left: 2.5rem;
+    }
+
+    .sidebar-widget ul.children > li {
+        padding: 0.625rem 0;
+        border-bottom: 0;
+    }
+
+    .sidebar-widget ul.children > li:last-child {
+        padding-bottom: 0;
+    }
+
+    /* Aktuelle Kommentare wie bisher: Autor in Themefarbe, Datum rechts in der Zeile, Auszug eingerueckt */
+    .sidebar-widget .wp-block-latest-comments__comment {
+        padding: 0 0 0.625rem;
+        line-height: 1.25;
+    }
+
+    .sidebar-widget .wp-block-latest-comments__comment-meta {
+        display: block;
+        line-height: 1.25rem;
+    }
+
+    .sidebar-widget a.wp-block-latest-comments__comment-author {
+        color: var(--color-primary);
+    }
+
+    .sidebar-widget .wp-block-latest-comments__comment-date {
+        float: right;
+        margin-top: 3px;
+        padding-left: 5px;
+        line-height: 1.25rem;
+    }
+
+    .sidebar-widget .wp-block-latest-comments__comment-excerpt {
+        padding-left: 1.25rem;
+    }
+
+    .sidebar-widget .wp-block-latest-comments__comment-excerpt p {
+        line-height: 1.25rem;
+    }
+
+    .widget .tag-cloud-link {
+        margin: 0 0.4375rem 0.625rem 0;
+        padding: 0.4375rem 0.9375rem;
+        border-radius: 0;
+        background: rgb(86 89 99);
+        color: #fff;
+        font-size: 0.8rem !important;
+        line-height: 1.25rem;
+    }
+
+    [data-theme="wallstreet-light"] .widget .tag-cloud-link {
+        background: #e4e7ec;
+        color: #727272;
+    }
+
+    /* wie bisher in beiden Schemata: beim Darueberfahren Themefarbe mit weisser Schrift */
+    [data-theme="wallstreet-light"] .widget .tag-cloud-link:is(:hover, :focus-visible) {
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    .widget .tagcloud,
+    .widget .wp-block-tag-cloud {
+        gap: 0;
+    }
+
+    /* Listen in Widgets: gepunktete Linie, kleines Kaestchen vor dem Link
+       (auch Jetpack "Top-Beitraege", das statt <li> eigene Container nutzt) */
+    .sidebar-widget li,
+    .sidebar-widget .jetpack-top-posts-item {
+        border-bottom: 1px dotted rgb(123 127 140);
+    }
+
+    /* Symbole wie bisher (Font Awesome 4): Kaestchen mit Pfeil, in Unterebenen Kreis mit Pfeil -
+       als Maske, damit sie die Textfarbe annehmen und ohne Icon-Schrift auskommen */
+    .sidebar-widget li:not(:has(img)) > a:first-child::before,
+    .sidebar-widget .jetpack-top-posts-item:not(:has(img)) .jetpack-top-posts-title > a::before {
+        content: "";
+        display: inline-block;
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-inline-end: 0.625rem;
+        vertical-align: 0.05em;
+        background-color: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' rx='2.5' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3Cpath d='M6.2 4.6 11 8l-4.8 3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' rx='2.5' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3Cpath d='M6.2 4.6 11 8l-4.8 3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    .sidebar-widget ul.children > li:not(:has(img)) > a:first-child::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 .5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM6.3 4.6 11.2 8l-4.9 3.4z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 .5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM6.3 4.6 11.2 8l-4.9 3.4z'/%3E%3C/svg%3E");
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Beitraege: Datums-Plakette, Format-LED, Trennlinie              */
+    /* ---------------------------------------------------------------- */
+    /* Innenabstand von Beitraegen und Seiten wie bisher: 30px ringsum */
+    :root {
+        --post-pad: clamp(1.25rem, 2.5vw, 1.875rem);
+    }
+
+    /* :where() haelt die Spezifitaet niedrig - die Einrueckung fuer die Datums-Plakette gewinnt */
+    :where(.has-frame) .entry__body,
+    :where(.has-frame .page-shell) .post-card__body {
+        padding: var(--post-pad);
+    }
+
+    .post-card__body.has-date-badge,
+    .entry__body.has-date-badge {
+        position: relative;
+    }
+
+    /* Datums-Plakette: Werte der bisherigen .blog-post-date (Farbe Themeblau, innen leicht abgedunkelt) */
+    .post-date-badge {
+        width: 3.75rem;
+        padding-top: 5px;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow:
+            0 54px 55px rgb(0 0 0 / 0.25),
+            0 -12px 30px rgb(0 0 0 / 0.12),
+            0 4px 6px rgb(0 0 0 / 0.12),
+            0 12px 13px rgb(0 0 0 / 0.17),
+            0 -3px 5px rgb(0 0 0 / 0.09);
+        color: #2a2c33;
+        text-align: center;
+        transition: box-shadow 200ms ease-out;
+    }
+
+    /* Wie bisher: beim Ueberfahren liegt die Plakette flacher auf, das Datum wirkt eingedrueckt */
+    .post-date-badge:hover {
+        box-shadow: 0 20px 30px -10px rgb(38 57 77);
+    }
+
+    .post-date-badge:hover > .post-date-badge__date {
+        box-shadow:
+            inset 0 30px 60px -12px rgb(50 50 93 / 0.25),
+            inset 0 30px 50px -18px rgb(0 0 0 / 0.3);
+        text-shadow: none;
+    }
+
+    .post-date-badge__date {
+        display: grid;
+        padding: 5px 0 3px;
+        background: var(--color-primary);
+        border-radius: 5.4px;
+        box-shadow:
+            inset 0 30px 60px -12px rgb(50 50 93 / 0.25),
+            inset 0 18px 36px -18px rgb(0 0 0 / 0.3);
+        color: var(--color-primary-content);
+        text-shadow: 0 2px 2px rgb(0 0 0 / 0.4);
+    }
+
+    .post-date-badge__day {
+        font-size: 2.25rem;
+        line-height: 2.1875rem;
+    }
+
+    .post-date-badge__month {
+        margin-bottom: 4px;
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+    }
+
+    .post-date-badge__comments {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.375rem 0 0.4375rem;
+        color: #2a2c33;
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.25rem;
+        text-decoration: none;
+    }
+
+    .post-date-badge__comments :is(.material-icons, .fa-comment) {
+        margin-inline-end: 5px;
+        color: var(--color-primary);
+        font-size: 0.9rem;
+    }
+
+    .post-date-badge__comments:hover {
+        color: var(--color-primary);
+    }
+
+    @media (width >= 40rem) {
+        :is(.post-card__body, .entry__body).has-date-badge {
+            padding-inline-start: calc(var(--post-pad) + 3.75rem + 1.5rem);
+        }
+
+        .has-date-badge > .post-date-badge {
+            position: absolute;
+            top: var(--post-pad);
+            inset-inline-start: var(--post-pad);
+        }
+
+    }
+
+    /* Schmal: Plakette waagerecht ueber dem Titel */
+    @media (width < 40rem) {
+        .post-date-badge {
+            display: inline-flex;
+            align-items: stretch;
+            width: auto;
+            padding-top: 0;
+            align-self: flex-start;
+        }
+
+        .post-date-badge__date {
+            display: flex;
+            align-items: baseline;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .post-date-badge__day {
+            font-size: 1.5rem;
+        }
+
+        .post-date-badge__comments {
+            padding-inline: 0.75rem;
+        }
+    }
+
+    /* Format-LED (Farben wie in den bisherigen Versionen) wie bisher oben rechts im Textbereich -
+       bei Beitraegen mit Bild also unter dem Bild, sonst in der Kartenecke */
+    :is(.post-card__body, .entry__body) {
+        position: relative;
+    }
+
+    .content-led {
+        position: absolute;
+        top: 1.125rem;
+        right: 1.125rem;
+        z-index: 2;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #337ab7;
+        box-shadow:
+            #000 0 -1px 7px 1px,
+            inset #006 0 -1px 9px,
+            #06f 0 2px 14px;
+        transition: all 0.2s ease;
+    }
+
+    .content-led.link {
+        background-color: #940;
+        box-shadow: #000 0 -1px 7px 1px, inset #600 0 -1px 9px, #f00 0 2px 12px;
+    }
+
+    .content-led.chat {
+        background-color: #a90;
+        box-shadow: #000 0 -1px 7px 1px, inset #660 0 -1px 9px, #dd0 0 2px 12px;
+    }
+
+    .content-led.quote {
+        background-color: #d8fb19;
+        box-shadow: #000 0 -1px 7px 1px, inset #660 0 -1px 9px, #dd0 0 2px 12px;
+    }
+
+    .content-led.aside {
+        background-color: #690;
+        box-shadow: #000 0 -1px 7px 1px, inset #460 0 -1px 9px, #7d0 0 2px 12px;
+    }
+
+    .content-led.status {
+        background-color: #337ab7;
+        box-shadow: #000 0 -1px 7px 1px, inset #460 0 -1px 9px, #7d0 0 2px 12px;
+    }
+
+    .content-led.audio {
+        background-color: #4ab;
+    }
+
+    .content-led.gallery {
+        background-color: #818bcf;
+    }
+
+    .content-led.image {
+        background-color: #a019ca;
+    }
+
+    .content-led.video {
+        background-color: #004e9f;
+    }
+
+    /* Beim Ueberfahren geht die LED wie bisher gestuft aus und wieder an */
+    :is(.post-card, .entry):hover .content-led {
+        animation: led-blink 1s steps(10, start) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :is(.post-card, .entry):hover .content-led {
+            animation: none;
+        }
+    }
+
+    @keyframes led-blink {
+        25%,
+        75% {
+            background-color: #101010;
+            box-shadow: #000 0 -1px 7px 1px, inset #9a9 0 -1px 9px, #969 0 2px 14px;
+        }
+    }
+
+    /* Autor-Box: rundes Bild mit Rand in Themefarbe (das Bild darf im Flex-Container nicht schrumpfen) */
+    .author-box__avatar {
+        flex: none;
+    }
+
+    .author-box__img {
+        width: 6.25rem;
+        height: 6.25rem;
+        object-fit: cover;
+        outline: 0;
+        border: 0.25em solid color-mix(in oklab, var(--color-primary) 18%, transparent);
+        box-shadow: 0 5px 15px rgb(0 0 0 / 0.35);
+    }
+
+    /* Kontakt: Kartentitel als Band in Themefarbe */
+    .contact-map__title {
+        padding: 1.1rem 1.5rem;
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+        font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+        font-weight: 400;
+        text-align: center;
+    }
+
+    /* Suchergebnisse: Band in Themefarbe ueber der Liste */
+    .search-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem 1.5rem;
+        padding: 1rem 1.25rem;
+        border-radius: var(--radius-panel);
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+        font-size: 1.25rem;
+    }
+
+    .search-head__count {
+        margin: 0;
+    }
+
+    .search-head .search-form {
+        flex: 1 1 18rem;
+        max-width: 26rem;
+    }
+
+    /* Beitragstitel in Listen: gross und leicht (wie bisher, unabhaengig vom Customizer) */
+    .post-card__title {
+        font-size: 2.4rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .post-card--compact .post-card__title {
+        font-size: 1.75rem;
+    }
+
+    /* Customizer "Beitragstitel" galt bisher fuer Zwischenueberschriften im Beitrag */
+    .entry-content h2 {
+        font-size: var(--post-font-size, 1.75rem);
+        font-weight: var(--post-font-weight, 700);
+        font-style: var(--post-font-style, normal);
+    }
+
+    /* Tabellen umbrechen statt seitlich abzuschneiden */
+    /* break-word statt anywhere: bricht lange Woerter nur im Notfall und laesst die
+       automatische Spaltenbreite der Tabelle unveraendert (sonst andere Umbrueche als bisher) */
+    .entry-content :where(th, td) {
+        overflow-wrap: break-word;
+    }
+
+    /* Kontaktzeile im Customizer aus: Topbar auf dem Handy ausblenden (wie bisher) */
+    @media (width <= 30rem) {
+        body.hide-header-top .site-topbar {
+            display: none;
+        }
+    }
+
+    /* Formularfelder: durchscheinend mit feiner Kante (wie bisher) */
+    .entry-content :where(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"]), select, textarea),
+    :is(.comment-respond, .contact-form) :where(input:not([type="checkbox"], [type="radio"], [type="submit"]), textarea) {
+        border-color: color-mix(in oklab, var(--color-base-content) 42%, transparent);
+        border-radius: var(--radius-field);
+        background-color: transparent;
+    }
+
+    /* 404: Meldung ueber dem Seitenkopf (Bannertitel nur fuer Screenreader) */
+    .error404 #wall_wrapper {
+        position: relative;
+    }
+
+    .error404 .page-banner__title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .error-404 {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        min-height: 100svh;
+        padding: calc(var(--header-h, 0px) + 2rem) 1rem 2rem;
+        background: rgb(0 0 0 / 0.5);
+        color: #fff;
+        text-align: center;
+    }
+
+    .error-404__inner {
+        display: grid;
+        justify-items: center;
+        gap: 0.75rem;
+        max-width: 40rem;
+    }
+
+    .error-404__code {
+        margin: 0;
+        font-size: clamp(3rem, 2rem + 4vw, 5rem);
+        font-weight: 600;
+        line-height: 1.1;
+        text-shadow: var(--text-outline-dark), 0 4px 30px rgb(0 0 0 / 0.4);
+    }
+
+    .error-404__title {
+        margin: 0;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-shadow: var(--text-outline-dark);
+    }
+
+    .error-404__text {
+        margin: 0 0 0.5rem;
+    }
+
+    /* Ohne Inhaltsrahmen faellt die Seite sonst unter die Bildschirmhoehe */
+    .error404 .site-content {
+        min-height: 100svh;
+    }
+
+    /* Titel in Listen: im hellen Schema in Themefarbe (wie bisher light.css), Token --list-title */
+    .post-card__title a,
+    .entry__title {
+        color: var(--list-title);
+    }
+
+    /* Wie bisher: das Beitragsformat ("Bemerkung:", "Video:" ...) behaelt beim Darueberfahren seine
+       Farbe, nur der Titel nimmt die Themefarbe an und pulsiert dabei gestuft gegen die Titelfarbe
+       (im hellen Schema sind beide Farben gleich, dort pulsiert nichts) */
+    .post-card__title a > .post-card__format {
+        color: var(--list-title);
+    }
+
+    .post-card__title a:hover > .post-card__name {
+        animation: title-blink 1s steps(10, start) infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .post-card__title a:hover > .post-card__name {
+            animation: none;
+        }
+    }
+
+    @keyframes title-blink {
+        25%,
+        75% {
+            color: var(--list-title);
+        }
+    }
+
+    /* Beitragsfuss wie bisher: gepunktete Linie 35px unter dem Text (abzueglich des Abstands im
+       Textbereich), Autor links, Schlagwoerter und Kategorien rechts, Datum darunter rechtsbuendig */
+    .post-meta--bottom {
+        display: block;
+        padding-top: calc(2.1875rem - 0.875rem);
+        border-top: 0;
+    }
+
+    .entry__body > .post-meta--bottom {
+        padding-top: calc(2.1875rem - 1.25rem);
+    }
+
+    .post-meta--bottom .post-meta__row {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.625rem;
+        border-top: 1px dotted #cacaca;
+        font-weight: 500;
+    }
+
+    .post-meta--bottom .post-meta__author {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        gap: 0;
+        padding: 5px 20px 5px 13px;
+        color: inherit !important;
+        white-space: nowrap;
+    }
+
+    .post-meta--bottom .post-meta__terms {
+        display: flex;
+        flex-grow: 2;
+        align-items: baseline;
+        margin: 5px;
+    }
+
+    .post-meta--bottom .post-meta__terms:last-child {
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+    .post-meta--bottom .post-meta__list {
+        margin-right: 9px;
+    }
+
+    .post-meta--bottom :is(.fa-solid, .material-icons) {
+        margin: 0 9px 0 0;
+        font-size: 0.9em;
+        opacity: 1;
+    }
+
+    .post-meta--bottom .post-meta__terms .material-icons {
+        align-self: center;
+    }
+
+    .post-meta--bottom a:hover {
+        color: var(--meta-hover) !important;
+    }
+
+    .post-meta--bottom .post-meta__published {
+        display: block;
+        margin-top: 10px;
+        text-align: end;
+    }
+
+    /* Als Block bleibt das Leerzeichen vor dem Datum erhalten - kein Zusatzabstand */
+    .post-meta--bottom .post-meta__updated time {
+        margin-inline-start: 0;
+    }
+
+    .post-meta--bottom .post-meta__published .material-icons {
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+        vertical-align: baseline;
+    }
+
+    /* Schmal wie bisher untereinander: Autor, dann Schlagwoerter und Kategorien */
+    @media (width < 48rem) {
+        .post-meta--bottom .post-meta__row {
+            display: block;
+        }
+
+        .post-meta--bottom .post-meta__author {
+            padding-inline: 0;
+        }
+
+        .post-meta--bottom .post-meta__terms {
+            display: inline-flex;
+            margin: 0 0.75rem 5px 0;
+        }
+    }
+
+    /* Beitragsbild wie bisher: in Beitraegen und Einzelansichten (bigpost-thumb) vollstaendig im
+       eigenen Seitenverhaeltnis, auf Seiten flach im Format 5:2 (wie blog-thumb) */
+    .entry > .entry__media .entry__img {
+        height: auto;
+        max-height: none;
+    }
+
+    .entry--page > .entry__media .entry__img {
+        aspect-ratio: 5 / 2;
+        object-fit: cover;
+    }
+
+    /* Textfluss im Beitrag wie bisher: Zeilenhoehe 25px, Absaetze 15px,
+       Zwischenueberschriften 25px darueber / 15px darunter, Titel -> Text 20px */
+    .entry-content {
+        --flow: 0.9375rem;
+        line-height: 1.5625;
+    }
+
+    .entry-content :is(h1, h2, h3, h4, h5, h6) {
+        margin-top: 1.5625rem;
+        margin-bottom: 0;
+    }
+
+    .entry-content :is(h1, h2, h3, h4, h5, h6) + * {
+        margin-top: 0.9375rem;
+    }
+
+    .entry__body {
+        gap: 1.25rem;
+    }
+
+    .entry__header .entry__title {
+        margin: 0;
+    }
+
+    /* Ohne wiederholten Titel (Formate ohne Beitragsbild) beginnt der Inhalt wie bisher 15px tiefer */
+    .entry-content--untitled {
+        margin-top: 15px;
+    }
+
+    /* Ein umflossenes Bild am Anfang zaehlt nicht als Absatz: der Text beginnt oben buendig */
+    .entry-content > :is(.alignleft, .alignright, figure.wp-block-image:is(.alignleft, .alignright), .wp-block-image:has(> :is(.alignleft, .alignright))):first-child + * {
+        margin-top: 0;
+    }
+
+    /* Feine Linie unter dem Beitragstitel */
+    .post-card__header::after {
+        content: "";
+        display: block;
+        width: min(18.75rem, 70%);
+        height: 1px;
+        margin: 0.75rem auto 0;
+        background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-base-content) 45%, transparent), transparent);
+    }
+
+    /* Ueberschriften im Beitrag in Themefarbe */
+    .entry-content :is(h1, h2, h3, h4) {
+        color: var(--color-primary);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Abschnittsueberschrift: Linie, Balken, Raute                    */
+    /* ---------------------------------------------------------------- */
+    /* Titel wie bisher reinweiss (hell: #2a2c33) mit Kontur */
+    .section-heading__title {
+        color: var(--heading-title);
+        text-shadow: var(--text-outline);
+    }
+
+    .section-heading__sep {
+        position: relative;
+        display: block;
+        width: min(15.625rem, 70%);
+        height: 2px;
+        margin: 1.4rem auto 1.75rem;
+        border-radius: 3px;
+        background: linear-gradient(90deg, transparent, var(--sep-line) 14%, var(--sep-line) 86%, transparent);
+    }
+
+    .section-heading__sep::before,
+    .section-heading__sep > span {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 3px;
+        background: var(--color-primary);
+    }
+
+    .section-heading__sep::before {
+        width: 6.25rem;
+        height: 6px;
+    }
+
+    .section-heading__sep > span {
+        width: 12px;
+        height: 12px;
+        rotate: 45deg;
+        box-shadow: 0 0 14px color-mix(in oklab, var(--color-primary) 65%, transparent);
+    }
+
+    .section-heading__sep + .section-heading__text {
+        margin-top: 0;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Buttons                                                         */
+    /* ---------------------------------------------------------------- */
+    /*
+     * Ein Button-System fuer alle primaeren Buttons, Werte der bisherigen button.css:
+     *   - Verlauf in Themefarbe, zu den Raendern durchscheinend; obere Haelfte aufgehellt
+     *   - Icon-Feld links (abgedunkelt), das sich bei Hover ueber den ganzen Button schiebt
+     *   - Mindestbreite 250px, Schrift leicht, dunkle Textkante
+     * Icon: eigenes <span class="material-icons"> im Button oder --btn-glyph (Standard: Pfeil).
+     */
+    .btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item),
+    .comment-reply-link {
+        --btn-glyph: "chevron_right";
+        --btn-edge: color-mix(in oklab, var(--color-primary) 88%, #000);
+        position: relative;
+        isolation: isolate;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        min-width: min(15.625rem, 100%);
+        height: auto;
+        min-height: 2.3125rem;
+        padding: 0.75em 1em 0.65em 3.5em;
+        overflow: hidden;
+        border: 1px solid transparent;
+        border-radius: var(--radius-field);
+        background-color: transparent;
+        background-image: linear-gradient(90deg, color-mix(in oklab, var(--btn-edge) 60%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--btn-edge) 70%, transparent));
+        /* daisyUI setzt eine zweite Hintergrundebene auf Groesse 0 */
+        background-size: auto;
+        box-shadow: inset 0 2.75em 0 -1.5em rgb(255 255 255 / 0.15);
+        color: var(--color-primary-content);
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1;
+        text-decoration: none;
+        text-shadow: 0 1px 1px #18191b;
+        white-space: nowrap;
+        transition: text-shadow 0.3s ease;
+    }
+
+    .btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item)::before,
+    .comment-reply-link::before {
+        content: var(--btn-glyph);
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: 0;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        width: 2.125em;
+        padding-inline-start: 0.55em;
+        background: rgb(0 0 0 / 0.15);
+        color: inherit;
+        font-family: "Material Icons";
+        font-size: 1.125rem;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        -webkit-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        transition: width 0.5s ease;
+    }
+
+    .btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item):is(:hover, :focus-visible),
+    .comment-reply-link:is(:hover, :focus-visible) {
+        text-shadow: 0 0 1px #18191b;
+    }
+
+    .btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item):is(:hover, :focus-visible)::before,
+    .comment-reply-link:is(:hover, :focus-visible)::before {
+        width: 100%;
+    }
+
+    /* Eigenes Icon im Markup: steht im Icon-Feld (Position in plugins.css, s. dort),
+       das Feld selbst bleibt der ::before-Balken */
+    .btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item):has(> .material-icons)::before,
+    .comment-reply-link:has(> .material-icons)::before {
+        content: "";
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .btn-primary::before,
+        .comment-reply-link::before {
+            transition: none;
+        }
+    }
+
+    /* Groessen wie bisher: "Alle anzeigen" 300px, Kommentar-Links klein */
+    .show-all-btn .btn,
+    .btn-primary.btn-lg:not(.join-item) {
+        min-width: min(18.75rem, 100%);
+    }
+
+    .btn-primary.btn-lg:not(.join-item) {
+        font-size: 1rem;
+    }
+
+    .btn-primary.btn-block {
+        width: 100%;
+    }
+
+    /* In kleinen Kacheln (Portfolio-Overlay) ohne Mindestbreite */
+    .portfolio-card .btn-primary {
+        min-width: 0;
+        max-width: 100%;
+        padding-inline-end: 0.8em;
+    }
+
+    .comment-reply-link {
+        --btn-glyph: "reply";
+        min-width: 0;
+        min-height: 2rem;
+        padding-inline-end: 1.1em;
+        font-size: 0.85rem;
+    }
+
+    /* Passende Symbole wie bisher (Klassen der alten button.css) */
+    .btn-primary[type="submit"] {
+        --btn-glyph: "send";
+    }
+
+    .btn.btn-primary.more.blog {
+        --btn-glyph: "dashboard";
+    }
+
+    .btn.btn-primary.more.portfolio {
+        --btn-glyph: "collections_bookmark";
+    }
+
+    .btn.btn-primary.more.services {
+        --btn-glyph: "engineering";
+    }
+
+    .btn.btn-primary.project,
+    .portfolio-detail__info .portfolio-detail__button.btn {
+        --btn-glyph: "developer_board";
+    }
+
+    .btn.btn-primary.loadmore {
+        --btn-glyph: "drive_folder_upload";
+    }
+
+    :is(.site-search, .search-form) .btn-primary {
+        --btn-glyph: "search";
+    }
+
+    /* Rahmen-Buttons ("Erfahre mehr" in Services 2-5): weisse Kante, kein Icon-Feld */
+    .btn-outline {
+        border-color: rgb(245 245 245 / 0.9);
+        border-radius: var(--radius-field);
+        color: var(--color-base-content);
+        font-weight: 400;
+    }
+
+    .btn-outline:hover {
+        border-color: var(--color-primary);
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    /*
+     * Seitennavigation: einzelne Knoepfe im Stil der Buttons (Verlauf in Themefarbe, obere Haelfte
+     * aufgehellt), 3.25rem x 2.5rem. Andere Seiten gedaempft, die aktuelle Seite voll mit hellem
+     * Ring und leichtem Leuchten; Hover hebt den Knopf an.
+     */
+    .pagination .join {
+        gap: 0.5rem 0.625rem;
+        box-shadow: none;
+    }
+
+    .pagination .join > .join-item.btn {
+        --page-edge: color-mix(in oklab, var(--color-primary) 80%, #000);
+        position: relative;
+        min-width: 3.25rem;
+        height: 2.5rem;
+        min-height: 0;
+        padding: 0 0.85rem;
+        border: 1px solid rgb(0 0 0 / 0.35);
+        border-radius: var(--radius-field);
+        background-color: transparent;
+        background-image: linear-gradient(90deg, color-mix(in oklab, var(--page-edge) 45%, transparent), color-mix(in oklab, var(--color-primary) 55%, transparent) 55%, color-mix(in oklab, var(--page-edge) 50%, transparent));
+        background-size: auto;
+        box-shadow:
+            inset 0 2.25rem 0 -1.2rem rgb(255 255 255 / 0.12),
+            0 6px 14px -8px rgb(0 0 0 / 0.8);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        text-shadow: 0 1px 1px #18191b;
+        transition:
+            transform 0.15s ease,
+            background-image 0.2s ease,
+            box-shadow 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .pagination .join > a.join-item.btn:is(:hover, :focus-visible) {
+        transform: translateY(-2px);
+        background-image: linear-gradient(90deg, color-mix(in oklab, var(--page-edge) 70%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--page-edge) 75%, transparent));
+        color: #fff;
+    }
+
+    .pagination .join > .join-item.btn-primary {
+        background-image: linear-gradient(90deg, color-mix(in oklab, var(--page-edge) 75%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--page-edge) 80%, transparent));
+        box-shadow:
+            inset 0 2.25rem 0 -1.2rem rgb(255 255 255 / 0.18),
+            inset 0 0 0 1px rgb(255 255 255 / 0.55),
+            0 0 16px -2px color-mix(in oklab, var(--color-primary) 70%, transparent);
+        color: #fff;
+        font-weight: 600;
+    }
+
+    /* Helles Schema wie bisher light.css: helle Kaestchen mit grauer Schrift, Themefarbe erst
+       beim Darueberfahren und fuer die aktuelle Seite */
+    [data-theme="wallstreet-light"] .pagination .join > a.join-item.btn:not(:hover, :focus-visible) {
+        border-color: #eaeaea;
+        background-color: #fafafa;
+        background-image: none;
+        box-shadow: 0 6px 14px -8px rgb(20 24 32 / 0.35);
+        color: #545454;
+        text-shadow: none;
+    }
+
+    [data-theme="wallstreet-light"] .pagination .join > .join-item.btn-disabled {
+        color: #545454;
+    }
+
+    .pagination .join > .join-item.btn-disabled {
+        min-width: 2rem;
+        padding: 0;
+        border-color: transparent;
+        background: none;
+        box-shadow: none;
+        color: rgb(255 255 255 / 0.6);
+    }
+
+    .pagination .join > .join-item.btn .material-icons {
+        font-size: 1.5rem;
+    }
+
+    /* Die Seitenschrift hat eine grosse Unterlaenge: Ziffern sitzen sonst ~3px zu hoch */
+    .pagination .join > .join-item.btn:not(:has(.material-icons)) {
+        padding-top: 0.3rem;
+    }
+
+    /* Leiste mit Abstand unter den Kacheln (Projektseite) */
+    .has-frame .page-shell .portfolio-pane .pagination {
+        margin-top: 2.25rem;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Footer: Glas mit dunkler Oberkante (in beiden Schemata dunkel)  */
+    /* ---------------------------------------------------------------- */
+    .site-footer {
+        --color-base-content: #e5e5e5;
+        color: #aaa;
+    }
+
+    .site-footer :is(.site-footer__widgets, .site-footer__bar) {
+        background: rgb(55 57 65 / 0.95);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+    }
+
+    .site-footer > :first-child {
+        border-top: 20px solid rgb(0 0 0 / 0.4);
+        box-shadow: 0 -10px 13px -7px rgb(0 0 0 / 0.7);
+    }
+
+    /* Leiste wie bisher: Social-Icons ueber die volle Breite (feine dunkle Kante darunter),
+       dann Rechtliches und Copyright, mittig, weiss mit Links in Themefarbe */
+    .site-footer__bar {
+        padding-block: 0;
+        font-size: 1rem;
+    }
+
+    .site-footer__details {
+        display: block;
+        text-align: center;
+    }
+
+    .site-footer .footer-social-area {
+        box-shadow: 0 7px 2px -6px #2a2c33;
+    }
+
+    .site-footer .social-links--footer {
+        justify-content: center;
+        gap: 0 3.125rem;
+        margin: 0;
+        padding-block: 1.5625rem;
+    }
+
+    .site-footer .social-links--footer .social-links__link {
+        width: auto;
+        height: 2.5rem;
+        background: none;
+        color: #fff;
+        font-size: 1.875rem;
+    }
+
+    .site-footer .social-links--footer .social-links__link:hover {
+        background: none;
+        color: var(--color-primary);
+    }
+
+    .site-footer .footer-copyright {
+        display: block;
+        padding-block: 1.25rem;
+        color: #fff;
+        font-size: 0.9rem;
+        line-height: 1.5625rem;
+    }
+
+    .site-footer .footer-copyright__links {
+        padding-bottom: 0.3125rem;
+        color: #fff;
+    }
+
+    .site-footer .footer-copyright__text {
+        margin: 0;
+        color: #fff;
+        font-size: inherit;
+    }
+
+    .site-footer .footer-copyright :is(.footer-copyright__links, .footer-copyright__text) a {
+        color: var(--color-primary);
+    }
+
+    .site-footer .footer-copyright :is(.footer-copyright__links, .footer-copyright__text) a:hover {
+        color: var(--color-primary);
+    }
+
+    /* Schmal: Platz unter dem Copyright fuer Cookie-Knopf und Nach-oben-Reiter */
+    @media (width < 70rem) {
+        .site-footer .footer-copyright {
+            padding-bottom: 4.25rem;
+        }
+    }
+
+    @media (width >= 70rem) {
+        /* Fester Footer ohne Widgets nimmt keinen Platz im Fluss ein: kein Zusatzabstand,
+           sonst bleibt unter dem Inhalt ein leerer Scrollbereich */
+        .site-footer--fixed:not(:has(.site-footer__widgets)) {
+            margin-top: 0;
+        }
+
+        /* Geschlossen schauen nur die 20px dunkle Oberkante und 2px der Leiste heraus (wie bisher) */
+        body.fixed_Footer {
+            --footer-peek: 22px;
+        }
+
+        /* Letzter Inhalt endet 1.5rem ueber der festen Leiste - auf allen Seiten gleich */
+        body.fixed_Footer #wall_wrapper {
+            padding-bottom: calc(var(--footer-peek) + 1.5rem);
+        }
+
+        .site-footer--fixed .site-footer__bar {
+            border-top: 20px solid rgb(0 0 0 / 0.4);
+            box-shadow: 3px 3px 3px 3px rgb(0 0 0 / 0.6);
+            transform: translateY(calc(100% - var(--footer-peek)));
+            transition:
+                transform 0.5s var(--ease-snappy),
+                border-radius 0.5s var(--ease-snappy);
+        }
+
+        /* Inhalt erst beim Aufklappen zeigen - nichts scheint durch */
+        .site-footer--fixed .site-footer__details {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Aufgeklappt: Oberkante woelbt sich (wie bisher) */
+        .site-footer--fixed .site-footer__bar:is(:hover, :focus-within, .is-open),
+        .site-footer--fixed:has(> .site-footer__peek:hover) > .site-footer__bar {
+            border-top-left-radius: 50% 100px;
+            border-top-right-radius: 50% 100px;
+        }
+
+        .site-footer--fixed .site-footer__bar:is(:hover, :focus-within, .is-open) .site-footer__details,
+        .site-footer--fixed:has(> .site-footer__peek:hover) .site-footer__details {
+            opacity: 1;
+        }
+
+        /* Info-Symbol wie bisher: gross und grau rechts ueber der Kante, blendet beim Aufklappen aus */
+        .site-footer--fixed .site-footer__peek {
+            right: 25px;
+            bottom: calc(var(--footer-peek) + 25px);
+            width: auto;
+            height: auto;
+            padding: 0;
+            border: 0;
+            background: none;
+            color: #aaa;
+            font-size: 4rem;
+            line-height: 1;
+            cursor: pointer;
+            transition:
+                opacity 0.5s ease-in-out 0.3s,
+                visibility 0.5s ease-in-out 0.3s,
+                color 0.2s ease;
+        }
+
+        .site-footer--fixed .site-footer__peek i {
+            --fa-display: block;
+            display: block;
+        }
+
+        .site-footer--fixed .site-footer__peek:is(:hover, :focus-visible) {
+            color: #fff;
+        }
+
+        /* Aufgeklappt endet das Copyright an der Unterkante (wie bisher, 188px hoch) */
+        .site-footer--fixed .footer-copyright {
+            padding-bottom: 0;
+        }
+
+        .site-footer--fixed:has(> .site-footer__bar:is(:hover, :focus-within, .is-open), > .site-footer__peek:hover) > .site-footer__peek {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Startseite: Glasbaender und Kacheln                             */
+    /* ---------------------------------------------------------------- */
+    /* Portfolio als Glasband ueber die volle Breite */
+    .portfolio-section {
+        position: relative;
+        isolation: isolate;
+        padding-block: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .portfolio-section::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0 calc(50% - 50vw);
+        background: var(--glass-band);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border-top: 20px solid var(--section-edge);
+        box-shadow: var(--tile-drop);
+    }
+
+    .features-section {
+        border-block: 20px solid rgb(255 255 255 / 0.8);
+        box-shadow: var(--tile-drop);
+    }
+
+    .testimonial-section .section--bleed__overlay {
+        padding-block: clamp(2.5rem, 4.5vw, 3.75rem);
+        background: color-mix(in oklab, color-mix(in oklab, var(--color-primary) 78%, #000) 72%, transparent);
+    }
+
+    /* Baender (Testimonial, Features) liegen wie bisher ohne Luecke am Abschnitt davor an */
+    .section--bleed {
+        margin-top: 0;
+    }
+
+    .section-heading__title {
+        font-weight: 700;
+    }
+
+    /* Blog-Teaser: oben Datum links, Kommentare rechts, darunter grosser Titel */
+    .home-blog-section .post-card .post-meta--top {
+        justify-content: space-between;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 14%, transparent);
+    }
+
+    .home-blog-section .post-card .post-meta__format {
+        display: none;
+    }
+
+    /* Titel wie bisher gross und leicht: 36px / 300 / 45px */
+    .home-blog-section .post-card__title {
+        margin-top: 0.75rem;
+        font-size: clamp(1.75rem, 1.2rem + 1.2vw, 2.25rem);
+        font-weight: 300;
+        line-height: 1.25;
+    }
+
+    /* Titel auf der Startseite wie bisher (#f5f5f5 bzw. hell #2a2c33), Themefarbe beim Ueberfahren der Kachel */
+    .home-blog-section .post-card__title a {
+        color: var(--card-title);
+    }
+
+    .home-blog-section .post-card__header::after {
+        content: none;
+    }
+
+    .home-blog-section .post-card__content {
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    /* Portfolio: Bild pur, Titel und Text erst bei Hover/Fokus */
+    @media (hover: hover) {
+        .portfolio-card__overlay {
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .portfolio-card:is(:hover, :focus-within) .portfolio-card__overlay {
+            opacity: 1;
+        }
+    }
+
+    /* Testimonials: freies Zitat ohne Kasten (alle Stile), Stil 1 mit Name zwischen zwei Linien */
+    .quote-card {
+        padding-block: 0.5rem;
+        background: none;
+        border: 0;
+        box-shadow: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    .quote-card--v1 .quote-card__text {
+        font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+        font-style: normal;
+    }
+
+    .quote-card--v1 .quote-card__name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        font-weight: 400;
+        opacity: 0.85;
+    }
+
+    .quote-card--v1 .quote-card__name::before,
+    .quote-card--v1 .quote-card__name::after {
+        content: "";
+        width: 2rem;
+        height: 1px;
+        background: currentColor;
+    }
+
+    /* Features: Bild ohne dunklen Schleier, Icons als Kreise in Themefarbe */
+    .features-section .section--bleed__overlay {
+        background: linear-gradient(90deg, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.38));
+    }
+
+    /* Freigestelltes Bild (z. B. die Taschenuhr) vollstaendig in seinem Seitenverhaeltnis,
+       hoechstens so gross wie bisher (525 x 331) */
+    .features__img {
+        display: block;
+        width: min(100%, 525px);
+        height: auto;
+        max-height: 331px;
+        margin-inline: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+        filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.55));
+    }
+
+    .feature-item__icon {
+        width: 3.75rem;
+        height: 3.75rem;
+        border: 0;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+        font-size: 1.5rem;
+        box-shadow: 0 8px 18px -8px rgb(0 0 0 / 0.6);
+    }
+
+    .features-section :is(.features__title, .feature-item__title, .feature-item__text) {
+        text-shadow: var(--text-outline-dark);
+    }
+
+    /* Services Stil 1: rundes Bild ragt ueber die Kachelkante */
+    .service-card--v1.has-image {
+        margin-top: 6.25rem;
+        overflow: visible;
+    }
+
+    .has-bigborder .service-card--v1 {
+        border-radius: var(--radius-big);
+    }
+
+    .service-card--v1.has-image .service-card__visual {
+        width: 12.5rem;
+        height: 12.5rem;
+        margin: calc(-6.25rem - var(--bigborder)) auto 0;
+        overflow: hidden;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
+    }
+
+    .service-card--v1.has-image .service-card__visual img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .service-card .service-card__more {
+        margin-top: auto;
+    }
+
+    /*
+     * Dreierreihen (wie bisher "Meine Interessen"): die beiden aeusseren Kacheln sind gleich hoch,
+     * die mittlere darf laenger sein. Die mittlere Kachel ueberspannt dafuer zwei Rasterzeilen,
+     * die aeusseren nur die erste - so bestimmen nur sie deren Hoehe. Fuer bis zu 12 Kacheln.
+     */
+    @media (width >= 48rem) {
+        .service-grid.card-grid--3 {
+            grid-auto-rows: auto;
+            row-gap: 0;
+            align-items: stretch;
+        }
+
+        .service-grid.card-grid--3 > * {
+            margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
+        }
+
+        .service-grid.card-grid--3 > :nth-child(1) {
+            grid-area: 1 / 1;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(2) {
+            grid-area: 1 / 2 / span 2;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(3) {
+            grid-area: 1 / 3;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(4) {
+            grid-area: 3 / 1;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(5) {
+            grid-area: 3 / 2 / span 2;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(6) {
+            grid-area: 3 / 3;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(7) {
+            grid-area: 5 / 1;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(8) {
+            grid-area: 5 / 2 / span 2;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(9) {
+            grid-area: 5 / 3;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(10) {
+            grid-area: 7 / 1;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(11) {
+            grid-area: 7 / 2 / span 2;
+        }
+
+        .service-grid.card-grid--3 > :nth-child(12) {
+            grid-area: 7 / 3;
+        }
+    }
+
+    /* Team Stil 1: nur das Bild sitzt in der Kachel, Name und Rolle stehen frei darunter */
+    .has-bigborder .team-card--1 {
+        padding: 0;
+        border: 0;
+        background: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .has-bigborder .team-card--1 .team-card__media {
+        overflow: hidden;
+        border: var(--bigborder) solid var(--glass-edge);
+        border-radius: var(--radius-big);
+        background-color: var(--glass-tile);
+        box-shadow: var(--tile-drop);
+    }
+
+    .team-card--1 .team-card__role::after {
+        content: "";
+        display: block;
+        width: 5.5rem;
+        height: 1px;
+        margin: 0.6rem auto 0;
+        background: color-mix(in oklab, var(--color-base-content) 55%, transparent);
+    }
+
+    /* Team-Hover je Stil wie bisher: 1 Glanz + Band in Themefarbe, 2 Bild kleiner, 4 dunkler Vorhang */
+    .team-card:is(.team-card--1, .team-card--3, .team-card--4):hover .team-card__img {
+        transform: none;
+    }
+
+    .team-card--2 .team-card__img {
+        transition: transform 0.2s linear;
+    }
+
+    .team-card--2:hover .team-card__img {
+        transform: scale(0.9);
+    }
+
+    .team-card--1 .team-card__media::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgb(255 255 255 / 0), rgb(255 255 255 / 0.1));
+        transform: skewX(-25deg);
+        pointer-events: none;
+    }
+
+    .team-card--1 .team-card__media:hover::before {
+        animation: team-shine 0.85s;
+    }
+
+    @keyframes team-shine {
+        100% {
+            left: 125%;
+        }
+    }
+
+    .team-card--1 .team-card__social {
+        min-height: 3.75rem;
+        padding: 15px 20px;
+        background: var(--link-color_reduced-85, color-mix(in srgb, var(--color-primary) 85%, #000));
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        transform: translateY(100%);
+        transition:
+            opacity 0.2s,
+            transform 0.2s;
+    }
+
+    .team-card--1 .team-card__media:is(:hover, :focus-within) .team-card__social {
+        opacity: 1;
+        transform: none;
+    }
+
+    .team-card--1:not(:has(.team-card__media:is(:hover, :focus-within))) .team-card__social {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    .team-card--1 .team-card__social .social-links__link {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        background: #fff;
+        color: #061018;
+    }
+
+    .team-card--4 .team-card__media::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 0;
+        height: 100%;
+        background: rgb(0 0 0 / 0.7);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .team-card--4:hover .team-card__media::before {
+        width: 100%;
+        opacity: 1;
+    }
+
+    .team-card--4 .team-card__social {
+        z-index: 2;
+        background: none;
+        transition-delay: 0.2s;
+    }
+
+    /* Kacheln dunkeln beim Ueberfahren nach (bisher 0.4 -> 0.8), Blog-Titel in Themefarbe */
+    :is(.home-blog-section .post-card, .logo-strip__item):hover,
+    .has-bigborder :is(.home-blog-section .post-card, .logo-strip__item):hover {
+        background-color: var(--glass-tile-hover);
+    }
+
+    .home-blog-section .post-card:hover .post-card__title a {
+        color: var(--color-primary);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Ueber uns: Autoren (bisher about-us team)                       */
+    /* ---------------------------------------------------------------- */
+    /* Ueberschrift und Karten in je einem Rahmen, 54px unter dem Inhalt, 20px dazwischen */
+    .about-team {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 3.375rem;
+        margin-bottom: 3.4375rem;
+    }
+
+    .about-team .section-heading {
+        margin-block: 0.625rem 1.25rem;
+    }
+
+    /* Untertitel wie bisher 45px unter dem Trenner */
+    .about-team .section-heading__sep {
+        margin-bottom: 2.8125rem;
+    }
+
+    /* Karten mittig, unterschiedlich hohe Karten mittig zueinander (wie bisher) */
+    .about-team__grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0 1.875rem;
+    }
+
+    /* Rahmen so breit wie der Inhaltsrahmen */
+    .has-frame .about-team {
+        width: calc(100% - 2 * clamp(0.5rem, 2.5vw, 2rem));
+        padding-inline: 0;
+    }
+
+    .has-frame :is(.about-team__head, .about-team__grid) {
+        padding: 0.625rem 0.625rem 0;
+        background-color: var(--glass-frame);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border-radius: var(--radius-box);
+        box-shadow:
+            var(--glass-drop),
+            inset 0 1px 0 var(--glass-shine);
+    }
+
+    .has-frame.has-bigborder :is(.about-team__head, .about-team__grid) {
+        border: var(--bigborder) solid var(--glass-edge);
+    }
+
+    /* Der Kartenrahmen ist so breit wie der Ueberschriftsrahmen (bisher je 15px schmaler - ein
+       Fehler im alten Design) */
+
+    /* Karte: rundes Bild ragt 80px in die Karte, Symbole immer sichtbar. Breite wie bisher ohne
+       Rahmen (Viertel der Zeile, 255px) in allen Einstellungen - mit Rahmen schrumpfte die Kachel
+       bisher durch Kante und Innenabstand auf 242px (Fehler im alten Design) */
+    .team-card.team-card--about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 15.9375rem;
+        padding: 0.625rem 0 1.875rem;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+
+    .team-card--about .team-card__media {
+        z-index: 1;
+        flex: none;
+        width: 150px;
+        height: 150px;
+        border: 0.5em solid #2a2c33;
+        border-radius: 50%;
+        background: var(--glass-tile);
+        box-shadow: 0 0 0 3px #9da0aa;
+        transition:
+            transform 600ms ease-out,
+            border 600ms ease-out,
+            box-shadow 600ms ease-out;
+    }
+
+    .team-card--about:hover .team-card__media {
+        border: 3px solid var(--color-primary);
+        box-shadow: 0 0 0 1px #e5e5e5;
+        transform: rotate(360deg);
+    }
+
+    .team-card--about:hover .team-card__img {
+        transform: none;
+    }
+
+    .team-card--about .team-card__body {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        margin-top: -80px;
+        padding: 127px 25px 15px;
+        border: 1px solid #9da0aa;
+        border-radius: var(--radius-big);
+        box-shadow: rgb(0 0 0 / 0.35) 0 5px 15px;
+        /* wie bisher eigenes Glas: die Karte hebt sich heller vom Rahmen ab (siehe unten: ohne
+           Einblend-Animation, sonst sieht das Glas den Rahmen dahinter nicht) */
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease;
+    }
+
+    /* Beim Ueberfahren wie bisher in Themefarbe (bisher dynamic.css, dunkel und hell) */
+    .team-card--about:hover .team-card__body {
+        border-color: #e5e5e5;
+        background-color: var(--color-primary);
+    }
+
+    /* Eine (auch abgelaufene) Scroll-Animation macht die Karte fuer Chrome zur Grenze des
+       Hintergrund-Filters - das Kartenglas waere dann wirkungslos */
+    .team-card--about.reveal {
+        animation: none;
+    }
+
+    /* Dicke Kante auch im hellen Schema (bisher schlug .bigborder den Rand aus light.css) */
+    .has-bigborder .team-card.team-card--about .team-card__body {
+        border: 0.5em solid rgb(0 0 0 / 0.2);
+    }
+
+    .has-bigborder .team-card.team-card--about:hover .team-card__body {
+        border-color: rgb(0 0 0 / 0.4);
+    }
+
+    .team-card--about :is(.team-card__name, .team-card__role) {
+        order: -1;
+    }
+
+    .team-card--about .team-card__name {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: normal;
+        color: #f5f5f5;
+    }
+
+    .team-card--about .team-card__role {
+        margin: 3px 0 0;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: normal;
+        text-transform: none;
+    }
+
+    /* Schriftfarben wechseln wie bisher weich */
+    .team-card--about :is(.team-card__name, .team-card__role, .team-card__text) {
+        transition: color 0.4s ease;
+    }
+
+    .team-card--about:hover .team-card__role {
+        color: #ccc;
+    }
+
+    /* Trennlinie unter Name und Rolle (bisher desi-seperate, auch ohne Rolle) */
+    .team-card--about .team-card__body::before {
+        content: "";
+        width: 150px;
+        height: 2px;
+        margin: 11px auto 15px;
+        border-radius: 3px;
+        background-color: #d0d0d0;
+    }
+
+    .team-card--about .team-card__text {
+        margin: 0 0 10px;
+        font-size: 0.9rem;
+        line-height: 25px;
+        color: #d6d6d9;
+    }
+
+    .team-card--about:hover .team-card__text {
+        color: #fff;
+    }
+
+    /* Symbolabstand wie bisher (10px Rand plus Wortabstand), die Reihe aber mittig */
+    .team-card--about .team-card__social {
+        position: static;
+        gap: 14px;
+        padding: 10px 0;
+        background: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .team-card--about .team-card__social .social-links__link {
+        width: auto;
+        height: auto;
+        padding: 1px;
+        background: none;
+        color: #fff;
+        line-height: 20px;
+    }
+
+    /* Symbole bleiben wie bisher weiss (die Karte ist dann selbst in Themefarbe) */
+    .team-card--about .team-card__social .social-links__link:is(:hover, :focus-visible) {
+        background: none;
+        transform: none;
+    }
+
+    /* Symbole wie bisher 0.9em */
+    .team-card--about .team-card__social .social-links__link > i {
+        font-size: 0.9rem;
+    }
+
+    /* Helles Schema (bisher light.css): helle Karte, beim Ueberfahren in Themefarbe */
+    [data-theme="wallstreet-light"] .team-card--about .team-card__media {
+        border: 3px solid #eaeaea;
+        box-shadow: 0 0 0 1px #d9d9d9;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about:hover .team-card__media {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 1px #e5e5e5;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about .team-card__body {
+        border: 1px solid #eaeaea;
+        background-color: #fafafa;
+    }
+
+    /* ohne dicke Kante bisher mit tuerkisem Rand (light.css) */
+    [data-theme="wallstreet-light"] .team-card--about:hover .team-card__body {
+        border-color: #00c2a9;
+        background-color: var(--color-primary);
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about .team-card__name {
+        color: #2a2c33;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about .team-card__text {
+        color: #727272;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about .team-card__social .social-links__link {
+        color: #bdbec5;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about:hover :is(.team-card__name, .team-card__text, .team-card__social .social-links__link) {
+        color: #fff;
+    }
+
+    [data-theme="wallstreet-light"] .team-card--about:hover .team-card__role {
+        color: #06443c;
+    }
+
+    /* Logos in Originalfarben */
+    .logo-strip__img {
+        filter: none;
+        opacity: 1;
+    }
+
+    /* Kacheln mit dunkler Kante; die Grundform hat eine eckige Ecke unten rechts */
+    .has-bigborder :is(.home-blog-section .post-card, .service-card--v1, .logo-strip__item, .portfolio-card) {
+        border: var(--bigborder) solid var(--glass-edge);
+        background-color: var(--glass-tile);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        box-shadow:
+            var(--tile-drop),
+            inset 0 1px 0 var(--glass-shine);
+    }
+
+    .has-bigborder :is(.home-blog-section .post-card, .service-card--v1, .logo-strip__item, .portfolio-card, .team-card--1 .team-card__media):hover,
+    .has-frame.has-bigborder .page-shell:hover {
+        border-color: rgb(0 0 0 / 0.4);
+    }
+
+    .has-bigborder :is(.home-blog-section .post-card, .service-card--v1, .logo-strip__item, .portfolio-card, .team-card--1 .team-card__media, .page-shell) {
+        transition: border-color 0.3s ease;
+    }
+
+    /* Services Stil 1: beim Ueberfahren in Themefarbe (70 %) wie alle Stile (sections.css) - hier, weil die Glaskachel oben gewinnt */
+    .service-grid > .service-card--v1:hover {
+        background-color: var(--link-color_additional-70, color-mix(in srgb, var(--color-primary) 70%, transparent));
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease;
+    }
+
+    /*
+     * Rundungen je nach Position in der Reihe - wie bisher (first/middle/last bzw. odd/even):
+     *   Startseiten-Blog (3 Spalten): aussen gerundet, die Reihe wirkt wie ein Band
+     *   Startseiten-Portfolio: nach Customizer-Anordnung (siehe unten)
+     *   Services Stil 1 (3 Spalten): links unten rechts eckig, Mitte rund, rechts unten links eckig
+     *   Projektseite: Basisrundung ringsum
+     */
+    .has-bigborder :is(.home-blog-section .post-card, .service-card--v1, .portfolio-section .portfolio-card) {
+        border-radius: var(--radius-big);
+    }
+
+    /* Startseiten-Portfolio, Customizer "Anordnung" (bisher clover-/block-items):
+       Kleeblatt - je 2x2 Kacheln zeigen die eckigen Ecken zur Mitte (Muster wiederholt sich alle 8);
+       Block - jede Reihe wirkt wie ein Band, nur die Aussenecken sind gerundet */
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 1),
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 3) {
+        border-bottom-right-radius: 0;
+    }
+
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 2),
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 4) {
+        border-bottom-left-radius: 0;
+    }
+
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 5),
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 7) {
+        border-top-right-radius: 0;
+    }
+
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 6),
+    .portfolio-section .portfolio-card--clover:nth-child(8n + 8) {
+        border-top-left-radius: 0;
+    }
+
+    @media (width >= 48rem) {
+        .portfolio-section :is(.card-grid--2, .card-grid--3) > .portfolio-card--block {
+            border-radius: 0;
+        }
+
+        .portfolio-section .card-grid--2 > .portfolio-card--block:nth-child(2n + 1),
+        .portfolio-section .card-grid--3 > .portfolio-card--block:nth-child(3n + 1) {
+            border-top-left-radius: var(--radius-big);
+            border-bottom-left-radius: var(--radius-big);
+        }
+
+        .portfolio-section .card-grid--2 > .portfolio-card--block:nth-child(2n),
+        .portfolio-section .card-grid--3 > .portfolio-card--block:nth-child(3n) {
+            border-top-right-radius: var(--radius-big);
+            border-bottom-right-radius: var(--radius-big);
+        }
+    }
+
+    @media (width >= 62rem) {
+        .portfolio-section .card-grid--4 > .portfolio-card--block {
+            border-radius: 0;
+        }
+
+        .portfolio-section .card-grid--4 > .portfolio-card--block:nth-child(4n + 1) {
+            border-top-left-radius: var(--radius-big);
+            border-bottom-left-radius: var(--radius-big);
+        }
+
+        .portfolio-section .card-grid--4 > .portfolio-card--block:nth-child(4n) {
+            border-top-right-radius: var(--radius-big);
+            border-bottom-right-radius: var(--radius-big);
+        }
+    }
+
+    @media (width >= 48rem) {
+        .has-bigborder .home-blog--1 .post-card:nth-child(3n + 1) {
+            border-radius: var(--radius-big) 0 0 var(--radius-big);
+        }
+
+        .has-bigborder .home-blog--1 .post-card:nth-child(3n + 2) {
+            border-radius: 0;
+        }
+
+        .has-bigborder .home-blog--1 .post-card:nth-child(3n) {
+            border-radius: 0 var(--radius-big) var(--radius-big) 0;
+        }
+
+        .has-bigborder .service-grid--v1 .service-card:nth-child(3n + 1) {
+            border-radius: var(--radius-big) var(--radius-big) 0 var(--radius-big);
+        }
+
+        .has-bigborder .service-grid--v1 .service-card:nth-child(3n) {
+            border-radius: var(--radius-big) var(--radius-big) var(--radius-big) 0;
+        }
+    }
+
+    /* Projektseite: nur das Bild mit kraeftiger dunkler Kante, ohne Kachelflaeche (wie bisher) */
+    .has-bigborder :is(.portfolio-pane, .portfolio-page) .portfolio-card {
+        border: var(--bigborder) solid rgb(0 0 0 / 0.4);
+        border-radius: var(--radius-box);
+        background: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+
+    /* Bildhoehe je Vorlage wie bisher: 4 Spalten 240px, 3 Spalten 320px, 2 Spalten 600px
+       (inklusive der dunklen Kante) */
+    :is(.portfolio-pane, .portfolio-page) .portfolio-card {
+        --tile-h: 240px;
+    }
+
+    :is(.portfolio-pane, .portfolio-page) .card-grid--3 > .portfolio-card {
+        --tile-h: 320px;
+    }
+
+    :is(.portfolio-pane, .portfolio-page) .card-grid--2 > .portfolio-card {
+        --tile-h: 600px;
+    }
+
+    .has-bigborder :is(.portfolio-pane, .portfolio-page) .portfolio-card {
+        --tile-edge: var(--bigborder);
+    }
+
+    :is(.portfolio-pane, .portfolio-page) .portfolio-card__media {
+        aspect-ratio: auto;
+        height: calc(var(--tile-h) - 2 * var(--tile-edge, 0px));
+    }
+
+    /* Inhaltsfenster der Projektseite: etwas mehr Luft wie bisher */
+    .has-frame .page-shell.portfoliocat {
+        padding: 1.75rem 1.25rem 1.25rem;
+    }
+
+    /* Portfolio: bei Hover legt sich Themefarbe ueber das Bild, Titel und Text mittig (wie bisher) */
+    .portfolio-card__overlay {
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        background: linear-gradient(to top, rgb(8 10 14 / 0.6), transparent 60%);
+        text-align: center;
+    }
+
+    .portfolio-card__title {
+        align-self: stretch;
+        padding-bottom: 0.9rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+    }
+
+    /* Wie bisher: Titel unterstrichen, sobald die Kachel ueberfahren wird */
+    .portfolio-card:hover .portfolio-card__title a {
+        text-decoration-line: underline;
+    }
+
+    .portfolio-card__title::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 1px;
+        margin: 0.9rem auto 0;
+        background: rgb(255 255 255 / 0.85);
+    }
+
+    .portfolio-card__text {
+        color: #fff;
+        font-size: 0.95rem;
+    }
+
+    .portfolio-card__actions {
+        justify-content: center;
+    }
+
+    .portfolio-card__actions .btn-circle {
+        --btn-color: rgb(50 52 60);
+        --btn-fg: #fff;
+        width: 2.75rem;
+        height: 2.6rem;
+        border: 0;
+        border-radius: 7%;
+        backdrop-filter: none;
+    }
+
+    @media (hover: hover) {
+        .portfolio-card__overlay {
+            background: color-mix(in oklab, color-mix(in oklab, var(--color-primary) 88%, #000) 70%, transparent);
+        }
+
+        /* Auch die dunkle Kante faerbt sich ein */
+        .has-bigborder .portfolio-card:is(:hover, :focus-within) {
+            border-color: color-mix(in oklab, color-mix(in oklab, var(--color-primary) 88%, #000) 70%, transparent);
+        }
+    }
+
+    .has-bigborder .logo-strip__item {
+        border-radius: var(--radius-big);
+    }
+
+    /* Startseiten-Blog 2-4 (mehrspaltig): Glasflaeche ohne dunkle Kante */
+    .has-bigborder :is(.home-blog--2, .home-blog--3, .home-blog--4) .post-card {
+        border: 0;
+        border-radius: var(--radius-panel);
+    }
+
+    /* Startseiten-Blog 5/6: freie Liste ohne Kachel, Bild links (6: abwechselnd) */
+    .has-bigborder :is(.home-blog--5, .home-blog--6) .post-card {
+        border: 0;
+        border-radius: 0;
+        background: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+
+    :is(.home-blog--5, .home-blog--6) .post-card__media {
+        border-radius: var(--radius-panel);
+    }
+
+    /* Listen- und Wechselansicht: Bild oben im Beitrag, mit Abstand zum Rand (nicht auf Kartenhoehe gestreckt) */
+    @media (width >= 48rem) {
+        :is(.post-card--media, .post-card--media-reverse) .post-card__media {
+            align-self: start;
+            min-height: 0;
+            aspect-ratio: 35 / 32;
+            margin: clamp(1rem, 2vw, 1.5rem);
+            border-radius: var(--radius-panel);
+        }
+
+        .post-card--media .post-card__media {
+            margin-inline-end: 0;
+        }
+
+        .post-card--media-reverse .post-card__media {
+            margin-inline-start: 0;
+        }
+    }
+
+    :is(.home-blog--5, .home-blog--6) .post-card .post-meta--top {
+        justify-content: flex-start;
+        border-bottom: 0;
+    }
+
+    /* Datum als Pille in Themefarbe (wie bisher in den Listenansichten) */
+    :is(.home-blog--5, .home-blog--6, .post-list--list, .post-list--switcher) .post-meta__date {
+        padding: 0.2rem 0.65rem;
+        border-radius: var(--radius-selector);
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+        box-shadow: inset 0 -10px 18px -10px rgb(0 0 0 / 0.3);
+    }
+
+    :is(.home-blog--5, .home-blog--6, .post-list--list, .post-list--switcher) .post-meta__date .material-icons {
+        display: none;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Ladeblende: Logo im Glasrahmen                                  */
+    /* ---------------------------------------------------------------- */
+    /* Eine Rundung fuer Karte und Lichtrand: mit grossem Rahmen die grosse (wie alle Rahmenflaechen) */
+    #page_fader .page-fader__card {
+        --fader-radius: var(--radius-box);
+        border-radius: var(--fader-radius);
+    }
+
+    .has-frame.has-bigborder #page_fader .page-fader__card {
+        --fader-radius: var(--radius-big);
+    }
+
+    .page-fader__card {
+        background-color: var(--glass-frame);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        border: var(--bigborder) solid var(--glass-edge);
+        border-radius: var(--radius-box);
+        box-shadow: var(--glass-drop);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Typografie der Startseite wie bisher (gemessen am alten Theme)  */
+    /* ---------------------------------------------------------------- */
+    /* Abschnittsueberschrift 38.4px / 42px, Untertitel 19.2px / 25px */
+    .section-heading__title {
+        font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.4rem);
+        line-height: 1.1;
+    }
+
+    .section-heading__text {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+
+    /* Services und Blog-Teaser: Texte hell wie bisher (#e5e5e5) */
+    .service-card__text,
+    .home-blog-section .post-card .post-meta--top {
+        color: color-mix(in oklab, var(--color-base-content) 92%, transparent);
+    }
+
+    /* Team: Name 24px / 500, Rolle 16px normal geschrieben, Text 16px */
+    .team-card:not(.team-card--about) .team-card__name {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    .team-card:not(.team-card--about) .team-card__role {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: normal;
+        text-transform: none;
+    }
+
+    .team-card:not(.team-card--about):not(.team-card--3) .team-card__text {
+        font-size: 1rem;
+        color: var(--color-base-content);
+    }
+
+    /* Features: Titel 32px leicht, Punkte 22.4px, Text 16px leicht im Blocksatz */
+    .features__title {
+        font-size: clamp(1.625rem, 1.3rem + 0.9vw, 2rem);
+        font-weight: 300;
+        line-height: 1.25;
+    }
+
+    .feature-item__title {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: justify;
+    }
+
+    .feature-item__text {
+        font-weight: 300;
+        line-height: 25px;
+        text-align: justify;
+        color: #fff;
+    }
+
+    /* Testimonials Stil 1: Zitat 22.4px / 30px, Name 18px dunkel zwischen Linien */
+    .quote-card--v1 .quote-card__text {
+        font-size: clamp(1.125rem, 1rem + 0.5vw, 1.4rem);
+        line-height: 30px;
+    }
+
+    .quote-card--v1 .quote-card__name {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 25px;
+        color: #2a2c33;
+        opacity: 1;
+    }
+
+    /* Beitragslisten: Titel 38.4px / 50px, Fusszeile 12.8px hell wie bisher */
+    .post-card__title,
+    .entry__title {
+        line-height: 1.3;
+    }
+
+    /* wie bisher: dunkles Schema #e5e5e5, helles #545454 */
+    .post-meta--bottom {
+        font-size: 0.8rem;
+        color: var(--meta-text);
+    }
+
+    .post-meta--bottom .post-meta__author {
+        font-weight: 500;
+    }
+}

@@ -14,7 +14,7 @@ get_template_parts(["template-parts/index/index", "banner"], true);
 
 djs_layout_start(["class" => "search"]); ?>
 
-<div class="search-head surface-card">
+<div class="search-head">
     <p class="search-head__count">
         <?php printf(
             /* translators: %s: number of results */

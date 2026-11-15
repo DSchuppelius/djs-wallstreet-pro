@@ -168,8 +168,8 @@ get_template_parts(["template-parts/index/index", "banner"], true); ?>
                         <?php $field_error("massage"); ?>
                     </label>
                 </div>
-                <button class="btn btn-primary btn-lg" name="contact_submit" id="contact_submit" type="submit">
-                    <span class="material-icons" aria-hidden="true">send</span><?php esc_html_e("Send Message", "djs-wallstreet-pro"); ?>
+                <button class="btn btn-primary more" name="contact_submit" id="contact_submit" type="submit">
+                    <?php esc_html_e("Send Message", "djs-wallstreet-pro"); ?><span class="material-icons" aria-hidden="true">send</span>
                 </button>
             </form>
         <?php } ?>

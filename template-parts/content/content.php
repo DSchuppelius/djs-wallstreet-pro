@@ -20,6 +20,9 @@ $variant = $args["variant"] ?? "stack";
 $first   = !empty($args["first"]);
 
 $has_thumb = has_post_thumbnail() && !post_password_required();
+$badge     = ($args["badge"] ?? $variant === "stack") && djs_show_post_date();
+// In Blog-Listen steht das Format wie bisher vor dem Titel ("Bemerkung: ..."), nicht als Etikett
+$prefix    = $mode !== "teaser" ? djs_post_format_label() : "";
 $classes   = ["post-card", "surface-card", "reveal", "post-card--" . $variant];
 if (!$has_thumb) {
     $classes[] = "has_no_post_thumbnail";
@@ -39,11 +42,15 @@ if ($first) {
         </a>
     <?php } ?>
 
-    <div class="post-card__body">
+    <div class="post-card__body<?php echo $badge ? " has-date-badge" : ""; ?>">
+        <?php get_template_part("template-parts/content/content", "led"); ?>
+        <?php if ($badge) {
+            get_template_part("template-parts/content/content", "date-badge");
+        } ?>
         <header class="post-card__header">
-            <?php get_template_part("template-parts/content/content", "meta-header"); ?>
+            <?php get_template_part("template-parts/content/content", "meta-header", ["badge" => $badge, "format" => $prefix === ""]); ?>
             <h2 class="post-card__title entry-title">
-                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php if ($prefix !== "") { ?><span class="post-card__format"><?php echo esc_html($prefix); ?>:</span> <?php } ?><span class="post-card__name"><?php the_title(); ?></span></a>
             </h2>
         </header>
 
@@ -62,6 +69,9 @@ if ($first) {
             </div>
         <?php } ?>
 
-        <?php get_template_part("template-parts/content/content", "meta-footer"); ?>
+        <?php /* Startseiten-Teaser wie bisher ohne Fusszeile (Datum und Kommentare stehen oben) */
+        if ($mode !== "teaser") {
+            get_template_part("template-parts/content/content", "meta-footer");
+        } ?>
     </div>
 </article>

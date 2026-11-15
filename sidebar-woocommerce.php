@@ -11,7 +11,9 @@
 if (!is_active_sidebar("woocommerce")) {
     return;
 } ?>
-<aside class="layout__sidebar sidebar-section" aria-label="<?php esc_attr_e("Shop sidebar", "djs-wallstreet-pro"); ?>">
-    <?php dynamic_sidebar("woocommerce"); ?>
+<aside class="layout__sidebar" aria-label="<?php esc_attr_e("Shop sidebar", "djs-wallstreet-pro"); ?>">
+    <div class="sidebar-section <?php with_filler(); ?>">
+        <?php dynamic_sidebar("woocommerce"); ?>
+    </div>
     <?php get_template_part("template-parts/content/filler"); ?>
 </aside>

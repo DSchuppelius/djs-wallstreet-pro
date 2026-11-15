@@ -6,6 +6,43 @@
  * Bewusst OHNE @layer: Plugin-Stylesheets sind ungelayert und wuerden jede Regel in
  * einem Layer schlagen. So kann das Theme sie - wie frueher - gezielt ueberstimmen.
  */
+/* WordPress-Kern (:where(figure) { margin: 0 0 1em }) ist ungelayert und schlaegt jede Layer-Regel:
+   Beitragsbild im Beitrag ohne Abstand darunter - Plakette, Titel und LED beginnen wie bisher
+   30px bzw. 18px unter dem Bild; die Bildrahmen (Ueber uns, Anhang, Projekt) ohne Leerraum unter
+   dem Bild */
+.entry > .entry__media,
+.about-hero__media,
+.media-hero__media,
+.portfolio-detail__media {
+    margin: 0;
+}
+
+/* Seitenleiste: WordPress setzt unter jedem Kommentar 1em (ungelayert) - der letzte endet buendig,
+   der Widget-Abstand kommt wie bisher allein vom Widget */
+.sidebar-widget .wp-block-latest-comments__comment:last-child {
+    margin-bottom: 0;
+}
+
+/* Schlagwort-Wolke: WordPress setzt 5px Abstand (ungelayert) - wie bisher 7px, dazu zwischen den
+   Schildchen die Breite des bisherigen Leerzeichens (am Zeilenende faellt sie wie bisher weg) */
+.widget .wp-block-tag-cloud {
+    column-gap: 4px;
+}
+
+.widget .wp-block-tag-cloud a.tag-cloud-link {
+    margin: 0 7px 10px 0;
+}
+
+/* Gepunktete Linie unter Listeneintraegen der Seitenleiste - auch wo Fremd-CSS sie entfernt;
+   Unterkategorien wie bisher ohne eigene Linie */
+.layout__sidebar .sidebar-widget li {
+    border-bottom: 1px dotted rgb(123 127 140);
+}
+
+.layout__sidebar .sidebar-widget ul.children > li {
+    border-bottom: 0;
+}
+
 /* Contact Form 7 */
 .wpcf7 form {
     display: grid;
@@ -37,42 +74,255 @@ body.fixed_Footer .grecaptcha-badge {
 /* ---------------------------------------------------------------- */
 /*  DJS-Wallstreet-Pro AngularJS: seitliche Widget-Laschen          */
 /* ---------------------------------------------------------------- */
+/* Layout (Hoehe der Lasche, 175px Inhalt) kommt aus dem Plugin; das Theme setzt nur
+   Glas in Themefarbe und haelt Preflight/daisyUI aus dem Plugin-Markup heraus. */
 .wallstreet.fixed-widget {
-    background: color-mix(in oklab, var(--color-primary) 78%, #0b0d12);
-    border: 1px solid color-mix(in oklab, var(--color-primary) 45%, transparent);
-    border-radius: var(--radius-small);
-    box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.6);
-    color: var(--color-primary-content);
+    background-color: color-mix(in oklab, color-mix(in oklab, var(--color-primary) 72%, #000) 72%, transparent);
+    -webkit-backdrop-filter: var(--glass-filter);
+    backdrop-filter: var(--glass-filter);
+    border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+    color: #fff;
 }
 
-/* Plugin rechnet mit 200px Gesamtbreite: 175px Inhalt + 25px Lasche */
+/* Lasche: Plugin setzt width 5px + line-height 210px, das Polster kam bisher vom Browser */
 .wallstreet.fixed-widget > button {
-    display: grid;
-    place-items: center;
-    width: 25px;
-    padding: 0;
-    line-height: normal;
-    background-color: rgb(0 0 0 / 0.18);
-    color: inherit;
-    font: inherit;
+    padding: 1px 6px;
+    font-size: 1rem;
 }
 
-.wallstreet.fixed-widget > button > i {
+.wallstreet.fixed-widget > button > i.material-icons {
+    font-size: 24px;
+}
+
+/* Der Inhalt ist ein <a class="btn">: daisyUI-Button zuruecksetzen (sonst einzeilig + abgeschnitten) */
+.wallstreet.fixed-widget > div a,
+.wallstreet.fixed-widget > div a.btn {
     display: block;
-    width: auto;
     height: auto;
-    margin: 0 !important;
-    font-size: 1.125rem;
-}
-
-.wallstreet.fixed-widget > div a {
-    color: inherit;
+    min-height: 0;
+    padding: 6px 12px;
+    border: 0;
     background: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.43;
+    white-space: normal;
+    text-align: center;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
 }
 
-.wallstreet.fixed-widget.right > div,
-.wallstreet.fixed-widget.left > div {
+/* ---------------------------------------------------------------- */
+/*  Tabellen im Beitrag (wie bisher)                                 */
+/* ---------------------------------------------------------------- */
+/* Heller Kopf, gestreifte Zeilen, keine Gitterlinien, Inhalt senkrecht mittig. Ungelayert,
+   weil die Core-Styles (.wp-block-table td { border: 1px solid }) es auch sind.
+   Farben der Zeilen: --table-row / --table-row-alt / --table-text (tokens.css, je Schema). */
+.entry-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    line-height: 1.43;
+}
+
+.entry-content table :is(th, td) {
+    border: 0;
+    text-align: start;
+    vertical-align: middle;
+}
+
+.entry-content table th {
+    padding: 0.5rem;
+    border-bottom: 4px solid #eee;
+    background: #eee;
+    color: #2a2c33;
+    /* Bisher war nur der Normalschnitt geladen, "500" wurde damit normal gesetzt. Der echte
+       Medium-Schnitt laeuft breiter und bricht Kopfzeilen anders um - deshalb 400. */
+    font-weight: 400;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 0.1);
+}
+
+.entry-content table td {
+    padding: 0.475rem;
+    font-size: 0.95em;
+    font-weight: 300;
+}
+
+.entry-content table tr {
+    background-color: var(--table-row);
+    color: var(--table-text);
+    text-shadow: 0 1px 1px rgb(255 255 255 / 0.1);
+}
+
+.entry-content table tr:nth-child(even) {
+    background-color: var(--table-row-alt);
+}
+
+.entry-content table thead {
+    border-bottom: 3px solid #888;
+}
+
+/* Im Tabellenkopf (thead) zeigt die graue Linie die Grenze, nicht die helle Kante */
+.entry-content table thead th {
+    border-bottom: 0;
+}
+
+.entry-content table tr:first-child > th:first-child {
+    border-top-left-radius: 3px;
+}
+
+.entry-content table tr:first-child > th:last-child {
+    border-top-right-radius: 3px;
+}
+
+/* Eingabefelder in Rechner-Tabellen fuellen die Zelle */
+.entry-content table td > :is(input, select):only-child {
+    width: 100%;
+}
+
+.entry-content :is(input, select, textarea) {
+    font-weight: 400;
+}
+
+/* Nur-Lese-Felder (berechnete Ergebnisse): als Ergebnis erkennbar statt wie ein Eingabefeld */
+.entry-content :is(input, textarea):read-only:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"]) {
+    border-color: color-mix(in oklab, var(--color-primary) 55%, transparent);
+    background-color: color-mix(in oklab, var(--color-primary) 18%, transparent);
+    color: var(--table-text, var(--color-base-content));
+    font-weight: 600;
+    cursor: default;
+}
+
+.entry-content :is(input, textarea):read-only:focus-visible {
+    outline: 1px dashed color-mix(in oklab, var(--color-primary) 70%, transparent);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.entry-content :is(input, textarea):disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.entry-content .wp-block-table.is-style-stripes {
+    border-bottom: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/*  Ausgerichtete Bilder im Text                                     */
+/* ---------------------------------------------------------------- */
+/* Abstand zum umfliessenden Text wie bisher (8px oben/unten, 16px zur Textseite).
+   Ungelayert, weil die Core-Regeln (.wp-block-image .alignright ...) es auch sind. */
+.entry-content :is(.alignright, .wp-block-image.alignright, .wp-block-image .alignright) {
+    float: right;
+    margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.entry-content :is(.alignleft, .wp-block-image.alignleft, .wp-block-image .alignleft) {
+    float: left;
+    margin: 0.5rem 1rem 0.5rem 0;
+}
+
+@media (width < 40rem) {
+    .entry-content :is(.alignright, .alignleft, .wp-block-image .alignright, .wp-block-image .alignleft) {
+        float: none;
+        margin: 0.5rem auto;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/*  Galerie-Block: dicht wie bisher (8px statt 1em)                  */
+/* ---------------------------------------------------------------- */
+/* Die Core-Styles (block-library) sind ungelayert - deshalb hier. Alte Galerien (ul/li) und
+   neue (verschachtelte Bild-Bloecke, Abstand ueber --wp--style--unstable-gallery-gap). */
+.entry-content .wp-block-gallery {
+    --gallery-gap: 8px;
+    --wp--style--unstable-gallery-gap: var(--gallery-gap);
+    gap: var(--gallery-gap);
+}
+
+.entry-content .wp-block-gallery:not(.has-nested-images) .blocks-gallery-item {
+    margin: 0 var(--gallery-gap) var(--gallery-gap) 0;
+}
+
+.entry-content .wp-block-gallery:not(.has-nested-images) .blocks-gallery-item:last-child {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-2:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 1 * var(--gallery-gap)) / 2);
+}
+
+.entry-content .wp-block-gallery.columns-2:not(.has-nested-images) .blocks-gallery-item:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-3:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 2 * var(--gallery-gap)) / 3);
+}
+
+.entry-content .wp-block-gallery.columns-3:not(.has-nested-images) .blocks-gallery-item:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-4:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 3 * var(--gallery-gap)) / 4);
+}
+
+.entry-content .wp-block-gallery.columns-4:not(.has-nested-images) .blocks-gallery-item:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-5:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 4 * var(--gallery-gap)) / 5);
+}
+
+.entry-content .wp-block-gallery.columns-5:not(.has-nested-images) .blocks-gallery-item:nth-of-type(5n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-6:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 5 * var(--gallery-gap)) / 6);
+}
+
+.entry-content .wp-block-gallery.columns-6:not(.has-nested-images) .blocks-gallery-item:nth-of-type(6n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-7:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 6 * var(--gallery-gap)) / 7);
+}
+
+.entry-content .wp-block-gallery.columns-7:not(.has-nested-images) .blocks-gallery-item:nth-of-type(7n) {
+    margin-right: 0;
+}
+
+.entry-content .wp-block-gallery.columns-8:not(.has-nested-images) .blocks-gallery-item {
+    width: calc((100% - 7 * var(--gallery-gap)) / 8);
+}
+
+.entry-content .wp-block-gallery.columns-8:not(.has-nested-images) .blocks-gallery-item:nth-of-type(8n) {
+    margin-right: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/*  Icon-Feld der Buttons                                            */
+/* ---------------------------------------------------------------- */
+/* Die Schriftdateien der DJS-Plugins setzen .material-icons ungelayert auf inline-block
+   und line-height 1em - deshalb steht die Position des Button-Icons hier (ungelayert). */
+.btn-primary:not(.btn-ghost, .btn-outline, .btn-soft, .btn-link, .btn-circle, .btn-square, .join-item) > .material-icons,
+.comment-reply-link > .material-icons {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    display: flex;
     align-items: center;
+    width: 2.125em;
+    margin: 0;
+    padding-inline-start: 0.55em;
+    font-size: 1.125rem;
+    line-height: 1;
 }
 
 /* ---------------------------------------------------------------- */
@@ -99,31 +349,59 @@ rs-module-wrap a:not([class*="btn"]) {
 /* ---------------------------------------------------------------- */
 /*  DJS-Wallstreet-Pro Extensions: Einwilligung fuer externe Inhalte */
 /* ---------------------------------------------------------------- */
+/*
+ * Wie bisher (altes default.css/light.css): Glasfenster mit 70 % Breite, Oberkante bei 30 % der
+ * Fensterhoehe, breiter halbtransparenter Rahmen, dunkle Titel- und Fusszeile ueber die volle
+ * Breite, roter Schliessen-Knopf, Buttons im Theme-Stil (Icon-Feld links, Verlauf) mittig in
+ * natuerlicher Breite. Die Vollbild-Suche (layout.css, .site-search__box) traegt dasselbe Fenster.
+ * Die Titelzeile dient als Griff zum Verschieben (theme.js, initDraggable). Ungelayert, weil die
+ * Plugin-Styles (popup.css) ebenfalls ungelayert sind.
+ */
 #script_fullscreen {
+    --drag-x: 0px;
+    --drag-y: 0px;
     position: fixed;
-    top: 50%;
+    top: 30dvh;
     left: 50%;
     z-index: 1000;
-    width: min(54rem, calc(100vw - 2rem));
+    width: max(70%, min(100% - 2rem, 40rem));
     max-height: calc(100dvh - 2rem);
-    padding: 0;
+    padding: 0 0 1.25rem;
     overflow: auto;
-    translate: -50% -50%;
-    border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
-    border-radius: min(var(--radius-box), 1.25rem);
-    background: var(--color-base-100);
+    /* Passt das Fenster ab 30 % nicht mehr auf den Schirm, rueckt es so weit wie noetig nach oben */
+    translate: calc(-50% + var(--drag-x)) calc(var(--drag-y) - clamp(0px, 100% + 1rem - 70dvh, 30dvh - 1rem));
+    transform: none;
+    transform-origin: 50% 0;
+    scale: 0.92;
+    border: 15px solid var(--glass-window-frame);
+    border-radius: var(--radius-box);
+    background-color: var(--glass-window);
+    -webkit-backdrop-filter: var(--glass-filter);
+    backdrop-filter: var(--glass-filter);
+    background-clip: padding-box;
     color: var(--color-base-content);
-    box-shadow: 0 40px 100px -30px rgb(0 0 0 / 0.85);
+    box-shadow:
+        -10px 0 13px -7px #000,
+        10px 0 13px -7px #000,
+        0 40px 80px -30px rgb(0 0 0 / 0.8);
     opacity: 0;
     visibility: hidden;
     transition:
         opacity 0.25s ease,
+        scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1),
         visibility 0.25s;
 }
 
 #script_fullscreen.open {
+    transform: none;
+    scale: 1;
     opacity: 1;
     visibility: visible;
+}
+
+#script_fullscreen.is-dragging {
+    transition: none;
+    user-select: none;
 }
 
 #script_fullscreen .title_row {
@@ -132,176 +410,557 @@ rs-module-wrap a:not([class*="btn"]) {
     justify-content: space-between;
     gap: 1rem;
     margin: 0;
-    padding: 1.125rem 1.5rem;
-    border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
-    background: color-mix(in oklab, var(--color-primary) 10%, var(--color-base-100));
+    padding: 0 1rem 0 1.25rem;
+    border: 0;
+    border-radius: max(0px, var(--radius-box) - 15px) max(0px, var(--radius-box) - 15px) 0 0;
+    background: var(--glass-window-bar);
+    cursor: move;
+    touch-action: none;
 }
 
 #script_fullscreen h3 {
     margin: 0;
-    padding: 0;
-    font-size: 1.25rem;
+    padding: 1.25rem 0;
     color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
-#script_fullscreen .close {
+/* Roter Schliessen-Knopf wie bisher (popup.css stellt button.close sonst auf position: fixed) */
+#script_fullscreen .title_row button.close {
     position: static;
     display: inline-grid;
     place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    flex: none;
+    width: 3.125rem;
+    height: 2.1875rem;
     min-width: 0;
     min-height: 0;
     padding: 0;
     border: 0;
-    border-radius: 999px;
-    background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
-    color: var(--color-base-content);
-    font-size: 1.25rem;
+    border-radius: 5px;
+    background: #f00;
+    box-shadow: inset 0 2.65em 0 -1.85em rgb(255 255 255 / 0.15);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 900;
     cursor: pointer;
+    opacity: 1;
 }
 
-#script_fullscreen .close:hover {
-    background: var(--color-error);
-    color: var(--color-error-content);
+#script_fullscreen .title_row button.close::before {
+    content: none;
+}
+
+#script_fullscreen .title_row button.close:hover {
+    background: #d00;
 }
 
 #script_fullscreen p {
     margin: 0;
-    padding: 1.25rem 1.5rem 0;
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    text-align: start;
-    color: color-mix(in oklab, var(--color-base-content) 85%, transparent);
+    padding: 1.25rem 1.25rem 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    text-align: justify;
+    hyphens: auto;
 }
 
+/* Button-Paare mittig und je Zeile gleich breit: so breit wie die laengere Beschriftung der Zeile
+   (theme.js misst sie als --btn-row-w), immer einzeilig - fehlt der Platz, kuerzt eine Ellipse.
+   Nebeneinander, solange jeder Button noch rund 70 % seiner Breite hat, sonst untereinander */
 #script_fullscreen form.script {
-    display: grid;
-    gap: 0.75rem;
-    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 1.875rem 1.25rem 0;
 }
 
-@media (width >= 48rem) {
-    #script_fullscreen form.script {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #script_fullscreen .footer_row {
-        grid-column: 1 / -1;
-    }
-}
-
+/* Fusszeile ueber die volle Fensterbreite bis an den Rahmen */
 #script_fullscreen form .footer_row {
-    display: grid;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 1rem 0 0;
-    background: transparent;
-    border-top: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+    flex: 0 0 calc(100% + 2.5rem);
+    min-width: 0; /* sonst gibt die laengste einzeilige Beschriftung die Mindestbreite vor */
+    margin: 0.625rem -1.25rem -1.25rem;
+    padding: 1.0625rem 1.25rem;
+    border: 0;
+    border-radius: 0 0 max(0px, var(--radius-box) - 15px) max(0px, var(--radius-box) - 15px);
+    background: var(--glass-window-bar);
 }
 
-#script_fullscreen .btn,
+/* Buttons im Fenster und in Einbettungs-Platzhaltern: Theme-Stil mit Farbvarianten */
+#script_fullscreen .btn:not(.close),
 .cookies .btn {
-    position: static;
+    --btn-edge: color-mix(in oklab, var(--color-primary) 88%, #000);
+    --btn-main: var(--color-primary);
+    --btn-glyph: "visibility";
+    position: relative;
     top: auto;
-    justify-content: flex-start;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 22rem;
+    min-width: min(22.5rem, 100%);
+    max-width: 100%;
     height: auto;
-    min-height: 2.75rem;
+    min-height: 2.3125rem;
     margin: 0;
-    padding-block: 0.625rem;
+    padding: 0.75em 1em 0.65em 3.5em;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: var(--radius-field);
+    background: linear-gradient(90deg, color-mix(in oklab, var(--btn-edge) 60%, transparent), var(--btn-main) 55%, color-mix(in oklab, var(--btn-edge) 70%, transparent));
+    box-shadow: inset 0 2.75em 0 -1.5em rgb(255 255 255 / 0.15);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.25;
+    text-align: center;
+    text-shadow: 0 1px 1px #18191b;
     white-space: normal;
-    text-align: start;
-    line-height: 1.35;
+    cursor: pointer;
 }
 
-#script_fullscreen .btn::before,
+#script_fullscreen .btn:not(.close) {
+    display: block;
+    flex: 1 1 calc(var(--btn-row-w, 28rem) * 0.7);
+    min-width: 0;
+    max-width: var(--btn-row-w, max-content);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#script_fullscreen .btn:not(.close)::before,
 .cookies .btn::before {
+    content: var(--btn-glyph);
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    width: 2.125em;
+    padding-inline-start: 0.55em;
+    background: rgb(0 0 0 / 0.15);
     font-family: "Material Icons";
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: normal;
     line-height: 1;
+    text-shadow: none;
     font-feature-settings: "liga";
+    transition: width 0.5s ease;
 }
 
-#script_fullscreen .btn.ok,
-.cookies .btn {
-    --btn-color: var(--color-primary);
-    --btn-fg: var(--color-primary-content);
+#script_fullscreen .btn:not(.close):is(:hover, :focus-visible)::before,
+.cookies .btn:is(:hover, :focus-visible)::before {
+    width: 100%;
 }
 
-#script_fullscreen .btn.ok::before,
-.cookies .btn::before {
-    content: "visibility";
+#script_fullscreen .btn:not(.close):is(:hover, :focus-visible),
+.cookies .btn:is(:hover, :focus-visible) {
+    text-shadow: 0 0 1px #18191b;
 }
 
 #script_fullscreen .btn.no {
-    --btn-color: var(--color-neutral);
-    --btn-fg: var(--color-neutral-content);
-}
-
-#script_fullscreen .btn.no::before {
-    content: "visibility_off";
+    --btn-glyph: "visibility_off";
 }
 
 #script_fullscreen .btn.all-ok {
-    --btn-color: var(--color-success);
-    --btn-fg: var(--color-success-content);
-}
-
-#script_fullscreen .btn.all-ok::before {
-    content: "cookie";
+    --btn-edge: rgb(13 114 0);
+    --btn-main: rgb(13 114 0);
+    --btn-glyph: "cookie";
 }
 
 #script_fullscreen .btn.all-no {
-    --btn-color: color-mix(in oklab, var(--color-error) 22%, var(--color-base-100));
-    --btn-fg: var(--color-base-content);
+    --btn-edge: rgb(114 0 6);
+    --btn-main: rgb(114 0 6);
+    --btn-glyph: "cookie_off";
 }
 
-#script_fullscreen .btn.all-no::before {
-    content: "do_not_disturb_on";
+/* Platzhalter fuer blockierte Einbettungen (DJS-Extensions iframe.php): Hinweis-Kasten,
+   Zustimm-Button und die Ziel-URL als LCD-Anzeige - Masse wie im bisherigen Theme.
+   Die Inhalte stehen oft in <center>, daher die Ausrichtung ausdruecklich setzen. */
+.notShow {
+    display: none;
 }
 
-/* Platzhalter fuer blockierte Einbettungen im Beitrag */
+/* Steht der Hinweis in einem Einbettungs-Block (figure.wp-block-embed), reserviert WordPress per
+   ::before noch die Video-Hoehe (16:9 usw.) - das Video ist aber ausgeblendet: Platz freigeben.
+   Ohne overflow:hidden, damit der Schatten des Kastens nicht abgeschnitten wird. */
+figure.wp-block-embed .wp-block-embed__wrapper:has(div.cookies) {
+    overflow: visible;
+}
+
+figure.wp-block-embed .wp-block-embed__wrapper:has(div.cookies)::before {
+    content: none;
+    display: none;
+}
+
+div.cookies {
+    padding: 0 10px;
+    text-align: start;
+}
+
+div.cookies > h3 {
+    margin: 25px 0 15px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.12;
+    text-align: start;
+}
+
 div.inner.cookies {
-    display: block;
+    position: relative;
+    z-index: 1;
+    display: flow-root; /* eigener Block-Kontext wie das fruehere inline-block: Absatz-Abstand bleibt innen */
     width: 100%;
-    padding: 1.25rem 1.5rem;
-    border: 1px dashed color-mix(in oklab, var(--color-base-content) 22%, transparent);
-    border-radius: var(--radius-small);
-    background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
-    box-shadow: none;
+    margin: 0 0 40px;
+    padding: 20px 20px 0;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(174deg, rgb(42 44 51 / 0.19) 15%, rgb(1 1 1 / 0.44) 32%, rgb(0 0 0 / 0.19) 93%);
+    box-shadow:
+        -4px 8px 8px rgb(0 0 0 / 0.1),
+        -8px 16px 16px rgb(0 0 0 / 0.1),
+        -16px 32px 32px rgb(0 0 0 / 0.15),
+        -32px 64px 64px rgb(0 0 0 / 0.25);
+    text-align: start;
+}
+
+div.inner.cookies > p {
+    margin: 0 0 15px;
+}
+
+.lcd a:not(.btn) {
+    text-decoration: none;
 }
 
 form.cookies {
-    margin: 1rem 0 0;
+    margin: 0 0 10px;
+    text-align: center;
 }
 
-/* Schwebender Cookie-Knopf: unten links statt ueber dem Logo */
-.cookie-control #cookie-settings,
-#cookie-settings {
+/* Einzeilig wie im Einwilligungsfenster; zu lange Beschriftung endet mit Ellipse (Tooltip = title) */
+form.cookies .btn {
+    display: inline-block;
+    min-width: min(22.5rem, 100%);
+    max-width: 100%;
+    margin: 20px 0 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.lcd {
+    display: block;
+    width: 100%;
+    margin: 1em auto;
+    padding: 0.65em 1em;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 0 rgb(0 0 0 / 0.2), 0 0 4px rgb(0 0 0 / 0.1), inset 0 0 5px 5px rgb(0 0 0 / 0.1);
+    color: #21230e;
+    font-family: consolas, courier, monospace;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 160%;
+    text-align: center;
+    text-shadow: -1px 2px 1px rgb(0 0 0 / 0.1);
+    word-break: break-all;
+}
+
+.lcd small {
+    float: right;
+    margin-top: -20px;
+    color: #949782;
+    text-shadow: none;
+}
+
+/* Roehrenbild: Zeilenraster mit Farbsaum, die Schrift zittert leicht */
+.crt {
+    background: linear-gradient(rgb(18 16 16 / 0) 50%, rgb(0 0 0 / 0.15) 50%), linear-gradient(90deg, rgb(255 0 0 / 0.06), rgb(0 255 0 / 0.02), rgb(0 0 255 / 0.06));
+    background-color: var(--lcd-screen, transparent);
+    animation: crt-text-shadow 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .crt {
+        animation: none;
+    }
+}
+
+@keyframes crt-text-shadow {
+    0% {
+        text-shadow: 0.43px 0 1px rgb(0 30 255 / 0.5), -0.43px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    5% {
+        text-shadow: 2.79px 0 1px rgb(0 30 255 / 0.5), -2.79px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    10% {
+        text-shadow: 0.02px 0 1px rgb(0 30 255 / 0.5), -0.02px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    15% {
+        text-shadow: 0.40px 0 1px rgb(0 30 255 / 0.5), -0.40px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    20% {
+        text-shadow: 3.47px 0 1px rgb(0 30 255 / 0.5), -3.47px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    25% {
+        text-shadow: 1.61px 0 1px rgb(0 30 255 / 0.5), -1.61px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    30% {
+        text-shadow: 0.70px 0 1px rgb(0 30 255 / 0.5), -0.70px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    35% {
+        text-shadow: 3.89px 0 1px rgb(0 30 255 / 0.5), -3.89px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    40% {
+        text-shadow: 3.87px 0 1px rgb(0 30 255 / 0.5), -3.87px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    45% {
+        text-shadow: 2.23px 0 1px rgb(0 30 255 / 0.5), -2.23px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    50% {
+        text-shadow: 0.08px 0 1px rgb(0 30 255 / 0.5), -0.08px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    55% {
+        text-shadow: 2.37px 0 1px rgb(0 30 255 / 0.5), -2.37px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    60% {
+        text-shadow: 2.20px 0 1px rgb(0 30 255 / 0.5), -2.20px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    65% {
+        text-shadow: 2.86px 0 1px rgb(0 30 255 / 0.5), -2.86px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    70% {
+        text-shadow: 0.48px 0 1px rgb(0 30 255 / 0.5), -0.48px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    75% {
+        text-shadow: 1.89px 0 1px rgb(0 30 255 / 0.5), -1.89px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    80% {
+        text-shadow: 0.08px 0 1px rgb(0 30 255 / 0.5), -0.08px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    85% {
+        text-shadow: 0.09px 0 1px rgb(0 30 255 / 0.5), -0.09px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    90% {
+        text-shadow: 3.44px 0 1px rgb(0 30 255 / 0.5), -3.44px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    95% {
+        text-shadow: 2.18px 0 1px rgb(0 30 255 / 0.5), -2.18px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+
+    100% {
+        text-shadow: 2.62px 0 1px rgb(0 30 255 / 0.5), -2.62px 0 1px rgb(255 0 80 / 0.3), 0 0 3px;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/*  Cookie-Knopf (Extensions) und Barrierefreiheit: Kaestchen wie bisher */
+/* ---------------------------------------------------------------- */
+/* Dunkles Kaestchen mit glaenzenden 30px-Knoepfen in Themefarbe. Am Desktop sitzen beide in der
+   Kopfleiste: Cookie links, Barrierefreiheit rechts am Rand, senkrecht mittig (theme.js setzt den
+   Cookie-Knopf dorthin). Schmal: Cookie unten links, Barrierefreiheit zwischen den Header-Knoepfen. */
+.cookie-control,
+.admin-bar .cookie-control,
+.font-size-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 8px;
+    background: rgb(0 0 0 / 0.3);
+    -webkit-backdrop-filter: var(--glass-filter);
+    backdrop-filter: var(--glass-filter);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+    transition: gap 0.2s ease;
+}
+
+.cookie-control,
+.admin-bar .cookie-control {
     position: fixed;
     top: auto;
     left: 1rem;
     bottom: 1rem;
     z-index: 44;
+}
+
+.cookie-control #cookie-settings,
+#cookie-settings,
+.font-size-controls button {
+    position: relative;
     display: grid;
     place-items: center;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 30px;
+    height: 30px;
+    margin: 0;
     padding: 0;
-    border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
-    border-radius: 999px;
-    background: color-mix(in oklab, var(--color-base-100) 90%, transparent);
-    color: var(--color-base-content);
-    box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.6);
-    backdrop-filter: blur(8px);
+    overflow: hidden;
+    border: 0;
+    border-radius: 5px;
+    background: var(--color-primary);
+    box-shadow: inset 0 2.65em 0 -1.9em rgb(255 255 255 / 0.15);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
     cursor: pointer;
 }
 
+.font-size-controls button .material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Bis zum Umsetzen durch theme.js nicht unten links aufblitzen */
 @media (width >= 70rem) {
-    body.fixed_Footer #cookie-settings {
-        bottom: 4.5rem;
+    .js body > .cookie-control {
+        visibility: hidden;
     }
+
+    .site-header__bar {
+        position: relative;
+    }
+
+    .site-header__bar > .cookie-control {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        bottom: auto;
+        z-index: 2;
+        translate: 0 -50%;
+    }
+
+    .site-a11y {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        z-index: 2;
+        translate: 0 -50%;
+    }
+}
+
+/* Schmal: Platzhalter in der Knopfreihe, das Kaestchen klappt nach unten auf */
+@media (width < 70rem) {
+    .site-a11y {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        flex: none;
+    }
+
+    .site-a11y .font-size-controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        flex-direction: column;
+    }
+}
+
+.font-size-controls__modes {
+    display: contents;
+}
+
+.font-size-controls:is(:hover, :focus-within) {
+    gap: 0.25rem;
+}
+
+/* Nur das Barrierefreiheits-Symbol ist immer zu sehen, die anderen fahren aus */
+.font-size-controls button:not(.anchor) {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        width 0.2s ease,
+        height 0.2s ease;
+}
+
+.font-size-controls:is(:hover, :focus-within) button:not(.anchor) {
+    width: 30px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}
+
+@media (width < 70rem) {
+    .font-size-controls button:not(.anchor) {
+        width: 30px;
+        height: 0;
+    }
+
+    .font-size-controls:is(:hover, :focus-within) button:not(.anchor) {
+        height: 30px;
+    }
+}
+
+/* Zuruecksetzen: zeigt das Barrierefreiheits-Symbol, beim Aufklappen den Pfeil */
+.font-size-controls .reset .material-symbols-outlined {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.font-size-controls .reset .material-symbols-outlined + .material-symbols-outlined,
+.font-size-controls:is(:hover, :focus-within) .reset .material-symbols-outlined:first-child {
+    opacity: 0;
+}
+
+.font-size-controls:is(:hover, :focus-within) .reset .material-symbols-outlined + .material-symbols-outlined {
+    opacity: 1;
+}
+
+.font-size-controls button:is(:hover, :focus-visible),
+#cookie-settings:is(:hover, :focus-visible) {
+    background-color: color-mix(in oklab, var(--color-primary) 80%, #fff);
+}
+
+.font-size-controls button:focus-visible,
+#cookie-settings:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 1px;
+}
+
+/* Gewaehltes Farbschema */
+.font-size-controls .color_mode[aria-checked="true"] {
+    box-shadow:
+        inset 0 2.65em 0 -1.9em rgb(255 255 255 / 0.15),
+        inset 0 0 0 2px #fff;
 }
 
 /* GDPR-Framework (Cookie-Banner): Schrift des Themes */
@@ -317,36 +976,125 @@ form.cookies {
 /* ---------------------------------------------------------------- */
 /*  Jetpack                                                          */
 /* ---------------------------------------------------------------- */
+/* "Teilen mit": Bezeichnung wie die Etiketten im Theme (klein, Themefarbe); Knoepfe im normalen
+   Theme-Button-Stil wie "Antworten" (Verlauf in Themefarbe, abgedunkeltes Icon-Feld links, das sich bei
+   Hover ueber den Knopf schiebt). Jetpack setzt Farben mit !important, deshalb hier ebenso. */
 .sharedaddy .sd-title {
-    font-size: 0.875rem !important;
-    color: color-mix(in oklab, var(--color-base-content) 70%, transparent) !important;
+    margin: 0 0 0.75rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary) !important;
 }
 
-.sharedaddy .sd-content ul li a.sd-button,
-.sharedaddy .sd-social-icon .sd-content ul li a.sd-button {
-    border-radius: 999px !important;
-    background: color-mix(in oklab, var(--color-base-content) 8%, transparent) !important;
-    color: var(--color-base-content) !important;
-    box-shadow: none !important;
+/* Der Textfluss-Abstand des Beitrags gilt nicht innerhalb der Box: Knoepfe 12px unter der Bezeichnung */
+.sharedaddy .sd-sharing .sd-content {
+    margin-top: 0 !important;
 }
 
-.sharedaddy .sd-content ul li a.sd-button:hover {
-    background: var(--color-primary) !important;
+.sharedaddy .sd-sharing .sd-content ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 !important;
+}
+
+.sharedaddy .sd-sharing .sd-content ul li {
+    margin: 0 !important;
+}
+
+/* leerer Abschluss von Jetpack (Float-Clearing) - in der Flex-Zeile nur eine zusaetzliche Luecke */
+.sharedaddy .sd-sharing .sd-content ul li.share-end {
+    display: none !important;
+}
+
+.sharedaddy .sd-sharing .sd-content ul li a.sd-button {
+    --btn-edge: color-mix(in oklab, var(--color-primary) 88%, #000);
+    position: relative !important;
+    isolation: isolate;
+    display: inline-flex !important;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.75em 1.1em 0.65em 3.5em !important;
+    overflow: hidden;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-field) !important;
+    background-color: transparent !important;
+    background-image: linear-gradient(90deg, color-mix(in oklab, var(--btn-edge) 60%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--btn-edge) 70%, transparent)) !important;
+    box-shadow: inset 0 2.75em 0 -1.5em rgb(255 255 255 / 0.15) !important;
     color: var(--color-primary-content) !important;
+    font-family: inherit !important;
+    font-size: 0.85rem !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    text-shadow: 0 1px 1px #18191b;
+    white-space: nowrap;
+    transition: text-shadow 0.3s ease;
+}
+
+.sharedaddy .sd-sharing .sd-content ul li a.sd-button > span {
+    margin: 0 !important;
+    /* Jetpack gibt der Beschriftung 23px Zeilenhoehe - der Knopf soll kompakt bleiben */
+    line-height: 1 !important;
+}
+
+/* Jetpack-Logo (Schrift social-logos) im Icon-Feld */
+.sharedaddy .sd-sharing .sd-content ul li a.sd-button::before {
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    z-index: -1;
+    display: flex !important;
+    align-items: center;
+    width: 2.125em !important;
+    height: auto !important;
+    padding-inline-start: 0.55em;
+    background: rgb(0 0 0 / 0.15) !important;
+    color: inherit !important;
+    line-height: 1 !important;
+    transition: width 0.5s ease;
+}
+
+.sharedaddy .sd-sharing .sd-content ul li a.sd-button:is(:hover, :focus-visible) {
+    color: var(--color-primary-content) !important;
+    text-shadow: 0 0 1px #18191b;
+}
+
+.sharedaddy .sd-sharing .sd-content ul li a.sd-button:is(:hover, :focus-visible)::before {
+    width: 100% !important;
+}
+
+/* Nur Symbole (Jetpack-Stil "Icon only"): das Feld fuellt den ganzen Knopf */
+.sharedaddy .sd-sharing.sd-social-icon .sd-content ul li a.sd-button {
+    width: 2.125rem;
+    padding: 0 !important;
+}
+
+.sharedaddy .sd-sharing.sd-social-icon .sd-content ul li a.sd-button::before {
+    width: 100% !important;
+}
+
+/* Klappfenster "Mehr": Glas wie die uebrigen Aufklappmenues */
+.sharedaddy .sharing-hidden .inner {
+    padding: 0.75rem !important;
+    border: 1px solid var(--glass-shine) !important;
+    border-radius: var(--radius-box) !important;
+    background: var(--glass-popover) !important;
+    -webkit-backdrop-filter: var(--glass-filter);
+    backdrop-filter: var(--glass-filter);
+    box-shadow: var(--glass-drop) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sharedaddy .sd-sharing .sd-content ul li a.sd-button::before {
+        transition: none;
+    }
 }
 
 /* ---------------------------------------------------------------- */
 /*  AngularJS-Rechner (Formulare im Beitrag)                         */
 /* ---------------------------------------------------------------- */
-[ng-app] form,
-form[ng-controller] {
-    display: grid;
-    gap: 0.75rem;
-    padding: 1.25rem;
-    border-radius: var(--radius-small);
-    background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
-}
-
 .ng-invalid.ng-touched {
     border-color: var(--color-error) !important;
 }
@@ -400,4 +1148,104 @@ p.demo_store {
 
 .woocommerce :is(table.shop_table, .cart_totals, .woocommerce-checkout-review-order) {
     border-radius: var(--radius-small);
+}
+
+/* ---------------------------------------------------------------- */
+/*  Suchblock (WordPress): wie bisher                                */
+/* ---------------------------------------------------------------- */
+/* Helle Fassung, dunkles Eingabefeld, daneben der Glanz-Button mit Lupen-Feld, das sich bei Hover
+   ueber den Button schiebt. Ungelayert und mit doppelter Klasse: die Block-Styles von WordPress
+   sind ebenfalls ungelayert. */
+.wp-block-search.wp-block-search .wp-block-search__label {
+    display: inline-block;
+    margin: 0 0 0.625rem;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid #e0e4e6;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.075);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:has(.wp-block-search__input:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+}
+
+.wp-block-search.wp-block-search .wp-block-search__input {
+    min-width: 0;
+    height: 2.875rem;
+    margin: 0;
+    padding: 0.625rem 0.5rem;
+    border: 0;
+    border-radius: 0.15rem 0 0 0.15rem;
+    background: var(--search-field, #2a2c33);
+    color: var(--search-field-text, #fff);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.wp-block-search.wp-block-search .wp-block-search__input:focus {
+    background: var(--search-field-focus, #565963);
+    outline: none;
+}
+
+.wp-block-search.wp-block-search .wp-block-search__button:not(.has-icon) {
+    position: relative;
+    isolation: isolate;
+    flex: none;
+    min-width: 9.375rem;
+    height: 2.875rem;
+    margin: 0;
+    padding: 0.85em 1em 0.55em 3.5em;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 0 0.1em 0.1em 0;
+    background: var(--color-primary);
+    box-shadow: inset 0 2.55em 0 -1em rgb(255 255 255 / 0.15);
+    color: var(--color-primary-content);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1;
+    text-shadow: 0 1px 1px #18191b;
+    cursor: pointer;
+}
+
+.wp-block-search.wp-block-search .wp-block-search__button:not(.has-icon)::before {
+    content: "search";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    width: 2.125em;
+    padding-inline-start: 0.55em;
+    background: rgb(0 0 0 / 0.15);
+    font-family: "Material Icons";
+    font-size: 1.125rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    transition: width 0.5s ease;
+}
+
+.wp-block-search.wp-block-search .wp-block-search__button:not(.has-icon):is(:hover, :focus-visible)::before {
+    width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-search.wp-block-search .wp-block-search__button::before {
+        transition: none;
+    }
 }

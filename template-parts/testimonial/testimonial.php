@@ -27,7 +27,8 @@ if ($carousel) {
     djs_use_script("carousel");
 }
 
-$effect   = in_array($pt->get("testimonial_slide_type"), ["fade", "crossfade", "cover", "uncover"], true) ? "fade" : "slide"; ?>
+// Customizer "Slidertyp": scroll = schieben, fade / crossfade / cover-fade = ueberblenden (wie bisher carouFredSel)
+$effect   = in_array($pt->get("testimonial_slide_type"), ["fade", "crossfade", "cover-fade", "cover", "uncover"], true) ? "fade" : "slide"; ?>
 
 <section class="section section--bleed testimonial-section testimonial-section--v<?php echo $style; ?>"<?php echo $bg ? ' style="--section-bg: url(\'' . esc_url($bg) . '\')"' : ""; ?>>
     <div class="section--bleed__overlay">
@@ -35,10 +36,10 @@ $effect   = in_array($pt->get("testimonial_slide_type"), ["fade", "crossfade", "
             <?php if ($carousel) { ?>
                 <div class="carousel carousel--quotes" data-carousel
                     data-effect="<?php echo esc_attr($effect); ?>"
-                    data-per-view="<?php echo $style === 3 ? 1 : 2; ?>"
+                    data-per-view="1"
                     data-step="<?php echo max(1, (int) $pt->get("testimonial_scroll_items")); ?>"
                     data-speed="<?php echo max(100, (int) $pt->get("testimonial_scroll_duration")); ?>"
-                    data-autoplay="<?php echo max(1500, (int) $pt->get("testimonial_timeout_duration")); ?>"
+                    data-autoplay="<?php echo max(500, (int) $pt->get("testimonial_timeout_duration")); ?>"
                     aria-roledescription="carousel" aria-label="<?php esc_attr_e("Testimonials", "djs-wallstreet-pro"); ?>">
                     <div class="carousel__viewport">
                         <div class="carousel__track">

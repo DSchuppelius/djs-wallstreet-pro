@@ -235,6 +235,8 @@ function djs_blog_loop(?WP_Query $query = null, array $args = []): void {
                 'mode'    => $mode,
                 'variant' => $variant,
                 'first'   => $index === 0,
+                // Datums-Plakette wie bisher in Standard- und Masonry-Ansicht
+                'badge'   => in_array($args['view'], ['stack', 'masonry'], true),
             ]);
             $index++;
         } ?>

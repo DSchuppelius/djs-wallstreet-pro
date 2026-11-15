@@ -36,8 +36,15 @@ djs_layout_end();
 
 if (defined("TEAM_POST_TYPE") && $current_setup_posttypes->get("about_team_section_show_hide")) { ?>
     <section class="section team-section about-team site-wrap" aria-label="<?php esc_attr_e("Team", "djs-wallstreet-pro"); ?>">
-        <?php djs_section_heading($current_setup_posttypes->get("about_team_title"), $current_setup_posttypes->get("about_team_description")); ?>
-        <div class="card-grid card-grid--4">
+        <?php /* Wie bisher: Ueberschrift und Karten in je einem eigenen Rahmen */
+        $team_title = trim((string) $current_setup_posttypes->get("about_team_title"));
+        $team_text  = trim((string) $current_setup_posttypes->get("about_team_description"));
+        if ($team_title !== "" || $team_text !== "") { ?>
+            <div class="about-team__head">
+                <?php djs_section_heading($team_title, $team_text); ?>
+            </div>
+        <?php } ?>
+        <div class="about-team__grid">
             <?php foreach (djs_team_members() as $member) {
                 get_template_part("template-parts/team/member", null, ["member" => $member, "variant" => "about"]);
             } ?>

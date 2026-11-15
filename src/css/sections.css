@@ -120,6 +120,22 @@
         visibility: visible;
     }
 
+    /* Senkrecht (Customizer "Bewegungsrichtung: vertikal"): Spur wandert nach oben */
+    .carousel--vertical.is-ready .carousel__viewport {
+        overflow: hidden;
+        scroll-snap-type: none;
+    }
+
+    .carousel--vertical.is-ready .carousel__track {
+        flex-direction: column;
+        gap: 0;
+        transition: transform var(--carousel-speed, 600ms) ease;
+    }
+
+    .carousel--vertical.is-ready .carousel__slide {
+        flex: none;
+    }
+
     .carousel__controls {
         display: flex;
         align-items: center;
@@ -170,9 +186,6 @@
     /* ---------------------------------------------------------------- */
     .hero-slider {
         position: relative;
-        overflow: hidden;
-        border-radius: 0 0 var(--main-slider-radius, 0) var(--main-slider-radius, 0);
-        background: var(--color-neutral);
     }
 
     .carousel--hero .carousel__viewport {
@@ -279,12 +292,6 @@
         }
     }
 
-    /* Slider Revolution: eigener Rahmen, Rundung aus dem Customizer */
-    .hero-revslider {
-        overflow: hidden;
-        border-radius: 0 0 var(--main-slider-radius, 0) var(--main-slider-radius, 0);
-    }
-
     /* ---------------------------------------------------------------- */
     /*  Blog-Teaser der Startseite                                      */
     /* ---------------------------------------------------------------- */
@@ -340,13 +347,14 @@
 
     .service-card__title {
         margin: 0;
-        font-size: var(--service-font-size, 1.375rem);
-        font-weight: var(--service-font-weight, 650);
+        font-size: var(--service-font-size, 1.5rem);
+        font-weight: var(--service-font-weight, 600);
         font-style: var(--service-font-style, normal);
     }
 
+    /* Titel wie bisher: dunkles Schema #f5f5f5, helles #2a2c33 */
     .service-card__title a {
-        color: inherit;
+        color: var(--card-title, inherit);
         text-decoration: none;
     }
 
@@ -358,23 +366,142 @@
     .service-card__more {
         align-self: flex-start;
         margin-top: auto;
-        padding-inline: 0;
+    }
+
+    .service-card__body > .service-card__text {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Wie bisher (nur Stil 1): die mittleren Karten (weder erste noch letzte) 10px mehr Innenabstand oben und unten */
+    .service-grid--roomy.service-grid--v1 .service-card:not(:first-child, :last-child) {
+        padding-block: calc(2rem + 10px);
+    }
+
+    /* Wie bisher bei allen Stilen, auch ohne Hover-Effekt: die Kachel faerbt sich in Themefarbe (70 %),
+       der Button wird dunkel */
+    .service-grid > .service-card:hover {
+        background-color: var(--link-color_additional-70, color-mix(in srgb, var(--color-primary) 70%, transparent));
+    }
+
+    .service-grid > .service-card:hover .service-card__more {
+        background: #32343c;
+        color: #fff;
+    }
+
+    .service-grid > .service-card:is(.service-card--v2, .service-card--v3, .service-card--v4, .service-card--v5):hover .service-card__more {
+        border-color: #f5f5f5;
+    }
+
+    /*
+     * Hover-Effekt (Customizer "Hover-Effekt aendern") je Stil wie bisher
+     * (Stil 1 = bisher .service, Stil 2-6 = bisher .service1 ... .service5)
+     */
+    .service-card__visual :is(img, .service-card__icon) {
+        transition:
+            transform 0.6s ease-out,
+            box-shadow 0.2s linear,
+            background-color 0.2s linear,
+            color 0.2s linear;
+    }
+
+    /* 1: Bild bzw. Symbol dreht sich einmal */
+    .service-grid--hover.service-grid--v1 .service-card:hover .service-card__visual :is(img, .service-card__icon) {
+        transform: rotate(360deg);
+    }
+
+    /* 2: Bild bzw. Symbol waechst, das Symbol bekommt einen Ring in Themefarbe */
+    .service-grid--v2 .service-card__visual :is(img, .service-card__icon) {
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+
+    .service-grid--hover.service-grid--v2 .service-card:hover .service-card__visual :is(img, .service-card__icon) {
+        transform: scale(1.2);
+    }
+
+    .service-grid--hover.service-grid--v2 .service-card:hover .service-card__icon {
+        background: #f5f6fa;
+        color: var(--color-primary);
+        box-shadow: 0 0 0 1px var(--color-primary);
+    }
+
+    /* 3: die Linie in Themefarbe fuellt die Kachel */
+    .service-grid--hover.service-grid--v3 .service-card {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .service-grid--hover.service-grid--v3 .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        z-index: -1;
+        width: 0;
+        background-color: var(--color-primary);
+        transition: width 0.5s;
+    }
+
+    .service-grid--hover.service-grid--v3 .service-card:hover::before {
+        width: 100%;
+    }
+
+    .service-grid--hover.service-grid--v3 .service-card:hover .service-card__icon {
+        color: #f5f5f5;
+    }
+
+    /* 4: Kachel hebt sich und wird zur Themefarbe, Bild bzw. Symbol waechst */
+    .service-grid--hover.service-grid--v4 .service-card:hover {
+        transform: translateY(-7px);
+        background-color: var(--color-primary);
+        box-shadow: 0 10px 25px 0 rgb(0 0 0 / 0.1);
+        color: #fff;
+    }
+
+    .service-grid--hover.service-grid--v4 .service-card:hover .service-card__visual :is(img, .service-card__icon) {
+        transform: scale(1.1);
+    }
+
+    .service-grid--hover.service-grid--v4 .service-card:hover .service-card__icon {
+        background: #f5f6fa;
         color: var(--color-primary);
     }
 
-    .service-card__more:hover {
-        background: none;
-        gap: 0.75rem;
+    /* 5: Schatten, Bild bzw. Symbol dreht sich */
+    .service-grid--v5 .service-card__visual :is(img, .service-card__icon) {
+        transition-duration: 0.5s;
     }
 
-    .service-grid--roomy .service-card {
-        padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    .service-grid--hover.service-grid--v5 .service-card:hover {
+        box-shadow: 5px 7px 9px -4px #9e9e9e;
     }
 
-    .service-grid--hover .service-card:hover {
-        transform: translateY(-6px);
-        border-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
-        box-shadow: 0 30px 50px -30px rgb(0 0 0 / 0.7);
+    .service-grid--hover.service-grid--v5 .service-card:hover .service-card__visual :is(img, .service-card__icon) {
+        transform: rotate(360deg);
+    }
+
+    /* 6: Kachel in Themefarbe, Symbol weiss mit Themefarbe, dreht sich; Button dunkel */
+    .service-grid--hover.service-grid--v6 .service-card:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+    }
+
+    .service-grid--hover.service-grid--v6 .service-card:hover .service-card__visual :is(img, .service-card__icon) {
+        transform: rotate(360deg);
+    }
+
+    .service-grid--hover.service-grid--v6 .service-card:hover .service-card__icon {
+        background: #fff;
+        color: var(--color-primary);
+    }
+
+    .service-grid--hover.service-grid--v6 .service-card:hover .service-card__more {
+        border-color: #32343c;
+        background: #32343c;
+    }
+
+    /* Texte auf farbiger Kachel weiss */
+    .service-grid--hover:is(.service-grid--v4, .service-grid--v6) .service-card:hover :is(.service-card__text, .service-card__title a) {
+        color: #fff;
     }
 
     /* 1: zentriert, Symbol/Bild oben */
@@ -387,149 +514,121 @@
         align-self: center;
     }
 
-    /* 2: Symbol links, Text rechts */
-    .service-card--v2 {
-        flex-direction: row;
-        align-items: flex-start;
+    /* Text im Blocksatz wie bei allen Stilen bisher */
+    .service-card--v1 .service-card__text {
+        text-align: justify;
+        hyphens: auto;
     }
 
-    .service-card--v2 .service-card__visual {
-        flex: none;
+    /*
+     * Stile 2-6: Werte der bisherigen Templates servic-2 ... servic-6.
+     * Gemeinsam: Glasflaeche ohne dunkle Kante, Titel 24px, Rahmen-Button.
+     */
+    .service-card:is(.service-card--v2, .service-card--v3, .service-card--v4, .service-card--v5, .service-card--v6) {
+        padding: 0.625rem 0.625rem 1.5rem;
+        gap: 0;
+        border: 0;
+        border-radius: var(--radius-panel);
+        background-color: var(--glass-tile);
+        -webkit-backdrop-filter: var(--glass-filter);
+        backdrop-filter: var(--glass-filter);
+        box-shadow: var(--tile-drop);
     }
 
-    .service-card--v2.has-image .service-card__visual {
-        width: 38%;
+    .service-card:is(.service-card--v2, .service-card--v3, .service-card--v4, .service-card--v5, .service-card--v6) .service-card__visual {
+        margin: 1.25rem 0 1.5rem;
     }
 
-    /* 3: Bild als Hintergrund, Text unten */
-    .service-card--v3 {
-        position: relative;
-        justify-content: flex-end;
-        min-height: 20rem;
-        padding: 0;
-        overflow: hidden;
-        color: #fff;
-    }
-
-    .service-card--v3 .service-card__visual {
-        position: absolute;
-        inset: 0;
-    }
-
-    .service-card--v3 .service-card__img {
-        height: 100%;
-        aspect-ratio: auto;
-        border-radius: 0;
-        transition: transform 0.6s var(--ease-snappy);
-    }
-
-    .service-card--v3:hover .service-card__img {
-        transform: scale(1.06);
-    }
-
-    .service-card--v3 .service-card__icon {
-        position: absolute;
-        top: 1.5rem;
-        left: 1.5rem;
-    }
-
-    .service-card--v3 .service-card__body {
-        position: relative;
-        flex: none;
-        padding: 6rem 1.5rem 1.5rem;
-        background: linear-gradient(to top, rgb(8 10 14 / 0.9), rgb(8 10 14 / 0.55) 60%, transparent);
-    }
-
-    .service-card--v3 .service-card__text {
-        color: rgb(255 255 255 / 0.85);
-    }
-
-    .service-card--v3 .service-card__more {
-        color: #fff;
-    }
-
-    /* 4: schlicht mit Akzentlinie */
-    .has-frame .service-card--v4,
-    .service-card--v4 {
-        border-width: 0 0 0 4px;
-        border-style: solid;
-        border-color: var(--color-primary);
-        border-radius: 0 var(--radius-small) var(--radius-small) 0;
-        background: color-mix(in oklab, var(--color-base-100) 60%, transparent);
-    }
-
-    .service-card--v4 .service-card__icon {
-        width: auto;
-        height: auto;
-        background: none;
-        box-shadow: none;
-        color: var(--color-primary);
-        font-size: 2.25rem;
-    }
-
-    .service-card--v4 .service-card__img {
-        aspect-ratio: 21 / 9;
-    }
-
-    /* 5: zentriert, Symbol schwebt ueber der Karte */
-    .service-grid--v5 {
-        padding-top: 2.5rem;
-        row-gap: 4rem;
-    }
-
-    .service-card--v5 {
-        align-items: center;
-        text-align: center;
-        overflow: visible;
-    }
-
-    .service-card--v5 .service-card__visual {
-        margin-top: calc(-2.5rem - clamp(1.25rem, 2.5vw, 2rem));
-    }
-
-    .service-card--v5 .service-card__icon {
+    .service-card:is(.service-card--v2, .service-card--v3, .service-card--v4, .service-card--v5, .service-card--v6) :is(.service-card__img, .service-card__visual img) {
         width: 5rem;
         height: 5rem;
-        border-radius: 999px;
-        outline: 6px solid color-mix(in oklab, var(--color-base-100) 92%, transparent);
-    }
-
-    .service-card--v5 .service-card__img {
-        width: 7rem;
-        height: 7rem;
         aspect-ratio: 1;
-        border-radius: 999px;
-        outline: 6px solid color-mix(in oklab, var(--color-base-100) 92%, transparent);
+        object-fit: cover;
+        border: 2px solid #fff;
+        border-radius: 50%;
     }
 
-    .service-card--v5 .service-card__more {
+    .service-card:is(.service-card--v2, .service-card--v3, .service-card--v4, .service-card--v5, .service-card--v6) .service-card__icon {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+
+    /* 2: rundes Bild mit Ring in Themefarbe, zentriert, Blocksatz */
+    .service-card--v2,
+    .service-card--v4,
+    .service-card--v6 {
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-card--v2 :is(.service-card__img, .service-card__visual img),
+    .service-card--v6 :is(.service-card__img, .service-card__visual img) {
+        border-width: 4px;
+        box-shadow: 0 0 0 1px var(--color-primary);
+    }
+
+    .service-card--v6 :is(.service-card__img, .service-card__visual img) {
+        border-width: 2px;
+    }
+
+    .service-card:is(.service-card--v2, .service-card--v4, .service-card--v6) .service-card__text {
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    .service-card:is(.service-card--v2, .service-card--v4, .service-card--v6) .service-card__more {
         align-self: center;
     }
 
-    /* 6: nummerierte Kacheln, Hover faerbt in Primaerfarbe */
-    .service-card--v6 .service-card__visual {
-        display: none;
+    /* 3: linksbuendig mit Linie in Themefarbe */
+    .service-card.service-card--v3 {
+        padding: 0.625rem 1.875rem 1.5rem;
+        border-inline-start: 2px solid var(--color-primary);
+        border-radius: 0;
     }
 
-    .service-card--v6 .service-card__number {
-        font-size: 2.75rem;
-        font-weight: 800;
-        line-height: 1;
-        color: transparent;
-        -webkit-text-stroke: 1.5px var(--color-primary);
+    /* 4: quadratisches Bild auf weissem Feld */
+    .service-card.service-card--v4 :is(.service-card__img, .service-card__visual img) {
+        padding: 0.625rem;
+        border-radius: var(--radius-panel);
+        background: #fff;
+        object-fit: contain;
     }
 
-    .service-card--v6:hover {
-        background: var(--color-primary);
-        color: var(--color-primary-content);
+    .service-card.service-card--v4 .service-card__icon {
+        border-radius: var(--radius-panel);
     }
 
-    .service-card--v6:hover :is(.service-card__text, .service-card__more) {
-        color: var(--color-primary-content);
+    /* 5: kleines Bild links, Text daneben */
+    .service-card.service-card--v5 {
+        display: grid;
+        grid-template-columns: 3.125rem minmax(0, 1fr);
+        column-gap: 0.625rem;
+        align-items: start;
     }
 
-    .service-card--v6:hover .service-card__number {
-        -webkit-text-stroke-color: var(--color-primary-content);
+    .service-card.service-card--v5 .service-card__visual {
+        margin: 0.75rem 0 0;
+    }
+
+    .service-card.service-card--v5 :is(.service-card__img, .service-card__visual img),
+    .service-card.service-card--v5 .service-card__icon {
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 0;
+        font-size: 1.25rem;
+    }
+
+    .service-card.service-card--v5 .service-card__body {
+        padding-top: 0.75rem;
+    }
+
+    /* 6: dunklere Kachel mit grosser Rundung, Button in Themefarbe */
+    .service-card.service-card--v6 {
+        padding: 1.875rem 0.9375rem 1.5rem;
+        border-radius: 1.875rem;
+        background-color: color-mix(in srgb, var(--glass-frame) 100%, transparent);
     }
 
     .entry__icon {
@@ -776,85 +875,50 @@
     }
 
     /* ---------------------------------------------------------------- */
-    /*  Team-Varianten (Variante 1 = Standard in components.css)        */
+    /*  Team-Varianten (Variante 1: Bild in der Glaskachel, glass.css)  */
     /* ---------------------------------------------------------------- */
-    .team-card--2 {
-        padding-top: 2rem;
-    }
-
-    .team-card--2 .team-card__media {
-        width: 9.5rem;
-        margin-inline: auto;
-        border-radius: 999px;
-        outline: 4px solid color-mix(in oklab, var(--color-primary) 45%, transparent);
-        outline-offset: 4px;
-    }
-
-    .team-card--2 .team-card__social {
-        position: static;
-        justify-content: center;
+    /* Werte der bisherigen Templates team-2 ... team-4 */
+    .team-card:is(.team-card--2, .team-card--3, .team-card--4) {
         padding: 0;
+        border: 0;
+        border-radius: 0;
         background: none;
-        opacity: 1;
-        transform: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        text-align: center;
     }
 
-    .team-card--2 .team-card__social .social-links__link {
-        color: var(--color-base-content);
-        background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
+    /* 2 und 4: Bild mit weissem Rahmen, Angaben frei darunter */
+    .team-card:is(.team-card--2, .team-card--4) .team-card__media {
+        border: 3px solid #fff;
+        border-radius: 0;
+        background-color: var(--glass-tile);
     }
 
-    .team-card--2 .team-card__body {
-        display: grid;
-        gap: 0.25rem;
+    .team-card.team-card--4 {
+        padding-bottom: 1.875rem;
     }
 
-    .team-card--2 .team-card__social {
-        order: 9;
+    /* 3: helle Karte, rundes Bild */
+    .team-card.team-card--3 {
+        padding: 2.25rem 0 0.25rem;
+        background: #e8e8e8;
+        box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
+        color: #1d2330;
     }
 
-    @media (width >= 40rem) {
-        .team-card--3 {
-            display: grid;
-            grid-template-columns: 42% 1fr;
-            text-align: start;
-        }
-
-        .team-card--3 .team-card__media {
-            aspect-ratio: auto;
-            height: 100%;
-        }
+    .team-card--3 .team-card__media {
+        width: 9.75rem;
+        aspect-ratio: 1;
+        margin-inline: auto;
+        overflow: hidden;
+        border: 3px solid #fff;
+        border-radius: 50%;
     }
 
-    .team-card--4 {
-        position: relative;
-    }
-
-    .team-card--4 .team-card__media {
-        aspect-ratio: 3 / 4;
-    }
-
-    .team-card--4 .team-card__body {
-        position: absolute;
-        inset: auto 0 0 0;
-        padding: 4rem 1.25rem 1.25rem;
-        background: linear-gradient(to top, rgb(8 10 14 / 0.9), transparent);
-        color: #fff;
-        text-align: start;
-    }
-
-    .team-card--4 .team-card__name {
-        color: #fff;
-    }
-
-    .team-card--4 .team-card__text {
-        display: none;
-    }
-
-    .team-card--4 .team-card__social {
-        inset: 0 0 auto 0;
-        justify-content: flex-end;
-        background: none;
+    .team-card--3 :is(.team-card__name, .team-card__text) {
+        color: #1d2330;
     }
 
     /* ---------------------------------------------------------------- */
@@ -962,38 +1026,28 @@
         }
     }
 
-    /* "Clover": versetzte Rundungen wie Kleeblaetter */
-    .portfolio-card--clover:nth-child(4n + 1) {
-        border-radius: var(--radius-big) var(--radius-small) var(--radius-big) var(--radius-small);
-    }
-
-    .portfolio-card--clover:nth-child(4n + 2) {
-        border-radius: var(--radius-small) var(--radius-big) var(--radius-small) var(--radius-big);
-    }
-
-    .portfolio-card--clover:nth-child(4n + 3) {
-        border-radius: var(--radius-small) var(--radius-big) var(--radius-small) var(--radius-big);
-    }
-
-    .portfolio-card--clover:nth-child(4n + 4) {
-        border-radius: var(--radius-big) var(--radius-small) var(--radius-big) var(--radius-small);
-    }
-
     .portfolio-tabs {
         display: flex;
         justify-content: center;
         margin-bottom: clamp(1.25rem, 3vw, 2rem);
     }
 
-    .portfolio-tabs .tabs {
+    /* Kategorien als Buttons mit Reiter-Symbol (wie bisher), aktiver Reiter kraeftiger */
+    .portfolio-tabs__list {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background: color-mix(in oklab, var(--color-base-100) 88%, transparent);
-        backdrop-filter: blur(10px);
+        gap: 0.5rem;
     }
 
-    .portfolio-tabs .tab {
-        text-decoration: none;
+    .portfolio-tabs .portfolio-tab.btn {
+        --btn-glyph: "tab";
+        min-width: 10rem;
+    }
+
+    .portfolio-tabs .portfolio-tab.btn.tab-active {
+        --btn-glyph: "tab_unselected";
+        background-color: var(--color-primary);
     }
 
     .portfolio-pane .pagination {
@@ -1002,24 +1056,19 @@
 
     .portfolio-detail__grid {
         display: grid;
-        gap: clamp(1.25rem, 2.5vw, 2rem);
-        align-items: start;
+        gap: 0.75rem;
+        align-items: stretch;
     }
 
     @media (width >= 62rem) {
         .portfolio-detail__grid {
-            grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 1fr);
-        }
-
-        .portfolio-detail__info {
-            position: sticky;
-            top: calc(var(--sticky-offset, 0px) + var(--wp-admin--admin-bar--height, 0px) + 1.5rem);
+            grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr);
         }
     }
 
     .portfolio-detail__media {
         margin: 0;
-        padding: 0;
+        padding: 0.75rem;
         overflow: hidden;
     }
 
@@ -1027,55 +1076,91 @@
         display: block;
         width: 100%;
         height: auto;
+        border-radius: var(--radius-panel);
     }
 
     .portfolio-detail__info {
-        display: grid;
-        gap: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
+    .portfolio-detail-description {
+        padding: 1rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* Eckdaten: "Kunden: Wert" in einer Zeile, Werte in Themefarbe (wie bisher) */
     .portfolio-facts {
         display: grid;
-        gap: 0.5rem;
+        gap: 0.6rem;
         margin: 0;
         padding: 1rem 1.25rem;
-        border-radius: var(--radius-small);
-        background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
-        font-size: 0.9375rem;
+        font-size: 0.95rem;
     }
 
     .portfolio-facts > div {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 0.5rem;
+        gap: 0.35rem;
     }
 
     .portfolio-facts dt {
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .portfolio-facts dd {
         margin: 0;
-        text-align: end;
-        color: color-mix(in oklab, var(--color-base-content) 78%, transparent);
+        color: var(--color-primary);
     }
 
+    .portfolio-detail__filler {
+        flex: 1 1 4rem;
+        padding: 0;
+    }
+
+    /* Blaettern: zwei Buttons nebeneinander */
     .portfolio-detail__pager {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .portfolio-detail__pager .portfolio-detail__nav.btn {
+        min-width: 0;
+        padding-inline-end: 0.75em;
+    }
+
+    .portfolio-detail__pager .portfolio-detail__nav--back.btn {
+        --btn-glyph: "fast_rewind";
+    }
+
+    .portfolio-detail__pager .portfolio-detail__nav--next.btn {
+        --btn-glyph: "fast_forward";
+    }
+
+    .portfolio-detail__pager .portfolio-detail__nav--next:only-child {
+        grid-column: 2;
     }
 
     .related-projects .carousel {
         --per-view-max: 3;
     }
 
+    /* Verwandte Projekte wie bisher im Format von index-thumb (493 x 300) */
+    .related-projects .portfolio-card__media {
+        aspect-ratio: 493 / 300;
+    }
+
     /* ---------------------------------------------------------------- */
     /*  Kunden / Partner                                                */
     /* ---------------------------------------------------------------- */
+    /* Flex statt Raster: wenige Logos (z. B. ein Partner) bleiben Kacheln und stehen mittig */
     .logo-strip {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: clamp(0.75rem, 2vw, 1.25rem);
-        grid-template-columns: repeat(auto-fit, minmax(min(11rem, 45%), 1fr));
         margin: 0;
         padding: 0;
         list-style: none;
@@ -1083,8 +1168,10 @@
 
     .logo-strip__item {
         display: grid;
+        flex: 0 1 14rem;
+        min-width: min(11rem, 45%);
         place-items: center;
-        min-height: 7rem;
+        min-height: 12.5rem; /* wie bisher 200px */
         padding: var(--client-pad-y, 1.5rem) var(--client-pad-x, 1.5rem);
         border: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent);
         border-radius: var(--radius-box);
@@ -1096,6 +1183,17 @@
 
     .logo-strip--partner .logo-strip__item {
         padding: var(--partner-pad-y, 1.5rem) var(--partner-pad-x, 1.5rem);
+    }
+
+    /* Ab 992px wie bisher vier Kacheln je Reihe (col-md-3): die Max.-Bildhoehe greift erst mit dieser Breite */
+    @media (min-width: 62rem) {
+        .logo-strip {
+            gap: 3.75rem 0.625rem; /* bisher 60px zwischen den Reihen */
+        }
+
+        .logo-strip__item {
+            flex-basis: calc((100% - 3 * 0.625rem) / 4);
+        }
     }
 
     .logo-strip__item:hover {

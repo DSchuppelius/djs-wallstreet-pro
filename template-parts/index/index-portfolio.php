@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  *
  * Portfolio der Startseite. Customizer: portfolio_list (Anzahl), portfolio_homepage_column_layouts
- * (Spaltenbreite), portfolio_homepage_item_layouts ("clover-items" = versetzte Rundungen),
+ * (Spaltenbreite), portfolio_homepage_item_layouts (single/block/clover-items = Rundungen je Position),
  * view_all_projects_btn_enabled.
  */
 
@@ -19,7 +19,9 @@ if (!$pt || !defined("PORTFOLIO_POST_TYPE")) {
 djs_use_script("lightbox");
 
 $columns = djs_cols_from_colmd($pt->get("portfolio_homepage_column_layouts"), 4);
-$shape   = $pt->get("portfolio_homepage_item_layouts") === "clover-items" ? "clover" : "";
+$layout  = (string) $pt->get("portfolio_homepage_item_layouts");
+// Wie bisher: "clover" nur bei vier Spalten, "block" verbindet jede Reihe zu einem Band, sonst rundum gerundet
+$shape   = $layout === "clover-items" && $columns === 4 ? "clover" : ($layout === "block-items" ? "block" : "");
 $query   = new WP_Query([
     "post_type"           => PORTFOLIO_POST_TYPE,
     "posts_per_page"      => (int) $pt->get("portfolio_list") ?: 8,

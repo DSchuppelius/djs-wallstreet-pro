@@ -27,21 +27,20 @@ if (show_rellax_div()) { ?></div><?php } ?>
             <?php } ?>
 
             <?php if ($show_social || $show_bar) { ?>
+                <?php /* Wie bisher: Social-Icons ueber die volle Breite, darunter Rechtliches und Copyright.
+                         Beim festen Footer schaut nur die dunkle Oberkante heraus; das Info-Symbol rechts
+                         darueber (oder Hover/Fokus) klappt die Leiste auf. */ ?>
                 <div class="site-footer__bar" <?php echo $fixed_footer ? "data-footer-bar" : ""; ?>>
-                    <?php if ($fixed_footer) { ?>
-                        <button type="button" class="site-footer__peek btn btn-circle btn-ghost show-me" data-footer-peek aria-expanded="false" aria-controls="site-footer-details">
-                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                            <span class="screen-reader-text"><?php esc_html_e("Show site information", "djs-wallstreet-pro"); ?></span>
-                        </button>
-                    <?php } ?>
-                    <div id="site-footer-details" class="site-wrap site-footer__details">
+                    <div id="site-footer-details" class="site-footer__details">
                         <?php if ($show_social) { ?>
                             <div class="footer-social-area">
-                                <?php get_template_part("template-parts/global/social-media", null, ["context" => "footer"]); ?>
+                                <div class="site-wrap">
+                                    <?php get_template_part("template-parts/global/social-media", null, ["context" => "footer"]); ?>
+                                </div>
                             </div>
                         <?php } ?>
                         <?php if ($show_bar) { ?>
-                            <div class="footer-copyright">
+                            <div class="site-wrap footer-copyright">
                                 <?php if ($current_setup->get("footer_link_enabled")) { ?>
                                     <nav class="footer-copyright__links" aria-label="<?php esc_attr_e("Legal", "djs-wallstreet-pro"); ?>">
                                         <?php echo wp_kses_post($current_setup->get("footer_link")); ?>
@@ -52,6 +51,12 @@ if (show_rellax_div()) { ?></div><?php } ?>
                         <?php } ?>
                     </div>
                 </div>
+                <?php if ($fixed_footer) { ?>
+                    <button type="button" class="site-footer__peek show-me" data-footer-peek aria-expanded="false" aria-controls="site-footer-details">
+                        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                        <span class="screen-reader-text"><?php esc_html_e("Show site information", "djs-wallstreet-pro"); ?></span>
+                    </button>
+                <?php } ?>
             <?php } ?>
         </footer>
 
@@ -67,7 +72,7 @@ if (show_rellax_div()) { ?></div><?php } ?>
     </div><!-- #wall_wrapper -->
 
     <?php if ($current_setup->get("scroll_to_top_enabled")) { ?>
-        <a href="#djs-body" class="page_scrollup btn btn-circle btn-primary" data-scroll-top>
+        <a href="#djs-body" class="page_scrollup" data-scroll-top>
             <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
             <span class="screen-reader-text"><?php esc_html_e("Back to top", "djs-wallstreet-pro"); ?></span>
         </a>

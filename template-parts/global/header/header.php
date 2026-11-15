@@ -25,6 +25,9 @@ $classes = [
 if ($preset["float"]) {
     $classes[] = "site-header--float";
 }
+if (!empty($preset["slant"])) {
+    $classes[] = "site-header--slant";
+}
 if ($sticky) {
     $classes[] = "is-sticky";
 }
@@ -58,3 +61,5 @@ $nav_label = esc_attr__("Main Navigation", "djs-wallstreet-pro"); ?>
         </div>
     <?php } ?>
 </header>
+<?php /* Header-Hoehe sofort messen: Banner/Slider liegen unter dem Glas-Header und sollen beim Laden nicht springen. theme.js aktualisiert den Wert. */ ?>
+<script>(function(h){if(h){var m=parseFloat(getComputedStyle(h).marginTop)||0;document.documentElement.style.setProperty("--header-h",Math.round(h.offsetHeight+m)+"px");}})(document.querySelector("[data-site-header]"));</script>

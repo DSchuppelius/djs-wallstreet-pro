@@ -85,6 +85,9 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             // Scroll to top
             "scroll_to_top_enabled" => true,
 
+            // Scrollleiste immer zeigen: kein Springen des Layouts zwischen kurzen und langen Seiten
+            "scrollbar_always_enabled" => true,
+
             "a_mark_targets" => false,
             "a_underlined" => true,
 

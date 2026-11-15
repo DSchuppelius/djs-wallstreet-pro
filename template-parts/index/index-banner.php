@@ -16,15 +16,38 @@ global $loaded_banner;
 $loaded_banner = true;
 
 /* ---- Header-Bild ---------------------------------------------------- */
-$header_url = get_header_image();
-$header_id  = 0;
+// Neben der Mediathek-ID wird das Seitenverhaeltnis des angezeigten Bildes (banner-thumb bzw.
+// Standardbild des Themes) ermittelt: der Banner ist wie bisher so hoch wie das Bild in voller
+// Seitenbreite (siehe glass.css, --banner-ratio).
+$header_url   = get_header_image();
+$header_id    = 0;
+$header_ratio = 0.0;
 if (!empty($header_url)) {
-    $cache_key = "djs_ws_banner_id_" . md5($header_url);
-    $header_id = get_transient($cache_key);
-    if ($header_id === false) {
-        $header_id = (int) attachment_url_to_postid($header_url);
-        set_transient($cache_key, $header_id, DAY_IN_SECONDS);
+    $cache_key = "djs_ws_banner_" . md5($header_url);
+    $cached    = get_transient($cache_key);
+    if (!is_array($cached) || count($cached) !== 2) {
+        $id    = (int) attachment_url_to_postid($header_url);
+        $ratio = 0.0;
+        if ($id) {
+            $src = wp_get_attachment_image_src($id, "banner-thumb");
+            if ($src && $src[1] > 0) {
+                $ratio = $src[2] / $src[1];
+            }
+        } else {
+            // Standardbild aus dem Theme (kein Mediathek-Eintrag): Masse aus der Datei,
+            // die Angabe in add_theme_support('custom-header') passt nicht zum Bild
+            $theme_uri = get_template_directory_uri();
+            if (str_starts_with($header_url, $theme_uri)) {
+                $size = wp_getimagesize(get_template_directory() . substr($header_url, strlen($theme_uri)));
+                if ($size && $size[0] > 0) {
+                    $ratio = $size[1] / $size[0];
+                }
+            }
+        }
+        $cached = [$id, $ratio];
+        set_transient($cache_key, $cached, DAY_IN_SECONDS);
     }
+    [$header_id, $header_ratio] = $cached;
 }
 
 /* ---- Titel ---------------------------------------------------------- */
@@ -80,7 +103,7 @@ if (is_front_page()) {
 
 $parallax = (bool) $current_setup->get("parallaxheader_enabled"); ?>
 
-<section class="page-banner page-mycarousel<?php echo $parallax ? " page-banner--parallax" : ""; ?>" aria-labelledby="page-title">
+<section class="page-banner page-mycarousel<?php echo $parallax ? " page-banner--parallax" : ""; ?>"<?php echo $header_ratio > 0 ? sprintf(' style="--banner-ratio: %.5F"', $header_ratio) : ""; ?> aria-labelledby="page-title">
     <?php if (!empty($header_url)) { ?>
         <div class="page-banner__media" aria-hidden="true">
             <?php if ($header_id) {
@@ -91,18 +114,19 @@ $parallax = (bool) $current_setup->get("parallaxheader_enabled"); ?>
                     "fetchpriority" => "high",
                     "decoding"      => "async",
                     "sizes"         => "100vw",
-                    "data-parallax" => $parallax ? "0.3" : false,
+                    "data-parallax" => $parallax ? "0.8" : false,
                 ]);
             } else { ?>
-                <img class="page-banner__img header-img" src="<?php echo esc_url($header_url); ?>" alt="" fetchpriority="high" decoding="async" <?php echo $parallax ? 'data-parallax="0.3"' : ""; ?>>
+                <img class="page-banner__img header-img" src="<?php echo esc_url($header_url); ?>" alt="" fetchpriority="high" decoding="async" <?php echo $parallax ? 'data-parallax="0.8"' : ""; ?>>
             <?php } ?>
         </div>
     <?php } ?>
 
     <div class="site-wrap page-banner__content page-title-col">
         <h1 id="page-title" class="page-banner__title"><?php echo $title; ?></h1>
-        <?php get_template_part("template-parts/global/breadcrumb"); ?>
     </div>
+
+    <?php get_template_part("template-parts/global/breadcrumb"); ?>
 </section>
 
 <?php if (show_rellax_div()) { ?>

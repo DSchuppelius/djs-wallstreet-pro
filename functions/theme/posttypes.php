@@ -24,6 +24,7 @@ function djs_section_heading(?string $title, ?string $description = '', string $
     <header class="section-heading section_heading_title">
         <?php if ($title !== '') { ?>
             <<?php echo $tag; ?> class="section-heading__title"><?php echo wp_kses_post($title); ?></<?php echo $tag; ?>>
+            <span class="section-heading__sep pagetitle-separator" aria-hidden="true"><span></span></span>
         <?php } ?>
         <?php if ($description !== '') { ?>
             <p class="section-heading__text"><?php echo wp_kses_post($description); ?></p>

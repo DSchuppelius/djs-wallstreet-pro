@@ -80,11 +80,13 @@ if ($query->have_posts()) {
 
 $effect = $pt->get("animation") === "fade" ? "fade" : "slide"; ?>
 
-<section class="homepage_mycarousel hero-slider rellax" data-rellax-speed="<?php echo $rellax; ?>" aria-label="<?php esc_attr_e("Slider", "djs-wallstreet-pro"); ?>">
+<?php /* Wie bisher: der Slidername steht als Klasse am Slider (eigenes CSS kann ihn ansprechen) */ ?>
+<section class="homepage_mycarousel hero-slider <?php echo esc_attr(sanitize_html_class((string) $pt->get("revolutionslidername"))); ?> rellax" data-rellax-speed="<?php echo $rellax; ?>" aria-label="<?php esc_attr_e("Slider", "djs-wallstreet-pro"); ?>">
     <div class="carousel carousel--hero" data-carousel
         data-effect="<?php echo esc_attr($effect); ?>"
+        data-direction="<?php echo $pt->get("slide_direction") === "vertical" ? "vertical" : "horizontal"; ?>"
         data-speed="<?php echo max(100, (int) $pt->get("animationSpeed")); ?>"
-        data-autoplay="<?php echo max(1500, (int) $pt->get("slideshowSpeed")); ?>"
+        data-autoplay="<?php echo max(500, (int) $pt->get("slideshowSpeed")); ?>"
         aria-roledescription="carousel">
         <div class="carousel__viewport">
             <div class="carousel__track">

@@ -8,7 +8,7 @@
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  *
  * Portfolio-Kachel mit Hover-Overlay. $args: item (djs_portfolio_item), button (Text oder ""),
- * shape ("" oder "clover").
+ * shape ("", "block" oder "clover").
  */
 
 $item   = $args["item"] ?? [];

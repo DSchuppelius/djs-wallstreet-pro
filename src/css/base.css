@@ -42,7 +42,7 @@
         font-family: var(--font-sans);
         font-weight: 600;
         line-height: 1.2;
-        letter-spacing: -0.01em;
+        letter-spacing: normal; /* wie bisher, keine engere Laufweite */
         text-wrap: balance;
         color: var(--color-base-content);
     }
@@ -68,15 +68,13 @@
         letter-spacing: 0.06em;
     }
 
+    /* Linkfarbe = Skin-Farbe aus dem Customizer (Theme-Stil). Beim Darueberfahren bleibt sie
+       wie bisher gleich; Bereiche mit eigener Hover-Farbe setzen diese selbst. */
     a {
         color: var(--color-primary);
         text-decoration-thickness: 1px;
         text-underline-offset: 0.2em;
         transition: color 0.15s ease;
-    }
-
-    a:hover {
-        color: color-mix(in oklab, var(--color-primary) 75%, var(--color-base-content));
     }
 
     :focus-visible {
@@ -213,18 +211,42 @@
     }
 }
 
-/* Customizer "Links unterstreichen" - nur im Fliesstext, nicht in Navigation/Buttons */
-.a_underlined :where(.entry-content, .comment-content, .widget, .site-footer__widgets) a:not(.btn, .wp-block-button__link, .wp-element-button) {
+/* Customizer "Links unterstreichen" (body.a_underlined) wie bisher: Textlinks in Inhalt,
+   Kommentaren, Kommentarformular, Widgets, Beitragsdaten, Brotkruemeln, Topbar, Fusszeile und
+   Titeln. Ausgenommen wie bisher Buttons, Antworten/Bearbeiten, die Listen der Sidebar
+   (Kategorien, Archiv, neueste Beitraege); das Hauptmenue bleibt bewusst ohne Linie (bisher
+   wurde es mit unterstrichen). Ohne die Option bleiben Links ohne Linie, auch beim
+   Darueberfahren (Ausnahmen: Text-Widgets, Kommentartext und Projekt-Kacheln). */
+.a_underlined :where(.entry-content, .comment-content, .comment-respond, .widget, .footer-copyright, .post-meta, .breadcrumbs, .site-topbar__contact, .service-card__title) a:not(.btn, .wp-block-button__link, .wp-element-button, .sd-button, .comment-reply-link, .comment-edit-link, .post-meta__format, :has(img, svg, iframe)) {
     text-decoration-line: underline;
     text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
 }
 
-.a_underlined :where(.entry-content, .comment-content, .widget) a:not(.btn, .wp-block-button__link):hover {
+.a_underlined :where(.entry-content, .comment-content, .comment-respond, .widget, .footer-copyright, .post-meta, .breadcrumbs, .site-topbar__contact, .service-card__title) a:not(.btn, .wp-block-button__link, .wp-element-button, .sd-button, .comment-reply-link, .comment-edit-link, .post-meta__format, :has(img, svg, iframe)):hover {
     text-decoration-color: currentColor;
 }
 
-/* Customizer "Externe Ziele markieren" - Icon hinter Links, die in neuem Tab oeffnen */
-.a_mark_targets :where(.entry-content, .comment-content, .widget) a[target="_blank"]:not(.btn, .wp-block-button__link, :has(img, svg, iframe))::after {
+.a_underlined .layout__sidebar ul li a,
+.a_underlined .breadcrumbs a:hover {
+    text-decoration-line: none;
+}
+
+/* Beitragstitel: nur der Titel, nicht das vorangestellte Beitragsformat ("Bemerkung:");
+   Seitenzahlen wie bisher ebenfalls */
+.a_underlined .post-card__title a > .post-card__name,
+.a_underlined .comment-card__author a:hover,
+.a_underlined .pagination a.join-item {
+    text-decoration-line: underline;
+}
+
+/* Links im Kommentartext wie bisher beim Darueberfahren unterstrichen, auch ohne die Option */
+.comment-content a:not(.btn, .wp-block-button__link, .wp-element-button, .sd-button, .comment-reply-link, .comment-edit-link, .post-meta__format, :has(img, svg, iframe)):hover {
+    text-decoration-line: underline;
+}
+
+/* Customizer "Externe Ziele markieren" - Icon hinter Textlinks, die in neuem Tab oeffnen
+   (gleiche Bereiche wie das Unterstreichen; Buttons, Bilder und Symbole ausgenommen) */
+.a_mark_targets :where(.entry-content, .comment-content, .comment-respond, .widget, .footer-copyright) a[target="_blank"]:not(.btn, .wp-block-button__link, .sd-button, .tag-cloud-link, .lcd a, .cookies a, :has(img, svg, iframe))::after {
     content: "\f35d";
     font-family: "Font Awesome 7 Free", "Font Awesome 6 Free", "FontAwesome";
     font-weight: 900;

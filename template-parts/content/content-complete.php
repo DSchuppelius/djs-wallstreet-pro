@@ -19,8 +19,15 @@ $has_thumb = has_post_thumbnail() && !post_password_required(); ?>
         </figure>
     <?php } ?>
 
-    <div class="entry__body">
-        <?php get_template_part("template-parts/content/content", "meta-header"); ?>
+    <?php $badge = djs_show_post_date(); ?>
+    <div class="entry__body<?php echo $badge ? " has-date-badge" : ""; ?>">
+        <?php if ($badge) {
+            get_template_part("template-parts/content/content", "date-badge");
+        } ?>
+        <?php get_template_part("template-parts/content/content", "meta-header", ["badge" => $badge, "format" => false]); ?>
+        <?php if ($badge) { /* Titel steht als <h1> im Banner; neben der Plakette wie bisher wiederholt */ ?>
+            <p class="entry__title post-card__title" aria-hidden="true"><?php the_title(); ?></p>
+        <?php } ?>
 
         <div class="entry-content">
             <?php the_content(); ?>

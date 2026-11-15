@@ -12,6 +12,21 @@
 
 get_template_parts(["template-parts/index/index", "banner"], true);
 
+/* Wie bisher: das Bild steht in voller Breite (fullpost-thumb, eigenes Seitenverhaeltnis)
+   ueber Text und Sidebar */
+$attachment_id = get_queried_object_id(); ?>
+<div class="page-shell site-wrap media-hero">
+    <figure class="media-hero__media surface-card attachment-figure">
+        <?php if (wp_attachment_is_image($attachment_id)) { ?>
+            <a href="<?php echo esc_url(wp_get_attachment_url($attachment_id)); ?>">
+                <?php echo wp_get_attachment_image($attachment_id, "fullpost-thumb", false, ["class" => "media-hero__img", "loading" => "eager", "fetchpriority" => "high"]); ?>
+            </a>
+        <?php } else {
+            echo wp_get_attachment_link($attachment_id, "fullpost-thumb", false, true);
+        } ?>
+    </figure>
+</div>
+<?php
 djs_layout_start(["class" => "single attachment"]);
 
 while (have_posts()) {
@@ -20,16 +35,6 @@ while (have_posts()) {
     $parent = $post->post_parent ? get_post($post->post_parent) : null; ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class("entry entry--attachment surface-card"); ?>>
-        <figure class="entry__media attachment-figure">
-            <?php if (wp_attachment_is_image()) { ?>
-                <a href="<?php echo esc_url(wp_get_attachment_url()); ?>">
-                    <?php echo wp_get_attachment_image(get_the_ID(), "fullpost-thumb", false, ["class" => "entry__img", "loading" => "eager"]); ?>
-                </a>
-            <?php } else {
-                echo wp_get_attachment_link(get_the_ID(), "fullpost-thumb", false, true);
-            } ?>
-        </figure>
-
         <div class="entry__body">
             <?php get_template_part("template-parts/content/content", "meta-header"); ?>
 
@@ -84,7 +89,8 @@ while (have_posts()) {
         setup_postdata($post); ?>
         <section class="linked-post">
             <h2 class="linked-post__title linked_post"><?php esc_html_e("Linked post", "djs-wallstreet-pro"); ?></h2>
-            <?php get_template_part("template-parts/content/content", null, ["mode" => "excerpt", "variant" => "media"]); ?>
+            <?php /* Bild wie bisher oben ueber dem Beitrag (blog-thumb, nicht seitlich beschnitten) */
+            get_template_part("template-parts/content/content", null, ["mode" => "excerpt"]); ?>
         </section>
         <?php wp_reset_postdata();
     }

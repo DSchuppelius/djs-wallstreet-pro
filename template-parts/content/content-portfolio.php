@@ -69,15 +69,15 @@ if ($tab === "" || !in_array($tab, $slugs, true)) {
     $tab = $slugs[0] ?? "";
 } ?>
 
-<div class="page-shell site-wrap site-wrap--wide portfolio portfoliocat">
+<div class="page-shell site-wrap portfolio portfoliocat">
     <?php djs_section_heading($pt->get("two_thre_four_col_port_tem_title"), $pt->get("two_thre_four_col_port_tem_desc")); ?>
 
     <?php if (count($terms) > 1) { ?>
         <nav class="portfolio-tabs" aria-label="<?php esc_attr_e("Categories", "djs-wallstreet-pro"); ?>">
-            <div class="tabs tabs-box" role="tablist" data-tabs>
+            <div class="portfolio-tabs__list" role="tablist" data-tabs>
                 <?php foreach ($terms as $t) {
                     $slug = rawurldecode($t->slug); ?>
-                    <a role="tab" class="tab<?php echo $slug === $tab ? " tab-active" : ""; ?>" id="tab-<?php echo esc_attr($slug); ?>"
+                    <a role="tab" class="btn btn-primary portfolio-tab<?php echo $slug === $tab ? " tab-active" : ""; ?>" id="tab-<?php echo esc_attr($slug); ?>"
                         aria-selected="<?php echo $slug === $tab ? "true" : "false"; ?>" aria-controls="pane-<?php echo esc_attr($slug); ?>"
                         href="<?php echo esc_url(add_query_arg("tab", $slug, remove_query_arg([$page_param, "div"]))); ?>"><?php echo esc_html($t->name); ?></a>
                 <?php } ?>

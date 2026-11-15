@@ -6,6 +6,7 @@
  * Markup:  .carousel[data-carousel] > .carousel__viewport > .carousel__track > .carousel__slide
  * Optionen (data-*):
  *   effect    "slide" (Standard) | "fade"
+ *   direction "horizontal" (Standard) | "vertical" (nur bei "slide": Slides wandern nach oben)
  *   per-view  Slides gleichzeitig (Desktop; schmale Bildschirme zeigen weniger, siehe CSS)
  *   step      Slides pro Schritt
  *   speed     Dauer des Uebergangs in ms (fade)
@@ -29,6 +30,7 @@
             if (!this.viewport || this.slides.length === 0) return;
 
             this.effect = root.dataset.effect === "fade" ? "fade" : "slide";
+            this.vertical = this.effect === "slide" && root.dataset.direction === "vertical";
             this.step = Math.max(1, parseInt(root.dataset.step || "1", 10) || 1);
             this.delay = parseInt(root.dataset.autoplay ?? "6000", 10) || 0;
             this.index = 0;
@@ -39,6 +41,7 @@
             root.style.setProperty("--carousel-speed", `${parseInt(root.dataset.speed || "600", 10)}ms`);
             if (root.dataset.perView) root.style.setProperty("--per-view-max", root.dataset.perView);
             root.classList.add("is-ready", `carousel--${this.effect}`);
+            if (this.vertical) root.classList.add("carousel--vertical");
             this.slides.forEach((slide, i) => slide.setAttribute("aria-label", fmt(l10n.slide, i + 1, this.slides.length)));
 
             if (this.slides.length < 2) {
@@ -59,7 +62,7 @@
         }
 
         perView() {
-            if (this.effect === "fade") return 1;
+            if (this.effect === "fade" || this.vertical) return 1;
             const value = parseFloat(getComputedStyle(this.root).getPropertyValue("--per-view"));
             return Number.isFinite(value) && value > 0 ? Math.round(value) : 1;
         }
@@ -78,6 +81,12 @@
                     slide.classList.toggle("is-active", active);
                     slide.inert = !active;
                 });
+            } else if (this.vertical) {
+                // Senkrecht: Viewport hat die Hoehe einer Slide, die Spur verschiebt sich per transform
+                this.viewport.style.height = `${this.slides[0].offsetHeight}px`;
+                this.track.style.transitionDuration = smooth && !reduceMotion.matches ? "" : "0s";
+                this.track.style.transform = `translateY(${-this.slides[this.index].offsetTop}px)`;
+                this.slides.forEach((slide, i) => (slide.inert = i !== this.index));
             } else {
                 const target = this.slides[this.index];
                 const left = target.offsetLeft - this.slides[0].offsetLeft;
@@ -179,17 +188,21 @@
 
             this.viewport.tabIndex = 0;
             this.viewport.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowRight") {
+                if (e.key === "ArrowRight" || (this.vertical && e.key === "ArrowDown")) {
                     e.preventDefault();
                     this.next();
-                } else if (e.key === "ArrowLeft") {
+                } else if (e.key === "ArrowLeft" || (this.vertical && e.key === "ArrowUp")) {
                     e.preventDefault();
                     this.prev();
                 }
             });
 
+            if (this.vertical) {
+                window.addEventListener("resize", () => this.go(this.index, false), { passive: true });
+            }
+
             // Wischen/Scrollen von Hand: Index aus der Position ableiten
-            if (this.effect === "slide") {
+            if (this.effect === "slide" && !this.vertical) {
                 let raf = 0;
                 this.viewport.addEventListener(
                     "scroll",

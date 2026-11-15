@@ -10,7 +10,9 @@
 
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance(); ?>
 
-<nav class="page-breadcrumbs breadcrumbs rellax" aria-label="<?php esc_attr_e("Breadcrumb", "djs-wallstreet-pro"); ?>"
+<nav class="page-breadcrumbs rellax" aria-label="<?php esc_attr_e("Breadcrumb", "djs-wallstreet-pro"); ?>"
     data-rellax-speed="<?php echo intval($current_setup->get("data_rellax_speed_breadcrumbs")); ?>">
-    <?php djs_breadcrumbs(); ?>
+    <div class="site-wrap breadcrumbs">
+        <?php djs_breadcrumbs(); ?>
+    </div>
 </nav>

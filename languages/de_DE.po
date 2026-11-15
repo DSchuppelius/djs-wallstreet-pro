@@ -2458,3 +2458,7 @@ msgstr "← Ältere Kommentare"
 
 #~ msgid "Home Page"
 #~ msgstr "Startseite"
+
+#: functions/customizer/childs/customizer-global.php
+msgid "Always show the scrollbar (the layout does not jump between short and long pages)"
+msgstr "Scrollleiste immer anzeigen (das Layout springt nicht zwischen kurzen und langen Seiten)"

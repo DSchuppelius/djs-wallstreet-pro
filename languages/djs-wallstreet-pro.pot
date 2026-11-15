@@ -1641,3 +1641,7 @@ msgstr ""
 #: comments.php
 msgid "← Older Comments"
 msgstr ""
+
+#: functions/customizer/childs/customizer-global.php
+msgid "Always show the scrollbar (the layout does not jump between short and long pages)"
+msgstr ""

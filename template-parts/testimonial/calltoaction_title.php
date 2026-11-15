@@ -17,3 +17,5 @@ if (!$pt) {
 <section class="section site-wrap testimonial-cta">
     <?php djs_section_heading($pt->get("testimonial_cta_title"), $pt->get("testimonial_cta_description")); ?>
 </section>
+<?php // Wie bisher: Call-to-Action-Bereich unter der Ueberschrift (Customizer "Call-out-Bereich")
+get_template_part("template-parts/index/index", "calloutarea");

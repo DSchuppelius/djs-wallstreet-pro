@@ -5,8 +5,8 @@
 @layer utilities {
     .entry-content {
         --flow: 1.25em;
-        font-size: 1.0625rem;
-        line-height: 1.75;
+        font-size: 1rem;
+        line-height: 1.6;
         color: var(--color-base-content);
     }
 
@@ -62,14 +62,9 @@
         font-weight: 650;
     }
 
+    /* Unterstrichen nur mit der Customizer-Option "Links unterstreichen" (base.css) */
     .entry-content a:not(.wp-block-button__link, .btn) {
         overflow-wrap: anywhere;
-        text-decoration-line: underline;
-        text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
-    }
-
-    .entry-content a:not(.wp-block-button__link, .btn):hover {
-        text-decoration-color: currentColor;
     }
 
     /* ---- Zitate -------------------------------------------------- */
@@ -144,27 +139,7 @@
         overflow-x: auto;
     }
 
-    .entry-content :where(table) {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9375em;
-    }
-
-    .entry-content :where(th, td) {
-        padding: 0.625rem 0.875rem;
-        border: 1px solid color-mix(in oklab, var(--color-base-content) 14%, transparent);
-        text-align: start;
-        vertical-align: top;
-    }
-
-    .entry-content :where(thead th) {
-        background: color-mix(in oklab, var(--color-base-content) 7%, transparent);
-        font-weight: 600;
-    }
-
-    .entry-content .wp-block-table.is-style-stripes :where(tbody tr:nth-child(odd)) {
-        background: color-mix(in oklab, var(--color-base-content) 4%, transparent);
-    }
+    /* Aussehen der Tabellen: plugins.css (die Core-Tabellenregeln sind ungelayert) */
 
     .entry-content :where(figcaption, .wp-element-caption, .wp-caption-text) {
         margin-top: 0.5rem;
@@ -232,8 +207,9 @@
         margin-block: 1.5em;
     }
 
+    /* Abstaende der Galerie: plugins.css (die Core-Regeln sind ungelayert) */
     .entry-content .wp-block-gallery figure img {
-        border-radius: calc(var(--radius-small) * 0.6);
+        border-radius: var(--radius-field);
     }
 
     .entry-content :where(audio) {
@@ -357,7 +333,7 @@
         font-size: 4.2em;
         font-weight: 700;
         line-height: 0.85;
-        color: var(--color-primary);
+        color: inherit; /* Initiale in Textfarbe (wie bisher) */
     }
 
     /* Seitenumbruch innerhalb eines Beitrags (<!--nextpage-->) */

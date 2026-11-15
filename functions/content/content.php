@@ -24,7 +24,7 @@ function form_more_button($more = "") {
     );
 
     return sprintf(
-        '<a href="%s" class="btn btn-primary btn-sm more blog-btn" aria-label="%s">%s<span class="material-icons" aria-hidden="true">arrow_forward</span></a>',
+        '<a href="%s" class="btn btn-primary btn-sm more blog-btn" aria-label="%s">%s<span class="material-icons" aria-hidden="true">read_more</span></a>',
         esc_url($url),
         esc_attr($label),
         esc_html($more_text)
@@ -44,7 +44,7 @@ function get_the_show_all($link, $text, $target = false, $button_class = "more b
         return "";
     }
     return sprintf(
-        '<div class="show-all-btn"><a href="%s" %s class="btn btn-primary btn-wide %s">%s<span class="material-icons" aria-hidden="true">arrow_forward</span></a></div>',
+        '<div class="show-all-btn"><a href="%s" %s class="btn btn-primary btn-wide %s">%s</a></div>',
         esc_url($link),
         get_blank_target($target) . ($target ? ' rel="noopener"' : ""),
         esc_attr($button_class),
@@ -69,3 +69,16 @@ function content_width() {
     }
 }
 add_action("template_redirect", "content_width");
+
+/**
+ * Akismet-Datenschutzhinweis wie bisher im Rahmen des Kommentarformulars (unter dem Senden-Knopf)
+ * statt lose dahinter: Akismet haengt ihn an "comment_form_after", das Theme setzt ihn in das
+ * Formular ("comment_form"). So wandert er auch beim Antworten mit dem Formular mit.
+ */
+add_action("comment_form_before", static function () {
+    $callback = ["Akismet", "display_comment_form_privacy_notice"];
+    if (class_exists("Akismet") && has_action("comment_form_after", $callback) !== false) {
+        remove_action("comment_form_after", $callback);
+        add_action("comment_form", static fn() => Akismet::display_comment_form_privacy_notice());
+    }
+});

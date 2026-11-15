@@ -11,9 +11,10 @@
  */
 
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-$format_label  = djs_post_format_label();
-$show_date     = djs_show_post_date();
-$show_comments = djs_show_post_meta() && (comments_open() || get_comments_number() > 0) && post_type_supports(get_post_type(), "comments");
+$format_label  = ($args["format"] ?? true) ? djs_post_format_label() : "";
+$with_badge    = !empty($args["badge"]); // Datum + Kommentare stehen dann in der Datums-Plakette
+$show_date     = !$with_badge && djs_show_post_date();
+$show_comments = !$with_badge && djs_show_post_meta() && (comments_open() || get_comments_number() > 0) && post_type_supports(get_post_type(), "comments");
 
 if ($format_label === "" && !$show_date && !$show_comments && !is_sticky()) {
     return;

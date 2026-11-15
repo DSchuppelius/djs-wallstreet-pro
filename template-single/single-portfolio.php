@@ -30,7 +30,34 @@ $btn_tab   = (bool) get_post_meta(get_the_ID(), "meta_button_target", true);
 $full      = has_post_thumbnail() ? wp_get_attachment_image_url(get_post_thumbnail_id(), "full") : ""; ?>
 
 <div class="page-shell site-wrap single portfolio portfolio-detail">
+    <?php /* Aufbau wie bisher: links Blaettern, Button, Beschreibung und Eckdaten; rechts das Bild */ ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class("portfolio-detail__grid"); ?>>
+        <aside class="portfolio-detail__info">
+            <nav class="portfolio-detail__pager" aria-label="<?php esc_attr_e("Projects", "djs-wallstreet-pro"); ?>">
+                <?php if ($next = get_next_post()) { ?>
+                    <a class="btn btn-primary portfolio-detail__nav portfolio-detail__nav--back" rel="next" href="<?php echo esc_url(get_permalink($next)); ?>"><?php esc_html_e("Back", "djs-wallstreet-pro"); ?></a>
+                <?php } ?>
+                <?php if ($prev = get_previous_post()) { ?>
+                    <a class="btn btn-primary portfolio-detail__nav portfolio-detail__nav--next" rel="prev" href="<?php echo esc_url(get_permalink($prev)); ?>"><?php esc_html_e("Next", "djs-wallstreet-pro"); ?></a>
+                <?php } ?>
+            </nav>
+
+            <?php if ($btn_text !== "") { ?>
+                <a class="btn btn-primary btn-block portfolio-detail__button" href="<?php echo esc_url($btn_link ?: $website ?: "#"); ?>"<?php echo $btn_tab ? ' target="_blank" rel="noopener"' : ""; ?>><?php echo esc_html($btn_text); ?></a>
+            <?php } ?>
+
+            <div class="entry-content portfolio-detail-description surface-card"><?php the_content(); ?></div>
+
+            <dl class="portfolio-facts surface-card">
+                <?php if ($client !== "") { ?><div><dt><?php esc_html_e("Clients", "djs-wallstreet-pro"); ?>:</dt><dd><?php echo esc_html($client); ?></dd></div><?php } ?>
+                <div><dt><?php esc_html_e("Date", "djs-wallstreet-pro"); ?>:</dt><dd><time datetime="<?php echo esc_attr(get_the_date(DATE_W3C)); ?>"><?php echo esc_html(get_the_date()); ?></time></dd></div>
+                <?php if ($terms) { ?><div><dt><?php esc_html_e("Categories", "djs-wallstreet-pro"); ?>:</dt><dd><?php echo esc_html(implode(", ", wp_list_pluck($terms, "name"))); ?></dd></div><?php } ?>
+                <?php if ($website !== "") { ?><div><dt><?php esc_html_e("Website", "djs-wallstreet-pro"); ?>:</dt><dd><a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><?php echo esc_html(wp_parse_url($website, PHP_URL_HOST) ?: $website); ?></a></dd></div><?php } ?>
+            </dl>
+
+            <div class="portfolio-detail__filler surface-card" aria-hidden="true"></div>
+        </aside>
+
         <figure class="portfolio-detail__media surface-card">
             <?php if ($full) { ?>
                 <a href="<?php echo esc_url($full); ?>" data-lightbox="project" data-title="<?php the_title_attribute(); ?>">
@@ -38,30 +65,6 @@ $full      = has_post_thumbnail() ? wp_get_attachment_image_url(get_post_thumbna
                 </a>
             <?php } ?>
         </figure>
-
-        <aside class="portfolio-detail__info surface-card">
-            <div class="entry-content portfolio-detail-description"><?php the_content(); ?></div>
-
-            <dl class="portfolio-facts">
-                <?php if ($client !== "") { ?><div><dt><?php esc_html_e("Clients", "djs-wallstreet-pro"); ?></dt><dd><?php echo esc_html($client); ?></dd></div><?php } ?>
-                <div><dt><?php esc_html_e("Date", "djs-wallstreet-pro"); ?></dt><dd><time datetime="<?php echo esc_attr(get_the_date(DATE_W3C)); ?>"><?php echo esc_html(get_the_date()); ?></time></dd></div>
-                <?php if ($terms) { ?><div><dt><?php esc_html_e("Categories", "djs-wallstreet-pro"); ?></dt><dd><?php echo esc_html(implode(", ", wp_list_pluck($terms, "name"))); ?></dd></div><?php } ?>
-                <?php if ($website !== "") { ?><div><dt><?php esc_html_e("Website", "djs-wallstreet-pro"); ?></dt><dd><a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><?php echo esc_html(wp_parse_url($website, PHP_URL_HOST) ?: $website); ?></a></dd></div><?php } ?>
-            </dl>
-
-            <?php if ($btn_text !== "") { ?>
-                <a class="btn btn-primary btn-block" href="<?php echo esc_url($btn_link ?: $website ?: "#"); ?>"<?php echo $btn_tab ? ' target="_blank" rel="noopener"' : ""; ?>><?php echo esc_html($btn_text); ?></a>
-            <?php } ?>
-
-            <nav class="portfolio-detail__pager join" aria-label="<?php esc_attr_e("Projects", "djs-wallstreet-pro"); ?>">
-                <?php if ($next = get_next_post()) { ?>
-                    <a class="btn btn-sm join-item" rel="next" href="<?php echo esc_url(get_permalink($next)); ?>"><span class="material-icons" aria-hidden="true">chevron_left</span><?php esc_html_e("Back", "djs-wallstreet-pro"); ?></a>
-                <?php } ?>
-                <?php if ($prev = get_previous_post()) { ?>
-                    <a class="btn btn-sm join-item" rel="prev" href="<?php echo esc_url(get_permalink($prev)); ?>"><?php esc_html_e("Next", "djs-wallstreet-pro"); ?><span class="material-icons" aria-hidden="true">chevron_right</span></a>
-                <?php } ?>
-            </nav>
-        </aside>
     </article>
 
     <?php comments_template("", true); ?>

@@ -16,6 +16,7 @@
  *   content.css     Beitragsinhalt und Gutenberg-Bloecke
  *   components.css  Theme-Bausteine (Karten, Abschnitte, Sidebar, Kommentare ...)
  *   sections.css    Startseiten-Sektionen und Post-Types (Slider, Portfolio, Team ...)
+ *   glass.css       Grundidee des Themes: Glas, Rahmen, Rundungen, Reiter, Plakette ...
  *   plugins.css     Fremd-Markup (DJS-Extensions, CF7, Jetpack, WooCommerce ...)
  *   compat.css      Alt-Klassen aus gespeichertem Content (Bootstrap 3)
  *   print.css       Druckansicht
@@ -150,7 +151,7 @@
     /* Ab hier zeigt die Hauptnavigation das volle Menue (vorher 1100px fest im JS). */
     --breakpoint-nav: 70rem;
 
-    --container-site: 80rem;
+    --container-site: 73.125rem; /* 1170px; ab 1920px 1570px, siehe tokens.css */
     --container-prose: 48rem;
 
     --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -168,12 +169,14 @@
     }
 }
 
-/* Seitenbreite mit fluessigem Rand - ersetzt Bootstraps .container in Theme-Templates. */
+/* Seitenbreite mit fluessigem Rand - ersetzt Bootstraps .container in Theme-Templates.
+   Innenabstand wie bisher 15px, sobald die volle Breite Platz hat (Inhalt 1140px bei 1170px);
+   darunter waechst er stufenlos auf den fluessigen Rand (1rem ... 2rem). */
 @utility site-wrap {
     width: 100%;
     max-width: var(--container-site);
     margin-inline: auto;
-    padding-inline: clamp(1rem, 3vw, 2rem);
+    padding-inline: clamp(0.9375rem, calc(var(--container-site) / 2 + 2rem - 50vw), clamp(1rem, 3vw, 2rem));
 }
 
 /* Halbtransparente Flaeche ueber dem Seitenhintergrund (Glas-Look). */
@@ -194,6 +197,7 @@
 @import "./content.css";
 @import "./components.css";
 @import "./sections.css";
+@import "./glass.css";
 @import "./plugins.css";
 @import "./compat.css";
 @import "./print.css";
