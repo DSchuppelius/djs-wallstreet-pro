@@ -66,6 +66,13 @@ if (!function_exists("wallstreet_comment")) {
         <?php
         // Das schliessende </li> setzt wp_list_comments() selbst (end-callback).
     }
+}
+
+// Nichts zu zeigen (keine Kommentare, Kommentare geschlossen): keine leere Huelle ausgeben - sie
+// erzeugte in der Spalte einen doppelten Abstand vor dem naechsten Block (Fuellflaeche)
+$closed_note = !comments_open() && get_comments_number() && post_type_supports(get_post_type(), "comments");
+if (!have_comments() && !comments_open() && !$closed_note) {
+    return;
 } ?>
 
 <section id="comments" class="comments-area">
@@ -87,7 +94,7 @@ if (!function_exists("wallstreet_comment")) {
         </div>
     <?php } ?>
 
-    <?php if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), "comments")) { ?>
+    <?php if ($closed_note) { ?>
         <p class="comments-closed surface-card"><?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?></p>
     <?php } ?>
 

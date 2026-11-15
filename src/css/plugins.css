@@ -1139,6 +1139,17 @@ form.cookies .btn {
     }
 }
 
+/* "Aehnliche Beitraege": Vorschaubilder einheitlich hoch im Format der Jetpack-Vorschau (Groesse aus
+   den Bildattributen, sonst 350x200), auch wenn das Bild ein anderes Seitenverhaeltnis hat (z. B.
+   YouTube-Vorschauen in 4:3) - zugeschnitten statt verzerrt. Eine Klasse mehr als Jetpack. */
+#jp-relatedposts.jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 7 / 4;
+    aspect-ratio: attr(width type(<number>), 7) / attr(height type(<number>), 4);
+    object-fit: cover;
+}
+
 /* ---------------------------------------------------------------- */
 /*  AngularJS-Rechner (Formulare im Beitrag)                         */
 /* ---------------------------------------------------------------- */
