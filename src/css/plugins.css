@@ -1222,9 +1222,13 @@ p.demo_store {
     outline-offset: 1px;
 }
 
+/* Feld und Button: gleiche Mindesthoehe und auf die Zeilenhoehe gestreckt - der Button ist immer
+   genau so hoch wie das Eingabefeld, auch bei groesserer Schrift (Schriftgroessen-Knoepfe) */
 .wp-block-search.wp-block-search .wp-block-search__input {
+    align-self: stretch;
     min-width: 0;
-    height: 2.875rem;
+    height: auto;
+    min-height: 2.875rem;
     margin: 0;
     padding: 0.625rem 0.5rem;
     border: 0;
@@ -1245,8 +1249,10 @@ p.demo_store {
     position: relative;
     isolation: isolate;
     flex: none;
+    align-self: stretch;
     min-width: 9.375rem;
-    height: 2.875rem;
+    height: auto;
+    min-height: 2.875rem;
     margin: 0;
     padding: 0.85em 1em 0.55em 3.5em;
     overflow: hidden;
@@ -1297,49 +1303,103 @@ p.demo_store {
     }
 }
 
-/* ---------------------------------------------------------------- */
-/*  Jetpack-Abonnement (Block/Widget): wie bisher                   */
-/* ---------------------------------------------------------------- */
-/* Dunkles Feld mit heller Kante wie die Suche, daneben der Glanz-Button in Themefarbe mit
-   Symbolfeld. Jetpack setzt Abstaende und Rundungen inline - deshalb !important (wie bisher). */
-.wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements {
-    align-items: flex-start;
+/* Symbol-Button der Suche (Blockeinstellung "Symbol statt Text"): Themefarbe mit Glanzkante wie
+   der Text-Button, beim Darueberfahren abgedunkelt */
+.wp-block-search.wp-block-search .wp-block-search__button.has-icon {
+    flex: none;
+    align-self: stretch;
+    height: auto;
+    min-height: 2.875rem;
+    margin: 0;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 0 0.1em 0.1em 0;
+    background-color: var(--color-primary);
+    box-shadow: inset 0 2.55em 0 -1em rgb(255 255 255 / 0.15);
+    color: var(--color-primary-content);
+    cursor: pointer;
 }
 
+.wp-block-search.wp-block-search .wp-block-search__button.has-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+    filter: drop-shadow(0 1px 1px #18191b);
+}
+
+.wp-block-search.wp-block-search .wp-block-search__button.has-icon:is(:hover, :focus-visible) {
+    background-image: linear-gradient(rgb(0 0 0 / 0.15), rgb(0 0 0 / 0.15));
+}
+
+/* ---------------------------------------------------------------- */
+/*  Jetpack-Abonnement (Block/Widget): wie der Suchblock            */
+/* ---------------------------------------------------------------- */
+/* Feld und Button sehen aus wie die Suche und folgen der Variante, die im Suchblock der Seite
+   eingestellt ist: Button innen (weisser Rahmen, Standard - auch ohne Suchblock), Button aussen
+   oder ohne Button (ohne Rahmen; das Abo behaelt seinen Button), Symbol statt Text. Jetpack setzt
+   Groessen, Abstaende und Rundungen inline - deshalb !important. */
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid #e0e4e6;
+    border-radius: 0.25rem;
+    background: #fff;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.075);
+}
+
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements:has(input:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+}
+
+/* Feld und Button wie bei der Suche gleich hoch: beide strecken sich auf die Zeilenhoehe */
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-email {
+    display: flex;
     flex: 1;
     min-width: 0;
     margin: 0;
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-email input {
+    align-self: stretch;
     width: 100%;
-    min-height: 0;
+    height: auto !important;
+    min-height: 2.875rem !important;
     margin: 0;
-    border: 1px solid #e0e4e6 !important;
-    border-radius: 0 !important;
+    padding: 0.625rem 0.5rem !important;
+    border: 0 !important;
+    border-radius: 0.15rem 0 0 0.15rem !important;
     background: var(--search-field, #2a2c33);
     color: var(--search-field-text, #fff);
-    box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.08);
+    box-shadow: none;
+    font-size: 0.9rem !important;
+    font-weight: 500;
+    line-height: 1.25rem;
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-email input:focus {
-    border-color: var(--color-primary) !important;
     background: var(--search-field-focus, #565963);
     outline: none;
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit {
     display: flex;
-    width: max-content;
+    flex: none;
+    width: auto;
     margin: 0 !important;
 }
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit button {
     position: relative;
     isolation: isolate;
-    min-width: 9.375rem;
-    margin: 0 0 0 2px !important;
+    align-self: stretch;
+    min-width: 9.375rem !important;
+    height: auto;
+    min-height: 2.875rem;
+    margin: 0 !important;
     padding: 0.85em 1em 0.55em 3.5em !important;
     overflow: hidden;
     border: 1px solid transparent !important;
@@ -1348,8 +1408,9 @@ p.demo_store {
     box-shadow: inset 0 2.55em 0 -1em rgb(255 255 255 / 0.15);
     color: var(--color-primary-content);
     font-family: inherit;
-    font-size: 1rem !important;
-    line-height: 1.3;
+    font-size: 0.9rem !important;
+    font-weight: 400;
+    line-height: 1;
     text-shadow: 0 1px 1px #18191b;
     cursor: pointer;
 }
@@ -1380,6 +1441,38 @@ p.demo_store {
 
 .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit button:is(:hover, :focus-visible)::before {
     width: 100%;
+}
+
+/* Suche mit Button aussen oder ohne Button: Feld und Button ohne gemeinsamen Rahmen */
+:root:has(.wp-block-search:is(.wp-block-search__button-outside, .wp-block-search__no-button)) .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions .wp-block-jetpack-subscriptions__form-elements {
+    gap: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Suche mit Symbol statt Text: nur das Symbol, Text bleibt fuer Bildschirmleser */
+:root:has(.wp-block-search.wp-block-search__icon-button) .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit button {
+    min-width: 0 !important;
+    padding: 0 1rem !important;
+    font-size: 0 !important;
+}
+
+:root:has(.wp-block-search.wp-block-search__icon-button) .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit button::before {
+    position: static;
+    z-index: auto;
+    width: auto;
+    padding: 0;
+    background: none;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 1px #18191b;
+}
+
+:root:has(.wp-block-search.wp-block-search__icon-button) .wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions #subscribe-submit button:is(:hover, :focus-visible) {
+    background-image: linear-gradient(rgb(0 0 0 / 0.15), rgb(0 0 0 / 0.15));
 }
 
 @media (prefers-reduced-motion: reduce) {
