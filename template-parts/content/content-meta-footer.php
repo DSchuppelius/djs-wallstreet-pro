@@ -39,7 +39,7 @@ $updated  = get_the_modified_date("Ymd") > get_the_date("Ymd"); ?>
         <?php } ?>
 
         <?php if ($cats) { ?>
-            <span class="post-meta__terms">
+            <span class="post-meta__terms post-meta__terms--cats">
                 <span class="material-icons" aria-hidden="true">category</span><span class="post-meta__list"><span class="screen-reader-text"><?php esc_html_e("Categories", "djs-wallstreet-pro"); ?>: </span><?php echo $cats; ?></span>
             </span>
         <?php } ?>

@@ -1059,6 +1059,20 @@
         padding: 15px 15px 20px;
     }
 
+    /* Besteht der Inhalt nur aus einem iframe, fuellt er den Rahmen ganz aus: kein Rand, unten
+       buendig (block statt inline, sonst bleibt die Unterlaenge frei), Ecken folgen dem Rahmen */
+    :where(.has-frame) .entry:has(> .entry__body > .entry-content:only-child > iframe:only-child) {
+        overflow: hidden;
+    }
+
+    :where(.has-frame) .entry__body:has(> .entry-content:only-child > iframe:only-child) {
+        padding: 0;
+    }
+
+    .entry__body > .entry-content:only-child > iframe:only-child {
+        display: block;
+    }
+
     .post-card__body.has-date-badge,
     .entry__body.has-date-badge {
         position: relative;
@@ -1443,6 +1457,7 @@
     /* Beitragsfuss wie bisher: gepunktete Linie 35px unter dem Text (abzueglich des Abstands im
        Textbereich), Autor links, Schlagwoerter und Kategorien rechts, Datum darunter rechtsbuendig */
     .post-meta--bottom {
+        container: post-meta / inline-size;
         display: block;
         padding-top: calc(2.1875rem - 0.875rem);
         border-top: 0;
@@ -1486,6 +1501,17 @@
         margin-right: 9px;
     }
 
+    /* Kategorienamen brechen nicht um (sonst zerlegt eine lange Schlagwortliste daneben
+       "Beats 4 Critical Mass" in vier Zeilen) - mehrere Kategorien umbrechen nur am Komma.
+       Neben einer mehrzeiligen Schlagwortliste mittig wie der Autor, Symbol und Text gemeinsam */
+    .post-meta--bottom .post-meta__terms--cats {
+        align-items: center;
+    }
+
+    .post-meta--bottom .post-meta__terms--cats a {
+        white-space: nowrap;
+    }
+
     .post-meta--bottom :is(.fa-solid, .material-icons) {
         margin: 0 9px 0 0;
         font-size: 0.9em;
@@ -1518,8 +1544,25 @@
         vertical-align: baseline;
     }
 
-    /* Schmal wie bisher untereinander: Autor, dann Schlagwoerter und Kategorien */
+    /* Schmal wie bisher untereinander: Autor, dann Schlagwoerter und Kategorien - auch in einer
+       schmalen Inhaltsspalte neben der Sidebar (Tablet), wo die Schlagwoerter zwischen Autor und
+       Kategorie sonst auf eine Wortbreite zusammengedrueckt wuerden */
     @media (width < 48rem) {
+        .post-meta--bottom .post-meta__row {
+            display: block;
+        }
+
+        .post-meta--bottom .post-meta__author {
+            padding-inline: 0;
+        }
+
+        .post-meta--bottom .post-meta__terms {
+            display: inline-flex;
+            margin: 0 0.75rem 5px 0;
+        }
+    }
+
+    @container post-meta (width < 34rem) {
         .post-meta--bottom .post-meta__row {
             display: block;
         }

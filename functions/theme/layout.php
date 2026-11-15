@@ -60,7 +60,10 @@ function djs_layout_start(array $args = []): void {
  */
 function djs_layout_end(): void {
     $args = $GLOBALS['djs_layout'] ?? ['sidebar' => 'right', 'area' => 'sidebar_primary'];
-    get_template_part('template-parts/content/filler'); ?>
+    // Fuellflaeche gleicht die Hauptspalte an die Sidebar an - ohne Sidebar gibt es nichts auszugleichen
+    if ($args['sidebar'] !== 'none') {
+        get_template_part('template-parts/content/filler');
+    } ?>
         </main>
         <?php if ($args['sidebar'] !== 'none') {
             get_sidebar($args['area'] === 'woocommerce' ? 'woocommerce' : null);
