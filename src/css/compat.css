@@ -218,4 +218,22 @@
     .glyphicon {
         display: none;
     }
+
+    /* ---- Eingabefelder in Beitraegen (Theme-Klasse blog-form-control, z. B. in den Rechnern
+       der Toolbox) wie bisher: schmaler Innenabstand, damit Auswahlfelder ihren Text zeigen */
+    .blog-form-control,
+    .blog-form-control-textarea {
+        padding: 6px 12px;
+        border: 1px solid var(--legacy-field-edge);
+        background-color: transparent;
+        color: var(--legacy-field-text);
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .blog-form-control {
+        height: 46px;
+        min-height: 0;
+    }
 }

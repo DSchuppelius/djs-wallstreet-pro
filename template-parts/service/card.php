@@ -18,7 +18,7 @@ if (!$item) {
 }
 $target = $item["new_tab"] ? ' target="_blank" rel="noopener"' : ""; ?>
 
-<article class="service-card service-card--v<?php echo $variant; ?><?php echo $variant === 1 ? " surface-card" : ""; ?> reveal<?php echo $item["image"] && !$item["icon"] ? " has-image" : ""; ?>" style="--i: <?php echo $index; ?>">
+<article class="service-card service-card--v<?php echo $variant; ?><?php echo $variant === 1 ? " surface-card" : ""; ?> reveal<?php echo $item["image"] && !$item["icon"] ? " has-image" : ($item["icon"] ? " has-icon" : ""); ?>" style="--i: <?php echo $index; ?>">
     <a class="service-card__visual" href="<?php echo esc_url($item["url"]); ?>"<?php echo $target; ?> tabindex="-1" aria-hidden="true">
         <?php if ($item["icon"]) { ?>
             <span class="service-card__icon"><i class="fa <?php echo esc_attr($item["icon"]); ?>"></i></span>

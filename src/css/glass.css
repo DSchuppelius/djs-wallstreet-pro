@@ -523,6 +523,15 @@
         min-height: max(calc(var(--header-h, 0px) + 16rem), min(46.875rem, calc(2.5rem + 85vw)));
     }
 
+    /* Slider Revolution 7: Texte wie bisher mit schwarzer Kontur, damit die weisse Schrift sich
+       auch von hellen Bildern abhebt. Kontur in em (skaliert mit 100/50/25px), paint-order haelt
+       die Fuellung scharf, der Schatten gibt etwas Abstand. (bisher standard.css) */
+    .hero-revslider sr7-txt {
+        -webkit-text-stroke: 0.02em #000 !important;
+        paint-order: stroke fill;
+        text-shadow: 0 0 4px rgb(0 0 0 / 0.55);
+    }
+
     /* Bild ohne dunklen Schleier, nur oben etwas Kontrast fuer den Glas-Header */
     .hero-slide::after {
         background: linear-gradient(180deg, rgb(0 0 0 / 0.3) 0%, rgb(0 0 0 / 0) 35%);
@@ -918,6 +927,18 @@
 
     body:not(.a_underlined) :is(.sidebar-widget, .footer_widget_column) p:not(.wp-block-tag-cloud) a:not(.tag-cloud-link):hover {
         text-decoration-line: none;
+    }
+
+    /* Blog-Statistik (Jetpack + Zusatzzeilen): jede Zeile ist eine eigene Liste, wie bisher mit
+       15px Abstand darunter */
+    .sidebar-widget :is(.blog-stats, .blog-stats ~ div) > ul {
+        margin-bottom: 0.9375rem;
+    }
+
+    /* Grafiken (z. B. 3D-Tag-Cloud "HTML5 Cumulus") wie bisher auf Spaltenbreite skaliert */
+    .sidebar-widget canvas {
+        width: 100%;
+        height: auto;
     }
 
     /* Kategorien: Unterebenen wie bisher 40px eingerueckt, ohne eigene Trennlinien */
@@ -1318,6 +1339,11 @@
         border-color: color-mix(in oklab, var(--color-base-content) 42%, transparent);
         border-radius: var(--radius-field);
         background-color: transparent;
+    }
+
+    /* Theme-Klasse blog-form-control (Rechner der Toolbox): Kante wie bisher, siehe compat.css */
+    .entry-content :is(.blog-form-control, .blog-form-control-textarea) {
+        border-color: var(--legacy-field-edge);
     }
 
     /* 404: Meldung ueber dem Seitenkopf (Bannertitel nur fuer Screenreader) */
@@ -2209,6 +2235,32 @@
         box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
     }
 
+    /* Symbol statt Bild wie bisher im selben Kreis: dunkler Grund, weisser Rand, grosses Symbol */
+    .service-card--v1.has-icon {
+        margin-top: 6.25rem;
+        overflow: visible;
+    }
+
+    .service-card--v1.has-icon .service-card__visual {
+        display: grid;
+        place-items: center;
+        width: 12.5rem;
+        height: 12.5rem;
+        margin: calc(-6.25rem - var(--bigborder)) auto 0;
+        text-decoration: none;
+    }
+
+    .service-card--v1.has-icon .service-card__icon {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: #2a2c33;
+        color: #fff;
+        font-size: 6.25rem;
+        box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
+    }
+
     .service-card--v1.has-image .service-card__visual img {
         width: 100%;
         height: 100%;
@@ -2821,6 +2873,17 @@
 
     .has-bigborder :is(.portfolio-pane, .portfolio-page) .portfolio-card {
         --tile-edge: var(--bigborder);
+    }
+
+    /* Wie bisher ab 1200px: alle Projekte einer Seite stehen in einer Reihe, die Vorlage bestimmt
+       nur die Kachelhoehe (sonst stuende z. B. bei 4 Projekten je Seite in "3 Spalten" eines
+       allein in der zweiten Reihe). Darunter echte Spalten je Vorlage. */
+    @media (width >= 75rem) {
+        .portfolio-pane .portfolio-grid {
+            grid-template-columns: none;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(0, 1fr);
+        }
     }
 
     :is(.portfolio-pane, .portfolio-page) .portfolio-card__media {

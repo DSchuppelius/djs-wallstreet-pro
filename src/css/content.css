@@ -270,16 +270,12 @@
         color: var(--color-primary);
     }
 
+    /* Trennlinie wie bisher (WordPress-Grundstil): volle Breite, 2px in Textfarbe - eigene
+       Aussenabstaende aus dem Editor (z. B. Doppellinien mit 40px Rand) bleiben wirksam */
     .entry-content .wp-block-separator {
-        width: 100%;
-        max-width: 8rem;
-        margin-inline: auto;
+        width: auto;
         border: 0;
-        border-top: 2px solid color-mix(in oklab, var(--color-base-content) 18%, transparent);
-    }
-
-    .entry-content .wp-block-separator.is-style-wide {
-        max-width: none;
+        border-top: 2px solid currentColor;
     }
 
     .entry-content .wp-block-separator.is-style-dots {

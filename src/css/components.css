@@ -463,14 +463,9 @@
         padding-inline: 0;
     }
 
-    /* Lesebreite nur ohne Sidebar begrenzen; neben der Sidebar nutzt der Text die Spalte */
-    .layout--sidebar-none :is(.entry--single, .entry--page, .entry--about) .entry-content {
-        max-width: var(--container-prose);
-    }
-
-    .layout--sidebar-none .entry .entry-content {
-        margin-inline: auto;
-    }
+    /* Ohne Sidebar nutzt der Inhalt wie bisher die volle Breite - keine schmale Lesebreite:
+       Seiten mit iframes, Spalten oder Rechnern brauchen den Platz (ein zentrierter, schmaler
+       Inhaltsbereich liess einen iframe sogar auf seine Standardbreite von 300px schrumpfen) */
 
     /* Vor/Zurueck: Flaechen wie die uebrigen Bereiche im Rahmen; aussen ein Icon-Feld in Themefarbe
        wie bei den Buttons, das sich bei Hover ueber die ganze Flaeche schiebt. Gibt es nur einen
@@ -1067,9 +1062,20 @@
 
     /* Suchkopf (Band in Themefarbe): glass.css */
 
-    .search-form .input {
+    /* Suchfeld: Optik der daisyUI-Komponente "input", die abgeschaltet ist - Beitraege nutzen die
+       Klasse "input" fuer eigene Tabellen (z. B. Rechner), die sonst wie ein Eingabefeld aussahen */
+    .search-form .search-field {
         flex: 1;
         min-width: 0;
+        height: 2.75rem;
+        padding: 0.5rem 0.75rem;
+        border: var(--border) solid color-mix(in oklab, var(--color-base-content) 20%, transparent);
+        background-color: var(--color-base-100);
+        font-size: 0.875rem;
+        vertical-align: middle;
+        box-shadow:
+            0 1px color-mix(in oklab, var(--color-base-content) 2%, transparent) inset,
+            0 -1px oklch(100% 0 0 / 0.1) inset;
     }
 
     /* ---------------------------------------------------------------- */
