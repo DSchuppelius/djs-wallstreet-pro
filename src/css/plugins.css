@@ -1139,6 +1139,39 @@ form.cookies .btn {
     }
 }
 
+/* Klassisches Such-Widget (Aufbau in glass.css): das Symbol kommt aus dem Lupen-Feld des Buttons,
+   die Beschriftung "Suchen" ist sichtbar wie bisher. Ungelayert, weil Font Awesome und
+   .screen-reader-text (base.css) ebenfalls ungelayert sind. */
+.widget .search-submit > i {
+    display: none;
+}
+
+.widget .search-submit .screen-reader-text {
+    position: static !important;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: nowrap;
+}
+
+/* Codebloecke wie bisher (Bootstrap-pre): 13px, Zeilenhoehe 1.43, 9.5px Innenabstand, heller Rand
+   mit 4px Rundung. Ungelayert, weil Syntax-Plugins (z. B. Prism) ihre Werte ebenfalls ungelayert
+   setzen (:where(pre.wp-block-code) { padding: 1em }) */
+.entry-content pre {
+    padding: 0.59375rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    line-height: 1.42857143;
+}
+
+.entry-content pre code {
+    font-size: inherit;
+}
+
 /* "Aehnliche Beitraege": Vorschaubilder einheitlich hoch im Format der Jetpack-Vorschau (Groesse aus
    den Bildattributen, sonst 350x200), auch wenn das Bild ein anderes Seitenverhaeltnis hat (z. B.
    YouTube-Vorschauen in 4:3) - zugeschnitten statt verzerrt. Eine Klasse mehr als Jetpack. */

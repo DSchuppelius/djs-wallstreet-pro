@@ -9,7 +9,7 @@
  */
 
 $field_id = wp_unique_id("search-field-");
-$label    = $args["aria_label"] ?? __("Search", "djs-wallstreet-pro"); ?>
+$label    = !empty($args["aria_label"]) ? $args["aria_label"] : __("Search", "djs-wallstreet-pro"); ?>
 <form role="search" method="get" class="search-form join w-full" action="<?php echo esc_url(home_url("/")); ?>" aria-label="<?php echo esc_attr($label); ?>">
     <label class="screen-reader-text" for="<?php echo esc_attr($field_id); ?>"><?php esc_html_e("Search for:", "djs-wallstreet-pro"); ?></label>
     <input type="search" id="<?php echo esc_attr($field_id); ?>" class="input join-item search-field" name="s" required

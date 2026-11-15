@@ -4,10 +4,6 @@
     "settings": {
         "appearanceTools": true,
         "useRootPaddingAwareAlignments": false,
-        "layout": {
-            "contentSize": "48rem",
-            "wideSize": "80rem"
-        },
         "color": {
             "defaultPalette": true,
             "palette": [
