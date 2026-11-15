@@ -270,12 +270,31 @@
         color: var(--color-primary);
     }
 
-    /* Trennlinie wie bisher (WordPress-Grundstil): volle Breite, 2px in Textfarbe - eigene
-       Aussenabstaende aus dem Editor (z. B. Doppellinien mit 40px Rand) bleiben wirksam */
-    .entry-content .wp-block-separator {
+    /* Trennlinie: volle Breite wie bisher - eigene Aussenabstaende aus dem Editor (z. B.
+       Doppellinien mit 40px Rand) bleiben wirksam. Feine Linie in Textfarbe mit einem Hauch
+       Themefarbe in der Mitte, die zu den Enden hin auslaeuft (Maske, damit Farben aus dem
+       Editor ebenfalls auslaufen) */
+    .entry-content .wp-block-separator:not(.is-style-dots) {
         width: auto;
+        height: 1px;
         border: 0;
-        border-top: 2px solid currentColor;
+        background: linear-gradient(90deg, currentColor 15%, var(--color-primary) 50%, currentColor 85%);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+    }
+
+    /* Hintergrundfarbe aus dem Editor statt des Verlaufs */
+    .entry-content .wp-block-separator.has-background:not(.is-style-dots) {
+        background-image: none;
+    }
+
+    /* Doppellinie (zwei Trennlinien direkt hintereinander): die zweite kuerzer und
+       zurueckgenommen, wie ein Lichtreflex unter der Kante */
+    .entry-content .wp-block-separator:not(.is-style-dots) + .wp-block-separator:not(.is-style-dots) {
+        background: currentColor;
+        opacity: 0.5;
+        -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 30%, #000 70%, transparent 92%);
+        mask-image: linear-gradient(90deg, transparent 8%, #000 30%, #000 70%, transparent 92%);
     }
 
     .entry-content .wp-block-separator.is-style-dots {

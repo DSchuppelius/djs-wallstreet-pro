@@ -66,6 +66,53 @@
     color: var(--color-error);
 }
 
+/* Absende-Felder (<input type="submit">, z. B. "Nachricht senden" in Contact Form 7) wie die
+   Theme-Buttons (glass.css): Verlauf in Themefarbe, Glanzkante, abgedunkeltes Icon-Feld links,
+   das sich beim Darueberfahren ueber den ganzen Button schiebt. Ein <input> kann kein ::before
+   tragen - Icon-Feld und Symbol ("send") liegen daher als Hintergrundebenen. Spezifischer als
+   die <style>-Bloecke, die Formulare selbst mitbringen (.wpcf7-submit { padding: 12px 24px }),
+   wie bisher (input[type="submit"]:not(...) schlug sie auch). */
+:is(.entry-content, .wpcf7, .post-password-form) input[type="submit"]:not(.btn, [class*="btn-"]) {
+    --submit-field: calc(2.125 * 1.125rem);
+    --btn-edge: color-mix(in oklab, var(--color-primary) 88%, #000);
+    min-width: min(15.625rem, 100%);
+    min-height: 2.3125rem;
+    margin: 0;
+    padding: 0.75em 1em 0.65em 3.5em;
+    border: 1px solid transparent;
+    border-radius: var(--radius-field);
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M2.01 21 23 12 2.01 3 2 10l15 2-15 2z'/%3E%3C/svg%3E") no-repeat calc(0.55 * 1.125rem) 50% / 1.125rem,
+        linear-gradient(rgb(0 0 0 / 0.15), rgb(0 0 0 / 0.15)) no-repeat 0 0 / var(--submit-field) 100%,
+        linear-gradient(90deg, color-mix(in oklab, var(--btn-edge) 60%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--btn-edge) 70%, transparent));
+    box-shadow: inset 0 2.75em 0 -1.5em rgb(255 255 255 / 0.15);
+    color: var(--color-primary-content);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0 1px 1px #18191b;
+    cursor: pointer;
+    appearance: none;
+    transition: background-size 0.5s ease, text-shadow 0.3s ease;
+}
+
+:is(.entry-content, .wpcf7, .post-password-form) input[type="submit"]:not(.btn, [class*="btn-"]):is(:hover, :focus-visible) {
+    background-size: 1.125rem, 100% 100%, auto;
+    text-shadow: 0 0 1px #18191b;
+}
+
+:is(.entry-content, .wpcf7, .post-password-form) input[type="submit"]:not(.btn, [class*="btn-"]):disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :is(.entry-content, .wpcf7, .post-password-form) input[type="submit"]:not(.btn, [class*="btn-"]) {
+        transition: none;
+    }
+}
+
 /* reCAPTCHA-Badge nicht unter dem festen Footer verstecken */
 body.fixed_Footer .grecaptcha-badge {
     bottom: 5rem !important;

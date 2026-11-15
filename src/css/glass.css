@@ -1053,6 +1053,12 @@
         padding: var(--post-pad);
     }
 
+    /* "Volle Breite (ohne Meta)" traegt eingebettete Anwendungen (Supportsystem, Datenupload):
+       wie bisher nur 15px Rand im Rahmen, damit der iframe die Flaeche ausfuellt */
+    :where(.has-frame) .page-full-width--no-meta .entry__body {
+        padding: 15px 15px 20px;
+    }
+
     .post-card__body.has-date-badge,
     .entry__body.has-date-badge {
         position: relative;

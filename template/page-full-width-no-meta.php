@@ -10,7 +10,7 @@
 
 get_template_parts(["template-parts/index/index", "banner"], true);
 
-djs_layout_start(["sidebar" => "none", "class" => "page-full-width"]);
+djs_layout_start(["sidebar" => "none", "class" => "page-full-width page-full-width--no-meta"]);
 
 while (have_posts()) {
     the_post();

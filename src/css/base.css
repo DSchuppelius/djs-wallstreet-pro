@@ -96,6 +96,13 @@
         max-width: 100%;
     }
 
+    /* Eingebettete Seiten im Browser-Standardschema wie bisher: Erbt ein iframe das dunkle
+       Schema, die eingebettete Seite kennt aber keins, legt der Browser eine weisse Flaeche
+       darunter (z. B. "Gefaellt mir" von Jetpack als weisser Kasten statt durchscheinend) */
+    iframe {
+        color-scheme: normal;
+    }
+
     img,
     video {
         height: auto;
