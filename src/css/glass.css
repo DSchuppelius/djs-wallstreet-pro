@@ -941,6 +941,19 @@
         height: auto;
     }
 
+    /* 3D-Tag-Cloud: Huelle als Block (nicht als Schlagwort-Leiste), damit die Wolke die ganze
+       Widgetbreite nutzt (theme.js verbreitert die Zeichenflaeche passend). Woerter, die am Rand
+       der Zeichenflaeche enden, laufen weich aus statt hart abgeschnitten zu werden. */
+    .widget .tagcloud:has(canvas) {
+        display: block;
+    }
+
+    .sidebar-widget canvas[id^="canvas-"] {
+        display: block;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    }
+
     /* Kategorien: Unterebenen wie bisher 40px eingerueckt, ohne eigene Trennlinien */
     .sidebar-widget ul.children {
         margin: 0;
@@ -1467,8 +1480,11 @@
         padding-top: calc(2.1875rem - 1.25rem);
     }
 
+    /* Autor, Schlagwoerter und Kategorien oben, an der ersten Textzeile ausgerichtet - auch neben
+       einer mehrzeiligen Schlagwortliste */
     .post-meta--bottom .post-meta__row {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
         padding-top: 0.625rem;
         border-top: 1px dotted #cacaca;
@@ -1502,12 +1518,7 @@
     }
 
     /* Kategorienamen brechen nicht um (sonst zerlegt eine lange Schlagwortliste daneben
-       "Beats 4 Critical Mass" in vier Zeilen) - mehrere Kategorien umbrechen nur am Komma.
-       Neben einer mehrzeiligen Schlagwortliste mittig wie der Autor, Symbol und Text gemeinsam */
-    .post-meta--bottom .post-meta__terms--cats {
-        align-items: center;
-    }
-
+       "Beats 4 Critical Mass" in vier Zeilen) - mehrere Kategorien umbrechen nur am Komma */
     .post-meta--bottom .post-meta__terms--cats a {
         white-space: nowrap;
     }

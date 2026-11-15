@@ -795,7 +795,23 @@
         });
     }
 
+    /** 3D-Tag-Cloud (Plugin "HTML5 Cumulus", TagCanvas): Die Zeichenflaeche ist fest (meist
+     *  400x400) und wird per CSS auf die Spaltenbreite verkleinert. Ist das Widget breiter (Tablet,
+     *  Sidebar unter dem Inhalt), wird sie vor dem Start auf die volle Breite verbreitert: Die Kugel
+     *  bleibt gleich gross (TagCanvas richtet sie nach der kuerzeren Seite), lange Woerter am Rand
+     *  haben Platz, statt abgeschnitten zu werden. Laeuft vor jQuery(document).ready des Plugins. */
+    function fitTagCanvas() {
+        doc.querySelectorAll('.sidebar-widget canvas[id^="canvas-"]').forEach((canvas) => {
+            const box = canvas.closest(".tagcloud") || canvas.parentElement;
+            const width = Math.floor(box.clientWidth);
+            if (width > canvas.width) {
+                canvas.width = width;
+            }
+        });
+    }
+
     const init = () => {
+        fitTagCanvas();
         initNavigation();
         initStickyHeader();
         initPopovers();
