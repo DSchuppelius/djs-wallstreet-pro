@@ -1117,7 +1117,7 @@
 
     /* Bildspalte: das Bild in seiner eigenen Flaeche, darueber und darunter je eine Fuellflaeche
        (wie bisher .portfolio-detail-filler top/bottom) - beide wachsen gleich, das Bild steht
-       mittig. Ohne Bild fuellt die leere Flaeche die Spalte. */
+       mittig. */
     .portfolio-detail__picture {
         display: flex;
         flex-direction: column;
@@ -1131,8 +1131,23 @@
         overflow: hidden;
     }
 
-    .portfolio-detail__media:only-child {
-        flex: 1 1 auto;
+    /* Ohne Beitragsbild: dieselbe Grafik wie in den Kacheln (graue Flaeche im Kachelformat,
+       Titel auf dem Band in Themefarbe) - hier ohne Overlay, also auch auf Touch-Geraeten */
+    .portfolio-detail__plain {
+        position: relative;
+        aspect-ratio: 493 / 300;
+        overflow: hidden;
+        border-radius: var(--radius-panel);
+        background: color-mix(in oklab, var(--color-base-300) 80%, var(--color-base-content));
+    }
+
+    .portfolio-detail__plain .portfolio-card__band {
+        display: grid;
+        padding-inline: 1.5rem;
+    }
+
+    .portfolio-detail__plain .portfolio-card__band-title {
+        font-size: clamp(1.05rem, 2.6vw, 2.25rem);
     }
 
     .portfolio-detail__picture > .portfolio-detail__filler {
