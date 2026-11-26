@@ -640,8 +640,37 @@
         background-color: color-mix(in srgb, var(--glass-frame) 100%, transparent);
     }
 
+    /* Einzelansicht einer Dienstleistung: das Symbol steht als Emblem rechts neben dem Titel -
+       dunkler Kreis mit heller Kante wie in den Kacheln der Startseite */
+    .entry__header:has(> .entry__icon) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+    }
+
+    .entry__header > .entry__title {
+        min-width: 0;
+    }
+
     .entry__icon {
-        align-self: flex-start;
+        flex: none;
+        width: 5.5rem;
+        height: 5.5rem;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: #2a2c33;
+        color: #fff;
+        font-size: 2.5rem;
+        box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
+    }
+
+    @media (width < 40rem) {
+        .entry__icon {
+            width: 3.75rem;
+            height: 3.75rem;
+            font-size: 1.625rem;
+        }
     }
 
     .entry__lead {
