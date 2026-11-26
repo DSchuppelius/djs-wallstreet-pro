@@ -142,6 +142,18 @@
     /* ---------------------------------------------------------------- */
     /*  Header                                                          */
     /* ---------------------------------------------------------------- */
+    /* Hoehe der WordPress-Toolbar, nur wenn sie wirklich angezeigt wird (body.admin-bar). Die
+       WordPress-Variable allein reicht nicht: Im Customizer blendet WordPress die Toolbar aus,
+       ihr Stylesheet (und damit die Variable) kann aber trotzdem geladen sein - der Header
+       klebte dann 32px unter dem oberen Rand. */
+    :root {
+        --adminbar-h: 0px;
+    }
+
+    body.admin-bar {
+        --adminbar-h: var(--wp-admin--admin-bar--height, 0px);
+    }
+
     .site-header {
         position: relative;
         z-index: 40;
@@ -152,7 +164,7 @@
 
     .site-header.is-sticky {
         position: sticky;
-        top: calc(var(--wp-admin--admin-bar--height, 0px) - var(--header-hide, 0px));
+        top: calc(var(--adminbar-h) - var(--header-hide, 0px));
     }
 
     /* Header-Preset 5: schwebende, abgerundete Leiste */
@@ -165,7 +177,7 @@
     }
 
     .site-header--float.is-sticky {
-        top: calc(var(--wp-admin--admin-bar--height, 0px) + 0.75rem);
+        top: calc(var(--adminbar-h) + 0.75rem);
     }
 
     .site-header--float .site-header__inner {
@@ -410,7 +422,7 @@
             top: 100%;
             left: 0;
             right: 0;
-            max-height: calc(100dvh - var(--header-height) - var(--wp-admin--admin-bar--height, 0px));
+            max-height: calc(100dvh - var(--header-height) - var(--adminbar-h));
             overflow-y: auto;
             overscroll-behavior: contain;
             padding: 0.75rem clamp(1rem, 3vw, 2rem) 1.5rem;
