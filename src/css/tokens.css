@@ -1,0 +1,207 @@
+/*
+ * Customizer -> Design-Tokens
+ *
+ * djs_wallstreet_root_css() (functions/scripts/custom_style.php) schreibt die
+ * Customizer-Werte als Custom Properties auf :root. Hier werden sie auf die
+ * Variablen von daisyUI/Tailwind abgebildet. Bewusst ausserhalb jeder @layer:
+ * so gewinnen sie gegen die Theme-Definitionen von daisyUI (die in @layer base
+ * liegen), ohne !important oder Spezifitaets-Tricks.
+ */
+:root,
+[data-theme] {
+    --color-primary: var(--link-color, #2793ff);
+    --color-primary-content: var(--link-color-contrast, #ffffff);
+
+    /* Customizer "Theme corner": Basis-, kleiner und sehr kleiner Radius, Button-Radius */
+    --radius-box: var(--border-base, 1rem);
+    --radius-field: var(--input-base, 0.5rem);
+    --radius-selector: var(--border-verysmallbase, 0.5rem);
+    --radius-big: var(--border-bigbase, 2rem);
+    --radius-small: var(--border-smallbase, 0.625rem);
+
+    /* Flaechen ueber dem Hintergrundbild */
+    --surface-alpha: 90%;
+    --surface-blur: 12px;
+
+    /* Glas-Design (Grundidee des Themes, siehe glass.css) - dunkles Schema */
+    --glass-blur: 5px;
+    --glass-filter: blur(var(--glass-blur)) saturate(125%);
+    --glass-header: rgb(0 0 0 / 0.4);
+    --glass-header-scrolled: rgb(16 17 21 / 0.86);
+    --glass-frame: rgb(55 57 65 / 0.6);
+    --glass-edge: rgb(0 0 0 / 0.2);
+    --glass-panel: rgb(80 82 90 / 0.8);
+    --glass-panel-alt: rgb(70 72 80 / 0.8);
+    --glass-panel-deep: rgb(60 62 70 / 0.8);
+    --glass-tile: rgb(100 100 100 / 0.4);
+    --glass-tile-hover: rgb(100 100 100 / 0.8);
+    --glass-band: rgb(55 57 65 / 0.5);
+    --glass-popover: rgb(40 42 49 / 0.94);
+    --glass-shine: rgb(255 255 255 / 0.07);
+    --search-field: #2a2c33;
+    --search-field-focus: #565963;
+    --search-field-text: #fff;
+    --scrollbar-track: #404040;
+    --fader-glint: color-mix(in oklab, var(--color-primary) 35%, #fff);
+    --meta-hover: #fff;
+    --meta-text: #e5e5e5;
+    --sidebar-text: #fff;
+    --lcd-screen: transparent;
+    --glass-drop: 0 19px 38px rgb(0 0 0 / 0.3), 0 15px 12px rgb(0 0 0 / 0.22);
+    /* Dialogfenster (Einwilligung, Vollbild-Suche): Werte aus dem alten default.css */
+    --glass-window: rgb(35 37 45 / 0.95);
+    --glass-window-frame: rgb(55 57 65 / 0.6);
+    --glass-window-field: rgb(55 57 65 / 0.6);
+    --glass-window-bar: rgb(0 0 0 / 0.2);
+    --tile-drop: 0 10px 13px -7px rgb(0 0 0 / 0.9);
+    --section-edge: rgb(0 0 0 / 0.4);
+    --text-outline-dark: 1px 1px 1px rgb(0 0 0 / 0.6), 1px -1px 1px rgb(0 0 0 / 0.6), -1px 1px 1px rgb(0 0 0 / 0.6), -1px -1px 1px rgb(0 0 0 / 0.6);
+    --text-outline: var(--text-outline-dark);
+    --sep-line: #ccc;
+    --crumb-bg: rgb(0 0 0 / 0.58);
+    --crumb-link: #fff;
+    --crumb-accent: var(--color-primary);
+    --crumb-shadow: none;
+    --list-title: #f5f5f5;
+    --card-title: #f5f5f5;
+    --heading-title: #fff;
+    --heading-text: #e5e5e5;
+    --legacy-field-text: #e5e5e5;
+    --legacy-field-edge: #7b7f8c;
+    /* Beitraege ab dem zweiten: oben fast durchsichtig, nach 120px deckend (Schatten) */
+    --post-shade-from: rgb(80 82 90 / 0.1);
+    --post-shade-to: rgb(80 82 90 / 0.9);
+    --menu-link: #fff;
+    --table-row: rgb(42 44 51);
+    --table-row-alt: rgb(61 63 71);
+    --table-text: #e5e5e5;
+    --bigborder: 16px;
+    --radius-panel: var(--border-verysmallbase, 5px);
+
+    /* Kopfbereich */
+    --header-height: 4.5rem;
+
+    /* Logo (Customizer "Logo-Breite/-Position") */
+    --logo-w: var(--logo-width, 12rem);
+    --logo-w-fixed: var(--fixed-logo-width, 9rem);
+    --logo-y: var(--logo-top, 0px);
+    --logo-y-fixed: var(--fixed-logo-top, 0px);
+}
+
+/* Inhaltsflaechen im hellen Schema etwas deckender, damit Text auf Fotos lesbar bleibt. */
+[data-theme="wallstreet-light"],
+:root:not([data-theme]) {
+    --surface-alpha: 94%;
+
+    /* Glas-Design - helles Schema (Werte aus dem alten light.css) */
+    --glass-header: rgb(255 255 255 / 0.72);
+    --glass-header-scrolled: rgb(255 255 255 / 0.92);
+    --glass-frame: rgb(255 255 255 / 0.3);
+    --glass-edge: rgb(0 0 0 / 0.08);
+    --glass-panel: rgb(255 255 255 / 0.95);
+    --glass-panel-alt: rgb(250 250 251 / 0.95);
+    --glass-panel-deep: rgb(243 244 247 / 0.95);
+    --glass-tile: rgb(250 250 250 / 0.9);
+    --glass-tile-hover: rgb(255 255 255 / 1);
+    --search-field: #fff;
+    --search-field-focus: #f2f3f6;
+    --search-field-text: #2a2c33;
+    --scrollbar-track: #d4d6dc;
+    --fader-glint: color-mix(in oklab, var(--color-primary) 75%, #000);
+    --meta-hover: #2a2c33;
+    --meta-text: #545454;
+    --sidebar-text: #727272;
+    --lcd-screen: #2f3540; /* LCD-Anzeige bleibt auch im hellen Schema ein dunkler Bildschirm */
+    --glass-band: rgb(255 255 255 / 0.5);
+    --glass-popover: rgb(255 255 255 / 0.96);
+    --glass-shine: rgb(255 255 255 / 0.65);
+    --glass-drop: 0 19px 38px rgb(20 24 32 / 0.16), 0 15px 12px rgb(20 24 32 / 0.1);
+    --glass-window: rgb(190 190 190 / 0.95);
+    --glass-window-frame: rgb(255 255 255 / 0.95);
+    --glass-window-field: rgb(255 255 255 / 0.95);
+    --tile-drop: 0 10px 13px -7px rgb(20 24 32 / 0.35);
+    --section-edge: rgb(0 0 0 / 0.22);
+    --text-outline: 1px 1px 1px rgb(255 255 255 / 0.6), 1px -1px 1px rgb(255 255 255 / 0.6), -1px 1px 1px rgb(255 255 255 / 0.6), -1px -1px 1px rgb(255 255 255 / 0.6);
+    --crumb-bg: rgb(255 255 255 / 0.7);
+    /* Brotkruemel wie bisher light.css: weiss mit grauer Kontur, aktuelle Seite in Themefarbe */
+    --crumb-link: #fff;
+    --crumb-accent: #fff;
+    --crumb-shadow: 1px 1px 1px rgb(100 100 100 / 0.6), 1px -1px 1px rgb(100 100 100 / 0.6), -1px 1px 1px rgb(100 100 100 / 0.6), -1px -1px 1px rgb(100 100 100 / 0.6);
+    --list-title: var(--color-primary);
+    --card-title: #2a2c33;
+    /* Abschnittsueberschriften wie bisher light.css */
+    --heading-title: #2a2c33;
+    --heading-text: #777;
+    --legacy-field-text: #727272;
+    --legacy-field-edge: #cacaca;
+    /* bisher ohne Verlauf (nur default.css hatte ihn) */
+    --post-shade-from: var(--glass-panel);
+    --post-shade-to: var(--glass-panel);
+    --menu-link: #32343c;
+    --table-row: #fff;
+    --table-row-alt: #f3f4f7;
+    --table-text: #2a2c33;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --surface-alpha: 90%;
+        --glass-header: rgb(0 0 0 / 0.4);
+        --glass-header-scrolled: rgb(16 17 21 / 0.86);
+        --glass-frame: rgb(55 57 65 / 0.6);
+        --glass-edge: rgb(0 0 0 / 0.2);
+        --glass-panel: rgb(80 82 90 / 0.8);
+        --glass-panel-alt: rgb(70 72 80 / 0.8);
+        --glass-panel-deep: rgb(60 62 70 / 0.8);
+        --glass-tile: rgb(100 100 100 / 0.4);
+        --glass-tile-hover: rgb(100 100 100 / 0.8);
+        --glass-band: rgb(55 57 65 / 0.5);
+        --glass-popover: rgb(40 42 49 / 0.94);
+        --glass-shine: rgb(255 255 255 / 0.07);
+        --search-field: #2a2c33;
+        --search-field-focus: #565963;
+        --search-field-text: #fff;
+        --scrollbar-track: #404040;
+        --fader-glint: color-mix(in oklab, var(--color-primary) 35%, #fff);
+        --meta-hover: #fff;
+        --meta-text: #e5e5e5;
+        --sidebar-text: #fff;
+        --lcd-screen: transparent;
+        --glass-drop: 0 19px 38px rgb(0 0 0 / 0.3), 0 15px 12px rgb(0 0 0 / 0.22);
+        --glass-window: rgb(35 37 45 / 0.95);
+        --glass-window-frame: rgb(55 57 65 / 0.6);
+        --glass-window-field: rgb(55 57 65 / 0.6);
+        --tile-drop: 0 10px 13px -7px rgb(0 0 0 / 0.9);
+        --section-edge: rgb(0 0 0 / 0.4);
+        --text-outline: var(--text-outline-dark);
+        --crumb-bg: rgb(0 0 0 / 0.58);
+        --crumb-link: #fff;
+        --crumb-accent: var(--color-primary);
+        --crumb-shadow: none;
+        --list-title: #f5f5f5;
+        --card-title: #f5f5f5;
+        --heading-title: #fff;
+        --heading-text: #e5e5e5;
+        --legacy-field-text: #e5e5e5;
+        --legacy-field-edge: #7b7f8c;
+        --post-shade-from: rgb(80 82 90 / 0.1);
+        --post-shade-to: rgb(80 82 90 / 0.9);
+        --menu-link: #fff;
+        --table-row: rgb(42 44 51);
+        --table-row-alt: rgb(61 63 71);
+        --table-text: #e5e5e5;
+    }
+}
+
+@media (width < 48rem) {
+    :root {
+        --bigborder: 10px;
+    }
+}
+
+/* Grosse Monitore: breiterer Inhalt (wie der bisherige 1570px-Container) */
+@media (width >= 120rem) {
+    :root {
+        --container-site: 98.125rem;
+    }
+}

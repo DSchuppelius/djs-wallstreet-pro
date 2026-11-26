@@ -21,6 +21,33 @@ function get_theme_link_color(): string {
     return maybe_hex_prefix( $stylesheet );
 }
 
+/**
+ * Farbpalette des Block-Editors (theme.json): "Theme: Primary" folgt der Skin-Farbe aus dem
+ * Customizer, damit damit eingefaerbte Bloecke dieselbe Farbe wie die Links tragen.
+ */
+add_filter("wp_theme_json_data_theme", static function ($theme_json) {
+    $color = get_theme_link_color();
+    if (!preg_match('/^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i', $color)) {
+        return $theme_json;
+    }
+    // get_data() liefert die Voreinstellungen nach Herkunft gruppiert (["theme" => [...]])
+    $data    = $theme_json->get_data();
+    $palette = $data["settings"]["color"]["palette"] ?? null;
+    if (is_array($palette) && isset($palette["theme"])) {
+        $palette = $palette["theme"];
+    }
+    if (!is_array($palette)) {
+        return $theme_json;
+    }
+    foreach ($palette as &$entry) {
+        if (($entry["slug"] ?? "") === "theme-primary") {
+            $entry["color"] = $color;
+        }
+    }
+    unset($entry);
+    return $theme_json->update_with(["version" => 3, "settings" => ["color" => ["palette" => $palette]]]);
+});
+
 function get_theme_bg_color(): string {
     $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
     $backgroundHex = get_background_color();

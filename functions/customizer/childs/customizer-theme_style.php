@@ -69,6 +69,51 @@ class theme_style_customizer extends Theme_Customizer {
                 "settings" => $this->theme_options_name . "[link_color]",
             ])
         );
+
+        // Farbmodus: wie oben gewaehlt oder automatisch nach Systemeinstellung
+        $wp_customize->add_setting($this->theme_options_name . "[color_mode]", [
+            "default" => "scheme",
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => static fn($value) => in_array($value, ["scheme", "auto"], true) ? $value : "scheme",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[color_mode]", [
+            "label" => esc_html__("Color mode", "djs-wallstreet-pro"),
+            "description" => esc_html__("Automatic follows the light/dark setting of the visitor's operating system.", "djs-wallstreet-pro"),
+            "section" => "theme_style",
+            "type" => "radio",
+            "choices" => [
+                "scheme" => esc_html__("As selected above (dark or light)", "djs-wallstreet-pro"),
+                "auto" => esc_html__("Automatic (system setting)", "djs-wallstreet-pro"),
+            ],
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[color_mode_toggle]", [
+            "default" => false,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "wp_validate_boolean",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[color_mode_toggle]", [
+            "label" => esc_html__("Let visitors switch between light and dark", "djs-wallstreet-pro"),
+            "section" => "theme_style",
+            "type" => "checkbox",
+        ]);
+
+        $wp_customize->add_setting($this->theme_options_name . "[font_size_controls_enabled]", [
+            "default" => true,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "wp_validate_boolean",
+            "type" => "option",
+        ]);
+
+        $wp_customize->add_control($this->theme_options_name . "[font_size_controls_enabled]", [
+            "label" => esc_html__("Show font size controls in the header", "djs-wallstreet-pro"),
+            "section" => "theme_style",
+            "type" => "checkbox",
+        ]);
     }
 }
 

@@ -7,15 +7,13 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-?>
 
-<?php if (is_active_sidebar("woocommerce")): ?>
-<!--Sidebar-->
-<div class="col-md-4 col-xs-12 flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
-    <div class="sidebar-section">
+if (!is_active_sidebar("woocommerce")) {
+    return;
+} ?>
+<aside class="layout__sidebar" aria-label="<?php esc_attr_e("Shop sidebar", "djs-wallstreet-pro"); ?>">
+    <div class="sidebar-section <?php with_filler(); ?>">
         <?php dynamic_sidebar("woocommerce"); ?>
     </div>
-    <div class="sidebar-section columnfiller"></div>
-</div>
-<!--/End of Sidebar-->
-<?php endif; ?>
+    <?php get_template_part("template-parts/content/filler"); ?>
+</aside>

@@ -7,10 +7,15 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
-?>
-<form method="get" id="searchform" action="<?php echo esc_url(home_url("/")); ?>">
-    <input type="text" class="search_widget_input" name="s" id="s"
-        placeholder="<?php esc_attr_e("Search Here", "djs-wallstreet-pro"); ?>" required />
-    <button type="submit" id="searchsubmit" class="btn search_btn" style="" name="submit"
-        value="<?php esc_attr_e("Search", "djs-wallstreet-pro"); ?>"><?php esc_html_e("Search", "djs-wallstreet-pro"); ?></button>
+
+$field_id = wp_unique_id("search-field-");
+$label    = !empty($args["aria_label"]) ? $args["aria_label"] : __("Search", "djs-wallstreet-pro"); ?>
+<form role="search" method="get" class="search-form join w-full" action="<?php echo esc_url(home_url("/")); ?>" aria-label="<?php echo esc_attr($label); ?>">
+    <label class="screen-reader-text" for="<?php echo esc_attr($field_id); ?>"><?php esc_html_e("Search for:", "djs-wallstreet-pro"); ?></label>
+    <input type="search" id="<?php echo esc_attr($field_id); ?>" class="input join-item search-field" name="s" required
+        placeholder="<?php esc_attr_e("Search Here", "djs-wallstreet-pro"); ?>" value="<?php echo esc_attr(get_search_query()); ?>">
+    <button type="submit" class="btn btn-primary join-item search-submit">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span class="screen-reader-text sm:not-sr-only"><?php esc_html_e("Search", "djs-wallstreet-pro"); ?></span>
+    </button>
 </form>

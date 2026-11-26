@@ -24,7 +24,8 @@ if ($current_setup_posttypes->get("testimonial_template_cta_section_show_hide") 
 }
 
 if ($current_setup_posttypes->get("testimonial_template_testimonial_section_show_hide") == true) {
-    get_template_part("template-parts/testimonial/testimonial", ltrim(filter_var(basename($template), FILTER_SANITIZE_NUMBER_INT), "-"));
+    $variant = (int) ltrim(filter_var(basename($template), FILTER_SANITIZE_NUMBER_INT), "-");
+    get_template_part("template-parts/testimonial/testimonial", $variant, ["variant" => $variant]);
 }
 
 if ($current_setup_posttypes->get("testimonial_template_client_section_show_hide") == true) {

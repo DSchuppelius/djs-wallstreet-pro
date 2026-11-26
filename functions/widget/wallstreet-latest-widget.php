@@ -30,36 +30,30 @@ class wallstreet_latest_widget extends WP_Widget {
 
     function widget_posts($posts) {
         global $post;
-
         $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-
-        if ($posts) {
-            foreach ($posts as $post) {
+        if (!$posts) {
+            return;
+        } ?>
+        <ul class="mini-posts">
+            <?php foreach ($posts as $post) {
                 setup_postdata($post); ?>
-                <div class="media post-media-sidebar">
-                    <a class="pull-left sidebar-pull-img" href="<?php echo esc_url(get_permalink()); ?>">
-                        <?php $atts = ["class" => "img-responsive post_sidebar_img sidebar_thumb"]; ?>
-                        <?php echo get_the_post_thumbnail($post->ID, "widget-thumb", $atts); ?>
-                    </a>
-                    <div class="media-body">
-                        <h3 style="padding-bottom:0px;"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php echo get_sidebar_excerpt(); ?></p>
-                    </div>
-                    <div class="sidebar-comment-box">
-                        <span>
-                            <?php echo get_the_date($current_setup->get("fulldateformat"), $post->ID); ?>
-                            <small>|</small>
-                            <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>">
-                                <?php esc_html_e("By", "djs-wallstreet-pro");
-                                echo "&nbsp;";
-                                the_author(); ?>
-                            </a>
+                <li class="mini-post">
+                    <?php if (has_post_thumbnail($post->ID)) { ?>
+                        <a class="mini-post__media" href="<?php echo esc_url(get_permalink()); ?>" tabindex="-1" aria-hidden="true">
+                            <?php echo get_the_post_thumbnail($post->ID, "widget-thumb", ["class" => "mini-post__img", "loading" => "lazy", "alt" => ""]); ?>
+                        </a>
+                    <?php } ?>
+                    <div class="mini-post__body">
+                        <a class="mini-post__title" href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a>
+                        <span class="mini-post__meta">
+                            <time datetime="<?php echo esc_attr(get_the_date(DATE_W3C, $post->ID)); ?>"><?php echo esc_html(get_the_date($current_setup->get("fulldateformat"), $post->ID)); ?></time>
+                            · <?php the_author(); ?>
                         </span>
                     </div>
-                </div>
-        <?php }
-            wp_reset_postdata();
-        }
+                </li>
+            <?php } ?>
+        </ul>
+        <?php wp_reset_postdata();
     }
 
     /**
@@ -72,81 +66,63 @@ class wallstreet_latest_widget extends WP_Widget {
      */
     public function widget($args, $instance) {
         $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
+        $title         = apply_filters("widget_title", $instance["title"] ?? "");
+        $uid           = esc_attr($this->id);
+        $tabs          = [
+            "popular" => __("Popular", "djs-wallstreet-pro"),
+            "recent"  => __("Recent", "djs-wallstreet-pro"),
+            "comment" => __("Comment", "djs-wallstreet-pro"),
+        ];
 
-        $title = apply_filters("widget_title", $instance["title"] ?? "");
-        $begin_widget = $args["before_widget"];
-        $end_widget = $args["after_widget"];
-
-        echo $begin_widget;
-
+        echo $args["before_widget"];
         if (!empty($title)) {
             echo $args["before_title"] . $title . $args["after_title"];
         } ?>
 
-        <ul class="sidebar-tab sidebar-widget-tab">
-            <li class="active"><a data-toggle="tab"
-                    href="<?php the_currentURL(); ?>#popular"><?php esc_html_e("Popular", "djs-wallstreet-pro"); ?></a></li>
-            <li><a data-toggle="tab"
-                    href="<?php the_currentURL(); ?>#recent"><?php esc_html_e("Recent", "djs-wallstreet-pro"); ?></a></li>
-            <li><a data-toggle="tab"
-                    href="<?php the_currentURL(); ?>#comment"><?php esc_html_e("Comment", "djs-wallstreet-pro"); ?></a></li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div id="popular" class="tab-pane fade active in">
-                <div class="row">
-                    <?php $this->widget_posts(get_posts([
-                        'numberposts'      => 5,
-                        'orderby'          => 'comment_count',
-                        'order'            => 'DESC',
-                        'post_type'        => 'post',
-                        'post_status'      => 'publish',
-                    ])); ?>
-                </div>
-            </div>
-            <div id="recent" class="tab-pane fade">
-                <div class="row">
-                    <?php $this->widget_posts(get_posts([
-                        "post_type" => "post",
-                        "posts_per_page" => 5,
-                        "post__not_in" => get_option("sticky_posts"),
-                    ])); ?>
-                </div>
-            </div>
-            <div id="comment" class="tab-pane fade">
-                <div class="row">
-                    <?php $comments = get_comments(["number" => 5]);
-                    foreach ($comments as $comment) {
-                        $comment_post_link = get_permalink($comment->comment_post_ID); ?>
-                        <div class="media post-media-sidebar">
-                            <a class="pull-left sidebar-pull-img" href="<?php echo esc_url($comment_post_link); ?>">
-                                <?php echo get_avatar($comment, 70); ?>
-                            </a>
-                            <div class="media-body">
-                                <h3><a
-                                        href="<?php echo esc_url($comment_post_link . "#comment-" . $comment->comment_ID); ?>"><?php echo get_comment_sidebar($comment->comment_content); ?></a>
-                                </h3>
-                            </div>
-                            <div class="sidebar-comment-box">
-                                <span>
-                                    <?php echo get_the_date($current_setup->get("fulldateformat"), $comment->comment_post_ID); ?>
-                                    <small>|</small>
-                                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta("ID"))); ?>">
-                                        <?php esc_html_e("By", "djs-wallstreet-pro");
-                                        the_author(); ?>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    <?php } ?>
-
-                </div>
-            </div>
+        <div class="tabs tabs-box tabs-sm widget-tabs" role="tablist" data-tabs>
+            <?php $first = true;
+            foreach ($tabs as $key => $label) { ?>
+                <button type="button" role="tab" class="tab<?php echo $first ? " tab-active" : ""; ?>" id="<?php echo $uid . "-tab-" . $key; ?>"
+                    aria-controls="<?php echo $uid . "-" . $key; ?>" aria-selected="<?php echo $first ? "true" : "false"; ?>"><?php echo esc_html($label); ?></button>
+            <?php $first = false;
+            } ?>
         </div>
 
-    <?php echo $end_widget;
-        // wp_reset_postdata() statt wp_reset_query(): letzteres gehoert zu query_posts(),
-        // das hier gar nicht verwendet wird.
-        wp_reset_postdata();
+        <div id="<?php echo $uid; ?>-popular" class="widget-tabs__pane" role="tabpanel" aria-labelledby="<?php echo $uid; ?>-tab-popular">
+            <?php $this->widget_posts(get_posts([
+                "numberposts" => 5,
+                "orderby"     => "comment_count",
+                "order"       => "DESC",
+                "post_type"   => "post",
+                "post_status" => "publish",
+            ])); ?>
+        </div>
+        <div id="<?php echo $uid; ?>-recent" class="widget-tabs__pane" role="tabpanel" aria-labelledby="<?php echo $uid; ?>-tab-recent" hidden>
+            <?php $this->widget_posts(get_posts([
+                "post_type"      => "post",
+                "posts_per_page" => 5,
+                "post__not_in"   => get_option("sticky_posts"),
+            ])); ?>
+        </div>
+        <div id="<?php echo $uid; ?>-comment" class="widget-tabs__pane" role="tabpanel" aria-labelledby="<?php echo $uid; ?>-tab-comment" hidden>
+            <ul class="mini-posts">
+                <?php foreach (get_comments(["number" => 5, "status" => "approve"]) as $comment) {
+                    $link = get_comment_link($comment); ?>
+                    <li class="mini-post">
+                        <span class="mini-post__media"><?php echo get_avatar($comment, 56, "", "", ["class" => "mini-post__img"]); ?></span>
+                        <div class="mini-post__body">
+                            <a class="mini-post__title" href="<?php echo esc_url($link); ?>"><?php echo esc_html(get_comment_sidebar($comment->comment_content)); ?></a>
+                            <span class="mini-post__meta">
+                                <time datetime="<?php echo esc_attr(get_comment_date(DATE_W3C, $comment)); ?>"><?php echo esc_html(get_comment_date($current_setup->get("fulldateformat"), $comment)); ?></time>
+                                · <?php echo esc_html(get_comment_author($comment)); ?>
+                            </span>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+
+        <?php echo $args["after_widget"];
     }
 
     public function form($instance) {

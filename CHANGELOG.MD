@@ -1,5 +1,37 @@
 ### Versionhistory
 
+#### Version 3.0.0:
+
+    1. New frontend stack: Tailwind CSS 4 + daisyUI 5 (build: npm run build)
+       1. Bootstrap 3, jQuery-dependent scripts, Flexslider, carouFredSel and the old lightbox removed
+       2. Color schemes dark/light as daisyUI themes, new option "automatic" (follows the OS) and
+          an optional visitor switch (light/dark/system)
+       3. Customizer colors, radii and typography mapped to design tokens
+    2. Facelift of all templates
+       1. Header presets 1-6, blog teasers 1-6, services 1-6, team 1-4, testimonials 1-4
+          each bundled into one template (all options still selectable)
+       2. New header with accessible menu (keyboard, screen readers), search dialog,
+          display settings (font size, color scheme)
+       3. Cards for posts, single post with author box and previous/next navigation
+       4. Carousel without dependencies (scroll-snap) for slider, testimonials and related projects
+       5. Lightbox with native dialog element, portfolio tabs without reload
+       6. Slider Revolution supported unchanged
+    3. Accessibility
+       1. One h1 per page, widget titles as h2, skip link, aria attributes, focus styles
+       2. Pausable autoplay, reduced motion respected
+    4. Performance
+       1. One stylesheet (~29 KB gzip) and one script instead of many requests
+       2. Site fonts as WOFF2, one font family with real weights
+       3. Banner and slider images with srcset and fetchpriority
+    5. Fixes
+       1. Breadcrumbs produced invalid nested list items
+       2. Read-more buttons were forms that lost the #more anchor
+       3. Contact form validated via injected jQuery snippets - now server side with field errors
+       4. Portfolio lightbox pointed to the attachment page instead of the image
+       5. Stray debug output in header preset 1, legacy font weight names as invalid CSS values
+    6. theme.json and editor styles for the block editor
+    7. German translation updated
+
 #### Version 2.2.0:
 
     1. Fix CSS Styles

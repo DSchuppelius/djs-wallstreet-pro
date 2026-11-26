@@ -205,7 +205,7 @@ function djs_vc_compat_tta_accordion($atts, $content = null) {
 
     $state = $outer;
 
-    $classes = ["panel-group", "vc_tta-accordion"];
+    $classes = ["sc-accordion", "vc_tta-accordion"];
     if ($atts["style"] !== "") {
         $classes[] = "vc_tta-style-" . sanitize_html_class($atts["style"]);
     }
@@ -220,10 +220,10 @@ add_shortcode("vc_tta_accordion", "djs_vc_compat_tta_accordion");
 
 function djs_vc_compat_tta_section($atts, $content = null) {
     $atts = shortcode_atts([
-        "title" => "",
-        "tab_id" => "",
+        "title"    => "",
+        "tab_id"   => "",
         "el_class" => "",
-        "css" => "",
+        "css"      => "",
     ], $atts, "vc_tta_section");
 
     $state = &djs_vc_compat_tta_state();
@@ -231,39 +231,26 @@ function djs_vc_compat_tta_section($atts, $content = null) {
     $index = $state["index"];
     $group = $state["group"];
 
-    // Die tab_id des Builders als ID weiterverwenden, damit bestehende Deep-Links
-    // (#...) auf die Sektionen weiter zeigen. Praefix, weil sie mit einer Ziffer beginnt.
+    // Die tab_id des Builders bleibt als ID, damit Deep-Links (#...) weiter funktionieren;
+    // theme.js oeffnet die angesprungene Sektion.
     $id = $atts["tab_id"] !== ""
         ? "djs-tta-" . sanitize_html_class($atts["tab_id"])
         : ($group !== "" ? $group : "djs-tta") . "-section-" . $index;
 
     $is_active = ($index === $state["active"]);
 
-    $icon = "";
-    list($icon_closed, $icon_open) = $state["icon"];
-    if ($icon_closed !== "") {
-        $icon = '<span class="fa ' . esc_attr($is_active ? $icon_open : $icon_closed) . '"></span>';
-    }
+    [$icon_closed, $icon_open] = $state["icon"];
+    $icon = $icon_closed !== ""
+        ? '<span class="fa ' . esc_attr($icon_closed) . ' sc-accordion__fa sc-accordion__fa--closed" aria-hidden="true"></span><span class="fa ' . esc_attr($icon_open) . ' sc-accordion__fa sc-accordion__fa--open" aria-hidden="true"></span>'
+        : "";
 
-    $gap = $state["gap"] > 0 ? ' style="margin-bottom:' . $state["gap"] . 'px"' : "";
-    $parent = $group !== "" ? ' data-parent="#' . esc_attr($group) . '"' : "";
+    $gap  = $state["gap"] > 0 ? ' style="margin-bottom:' . $state["gap"] . 'px"' : "";
+    $name = $group !== "" ? ' name="' . esc_attr($group) . '"' : "";
 
-    // "panel" muss mit: Bootstrap 3 sucht in Collapse.show() ueber
-    // this.$parent.children('.panel') nach der offenen Geschwistersektion - ohne die
-    // Klasse bliebe beim Aufklappen die vorherige Sektion mit offen.
-    // "panel-heading" dagegen bewusst NICHT: die Klasse hat keine Funktion im
-    // Collapse-Plugin, zieht aber Bootstraps helles .panel-default>.panel-heading
-    // (#f5f5f5) herein, das unter dem dunklen Kopf durchscheinen wuerde.
-    return '<div class="' . esc_attr(djs_vc_compat_classes(["acco_panel", "panel", "panel-default"], $atts["el_class"])) . '"' . $gap . '>'
-        . '<div class="short-panel-heading" role="tab" id="' . esc_attr($id) . '-heading">'
-        . '<h4 class="panel-title">'
-        . '<a class="accordion-toggle' . ($is_active ? "" : " collapsed") . '" data-toggle="collapse"' . $parent
-        . ' href="#' . esc_attr($id) . '" aria-expanded="' . ($is_active ? "true" : "false") . '" aria-controls="' . esc_attr($id) . '">'
-        . djs_vc_compat_text($atts["title"]) . $icon
-        . "</a></h4></div>"
-        . '<div id="' . esc_attr($id) . '" class="panel-collapse collapse' . ($is_active ? " in" : "") . '" role="tabpanel" aria-labelledby="' . esc_attr($id) . '-heading">'
-        . '<div class="panel-body"' . djs_vc_compat_css_to_style($atts["css"]) . ">" . do_shortcode((string) $content) . "</div>"
-        . "</div></div>";
+    return '<details id="' . esc_attr($id) . '" class="' . esc_attr(djs_vc_compat_classes(["sc-accordion__item", "acco_panel"], $atts["el_class"])) . '"' . $name . $gap . ($is_active ? " open" : "") . ">"
+        . '<summary class="sc-accordion__title">' . djs_vc_compat_text($atts["title"]) . $icon . "</summary>"
+        . '<div class="sc-accordion__body panel-body"' . djs_vc_compat_css_to_style($atts["css"]) . ">" . do_shortcode((string) $content) . "</div>"
+        . "</details>";
 }
 add_shortcode("vc_tta_section", "djs_vc_compat_tta_section");
 
@@ -311,29 +298,8 @@ add_filter("the_content", "djs_vc_compat_do_shortcodes", 9);
  * registriert ist - wp_add_inline_style setzt das voraus.
  */
 function djs_vc_compat_enqueue() {
-    global $wp_query;
-
-    if (empty($wp_query->posts)) {
-        return;
-    }
-
-    $found = false;
-    foreach ($wp_query->posts as $post) {
-        if (!empty($post->post_content) && strpos($post->post_content, "[vc_") !== false) {
-            $found = true;
-            break;
-        }
-    }
-
-    if (!$found) {
-        return;
-    }
-
-    // bootstrap.min.js haengt schon global in theme_bootstrap_scripts(), hier fehlt nur
-    // das Umschalten der Chevron-Icons beim Auf- und Zuklappen.
-    wp_enqueue_script("accordion-tab", THEME_ASSETS_PATH_URI . "/js/accordion-tab.js", ["jquery", "bootstrap"], null, ['strategy' => 'defer', 'in_footer' => false]);
-
-    wp_add_inline_style("djs-wallstreet-pro-standard", djs_vc_compat_inline_css());
+    // Frueher Bootstrap-Collapse + accordion-tab.js. Die Sektionen sind jetzt native
+    // <details>-Elemente; das Styling steckt im Theme-Stylesheet (content.css).
 }
 add_action("wp_enqueue_scripts", "djs_vc_compat_enqueue", 20);
 
@@ -350,20 +316,5 @@ add_action("wp_enqueue_scripts", "djs_vc_compat_enqueue", 20);
  * bleibt.
  */
 function djs_vc_compat_inline_css() {
-    return <<<CSS
-.vc_column_text{margin-bottom:12px}
-.vc_column_text:last-child{margin-bottom:0}
-.vc_column_text>:last-child{margin-bottom:0}
-.panel-group.vc_tta-accordion .acco_panel{background-color:transparent;border-color:transparent;box-shadow:none;border-radius:var(--border-smallbase);overflow:hidden}
-.vc_tta-accordion .panel-default>.short-panel-heading h4{background-color:transparent}
-.vc_tta-accordion .panel-title>a{background-color:rgba(0,0,0,.28);transition:background-color .2s ease}
-.vc_tta-accordion .panel-title>a.collapsed:hover{background-color:var(--link-color_additional-60)}
-.vc_tta-accordion .panel-title>a:not(.collapsed){background-color:var(--link-color)}
-.vc_tta-accordion .panel-title>a:focus{outline:0}
-.vc_tta-accordion .panel-title>a:focus-visible{outline:2px solid var(--link-color-contrast);outline-offset:-4px}
-.vc_tta-accordion .panel-title a span{float:right;line-height:28px;color:inherit;opacity:.85}
-.vc_tta-accordion .panel-collapse{background-color:rgba(0,0,0,.18)}
-.vc_tta-accordion .panel-body{padding:15px !important}
-.vc_tta-accordion .panel-body>.vc_column_text{padding:12px 15px;border-radius:var(--border-smallbase)}
-CSS;
+    return "";
 }

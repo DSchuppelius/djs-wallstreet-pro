@@ -1,0 +1,239 @@
+/*
+ * Kompatibilitaet fuer Bootstrap-3-Klassen.
+ *
+ * Bootstrap selbst wird nicht mehr geladen. Diese schlanke Nachbildung deckt ab, was
+ * in gespeichertem Content (Beitraege, Shortcode-Ausgaben, Plugin-Markup) noch
+ * vorkommt: Raster, Bild- und Float-Helfer, Buttons, Panels/Collapse.
+ */
+@layer components {
+    /* ---- Raster -------------------------------------------------- */
+    .container,
+    .container-fluid {
+        width: 100%;
+        margin-inline: auto;
+        padding-inline: clamp(1rem, 3vw, 2rem);
+    }
+
+    .container {
+        max-width: var(--container-site);
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: -0.75rem;
+    }
+
+    .row > [class*="col-"] {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        padding-inline: 0.75rem;
+    }
+
+    .col-xs-1 { width: 8.3333%; }
+    .col-xs-2 { width: 16.6667%; }
+    .col-xs-3 { width: 25%; }
+    .col-xs-4 { width: 33.3333%; }
+    .col-xs-5 { width: 41.6667%; }
+    .col-xs-6 { width: 50%; }
+    .col-xs-7 { width: 58.3333%; }
+    .col-xs-8 { width: 66.6667%; }
+    .col-xs-9 { width: 75%; }
+    .col-xs-10 { width: 83.3333%; }
+    .col-xs-11 { width: 91.6667%; }
+    .col-xs-12 { width: 100%; }
+
+    @media (width >= 48rem) {
+        .col-sm-1 { width: 8.3333%; }
+        .col-sm-2 { width: 16.6667%; }
+        .col-sm-3 { width: 25%; }
+        .col-sm-4 { width: 33.3333%; }
+        .col-sm-5 { width: 41.6667%; }
+        .col-sm-6 { width: 50%; }
+        .col-sm-7 { width: 58.3333%; }
+        .col-sm-8 { width: 66.6667%; }
+        .col-sm-9 { width: 75%; }
+        .col-sm-10 { width: 83.3333%; }
+        .col-sm-11 { width: 91.6667%; }
+        .col-sm-12 { width: 100%; }
+    }
+
+    @media (width >= 62rem) {
+        .col-md-1 { width: 8.3333%; }
+        .col-md-2 { width: 16.6667%; }
+        .col-md-3 { width: 25%; }
+        .col-md-4 { width: 33.3333%; }
+        .col-md-5 { width: 41.6667%; }
+        .col-md-6 { width: 50%; }
+        .col-md-7 { width: 58.3333%; }
+        .col-md-8 { width: 66.6667%; }
+        .col-md-9 { width: 75%; }
+        .col-md-10 { width: 83.3333%; }
+        .col-md-11 { width: 91.6667%; }
+        .col-md-12 { width: 100%; }
+        .col-md-offset-2 { margin-inline-start: 16.6667%; }
+        .col-md-offset-3 { margin-inline-start: 25%; }
+    }
+
+    @media (width >= 75rem) {
+        .col-lg-1 { width: 8.3333%; }
+        .col-lg-2 { width: 16.6667%; }
+        .col-lg-3 { width: 25%; }
+        .col-lg-4 { width: 33.3333%; }
+        .col-lg-5 { width: 41.6667%; }
+        .col-lg-6 { width: 50%; }
+        .col-lg-7 { width: 58.3333%; }
+        .col-lg-8 { width: 66.6667%; }
+        .col-lg-9 { width: 75%; }
+        .col-lg-10 { width: 83.3333%; }
+        .col-lg-11 { width: 91.6667%; }
+        .col-lg-12 { width: 100%; }
+    }
+
+    /* ---- Helfer -------------------------------------------------- */
+    .clearfix::after,
+    .clear {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+
+    .img-rounded,
+    .img-thumbnail {
+        border-radius: var(--radius-small);
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    @media (width < 48rem) {
+        .hidden-xs {
+            display: none !important;
+        }
+    }
+
+    @media (48rem <= width < 62rem) {
+        .hidden-sm {
+            display: none !important;
+        }
+    }
+
+    @media (62rem <= width < 75rem) {
+        .hidden-md {
+            display: none !important;
+        }
+    }
+
+    @media (width >= 75rem) {
+        .hidden-lg {
+            display: none !important;
+        }
+    }
+
+    /* ---- Buttons: Bootstrap-Varianten auf daisyUI-Farben --------- */
+    .btn-default {
+        --btn-color: var(--color-neutral);
+        --btn-fg: var(--color-neutral-content);
+    }
+
+    .btn-danger {
+        --btn-color: var(--color-error);
+        --btn-fg: var(--color-error-content);
+    }
+
+    .btn-xs {
+        --size: calc(var(--size-field, 0.25rem) * 6);
+        font-size: 0.6875rem;
+        padding-inline: 0.5rem;
+    }
+
+    /* ---- Collapse / Panels (alte Accordion-Ausgaben) ------------- */
+    .collapse:not(.in, .show, .collapse-open, [class*="collapse-"]) {
+        display: none;
+    }
+
+    .panel-group {
+        display: grid;
+        gap: 0.5rem;
+        margin-block: 1.5rem;
+    }
+
+    .panel {
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 3%, transparent);
+        overflow: hidden;
+    }
+
+    .panel-heading {
+        padding: 0.875rem 1.125rem;
+    }
+
+    .panel-title {
+        margin: 0;
+        font-size: 1.0625rem;
+    }
+
+    .panel-title a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--color-base-content);
+        text-decoration: none;
+    }
+
+    .panel-body {
+        padding: 0 1.125rem 1.125rem;
+    }
+
+    /* ---- Bootstrap-Icons (glyphicon) gibt es nicht mehr: ausblenden statt Kaestchen */
+    .glyphicon {
+        display: none;
+    }
+
+    /* ---- Eingabefelder in Beitraegen (Theme-Klasse blog-form-control, z. B. in den Rechnern
+       der Toolbox) wie bisher: schmaler Innenabstand, damit Auswahlfelder ihren Text zeigen */
+    .blog-form-control,
+    .blog-form-control-textarea {
+        padding: 6px 12px;
+        border: 1px solid var(--legacy-field-edge);
+        background-color: transparent;
+        color: var(--legacy-field-text);
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .blog-form-control {
+        height: 46px;
+        min-height: 0;
+    }
+}

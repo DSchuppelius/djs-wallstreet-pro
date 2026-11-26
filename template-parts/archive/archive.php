@@ -6,45 +6,31 @@
  * Filename     : archive.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Archive (Kategorie, Schlagwort, Autor, Datum, Formate).
  */
-global $more;
-global $wp_query;
-global $first_post;
-global $archive_type;
-global $only_one_post;
-global $theme_blog_section;
 
-$current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-$theme_blog_section = "blog-section-left";
+global $archive_type, $wp_query;
+
 get_template_parts(["template-parts/index/index", "banner"], true);
 
-$post_type_data = $wp_query;
-?>
-<div class="container archive<?php echo empty($archive_type) ? "" : " " . $archive_type; ?>">
-    <div class="row <?php row_frame_border(""); ?> flexstretch">
-        <div
-            class="col-md-<?php echo is_active_sidebar("sidebar_primary") ? "8" : "12"; ?> flexcolumn<?php values_on_current_option("flexelements", " fill"); ?>">
-            <?php $paged = get_query_var("paged") ? get_query_var("paged") : 1;
-            if(!empty($archive_type))
-                $post_type_data = new WP_Query([
-                    "post_type" => "post",
-                    "paged" => $paged,
-                    $archive_type => get_query_var($archive_type)
-                ]);
-            $only_one_post = $post_type_data->found_posts == 1;
-            $first_post = true;
-            while ($post_type_data->have_posts()) {
-                $post_type_data->the_post();
-                $more = 0;
-                get_template_part("template-parts/content/content", $current_setup->get("blog_template_content_excerpt_get_setting"));
-                $first_post = false;
-            }
-            wp_reset_postdata();
-            the_pagination($paged, $post_type_data);
-            get_template_part("template-parts/content/filler");
-            ?>
-        </div>
-        <?php get_sidebar(); ?>
-    </div>
-</div>
-<?php get_footer(); ?>
+$query = $wp_query;
+if (!empty($archive_type)) {
+    // Kategorie/Schlagwort/Autor: nur Beitraege, keine fremden Post-Types im Archiv.
+    $query = new WP_Query([
+        "post_type"    => "post",
+        "paged"        => max(1, (int) get_query_var("paged")),
+        $archive_type  => get_query_var($archive_type),
+    ]);
+}
+
+djs_layout_start(["class" => "archive" . (empty($archive_type) ? "" : " " . sanitize_html_class($archive_type))]);
+
+if ($description = get_the_archive_description()) { ?>
+    <div class="archive-intro surface-card entry-content"><?php echo wp_kses_post($description); ?></div>
+<?php }
+
+djs_blog_loop($query, ["context" => "archive"]);
+djs_layout_end();
+
+get_footer();

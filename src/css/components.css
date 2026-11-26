@@ -1,0 +1,1398 @@
+/*
+ * Theme-Bausteine: Seitenlayout (Inhalt + Sidebar), Beitragskarten, Meta-Zeilen,
+ * Einzelbeitrag, Autor-Box, Pagination, Kommentare, Sidebar-Widgets, Leerzustaende,
+ * Kontakt, Call-out, Team-Karten, Abschnittsueberschriften.
+ */
+@layer utilities {
+    /* ---------------------------------------------------------------- */
+    /*  Flaechen (Customizer "Rahmen auf Seiten" / "Grosser Rahmen")    */
+    /* ---------------------------------------------------------------- */
+    .surface-card {
+        position: relative;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+        border-radius: var(--radius-box);
+    }
+
+    /* Mit Rahmen: Glasflaechen, siehe glass.css. Ohne Rahmen: Inhalte liegen direkt auf dem Hintergrund, getrennt durch Linien */
+    body:not(.has-frame) .surface-card {
+        padding-inline: 0;
+        border-radius: 0;
+        border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Hauptspalte + Sidebar                                           */
+    /* ---------------------------------------------------------------- */
+    .layout {
+        display: grid;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        align-items: start;
+    }
+
+    .layout__main,
+    .layout__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+        min-width: 0;
+    }
+
+    @media (width >= 62rem) {
+        /* Inhalt : Seitenleiste wie bisher 740 : 368 (Bootstrap col-md-8 / col-md-4 abzueglich Polster) */
+        .layout--sidebar-right {
+            grid-template-columns: minmax(0, 740fr) minmax(17rem, 368fr);
+        }
+
+        .layout--sidebar-left {
+            grid-template-columns: minmax(17rem, 368fr) minmax(0, 740fr);
+        }
+
+        .layout--sidebar-left .layout__main {
+            order: 2;
+        }
+
+        /*
+         * Fuellen am Spaltenende (wie bisher, zwei Customizer-Schalter):
+         *   "Fuellelemente hinzufuegen" (addflexelements): am Ende jeder Spalte eine Fuellflaeche
+         *     (.columnfiller), die den Rest bis zum Ende der laengeren Spalte einnimmt.
+         *   "Vorhandene Elemente fuellen" (flexelements, .layout--stretch): das letzte Element der
+         *     Spalte waechst selbst bis zum Ende; eine Fuellflaeche bleibt dann 20px schmal.
+         * Beides aus: Inhalt in natuerlicher Hoehe, darunter der Rahmen.
+         */
+        .layout {
+            align-items: start;
+        }
+
+        .layout__main {
+            align-self: stretch;
+        }
+
+        .layout:is(.layout--stretch, :has(> * > .columnfiller)) > .layout__sidebar {
+            align-self: stretch;
+        }
+
+        .layout--stretch > * > :not(.columnfiller):not(:has(~ :not(.columnfiller, script, style, template))) {
+            flex-grow: 1;
+        }
+    }
+
+    .columnfiller {
+        flex: 1 1 1.25rem;
+        min-height: 1.25rem;
+        padding: 0;
+    }
+
+    .layout--stretch .columnfiller {
+        flex-grow: 0;
+    }
+
+    /* Einspaltig (Sidebar unter dem Inhalt) gibt es nichts aufzufuellen - wie bisher keine Flaeche */
+    @media (width < 62rem) {
+        .layout > * > .columnfiller {
+            display: none;
+        }
+    }
+
+    .page-intro,
+    .archive-intro {
+        font-size: 1.0625rem;
+    }
+
+    /* Raster fuer Karten (Team, Kontakt, Sektionen) */
+    .card-grid {
+        display: grid;
+        gap: clamp(1rem, 2.5vw, 1.75rem);
+        grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+    }
+
+    @media (width >= 48rem) {
+        .card-grid--2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card-grid--3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (width >= 62rem) {
+        .card-grid--4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    /* Sanftes Einblenden beim Scrollen (nur wo der Browser es nativ kann) */
+    @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                animation: fade-up linear both;
+                animation-timeline: view();
+                animation-range: entry 0% entry 30%;
+            }
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Abschnittsueberschrift                                          */
+    /* ---------------------------------------------------------------- */
+    .section {
+        margin-top: clamp(3rem, 7vw, 5.5rem);
+    }
+
+    .section-heading {
+        max-width: 46rem;
+        margin: 0 auto clamp(1.75rem, 4vw, 2.75rem);
+        text-align: center;
+    }
+
+    .section-heading__title {
+        margin: 0;
+        font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+        font-weight: 700;
+    }
+
+    .section-heading__text {
+        margin: 1rem 0 0;
+        font-size: 1.0625rem;
+        color: var(--heading-text, var(--color-base-content));
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Beitragslisten                                                  */
+    /* ---------------------------------------------------------------- */
+    .post-list {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .post-list--masonry {
+        display: block;
+        columns: 1;
+        column-gap: clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    .post-list--masonry > .post-card {
+        break-inside: avoid;
+        margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    @media (width >= 48rem) {
+        .post-list--masonry {
+            columns: 2;
+        }
+    }
+
+    @media (width >= 62rem) {
+        .post-list--cols-3 {
+            columns: 3;
+        }
+    }
+
+    @media (width >= 75rem) {
+        .post-list--cols-4 {
+            columns: 4;
+        }
+
+        .layout--wide.blog-page {
+            max-width: 96rem;
+        }
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Beitragskarte                                                   */
+    /* ---------------------------------------------------------------- */
+    .post-card {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        transition:
+            transform 0.25s var(--ease-snappy),
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .post-card__media {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 5 / 2;
+        background: var(--color-base-300);
+    }
+
+    .post-card--compact .post-card__media {
+        aspect-ratio: 16 / 10;
+    }
+
+    .post-card__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s var(--ease-snappy);
+    }
+
+    .post-card:hover .post-card__img {
+        transform: scale(1.04);
+    }
+
+    .post-card__body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.875rem;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    body:not(.has-frame) .post-card__body {
+        padding-inline: 0;
+    }
+
+    .post-card__header {
+        display: grid;
+        gap: 0.625rem;
+    }
+
+    .post-card__title {
+        margin: 0;
+        font-size: var(--post-font-size, clamp(1.375rem, 1.1rem + 1vw, 1.875rem));
+        font-weight: var(--post-font-weight, 700);
+        font-style: var(--post-font-style, normal);
+        line-height: 1.25;
+    }
+
+    .post-card--compact .post-card__title {
+        font-size: 1.25rem;
+    }
+
+    .post-card__title a {
+        color: var(--color-base-content);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .post-card__title a:hover {
+        color: var(--color-primary);
+    }
+
+    .post-card__content {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: color-mix(in oklab, var(--color-base-content) 88%, transparent);
+    }
+
+    .post-card__content > p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .blog-btn-col {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .post-card .blog-btn-col {
+        margin-top: 1.25rem;
+    }
+
+    /* Liste / Wechselansicht: Bild seitlich */
+    @media (width >= 48rem) {
+        .post-card--media,
+        .post-card--media-reverse {
+            display: grid;
+            grid-template-columns: minmax(14rem, 38%) minmax(0, 1fr);
+        }
+
+        .post-card--media-reverse {
+            grid-template-columns: minmax(0, 1fr) minmax(14rem, 38%);
+        }
+
+        .post-card--media-reverse .post-card__media {
+            order: 2;
+        }
+
+        .post-card--media .post-card__media,
+        .post-card--media-reverse .post-card__media {
+            aspect-ratio: auto;
+            min-height: 100%;
+        }
+
+        .post-card--media.has_no_post_thumbnail,
+        .post-card--media-reverse.has_no_post_thumbnail {
+            display: flex;
+        }
+    }
+
+    /* Format "Status": Terminal-Anzeige */
+    .status-screen {
+        position: relative;
+        padding: 1.25rem 1.5rem 2rem;
+        border-radius: var(--radius-small);
+        background: #0b0f0c;
+        color: #6ef08a;
+        font-family: var(--font-mono);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-shadow: 0 0 6px rgb(110 240 138 / 0.45);
+        box-shadow: inset 0 0 30px rgb(0 0 0 / 0.8);
+    }
+
+    .status-screen__text {
+        margin: 0;
+        white-space: pre-wrap;
+    }
+
+    .status-screen__count {
+        position: absolute;
+        right: 1rem;
+        bottom: 0.5rem;
+        font-size: 0.75rem;
+        opacity: 0.7;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Meta-Zeilen                                                     */
+    /* ---------------------------------------------------------------- */
+    .post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 1rem;
+        font-size: 0.8125rem;
+        color: color-mix(in oklab, var(--color-base-content) 68%, transparent);
+    }
+
+    .post-meta a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .post-meta a:hover {
+        color: var(--color-primary);
+    }
+
+    .post-meta .material-icons {
+        font-size: 1.05rem;
+        margin-inline-end: 0.3rem;
+        opacity: 0.85;
+    }
+
+    .post-meta > :is(time, a, span) {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Begriffslisten als Fliesstext, sonst verschluckt inline-flex die Leerzeichen nach den Kommas */
+    .post-meta > .post-meta__terms {
+        display: inline;
+    }
+
+    .post-meta__terms .material-icons {
+        vertical-align: -0.2em;
+    }
+
+    .post-meta .badge {
+        gap: 0.25rem;
+        text-decoration: none;
+    }
+
+    .post-meta .badge .material-icons {
+        margin: 0;
+        font-size: 0.95rem;
+    }
+
+    .post-meta--bottom {
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent);
+    }
+
+    .post-meta__author {
+        gap: 0.5rem;
+        font-weight: 600;
+        color: var(--color-base-content) !important;
+    }
+
+    .post-meta__avatar {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 999px;
+    }
+
+    .post-meta__terms a + a::before {
+        content: none;
+    }
+
+    /* inline-flex verschluckt das Leerzeichen zwischen Beschriftung und Datum */
+    .post-meta__updated time {
+        margin-inline-start: 0.3em;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Einzelbeitrag / Seite                                           */
+    /* ---------------------------------------------------------------- */
+    .entry {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .entry__media {
+        margin: 0;
+        background: var(--color-base-300);
+    }
+
+    .entry__img {
+        display: block;
+        width: 100%;
+        max-height: 34rem;
+        object-fit: cover;
+    }
+
+    .entry__media figcaption {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8125rem;
+        color: color-mix(in oklab, var(--color-base-content) 65%, transparent);
+    }
+
+    .entry__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    body:not(.has-frame) .entry__body {
+        padding-inline: 0;
+    }
+
+    /* Ohne Sidebar nutzt der Inhalt wie bisher die volle Breite - keine schmale Lesebreite:
+       Seiten mit iframes, Spalten oder Rechnern brauchen den Platz (ein zentrierter, schmaler
+       Inhaltsbereich liess einen iframe sogar auf seine Standardbreite von 300px schrumpfen) */
+
+    /* Vor/Zurueck: Flaechen wie die uebrigen Bereiche im Rahmen; aussen ein Icon-Feld in Themefarbe
+       wie bei den Buttons, das sich bei Hover ueber die ganze Flaeche schiebt. Gibt es nur einen
+       Nachbarbeitrag, fuellt dessen Link die ganze Breite. */
+    .post-nav .nav-links {
+        display: grid;
+        gap: 0.625rem;
+    }
+
+    @media (width >= 40rem) {
+        .post-nav .nav-links {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .post-nav .nav-next {
+            grid-column: 2;
+        }
+
+        .post-nav .nav-links > :only-child {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .post-nav .nav-next {
+        text-align: end;
+    }
+
+    .post-nav a {
+        --nav-glyph: "fast_rewind";
+        --btn-edge: color-mix(in oklab, var(--color-primary) 88%, #000);
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        align-content: center;
+        gap: 0.3rem;
+        height: 100%;
+        min-height: 4.75rem;
+        padding: 0.875rem 1.25rem 0.875rem 4rem;
+        overflow: hidden;
+        border-radius: var(--radius-panel, var(--radius-small));
+        background-color: var(--glass-panel-deep);
+        box-shadow: inset 0 1px 0 var(--glass-shine);
+        color: var(--color-base-content);
+        text-decoration: none;
+        transition:
+            color 0.3s ease,
+            text-shadow 0.3s ease;
+    }
+
+    .post-nav .nav-next a {
+        --nav-glyph: "fast_forward";
+        padding: 0.875rem 4rem 0.875rem 1.25rem;
+    }
+
+    .post-nav a::before {
+        content: var(--nav-glyph);
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: 0;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        width: 2.75rem;
+        padding-inline: 0.6875rem;
+        /* wie bei den Buttons: obere Haelfte aufgehellt */
+        background-image:
+            linear-gradient(rgb(255 255 255 / 0.15) 50%, transparent 50%),
+            linear-gradient(90deg, color-mix(in oklab, var(--btn-edge) 60%, transparent), var(--color-primary) 55%, color-mix(in oklab, var(--btn-edge) 70%, transparent));
+        color: var(--color-primary-content);
+        font-family: "Material Icons";
+        font-size: 1.375rem;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        -webkit-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        transition: width 0.5s ease;
+    }
+
+    .post-nav .nav-next a::before {
+        inset-inline: auto 0;
+        justify-content: flex-end;
+    }
+
+    .post-nav a:is(:hover, :focus-visible) {
+        color: var(--color-primary-content);
+        text-shadow: 0 1px 1px #18191b;
+    }
+
+    .post-nav a:is(:hover, :focus-visible)::before {
+        width: 100%;
+    }
+
+    .post-nav__label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        transition: color 0.3s ease;
+    }
+
+    .post-nav a:is(:hover, :focus-visible) .post-nav__label {
+        color: inherit;
+    }
+
+    .post-nav__title {
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .post-nav a::before {
+            transition: none;
+        }
+    }
+
+    /* Autor-Box */
+    .author-box {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .author-box__img {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 999px;
+        outline: 3px solid color-mix(in oklab, var(--color-primary) 35%, transparent);
+        outline-offset: 2px;
+    }
+
+    .author-box__eyebrow {
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .author-box__name {
+        margin: 0.125rem 0 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .author-box__name a {
+        color: var(--color-base-content);
+        text-decoration: none;
+    }
+
+    .author-box__bio {
+        margin: 0 0 0.75rem;
+        color: color-mix(in oklab, var(--color-base-content) 80%, transparent);
+    }
+
+    /* Anhangseite: Querformat vollstaendig wie bisher, sehr hohe Bilder passen auf den Bildschirm */
+    .attachment-figure img {
+        max-height: 90vh;
+        object-fit: contain;
+        background: var(--color-base-300);
+    }
+
+    .attachment-props {
+        padding: 1rem 1.25rem;
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+    }
+
+    .attachment-props__title {
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
+    }
+
+    .attachment-props dl {
+        display: grid;
+        gap: 0.375rem;
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    .attachment-props dl > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .attachment-props dt {
+        font-weight: 600;
+    }
+
+    .attachment-props dd {
+        margin: 0;
+    }
+
+    .linked-post__title {
+        margin: 0 0 1rem;
+        font-size: 1.125rem;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Pagination                                                      */
+    /* ---------------------------------------------------------------- */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .pagination .join {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: var(--radius-field);
+        box-shadow: 0 10px 24px -16px rgb(0 0 0 / 0.6);
+    }
+
+    .pagination .btn:not(.btn-primary) {
+        background: color-mix(in oklab, var(--color-base-100) 92%, transparent);
+    }
+
+    .pagination .material-icons {
+        font-size: 1.25rem;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Sidebar-Widgets                                                 */
+    /* ---------------------------------------------------------------- */
+    .sidebar-widget {
+        position: relative;
+        padding: clamp(1.25rem, 2.5vw, 1.75rem);
+        border-radius: var(--radius-box);
+    }
+
+    .sidebar-widget .widget-title,
+    .sidebar-widget .wp-block-search__label,
+    .sidebar-widget :is(h2, h3).wp-block-heading {
+        margin: 0 0 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+        font-size: var(--widget-font-size, 1.125rem);
+        font-weight: var(--widget-font-weight, 600);
+        font-style: var(--widget-font-style, normal);
+    }
+
+    .widget ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar-widget li {
+        padding-block: 0.5rem;
+        border-bottom: 1px solid color-mix(in oklab, var(--color-base-content) 7%, transparent);
+    }
+
+    .sidebar-widget li:last-child {
+        border-bottom: 0;
+    }
+
+    .sidebar-widget li ul {
+        margin-top: 0.5rem;
+        padding-inline-start: 1rem;
+    }
+
+    .sidebar-widget a {
+        color: color-mix(in oklab, var(--color-base-content) 88%, transparent);
+        text-decoration: none;
+    }
+
+    .sidebar-widget a:hover {
+        color: var(--color-primary);
+    }
+
+    .widget .wp-block-search__inside-wrapper,
+    .widget .search-form {
+        display: flex;
+        gap: 0;
+    }
+
+    .widget .wp-block-search__input {
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+    }
+
+    .widget .wp-block-search__button {
+        margin: 0;
+        padding-inline: 1rem;
+        border: 0;
+        border-radius: 0 var(--radius-field) var(--radius-field) 0;
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .widget .tagcloud,
+    .widget .wp-block-tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    .widget .tag-cloud-link {
+        display: inline-flex;
+        padding: 0.25rem 0.625rem;
+        border-radius: 999px;
+        background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
+        font-size: 0.8125rem !important;
+        text-decoration: none;
+    }
+
+    .widget .tag-cloud-link:hover {
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    .widget select {
+        min-height: 2.5rem;
+    }
+
+    .widget .wp-calendar-table,
+    .widget #wp-calendar {
+        width: 100%;
+        font-size: 0.875rem;
+        text-align: center;
+    }
+
+    .widget .wp-calendar-table td#today,
+    .widget #wp-calendar #today {
+        border-radius: 999px;
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Kommentare                                                      */
+    /* ---------------------------------------------------------------- */
+    .comments-area {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .comments-area > *,
+    .layout__main > * {
+        min-width: 0;
+    }
+
+    .comment-content {
+        overflow-wrap: anywhere;
+    }
+
+    .comment-title,
+    .comments-title,
+    .comment-reply-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 1.25rem;
+        font-size: 1.375rem;
+    }
+
+    .comment-title .material-icons,
+    .comment-reply-title .material-icons {
+        color: var(--color-primary);
+    }
+
+    .comment-reply-title small {
+        margin-inline-start: auto;
+        font-size: 0.8125rem;
+    }
+
+    .comment-list,
+    .comment-list .children {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .comment-list .children {
+        margin-inline-start: clamp(1rem, 4vw, 3.5rem);
+        padding-inline-start: 1rem;
+        border-inline-start: 2px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+    }
+
+    .comment-item + .comment-item,
+    .comment-list .children > .comment-item {
+        margin-top: 1rem;
+    }
+
+    .comment-card {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .comment-img {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 999px;
+    }
+
+    .comment-card__body {
+        flex: 1;
+        min-width: 0;
+        padding: 0.875rem 1.125rem;
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+    }
+
+    .bypostauthor > .comment-card .comment-card__body {
+        background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+    }
+
+    .comment-card__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.25rem 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .comment-card__author {
+        font-weight: 650;
+    }
+
+    .comment-card__date {
+        font-size: 0.75rem;
+        color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
+        text-decoration: none;
+    }
+
+    .comment-content {
+        font-size: 0.975rem;
+    }
+
+    .comment-card__actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .comment-card__actions a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .comment-card__actions .material-icons {
+        font-size: 1rem;
+    }
+
+    .comment-awaiting-moderation {
+        margin: 0 0 0.5rem;
+    }
+
+    .comment-pagination .nav-links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.25rem;
+    }
+
+    .comment-form {
+        display: grid;
+        gap: 1rem;
+    }
+
+    @media (width >= 40rem) {
+        .comment-form {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comment-form > :is(.comment-notes, .comment-form-comment, .comment-form-url, .comment-form-cookies-consent, .form-submit, .logged-in-as, p:not(.form-field)) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .comment-notes {
+        margin: 0;
+        font-size: 0.875rem;
+        color: color-mix(in oklab, var(--color-base-content) 75%, transparent);
+    }
+
+    .comment-form-cookies-consent {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        font-size: 0.875rem;
+    }
+
+    .form-submit {
+        margin: 0;
+    }
+
+    /* Akismet-Hinweis (functions/content/content.php setzt ihn ins Formular): dezent unter einer
+       feinen Linie, Symbol in Themefarbe */
+    .comment-form .akismet_comment_form_privacy_notice {
+        position: relative;
+        margin: 0.5rem 0 0;
+        padding: 1rem 0 0 1.75rem;
+        border-top: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: color-mix(in oklab, var(--color-base-content) 70%, transparent);
+    }
+
+    .comment-form .akismet_comment_form_privacy_notice::before {
+        content: "verified_user";
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: var(--color-primary);
+        font-family: "Material Icons";
+        font-size: 1.125rem;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        -webkit-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+    }
+
+    /* Formularfelder (Kommentare, Kontakt) */
+    .form-field {
+        display: grid;
+        gap: 0.375rem;
+        margin: 0;
+    }
+
+    .form-field > label,
+    .form-field__label {
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .field-error {
+        margin: 0;
+        font-size: 0.8125rem;
+        color: var(--color-error);
+    }
+
+    [aria-invalid="true"] {
+        border-color: var(--color-error) !important;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Leerzustand, Suche, 404                                         */
+    /* ---------------------------------------------------------------- */
+    .empty-state {
+        display: grid;
+        justify-items: center;
+        gap: 0.75rem;
+        padding-block: clamp(2.5rem, 6vw, 4.5rem);
+        text-align: center;
+    }
+
+    .empty-state__icon {
+        font-size: 3rem;
+        color: var(--color-primary);
+    }
+
+    .empty-state__code {
+        margin: 0;
+        font-size: clamp(5rem, 14vw, 9rem);
+        font-weight: 800;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--color-primary), color-mix(in oklab, var(--color-primary) 30%, var(--color-base-content)));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .empty-state__title {
+        margin: 0;
+    }
+
+    .empty-state p {
+        max-width: 36rem;
+        margin: 0;
+        color: color-mix(in oklab, var(--color-base-content) 75%, transparent);
+    }
+
+    .empty-state__search {
+        width: min(28rem, 100%);
+        margin-block: 0.5rem;
+    }
+
+    /* Suchkopf (Band in Themefarbe): glass.css */
+
+    /* Suchfeld: Optik der daisyUI-Komponente "input", die abgeschaltet ist - Beitraege nutzen die
+       Klasse "input" fuer eigene Tabellen (z. B. Rechner), die sonst wie ein Eingabefeld aussahen */
+    .search-form .search-field {
+        flex: 1;
+        min-width: 0;
+        height: 2.75rem;
+        padding: 0.5rem 0.75rem;
+        border: var(--border) solid color-mix(in oklab, var(--color-base-content) 20%, transparent);
+        background-color: var(--color-base-100);
+        font-size: 0.875rem;
+        vertical-align: middle;
+        box-shadow:
+            0 1px color-mix(in oklab, var(--color-base-content) 2%, transparent) inset,
+            0 -1px oklch(100% 0 0 / 0.1) inset;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Ueber uns                                                       */
+    /* ---------------------------------------------------------------- */
+    .about-hero__media {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .about-hero__img {
+        display: block;
+        width: 100%;
+        max-height: 30rem;
+        object-fit: cover;
+    }
+
+    /* Anhangseite: Bild wie bisher in voller Breite ueber Text und Sidebar */
+    .media-hero__media {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .media-hero__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    :is(.about-hero, .media-hero) + .page-shell {
+        margin-top: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .about-social {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Kontakt                                                         */
+    /* ---------------------------------------------------------------- */
+    .contact {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+    .contact-map {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .contact-map__title {
+        margin: 0;
+        padding: 1rem 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .contact-map__frame {
+        display: block;
+        width: 100%;
+        height: clamp(18rem, 45vw, 30rem);
+        border: 0;
+    }
+
+    .contact-card {
+        display: grid;
+        justify-items: center;
+        gap: 0.375rem;
+        text-align: center;
+    }
+
+    .contact-card__icon {
+        display: grid;
+        place-items: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 999px;
+        background: color-mix(in oklab, var(--color-primary) 16%, transparent);
+        color: var(--color-primary);
+        font-size: 1.375rem;
+    }
+
+    .contact-card__title {
+        margin: 0 0 0.25rem;
+        font-size: 1.125rem;
+    }
+
+    .contact-card address {
+        font-style: normal;
+    }
+
+    .contact-form {
+        display: grid;
+        gap: 1.25rem;
+    }
+
+    .contact-form__grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    @media (width >= 40rem) {
+        .contact-form__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form-field--full {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .contact-form .btn {
+        justify-self: start;
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Call-out                                                        */
+    /* ---------------------------------------------------------------- */
+    .callout {
+        margin-top: clamp(3rem, 7vw, 5.5rem);
+    }
+
+    .callout__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem 2.5rem;
+        padding: clamp(1.75rem, 4vw, 3rem);
+        border-radius: var(--radius-box);
+        background:
+            radial-gradient(120% 160% at 100% 0%, rgb(255 255 255 / 0.18), transparent 55%),
+            linear-gradient(135deg, var(--color-primary), color-mix(in oklab, var(--color-primary) 55%, #0b0d12));
+        color: var(--color-primary-content);
+        box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--color-primary) 70%, transparent);
+    }
+
+    .has-bigborder .callout__inner {
+        border-radius: var(--radius-big);
+    }
+
+    .callout__text {
+        flex: 1 1 26rem;
+    }
+
+    .callout__title {
+        margin: 0;
+        color: inherit;
+        font-size: var(--callout-title-size, clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem));
+        font-weight: var(--callout-title-weight, 700);
+        font-style: var(--callout-title-style, normal);
+    }
+
+    .callout__desc {
+        margin: 0.625rem 0 0;
+        font-size: var(--callout-desc-size, 1.0625rem);
+        font-weight: var(--callout-desc-weight, 400);
+        font-style: var(--callout-desc-style, normal);
+        opacity: 0.9;
+    }
+
+    .callout__button {
+        --btn-color: var(--color-primary-content);
+        --btn-fg: var(--color-primary);
+        font-size: var(--callout-link-size, 1.0625rem);
+        font-weight: var(--callout-link-weight, 600);
+    }
+
+    /* ---------------------------------------------------------------- */
+    /*  Team-Karten                                                     */
+    /* ---------------------------------------------------------------- */
+    .team-card {
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .team-card__media {
+        position: relative;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: var(--color-base-300);
+    }
+
+    .team-card__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s var(--ease-snappy);
+    }
+
+    .team-card:hover .team-card__img {
+        transform: scale(1.05);
+    }
+
+    .team-card__placeholder {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        font-size: 4rem;
+        opacity: 0.4;
+    }
+
+    .team-card__social {
+        position: absolute;
+        inset: auto 0 0 0;
+        justify-content: center;
+        padding: 0.75rem;
+        background: linear-gradient(to top, rgb(0 0 0 / 0.65), transparent);
+        opacity: 0;
+        transform: translateY(0.5rem);
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s var(--ease-snappy);
+    }
+
+    .team-card:is(:hover, :focus-within) .team-card__social {
+        opacity: 1;
+        transform: none;
+    }
+
+    .team-card__social .social-links__link {
+        color: #fff;
+        background: rgb(255 255 255 / 0.14);
+    }
+
+    .team-card__body {
+        padding: 1.25rem 1.25rem 1.5rem;
+    }
+
+    .team-card__name {
+        margin: 0;
+        font-size: 1.1875rem;
+    }
+
+    .team-card__role {
+        margin: 0.25rem 0 0;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .team-card__text {
+        margin: 0.75rem 0 0;
+        font-size: 0.9375rem;
+        color: color-mix(in oklab, var(--color-base-content) 78%, transparent);
+    }
+
+    /* Leerer Weiterlesen-Abstand in Listen ohne Bild */
+    .post-card.has_no_post_thumbnail .post-card__body {
+        padding-top: clamp(1.5rem, 3vw, 2.25rem);
+    }
+}
+
+/* Widget "Latest Posts" (Tabs) */
+@layer utilities {
+    .widget-tabs {
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .mini-posts {
+        display: grid;
+        gap: 0.875rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar-widget .mini-posts > li {
+        padding: 0;
+        border: 0;
+    }
+
+    .mini-post {
+        display: flex;
+        gap: 0.875rem;
+        align-items: center;
+    }
+
+    .mini-post__media {
+        flex: none;
+        width: 3.5rem;
+        height: 3.5rem;
+        overflow: hidden;
+        border-radius: var(--radius-small);
+        background: var(--color-base-300);
+    }
+
+    .mini-post__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mini-post__body {
+        display: grid;
+        gap: 0.125rem;
+        min-width: 0;
+    }
+
+    .mini-post__title {
+        display: -webkit-box;
+        overflow: hidden;
+        font-weight: 600;
+        line-height: 1.35;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .mini-post__meta {
+        font-size: 0.75rem;
+        color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
+    }
+}

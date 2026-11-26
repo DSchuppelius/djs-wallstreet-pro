@@ -54,6 +54,9 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "technicalfulldatetimeformat" => "Y-m-d\TH:i:sP",
             "upload_image_favicon" => "",
             "stylesheet" => "default.css",
+            "color_mode" => "scheme",
+            "color_mode_toggle" => false,
+            "font_size_controls_enabled" => true,
             "google_analytics" => "",
             "webrit_custom_css" => "",
             "link_color" => "#00c2a9",
@@ -81,6 +84,9 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
 
             // Scroll to top
             "scroll_to_top_enabled" => true,
+
+            // Scrollleiste immer zeigen: kein Springen des Layouts zwischen kurzen und langen Seiten
+            "scrollbar_always_enabled" => true,
 
             "a_mark_targets" => false,
             "a_underlined" => true,

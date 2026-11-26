@@ -1,16 +1,64 @@
+/*
+ * Seitenschrift (roboto) - erzeugt aus den TTF-Dateien, WOFF2 zuerst.
+ * "SiteFont" ist eine Familie mit echten Staerken; font-weight waehlt die Datei.
+ */
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 300;
+    src: url('roboto/Roboto-Light.woff2') format('woff2'), url('roboto/Roboto-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
 @font-face {
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('roboto/Roboto-Regular.ttf');
+    src: url('roboto/Roboto-Regular.woff2') format('woff2'), url('roboto/Roboto-Regular.ttf') format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 500;
+    src: url('roboto/Roboto-Medium.woff2') format('woff2'), url('roboto/Roboto-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 700;
+    src: url('roboto/Roboto-Bold.woff2') format('woff2'), url('roboto/Roboto-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Alte Familiennamen (vor 3.0) - fuer gespeicherte Inhalte und Plugins */
 
 @font-face {
     font-family: "SiteFontLight";
     font-style: normal;
     font-weight: 400;
-    src: url('roboto/Roboto-Light.ttf');
+    src: url('roboto/Roboto-Light.woff2') format('woff2'), url('roboto/Roboto-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontMedium";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Medium.woff2') format('woff2'), url('roboto/Roboto-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontSemi";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Medium.woff2') format('woff2'), url('roboto/Roboto-Medium.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -18,23 +66,6 @@
     font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('roboto/Roboto-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "SiteFontSemi";
-    font-style: normal;
-    font-weight: 200;
-    src: url('roboto/Roboto-Bold.ttf');
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: "SiteFontMedium";
-    font-style: normal;
-    font-weight: 400;
-    src: url('roboto/Roboto-Medium.ttf');
+    src: url('roboto/Roboto-Bold.woff2') format('woff2'), url('roboto/Roboto-Bold.ttf') format('truetype');
     font-display: swap;
 }

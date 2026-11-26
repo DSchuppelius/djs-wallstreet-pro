@@ -1,0 +1,544 @@
+/*
+ * Beitragsinhalt (the_content) und Gutenberg-Bloecke.
+ * Alles ist auf .entry-content begrenzt, damit Plugins und Widgets unberuehrt bleiben.
+ */
+@layer utilities {
+    .entry-content {
+        --flow: 1.25em;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-base-content);
+    }
+
+    .entry-content > * + * {
+        margin-top: var(--flow);
+    }
+
+    .entry-content > :first-child {
+        margin-top: 0;
+    }
+
+    .entry-content > :last-child {
+        margin-bottom: 0;
+    }
+
+    .entry-content :where(h2, h3, h4, h5, h6) {
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+        scroll-margin-top: calc(var(--sticky-offset, 0px) + 1rem);
+    }
+
+    .entry-content :where(h2, h3, h4, h5, h6) + * {
+        margin-top: 0;
+    }
+
+    .entry-content :where(p, li) {
+        text-align: start;
+        hyphens: auto;
+    }
+
+    .entry-content :where(ul, ol):not([class*="wp-block-"]):not(.blocks-gallery-grid),
+    .entry-content .wp-block-list {
+        padding-inline-start: 1.5em;
+    }
+
+    .entry-content :where(ul):not([class*="gallery"]) {
+        list-style: disc;
+    }
+
+    .entry-content :where(ol) {
+        list-style: decimal;
+    }
+
+    .entry-content :where(li + li) {
+        margin-top: 0.35em;
+    }
+
+    .entry-content :where(li)::marker {
+        color: var(--color-primary);
+    }
+
+    .entry-content :where(strong, b) {
+        font-weight: 650;
+    }
+
+    /* Unterstrichen nur mit der Customizer-Option "Links unterstreichen" (base.css) */
+    .entry-content a:not(.wp-block-button__link, .btn) {
+        overflow-wrap: anywhere;
+    }
+
+    /* ---- Zitate -------------------------------------------------- */
+    .entry-content :where(blockquote, .wp-block-quote) {
+        position: relative;
+        margin-inline: 0;
+        padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+        border-inline-start: 4px solid var(--color-primary);
+        border-radius: 0 var(--radius-small) var(--radius-small) 0;
+        background: color-mix(in oklab, var(--color-primary) 7%, transparent);
+        font-size: 1.0625em;
+        font-style: italic;
+    }
+
+    .entry-content :where(blockquote, .wp-block-quote) > * + * {
+        margin-top: 0.75em;
+    }
+
+    .entry-content :where(blockquote cite, .wp-block-quote cite, .wp-block-pullquote cite) {
+        display: block;
+        margin-top: 0.75em;
+        font-size: 0.875em;
+        font-style: normal;
+        color: color-mix(in oklab, var(--color-base-content) 65%, transparent);
+    }
+
+    .entry-content .wp-block-pullquote {
+        padding: 2rem 1.5rem;
+        border-block: 3px solid var(--color-primary);
+        text-align: center;
+    }
+
+    .entry-content .wp-block-pullquote blockquote {
+        border: 0;
+        background: none;
+        padding: 0;
+        font-size: 1.375em;
+    }
+
+    /* ---- Code ---------------------------------------------------- */
+    .entry-content :where(code):not(pre code) {
+        padding: 0.15em 0.4em;
+        border-radius: 0.35em;
+        background: color-mix(in oklab, var(--color-base-content) 9%, transparent);
+        font-size: 0.875em;
+    }
+
+    .entry-content :where(pre),
+    .entry-content .wp-block-code {
+        overflow-x: auto;
+        padding: 1.125rem 1.25rem;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+        border-radius: var(--radius-small);
+        background: var(--color-base-300);
+        font-size: 0.875rem;
+        line-height: 1.6;
+        tab-size: 4;
+        white-space: pre;
+    }
+
+    .entry-content :where(kbd) {
+        padding: 0.1em 0.45em;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 25%, transparent);
+        border-bottom-width: 2px;
+        border-radius: 0.35em;
+        font-size: 0.85em;
+    }
+
+    /* ---- Tabellen ------------------------------------------------ */
+    .entry-content .wp-block-table,
+    .entry-content :where(table):not(.wp-block-table table) {
+        overflow-x: auto;
+    }
+
+    /* Aussehen der Tabellen: plugins.css (die Core-Tabellenregeln sind ungelayert) */
+
+    .entry-content :where(figcaption, .wp-element-caption, .wp-caption-text) {
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        text-align: center;
+        color: color-mix(in oklab, var(--color-base-content) 65%, transparent);
+    }
+
+    /* ---- Bilder & Medien ----------------------------------------- */
+    .entry-content :where(img) {
+        border-radius: var(--radius-small);
+    }
+
+    .entry-content .wp-block-image :where(img) {
+        display: block;
+    }
+
+    .entry-content .wp-block-image.is-style-rounded img {
+        border-radius: 9999px;
+    }
+
+    .entry-content :where(.alignleft) {
+        float: left;
+        margin: 0.35em 1.5em 1em 0;
+        max-width: 50%;
+    }
+
+    .entry-content :where(.alignright) {
+        float: right;
+        margin: 0.35em 0 1em 1.5em;
+        max-width: 50%;
+    }
+
+    .entry-content :where(.aligncenter) {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .entry-content .wp-block-image.aligncenter > img {
+        margin-inline: auto;
+    }
+
+    .entry-content::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @media (width < 40rem) {
+        .entry-content :where(.alignleft, .alignright) {
+            float: none;
+            margin-inline: 0;
+            max-width: 100%;
+        }
+    }
+
+    .entry-content .wp-caption {
+        max-width: 100%;
+    }
+
+    .entry-content .wp-block-gallery,
+    .entry-content .tiled-gallery,
+    .entry-content .wp-block-jetpack-tiled-gallery {
+        margin-block: 1.5em;
+    }
+
+    /* Abstaende der Galerie: plugins.css (die Core-Regeln sind ungelayert) */
+    .entry-content .wp-block-gallery figure img {
+        border-radius: var(--radius-field);
+    }
+
+    .entry-content :where(audio) {
+        width: 100%;
+    }
+
+    .entry-content .wp-block-video video,
+    .entry-content :where(video) {
+        border-radius: var(--radius-small);
+    }
+
+    /* Einbettungen (YouTube & Co.) - Seitenverhaeltnis setzt der Core ueber wp-embed-aspect-* */
+    .entry-content .wp-block-embed {
+        margin-block: 1.75em;
+    }
+
+    .entry-content .wp-block-embed__wrapper {
+        overflow: hidden;
+        border-radius: var(--radius-small);
+    }
+
+    .entry-content .wp-block-embed__wrapper.no-element {
+        display: none;
+    }
+
+    .entry-content :where(iframe) {
+        max-width: 100%;
+        border: 0;
+    }
+
+    /* ---- Buttons, Trenner, Gruppen ------------------------------- */
+    .entry-content .wp-block-button__link,
+    .entry-content .wp-element-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 2.75rem;
+        padding: 0.625rem 1.5rem;
+        border-radius: var(--radius-field);
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+            filter 0.15s ease,
+            transform 0.15s ease;
+    }
+
+    .entry-content .wp-block-button__link:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+    }
+
+    .entry-content .is-style-outline .wp-block-button__link {
+        background: transparent;
+        border: 2px solid currentColor;
+        color: var(--color-primary);
+    }
+
+    /* Trennlinie: volle Breite wie bisher - eigene Aussenabstaende aus dem Editor (z. B.
+       Doppellinien mit 40px Rand) bleiben wirksam. Feine Linie in Textfarbe mit einem Hauch
+       Themefarbe in der Mitte, die zu den Enden hin auslaeuft (Maske, damit Farben aus dem
+       Editor ebenfalls auslaufen) */
+    .entry-content .wp-block-separator:not(.is-style-dots) {
+        width: auto;
+        height: 1px;
+        border: 0;
+        background: linear-gradient(90deg, currentColor 15%, var(--color-primary) 50%, currentColor 85%);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+    }
+
+    /* Hintergrundfarbe aus dem Editor statt des Verlaufs */
+    .entry-content .wp-block-separator.has-background:not(.is-style-dots) {
+        background-image: none;
+    }
+
+    /* Doppellinie (zwei Trennlinien direkt hintereinander): die zweite kuerzer und
+       zurueckgenommen, wie ein Lichtreflex unter der Kante */
+    .entry-content .wp-block-separator:not(.is-style-dots) + .wp-block-separator:not(.is-style-dots) {
+        background: currentColor;
+        opacity: 0.5;
+        -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 30%, #000 70%, transparent 92%);
+        mask-image: linear-gradient(90deg, transparent 8%, #000 30%, #000 70%, transparent 92%);
+    }
+
+    .entry-content .wp-block-separator.is-style-dots {
+        border: 0;
+    }
+
+    .entry-content .wp-block-group.has-background,
+    .entry-content .wp-block-columns.has-background,
+    .entry-content .wp-block-cover {
+        border-radius: var(--radius-small);
+    }
+
+    .entry-content .wp-block-cover {
+        overflow: hidden;
+    }
+
+    .entry-content .wp-block-details {
+        padding: 0.75rem 1rem;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        border-radius: var(--radius-small);
+    }
+
+    .entry-content .wp-block-details summary {
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .entry-content .wp-block-file {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+    }
+
+    .entry-content .wp-block-file__button {
+        margin: 0;
+    }
+
+    .entry-content .wp-block-footnotes {
+        padding-top: 1rem;
+        border-top: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        font-size: 0.875rem;
+    }
+
+    .entry-content .has-drop-cap:not(:focus)::first-letter {
+        float: left;
+        margin: 0.08em 0.12em 0 0;
+        font-size: 4.2em;
+        font-weight: 700;
+        line-height: 0.85;
+        color: inherit; /* Initiale in Textfarbe (wie bisher) */
+    }
+
+    /* Seitenumbruch innerhalb eines Beitrags (<!--nextpage-->) */
+    .page-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.375rem;
+        margin-top: 1.5rem;
+        font-weight: 600;
+    }
+
+    .page-links > a,
+    .page-links > span:not(:first-child) {
+        display: inline-grid;
+        place-items: center;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        padding-inline: 0.5rem;
+        border-radius: var(--radius-field);
+        background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
+        text-decoration: none;
+    }
+
+    .page-links > span.current,
+    .page-links > span:not(:first-child):not(a) {
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+}
+
+/* Shortcodes des Themes (functions/shortcodes) */
+@layer utilities {
+    .sc-accordion {
+        display: grid;
+        gap: 0.5rem;
+        margin-block: 1.5em;
+    }
+
+    .sc-accordion__group {
+        margin: 0 0 0.25rem;
+    }
+
+    .sc-accordion__item {
+        overflow: hidden;
+        border: 1px solid color-mix(in oklab, var(--color-base-content) 12%, transparent);
+        border-radius: var(--radius-small);
+        background: color-mix(in oklab, var(--color-base-content) 4%, transparent);
+    }
+
+    .sc-accordion__title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.875rem 1.125rem;
+        font-weight: 600;
+        list-style: none;
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .sc-accordion__title::-webkit-details-marker {
+        display: none;
+    }
+
+    .sc-accordion__title:hover {
+        background: color-mix(in oklab, var(--color-primary) 14%, transparent);
+    }
+
+    .sc-accordion__item[open] > .sc-accordion__title {
+        background: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    .sc-accordion__icon,
+    .sc-accordion__fa {
+        margin-inline-start: auto;
+    }
+
+    .sc-accordion__icon {
+        transition: rotate 0.25s var(--ease-snappy);
+    }
+
+    .sc-accordion__item[open] .sc-accordion__icon {
+        rotate: 180deg;
+    }
+
+    /* Font Awesome setzt display ueber --fa-display (ungelayert) - daher die Variable */
+    .sc-accordion__fa--open,
+    .sc-accordion__item[open] .sc-accordion__fa--closed {
+        --fa-display: none;
+    }
+
+    .sc-accordion__item[open] .sc-accordion__fa--open {
+        --fa-display: inline-block;
+    }
+
+    .sc-accordion__body {
+        padding: 1rem 1.125rem;
+    }
+
+    .sc-accordion__body > :first-child {
+        margin-top: 0;
+    }
+
+    .sc-accordion__body > :last-child {
+        margin-bottom: 0;
+    }
+
+    .vc_column_text + .vc_column_text {
+        margin-top: 0.75rem;
+    }
+
+    .sc-tabs {
+        margin-block: 1.5em;
+    }
+
+    .sc-tabs__list {
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .sc-alert {
+        margin-block: 1.25em;
+    }
+
+    .sc-alert > div {
+        flex: 1;
+    }
+
+    .sc-dropcap .first {
+        float: left;
+        margin: 0.05em 0.12em 0 0;
+        font-size: 3.6em;
+        font-weight: 700;
+        line-height: 0.85;
+        color: var(--color-primary);
+    }
+
+    .sc-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-block: 1.5em;
+    }
+
+    @media (width >= 48rem) {
+        .sc-grid--2,
+        .sc-grid--4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .sc-grid--3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (width >= 62rem) {
+        .sc-grid--4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    .sc-grid__title {
+        margin: 0 0 0.5rem;
+        font-size: 1.125rem;
+    }
+
+    .sc-grid__item > p {
+        margin: 0;
+    }
+
+    .typo-para-icons .para-box {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: baseline;
+        gap: 0.5rem 0.75rem;
+        margin-block: 1em;
+    }
+
+    .typo-para-icons .para-box > ul {
+        grid-column: 1 / -1;
+    }
+
+    .typo-para-icons .para-box > i {
+        color: var(--color-primary);
+    }
+
+    .sc-tooltip .tooltip > a {
+        text-decoration: underline dotted;
+    }
+}

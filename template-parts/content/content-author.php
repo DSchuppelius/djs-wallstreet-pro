@@ -6,39 +6,43 @@
  * Filename     : content-author.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Autorbox unter Beitraegen.
  */
-?>
-<div class="blog-author<?php innerrow_frame_border(" "); ?>">
-    <div class="media">
-        <div class="pull-left">
-            <?php echo get_avatar(get_the_author_meta("ID"), 94); ?>
-        </div>
-        <div class="media-body">
-            <h6><?php the_author(); ?></h6>
-            <p class="justify"><?php the_author_meta("description"); ?></p>
-            <ul class="blog-author-social">
-                <?php
-                $facebook_profile = get_the_author_meta("facebook_profile");
-                if ($facebook_profile && $facebook_profile != "") {
-                    echo '<li class="facebook"><a href="' . esc_url($facebook_profile) . '"><i class="fa-brands fa-facebook"></i></a></li>';
-                }
 
-                $linkedin_profile = get_the_author_meta("linkedin_profile");
-                if ($linkedin_profile && $linkedin_profile != "") {
-                    echo '<li class="linkedin"><a href="' . esc_url($linkedin_profile) . '"><i class="fa-brands fa-linkedin"></i></a></li>';
-                }
+$author_id   = get_the_author_meta("ID");
+$description = get_the_author_meta("description");
+$profiles    = [
+    "facebook_profile" => ["fa-brands fa-facebook", "Facebook"],
+    "linkedin_profile" => ["fa-brands fa-linkedin", "LinkedIn"],
+    "twitter_profile"  => ["fa-brands fa-x-twitter", "X / Twitter"],
+    "google_profile"   => ["fa-brands fa-google", "Google"],
+]; ?>
 
-                $twitter_profile = get_the_author_meta("twitter_profile");
-                if ($twitter_profile && $twitter_profile != "") {
-                    echo '<li class="twitter"><a href="' . esc_url($twitter_profile) . '"><i class="fa-brands fa-twitter"></i></a></li>';
-                }
-
-                $google_profile = get_the_author_meta("google_profile");
-                if ($google_profile && $google_profile != "") {
-                    echo '<li class="googleplus"><a href="' . esc_url($google_profile) . '" rel="author"><i class="fa-brands fa-google-plus"></i></a></li>';
-                }
-                ?>
-            </ul>
-        </div>
+<aside class="author-box surface-card blog-author" aria-label="<?php esc_attr_e("About the author", "djs-wallstreet-pro"); ?>">
+    <div class="author-box__avatar">
+        <?php echo get_avatar($author_id, 96, "", "", ["class" => "author-box__img"]); ?>
     </div>
-</div>
+    <div class="author-box__body">
+        <p class="author-box__eyebrow"><?php esc_html_e("Written by", "djs-wallstreet-pro"); ?></p>
+        <h2 class="author-box__name">
+            <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" rel="author"><?php the_author(); ?></a>
+        </h2>
+        <?php if ($description) { ?>
+            <p class="author-box__bio"><?php echo wp_kses_post($description); ?></p>
+        <?php } ?>
+        <ul class="social-links">
+            <?php foreach ($profiles as $meta => [$icon, $label]) {
+                $url = get_the_author_meta($meta);
+                if (!$url) {
+                    continue;
+                } ?>
+                <li>
+                    <a class="social-links__link" href="<?php echo esc_url($url); ?>" rel="me noopener" target="_blank" aria-label="<?php echo esc_attr($label); ?>">
+                        <i class="<?php echo esc_attr($icon); ?>" aria-hidden="true"></i>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+</aside>

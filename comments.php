@@ -11,119 +11,119 @@
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
 
 if (post_password_required()) { ?>
-    <p class="nopassword">
+    <p class="nopassword surface-card">
         <?php esc_html_e("This post is password protected. Enter the password to view any comments.", "djs-wallstreet-pro"); ?>
     </p>
     <?php return;
 }
 
-// code for comment
 if (!function_exists("wallstreet_comment")) {
+    /**
+     * Ausgabe eines einzelnen Kommentars (wp_list_comments-Callback, Name bleibt kompatibel).
+     */
     function wallstreet_comment($comment, $args, $depth) {
-        $leave_reply = esc_html__("Reply", "djs-wallstreet-pro");
-        $autor_url = get_comment_author_url($comment); ?>
-
-        <div <?php comment_class("media comment_box"); ?> id="comment-<?php comment_ID(); ?>">
-            <a class="pull-left-comment" <?php if ($autor_url !== "") { ?>href="<?php echo esc_url($autor_url); ?>"
-                rel="nofollow" <?php } ?>>
-                <?php echo get_avatar($comment, 70); ?>
-            </a>
-            <div class="media-body">
-                <div class="comment-detail">
-                    <h4 class="comment-detail-title"><?php if ($autor_url !== "") { ?><a
-                                href="<?php echo esc_url($autor_url); ?>"
-                                rel="nofollow"><?php comment_author(); ?></a><?php } else {
-                                                                                comment_author();
-                                                                            } ?>
-                        <span class="comment-date">
-                            <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-                                <?php esc_html_e("Posted on", "djs-wallstreet-pro");
-                                echo "&nbsp;" . get_comment_date("j.M Y") . " (" . get_comment_time("H:i:s") . ")"; ?>
-                            </a>
-                        </span>
-                    </h4>
-                    <?php comment_text(); ?>
-                    <?php edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<div class="edit-link">', "</div>");
-                    if (comments_open()) { ?>
-                        <div class="reply">
-                            <?php comment_reply_link(
-                                array_merge($args, [
-                                    "reply_text" => $leave_reply,
-                                    "depth" => $depth,
-                                    "max_depth" => $args["max_depth"],
-                                    "per_page" => $args["per_page"],
-                                ])
-                            ); ?>
-                        </div>
-
-                    <?php }
-                    if ($comment->comment_approved == "0") { ?>
-                        <em
-                            class="comment-awaiting-moderation"><?php esc_html_e("Your comment is awaiting moderation.", "djs-wallstreet-pro"); ?></em>
-                        <br />
-                    <?php } ?>
+        $author_url = get_comment_author_url($comment);
+        $tag        = $args["style"] === "div" ? "div" : "li"; ?>
+        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(["comment-item", empty($args["has_children"]) ? "" : "parent"]); ?>>
+            <article class="comment-card">
+                <div class="comment-card__avatar">
+                    <?php echo get_avatar($comment, 56, "", "", ["class" => "comment-img"]); ?>
                 </div>
-            </div>
-        </div>
-    <?php }
+                <div class="comment-card__body">
+                    <header class="comment-card__header">
+                        <span class="comment-card__author">
+                            <?php if ($author_url) { ?>
+                                <a href="<?php echo esc_url($author_url); ?>" rel="nofollow ugc"><?php comment_author(); ?></a>
+                            <?php } else {
+                                comment_author();
+                            } ?>
+                        </span>
+                        <a class="comment-card__date" href="<?php echo esc_url(get_comment_link($comment)); ?>">
+                            <time datetime="<?php comment_time("c"); ?>">
+                                <?php echo esc_html(get_comment_date(DJS_Wallstreet_Pro_Theme_Setup::instance()->get("fulldatetimeformat"), $comment)); ?>
+                            </time>
+                        </a>
+                    </header>
+
+                    <?php if ($comment->comment_approved == "0") { ?>
+                        <p class="comment-awaiting-moderation badge badge-warning badge-soft"><?php esc_html_e("Your comment is awaiting moderation.", "djs-wallstreet-pro"); ?></p>
+                    <?php } ?>
+
+                    <div class="comment-content entry-content"><?php comment_text(); ?></div>
+
+                    <footer class="comment-card__actions">
+                        <?php if (comments_open()) {
+                            comment_reply_link(array_merge($args, [
+                                "reply_text" => '<span class="material-icons" aria-hidden="true">reply</span>' . esc_html__("Reply", "djs-wallstreet-pro"),
+                                "depth"      => $depth,
+                                "max_depth"  => $args["max_depth"],
+                            ]));
+                        }
+                        edit_comment_link(esc_html__("Edit", "djs-wallstreet-pro"), '<span class="edit-link">', "</span>"); ?>
+                    </footer>
+                </div>
+            </article>
+        <?php
+        // Das schliessende </li> setzt wp_list_comments() selbst (end-callback).
+    }
 }
 
-if (have_comments()) { ?>
-    <div class="comment-section<?php innerrow_frame_border(" "); ?>">
-        <div class="comment-title">
-            <h3><i
-                    class="fa-solid fa-comments"></i><?php comments_number(esc_html__("No comments so far", "djs-wallstreet-pro"), esc_html__("1 comment so far", "djs-wallstreet-pro"), esc_html__("% comments so far", "djs-wallstreet-pro")); ?>
-            </h3>
-        </div>
-        <?php wp_list_comments(["callback" => "wallstreet_comment"]); ?>
-    </div>
-
-    <?php if (get_comment_pages_count() > 1 && get_option("page_comments")) { ?>
-        <nav id="comment-nav-below">
-            <h1 class="assistive-text"><?php esc_html_e("Comment navigation", "djs-wallstreet-pro"); ?></h1>
-            <div class="nav-previous">
-                <?php previous_comments_link(esc_html__("&larr; Older Comments", "djs-wallstreet-pro")); ?></div>
-            <div class="nav-next"><?php next_comments_link(esc_html__("Newer Comments &rarr;", "djs-wallstreet-pro")); ?></div>
-        </nav>
-    <?php } elseif (!comments_open() && !is_page() && post_type_supports(get_post_type(), "comments")) { ?>
-        <div class="comment-section closed">
-            <?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?>
-        </div>
-    <?php }
-}
-
-if ("open" == $post->comment_status) {
-    if (get_option("comment_registration") && !$user_ID) { ?>
-        <p><?php echo sprintf(esc_html__('You must be <a href="%s">logged in</a> to post a comment.', "djs-wallstreet-pro"), esc_url(wp_login_url(get_permalink()))); ?>
-        </p>
-    <?php } else { ?>
-        <div class="comment-form-section<?php innerrow_frame_border(" "); ?>">
-            <?php $fields = [
-                "url" => '<div class="blog-form-group-full"><input class="blog-form-control" name="url" id="url" value="" type="url" placeholder="' . esc_html__("Website", "djs-wallstreet-pro") . '" /></div>',
-                "author" => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="' . esc_html__("Name", "djs-wallstreet-pro") . '" /></div>',
-                "email" => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value="" type="email" placeholder="' . esc_html__("Email", "djs-wallstreet-pro") . '" /></div>',
-            ];
-
-            // Hier stand eine Funktion my_fields(), die $fields unveraendert zurueckgab und
-            // sich selbst als Filter registrierte - ohne jede Wirkung, dafuer mit dem Risiko
-            // eines "Cannot redeclare" bei mehrfachem Einbinden. Der apply_filters()-Aufruf
-            // unten bleibt, damit Dritte die Felder weiterhin filtern koennen (comment_form()
-            // wendet den Filter auf uebergebene "fields" nicht selbst an).
-            $defaults = [
-                "fields" => apply_filters("comment_form_default_fields", $fields),
-                "comment_field" => '<div class="blog-form-group-textarea" ><textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="' . esc_html__("Leave your message", "djs-wallstreet-pro") . '"></textarea></div>',
-                "logged_in_as" => '<p class="logged-in-as">' . esc_html__("Logged in as", "djs-wallstreet-pro") . ' <a href="' . esc_url(admin_url("profile.php")) . '">' . $user_identity . "</a>" . '<a href="' . esc_url(wp_logout_url(get_permalink())) . '" title="' . esc_html__("Log out from this Account", "djs-wallstreet-pro") . '"> ' . esc_html__("Log out", "djs-wallstreet-pro") . "</a>" . "</p>",
-                "id_submit" => "blogdetail_btn",
-                "class_submit" => "btn submit",
-                "label_submit" => esc_html__("Send Message", "djs-wallstreet-pro"),
-                "submit_button" => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />%4$s</button>',
-                "comment_notes_before" => empty($current_setup->get("before_comment")) ? "" : "<p><b>" . esc_html__("Please Note:", "djs-wallstreet-pro") . "</b>&nbsp;" . $current_setup->get("before_comment") . "</p>",
-                "comment_notes_after" => empty($current_setup->get("after_comment")) ? "" : "<p>" . $current_setup->get("after_comment") . "</p>",
-                "title_reply" => '<div class="comment-title"><h3><i class="fa-solid fa-comment-dots"></i>' . esc_html__("Leave a Reply", "djs-wallstreet-pro") . "</h3></div>",
-                'title_reply_to' => '<div class="comment-title answer"><h3><i class="fa-solid fa-comment-dots"></i>' . esc_html__("Leave a Reply to %s", "djs-wallstreet-pro") . "</h3></div>",
-                "id_form" => "commentform",
-            ];
-            comment_form($defaults); ?>
-        </div>
-<?php }
+// Nichts zu zeigen (keine Kommentare, Kommentare geschlossen): keine leere Huelle ausgeben - sie
+// erzeugte in der Spalte einen doppelten Abstand vor dem naechsten Block (Fuellflaeche)
+$closed_note = !comments_open() && get_comments_number() && post_type_supports(get_post_type(), "comments");
+if (!have_comments() && !comments_open() && !$closed_note) {
+    return;
 } ?>
+
+<section id="comments" class="comments-area">
+    <?php if (have_comments()) { ?>
+        <div class="comment-section surface-card">
+            <h2 class="comments-title comment-title">
+                <span class="material-icons" aria-hidden="true">forum</span>
+                <?php comments_number(esc_html__("No comments so far", "djs-wallstreet-pro"), esc_html__("1 comment so far", "djs-wallstreet-pro"), esc_html__("% comments so far", "djs-wallstreet-pro")); ?>
+            </h2>
+            <ol class="comment-list">
+                <?php wp_list_comments(["callback" => "wallstreet_comment", "style" => "ol", "avatar_size" => 56]); ?>
+            </ol>
+
+            <?php the_comments_pagination([
+                "prev_text" => esc_html__("← Older Comments", "djs-wallstreet-pro"),
+                "next_text" => esc_html__("Newer Comments →", "djs-wallstreet-pro"),
+                "class"     => "comment-pagination",
+            ]); ?>
+        </div>
+    <?php } ?>
+
+    <?php if ($closed_note) { ?>
+        <p class="comments-closed surface-card"><?php esc_html_e("Comments Are Closed!!!", "djs-wallstreet-pro"); ?></p>
+    <?php } ?>
+
+    <?php if (comments_open()) {
+        $before = (string) $current_setup->get("before_comment");
+        $after  = (string) $current_setup->get("after_comment");
+        $req    = get_option("require_name_email");
+
+        $fields = [
+            "author" => '<p class="comment-form-author form-field"><label for="author">' . esc_html__("Name", "djs-wallstreet-pro") . ($req ? " *" : "") . '</label><input id="author" name="author" type="text" autocomplete="name" value="' . esc_attr(wp_get_current_commenter()["comment_author"]) . '"' . ($req ? " required" : "") . "></p>",
+            "email"  => '<p class="comment-form-email form-field"><label for="email">' . esc_html__("Email", "djs-wallstreet-pro") . ($req ? " *" : "") . '</label><input id="email" name="email" type="email" autocomplete="email" value="' . esc_attr(wp_get_current_commenter()["comment_author_email"]) . '"' . ($req ? " required" : "") . "></p>",
+            "url"    => '<p class="comment-form-url form-field"><label for="url">' . esc_html__("Website", "djs-wallstreet-pro") . '</label><input id="url" name="url" type="url" autocomplete="url" value="' . esc_attr(wp_get_current_commenter()["comment_author_url"]) . '"></p>',
+        ];
+
+        comment_form([
+            "class_container"      => "comment-respond comment-form-section surface-card",
+            "fields"               => apply_filters("comment_form_default_fields", $fields),
+            "comment_field"        => '<p class="comment-form-comment form-field form-field--full"><label for="comment">' . esc_html__("Leave your message", "djs-wallstreet-pro") . ' *</label><textarea id="comment" name="comment" rows="6" required></textarea></p>',
+            "title_reply"          => '<span class="material-icons" aria-hidden="true">rate_review</span>' . esc_html__("Leave a Reply", "djs-wallstreet-pro"),
+            /* translators: %s: comment author */
+            "title_reply_to"       => '<span class="material-icons" aria-hidden="true">reply</span>' . esc_html__("Leave a Reply to %s", "djs-wallstreet-pro"),
+            "title_reply_before"   => '<h2 id="reply-title" class="comment-reply-title comment-title">',
+            "title_reply_after"    => "</h2>",
+            "comment_notes_before" => $before === "" ? "" : '<p class="comment-notes"><strong>' . esc_html__("Please Note:", "djs-wallstreet-pro") . "</strong> " . wp_kses_post($before) . "</p>",
+            "comment_notes_after"  => $after === "" ? "" : '<p class="comment-notes">' . wp_kses_post($after) . "</p>",
+            "class_submit"         => "btn btn-primary submit",
+            "id_submit"            => "blogdetail_btn",
+            "label_submit"         => esc_html__("Send Message", "djs-wallstreet-pro"),
+            "submit_button"        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
+        ]);
+    } ?>
+</section>

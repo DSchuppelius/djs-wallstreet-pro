@@ -6,31 +6,42 @@
  * Filename     : social-media.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Aufruf: get_template_part("template-parts/global/social-media", null, ["context" => "footer"]);
+ * Kontexte: head, footer, about. Das alte "global $ul_class" funktioniert weiterhin.
  */
 global $ul_class;
 
 $current_setup = DJS_Wallstreet_Pro_Theme_Setup::instance();
-if (!empty($ul_class)) {
-    $ul_class .= "-";
+$context       = $args["context"] ?? ($ul_class ?: "");
+$context       = sanitize_html_class($context);
+
+$links = [];
+foreach (djs_wallstreet_social_networks() as $network) {
+    $url = djs_wallstreet_social_url($network);
+    if ($url == "") {
+        continue;
+    }
+    $links[] = [$network, $url];
 }
-?>
 
-<ul class="<?php echo $ul_class; ?>contact-social">
-    <?php foreach (djs_wallstreet_social_networks() as $network) {
-        $url = djs_wallstreet_social_url($network);
-        if ($url == "") {
-            continue;
-        }
+if (!$links) {
+    return;
+} ?>
 
-        $new_tab = $current_setup->get($network["tab"]);
-
-        $rel = empty($network["rel"]) ? [] : explode(" ", $network["rel"]);
+<ul class="social-links<?php echo $context ? " social-links--" . $context . " " . $context . "-contact-social" : " contact-social"; ?>">
+    <?php foreach ($links as [$network, $url]) {
+        $new_tab = (bool) $current_setup->get($network["tab"]);
+        $rel     = empty($network["rel"]) ? [] : explode(" ", $network["rel"]);
         if ($new_tab) {
             $rel[] = "noopener";
-        }
-        $rel = empty($rel) ? "" : ' rel="' . esc_attr(implode(" ", $rel)) . '"'; ?>
-        <li><a href="<?php echo esc_url($url); ?>" <?php blank_target($new_tab); ?>
-                aria-label="<?php echo esc_attr($network["label"]); ?>"<?php echo $rel; ?>><i
-                    class="<?php echo esc_attr($network["icon"]); ?>"></i></a></li>
+        } ?>
+        <li>
+            <a class="social-links__link" href="<?php echo esc_url($url); ?>" <?php blank_target($new_tab); ?>
+                <?php echo $rel ? ' rel="' . esc_attr(implode(" ", array_unique($rel))) . '"' : ""; ?>
+                aria-label="<?php echo esc_attr($network["label"]); ?>" title="<?php echo esc_attr($network["label"]); ?>">
+                <i class="<?php echo esc_attr($network["icon"]); ?>" aria-hidden="true"></i>
+            </a>
+        </li>
     <?php } ?>
 </ul>

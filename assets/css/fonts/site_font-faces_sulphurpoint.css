@@ -1,16 +1,56 @@
+/*
+ * Seitenschrift (sulphurpoint) - erzeugt aus den TTF-Dateien, WOFF2 zuerst.
+ * "SiteFont" ist eine Familie mit echten Staerken; font-weight waehlt die Datei.
+ */
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 300;
+    src: url('sulphurpoint/SulphurPoint-Light.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
 @font-face {
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('sulphurpoint/SulphurPoint-Regular.ttf');
+    src: url('sulphurpoint/SulphurPoint-Regular.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Regular.ttf') format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 700;
+    src: url('sulphurpoint/SulphurPoint-Bold.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Alte Familiennamen (vor 3.0) - fuer gespeicherte Inhalte und Plugins */
 
 @font-face {
     font-family: "SiteFontLight";
     font-style: normal;
     font-weight: 400;
-    src: url('sulphurpoint/SulphurPoint-Light.ttf');
+    src: url('sulphurpoint/SulphurPoint-Light.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontMedium";
+    font-style: normal;
+    font-weight: 400;
+    src: url('sulphurpoint/SulphurPoint-Regular.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFontSemi";
+    font-style: normal;
+    font-weight: 400;
+    src: url('sulphurpoint/SulphurPoint-Bold.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Bold.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -18,27 +58,6 @@
     font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('sulphurpoint/SulphurPoint-Bold.ttf');
+    src: url('sulphurpoint/SulphurPoint-Bold.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Bold.ttf') format('truetype');
     font-display: swap;
 }
-
-@font-face {
-    font-family: "SiteFontSemi";
-    font-style: normal;
-    font-weight: 200;
-    src: url('sulphurpoint/SulphurPoint-Bold.ttf');
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: "SiteFontMedium";
-    font-style: normal;
-    font-weight: 500;
-    src: url('sulphurpoint/SulphurPoint-Regular.ttf');
-    font-display: swap;
-}
-
-/*.blog-pagination a:not(.btn.next, .btn.prev), .page-links a, .blog-pagination span, .page-numbers {
-    padding: 8px 0 !important;
-}*/

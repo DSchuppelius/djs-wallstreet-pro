@@ -7,6 +7,19 @@
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
  */
+/**
+ * Customizer-Wert fuer die Schriftstaerke -> CSS font-weight.
+ * Aeltere Installationen speichern Namen der frueheren Pseudo-Familien (SiteFontLight ...).
+ */
+function djs_font_weight($value): string {
+    $legacy = ['SiteFontThin' => 200, 'SiteFontLight' => 300, 'SiteFontRegular' => 400, 'SiteFont' => 400, 'SiteFontMedium' => 500, 'SiteFontSemi' => 600, 'SiteFontBold' => 700, 'SiteFontBlack' => 900];
+    if (isset($legacy[$value])) {
+        return (string) $legacy[$value];
+    }
+    $weight = absint($value);
+    return ($weight >= 100 && $weight <= 900) ? (string) $weight : '400';
+}
+
 if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
 	/**
 	 * Baut den :root‑Block + optionalen #page_fader‑Selektor
@@ -85,7 +98,7 @@ if ( ! function_exists( 'djs_wallstreet_root_css' ) ) {
 
 			foreach ( $groups as $key => $opt ) {
 				$vars["--{$key}-font-size"]     = absint($current_setup->get("{$opt}_fontsize"))  . 'px';
-				$vars["--{$key}-font-weight"]   = esc_attr($current_setup->get("{$opt}_fontfamily"));
+				$vars["--{$key}-font-weight"]   = djs_font_weight($current_setup->get("{$opt}_fontfamily"));
 				$vars["--{$key}-font-style"]    = esc_attr($current_setup->get("{$opt}_fontstyle"));
 			}
 		}

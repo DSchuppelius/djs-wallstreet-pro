@@ -15,92 +15,62 @@ if (defined("WP_ADMIN") && WP_ADMIN) require_once "shortcode_popup.php";
 
 function button_shortcode($atts, $content = null) {
     $atts = shortcode_atts([
-        "style" => "",
-        "size" => "small",
-        "target" => "self",
-        "url" => "#",
+        "style"    => "",
+        "size"     => "small",
+        "target"   => "self",
+        "url"      => "#",
         "textdata" => "Button",
     ], $atts);
 
-    $size = $atts["size"];
-    $style = $atts["style"];
-    $url = $atts["url"];
-    $target = $atts["target"];
-    $style = $style ? " " . $style : "";
-    $result = '<a class="' . esc_attr(trim($style . " " . $size)) . '" href="' . esc_url($url) . '" ' . get_blank_target($target == "blank") . ">" . do_shortcode($content) . "</a>";
-    return $result;
+    $sizes = ["mini" => "btn-xs", "small" => "btn-sm", "medium" => "", "large" => "btn-lg", "big" => "btn-lg"];
+    $size  = $sizes[$atts["size"]] ?? "";
+    $style = trim((string) $atts["style"]);
+    // Alte Stilnamen (btn-default, btn-green ...) bleiben als Klasse erhalten; ohne Stil primaer.
+    $color = preg_match('/\b(btn-(primary|secondary|accent|neutral|info|success|warning|error|danger|ghost|link|outline|default))\b/', $style) ? "" : "btn-primary";
+    $label = $content !== null && $content !== "" ? do_shortcode($content) : esc_html($atts["textdata"]);
+    $blank = $atts["target"] === "blank";
+
+    return sprintf(
+        '<a class="%s" href="%s"%s>%s</a>',
+        esc_attr(trim("btn " . $color . " " . $style . " " . $size)),
+        esc_url($atts["url"]),
+        $blank ? ' target="_blank" rel="noopener"' : "",
+        $label
+    );
 }
 add_shortcode("button", "button_shortcode");
 
 function accordion_shortcode($atts, $content = null) {
     $atts = shortcode_atts([
-        "fields" => "1",
+        "fields"          => "1",
         "accordian_group" => "Accordions",
         "accordian_title" => "Accordions title, Accordions title",
-        "accordian_text" => "Accordions Description, Accordions Description",
-        "echo" => false,
+        "accordian_text"  => "Accordions Description, Accordions Description",
+        "echo"            => false,
     ], $atts);
 
-    $fields = $atts["fields"];
-    $accordian_group = $atts["accordian_group"];
+    static $counter = 0;
+    $counter++;
 
-    $accordian_title = $atts["accordian_title"];
-    $title = explode(",", $accordian_title);
+    $group  = "djs-accordion-" . $counter;
+    $titles = explode(",", (string) $atts["accordian_title"]);
+    $texts  = explode(",", (string) $atts["accordian_text"]);
+    $count  = min(max(1, (int) $atts["fields"] + 1), count($titles));
 
-    $accordian_text = $atts["accordian_text"];
-    $text = explode(",", $accordian_text);
-    $result = "";
-    $result .= '<div class="typo-head-title"><h3>' . $accordian_group . '</h3></div><div class="panel-group" id="accordion">';
-    for ($i = 0; $i <= $fields; $i++) {
-        $title[$i] = preg_replace("/__/", ",", $title[$i]);
-        $text[$i] = preg_replace("/__/", ",", $text[$i]);
-        //$title[$i] = preg_replace('~[^A-Za-z\d\s-]+~u', 'wr', $title[$i]);
-        //$title1[$i] = preg_replace('/\s/', '_', $title[$i]);
-        //$changetitle = preg_replace(" ", 'wl', $changetitle);
-        if ($i == 0) {
-            $result .=
-                '<div class="acco_panel panel-default">
-                    <div class="short-panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
-                $title[$i] . '<span class="fa fa-minus"></span>
-                            </a>
-                        </h4>
-                    </div>
-                    <div  class="panel-collapse collapse in" id="' . $accordian_group . $i . '">
-                        <div class="panel-body">
-                            <div class="media">
-                                <div class="media-body">
-                                    <p class="image-para-content">' .
-                $text[$i] .
-                '</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
-        } else {
-            $result .=
-                '<div class="acco_panel panel-default">
-                    <div class="short-panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $accordian_group . '" href="' . get_the_currentURL() . '#' . $accordian_group . $i . '">' .
-                $title[$i] . '<span class="fa fa-plus"></span>
-                            </a>
-                        </h4>
-                    </div>
-                    <div class="panel-collapse collapse" id="' . $accordian_group . $i . '">
-                        <div class="panel-body">
-                            <p>' .
-                $text[$i] .
-                '</p>
-                        </div>
-                    </div>
-                </div>';
-        }
+    // <details name="..."> verhaelt sich wie data-parent: es ist immer nur ein Eintrag offen.
+    $result = '<div class="sc-accordion" id="' . esc_attr($group) . '">';
+    if (trim((string) $atts["accordian_group"]) !== "") {
+        $result .= '<h3 class="sc-accordion__group typo-head-title">' . esc_html($atts["accordian_group"]) . "</h3>";
     }
-    $result .= "</div>";
-    return $result;
+    for ($i = 0; $i < $count; $i++) {
+        $title = str_replace("__", ",", trim($titles[$i] ?? ""));
+        $text  = str_replace("__", ",", trim($texts[$i] ?? ""));
+        $result .= '<details class="sc-accordion__item acco_panel" name="' . esc_attr($group) . '"' . ($i === 0 ? " open" : "") . ">"
+            . '<summary class="sc-accordion__title">' . wp_kses_post($title) . '<span class="sc-accordion__icon material-icons" aria-hidden="true">expand_more</span></summary>'
+            . '<div class="sc-accordion__body panel-body"><p>' . wp_kses_post($text) . "</p></div>"
+            . "</details>";
+    }
+    return $result . "</div>";
 }
 add_shortcode("accordian", "accordion_shortcode");
 
@@ -108,36 +78,39 @@ if (!function_exists("tabgroup")) {
     function tabgroup($atts, $content = null) {
         $atts = shortcode_atts([
             "tabs_title" => "This is tabs heading",
-            "echo" => false
+            "echo"       => false,
         ], $atts);
 
-        $tabs_title1 = $atts["tabs_title"];
-        // Extract the tab titles for use in the tab shortcode
-        preg_match_all('/tabs_title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE);
-        $tab_titles = [];
-        $theme_tabs_title = [];
-        if (isset($matches[1])) {
-            $tab_titles = $matches[1];
+        static $counter = 0;
+        $counter++;
+        $group = "djs-tabs-" . $counter;
+
+        preg_match_all('/tabs_title="([^"]+)"/i', (string) $content, $matches);
+        $titles = $matches[1] ?? [];
+        if (!$titles) {
+            return do_shortcode((string) $content);
         }
-        $resultput = '<div class="short-tabs-section">';
-        if (count($tab_titles)) {
-            $resultput .= '<ul class="short-tabs" id="myTab-' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $tabs_title1) . '">';
-            $count = 0;
-            foreach ($tab_titles as $tabs_title) {
-                if ($count == 0) {
-                    $theme_tabs_title[0] = str_replace(" ", "_", $tabs_title[0]);
-                    $resultput .= '<li class="active" ><a data-toggle="tab" href="' . get_the_currentURL() . '#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
-                } else {
-                    $theme_tabs_title[0] = str_replace(" ", "_", $tabs_title[0]);
-                    $resultput .= '<li class="" ><a data-toggle="tab" href="' . get_the_currentURL() . '#' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title[0]) . '">' . $tabs_title[0] . "</a></li>";
-                }
-                $count++;
-            }
-            $resultput .= '</ul><div id="myTabContent" class="tab-content">';
-            $resultput .= do_shortcode($content);
+
+        $result = '<div class="sc-tabs short-tabs-section">'
+            . '<div class="tabs tabs-border sc-tabs__list short-tabs" role="tablist" data-tabs>';
+        foreach ($titles as $i => $title) {
+            $result .= sprintf(
+                '<button type="button" role="tab" class="tab%s" id="%s-tab-%d" aria-controls="%s-pane-%d" aria-selected="%s">%s</button>',
+                $i === 0 ? " tab-active" : "",
+                $group, $i, $group, $i,
+                $i === 0 ? "true" : "false",
+                esc_html($title)
+            );
         }
-        $resultput .= "</div></div>";
-        return $resultput;
+        $result .= "</div>";
+
+        // [tabs] darin liest Gruppe und Zaehler, um IDs und Sichtbarkeit zu setzen.
+        $previous = $GLOBALS["djs_tabgroup"] ?? null;
+        $GLOBALS["djs_tabgroup"] = ["id" => $group, "index" => 0];
+        $result .= '<div class="sc-tabs__panes tab-content">' . do_shortcode((string) $content) . "</div>";
+        $GLOBALS["djs_tabgroup"] = $previous;
+
+        return $result . "</div>";
     }
     add_shortcode("tabgroup", "tabgroup");
 }
@@ -145,25 +118,27 @@ if (!function_exists("tabgroup")) {
 function tabs_shortcode($atts, $content = null) {
     $atts = shortcode_atts([
         "tabs_title" => "This is tabs heading",
-        "tabs_text" => "Description",
-        "wrap" => "yes",
-        "echo" => false,
+        "tabs_text"  => "Description",
+        "wrap"       => "yes",
+        "echo"       => false,
     ], $atts);
 
-    $tabs_title = $atts["tabs_title"];
-    $tabs_text = $atts["tabs_text"];
-    $wrap = $atts["wrap"];
-    $theme_tabs_title = str_replace(" ", "_", $tabs_title);
-    static $c = 0;
-    $result = "";
-    if ($c == 0 || $wrap == "yes") {
-        $result .= '<div id="' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title) . '" class="tab-pane fade active in">';
-    } else {
-        $result .= '<div id="' . preg_replace("~[^A-Za-z\d\s-]+~u", "wr", $theme_tabs_title) . '" class="tab-pane fade">';
+    $group = $GLOBALS["djs_tabgroup"] ?? null;
+    $body  = '<p class="short-tabs-content">' . wp_kses_post($atts["tabs_text"]) . "</p>" . do_shortcode((string) $content);
+
+    if (!$group) {
+        // [tabs] ohne [tabgroup]: als einfacher Abschnitt ausgeben
+        return '<div class="sc-tabs__pane tab-pane">' . $body . "</div>";
     }
-    $c++;
-    $result .= '<p class="short-tabs-content" >' . $tabs_text . "</p>" . do_shortcode($content) . "</div>";
-    return $result;
+
+    $i = $GLOBALS["djs_tabgroup"]["index"]++;
+    return sprintf(
+        '<div class="sc-tabs__pane tab-pane" role="tabpanel" id="%1$s-pane-%2$d" aria-labelledby="%1$s-tab-%2$d"%3$s>%4$s</div>',
+        esc_attr($group["id"]),
+        $i,
+        $i === 0 ? "" : " hidden",
+        $body
+    );
 }
 add_shortcode("tabs", "tabs_shortcode");
 
@@ -171,207 +146,66 @@ add_shortcode("tabs", "tabs_shortcode");
 function alert_shortcode($atts, $content = null) {
     $atts = shortcode_atts([
         "alert_heading" => "Please enter alert heading",
-        "alert_text" => "Please enter text in alert text",
-        "alert_style" => "",
+        "alert_text"    => "Please enter text in alert text",
+        "alert_style"   => "",
     ], $atts);
 
-    $alert_heading = $atts["alert_heading"];
-    $alert_text = $atts["alert_text"];
-    $alert_style = $atts["alert_style"];
+    $style = (string) $atts["alert_style"];
+    $types = ["success" => ["alert-success", "check_circle"], "info" => ["alert-info", "info"], "warning" => ["alert-warning", "warning"], "danger" => ["alert-error", "error"], "error" => ["alert-error", "error"]];
+    [$type, $icon] = ["", "info"];
+    foreach ($types as $needle => $map) {
+        if (str_contains($style, $needle)) {
+            [$type, $icon] = $map;
+            break;
+        }
+    }
 
-    $result =
-        '<div class="' .
-        esc_attr($alert_style) .
-        '">
-            <button data-dismiss="alert" class="not close material-icons-outlined" type="button">close</button>
-            <strong>' .
-        esc_html($alert_heading) .
-        "</strong>&nbsp;&nbsp;" .
-        esc_html($alert_text) .
-        do_shortcode($content) .
-        "</div>";
-    return $result;
+    return '<div role="alert" class="' . esc_attr(trim("alert alert-soft sc-alert " . $type . " " . $style)) . '">'
+        . '<span class="material-icons" aria-hidden="true">' . $icon . "</span>"
+        . "<div><strong>" . esc_html($atts["alert_heading"]) . "</strong> " . esc_html($atts["alert_text"]) . do_shortcode((string) $content) . "</div>"
+        . '<button type="button" class="btn btn-ghost btn-sm btn-circle" data-dismiss="alert" aria-label="' . esc_attr__("Close", "djs-wallstreet-pro") . '"><span class="material-icons" aria-hidden="true">close</span></button>'
+        . "</div>";
 }
 add_shortcode("alert", "alert_shortcode");
 
 /*-----------Dropcap-----------*/
 function dropcp_shortcode($atts, $content = null) {
     $atts = shortcode_atts([
-        "dropcp_style" => "dropcap_simple_content",
-        "dropcp_text" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
+        "dropcp_style"        => "dropcap_simple_content",
+        "dropcp_text"         => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
         "dropcp_first_letter" => "L",
-        "echo" => false,
+        "echo"                => false,
     ], $atts);
 
-    $dropcp_text = $atts["dropcp_text"];
-    $dropcp_style = $atts["dropcp_style"];
-    $dropcp_first_letter = $atts["dropcp_first_letter"];
-
-    $result = '<p class="' . $dropcp_style . '"><span class="first">' . $dropcp_first_letter . "</span>&nbsp;&nbsp;" . $dropcp_text . "</p>";
-    return $result;
+    return '<p class="sc-dropcap ' . esc_attr($atts["dropcp_style"]) . '"><span class="first">' . esc_html($atts["dropcp_first_letter"]) . "</span>" . wp_kses_post($atts["dropcp_text"]) . "</p>";
 }
 add_shortcode("dropcap", "dropcp_shortcode");
 
 function gridsystemlayout_function($atts, $content = null) {
     $grid_atts = shortcode_atts(["grid_layout" => ""], (array) $atts, "gridsystemlayout");
-    $grid_layout = $grid_atts["grid_layout"];
-    $result = "";
-
-    if ($grid_layout == "one-column") {
-        $atts = shortcode_atts([
-            "one_column_title" => "One Column",
-            "one_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-        ], $atts);
-
-        $one_column_title = $atts["one_column_title"];
-        $one_column_description = $atts["one_column_description"];
-        $result =
-            '<div class="row">
-                <div class="col-md-12">
-                    <div class="hc_head_title"><span>' .
-            $one_column_title .
-            '</span></div>
-                    <p>' .
-            $one_column_description .
-            '</p>
-                </div>
-            </div>';
-    } elseif ($grid_layout == "two-column") {
-        $atts = shortcode_atts([
-            "one_column_title" => "two Column",
-            "one_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "two_column_title" => "two Column",
-            "two_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "echo" => false,
-        ], $atts);
-
-        $one_column_title = $atts["one_column_title"];
-        $one_column_description = $atts["one_column_description"];
-        $two_column_title = $atts["two_column_title"];
-        $two_column_description = $atts["two_column_description"];
-
-        $result =
-            '<div class="row">
-                <div class="col-md-6">
-                    <div class="hc_head_title"><span>' .
-            $one_column_title .
-            '</span></div>
-                    <p>' .
-            $one_column_description .
-            '</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="hc_head_title"><span>' .
-            $two_column_title .
-            '</span></div>
-                    <p>' .
-            $two_column_description .
-            '</p>
-                </div>
-            </div>';
-    } elseif ($grid_layout == "three-column") {
-        $atts = shortcode_atts([
-            "one_column_title" => "Three Column",
-            "one_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "two_column_title" => "Three Column",
-            "two_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "three_column_title" => "Three Column",
-            "three_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "echo" => false,
-        ], $atts);
-
-        $one_column_title = $atts["one_column_title"];
-        $one_column_description = $atts["one_column_description"];
-        $two_column_title = $atts["two_column_title"];
-        $two_column_description = $atts["two_column_description"];
-        $three_column_title = $atts["three_column_title"];
-        $three_column_description = $atts["three_column_description"];
-        $result =
-            '<div class="row">
-                <div class="col-md-4">
-                    <div class="hc_head_title"><span>' .
-            $one_column_title .
-            '</span></div>
-                    <p>' .
-            $one_column_description .
-            '</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="hc_head_title"><span>' .
-            $two_column_title .
-            '</span></div>
-                    <p>' .
-            $two_column_description .
-            '</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="hc_head_title"><span>' .
-            $three_column_title .
-            '</span></div>
-                    <p>' .
-            $three_column_description .
-            '</p>
-                </div>
-            </div>';
-    } elseif ($grid_layout == "fourth-column") {
-        $atts = shortcode_atts([
-            "one_column_title" => "fourth Column",
-            "one_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "two_column_title" => "fourth Column",
-            "two_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "three_column_title" => "fourth Column",
-            "three_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "fourth_column_title" => "fourth Column",
-            "fourth_column_description" => "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.",
-            "echo" => false,
-        ], $atts);
-
-        $one_column_title = $atts["one_column_title"];
-        $one_column_description = $atts["one_column_description"];
-        $two_column_title = $atts["two_column_title"];
-        $two_column_description = $atts["two_column_description"];
-        $three_column_title = $atts["three_column_title"];
-        $three_column_description = $atts["three_column_description"];
-        $fourth_column_title = $atts["fourth_column_title"];
-        $fourth_column_description = $atts["fourth_column_description"];
-
-        $result =
-            '<div class="row">
-                <div class="col-md-3">
-                    <div class="hc_head_title"><span>' .
-            $one_column_title .
-            '</span></div>
-                    <p>' .
-            $one_column_description .
-            '</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="hc_head_title"><span>' .
-            $two_column_title .
-            '</span></div>
-                    <p>' .
-            $two_column_description .
-            '</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="hc_head_title"><span>' .
-            $three_column_title .
-            '</span></div>
-                    <p>' .
-            $three_column_description .
-            '</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="hc_head_title"><span>' .
-            $fourth_column_title .
-            '</span></div>
-                    <p>' .
-            $fourth_column_description .
-            '</p>
-                </div>
-            </div>';
+    $columns   = ["one-column" => 1, "two-column" => 2, "three-column" => 3, "fourth-column" => 4][$grid_atts["grid_layout"]] ?? 0;
+    if (!$columns) {
+        return "";
     }
-    return $result;
+
+    $names    = ["one", "two", "three", "fourth"];
+    $label    = ["One Column", "two Column", "Three Column", "fourth Column"][$columns - 1];
+    $lorem    = "orem ipsum dolor sit amet, Integer commodo tristiqu odio, aliquet ut. Maecenas sed justo imperdiet bibendum. Vivamus nec sapien imperdiet diam. Aliquam erat volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet,volutpat. Sed onsectetur suscipit nunc et rutrum. Lorem ipsum dolor sit amet, volutpat.";
+    $defaults = ["echo" => false];
+    for ($i = 0; $i < $columns; $i++) {
+        $defaults[$names[$i] . "_column_title"]       = $label;
+        $defaults[$names[$i] . "_column_description"] = $lorem;
+    }
+    $atts = shortcode_atts($defaults, $atts);
+
+    $result = '<div class="sc-grid sc-grid--' . $columns . '">';
+    for ($i = 0; $i < $columns; $i++) {
+        $result .= '<div class="sc-grid__item">'
+            . '<h4 class="sc-grid__title hc_head_title"><span>' . wp_kses_post($atts[$names[$i] . "_column_title"]) . "</span></h4>"
+            . "<p>" . wp_kses_post($atts[$names[$i] . "_column_description"]) . "</p>"
+            . "</div>";
+    }
+    return $result . "</div>";
 }
 add_shortcode("gridsystemlayout", "gridsystemlayout_function");
 
@@ -441,30 +275,22 @@ add_shortcode("list", "list_function");
 
 /*Tool Tip*/
 function tooltip_function($atts, $content = null) {
-    wp_enqueue_style("tool-tip", THEME_ASSETS_PATH_URI . "/css/css-tooltips.css"); //ToolTip
     $atts = shortcode_atts([
         "tooltip_text" => "Tight pants next level keffiyeh&nbsp;",
         "tooltip_word" => "sample",
-        "tooltip_url" => "#",
-        "tip_word" => "ToolTip",
+        "tooltip_url"  => "#",
+        "tip_word"     => "ToolTip",
     ], $atts);
 
-    $tooltip_text = $atts["tooltip_text"];
-    $tooltip_word = $atts["tooltip_word"];
-    $tooltip_url = $atts["tooltip_url"];
-    $tip_word = $atts["tip_word"];
+    // Das Schluesselwort im Text wird zum Link mit Tooltip (daisyUI, reines CSS).
+    $link = sprintf(
+        '<span class="tooltip" data-tip="%s"><a href="%s">%s</a></span>',
+        esc_attr($atts["tip_word"]),
+        esc_url($atts["tooltip_url"]),
+        esc_html($atts["tooltip_word"])
+    );
+    $text = str_replace($atts["tooltip_word"], "\0", wp_kses_post($atts["tooltip_text"]));
 
-    // Die Attribute stehen in einfachen Anfuehrungszeichen - esc_attr() maskiert die
-    // ebenfalls (ENT_QUOTES), ein Ausbruch aus data-tip/href ist damit ausgeschlossen.
-    $myString = $tooltip_text;
-    $tooltip_text = str_replace($tooltip_word, "<a data-tip='" . esc_attr($tip_word) . "' href='" . esc_url($tooltip_url) . "'>" . esc_html($tooltip_word) . "</a>", $myString);
-
-    $result =
-        '<div class="short-tooltip">
-            <p class="short-tooltip">' .
-        $tooltip_text .
-        "</p>
-        </div>";
-    return $result;
+    return '<p class="sc-tooltip short-tooltip">' . str_replace("\0", $link, $text) . "</p>";
 }
 add_shortcode("tooltip", "tooltip_function");

@@ -6,14 +6,35 @@
 ## Developing
 
 - **Contributors:** DSchuppelius
-- **Version:** 2.1.0
-- **Requires at least:** 5.3
-- **Tested up to:** 6.0.2
-- **Requires PHP:** 5.6.20
+- **Version:** 3.0.0
+- **Requires at least:** 6.3
+- **Tested up to:** 7.0
+- **Requires PHP:** 8.0
 - **Requires MySQL:** 5.0
 - **License:** GNU General Public License v3 or later
 - **License URI:** http://www.gnu.org/licenses/gpl.html
 
+
+## Development
+
+The styles are built with [Tailwind CSS 4](https://tailwindcss.com) and [daisyUI 5](https://daisyui.com).
+The compiled stylesheet `assets/dist/theme.css` is part of the repository, so the server needs no Node.js.
+
+```bash
+npm install      # once
+npm run build    # src/css/* -> assets/dist/theme.css (minified)
+npm run watch    # rebuild on every change
+```
+
+- `src/css/theme.css` – entry point: Tailwind, daisyUI themes (wallstreet-dark / wallstreet-light), imports
+- `src/css/tokens.css` – Customizer values (colors, radii, logo sizes) mapped to design tokens
+- `src/css/layout.css`, `components.css`, `sections.css`, `content.css` – theme styles
+- `src/css/plugins.css` – styles for plugin markup (unlayered on purpose), `compat.css` – Bootstrap 3 classes in stored content
+- `assets/js/theme.js` – navigation, sticky header, search, display settings, page fader, parallax, tabs
+- `assets/js/carousel.js`, `assets/js/lightbox.js` – loaded only where needed
+
+Header presets, blog/service/team/testimonial variants are configuration (`djs_header_preset()`, template arguments),
+not separate template files.
 
 ## Description
 

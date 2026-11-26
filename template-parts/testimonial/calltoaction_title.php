@@ -6,27 +6,16 @@
  * Filename     : calltoaction_title.php
  * License      : GNU General Public License v3 or later
  * License Uri  : http://www.gnu.org/licenses/gpl.html
+ *
+ * Ueberschrift ueber den Testimonials (Testimonial-Seitentemplates).
  */
-$current_setup_posttypes = PostTypes_Plugin_Setup::instance(); ?>
-<div class="container">
-    <?php
- if (!empty($current_setup_posttypes->get("testimonial_cta_title")) || !empty($current_setup_posttypes->get("testimonial_cta_description"))) { ?>
-    <div class="row">
-        <div class="section_heading_title">
-            <?php if ($current_setup_posttypes->get("testimonial_cta_title") != "") { ?>
-            <h1><?php echo $current_setup_posttypes->get("testimonial_cta_title"); ?></h1>
-            <div class="pagetitle-separator">
-                <div class="pagetitle-separator-border">
-                    <div class="pagetitle-separator-box"></div>
-                </div>
-            </div>
-            <?php } ?>
-            <?php if ($current_setup_posttypes->get("testimonial_cta_description") != "") { ?>
-            <p><?php echo $current_setup_posttypes->get("testimonial_cta_description"); ?></p>
-            <?php } ?>
-        </div>
-    </div>
-    <?php }
- get_template_part("template-parts/index/index", "calloutarea");
- ?>
-</div>
+
+$pt = djs_pt();
+if (!$pt) {
+    return;
+} ?>
+<section class="section site-wrap testimonial-cta">
+    <?php djs_section_heading($pt->get("testimonial_cta_title"), $pt->get("testimonial_cta_description")); ?>
+</section>
+<?php // Wie bisher: Call-to-Action-Bereich unter der Ueberschrift (Customizer "Call-out-Bereich")
+get_template_part("template-parts/index/index", "calloutarea");

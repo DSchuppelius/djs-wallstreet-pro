@@ -1,0 +1,149 @@
+/*
+ * Lokale Kopien der waehlbaren Schriften (Customizer > Typografie > eigene Schrift).
+ * Wird die Schrift unter ihrem Google-Namen gewaehlt, laedt der Browser sie von hier
+ * statt von fonts.googleapis.com (DSGVO). Ersetzt den @font-face-Teil der alten font.css.
+ */
+
+@font-face {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 400;
+    src: url('el-messiri/ElMessiri-Regular.woff2') format('woff2'), url('el-messiri/ElMessiri-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 700;
+    src: url('el-messiri/ElMessiri-Bold.woff2') format('woff2'), url('el-messiri/ElMessiri-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url('roboto/Roboto-Regular.woff2') format('woff2'), url('roboto/Roboto-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url('roboto/Roboto-Bold.woff2') format('woff2'), url('roboto/Roboto-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Anonymous Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url('anonymous-pro/AnonymousPro-Regular.woff2') format('woff2'), url('anonymous-pro/AnonymousPro-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Anonymous Pro";
+    font-style: normal;
+    font-weight: 700;
+    src: url('anonymous-pro/AnonymousPro-Bold.woff2') format('woff2'), url('anonymous-pro/AnonymousPro-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    font-style: normal;
+    font-weight: 400;
+    src: url('dancing-script/DancingScript-Regular.woff2') format('woff2'), url('dancing-script/DancingScript-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dancing Script";
+    font-style: normal;
+    font-weight: 700;
+    src: url('dancing-script/DancingScript-Bold.woff2') format('woff2'), url('dancing-script/DancingScript-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url('montserrat/Montserrat-Regular.woff2') format('woff2'), url('montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url('montserrat/Montserrat-Bold.woff2') format('woff2'), url('montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sulphur Point";
+    font-style: normal;
+    font-weight: 400;
+    src: url('sulphurpoint/SulphurPoint-Regular.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sulphur Point";
+    font-style: normal;
+    font-weight: 700;
+    src: url('sulphurpoint/SulphurPoint-Bold.woff2') format('woff2'), url('sulphurpoint/SulphurPoint-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url('opensans/OpenSans_Condensed-Regular.woff2') format('woff2'), url('opensans/OpenSans_Condensed-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url('opensans/OpenSans_Condensed-Bold.woff2') format('woff2'), url('opensans/OpenSans_Condensed-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    src: url('rubik/Rubik-Regular.woff2') format('woff2'), url('rubik/Rubik-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    src: url('rubik/Rubik-Bold.woff2') format('woff2'), url('rubik/Rubik-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Overlock";
+    font-style: normal;
+    font-weight: 400;
+    src: url('overlock/Overlock-Regular.woff2') format('woff2'), url('overlock/Overlock-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Overlock";
+    font-style: normal;
+    font-weight: 700;
+    src: url('overlock/Overlock-Bold.woff2') format('woff2'), url('overlock/Overlock-Bold.ttf') format('truetype');
+    font-display: swap;
+}

@@ -1,0 +1,171 @@
+/*
+ * Druckansicht wie bisher (Druckstil des alten Themes): nur der Inhalt schwarz auf weiss, ohne
+ * Glasflaechen, Rahmen, Schatten und Bedienelemente; oben die Kontaktzeile als graues Band.
+ */
+
+/* Farben und Flaechen zuruecksetzen. Bewusst in der fruehesten Ebene: wichtige (!important)
+   Angaben einer frueheren Ebene schlagen alle spaeteren Ebenen und das ungelayerte Plugin-CSS. */
+@layer base {
+    @media print {
+        *,
+        *::before,
+        *::after {
+            color: #000 !important;
+            text-shadow: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+        }
+
+        /* Papier weiss - auch im dunklen Farbschema (color-scheme: dark faerbt sonst die Flaeche) */
+        :root {
+            color-scheme: light !important;
+        }
+
+        html,
+        body {
+            background: #fff !important;
+        }
+
+        /* wie bisher grau hinterlegt */
+        .site-topbar {
+            background: #ccc !important;
+        }
+
+        .post-date-badge__date {
+            background: #999 !important;
+        }
+
+        .post-date-badge__comments {
+            background: #bbb !important;
+        }
+    }
+}
+
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+
+    html,
+    body {
+        height: auto;
+    }
+
+    /* Nicht drucken: Navigation, Seitenkopf, Sidebar, Fuellflaechen, Meta-Angaben, Bedienelemente */
+    .site-header,
+    .site-topbar__social,
+    .page-banner,
+    .page_scrollup,
+    .page-fader,
+    .layout__sidebar,
+    .columnfiller,
+    .post-meta,
+    .author-box,
+    .pagination,
+    .post-nav,
+    .section-heading__sep,
+    #comments,
+    .comment-respond,
+    .site-search,
+    .skip-link,
+    .site-footer,
+    .wp-block-embed,
+    iframe,
+    .fixed-widget,
+    .cookie-control,
+    #script_fullscreen,
+    .cc-window,
+    .cc-revoke,
+    .sharedaddy,
+    #jp-relatedposts,
+    #wpadminbar,
+    .do-not-print,
+    .home :is(.hero-slider, .hero-revslider, .home-blog-section, .portfolio-section, .testimonial-section, .features-section) {
+        display: none !important;
+    }
+
+    /* Kontaktzeile oben als graues Band (wie bisher), ohne die Social-Icons */
+    .site-topbar {
+        position: static !important;
+        margin: 0 0 1.25rem;
+        border-radius: 10px;
+        transform: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .post-date-badge {
+        break-inside: avoid;
+    }
+
+    .post-date-badge__date,
+    .post-date-badge__comments {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Inhalt in voller Breite, ohne Glasrahmen; die Inhaltsposition (Customizer) entfaellt */
+    .page-shell,
+    .surface-card,
+    .with_background,
+    .post-card,
+    .team-card,
+    .team-card__body,
+    .about-team__head,
+    .about-team__grid {
+        border: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .page-shell {
+        width: auto !important;
+        margin: 0 0 1.5rem !important;
+        padding: 0 !important;
+    }
+
+    .layout {
+        display: block !important;
+    }
+
+    /* Einblend-Effekte: alles sofort sichtbar */
+    .reveal {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        translate: none !important;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    /* Bilder wie bisher abgerundet (Team-Fotos bleiben rund) */
+    img {
+        max-width: 100% !important;
+        break-inside: avoid;
+    }
+
+    img:not(.team-card__img, .emoji, .wp-smiley) {
+        border-radius: 20px !important;
+    }
+
+    /* Wie bisher: in Beitragslisten jeder Beitrag auf einer eigenen Seite */
+    .post-list > .post:not(:last-child) {
+        break-after: page;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h1,
+    h2,
+    h3 {
+        break-after: avoid;
+    }
+}

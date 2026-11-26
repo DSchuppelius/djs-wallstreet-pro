@@ -1,24 +1,56 @@
+/*
+ * Seitenschrift (dancing-script) - erzeugt aus den TTF-Dateien, WOFF2 zuerst.
+ * "SiteFont" ist eine Familie mit echten Staerken; font-weight waehlt die Datei.
+ */
+
 @font-face {
     font-family: "SiteFont";
     font-style: normal;
     font-weight: 400;
-    src: url('dancing-script/DancingScript-Regular.ttf');
+    src: url('dancing-script/DancingScript-Regular.woff2') format('woff2'), url('dancing-script/DancingScript-Regular.ttf') format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 500;
+    src: url('dancing-script/DancingScript-Medium.woff2') format('woff2'), url('dancing-script/DancingScript-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 600;
+    src: url('dancing-script/DancingScript-SemiBold.woff2') format('woff2'), url('dancing-script/DancingScript-SemiBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SiteFont";
+    font-style: normal;
+    font-weight: 700;
+    src: url('dancing-script/DancingScript-Bold.woff2') format('woff2'), url('dancing-script/DancingScript-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Alte Familiennamen (vor 3.0) - fuer gespeicherte Inhalte und Plugins */
 
 @font-face {
     font-family: "SiteFontLight";
     font-style: normal;
-    font-weight: 200;
-    src: url('dancing-script/DancingScript-Regular.ttf');
+    font-weight: 400;
+    src: url('dancing-script/DancingScript-Regular.woff2') format('woff2'), url('dancing-script/DancingScript-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
-    font-family: "SiteFontBold";
+    font-family: "SiteFontMedium";
     font-style: normal;
     font-weight: 400;
-    src: url('dancing-script/DancingScript-Bold.ttf');
+    src: url('dancing-script/DancingScript-Medium.woff2') format('woff2'), url('dancing-script/DancingScript-Medium.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -26,19 +58,14 @@
     font-family: "SiteFontSemi";
     font-style: normal;
     font-weight: 400;
-    src: url('dancing-script/DancingScript-SemiBold.ttf');
+    src: url('dancing-script/DancingScript-SemiBold.woff2') format('woff2'), url('dancing-script/DancingScript-SemiBold.ttf') format('truetype');
     font-display: swap;
 }
-
 
 @font-face {
-    font-family: "SiteFontMedium";
+    font-family: "SiteFontBold";
     font-style: normal;
     font-weight: 400;
-    src: url('dancing-script/DancingScript-Medium.ttf');
+    src: url('dancing-script/DancingScript-Bold.woff2') format('woff2'), url('dancing-script/DancingScript-Bold.ttf') format('truetype');
     font-display: swap;
-}
-
-.blog-pagination a:not(.btn.next, .btn.prev), .page-links a, .blog-pagination span, .page-numbers {
-    padding: 6px 0 !important;
 }
