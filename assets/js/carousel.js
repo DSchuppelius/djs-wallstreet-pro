@@ -34,6 +34,7 @@
             this.step = Math.max(1, parseInt(root.dataset.step || "1", 10) || 1);
             this.delay = parseInt(root.dataset.autoplay ?? "6000", 10) || 0;
             this.index = 0;
+            this.deferred = this.track.querySelector("img[data-src]") !== null;
             this.timer = null;
             this.userPaused = false;
             this.holds = new Set();
@@ -58,6 +59,7 @@
             this.bind();
             this.buildDots();
             this.go(0, false);
+            if (this.deferred && document.readyState !== "complete") window.addEventListener("load", () => this.loadAround(), { once: true });
             this.syncAutoplay();
         }
 
@@ -71,9 +73,29 @@
             return this.effect === "fade" ? this.slides.length : Math.max(1, this.slides.length - this.perView() + 1);
         }
 
+        /* Zurueckgestellte Bilder (data-src, z. B. Startseiten-Slider): geladen werden die gezeigten
+           Slides und ihre Nachbarn - beim Start die Nachbarn erst, wenn die Seite fertig geladen ist. */
+        loadAround(index = this.index) {
+            if (!this.deferred) return;
+            const count = this.slides.length;
+            const from = document.readyState === "complete" ? -1 : 0;
+            const to = document.readyState === "complete" ? this.perView() : this.perView() - 1;
+            for (let offset = from; offset <= to; offset++) {
+                this.slides[(((index + offset) % count) + count) % count].querySelectorAll("img[data-src]").forEach((img) => {
+                    if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+                    img.src = img.dataset.src;
+                    img.loading = "eager";
+                    img.removeAttribute("data-src");
+                    img.removeAttribute("data-srcset");
+                });
+            }
+            this.deferred = this.track.querySelector("img[data-src]") !== null;
+        }
+
         go(index, smooth = true) {
             const max = this.positions();
             this.index = ((index % max) + max) % max;
+            this.loadAround();
 
             if (this.effect === "fade") {
                 this.slides.forEach((slide, i) => {
@@ -213,6 +235,7 @@
                             const index = Math.round(this.viewport.scrollLeft / Math.max(1, width));
                             if (index !== this.index) {
                                 this.index = Math.min(index, this.positions() - 1);
+                                this.loadAround();
                                 this.updateDots();
                             }
                         });

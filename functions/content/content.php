@@ -82,3 +82,26 @@ add_action("comment_form_before", static function () {
         add_action("comment_form", static fn() => Akismet::display_comment_form_privacy_notice());
     }
 });
+
+/**
+ * Inhaltsbilder ohne Breite/Hoehe im Markup (Jetpack-Galerien, Slideshows, von Hand eingefuegte
+ * Bilder) bekommen von WordPress kein loading="lazy" - die Blogliste lud deshalb alle auf einmal,
+ * oft die Originale in voller Groesse. Die Entscheidung trifft weiter der Core (die ersten Bilder
+ * einer Seite bleiben sofort ladend); das Theme liefert ihm nur die fehlenden Masse, soweit das
+ * Markup sie kennt (data-orig-size), und setzt selbst keine width/height-Attribute.
+ */
+add_filter("wp_content_img_tag", static function ($html, $context) {
+    if (!is_string($html) || str_contains($html, " loading=") || !function_exists("wp_get_loading_optimization_attributes")) {
+        return $html;
+    }
+    $width  = 1000;
+    $height = 1000;
+    if (preg_match('/\sdata-orig-size="(\d+),(\d+)"/', $html, $m)) {
+        [$width, $height] = [(int) $m[1], (int) $m[2]];
+    }
+    $attrs = wp_get_loading_optimization_attributes("img", ["width" => $width, "height" => $height], $context);
+    if (($attrs["loading"] ?? "") !== "lazy") {
+        return $html;
+    }
+    return preg_replace('/^<img\b/i', '<img loading="lazy"', $html, 1);
+}, 10, 2);

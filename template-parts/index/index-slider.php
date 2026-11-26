@@ -93,17 +93,27 @@ $effect = $pt->get("animation") === "fade" ? "fade" : "slide"; ?>
                 <?php foreach ($slides as $i => $slide) {
                     $heading = $i === 0 ? "h1" : "p"; ?>
                     <div class="carousel__slide hero-slide" role="group" aria-roledescription="slide">
-                        <?php if (!empty($slide["image"])) {
-                            echo wp_get_attachment_image($slide["image"], "bigbanner-thumb", false, [
+                        <?php /* Nur das erste Bild laedt sofort. Die uebrigen liegen (Ueberblenden) unsichtbar
+                                 im sichtbaren Bereich - loading="lazy" laedt sie dort trotzdem alle auf einmal.
+                                 Sie stehen deshalb in data-src, carousel.js holt jeweils die Nachbarn der
+                                 gezeigten Slide. Ohne JavaScript greift das <noscript>-Bild. */
+                        $img = "";
+                        if (!empty($slide["image"])) {
+                            $img = wp_get_attachment_image($slide["image"], "bigbanner-thumb", false, [
                                 "class"         => "hero-slide__img",
                                 "alt"           => "",
                                 "sizes"         => "100vw",
                                 "loading"       => $i === 0 ? "eager" : "lazy",
                                 "fetchpriority" => $i === 0 ? "high" : "auto",
                             ]);
-                        } elseif (!empty($slide["image_url"])) { ?>
-                            <img class="hero-slide__img" src="<?php echo esc_url($slide["image_url"]); ?>" alt="" <?php echo $i ? 'loading="lazy"' : 'fetchpriority="high"'; ?>>
-                        <?php } ?>
+                        } elseif (!empty($slide["image_url"])) {
+                            $img = '<img class="hero-slide__img" src="' . esc_url($slide["image_url"]) . '" alt="" ' . ($i ? 'loading="lazy"' : 'fetchpriority="high"') . ">";
+                        }
+                        if ($img !== "" && $i > 0) {
+                            echo str_replace([" src=", " srcset="], [" data-src=", " data-srcset="], $img), "<noscript>", $img, "</noscript>";
+                        } else {
+                            echo $img;
+                        } ?>
                         <div class="hero-slide__caption flex-slider-center">
                             <div class="site-wrap">
                                 <p class="hero-slide__eyebrow slide-text-bg1<?php echo $visibility("title"); ?>"><?php echo esc_html($slide["title"]); ?></p>
