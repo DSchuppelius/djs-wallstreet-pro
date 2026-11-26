@@ -179,7 +179,7 @@ add_action('wp_head', function () {
         $srcs[$handle] = $styles->registered[$handle]->src ?? '';
     }
 
-    $cache_key = 'djs_ws_font_preload_v3_' . md5(implode('|', $srcs));
+    $cache_key = 'djs_ws_font_preload_v4_' . md5(implode('|', $srcs));
     $out = get_transient($cache_key);
 
     if ($out === false) {
@@ -205,6 +205,9 @@ add_action('wp_head', function () {
                     $family = trim($blk[2]);
                     // Nur die eigentliche Seitenschrift - die Alias-Familien (SiteFontBold ...) braucht der erste Bildschirm nicht.
                     if (preg_match('/^SiteFont./i', $family)) continue;
+                    // Von den Icon-Schriften nur Material Icons (Buttons, Menue): "Bootstrap Icons" und die
+                    // alte Familie "FontAwesome" nutzt das Theme nicht - vorab geladen waren das 120 kB je Seite umsonst.
+                    if ($handle === 'icon_font-faces' && strcasecmp($family, 'Material Icons') !== 0) continue;
                     if (!preg_match('/url\((["\']?)([^)]+\.woff2[^)]*)\1\)/i', $blk[3], $u)) continue;
                     $url = $u[2];
                     if (str_starts_with($url, '//')) {
