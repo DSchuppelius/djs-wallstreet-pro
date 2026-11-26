@@ -409,6 +409,15 @@
         transform: rotate(360deg);
     }
 
+    /* Stile mit Drehung (1, 5, 6): der Schatten liegt am ruhenden Rahmen, sonst wandert er mit dem Symbol im Kreis */
+    .service-grid:is(.service-grid--v1, .service-grid--v5, .service-grid--v6) .service-card__icon {
+        box-shadow: none;
+    }
+
+    .service-grid:where(.service-grid--v1, .service-grid--v5, .service-grid--v6) .service-card__visual:where(:has(> .service-card__icon)) {
+        filter: drop-shadow(0 10px 8px color-mix(in oklab, var(--color-primary) 45%, transparent));
+    }
+
     /* 2: Bild bzw. Symbol waechst, das Symbol bekommt einen Ring in Themefarbe */
     .service-grid--v2 .service-card__visual :is(img, .service-card__icon) {
         transition-duration: 0.2s;

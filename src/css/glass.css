@@ -2396,6 +2396,10 @@
         width: 12.5rem;
         height: 12.5rem;
         margin: calc(-6.25rem - var(--bigborder)) auto 0;
+        /* Schatten am ruhenden Kreis, nicht am Symbol: das dreht sich beim Ueberfahren, der Schatten bleibt unten */
+        border-radius: 50%;
+        box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
+        filter: none;
         text-decoration: none;
     }
 
@@ -2407,7 +2411,7 @@
         background: #2a2c33;
         color: #fff;
         font-size: 6.25rem;
-        box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.7);
+        box-shadow: none;
     }
 
     .service-card--v1.has-image .service-card__visual img {
@@ -3098,6 +3102,12 @@
     @media (hover: hover) {
         .portfolio-card__overlay {
             background: color-mix(in oklab, color-mix(in oklab, var(--color-primary) 88%, #000) 70%, transparent);
+        }
+
+        /* Auf der Themefarbe waere der Button in Themefarbe unsichtbar: dunkel wie bei den Service-Kacheln */
+        .portfolio-card .portfolio-card__actions .btn-primary {
+            background: #32343c;
+            color: #fff;
         }
 
         /* Auch die dunkle Kante faerbt sich ein */
