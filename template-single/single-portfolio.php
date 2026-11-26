@@ -58,13 +58,22 @@ $full      = has_post_thumbnail() ? wp_get_attachment_image_url(get_post_thumbna
             <div class="portfolio-detail__filler surface-card" aria-hidden="true"></div>
         </aside>
 
-        <figure class="portfolio-detail__media surface-card">
+        <?php /* Wie bisher: ist die linke Spalte hoeher als das Bild, steht es mittig zwischen zwei Fuellflaechen */ ?>
+        <div class="portfolio-detail__picture">
             <?php if ($full) { ?>
-                <a href="<?php echo esc_url($full); ?>" data-lightbox="project" data-title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail("bigport-thumb", ["class" => "portfolio-detail__img", "loading" => "eager", "fetchpriority" => "high"]); ?>
-                </a>
+                <div class="portfolio-detail__filler portfolio-detail__filler--top surface-card" aria-hidden="true"></div>
             <?php } ?>
-        </figure>
+            <figure class="portfolio-detail__media surface-card">
+                <?php if ($full) { ?>
+                    <a href="<?php echo esc_url($full); ?>" data-lightbox="project" data-title="<?php the_title_attribute(); ?>">
+                        <?php the_post_thumbnail("bigport-thumb", ["class" => "portfolio-detail__img", "loading" => "eager", "fetchpriority" => "high"]); ?>
+                    </a>
+                <?php } ?>
+            </figure>
+            <?php if ($full) { ?>
+                <div class="portfolio-detail__filler portfolio-detail__filler--bottom surface-card" aria-hidden="true"></div>
+            <?php } ?>
+        </div>
     </article>
 
     <?php comments_template("", true); ?>

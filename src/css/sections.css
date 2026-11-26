@@ -1115,10 +1115,36 @@
         }
     }
 
+    /* Bildspalte: das Bild in seiner eigenen Flaeche, darueber und darunter je eine Fuellflaeche
+       (wie bisher .portfolio-detail-filler top/bottom) - beide wachsen gleich, das Bild steht
+       mittig. Ohne Bild fuellt die leere Flaeche die Spalte. */
+    .portfolio-detail__picture {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-width: 0;
+    }
+
     .portfolio-detail__media {
         margin: 0;
         padding: 0.75rem;
         overflow: hidden;
+    }
+
+    .portfolio-detail__media:only-child {
+        flex: 1 1 auto;
+    }
+
+    .portfolio-detail__picture > .portfolio-detail__filler {
+        flex: 1 1 1.25rem;
+        min-height: 1.25rem;
+    }
+
+    /* Einspaltig gibt es neben dem Bild nichts aufzufuellen (wie bisher) */
+    @media (width < 62rem) {
+        .portfolio-detail__picture > .portfolio-detail__filler {
+            display: none;
+        }
     }
 
     .portfolio-detail__img {
@@ -1166,6 +1192,11 @@
     .portfolio-detail__filler {
         flex: 1 1 4rem;
         padding: 0;
+    }
+
+    /* Fuellflaechen wie bisher durchscheinender als die Inhaltsflaechen (halbe Deckkraft) */
+    .has-frame .page-shell.portfolio-detail .portfolio-detail__filler {
+        background-color: color-mix(in srgb, var(--glass-panel) 50%, transparent);
     }
 
     /* Blaettern: zwei Buttons nebeneinander */
