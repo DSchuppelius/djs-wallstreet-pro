@@ -958,12 +958,52 @@
         transition: transform 0.7s var(--ease-snappy);
     }
 
-    .portfolio-card__placeholder {
+    /* Ohne Beitragsbild: graue Kachel, Titel auf einem Band in Themefarbe (ersetzt eine eigens gebaute Grafik) */
+    .portfolio-card--plain .portfolio-card__media {
+        background: color-mix(in oklab, var(--color-base-300) 80%, var(--color-base-content));
+    }
+
+    /* Das Band ist in allen Kacheln gleich hoch (Anteil der Kachelhoehe), laengere Titel enden nach drei Zeilen */
+    .portfolio-card__band {
+        position: absolute;
+        inset-inline: 0;
+        top: 28%;
         display: grid;
         place-items: center;
-        height: 100%;
-        font-size: 3rem;
-        opacity: 0.4;
+        height: 44%;
+        padding: 0 1rem;
+        background: var(--color-primary);
+        transition: opacity 0.3s ease;
+    }
+
+    .portfolio-card__band-title {
+        display: -webkit-box;
+        overflow: hidden;
+        color: #fff;
+        font-size: clamp(1.05rem, 1.5vw, 1.375rem);
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+        text-wrap: balance;
+        overflow-wrap: anywhere;
+        text-shadow: 2px 3px 5px rgb(0 0 0 / 0.55);
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    /* Liegt das Overlay darueber (Hover bzw. dauerhaft auf Touch-Geraeten), stuende der Titel doppelt da */
+    .portfolio-card:is(:hover, :focus-within) .portfolio-card__band {
+        opacity: 0;
+    }
+
+    @media (hover: none) {
+        .portfolio-card__band {
+            display: none;
+        }
+
+        .portfolio-card--plain .portfolio-card__overlay {
+            background: color-mix(in oklab, var(--color-primary) 80%, #000);
+        }
     }
 
     .portfolio-card__overlay {

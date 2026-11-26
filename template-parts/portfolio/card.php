@@ -9,6 +9,7 @@
  *
  * Portfolio-Kachel mit Hover-Overlay. $args: item (djs_portfolio_item), button (Text oder ""),
  * shape ("", "block" oder "clover").
+ * Ohne Beitragsbild zeigt die Kachel statt einer Grafik den Titel auf einem Band in Themefarbe.
  */
 
 $item   = $args["item"] ?? [];
@@ -18,11 +19,16 @@ $index  = (int) ($args["index"] ?? 0);
 if (!$item) {
     return;
 }
+$plain  = empty($item["image"]);
 $target = $item["new_tab"] ? ' target="_blank" rel="noopener"' : ""; ?>
 
-<article class="portfolio-card<?php echo $shape ? " portfolio-card--" . esc_attr($shape) : ""; ?> reveal" style="--i: <?php echo $index; ?>">
+<article class="portfolio-card<?php echo $shape ? " portfolio-card--" . esc_attr($shape) : ""; echo $plain ? " portfolio-card--plain" : ""; ?> reveal" style="--i: <?php echo $index; ?>">
     <div class="portfolio-card__media">
-        <?php echo $item["image"] ?: '<span class="portfolio-card__placeholder material-icons" aria-hidden="true">image</span>'; ?>
+        <?php if ($plain) { ?>
+            <div class="portfolio-card__band" aria-hidden="true"><span class="portfolio-card__band-title"><?php echo esc_html($item["title"]); ?></span></div>
+        <?php } else {
+            echo $item["image"];
+        } ?>
         <div class="portfolio-card__overlay">
             <h3 class="portfolio-card__title"><a href="<?php echo esc_url($item["url"]); ?>"<?php echo $target; ?>><?php echo esc_html($item["title"]); ?></a></h3>
             <?php if ($item["excerpt"] !== "") { ?>
