@@ -55,7 +55,7 @@
     }
 
     .entry-content :where(li)::marker {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .entry-content :where(strong, b) {
@@ -267,7 +267,7 @@
     .entry-content .is-style-outline .wp-block-button__link {
         background: transparent;
         border: 2px solid currentColor;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* Trennlinie: volle Breite wie bisher - eigene Aussenabstaende aus dem Editor (z. B.
@@ -487,7 +487,7 @@
         font-size: 3.6em;
         font-weight: 700;
         line-height: 0.85;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .sc-grid {
@@ -535,7 +535,7 @@
     }
 
     .typo-para-icons .para-box > i {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .sc-tooltip .tooltip > a {

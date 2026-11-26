@@ -271,7 +271,7 @@
     }
 
     .post-card__title a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .post-card__content {
@@ -366,7 +366,7 @@
     }
 
     .post-meta a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .post-meta .material-icons {
@@ -567,7 +567,7 @@
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: var(--color-primary);
+        color: var(--primary-text);
         transition: color 0.3s ease;
     }
 
@@ -607,7 +607,7 @@
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .author-box__name {
@@ -739,7 +739,7 @@
     }
 
     .sidebar-widget a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .widget .wp-block-search__inside-wrapper,
@@ -832,7 +832,7 @@
 
     .comment-title .material-icons,
     .comment-reply-title .material-icons {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .comment-reply-title small {
@@ -982,7 +982,7 @@
         position: absolute;
         top: 1rem;
         left: 0;
-        color: var(--color-primary);
+        color: var(--primary-text);
         font-family: "Material Icons";
         font-size: 1.125rem;
         font-weight: normal;
@@ -1031,7 +1031,7 @@
 
     .empty-state__icon {
         font-size: 3rem;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .empty-state__code {
@@ -1157,7 +1157,7 @@
         margin-bottom: 0.5rem;
         border-radius: 999px;
         background: color-mix(in oklab, var(--color-primary) 16%, transparent);
-        color: var(--color-primary);
+        color: var(--primary-text);
         font-size: 1.375rem;
     }
 
@@ -1320,7 +1320,7 @@
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .team-card__text {

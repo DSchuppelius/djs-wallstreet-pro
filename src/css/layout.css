@@ -62,7 +62,7 @@
     .social-links__link:hover,
     .social-links__link:focus-visible {
         background-color: color-mix(in oklab, var(--color-primary) 16%, transparent);
-        color: var(--color-primary);
+        color: var(--primary-text);
         transform: translateY(-1px);
     }
 
@@ -195,7 +195,7 @@
 
     /* Lupe wie bisher in Themefarbe (Vollbild-Suche und Pop-up-Suche) */
     .site-header__tools :is([data-search-open], .site-popover > summary) .fa-magnifying-glass {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* Logo */
@@ -355,7 +355,7 @@
 
     .site-menu__link:hover,
     .site-menu__link:focus-visible {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .site-menu__row {
@@ -390,7 +390,7 @@
 
     .site-menu .active>.site-menu__link,
     .site-menu .active>.site-menu__row>.site-menu__link {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* ---------------------------------------------------------------- */
@@ -997,7 +997,7 @@
     }
 
     .site-footer .widget a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .site-footer__bar {
@@ -1036,7 +1036,7 @@
 
     .footer-copyright__links a:hover,
     .footer-copyright__text a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .footer-copyright__text {

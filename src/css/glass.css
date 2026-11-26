@@ -465,7 +465,7 @@
         -webkit-backdrop-filter: var(--glass-filter);
         backdrop-filter: var(--glass-filter);
         border-block: 1px solid rgb(255 255 255 / 0.07);
-        color: var(--color-primary);
+        color: var(--primary-text);
         font-size: 0.9rem;
     }
 
@@ -491,7 +491,7 @@
     }
 
     .page-breadcrumbs a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
         text-decoration: none;
     }
 
@@ -500,7 +500,7 @@
     }
 
     .page-breadcrumbs [aria-current] {
-        color: var(--color-primary);
+        color: var(--primary-text);
         font-weight: 400;
     }
 
@@ -921,7 +921,7 @@
     /* Links im Fliesstext (Text-Widgets) wie bisher in Themefarbe und unterstrichen; ohne die
        Option "Links unterstreichen" verschwindet die Linie beim Darueberfahren */
     :is(.sidebar-widget, .footer_widget_column) p:not(.wp-block-tag-cloud) a:not(.tag-cloud-link) {
-        color: var(--color-primary);
+        color: var(--primary-text);
         text-decoration: underline;
     }
 
@@ -981,13 +981,13 @@
     }
 
     .sidebar-widget a.wp-block-latest-comments__comment-author {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* Klassisches Widget "Neueste Kommentare": Links (Autor mit Website, Beitrag) wie bisher in
        Themefarbe, nicht verlinkte Autoren in Textfarbe */
     .sidebar-widget .recentcomments a {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .sidebar-widget .wp-block-latest-comments__comment-date {
@@ -1165,12 +1165,12 @@
 
     .post-date-badge__comments :is(.material-icons, .fa-comment) {
         margin-inline-end: 5px;
-        color: var(--color-primary);
+        color: var(--primary-text);
         font-size: 0.9rem;
     }
 
     .post-date-badge__comments:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     @media (width >= 40rem) {
@@ -1654,7 +1654,7 @@
     /* Ueberschriften im Beitrag wie bisher: alle Ebenen in Themefarbe, Groessen, Staerken und
        Zeilenhoehen der bisherigen font.css/style.css (h2 folgt dem Customizer "Beitragstitel") */
     .entry-content :is(h1, h2, h3, h4, h5, h6) {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .entry-content h1 {
@@ -2091,7 +2091,7 @@
 
     .site-footer .social-links--footer .social-links__link:hover {
         background: none;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .site-footer .footer-copyright {
@@ -2114,11 +2114,11 @@
     }
 
     .site-footer .footer-copyright :is(.footer-copyright__links, .footer-copyright__text) a {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .site-footer .footer-copyright :is(.footer-copyright__links, .footer-copyright__text) a:hover {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* Schmal: Platz unter dem Copyright fuer Cookie-Knopf und Nach-oben-Reiter */
@@ -2618,7 +2618,7 @@
     }
 
     .home-blog-section .post-card:hover .post-card__title a {
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     /* ---------------------------------------------------------------- */
@@ -3238,7 +3238,8 @@
         color: var(--color-base-content);
     }
 
-    /* Features: Titel 32px leicht, Punkte 22.4px, Text 16px leicht im Blocksatz */
+    /* Features: Titel 32px leicht, Punkte 22.4px, Text 16px leicht im Blocksatz.
+       Die Punkt-Ueberschriften ohne Blocksatz: bei zwei Zeilen riss er die erste weit auseinander. */
     .features__title {
         font-size: clamp(1.625rem, 1.3rem + 0.9vw, 2rem);
         font-weight: 300;
@@ -3249,7 +3250,8 @@
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 25px;
-        text-align: justify;
+        text-align: start;
+        text-wrap: balance;
     }
 
     .feature-item__text {

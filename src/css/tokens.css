@@ -11,6 +11,9 @@
 [data-theme] {
     --color-primary: var(--link-color, #2793ff);
     --color-primary-content: var(--link-color-contrast, #ffffff);
+    /* Themefarbe als TEXTfarbe (Links, Ueberschriften, Eckdaten): Flaechen und Buttons behalten
+       --color-primary, Text bekommt --primary-text - siehe unten, je Farbschema lesbar abgestimmt. */
+    --primary-text: var(--color-primary);
 
     /* Customizer "Theme corner": Basis-, kleiner und sehr kleiner Radius, Button-Radius */
     --radius-box: var(--border-base, 1rem);
@@ -203,5 +206,30 @@
 @media (width >= 120rem) {
     :root {
         --container-site: 98.125rem;
+    }
+}
+
+/*
+ * Lesbare Themefarbe fuer Text. Die Skin-Farbe selbst (z. B. #2793ff) kommt auf den grauen
+ * Glasflaechen nur auf rund 2,8:1 Kontrast, auf Weiss auf 3,2:1. Als Textfarbe wird sie deshalb
+ * bei gleichem Farbton nur in der Helligkeit begrenzt: im dunklen Schema mindestens 80 %, im
+ * hellen hoechstens 55 % (OKLCH). Skin-Farben, die schon hell bzw. dunkel genug sind, bleiben
+ * unveraendert. Ohne Unterstuetzung fuer relative Farben bleibt es bei der Skin-Farbe.
+ */
+@supports (color: oklch(from red l c h)) {
+    :root,
+    [data-theme] {
+        --primary-text: oklch(from var(--color-primary) max(l, 0.8) c h);
+    }
+
+    [data-theme="wallstreet-light"],
+    :root:not([data-theme]) {
+        --primary-text: oklch(from var(--color-primary) min(l, 0.55) c h);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+            --primary-text: oklch(from var(--color-primary) max(l, 0.8) c h);
+        }
     }
 }

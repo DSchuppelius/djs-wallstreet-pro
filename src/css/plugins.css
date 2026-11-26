@@ -468,7 +468,7 @@ rs-module-wrap a:not([class*="btn"]) {
 #script_fullscreen h3 {
     margin: 0;
     padding: 1.25rem 0;
-    color: var(--color-primary);
+    color: var(--primary-text);
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -1032,7 +1032,7 @@ form.cookies .btn {
     font-weight: 600 !important;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--color-primary) !important;
+    color: var(--primary-text) !important;
 }
 
 /* Der Textfluss-Abstand des Beitrags gilt nicht innerhalb der Box: Knoepfe 12px unter der Bezeichnung */
@@ -1218,7 +1218,7 @@ form.cookies .btn {
 }
 
 .woocommerce :is(ul.products li.product .price, div.product p.price, div.product span.price) {
-    color: var(--color-primary);
+    color: var(--primary-text);
 }
 
 .woocommerce :is(.woocommerce-message, .woocommerce-info) {
