@@ -1054,6 +1054,26 @@
         mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' rx='2.5' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3Cpath d='M6.2 4.6 11 8l-4.8 3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
     }
 
+    /* Laengere Eintraege: die zweite Zeile beginnt unter dem Text, nicht unter dem Symbol
+       (haengender Einzug um Symbolbreite + Abstand). Bloecke im Eintrag (Datum, Auszug,
+       Unterlisten) erben den Einzug nicht. */
+    .sidebar-widget :not(.wp-tag-cloud, .tagcloud) > li:not(:has(img)):has(> a:first-child),
+    .sidebar-widget .jetpack-top-posts-item:not(:has(img)) .jetpack-top-posts-title,
+    .sidebar-widget .recentcomments:has(.comment-author-link > a) {
+        padding-inline-start: 1.225rem;
+        text-indent: -1.225rem;
+    }
+
+    .sidebar-widget li > *,
+    .sidebar-widget .jetpack-top-posts-title > * {
+        text-indent: 0;
+    }
+
+    /* Unterebenen bleiben wie bisher 40px eingerueckt - der Einzug des Eintrags zaehlt nicht mit */
+    .sidebar-widget li:not(:has(img)):has(> a:first-child) > ul.children {
+        margin-inline-start: -1.225rem;
+    }
+
     .sidebar-widget ul.children > li:not(:has(img)) > a:first-child::before {
         -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 .5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM6.3 4.6 11.2 8l-4.9 3.4z'/%3E%3C/svg%3E");
         mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 .5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zM6.3 4.6 11.2 8l-4.9 3.4z'/%3E%3C/svg%3E");

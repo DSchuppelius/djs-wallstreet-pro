@@ -43,6 +43,13 @@
     border-bottom: 0;
 }
 
+/* "Aktuelle Beitraege" (Block): WordPress setzt zwischen den Eintraegen den Block-Abstand (24px,
+   ungelayert) - die Liste ist damit weiter als alle anderen. Abstand wie in den uebrigen Listen
+   allein aus dem Innenabstand der Eintraege. */
+.sidebar-widget .wp-block-latest-posts > li {
+    margin-block: 0;
+}
+
 /* Contact Form 7 */
 .wpcf7 form {
     display: grid;
