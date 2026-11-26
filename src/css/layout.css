@@ -1144,6 +1144,12 @@
             page-fader-release 0.01s linear 8s forwards;
     }
 
+    /* Uebernahme vom Seitenwechsel: die Blende war auf der letzten Seite schon zu sehen und steht
+       deshalb sofort, ohne Wartezeit und ohne erneutes Einblenden */
+    .js.fader-continue .page-fader {
+        animation: page-fader-release 0.01s linear 8s forwards;
+    }
+
     .js .page-fader.is-hidden {
         display: none;
     }

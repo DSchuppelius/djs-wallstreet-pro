@@ -434,6 +434,7 @@
             const opacity = parseFloat(getComputedStyle(fader).opacity) || 0;
             if (instant || opacity < 0.05 || mqReducedMotion.matches || typeof fader.animate !== "function") {
                 fader.classList.add("is-hidden");
+                root.classList.remove("fader-continue");
                 return;
             }
             // Schon sichtbar: den vollen Rahmen kurz zeigen, dann weich ausblenden
@@ -441,10 +442,20 @@
                 .animate([{ opacity }, { opacity: 0 }], { duration: 350, delay: 200, easing: "ease", fill: "forwards" })
                 .finished.then(() => {
                     fader.classList.add("is-hidden");
+                    root.classList.remove("fader-continue");
                     fader.getAnimations().forEach((animation) => animation.cancel());
                 })
                 .catch(() => {});
         };
+
+        // Seitenwechsel mit schon sichtbarer Blende: die naechste Seite uebernimmt sie nahtlos
+        // (Inline-Skript in page-fader.php), statt sie nach 0,3 s ein zweites Mal einzublenden.
+        window.addEventListener("pagehide", () => {
+            if (fader.classList.contains("is-hidden") || parseFloat(getComputedStyle(fader).opacity) < 0.5) return;
+            try {
+                sessionStorage.setItem("djsFader", String(Date.now()));
+            } catch (e) {}
+        });
 
         // Fortschritt: die Seite selbst (das Skript laeuft deferred), die Schriften und alle Bilder,
         // die gerade noch laden (spaet nachladende loading="lazy"-Bilder zaehlen nicht).

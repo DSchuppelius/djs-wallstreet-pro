@@ -12,7 +12,9 @@
  * Der leuchtende Rahmen (SVG) zeigt den Ladefortschritt, theme.js setzt --p.
  */
 ?>
-<script>document.documentElement.classList.add("js", "has-page-fader");</script>
+<?php /* War die Blende beim Verlassen der letzten Seite schon sichtbar (theme.js merkt es sich),
+         steht sie hier sofort - sonst blitzte die neue Seite auf und die Blende erschiene ein zweites Mal. */ ?>
+<script>(function (c) { c.add("js", "has-page-fader"); try { var t = +sessionStorage.getItem("djsFader"); sessionStorage.removeItem("djsFader"); if (t && Date.now() - t < 10000) c.add("fader-continue"); } catch (e) {} })(document.documentElement.classList);</script>
 <div id="page_fader" class="page-fader" aria-hidden="true">
     <div class="page-fader__card <?php row_frame_border(""); ?>">
         <svg class="page-fader__frame" focusable="false">
