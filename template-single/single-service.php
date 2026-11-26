@@ -28,11 +28,12 @@ while (have_posts()) {
                 get_template_part("template-parts/content/content", "date-badge");
             } ?>
             <header class="entry__header">
+                <?php /* Titel steht als <h1> im Banner; im Beitrag wie bisher neben der Plakette wiederholt */ ?>
+                <p class="entry__title post-card__title" aria-hidden="true"><?php the_title(); ?></p>
+                <?php /* Symbol der Dienstleistung als Emblem rechts neben dem Titel (Kreis wie in den Kacheln) */ ?>
                 <?php if ($item["icon"]) { ?>
                     <span class="service-card__icon entry__icon" aria-hidden="true"><i class="fa <?php echo esc_attr($item["icon"]); ?>"></i></span>
                 <?php } ?>
-                <?php /* Titel steht als <h1> im Banner; im Beitrag wie bisher neben der Plakette wiederholt */ ?>
-                <p class="entry__title post-card__title" aria-hidden="true"><?php the_title(); ?></p>
             </header>
             <div class="entry-content">
                 <?php if ($item["text"] !== "") { ?>
