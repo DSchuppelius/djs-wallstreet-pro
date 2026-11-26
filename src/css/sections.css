@@ -756,7 +756,7 @@
 
     .quote-card__name {
         font-weight: 650;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .section--bleed .quote-card__name {
@@ -864,7 +864,7 @@
         font-family: Georgia, serif;
         font-size: 6rem;
         line-height: 1;
-        color: var(--color-primary);
+        color: var(--primary-text);
         opacity: 0.9;
     }
 
@@ -1120,7 +1120,7 @@
 
     .portfolio-facts dd {
         margin: 0;
-        color: var(--color-primary);
+        color: var(--primary-text);
     }
 
     .portfolio-detail__filler {

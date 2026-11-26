@@ -71,7 +71,7 @@
     /* Linkfarbe = Skin-Farbe aus dem Customizer (Theme-Stil). Beim Darueberfahren bleibt sie
        wie bisher gleich; Bereiche mit eigener Hover-Farbe setzen diese selbst. */
     a {
-        color: var(--color-primary);
+        color: var(--primary-text);
         text-decoration-thickness: 1px;
         text-underline-offset: 0.2em;
         transition: color 0.15s ease;
