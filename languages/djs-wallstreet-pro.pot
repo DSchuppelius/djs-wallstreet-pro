@@ -1645,3 +1645,11 @@ msgstr ""
 #: functions/customizer/childs/customizer-global.php
 msgid "Always show the scrollbar (the layout does not jump between short and long pages)"
 msgstr ""
+
+#: functions/customizer/childs/customizer-home.php
+msgid "Page for the content section"
+msgstr ""
+
+#: functions/customizer/childs/customizer-home.php
+msgid "The content of this page is shown in the home page section named content. Enable and position the section in the theme layout manager."
+msgstr ""

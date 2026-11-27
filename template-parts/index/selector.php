@@ -42,6 +42,10 @@ if ($data) {
                 //****** get index  client  ********
                 get_template_part("template-parts/index/index", "client");
                 break;
+            case "content":
+                //****** get index content (page content)  ********
+                get_template_part("template-parts/index/index", "content");
+                break;
             case "partner":
                 //****** get index  client  ********
                 get_template_part("template-parts/index/index", "partner");

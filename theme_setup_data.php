@@ -151,6 +151,7 @@ class DJS_Wallstreet_Pro_Theme_Setup extends DJS_Setup {
             "home_blog_counts" => 3,
             "home_blog_design" => 1,
             "home_meta_description" => "",
+            "home_content_page" => 0,
 
             // Blog Meta
             "blog_template_content_excerpt_get_setting" => "excerpt",
