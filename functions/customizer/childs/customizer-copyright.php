@@ -32,7 +32,8 @@ class theme_copyright_customizer extends Theme_Customizer {
 
     //HACK Theme Check - required to add theme in WordPress theme library (found no sanitizer)
     private function hack_4_theme_check__footer_link(){
-        return sanitize_link_field(esc_html__('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "djs-wallstreet-pro"));
+        // Kein esc_html__(): der Standardwert enthaelt Links und wuerde sonst in der Customizer-Vorschau als Quelltext erscheinen.
+        return sanitize_link_field(__('&nbsp;<a href="/contact">Contact</a>&nbsp;|&nbsp;<a href="/impress">Impress</a>&nbsp;|&nbsp;<a href="/privacy">Privacy policy</a>&nbsp;|&nbsp;<a href="/terms">General Terms and Conditions</a>&nbsp;|&nbsp;<a href="/rights">Rights of withdrawal</a>&nbsp;|&nbsp;<a href="/shipping-costs">Shipping costs</a>&nbsp;', "djs-wallstreet-pro"));
     }
 
     public function customize_register_settings_and_controls($wp_customize) {
