@@ -39,7 +39,7 @@ class theme_global_customizer extends Theme_Customizer {
         $wp_customize->add_section("wallstreet_datetime_section", [
             "title" => esc_html__("Datetime section", "djs-wallstreet-pro"),
             "panel" => "global_theme_settings",
-            "description" => esc_html__('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "djs-wallstreet-pro"),
+            "description" => wp_kses_post(__('For more information, visit <a href="https://www.php.net/manual/en/datetime.format.php">php.net (datetime.format)</a>', "djs-wallstreet-pro")),
         ]);
     }
 
