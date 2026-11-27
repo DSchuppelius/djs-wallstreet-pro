@@ -146,8 +146,54 @@ function djs_meta_description(): string {
         }
     }
 
+    // Startseite: eigener Text aus dem Customizer. Eine statische Startseite mit "page_description" hat oben Vorrang.
+    $description = djs_home_meta_description();
+    if ($description !== '') {
+        return $description;
+    }
+
     return get_bloginfo('name') . ' - ' . get_bloginfo('description');
 }
+
+/**
+ * Meta-Beschreibung der Startseite aus dem Customizer, auf 155 Zeichen gekürzt.
+ * Leer, wenn nicht die Startseite angezeigt wird oder kein Text hinterlegt ist.
+ */
+function djs_home_meta_description(): string {
+    if (!is_front_page()) {
+        return '';
+    }
+    $description = trim(wp_strip_all_tags((string) DJS_Wallstreet_Pro_Theme_Setup::instance()->get('home_meta_description'), true));
+    return $description !== '' ? wp_html_excerpt($description, 155, '…') : '';
+}
+
+/* -------------------------------------------------------------------------
+ *  Open Graph (Plugins "OG" und Jetpack)
+ * ---------------------------------------------------------------------- */
+
+// Beide Plugins schreiben og:-Angaben in den <head>. Ist "OG" aktiv, schweigt Jetpack, sonst stehen sie doppelt da.
+add_filter('jetpack_enable_open_graph', function ($enabled) {
+    return class_exists('iWorks_OpenGraph') ? false : $enabled;
+}, 100);
+
+// og:description und twitter:description der Startseite folgen der Meta-Beschreibung aus dem Customizer.
+function djs_og_home_description($tags) {
+    $description = djs_home_meta_description();
+    if ($description !== '' && is_array($tags)) {
+        $tags['description'] = $description;
+    }
+    return $tags;
+}
+add_filter('og_og_array', 'djs_og_home_description');
+add_filter('og_twitter_array', 'djs_og_home_description');
+
+add_filter('jetpack_open_graph_tags', function ($tags) {
+    $description = djs_home_meta_description();
+    if ($description !== '' && is_array($tags)) {
+        $tags['og:description'] = $description;
+    }
+    return $tags;
+});
 
 function djs_meta_keywords(): string {
     $keywords = ['Blog'];

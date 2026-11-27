@@ -89,6 +89,20 @@ class theme_home_customizer extends Theme_Customizer {
             "priority" => 100,
         ]);
 
+        // Meta-Beschreibung der Startseite (Kernbereich "Homepage-Einstellungen")
+        $wp_customize->add_setting($this->theme_options_name . "[home_meta_description]", [
+            "default" => "",
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "sanitize_textarea_field",
+            "type" => "option",
+        ]);
+        $wp_customize->add_control($this->theme_options_name . "[home_meta_description]", [
+            "label" => esc_html__("Meta description of the home page", "djs-wallstreet-pro"),
+            "description" => esc_html__("Shown by search engines below the title, up to 155 characters. Empty: site title and tagline.", "djs-wallstreet-pro"),
+            "section" => "static_front_page",
+            "type" => "textarea",
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_same_height]", [
             "default" => false,
             "capability" => "edit_theme_options",

@@ -216,12 +216,14 @@ function djs_portfolio_item(?int $post_id = null, string $size = 'port-thumb', i
     $project   = (string) get_post_meta($post_id, 'meta_project_link', true);
     $button    = (string) get_post_meta($post_id, 'meta_button_link', true);
     $thumb_id  = get_post_thumbnail_id($post_id);
+    // Alt-Text aus der Mediathek, sonst der Projekttitel: die Kachel besteht sichtbar nur aus dem Bild
+    $alt       = $thumb_id ? (trim((string) get_post_meta($thumb_id, '_wp_attachment_image_alt', true)) ?: str_replace(['&shy;', "\u{AD}"], '', wp_strip_all_tags(get_the_title($post_id)))) : '';
 
     return [
         'id'          => $post_id,
         'title'       => get_the_title($post_id),
         'excerpt'     => portfolio_excerpt($words, $post_id),
-        'image'       => $thumb_id ? wp_get_attachment_image($thumb_id, $size, false, ['class' => 'portfolio-card__img', 'loading' => 'lazy', 'alt' => '']) : '',
+        'image'       => $thumb_id ? wp_get_attachment_image($thumb_id, $size, false, ['class' => 'portfolio-card__img', 'loading' => 'lazy', 'alt' => $alt]) : '',
         'full'        => $thumb_id ? (string) wp_get_attachment_image_url($thumb_id, 'full') : '',
         'url'         => $project !== '' ? $project : get_permalink($post_id),
         'new_tab'     => (bool) get_post_meta($post_id, 'meta_project_target', true),

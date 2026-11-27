@@ -2462,3 +2462,11 @@ msgstr "← Ältere Kommentare"
 #: functions/customizer/childs/customizer-global.php
 msgid "Always show the scrollbar (the layout does not jump between short and long pages)"
 msgstr "Scrollleiste immer anzeigen (das Layout springt nicht zwischen kurzen und langen Seiten)"
+
+#: functions/customizer/childs/customizer-home.php
+msgid "Meta description of the home page"
+msgstr "Meta-Beschreibung der Startseite"
+
+#: functions/customizer/childs/customizer-home.php
+msgid "Shown by search engines below the title, up to 155 characters. Empty: site title and tagline."
+msgstr "Zeigen Suchmaschinen unter dem Titel an, bis zu 155 Zeichen. Leer: Seitentitel und Untertitel."
