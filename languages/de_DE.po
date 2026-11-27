@@ -2470,3 +2470,11 @@ msgstr "Meta-Beschreibung der Startseite"
 #: functions/customizer/childs/customizer-home.php
 msgid "Shown by search engines below the title, up to 155 characters. Empty: site title and tagline."
 msgstr "Zeigen Suchmaschinen unter dem Titel an, bis zu 155 Zeichen. Leer: Seitentitel und Untertitel."
+
+#: functions/customizer/childs/customizer-home.php
+msgid "Page for the content section"
+msgstr "Seite für den Inhaltsabschnitt"
+
+#: functions/customizer/childs/customizer-home.php
+msgid "The content of this page is shown in the home page section named content. Enable and position the section in the theme layout manager."
+msgstr "Der Inhalt dieser Seite erscheint im Startseiten-Abschnitt namens content. Abschnitt im Theme-Layout-Manager aktivieren und einordnen."

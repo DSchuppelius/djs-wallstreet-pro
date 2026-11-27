@@ -103,6 +103,21 @@ class theme_home_customizer extends Theme_Customizer {
             "type" => "textarea",
         ]);
 
+        // Seite, deren Inhalt der Startseiten-Abschnitt "content" ausgibt (Reihenfolge: Layout-Manager)
+        $wp_customize->add_setting($this->theme_options_name . "[home_content_page]", [
+            "default" => 0,
+            "capability" => "edit_theme_options",
+            "sanitize_callback" => "absint",
+            "type" => "option",
+        ]);
+        $wp_customize->add_control($this->theme_options_name . "[home_content_page]", [
+            "label" => esc_html__("Page for the content section", "djs-wallstreet-pro"),
+            "description" => esc_html__("The content of this page is shown in the home page section named content. Enable and position the section in the theme layout manager.", "djs-wallstreet-pro"),
+            "section" => "static_front_page",
+            "type" => "dropdown-pages",
+            "allow_addition" => true,
+        ]);
+
         $wp_customize->add_setting($this->theme_options_name . "[home_blog_same_height]", [
             "default" => false,
             "capability" => "edit_theme_options",
