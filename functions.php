@@ -295,3 +295,23 @@ if (! function_exists('_wp_render_title_tag')) {
         return $title;
     }, 10, 2);
 }
+
+add_action('wp_enqueue_scripts', function () {
+    // Seiten (ID oder Kurzname), auf denen reCAPTCHA in jedem Fall bleiben soll
+    $immer_laden = [];
+
+    if ($immer_laden && is_page($immer_laden)) {
+        return;
+    }
+
+    $post = is_singular() ? get_post() : null;
+    if ($post instanceof WP_Post) {
+        $inhalt = (string) $post->post_content;
+        if (has_shortcode($inhalt, 'contact-form-7') || has_block('contact-form-7/contact-form-selector', $post)) {
+            return;
+        }
+    }
+
+    wp_dequeue_script('wpcf7-recaptcha');
+    wp_dequeue_script('google-recaptcha');
+}, 100);
