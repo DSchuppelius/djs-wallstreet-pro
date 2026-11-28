@@ -350,3 +350,19 @@ add_action('wp_footer', function () {
         . '})();';
     echo '<script id="djs-zustimmung-melden">' . $js . '</script>' . "\n";
 }, 999);
+
+add_action('wp_footer', function () {
+    $js = '(function(){'
+        . 'function an(){var $=window.jQuery;if(!$){return false;}if($.djsOhneIpify){return true;}$.djsOhneIpify=true;'
+        . 'var alt=$.getJSON;'
+        . '$.getJSON=function(u){'
+        . 'if(typeof u==="string"&&u.indexOf("api.ipify.org")!==-1){'
+        . 'window.setTimeout(function(){$(".cc-close").trigger("click");'
+        . 'if(window.gdpr_policy_page&&window.gdpr_policy_page.gdpr_hide){$(".cc-revoke").hide();}},0);'
+        . 'return $.Deferred().resolve({}).promise();}'
+        . 'return alt.apply(this,arguments);};'
+        . 'return true;}'
+        . 'if(!an()){document.addEventListener("DOMContentLoaded",an);window.addEventListener("load",an);}'
+        . '})();';
+    echo '<script id="djs-ohne-ipify">' . $js . '</script>' . "\n";
+}, 999);
