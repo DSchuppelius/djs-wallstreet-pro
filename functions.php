@@ -339,7 +339,10 @@ add_action('wp_footer', function () {
         . 'document.addEventListener("DOMContentLoaded",melden);'
         . 'window.addEventListener("load",melden);'
         . 'document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest){return;}'
-        . 'if(t.closest(".cc-allow")){setze("allow");}else if(t.closest(".cc-deny")||t.closest(".cc-close")){setze("deny");}else{return;}'
+        // Fassung 4: Das Hinweis-Plugin klickt nach "Akzeptieren" selbst das Schliessen-Kreuz an.
+        // Das Kreuz gilt deshalb nur als Ablehnung, wenn noch keine Entscheidung gespeichert ist.
+        . 'if(t.closest(".cc-allow")){setze("allow");}else if(t.closest(".cc-deny")){setze("deny");}'
+        . 'else if(t.closest(".cc-close")){if(lies("djs_zustimmung")){return;}setze("deny");}else{return;}'
         . 'melden();},true);'
         . '})();';
     echo '<script id="djs-zustimmung-melden">' . $js . '</script>' . "\n";
