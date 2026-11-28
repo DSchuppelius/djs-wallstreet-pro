@@ -1186,7 +1186,7 @@
 
     /* Einspaltig gibt es neben dem Bild nichts aufzufuellen (wie bisher) */
     @media (width < 62rem) {
-        .portfolio-detail__picture > .portfolio-detail__filler {
+        .portfolio-detail__filler {
             display: none;
         }
     }

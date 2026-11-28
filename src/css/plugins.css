@@ -230,6 +230,17 @@ body.fixed_Footer .grecaptcha-badge {
     border-top-right-radius: 3px;
 }
 
+/* Rechner-Tabellen (class="input", Plugin djs-wallstreet-pro-angularjs) sind auf dem Handy breiter als der
+   Beitrag und wurden rechts abgeschnitten: dort als Block, der in sich seitlich scrollt */
+@media (width < 48rem) {
+    .entry-content table.input {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}
+
 /* Eingabefelder in Rechner-Tabellen fuellen die Zelle */
 .entry-content table td > :is(input, select):only-child {
     width: 100%;
