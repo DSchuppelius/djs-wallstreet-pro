@@ -320,15 +320,18 @@ add_filter('wp_get_consent_type', function () {
     return 'optin';
 });
 
-add_action('wp_enqueue_scripts', function () {
+add_action('wp_footer', function () {
     $js = '(function(){'
         . 'function wahl(){var m=document.cookie.match(/(?:^|; )cookieconsent_status=([^;]*)/);return m?decodeURIComponent(m[1]):"";}'
+        . 'var zuletzt=null;'
         . 'function melden(){if(typeof window.wp_set_consent!=="function"){return;}'
-        . 'var v=wahl()==="allow"?"allow":"deny";'
+        . 'var v=wahl()==="allow"?"allow":"deny";if(v===zuletzt){return;}zuletzt=v;'
         . '["statistics","statistics-anonymous","marketing","preferences"].forEach(function(c){window.wp_set_consent(c,v);});'
         . 'window.wp_set_consent("functional","allow");}'
         . 'melden();'
-        . 'document.addEventListener("click",function(e){if(e.target&&e.target.closest&&e.target.closest(".cc-btn")){setTimeout(melden,300);}});'
+        . 'document.addEventListener("DOMContentLoaded",melden);'
+        . 'window.addEventListener("load",melden);'
+        . 'document.addEventListener("click",function(e){if(e.target&&e.target.closest&&e.target.closest(".cc-btn")){setTimeout(melden,300);setTimeout(melden,1500);}});'
         . '})();';
-    wp_add_inline_script('wp-consent-api', $js);
-}, 30);
+    echo '<script id="djs-zustimmung-melden">' . $js . '</script>' . "\n";
+}, 999);
