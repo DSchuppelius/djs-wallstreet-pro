@@ -332,7 +332,10 @@ add_action('wp_footer', function () {
         . 'var zuletzt=null;'
         . 'function melden(){if(typeof window.wp_set_consent!=="function"){return;}'
         . 'var v=lies("djs_zustimmung")==="allow"?"allow":"deny";if(v===zuletzt){return;}zuletzt=v;'
-        . '["statistics","statistics-anonymous","marketing","preferences"].forEach(function(c){window.wp_set_consent(c,v);});'
+        // Fassung 5: Der Hinweis fragt nur nach der Statistik. Marketing und Praeferenzen
+        // bleiben deshalb immer abgelehnt (bei Google: keine Werbe-Cookies, ad_storage "denied").
+        . '["statistics","statistics-anonymous"].forEach(function(c){window.wp_set_consent(c,v);});'
+        . '["marketing","preferences"].forEach(function(c){window.wp_set_consent(c,"deny");});'
         . 'window.wp_set_consent("functional","allow");}'
         . 'if(!lies("djs_zustimmung")){if(lies("cookieconsent_status")){document.cookie="cookieconsent_status=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";}}'
         . 'melden();'
