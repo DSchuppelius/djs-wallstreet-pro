@@ -247,13 +247,16 @@
         padding-inline: 0;
     }
 
+    /* Spalte darf schmaler werden als das laengste Wort (sonst schiebt ein langer Titel Datum und Titel aus der Karte) */
     .post-card__header {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 0.625rem;
     }
 
     .post-card__title {
         margin: 0;
+        overflow-wrap: anywhere;
         font-size: var(--post-font-size, clamp(1.375rem, 1.1rem + 1vw, 1.875rem));
         font-weight: var(--post-font-weight, 700);
         font-style: var(--post-font-style, normal);
