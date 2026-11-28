@@ -315,3 +315,20 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_script('wpcf7-recaptcha');
     wp_dequeue_script('google-recaptcha');
 }, 100);
+
+add_filter('wp_get_consent_type', function () {
+    return 'optin';
+});
+
+add_action('wp_enqueue_scripts', function () {
+    $js = '(function(){'
+        . 'function wahl(){var m=document.cookie.match(/(?:^|; )cookieconsent_status=([^;]*)/);return m?decodeURIComponent(m[1]):"";}'
+        . 'function melden(){if(typeof window.wp_set_consent!=="function"){return;}'
+        . 'var v=wahl()==="allow"?"allow":"deny";'
+        . '["statistics","statistics-anonymous","marketing","preferences"].forEach(function(c){window.wp_set_consent(c,v);});'
+        . 'window.wp_set_consent("functional","allow");}'
+        . 'melden();'
+        . 'document.addEventListener("click",function(e){if(e.target&&e.target.closest&&e.target.closest(".cc-btn")){setTimeout(melden,300);}});'
+        . '})();';
+    wp_add_inline_script('wp-consent-api', $js);
+}, 30);
