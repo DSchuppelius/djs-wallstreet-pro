@@ -321,17 +321,26 @@ add_filter('wp_get_consent_type', function () {
 });
 
 add_action('wp_footer', function () {
+    // Fassung 3: Der Hinweis laeuft im Opt-out-Modus und speichert fuer "Akzeptieren" und
+    // fuer das Schliessen-Kreuz denselben Wert ("dismiss"). Das Skript merkt sich deshalb
+    // selbst, welcher Knopf geklickt wurde (Cookie "djs_zustimmung", ein Jahr gueltig).
+    // Wer frueher schon entschieden hat, wird einmal neu gefragt: Fehlt das eigene Cookie,
+    // wird das Cookie des Hinweises geloescht, damit er beim naechsten Aufruf wieder erscheint.
     $js = '(function(){'
-        . 'function wahl(){var m=document.cookie.match(/(?:^|; )cookieconsent_status=([^;]*)/);return m?decodeURIComponent(m[1]):"";}'
+        . 'function lies(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):"";}'
+        . 'function setze(v){document.cookie="djs_zustimmung="+v+"; max-age=31536000; path=/; SameSite=Lax";}'
         . 'var zuletzt=null;'
         . 'function melden(){if(typeof window.wp_set_consent!=="function"){return;}'
-        . 'var v=wahl()==="allow"?"allow":"deny";if(v===zuletzt){return;}zuletzt=v;'
+        . 'var v=lies("djs_zustimmung")==="allow"?"allow":"deny";if(v===zuletzt){return;}zuletzt=v;'
         . '["statistics","statistics-anonymous","marketing","preferences"].forEach(function(c){window.wp_set_consent(c,v);});'
         . 'window.wp_set_consent("functional","allow");}'
+        . 'if(!lies("djs_zustimmung")){if(lies("cookieconsent_status")){document.cookie="cookieconsent_status=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";}}'
         . 'melden();'
         . 'document.addEventListener("DOMContentLoaded",melden);'
         . 'window.addEventListener("load",melden);'
-        . 'document.addEventListener("click",function(e){if(e.target&&e.target.closest&&e.target.closest(".cc-btn")){setTimeout(melden,300);setTimeout(melden,1500);}});'
+        . 'document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest){return;}'
+        . 'if(t.closest(".cc-allow")){setze("allow");}else if(t.closest(".cc-deny")||t.closest(".cc-close")){setze("deny");}else{return;}'
+        . 'melden();},true);'
         . '})();';
     echo '<script id="djs-zustimmung-melden">' . $js . '</script>' . "\n";
 }, 999);
